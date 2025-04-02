@@ -2,6 +2,7 @@
 
 ##기본폴더구조
 
+```
 project/
 ├── src/
 │   ├── templates/
@@ -20,3 +21,7 @@ project/
 │   └── *.html
 ├── gulpfile.js
 ├── package.json
+```
+환경 : gulp + nunjucks + scss 
+
+구동 : npm install 후 npx gulp dev

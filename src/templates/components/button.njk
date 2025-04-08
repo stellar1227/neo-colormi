@@ -1,0 +1,8 @@
+<button type="{{ type or button }}" class="{{ variant }} {{ size }}">
+    {% if useIcon %}
+    <i aria-hidden="true"></i>
+    {% if label %}<span>{{ label }}</span>{% endif %}
+    {% else %}
+    <i>button</i>
+    {% endif %}
+</button>

@@ -1,8 +1,10 @@
-<button type="{{ type or button }}" class="{{ variant }} {{ size }}">
-    {% if useIcon %}
-    <i aria-hidden="true"></i>
-    {% if label %}<span>{{ label }}</span>{% endif %}
-    {% else %}
-    <i>button</i>
+{% macro Button(props) %}
+  <button type="{{ props.type or 'button' }}" class="{{ props.variant }} {{ props.size }}" {% if props.disabled %}disabled{% endif %}>
+    {% if props.useIcon %}
+      <i class="{{ props.useIcon }}"></i>
     {% endif %}
-</button>
+    {% if props.label %}
+      <span>{{ props.label }}</span>
+    {% endif %}
+  </button>
+{% endmacro %}

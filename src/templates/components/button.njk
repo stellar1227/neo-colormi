@@ -1,0 +1,10 @@
+{% macro Button(props) %}
+  <button type="{{ props.type or 'button' }}" class="{{ props.variant }} {{ props.size }}" {% if props.disabled %}disabled{% endif %}>
+    {% if props.useIcon %}
+      <i class="{{ props.useIcon }}"></i>
+    {% endif %}
+    {% if props.label %}
+      <span>{{ props.label }}</span>
+    {% endif %}
+  </button>
+{% endmacro %}

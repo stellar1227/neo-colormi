@@ -1,6 +1,5 @@
 {
-    "title": "My Gulp Nunjucks Site",
-    "siteName": "Static Awesome",
+    "siteName": "칼라미",
     "description": "This is a simple static site built with Gulp and Nunjucks.",
     "year": 2025
   }

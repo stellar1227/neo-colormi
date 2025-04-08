@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>{{ title }}</title>
+  <title>{{ title }} | {{ siteName }}</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   {% include "partials/header.njk" %}
-  <main>
+  <section id="wrap">
+    <div id="container">
     {% block content %}{% endblock %}
-  </main>
+    </div>
+  </section>
   {% include "partials/footer.njk" %}
-  <script src="/js/main.js"></script>
+  <script src="/js/colormi-ui.js"></script>
 </body>
 </html>

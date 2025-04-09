@@ -337,12 +337,13 @@ h5 {
       line-height: 1;
 
       &:after {
-        content: '-'; //background-image 대신 넣은거임. 나중에 삭제
+        content: '';
         position: absolute;
         top: 50%;
         right: 12px;
         width: 16px;
         height: 16px;
+        background-image: url('../img/icon/icon-arrow-16-down.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 100% 100%;
@@ -404,22 +405,23 @@ h5 {
       right: 12px;
       top: 50%;
       display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 0 8px;
       min-height: 16px;
       transform: translateY(-50%);
 
       [class^=btn-] {
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
         width: 16px;
         height: 16px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 100% 100%;
+        // background: var(--color-border-primary-light); //background-image 대신 넣은거임. 나중에 삭제
 
         &.btn-del {
-          background-image: url('');
+          background-image: url('../img/icon/icon-del-circle-16.png');
         }
 
         &.btn-visible {
@@ -429,7 +431,13 @@ h5 {
         i {
           font-size: 0;
         }
+
       }
+    }
+
+    .guide {
+      @extend %body-xsmall;
+      color: var(--color-text-subcolor);
     }
   }
 
@@ -560,6 +568,63 @@ h5 {
         @extend %body-xxsmall;
         font-weight: 500;
       }
+    }
+  }
+
+  &.search {
+    .form-wrap {
+      position: relative;
+
+      input {
+        height: 48px;
+        padding-right: 86px;
+        box-shadow: none;
+        border-radius: 8px;
+
+        ~.search-bg {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+          border: 1px solid var(--Line-line-3);
+          background-origin: border-box;
+          background-clip: content-box, border-box;
+          z-index: -1;
+        }
+
+        &:focus~.search-bg,
+        &:hover~.search-bg {
+          border: 2px solid transparent;
+          background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #F8C0D2 0%, #F4D360 42%, #ED6190 100%);
+
+          ~.btn-search {
+            background-image: url('');
+            color: var(--color-text-primary);
+          }
+        }
+      }
+
+      .util {
+        right: 0;
+        gap: 0 14px;
+
+        .btn-search {
+          width: 44px;
+          height: 44px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 100% 100%;
+        }
+      }
+
+    }
+
+    &.completed input~.search-bg {
+      border: 2px solid transparent;
+      background-image: linear-gradient(#fff, #fff), conic-gradient(from 180deg at 50% 50%, #F4A0BC 0deg, #F1CB40 101.39984965324402deg, #92D1FF 270.5998492240906deg, #F4A0BC 360deg);
     }
   }
 }
@@ -713,8 +778,8 @@ h5 {
         &:before {
           position: absolute;
           content: '';
-          width: 9px;
-          height: 6px;
+          width: 12px;
+          height: 12px;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -784,8 +849,8 @@ h5 {
           border-color: var(--color-border-primary);
 
           &:before {
-            content: ';'; //background-image 대신 넣은거임. 나중에 삭제
-            background-image: url();
+            content: '';
+            background-image: url('../img/icon/icon-checkbox-12.png');
             color: #fff;
           }
         }
@@ -1120,11 +1185,14 @@ h5 {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
 
   i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
     margin: 0;
     padding: 0;
     line-height: 1;
-    background: url() no-repeat center center/100% 100%;
-    background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
+    font-size: 0;
+    background: url('../img/icon/icon-arrow-line-24-up.png') no-repeat center center/100% 100%;
 
     +span {
       margin: 4px 0 0;
@@ -1290,5 +1358,338 @@ h5 {
 
   &.small {
     width: 400px;
+  }
+}
+
+// header
+.top-banner-wrap {
+  position: relative;
+  width: 100%;
+
+  .top-banner {
+    position: relative;
+    height: 65px;
+
+    .top-banner-link {
+      display: block;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 65px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .top-banner-close {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url() no-repeat center center/100% 100%;
+    background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
+    font-size: 0;
+  }
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+
+  .logo {
+    margin: 0;
+
+    .logo-link {
+      display: flex;
+      align-items: flex-end;
+      padding: 4px 0;
+      color: var(--color-text-basic);
+      font-size: var(--font-size-navigation-XXS);
+      font-weight: 500;
+
+      .logo-img {
+        display: inline-block;
+        width: 78px;
+        height: 38px;
+        object-fit: contain;
+      }
+
+      p {
+        display: inline-block;
+        margin-left: 4px;
+
+      }
+    }
+  }
+
+  .util-menu-wrap {
+    .util-menu {
+      display: flex;
+      gap: 0 16px;
+
+      [class^=btn-] {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background: #003f6d; //대신 넣은거임. 나중에 삭제
+
+        span {
+          font-size: 0;
+        }
+      }
+    }
+  }
+}
+
+header {
+  position: relative;
+
+  .gnb-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .gnb {
+      display: flex;
+      align-items: center;
+      gap: 0 8px;
+
+      .btn-menu-all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: url() no-repeat center center/100% auto;
+        background: #003f6d; //대신 넣은거임. 나중에 삭제
+
+        span {
+          font-size: 0;
+        }
+      }
+
+      .gnb-menu {
+        ul {
+          display: flex;
+          gap: 0 16px;
+          align-items: center;
+
+          .depth-1 {
+            a {
+              display: block;
+              padding: 10px 3px;
+              color: var(--color-text-subcolor-deep);
+              @extend %depth-medium;
+              line-height: 20px;
+            }
+
+            a:hover,
+            &.active a {
+              color: var(--color-text-primary);
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .all-menu-wrap {
+    position: absolute;
+    width: 100%;
+    padding: 32px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
+    color: var(--color-text-basic);
+
+    .banner-wrap {
+      display: flex;
+      flex: 1 100%;
+      gap: 0 12px;
+      margin-bottom: 24px;
+
+      a {
+        display: inline-block;
+
+        img {
+          display: inline-block;
+          width: 240px;
+          height: 64px;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .all-menu {
+      display: flex;
+      flex-flow: row wrap;
+
+      .all-menu-inner {
+        display: flex;
+        flex: 1;
+
+        +.all-menu-inner {
+          margin-top: 24px;
+          padding-top: 32px;
+          border-top: 1px solid var(--Line-line-2);
+
+          .category>ul>li {
+            width: 150px;
+
+            &:last-child {
+              width: 116px;
+            }
+          }
+        }
+
+        .category {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+
+
+
+          +.category {
+            padding-left: 22px;
+            border-left: 1px solid var(--Line-line);
+          }
+
+          >.depth-1 {
+            margin: 0 0 22px;
+            @extend %title-semibold;
+
+            &.focus:after {
+              content: '';
+              display: inline-block;
+              width: 5px;
+              height: 5px;
+              background: #EA4279;
+              border-radius: 50%;
+              vertical-align: 12px;
+            }
+          }
+
+          >ul {
+            display: flex;
+            gap: 0 20px;
+
+            &:nth-child(even) li {
+              width: 150px;
+            }
+
+            >li {
+              // flex: 0 1 182px;
+              width: 182px;
+
+
+              >.depth-2 {
+                margin-bottom: 8px;
+                @extend %depth-medium-bold;
+              }
+
+              >ul {
+                +.depth-2 {
+                  margin-top: 36px;
+                }
+              }
+
+              a:hover,
+              &.active a {
+                color: var(--color-text-primary);
+                text-decoration: underline;
+              }
+
+              .depth-3 {
+                margin: 4px 0;
+                padding: 3px 0;
+
+                a {
+                  display: block;
+                  color: var(--color-text-subcolor-deep);
+                  @extend %depth-small-medium;
+
+                  &:hover {
+                    color: var(--color-text-primary);
+                    font-weight: 600;
+
+                    // @at-root .all-menu-wrap .all-menu .all-menu-inner .category>.depth-1:after {
+                    //   content: '';
+                    //   display: inline-block;
+                    //   width: 5px;
+                    //   height: 5px;
+                    //   background: #EA4279;
+                    //   border-radius: 50%;
+                    //   vertical-align: 12px;
+                    // }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .product-info {
+        width: 566px;
+        padding-left: 32px;
+        border-left: 1px solid var(--Line-line);
+        border-radius: 6px;
+
+        .product-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0 16px;
+
+          li {
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid var(--Line-line);
+
+            img {
+              display: inline-block;
+              flex: 0 1 50%;
+              width: 259px;
+              height: 259px;
+              object-fit: cover;
+
+            }
+          }
+
+        }
+
+        .product-text {
+          margin-top: 20px;
+          color: var(--color-text-basic);
+          @extend %body-xsmall;
+          color: var(--color-text-subcolor);
+
+          .title {
+            display: block;
+            margin-bottom: 14.5px;
+            @extend %title-medium;
+            color: var(--color-text-basic);
+
+            .status {
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              margin-left: 2px;
+              vertical-align: -3px;
+              background: url() no-repeat center center/100% 100%;
+              background: #003f6d; //대신 넣은거임. 나중에 삭제
+            }
+          }
+        }
+      }
+    }
   }
 }

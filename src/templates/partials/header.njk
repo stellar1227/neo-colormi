@@ -18,7 +18,7 @@
   <div class="header-top">
     <h1 class="logo">
       <a href="/" class="logo-link">
-        <img src="https://www.colormi.co.kr/resources/fe/img/img/header-logo.png" alt="칼라미" class="logo-img">
+        <img src="{{ imgPath }}/colormi-logo.png" alt="칼라미" class="logo-img"/>
         <p>고품질 디지털 인쇄 전문</p>
       </a>
     </h1>
@@ -36,6 +36,24 @@
         <a href="#" class="btn-cart">
           <span>장바구니</span>
         </a>
+      </div>
+      <div class="quick-menu">
+        <div class="user-info">
+          <span class="user-img"><img src="{{ imgPath }}/img-random-profile-1.png" alt="랜덤프로필1"/>
+          </span>
+          <p class="user-name">고객명</p>
+        </div>
+        <ul class="quick-menu-list">
+          <li>
+            <a href="#" class="btn-my">마이페이지</a>
+          </li>
+          <li>
+            <a href="#" class="btn-status">주문배송조회</a>
+          </li>
+          <li>
+            <a href="#" class="btn-logout">로그아웃</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -90,9 +108,24 @@
         <a href="#" class="btn-quick">
           <span>고객센터</span>
         </a>
-        <a href="#" class="btn-site">
-          <span>패밀리사이트</span>
-        </a>
+        <div class="form-field">
+          <div class="form-wrap">
+            <button type="button" class="btn-select small">
+              <span>패밀리사이트</span>
+            </button>
+            <ul class="option-list">
+              <li>
+                <a href="" class="btn-option">바로DM</a>
+              </li>
+              <li>
+                <a href="" class="btn-option">북페이크</a>
+              </li>
+              <li>
+                <a href="" class="btn-option">동서남북</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -172,7 +205,7 @@
     </div>
   </nav>
   <!-- 전체메뉴 -->
-  <nav class="all-menu-wrap">
+  <nav class="all-menu-wrap" style="display: none;">
     <div class="all-menu">
       <div class="banner-wrap">
         <a href="" alt=""><img src="img-banner-01.png" alt="학원·기업교재"/>

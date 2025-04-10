@@ -1,14 +1,13 @@
 {% extends "layouts/base.njk" %}
 {% set title = "designGuide" %}
-
 {% block content %}
   <style>
-    body{
-        padding:20px;
+    #container {
+      padding: 20px;
     }
     .design-system {
       h1.d-sys {
-        margin: 20px 0;
+        margin: 20px -20px;
         padding: 10px;
         background: var(--color-background-inverse);
         color: var(--color-text-basic-inverse);
@@ -783,7 +782,7 @@
         class="d-sys-list">
         <!-- btn-primary xsmall -->
         <button type="button" class="btn-primary xsmall">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-primary</span>
         </button>
         <p>btn-primary xsmall</p>
@@ -792,7 +791,7 @@
         class="d-sys-list">
         <!-- btn-primary small -->
         <button type="button" class="btn-primary small">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-primary</span>
         </button>
         <p>btn-primary small</p>
@@ -801,7 +800,7 @@
         class="d-sys-list">
         <!-- btn-primary medium -->
         <button type="button" class="btn-primary medium">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-primary</span>
         </button>
         <p>btn-primary medium</p>
@@ -810,7 +809,7 @@
         class="d-sys-list">
         <!-- btn-primary large -->
         <button type="button" class="btn-primary large">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-primary</span>
         </button>
         <p>btn-primary large</p>
@@ -854,7 +853,7 @@
         class="d-sys-list">
         <!-- btn-black xsmall -->
         <button type="button" class="btn-black xsmall">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-black</span>
         </button>
         <p>btn-black xsmall</p>
@@ -863,7 +862,7 @@
         class="d-sys-list">
         <!-- btn-black small -->
         <button type="button" class="btn-black small">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-black</span>
         </button>
         <p>btn-black small</p>
@@ -872,7 +871,7 @@
         class="d-sys-list">
         <!-- btn-black medium -->
         <button type="button" class="btn-black medium">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-black</span>
         </button>
         <p>btn-black medium</p>
@@ -881,7 +880,7 @@
         class="d-sys-list">
         <!-- btn-black large -->
         <button type="button" class="btn-black large">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-black</span>
         </button>
         <p>btn-black large</p>
@@ -925,7 +924,7 @@
         class="d-sys-list">
         <!-- btn-outline xsmall -->
         <button type="button" class="btn-outline xsmall">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-outline</span>
         </button>
         <p>btn-outline xsmall</p>
@@ -934,7 +933,7 @@
         class="d-sys-list">
         <!-- btn-outline small -->
         <button type="button" class="btn-outline small">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-outline</span>
         </button>
         <p>btn-outline small</p>
@@ -943,7 +942,7 @@
         class="d-sys-list">
         <!-- btn-outline medium -->
         <button type="button" class="btn-outline medium">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-outline</span>
         </button>
         <p>btn-outline medium</p>
@@ -952,7 +951,7 @@
         class="d-sys-list">
         <!-- btn-outline large -->
         <button type="button" class="btn-outline large">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>btn-outline</span>
         </button>
         <p>btn-outline large</p>
@@ -994,28 +993,28 @@
     <div class="d-sys-list-wrap">
       <div class="d-sys-list">
         <button type="button" class="btn-primary xsmall" disabled="disabled">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>[class^=btn-]</span>
         </button>
         <p>[class^=btn-] xsmall :disabled</p>
       </div>
       <div class="d-sys-list">
         <button type="button" class="btn-primary small" disabled="disabled">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>[class^=btn-]</span>
         </button>
         <p>[class^=btn-] small :disabled</p>
       </div>
       <div class="d-sys-list">
         <button type="button" class="btn-primary medium" disabled="disabled">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>[class^=btn-]</span>
         </button>
         <p>[class^=btn-] medium :disabled</p>
       </div>
       <div class="d-sys-list">
         <button type="button" class="btn-primary large" disabled="disabled">
-          <i aria-hidden="true"></i>
+          <i class="plus"></i>
           <span>[class^=btn-]</span>
         </button>
         <p>[class^=btn-] large :disabled</p>
@@ -1070,7 +1069,7 @@
         class="d-sys-list">
         <!-- btn-top -->
         <button type="button" class="btn-top">
-          <i>위로</i>
+          <i class="top">위로</i>
         </button>
         <p>btn-top</p>
       </div>
@@ -1078,7 +1077,7 @@
         class="d-sys-list">
         <!-- btn-top label -->
         <button type="button" class="btn-top label">
-          <i aria-hidden="true"></i>
+          <i class="top"></i>
           <span>위로</span>
         </button>
         <p>btn-top label</p>

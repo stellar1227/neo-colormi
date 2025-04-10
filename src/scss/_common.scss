@@ -336,13 +336,21 @@ h5 {
       text-align: left;
       line-height: 1;
 
+      &.small {
+        height: 20px;
+        padding: 2px 20px 2px 5px;
+        @extend %depth-xsmall-semibold;
+        border: none;
+      }
+
       &:after {
-        content: '-'; //background-image 대신 넣은거임. 나중에 삭제
+        content: '';
         position: absolute;
         top: 50%;
         right: 12px;
         width: 16px;
         height: 16px;
+        background-image: url('../img/icon/icon-arrow-16-down.png');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 100% 100%;
@@ -362,7 +370,7 @@ h5 {
       &:disabled,
       &:read-only {
         box-shadow: inset 0 0 0 1px #D6D6D6;
-        background-color: #F4F5F6;
+        background: #F4F5F6;
       }
     }
 
@@ -404,22 +412,23 @@ h5 {
       right: 12px;
       top: 50%;
       display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 0 8px;
       min-height: 16px;
       transform: translateY(-50%);
 
       [class^=btn-] {
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
         width: 16px;
         height: 16px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 100% 100%;
+        // background: var(--color-border-primary-light); //background-image 대신 넣은거임. 나중에 삭제
 
         &.btn-del {
-          background-image: url('');
+          background-image: url('../img/icon/icon-del-circle-16.png');
         }
 
         &.btn-visible {
@@ -429,7 +438,13 @@ h5 {
         i {
           font-size: 0;
         }
+
       }
+    }
+
+    .guide {
+      @extend %body-xsmall;
+      color: var(--color-text-subcolor);
     }
   }
 
@@ -560,6 +575,63 @@ h5 {
         @extend %body-xxsmall;
         font-weight: 500;
       }
+    }
+  }
+
+  &.search {
+    .form-wrap {
+      position: relative;
+
+      input {
+        height: 48px;
+        padding-right: 86px;
+        box-shadow: none;
+        border-radius: 8px;
+
+        ~.search-bg {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+          border: 1px solid var(--Line-line-3);
+          background-origin: border-box;
+          background-clip: content-box, border-box;
+          z-index: -1;
+        }
+
+        &:focus~.search-bg,
+        &:hover~.search-bg {
+          border: 2px solid transparent;
+          background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #F8C0D2 0%, #F4D360 42%, #ED6190 100%);
+
+          ~.btn-search {
+            background-image: url('');
+            color: var(--color-text-primary);
+          }
+        }
+      }
+
+      .util {
+        right: 0;
+        gap: 0 14px;
+
+        .btn-search {
+          width: 44px;
+          height: 44px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 100% 100%;
+        }
+      }
+
+    }
+
+    &.completed input~.search-bg {
+      border: 2px solid transparent;
+      background-image: linear-gradient(#fff, #fff), conic-gradient(from 180deg at 50% 50%, #F4A0BC 0deg, #F1CB40 101.39984965324402deg, #92D1FF 270.5998492240906deg, #F4A0BC 360deg);
     }
   }
 }
@@ -713,8 +785,8 @@ h5 {
         &:before {
           position: absolute;
           content: '';
-          width: 9px;
-          height: 6px;
+          width: 12px;
+          height: 12px;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -784,8 +856,8 @@ h5 {
           border-color: var(--color-border-primary);
 
           &:before {
-            content: ';'; //background-image 대신 넣은거임. 나중에 삭제
-            background-image: url();
+            content: '';
+            background-image: url('../img/icon/icon-checkbox-12.png');
             color: #fff;
           }
         }
@@ -1120,11 +1192,14 @@ h5 {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
 
   i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
     margin: 0;
     padding: 0;
     line-height: 1;
-    background: url() no-repeat center center/100% 100%;
-    background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
+    font-size: 0;
+    background: url('../img/icon/icon-arrow-line-24-up.png') no-repeat center center/100% 100%;
 
     +span {
       margin: 4px 0 0;

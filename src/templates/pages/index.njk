@@ -1,133 +1,134 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-<style>
-  .design-system {
-    h1.d-sys {
-      margin: 20px 0;
-      padding: 10px;
-      background: var(--color-background-inverse);
-      color: var(--color-text-basic-inverse);
-      font: 700 var(--font-size-navigation-L)/normal var(--font-typo-main-font);
-    }
-    h2.d-sys {
-      margin: 30px 0 10px;
-      color: var(--color-text-basic);
-      font: 600 var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-      &:before {
-        content: '';
-        display: inline-block;
-        width: 4px;
-        height: 4px;
-        margin-right: 6px;
-        background: var(--color-divider-gray-darker);
-        border-radius: 50%;
-        vertical-align: 3px;
+  <style>
+    .design-system {
+      h1.d-sys {
+        margin: 20px 0;
+        padding: 10px;
+        background: var(--color-background-inverse);
+        color: var(--color-text-basic-inverse);
+        font: 700 var(--font-size-navigation-L)/normal var(--font-typo-main-font);
       }
-    }
-    h3.d-sys {
-      margin: 20px 0;
-      color: var(--color-text-basic);
-      font: 600 var(--font-size-navigation-S)/normal var(--font-typo-main-font);
-    }
-    .d-sys-list-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px 20px;
-      .d-sys-list {
-        width: calc(50% - 10px);
-      }
-    }
-    &.color {
-      .d-sys-list {
-        width: calc(33.33% - 15px);
-        min-width: 300px;
-        max-height: 300px;
-        overflow-y: auto;
-        li {
-          line-height: 20px;
-          > span {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin-right: 4px;
-            background: var(--color-background-inverse);
-            border-radius: 4px;
-            border: 1px solid #D9D9D9;
-            vertical-align: top;
-          }
-          + li {
-            margin: 4px 0;
-          }
+      h2.d-sys {
+        margin: 30px 0 10px;
+        color: var(--color-text-basic);
+        font: 600 var(--font-size-navigation-M)/normal var(--font-typo-main-font);
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          margin-right: 6px;
+          background: var(--color-divider-gray-darker);
+          border-radius: 50%;
+          vertical-align: 3px;
         }
       }
-    }
-    &.typography {
-      .d-sys-list {
-        width: calc(33.33% - 15px);
-        min-width: 300px;
+      h3.d-sys {
+        margin: 20px 0;
+        color: var(--color-text-basic);
+        font: 600 var(--font-size-navigation-S)/normal var(--font-typo-main-font);
       }
-    }
-    &.button {
       .d-sys-list-wrap {
-        gap: 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 20px;
         .d-sys-list {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          width: calc(50% - 15px);
-          p {
-            margin-left: 20px;
+          width: calc(50% - 10px);
+        }
+      }
+      &.color {
+        .d-sys-list {
+          width: calc(33.33% - 15px);
+          min-width: 300px;
+          max-height: 300px;
+          overflow-y: auto;
+          li {
+            line-height: 20px;
+            > span {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              margin-right: 4px;
+              background: var(--color-background-inverse);
+              border-radius: 4px;
+              border: 1px solid #D9D9D9;
+              vertical-align: top;
+            }
+            + li {
+              margin: 4px 0;
+            }
           }
         }
       }
+      &.typography {
+        .d-sys-list {
+          width: calc(33.33% - 15px);
+          min-width: 300px;
+        }
+      }
+      &.button {
+        .d-sys-list-wrap {
+          gap: 10px 20px;
+          .d-sys-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: calc(50% - 15px);
+            p {
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+      .modal {
+        position: relative;
+      }
     }
-    .modal {
-      position: relative;
-    }
-  }
-</style></head><body>
-<h1>SiteInfo</h1>
-<table>
-  <tr>
-    <th>
-      Type
-    </th>
-    <th>1depth</th>
-    <th>2depth</th>
-    <th>3depth</th>
-    <th>url</th>
-    <th>status</th>
-    <th>comments</th>
-  </tr>
-  <tr>
-    <td colspan='4'>
-      designSystem
-    </td>
-    <td>
-      <a href='./designGuide.html'>pages/designGuide.html</a>
-    </td>
-    <td>작성중</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td colspan='4'>
-      code snippets
-    </td>
-    <td>
-      <a href='./snippets.html'>pages/snippets.html</a>
-    </td>
-    <td>작성중</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td colspan='4'>
-      main
-    </td>
-    <td>
-      <a href='./main.html'>pages/main.html</a>
-    </td>
-    <td>작성중</td>
-    <td></td>
-  </tr>
-</table>
-<script src="/js/colormi-ui.js"></script></body></html>
+  </style>
+  <h1>SiteInfo</h1>
+  <table>
+    <tr>
+      <th>
+        Type
+      </th>
+      <th>1depth</th>
+      <th>2depth</th>
+      <th>3depth</th>
+      <th>url</th>
+      <th>status</th>
+      <th>comments</th>
+    </tr>
+    <tr>
+      <td colspan='4'>
+        designSystem
+      </td>
+      <td>
+        <a href='./designGuide.html'>pages/designGuide.html</a>
+      </td>
+      <td>작성중</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan='4'>
+        code snippets
+      </td>
+      <td>
+        <a href='./snippets.html'>pages/snippets.html</a>
+      </td>
+      <td>작성중</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan='4'>
+        main
+      </td>
+      <td>
+        <a href='./main.html'>pages/main.html</a>
+      </td>
+      <td>작성중</td>
+      <td></td>
+    </tr>
+  </table>
+  <script src="/js/colormi-ui.js"></script>
+{% endblock %}

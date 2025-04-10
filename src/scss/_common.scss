@@ -511,12 +511,6 @@ h5 {
         // transform: rotate(180deg) translateY(50%);
         background-image: url(../img/icon/icon-arrow-16-up.png);
       }
-
-      &.small {
-        &:after {
-          background-image: url(../img/icon/icon-arrow-triangle-16-up.png);
-        }
-      }
     }
   }
 

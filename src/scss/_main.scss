@@ -267,7 +267,7 @@ header {
           background: #fff;
 
           &:after {
-            content: "";
+            content: '';
             position: absolute;
             top: 50%;
             right: 0;
@@ -282,6 +282,14 @@ header {
 
           &:hover {
             background: var(--color-border-gray-light);
+          }
+        }
+
+        .quick-menu-wrap.active {
+          .btn-select {
+            &:after {
+              background-image: url(../img/icon/icon-arrow-triangle-16-up.png);
+            }
           }
         }
       }

@@ -24,4 +24,5 @@ project/
 ```
 환경 : gulp + nunjucks + scss 
 
-구동 : npm install 후 npx gulp dev
+구동 : npm install 후 npm run copy:images && npm run dev
+이미지는 중간에 추가시에 npm run copy:images 따로 실행해줘야함 

@@ -109,7 +109,7 @@ header {
       }
 
       .quick-menu {
-        left: calc(100% - (36px * 3 + 16px));
+        left: calc(100% - (36px * 2)); // (버튼width * 메뉴갯수-1)
       }
     }
   }

@@ -33,6 +33,11 @@ const paths = {
     src: 'src/js/**/*.js',
     dest: 'dist/js/',
   },
+  images: {
+    src: 'src/img/**/*.*',
+    dest: 'dist/img/',
+    watch: 'src/img/**/*.*',
+  },
 };
 
 // HTML (Nunjucks)

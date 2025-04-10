@@ -30,30 +30,44 @@
         <a href="#" class="btn-login">
           <span>로그인</span>
         </a>
-        <a href="#" class="btn-join">
-          <span>회원가입</span>
-        </a>
         <a href="#" class="btn-cart">
           <span>장바구니</span>
         </a>
       </div>
-      <div class="quick-menu" style="display: none;">
-        <div class="user-info">
-          <span class="user-img"><img src="/img/img/img-random-profile-1.png" alt="랜덤프로필1"/>
-          </span>
-          <p class="user-name">고객명</p>
+      <div
+        class="quick-menu" style="display: none;">
+        <!-- 로그인 후 -->
+        <div class="menu-box">
+          <div class="user-info">
+            <span class="user-img"><img src="/img/img/img-random-profile-1.png" alt="랜덤프로필1"/>
+            </span>
+            <p class="user-name">고객명</p>
+          </div>
+          <ul class="quick-menu-list">
+            <li>
+              <a href="#" class="btn-my">마이페이지</a>
+            </li>
+            <li>
+              <a href="#" class="btn-status">주문배송조회</a>
+            </li>
+            <li>
+              <a href="#" class="btn-logout">로그아웃</a>
+            </li>
+          </ul>
         </div>
-        <ul class="quick-menu-list">
-          <li>
-            <a href="#" class="btn-my">마이페이지</a>
-          </li>
-          <li>
-            <a href="#" class="btn-status">주문배송조회</a>
-          </li>
-          <li>
-            <a href="#" class="btn-logout">로그아웃</a>
-          </li>
-        </ul>
+        <!-- // 로그인 후 -->
+        <!-- 로그인 전 -->
+        <div class="menu-box">
+          <ul class="quick-menu-list">
+            <li>
+              <a href="#" class="btn-login">로그인</a>
+            </li>
+            <li>
+              <a href="#" class="btn-join">회원가입</a>
+            </li>
+          </ul>
+        </div>
+        <!-- // 로그인 전 -->
       </div>
     </div>
   </div>
@@ -64,7 +78,9 @@
       </a>
       <nav class="gnb-menu">
         <ul>
-          <li class="depth-1 active">
+          <li
+            class="depth-1">
+            <!-- 선택되면 active 클래스 추가 -->
             <a href="#">전체상품</a>
           </li>
           <li class="depth-1">
@@ -92,13 +108,13 @@
             <a href="#">문구점</a>
           </li>
           <li class="depth-1">
-            <a href="#">오피스·문구</a>
-          </li>
-          <li class="depth-1">
             <a href="#">판촉물</a>
           </li>
           <li class="depth-1">
             <a href="#">옵셋인쇄</a>
+          </li>
+          <li class="depth-1">
+            <a href="#">오피스·문구</a>
           </li>
         </ul>
       </nav>
@@ -108,22 +124,26 @@
         <a href="#" class="btn-customer">
           <span>고객센터</span>
         </a>
-        <div class="form-field">
-          <div class="form-wrap">
-            <button type="button" class="btn-select small">
-              <span>패밀리사이트</span>
-            </button>
-            <ul class="option-list">
-              <li>
-                <a href="" class="btn-option">바로DM</a>
-              </li>
-              <li>
-                <a href="" class="btn-option">북페이크</a>
-              </li>
-              <li>
-                <a href="" class="btn-option">동서남북</a>
-              </li>
-            </ul>
+        <div
+          class=" quick-menu-list active">
+          <!-- 선택누르면 active 클래스 추가 -->
+          <a href="#" class="btn-select">
+            <span>패밀리사이트</span>
+          </a>
+          <div class="quick-menu" style="display: none;">
+            <div class="menu-box">
+              <ul class="quick-menu-list">
+                <li>
+                  <a href="" class="btn-option">바로DM</a>
+                </li>
+                <li>
+                  <a href="" class="btn-option">북페이크</a>
+                </li>
+                <li>
+                  <a href="" class="btn-option">동서남북</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -31,8 +31,7 @@
       display: inline-block;
       width: 24px;
       height: 24px;
-      background: url() no-repeat center center/100% 100%;
-      background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
+      background: url('../img/icon/icon-close-24.png') no-repeat center center/100% 100%;
       font-size: 0;
     }
   }
@@ -90,68 +89,87 @@ header {
           display: inline-block;
           width: 36px;
           height: 36px;
-          background: #003f6d; //대신 넣은거임. 나중에 삭제
 
           span {
             font-size: 0;
           }
         }
+
+        .btn-search {
+          background: url('../img/icon/icon-search-24.png') no-repeat center center/24px 24px;
+        }
+
+        .btn-login {
+          background: url('../img/icon/icon-user-24.png') no-repeat center center/24px 24px;
+        }
+
+        .btn-cart {
+          background: url('../img/icon/icon-cart-24.png') no-repeat center center/24px 24px;
+        }
       }
 
       .quick-menu {
-        position: absolute;
         left: calc(100% - (36px * 3 + 16px));
-        transform: translateX(-50%);
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid var(--Line-line);
-        background: var(--color-text-basic-inverse);
-        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
-        z-index: 1;
+      }
+    }
+  }
 
-        .user-info {
-          padding-bottom: 8px;
-          border-bottom: 1px solid var(--Line-line);
-          text-align: center;
+  .util-menu-wrap {
+    .quick-menu {
+      position: absolute;
+      transform: translateX(-50%);
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid var(--Line-line);
+      background: var(--color-text-basic-inverse);
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
+      z-index: 1;
 
-          .user-img {
+      .user-info {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--Line-line);
+        text-align: center;
+
+        .user-img {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          margin-bottom: 8px;
+          border-radius: 50%;
+          background: var(--color-border-tertiary); //대신 넣은거임. 나중에 삭제
+
+          img {
             display: inline-block;
             width: 40px;
             height: 40px;
-            margin-bottom: 8px;
-            border-radius: 50%;
-            background: var(--color-border-tertiary); //대신 넣은거임. 나중에 삭제
-
-            img {
-              display: inline-block;
-              width: 40px;
-              height: 40px;
-              object-fit: cover;
-            }
-          }
-
-          .user-name {
-            @extend %body-xxsmall-bold;
-            color: var(--color-text-basic);
+            object-fit: cover;
           }
         }
 
-        .quick-menu-list {
+        .user-name {
+          @extend %body-xxsmall-bold;
+          color: var(--color-text-basic);
+        }
+      }
 
-          li {
-            padding: 8px 0 0;
-            @extend %body-xsmall;
-            text-align: center;
+      .quick-menu-list {
+        li {
+          +li {
+            margin-top: 8px;
+          }
 
-            a {
-              display: block;
-              color: var(--color-text-subcolor);
-              white-space: nowrap;
+          @extend %body-xsmall;
+          text-align: center;
 
-              &:hover {
-                color: var(--color-text-basic);
-                font-weight: 600;
-              }
+          a {
+            display: block;
+            color: var(--color-text-subcolor);
+            white-space: nowrap;
+
+            &:hover {
+              color: var(--color-text-basic);
+              font-weight: 600;
             }
           }
         }
@@ -176,8 +194,7 @@ header {
         justify-content: center;
         width: 36px;
         height: 36px;
-        background: url() no-repeat center center/100% auto;
-        background: #003f6d; //대신 넣은거임. 나중에 삭제
+        background: url('../img/icon/icon-menu-pc.png') no-repeat center center/100% auto;
 
         span {
           font-size: 0;
@@ -238,6 +255,41 @@ header {
             transform: translateY(-50%);
           }
         }
+
+        .btn-select {
+          position: relative;
+          text-align: left;
+          line-height: 1;
+          height: 20px;
+          padding: 2px 20px 2px 5px;
+          @extend %depth-xsmall-semibold;
+          box-shadow: none;
+          background: #fff;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 16px;
+            height: 16px;
+            background-image: url(../img/icon/icon-arrow-triangle-16-down.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+            transform: translateY(-50%);
+          }
+
+          &:hover {
+            background: var(--color-border-gray-light);
+          }
+        }
+      }
+
+      .quick-menu {
+        left: auto;
+        transform: translateX(0);
+        min-width: 90px;
       }
     }
   }

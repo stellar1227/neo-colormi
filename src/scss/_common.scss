@@ -336,18 +336,6 @@ h5 {
       text-align: left;
       line-height: 1;
 
-      &.small {
-        height: 20px;
-        padding: 2px 20px 2px 5px;
-        @extend %depth-xsmall-semibold;
-        border: none;
-        box-shadow: none;
-
-        &:after {
-          right: 0;
-        }
-      }
-
       &:after {
         content: '';
         position: absolute;
@@ -451,6 +439,8 @@ h5 {
     }
 
     .guide {
+      display: inline-block;
+      margin-right: 2px;
       @extend %body-xsmall;
       color: var(--color-text-subcolor);
     }
@@ -509,6 +499,23 @@ h5 {
 
       &:before {
         background-image: url('');
+      }
+    }
+  }
+
+  &.active {
+
+    select,
+    .btn-select {
+      &:after {
+        // transform: rotate(180deg) translateY(50%);
+        background-image: url(../img/icon/icon-arrow-16-up.png);
+      }
+
+      &.small {
+        &:after {
+          background-image: url(../img/icon/icon-arrow-triangle-16-up.png);
+        }
       }
     }
   }
@@ -615,23 +622,24 @@ h5 {
           border: 2px solid transparent;
           background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #F8C0D2 0%, #F4D360 42%, #ED6190 100%);
 
-          ~.btn-search {
-            background-image: url('');
-            color: var(--color-text-primary);
+          ~.util .btn-search {
+            background-image: url('../img/icon/icon-search-on-24.png');
           }
         }
       }
 
       .util {
         right: 0;
-        gap: 0 14px;
+        gap: 0;
 
         .btn-search {
           width: 44px;
           height: 44px;
+          margin-left: 14px;
+          background-image: url('../img/icon/icon-search-24.png');
           background-repeat: no-repeat;
           background-position: center center;
-          background-size: 100% 100%;
+          background-size: 24px 24px;
         }
       }
 

@@ -543,8 +543,10 @@
       </div>
       <div class="d-sys-list">
         <h2 class="d-sys">select</h2>
-        <!-- form-field button select -->
-        <div class="form-field">
+        <!-- form-field button select :active -->
+        <div
+          class="form-field active">
+          <!-- 선택누르면 active 클래스 추가 -->
           <div class="form-wrap">
             <button type="button" class="btn-select">
               <span>선택</span>
@@ -593,10 +595,10 @@
               <button type="button" class="btn-del">
                 <i>삭제</i>
               </button>
-              <button type="button" class="btn-del">
+              <button type="button" class="btn-search">
                 <i>검색</i>
               </button>
-            </button>
+            </div>
           </div>
         </div>
         <!-- form-field button select search completed -->
@@ -605,10 +607,15 @@
             <input type="text" placeholder="search"/>
             <i class="search-bg"></i>
             <div class="util">
+              <span class="guide">총
+                <em>00</em>개의 상품이 검색되었어요</span>
               <button type="button" class="btn-del">
                 <i>삭제</i>
               </button>
-            </button>
+              <button type="button" class="btn-search">
+                <i>검색</i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -664,593 +671,590 @@
               <button type="button" class="btn-del">
                 <i>삭제</i>
               </button>
-            </button>
+            </div>
+          </div>
+          <p class="description">Helper Text</p>
+        </div>
+        <!-- form-field :login -->
+        <div class="form-field login">
+          <div class="form-wrap">
+            <input type="password" placeholder="password"/>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+              <button type="button" class="btn-visible">
+                <i>보기</i>
+              </button>
+            </div>
+          </div>
+          <p class="description">Helper Text</p>
+        </div>
+        <h2 class="d-sys">textarea</h2>
+        <!-- form-field textarea -->
+        <div class="form-field textarea">
+          <div class="form-wrap">
+            <label for="textarea">Label</label>
+            <textarea id="textarea" placeholder="Placeholder"></textarea>
+          </div>
+          <div class="count">
+            <em>1</em>/<span>100</span>
           </div>
         </div>
-        <p class="description">Helper Text</p>
-      </div>
-      <!-- form-field :login -->
-      <div class="form-field login">
-        <div class="form-wrap">
-          <input type="password" placeholder="password"/>
-          <div class="util">
-            <button type="button" class="btn-del">
-              <i>삭제</i>
-            </button>
-            <button type="button" class="btn-visible">
-              <i>보기</i>
-            </button>
+        <!-- form-field textarea -->
+        <div class="form-field textarea">
+          <div class="form-wrap">
+            <textarea id="textarea" placeholder="Placeholder"></textarea>
+          </div>
+          <div class="count">
+            <em>1</em>/<span>100</span>
           </div>
         </div>
-        <p class="description">Helper Text</p>
       </div>
-      <h2 class="d-sys">textarea</h2>
-      <!-- form-field textarea -->
-      <div class="form-field textarea">
-        <div class="form-wrap">
-          <label for="textarea">Label</label>
-          <textarea id="textarea" placeholder="Placeholder"></textarea>
-        </div>
-        <div class="count">
-          <em>1</em>/<span>100</span>
-        </div>
+    </section>
+    <section class="design-system toggle">
+      <h1 class="d-sys">Toggle/Checkbox/Radio</h1>
+      <h2 class="d-sys">Toggle</h2>
+      <!-- toggle-wrap -->
+      <div class="toggle-wrap">
+        <label class="toggle" for="toggle-0-1">
+          <input type="checkbox" id="toggle-0-1" title="선택"/>
+          <span class="toggle-switch"></span>
+          <span class="toggle-label">Label</span>
+        </label>
       </div>
-      <!-- form-field textarea -->
-      <div class="form-field textarea">
+      <div class="toggle-wrap">
+        <label class="toggle" for="toggle-0-2">
+          <input type="checkbox" id="toggle-0-2" title="선택" checked="checked"/>
+          <span class="toggle-switch"></span>
+          <span class="toggle-label">Label</span>
+        </label>
+      </div>
+      <div class="toggle-wrap">
+        <label class="toggle" for="toggle-2">
+          <input type="checkbox" id="toggle-2" title="선택" disabled="disabled"/>
+          <span class="toggle-switch"></span>
+          <span class="toggle-label">disabled</span>
+        </label>
+      </div>
+      <div class="toggle-wrap">
+        <label class="toggle" for="toggle-1">
+          <input type="checkbox" id="toggle-1" title="선택" checked="checked" disabled="disabled"/>
+          <span class="toggle-switch"></span>
+          <span class="toggle-label">checked+disabled</span>
+        </label>
+      </div>
+      <h2 class="d-sys">Checkbox</h2>
+      <!-- checkbox-wrap -->
+      <div class="checkbox-wrap">
+        <label class="checkbox" for="check-0-1">
+          <input type="checkbox" id="check-0-1" title="선택"/>
+          <span class="checkbox-icon"></span>
+          <span class="checkbox-label">Label</span>
+        </label>
+        <label class="checkbox" for="check-0-2">
+          <input type="checkbox" id="check-0-2" title="선택" checked="checked"/>
+          <span class="checkbox-icon"></span>
+          <span class="checkbox-label">Label</span>
+        </label>
+      </div>
+      <div class="checkbox-wrap">
+        <label class="checkbox" for="check-1">
+          <input type="checkbox" id="check-1" title="선택" disabled="disabled"/>
+          <span class="checkbox-icon"></span>
+          <span class="checkbox-label">disabled</span>
+        </label>
+      </div>
+      <div class="checkbox-wrap">
+        <label class="checkbox" for="check-2">
+          <input type="checkbox" id="check-2" title="선택" checked="checked" disabled="disabled"/>
+          <span class="checkbox-icon"></span>
+          <span class="checkbox-label">checked+disabled</span>
+        </label>
+      </div>
+      <h2 class="d-sys">radio</h2>
+      <!-- radio-wrap -->
+      <div class="radio-wrap">
+        <label class="radio" for="radio-0-1">
+          <input type="radio" id="radio-0-1" name="radio" title="선택"/>
+          <span class="radio-icon"></span>
+          <span class="radio-label">Label</span>
+        </label>
+        <label class="radio" for="radio-0-2">
+          <input type="radio" id="radio-0-2" name="radio" title="선택"/>
+          <span class="radio-icon"></span>
+          <span class="radio-label">Label</span>
+        </label>
+      </div>
+      <div class="radio-wrap">
+        <label class="radio" for="radio-1">
+          <input type="radio" id="radio-1" title="선택" disabled="disabled"/>
+          <span class="radio-icon"></span>
+          <span class="radio-label">disabled</span>
+        </label>
+      </div>
+      <div class="radio-wrap">
+        <label class="radio" for="radio-2">
+          <input type="radio" id="radio-2" title="선택" checked="checked" disabled="disabled"/>
+          <span class="radio-icon"></span>
+          <span class="radio-label">checked+disabled</span>
+        </label>
+      </div>
+    </section>
+    <section class="design-system tooltip">
+      <h1 class="d-sys">Tooltip</h1>
+    </section>
+    <section class="design-system button">
+      <h1 class="d-sys">Buttons</h1>
+      <p>32, 40, 48, 56 사이즈별로 Type을 Only Text / Normal / Only Icon 으로 나누어 사용한다.</p>
+      <p>Default는 Primary button, Black/Outline은 Secondary button으로 활용된다.</p>
+      <h2 class="d-sys">Primary</h2>
+      <div class="d-sys-list-wrap">
         <div
-          class="form-wrap">
-          {# <label for="textarea">Label</label> #}
-          <textarea id="textarea" placeholder="Placeholder"></textarea>
-        </div>
-        <div class="count">
-          <em>1</em>/<span>100</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="design-system toggle">
-    <h1 class="d-sys">Toggle/Checkbox/Radio</h1>
-    <h2 class="d-sys">Toggle</h2>
-    <!-- toggle-wrap -->
-    <div class="toggle-wrap">
-      <label class="toggle" for="toggle-0-1">
-        <input type="checkbox" id="toggle-0-1" title="선택"/>
-        <span class="toggle-switch"></span>
-        <span class="toggle-label">Label</span>
-      </label>
-    </div>
-    <div class="toggle-wrap">
-      <label class="toggle" for="toggle-0-2">
-        <input type="checkbox" id="toggle-0-2" title="선택" checked="checked"/>
-        <span class="toggle-switch"></span>
-        <span class="toggle-label">Label</span>
-      </label>
-    </div>
-    <div class="toggle-wrap">
-      <label class="toggle" for="toggle-2">
-        <input type="checkbox" id="toggle-2" title="선택" disabled="disabled"/>
-        <span class="toggle-switch"></span>
-        <span class="toggle-label">disabled</span>
-      </label>
-    </div>
-    <div class="toggle-wrap">
-      <label class="toggle" for="toggle-1">
-        <input type="checkbox" id="toggle-1" title="선택" checked="checked" disabled="disabled"/>
-        <span class="toggle-switch"></span>
-        <span class="toggle-label">checked+disabled</span>
-      </label>
-    </div>
-    <h2 class="d-sys">Checkbox</h2>
-    <!-- checkbox-wrap -->
-    <div class="checkbox-wrap">
-      <label class="checkbox" for="check-0-1">
-        <input type="checkbox" id="check-0-1" title="선택"/>
-        <span class="checkbox-icon"></span>
-        <span class="checkbox-label">Label</span>
-      </label>
-      <label class="checkbox" for="check-0-2">
-        <input type="checkbox" id="check-0-2" title="선택" checked="checked"/>
-        <span class="checkbox-icon"></span>
-        <span class="checkbox-label">Label</span>
-      </label>
-    </div>
-    <div class="checkbox-wrap">
-      <label class="checkbox" for="check-1">
-        <input type="checkbox" id="check-1" title="선택" disabled="disabled"/>
-        <span class="checkbox-icon"></span>
-        <span class="checkbox-label">disabled</span>
-      </label>
-    </div>
-    <div class="checkbox-wrap">
-      <label class="checkbox" for="check-2">
-        <input type="checkbox" id="check-2" title="선택" checked="checked" disabled="disabled"/>
-        <span class="checkbox-icon"></span>
-        <span class="checkbox-label">checked+disabled</span>
-      </label>
-    </div>
-    <h2 class="d-sys">radio</h2>
-    <!-- radio-wrap -->
-    <div class="radio-wrap">
-      <label class="radio" for="radio-0-1">
-        <input type="radio" id="radio-0-1" name="radio" title="선택"/>
-        <span class="radio-icon"></span>
-        <span class="radio-label">Label</span>
-      </label>
-      <label class="radio" for="radio-0-2">
-        <input type="radio" id="radio-0-2" name="radio" title="선택"/>
-        <span class="radio-icon"></span>
-        <span class="radio-label">Label</span>
-      </label>
-    </div>
-    <div class="radio-wrap">
-      <label class="radio" for="radio-1">
-        <input type="radio" id="radio-1" title="선택" disabled="disabled"/>
-        <span class="radio-icon"></span>
-        <span class="radio-label">disabled</span>
-      </label>
-    </div>
-    <div class="radio-wrap">
-      <label class="radio" for="radio-2">
-        <input type="radio" id="radio-2" title="선택" checked="checked" disabled="disabled"/>
-        <span class="radio-icon"></span>
-        <span class="radio-label">checked+disabled</span>
-      </label>
-    </div>
-  </section>
-  <section class="design-system tooltip">
-    <h1 class="d-sys">Tooltip</h1>
-  </section>
-  <section class="design-system button">
-    <h1 class="d-sys">Buttons</h1>
-    <p>32, 40, 48, 56 사이즈별로 Type을 Only Text / Normal / Only Icon 으로 나누어 사용한다.</p>
-    <p>Default는 Primary button, Black/Outline은 Secondary button으로 활용된다.</p>
-    <h2 class="d-sys">Primary</h2>
-    <div class="d-sys-list-wrap">
-      <div
-        class="d-sys-list">
-        <!-- btn-primary xsmall -->
-        <button type="button" class="btn-primary xsmall">
-          <i class="plus"></i>
-          <span>btn-primary</span>
-        </button>
-        <p>btn-primary xsmall</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-primary small -->
-        <button type="button" class="btn-primary small">
-          <i class="plus"></i>
-          <span>btn-primary</span>
-        </button>
-        <p>btn-primary small</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-primary medium -->
-        <button type="button" class="btn-primary medium">
-          <i class="plus"></i>
-          <span>btn-primary</span>
-        </button>
-        <p>btn-primary medium</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-primary large -->
-        <button type="button" class="btn-primary large">
-          <i class="plus"></i>
-          <span>btn-primary</span>
-        </button>
-        <p>btn-primary large</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-primary xsmall -->
-        <button type="button" class="btn-primary xsmall">
-          <i>button</i>
-        </button>
-        <p>btn-primary xsmall</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-primary small -->
-        <button type="button" class="btn-primary small">
-          <i>button</i>
-        </button>
-        <p>btn-primary small</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-primary medium -->
-        <button type="button" class="btn-primary medium">
-          <i>button</i>
-        </button>
-        <p>btn-primary medium</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-primary large -->
-        <button type="button" class="btn-primary large">
-          <i>button</i>
-        </button>
-        <p>btn-primary large</p>
-      </div>
-    </div>
-    <h2 class="d-sys">Black</h2>
-    <div class="d-sys-list-wrap">
-      <div
-        class="d-sys-list">
-        <!-- btn-black xsmall -->
-        <button type="button" class="btn-black xsmall">
-          <i class="plus"></i>
-          <span>btn-black</span>
-        </button>
-        <p>btn-black xsmall</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-black small -->
-        <button type="button" class="btn-black small">
-          <i class="plus"></i>
-          <span>btn-black</span>
-        </button>
-        <p>btn-black small</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-black medium -->
-        <button type="button" class="btn-black medium">
-          <i class="plus"></i>
-          <span>btn-black</span>
-        </button>
-        <p>btn-black medium</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-black large -->
-        <button type="button" class="btn-black large">
-          <i class="plus"></i>
-          <span>btn-black</span>
-        </button>
-        <p>btn-black large</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-black xsmall -->
-        <button type="button" class="btn-black xsmall">
-          <i>button</i>
-        </button>
-        <p>btn-black xsmall</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-black small -->
-        <button type="button" class="btn-black small">
-          <i>button</i>
-        </button>
-        <p>btn-black small</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-black medium -->
-        <button type="button" class="btn-black medium">
-          <i>button</i>
-        </button>
-        <p>btn-black medium</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-black large -->
-        <button type="button" class="btn-black large">
-          <i>button</i>
-        </button>
-        <p>btn-black large</p>
-      </div>
-    </div>
-    <h2 class="d-sys">Outline</h2>
-    <div class="d-sys-list-wrap">
-      <div
-        class="d-sys-list">
-        <!-- btn-outline xsmall -->
-        <button type="button" class="btn-outline xsmall">
-          <i class="plus"></i>
-          <span>btn-outline</span>
-        </button>
-        <p>btn-outline xsmall</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-outline small -->
-        <button type="button" class="btn-outline small">
-          <i class="plus"></i>
-          <span>btn-outline</span>
-        </button>
-        <p>btn-outline small</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-outline medium -->
-        <button type="button" class="btn-outline medium">
-          <i class="plus"></i>
-          <span>btn-outline</span>
-        </button>
-        <p>btn-outline medium</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-outline large -->
-        <button type="button" class="btn-outline large">
-          <i class="plus"></i>
-          <span>btn-outline</span>
-        </button>
-        <p>btn-outline large</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-outline xsmall -->
-        <button type="button" class="btn-outline xsmall">
-          <i>button</i>
-        </button>
-        <p>btn-outline xsmall</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-outline small -->
-        <button type="button" class="btn-outline small">
-          <i>button</i>
-        </button>
-        <p>btn-outline small</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-outline medium -->
-        <button type="button" class="btn-outline medium">
-          <i>button</i>
-        </button>
-        <p>btn-outline medium</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-outline large -->
-        <button type="button" class="btn-outline large">
-          <i>button</i>
-        </button>
-        <p>btn-outline large</p>
-      </div>
-    </div>
-    <h2 class="d-sys">primary/black/outline :disabled 스타일공통사용</h2>
-    <div class="d-sys-list-wrap">
-      <div class="d-sys-list">
-        <button type="button" class="btn-primary xsmall" disabled="disabled">
-          <i class="plus"></i>
-          <span>[class^=btn-]</span>
-        </button>
-        <p>[class^=btn-] xsmall :disabled</p>
-      </div>
-      <div class="d-sys-list">
-        <button type="button" class="btn-primary small" disabled="disabled">
-          <i class="plus"></i>
-          <span>[class^=btn-]</span>
-        </button>
-        <p>[class^=btn-] small :disabled</p>
-      </div>
-      <div class="d-sys-list">
-        <button type="button" class="btn-primary medium" disabled="disabled">
-          <i class="plus"></i>
-          <span>[class^=btn-]</span>
-        </button>
-        <p>[class^=btn-] medium :disabled</p>
-      </div>
-      <div class="d-sys-list">
-        <button type="button" class="btn-primary large" disabled="disabled">
-          <i class="plus"></i>
-          <span>[class^=btn-]</span>
-        </button>
-        <p>[class^=btn-] large :disabled</p>
-      </div>
-    </div>
-    <h2 class="d-sys">round/더보기</h2>
-    <div class="d-sys-list-wrap">
-      <div
-        class="d-sys-list">
-        <!-- btn-round -->
-        <button type="button" class="btn-round icon">
-          <span>더보기</span>
-        </button>
-        <p>btn-round icon</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-round -->
-        <button type="button" class="btn-round">
-          <span>더보기</span>
-        </button>
-        <p>btn-round</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-text -->
-        <button type="button" class="btn-text">
-          <span>더보기</span>
-        </button>
-        <p>btn-text default</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-text -->
-        <button type="button" class="btn-text small">
-          <span>더보기</span>
-        </button>
-        <p>btn-text small</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-text -->
-        <button type="button" class="btn-text large">
-          <span>더보기</span>
-        </button>
-        <p>btn-text large</p>
-      </div>
-    </div>
-    <h2 class="d-sys">TopButton</h2>
-    <div class="d-sys-list-wrap">
-      <div
-        class="d-sys-list">
-        <!-- btn-top -->
-        <button type="button" class="btn-top">
-          <i class="top">위로</i>
-        </button>
-        <p>btn-top</p>
-      </div>
-      <div
-        class="d-sys-list">
-        <!-- btn-top label -->
-        <button type="button" class="btn-top label">
-          <i class="top"></i>
-          <span>위로</span>
-        </button>
-        <p>btn-top label</p>
-      </div>
-    </div>
-  </section>
-  <section class="design-system alert">
-    <h1 class="d-sys">Alert</h1>
-    <h2 class="d-sys">Danger</h2>
-    <!-- alert-danger -->
-    <div class="alert-danger">
-      <dl>
-        <dt class="title">타이틀</dt>
-        <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-      </dl>
-    </div>
-    <div class="alert-danger">
-      <dl>
-        <dd class="content">메시지 내용 최대 1줄</dd>
-      </dl>
-    </div>
-    <h2 class="d-sys">Warning</h2>
-    <!-- alert-warning -->
-    <div class="alert-warning">
-      <dl>
-        <dt class="title">타이틀</dt>
-        <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-      </dl>
-    </div>
-    <h2 class="d-sys">Success</h2>
-    <!-- alert-success -->
-    <div class="alert-success">
-      <dl>
-        <dt class="title">타이틀</dt>
-        <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-      </dl>
-    </div>
-    <h2 class="d-sys">Information</h2>
-    <!-- alert-information -->
-    <div class="alert-information">
-      <dl>
-        <dt class="title">타이틀</dt>
-        <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-      </dl>
-    </div>
-  </section>
-  <section class="design-system modal-popup">
-    <h1 class="d-sys">Modal</h1>
-    <h2 class="d-sys">large :540</h2>
-    <!-- modal large -->
-    <div
-      class="modal large">
-      <!-- modal header -->
-      <h5 class="modal-title">타이틀</h5>
-      <!-- modal content -->
-      <div
-        class="modal-content">
-        <!-- photo -->
-        <p class="cont-photo"><img src="" alt="이미지"/>
-        </p>
-        <!-- text -->
-        <p class="cont-text">modal content</p>
-      </div>
-      <!-- modal footer -->
-      <div class="modal-footer">
-        <div class="btn-wrap">
-          <button type="button" class="btn-outline medium">
-            <span>btn-outline</span>
-          </button>
-          <button type="button" class="btn-primary medium">
+          class="d-sys-list">
+          <!-- btn-primary xsmall -->
+          <button type="button" class="btn-primary xsmall">
+            <i class="plus"></i>
             <span>btn-primary</span>
           </button>
+          <p>btn-primary xsmall</p>
         </div>
-      </div>
-      <!-- btn-wrap close -->
-      <div class="btn-wrap close">
-        <button type="button" class="btn-close">
-          <i>닫기</i>
-        </button>
-      </div>
-    </div>
-    <h2 class="d-sys">normal :480</h2>
-    <!-- modal -->
-    <div
-      class="modal">
-      <!-- modal header -->
-      <h5 class="modal-title">타이틀</h5>
-      <!-- modal content -->
-      <div
-        class="modal-content">
-        <!-- photo -->
-        <p class="cont-photo"><img src="" alt="이미지"/>
-        </p>
-        <!-- text -->
-        <p class="cont-text">modal content</p>
-      </div>
-      <!-- modal footer -->
-      <div class="modal-footer">
-        <div class="btn-wrap">
-          <button type="button" class="btn-outline medium">
-            <span>btn-outline</span>
-          </button>
-          <button type="button" class="btn-primary medium">
+        <div
+          class="d-sys-list">
+          <!-- btn-primary small -->
+          <button type="button" class="btn-primary small">
+            <i class="plus"></i>
             <span>btn-primary</span>
           </button>
+          <p>btn-primary small</p>
         </div>
-      </div>
-      <!-- btn-wrap close -->
-      <div class="btn-wrap close">
-        <button type="button" class="btn-close">
-          <i>닫기</i>
-        </button>
-      </div>
-    </div>
-    <h2 class="d-sys">small :400</h2>
-    <!-- modal small -->
-    <div
-      class="modal small">
-      <!-- modal header -->
-      <h5 class="modal-title">타이틀</h5>
-      <!-- modal content -->
-      <div
-        class="modal-content">
-        <!-- photo -->
-        <p class="cont-photo"><img src="" alt="이미지"/>
-        </p>
-        <!-- text -->
-        <p class="cont-text">modal content</p>
-      </div>
-      <!-- modal footer -->
-      <div class="modal-footer">
-        <div class="btn-wrap">
-          <button type="button" class="btn-outline medium">
-            <span>btn-outline</span>
-          </button>
+        <div
+          class="d-sys-list">
+          <!-- btn-primary medium -->
           <button type="button" class="btn-primary medium">
+            <i class="plus"></i>
             <span>btn-primary</span>
           </button>
+          <p>btn-primary medium</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-primary large -->
+          <button type="button" class="btn-primary large">
+            <i class="plus"></i>
+            <span>btn-primary</span>
+          </button>
+          <p>btn-primary large</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-primary xsmall -->
+          <button type="button" class="btn-primary xsmall">
+            <i>button</i>
+          </button>
+          <p>btn-primary xsmall</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-primary small -->
+          <button type="button" class="btn-primary small">
+            <i>button</i>
+          </button>
+          <p>btn-primary small</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-primary medium -->
+          <button type="button" class="btn-primary medium">
+            <i>button</i>
+          </button>
+          <p>btn-primary medium</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-primary large -->
+          <button type="button" class="btn-primary large">
+            <i>button</i>
+          </button>
+          <p>btn-primary large</p>
         </div>
       </div>
-      <!-- btn-wrap close -->
-      <div class="btn-wrap close">
-        <button type="button" class="btn-close">
-          <i>닫기</i>
-        </button>
+      <h2 class="d-sys">Black</h2>
+      <div class="d-sys-list-wrap">
+        <div
+          class="d-sys-list">
+          <!-- btn-black xsmall -->
+          <button type="button" class="btn-black xsmall">
+            <i class="plus"></i>
+            <span>btn-black</span>
+          </button>
+          <p>btn-black xsmall</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black small -->
+          <button type="button" class="btn-black small">
+            <i class="plus"></i>
+            <span>btn-black</span>
+          </button>
+          <p>btn-black small</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black medium -->
+          <button type="button" class="btn-black medium">
+            <i class="plus"></i>
+            <span>btn-black</span>
+          </button>
+          <p>btn-black medium</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black large -->
+          <button type="button" class="btn-black large">
+            <i class="plus"></i>
+            <span>btn-black</span>
+          </button>
+          <p>btn-black large</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black xsmall -->
+          <button type="button" class="btn-black xsmall">
+            <i>button</i>
+          </button>
+          <p>btn-black xsmall</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black small -->
+          <button type="button" class="btn-black small">
+            <i>button</i>
+          </button>
+          <p>btn-black small</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black medium -->
+          <button type="button" class="btn-black medium">
+            <i>button</i>
+          </button>
+          <p>btn-black medium</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black large -->
+          <button type="button" class="btn-black large">
+            <i>button</i>
+          </button>
+          <p>btn-black large</p>
+        </div>
       </div>
-    </div>
-  {% endblock %}
+      <h2 class="d-sys">Outline</h2>
+      <div class="d-sys-list-wrap">
+        <div
+          class="d-sys-list">
+          <!-- btn-outline xsmall -->
+          <button type="button" class="btn-outline xsmall">
+            <i class="plus"></i>
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline xsmall</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline small -->
+          <button type="button" class="btn-outline small">
+            <i class="plus"></i>
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline small</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline medium -->
+          <button type="button" class="btn-outline medium">
+            <i class="plus"></i>
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline medium</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline large -->
+          <button type="button" class="btn-outline large">
+            <i class="plus"></i>
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline large</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline xsmall -->
+          <button type="button" class="btn-outline xsmall">
+            <i>button</i>
+          </button>
+          <p>btn-outline xsmall</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline small -->
+          <button type="button" class="btn-outline small">
+            <i>button</i>
+          </button>
+          <p>btn-outline small</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline medium -->
+          <button type="button" class="btn-outline medium">
+            <i>button</i>
+          </button>
+          <p>btn-outline medium</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline large -->
+          <button type="button" class="btn-outline large">
+            <i>button</i>
+          </button>
+          <p>btn-outline large</p>
+        </div>
+      </div>
+      <h2 class="d-sys">primary/black/outline :disabled 스타일공통사용</h2>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <button type="button" class="btn-primary xsmall" disabled="disabled">
+            <i class="plus"></i>
+            <span>[class^=btn-]</span>
+          </button>
+          <p>[class^=btn-] xsmall :disabled</p>
+        </div>
+        <div class="d-sys-list">
+          <button type="button" class="btn-primary small" disabled="disabled">
+            <i class="plus"></i>
+            <span>[class^=btn-]</span>
+          </button>
+          <p>[class^=btn-] small :disabled</p>
+        </div>
+        <div class="d-sys-list">
+          <button type="button" class="btn-primary medium" disabled="disabled">
+            <i class="plus"></i>
+            <span>[class^=btn-]</span>
+          </button>
+          <p>[class^=btn-] medium :disabled</p>
+        </div>
+        <div class="d-sys-list">
+          <button type="button" class="btn-primary large" disabled="disabled">
+            <i class="plus"></i>
+            <span>[class^=btn-]</span>
+          </button>
+          <p>[class^=btn-] large :disabled</p>
+        </div>
+      </div>
+      <h2 class="d-sys">round/더보기</h2>
+      <div class="d-sys-list-wrap">
+        <div
+          class="d-sys-list">
+          <!-- btn-round -->
+          <button type="button" class="btn-round icon">
+            <span>더보기</span>
+          </button>
+          <p>btn-round icon</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-round -->
+          <button type="button" class="btn-round">
+            <span>더보기</span>
+          </button>
+          <p>btn-round</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-text -->
+          <button type="button" class="btn-text">
+            <span>더보기</span>
+          </button>
+          <p>btn-text default</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-text -->
+          <button type="button" class="btn-text small">
+            <span>더보기</span>
+          </button>
+          <p>btn-text small</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-text -->
+          <button type="button" class="btn-text large">
+            <span>더보기</span>
+          </button>
+          <p>btn-text large</p>
+        </div>
+      </div>
+      <h2 class="d-sys">TopButton</h2>
+      <div class="d-sys-list-wrap">
+        <div
+          class="d-sys-list">
+          <!-- btn-top -->
+          <button type="button" class="btn-top">
+            <i class="top">위로</i>
+          </button>
+          <p>btn-top</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-top label -->
+          <button type="button" class="btn-top label">
+            <i class="top"></i>
+            <span>위로</span>
+          </button>
+          <p>btn-top label</p>
+        </div>
+      </div>
+    </section>
+    <section class="design-system alert">
+      <h1 class="d-sys">Alert</h1>
+      <h2 class="d-sys">Danger</h2>
+      <!-- alert-danger -->
+      <div class="alert-danger">
+        <dl>
+          <dt class="title">타이틀</dt>
+          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+        </dl>
+      </div>
+      <div class="alert-danger">
+        <dl>
+          <dd class="content">메시지 내용 최대 1줄</dd>
+        </dl>
+      </div>
+      <h2 class="d-sys">Warning</h2>
+      <!-- alert-warning -->
+      <div class="alert-warning">
+        <dl>
+          <dt class="title">타이틀</dt>
+          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+        </dl>
+      </div>
+      <h2 class="d-sys">Success</h2>
+      <!-- alert-success -->
+      <div class="alert-success">
+        <dl>
+          <dt class="title">타이틀</dt>
+          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+        </dl>
+      </div>
+      <h2 class="d-sys">Information</h2>
+      <!-- alert-information -->
+      <div class="alert-information">
+        <dl>
+          <dt class="title">타이틀</dt>
+          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+        </dl>
+      </div>
+    </section>
+    <section class="design-system modal-popup">
+      <h1 class="d-sys">Modal</h1>
+      <h2 class="d-sys">large :540</h2>
+      <!-- modal large -->
+      <div
+        class="modal large">
+        <!-- modal header -->
+        <h5 class="modal-title">타이틀</h5>
+        <!-- modal content -->
+        <div
+          class="modal-content">
+          <!-- photo -->
+          <p class="cont-photo"><img src="" alt="이미지"/>
+          </p>
+          <!-- text -->
+          <p class="cont-text">modal content</p>
+        </div>
+        <!-- modal footer -->
+        <div class="modal-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-outline medium">
+              <span>btn-outline</span>
+            </button>
+            <button type="button" class="btn-primary medium">
+              <span>btn-primary</span>
+            </button>
+          </div>
+        </div>
+        <!-- btn-wrap close -->
+        <div class="btn-wrap close">
+          <button type="button" class="btn-close">
+            <i>닫기</i>
+          </button>
+        </div>
+      </div>
+      <h2 class="d-sys">normal :480</h2>
+      <!-- modal -->
+      <div
+        class="modal">
+        <!-- modal header -->
+        <h5 class="modal-title">타이틀</h5>
+        <!-- modal content -->
+        <div
+          class="modal-content">
+          <!-- photo -->
+          <p class="cont-photo"><img src="" alt="이미지"/>
+          </p>
+          <!-- text -->
+          <p class="cont-text">modal content</p>
+        </div>
+        <!-- modal footer -->
+        <div class="modal-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-outline medium">
+              <span>btn-outline</span>
+            </button>
+            <button type="button" class="btn-primary medium">
+              <span>btn-primary</span>
+            </button>
+          </div>
+        </div>
+        <!-- btn-wrap close -->
+        <div class="btn-wrap close">
+          <button type="button" class="btn-close">
+            <i>닫기</i>
+          </button>
+        </div>
+      </div>
+      <h2 class="d-sys">small :400</h2>
+      <!-- modal small -->
+      <div
+        class="modal small">
+        <!-- modal header -->
+        <h5 class="modal-title">타이틀</h5>
+        <!-- modal content -->
+        <div
+          class="modal-content">
+          <!-- photo -->
+          <p class="cont-photo"><img src="" alt="이미지"/>
+          </p>
+          <!-- text -->
+          <p class="cont-text">modal content</p>
+        </div>
+        <!-- modal footer -->
+        <div class="modal-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-outline medium">
+              <span>btn-outline</span>
+            </button>
+            <button type="button" class="btn-primary medium">
+              <span>btn-primary</span>
+            </button>
+          </div>
+        </div>
+        <!-- btn-wrap close -->
+        <div class="btn-wrap close">
+          <button type="button" class="btn-close">
+            <i>닫기</i>
+          </button>
+        </div>
+      </div>
+    {% endblock %}

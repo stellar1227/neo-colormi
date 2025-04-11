@@ -648,6 +648,7 @@ footer {
 
         dl {
           display: flex;
+          flex-wrap: wrap;
 
           dt {
             flex: 0 auto;

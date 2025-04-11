@@ -227,23 +227,19 @@ button {
 @media (max-width:700px) {
 
   .top-banner,
-  header {
+  header,
+  .footer-wrap,
+  .footer-link {
     width: 100%;
   }
 }
 
-// @media (min-width:701px) {
-
-//   header {
-//     width: 1200px;
-//     margin: 0 auto;
-//   }
-// }
-
 @media (min-width:1200px) {
 
   .top-banner,
-  header {
+  header,
+  .footer-wrap,
+  .footer-link {
     width: 1200px;
     margin: 0 auto;
   }

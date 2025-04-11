@@ -653,7 +653,6 @@ footer {
             flex: 0 auto;
             margin-right: 4px;
             font-weight: 600;
-
           }
 
           dd+dt,
@@ -703,7 +702,9 @@ footer {
     }
 
     .info {
-      dl {
+      dl:not(.address) {
+        display: inline-block;
+
         dt {
           display: inline-block;
         }
@@ -713,19 +714,15 @@ footer {
           padding-right: 16px;
         }
 
-        &.address {
-          display: flex;
-          flex-wrap: wrap;
+      }
 
-          dt {
-            flex: 0 auto;
-          }
+      .address {
+        dt {
+          display: inline-block;
+        }
 
-          dd {
-            flex: 1 85%;
-            white-space: nowrap;
-            padding: 0;
-          }
+        dd {
+          display: inline-block;
         }
       }
 
@@ -768,6 +765,36 @@ footer {
         @extend %body-xsmall;
         color: var(--color-text-subcolor-inverse);
         text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width:700px) {
+  footer {
+    .footer-link-wrap {
+      .footer-link {
+        a {
+          padding: 8px 0;
+        }
+      }
+    }
+
+    .footer-wrap {
+      display: block;
+      padding: 32px 17px;
+
+
+      .contact {
+        width: 100%;
+      }
+
+      .info dl dt {
+        display: block;
+      }
+
+      .info dl dd {
+        display: block;
       }
     }
   }

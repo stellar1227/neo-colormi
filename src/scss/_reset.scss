@@ -7,7 +7,8 @@ html {
   font-weight: 400;
   font-size: 14px;
   font-family:
-    'Pretendard',
+    // 'Montserrat',
+    var(--font-typo-main-font),
     -apple-system,
     BlinkMacSystemFont,
     system-ui,
@@ -21,8 +22,8 @@ html {
     'Segoe UI Emoji',
     'Segoe UI Symbol',
     sans-serif;
-  line-height: 22px;
-  letter-spacing: -1%;
+  line-height: normal;
+  letter-spacing: 0;
 }
 
 html,
@@ -180,7 +181,10 @@ textarea {
   width: 100%;
   height: 40px;
   background: transparent;
-  box-shadow: inset 0 0 0 1px #dedede;
+  // box-shadow: inset 0 0 0 1px #dedede;
+  box-shadow: none;
+  border: 1px solid var(--Line-line);
+  background: var(--color-background-white);
   padding: 10px 12px;
   border-radius: 4px;
   color: #4c4c4c;
@@ -189,18 +193,21 @@ textarea {
   line-height: 22px;
 
   &::placeholder {
-    color: #dedede;
+    color: var(--color-divider-gray);
   }
 
-  &:focus {
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
     outline: none;
-    box-shadow: inset 0 0 0 1px #4c4c4c;
+    border: 1px solid var(--color-border-gray-dark);
   }
 
-  &[disabled],
+  &:disabled,
   &:read-only {
-    box-shadow: inset 0 0 0 1px #d6d6d6;
-    background-color: #F4F5F6;
+    border: 1px solid var(--color-border-gray);
+    background: var(--color-background-gray-subtle);
   }
 }
 
@@ -224,22 +231,24 @@ button {
   cursor: pointer;
 }
 
-@media (max-width:700px) {
+@media (max-width:565px) {
 
   .top-banner,
   header,
   .footer-wrap,
-  .footer-link {
+  .footer-link,
+  #container {
     width: 100%;
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width:566px) {
 
   .top-banner,
   header,
   .footer-wrap,
-  .footer-link {
+  .footer-link,
+  #container {
     width: 1200px;
     margin: 0 auto;
   }

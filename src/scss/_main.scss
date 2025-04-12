@@ -179,7 +179,7 @@ header {
 
   .gnb-wrap {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
 
@@ -215,6 +215,7 @@ header {
               color: var(--color-text-subcolor-deep);
               @extend %depth-medium;
               line-height: 20px;
+              white-space: nowrap;
             }
 
             a:hover,
@@ -252,6 +253,7 @@ header {
       .util-menu {
         gap: 0;
         color: var(--color-text-subcolor);
+        white-space: nowrap;
 
         [class^=btn-]:hover {
           color: var(--color-text-basic);
@@ -288,7 +290,7 @@ header {
           height: 20px;
           padding: 2px 20px 2px 5px;
           @extend %depth-xsmall-semibold;
-          box-shadow: none;
+          border: none;
           background: var(--color-background-white);
 
           &:after {
@@ -335,6 +337,7 @@ header {
     background: var(--color-background-white);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
     color: var(--color-text-basic);
+    z-index: 10;
 
     .banner-wrap {
       display: flex;
@@ -397,20 +400,21 @@ header {
               vertical-align: 12px;
             }
 
-            .desc {
+            .desc-guide {
               display: inline-block;
-              margin-left: 12px;
-              padding: 0 4px;
-              @extend %body-xxsmall;
-              color: var(--color-text-subcolor);
+              padding: 4px;
               border-radius: 2px;
               background: var(--color-border-gray-light);
+              @extend %body-xxsmall;
+              line-height: 12px;
+              color: var(--color-text-subcolor);
+              // @include desc-guide;
               vertical-align: 1px;
 
               i {
                 padding-right: 2px;
                 @extend %body-small;
-                line-height: 19px;
+                line-height: 12px;
                 color: var(--color-text-tertiary);
               }
             }

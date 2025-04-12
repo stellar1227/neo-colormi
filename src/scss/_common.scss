@@ -13,16 +13,16 @@ main {
   --Line-line-3: #565656;
 
   // Display Status
-  --Display-Status-Display1: #fa5c54;
-  --Display-Status-Display2: #ff7373;
-  --Display-Status-Display3: #eb8d57;
-  --Display-Status-Display4: #84c860;
-  --Display-Status-Display5: #6dcda6;
-  --Display-Status-Display6: #5bc5d2;
-  --Display-Status-Display7: #7284c6;
-  --Display-Status-Display8: #a454dd;
-  --Display-Status-Display9: #f65b90;
-  --Display-Status-Display10: #2ea73a;
+  --Display-Status-Display-1: #fa5c54;
+  --Display-Status-Display-2: #ff7373;
+  --Display-Status-Display-3: #eb8d57;
+  --Display-Status-Display-4: #84c860;
+  --Display-Status-Display-5: #6dcda6;
+  --Display-Status-Display-6: #5bc5d2;
+  --Display-Status-Display-7: #7284c6;
+  --Display-Status-Display-8: #a454dd;
+  --Display-Status-Display-9: #f65b90;
+  --Display-Status-Display-10: #2ea73a;
 
   // font
   --font-typo-main-font: 'Pretendard Variable', Pretendard;
@@ -327,14 +327,20 @@ h5 {
 
     input {
       padding-right: 40px;
+
+      &:disabled,
+      &:read-only {
+        border: 1px solid var(--color-border-gray);
+        background-color: var(--color-background-gray-subtle);
+      }
     }
 
-    select,
     .btn-select {
       position: relative;
       padding-right: 40px;
       text-align: left;
       line-height: 1;
+      background: var(--color-background-white);
 
       &:after {
         content: '';
@@ -350,24 +356,21 @@ h5 {
         transform: translateY(-50%);
       }
 
-      &:hover {
-        box-shadow: inset 0 0 0 1px var(--color-border-gray-dark);
-      }
-
       &:focus,
       &:focus-visible,
       &:active {
-        box-shadow: inset 0 0 0 1px var(--color-border-secondary);
+        border: 1px solid var(--color-border-secondary);
       }
 
-      &:disabled,
-      &:read-only {
-        box-shadow: inset 0 0 0 1px var(--color-border-gray);
+      &:disabled {
+        border: 1px solid var(--color-border-gray);
         background: var(--color-background-gray-subtle);
+        color: var(--color-text-basic);
       }
     }
 
     .option-list {
+      display: none;
       position: absolute;
       width: 100%;
       padding: 10px 0;
@@ -421,7 +424,6 @@ h5 {
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 100% 100%;
-        // background: var(--color-border-primary-light); //background-image 대신 넣은거임. 나중에 삭제
 
         &.btn-del {
           background-image: url('../img/icon/icon-del-circle-16.png');
@@ -474,7 +476,7 @@ h5 {
     input,
     select,
     .btn-select {
-      box-shadow: inset 0 0 0 1px var(--color-border-danger) !important;
+      border: 1px solid var(--color-border-danger) !important;
     }
 
     .description {
@@ -491,7 +493,7 @@ h5 {
     input,
     select,
     .btn-select {
-      box-shadow: inset 0 0 0 1px var(--color-text-success) !important;
+      border: 1px solid var(--color-text-success) !important;
     }
 
     .description {
@@ -511,6 +513,10 @@ h5 {
         // transform: rotate(180deg) translateY(50%);
         background-image: url(../img/icon/icon-arrow-16-up.png);
       }
+    }
+
+    .option-list {
+      display: block;
     }
   }
 
@@ -594,8 +600,10 @@ h5 {
       input {
         height: 48px;
         padding-right: 86px;
-        box-shadow: none;
+        // box-shadow: none;
+        border: none;
         border-radius: 8px;
+        background: transparent;
 
         ~.search-bg {
           display: block;
@@ -933,7 +941,7 @@ h5 {
   }
 }
 
-%button {
+@mixin button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -942,6 +950,8 @@ h5 {
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
+  vertical-align: middle;
+  box-sizing: border-box;
 
 
   i {
@@ -1038,7 +1048,7 @@ h5 {
 }
 
 .btn-primary {
-  @extend %button;
+  @include button;
   border-color: var(--color-border-primary);
   background: var(--color-border-primary);
   color: var(--color-text-basic-inverse);
@@ -1065,7 +1075,7 @@ h5 {
 }
 
 .btn-black {
-  @extend %button;
+  @include button;
   border-color: var(--color-border-gray-dark);
   background: var(--color-border-gray-dark);
   color: var(--color-text-basic-inverse);
@@ -1087,7 +1097,7 @@ h5 {
 }
 
 .btn-outline {
-  @extend %button;
+  @include button;
   border-color: var(--color-border-gray-dark);
   background: var(--color-border-inverse);
   color: var(--color-text-basic);
@@ -1114,7 +1124,7 @@ h5 {
 }
 
 .btn-round {
-  @extend %button;
+  @include button;
   border-color: var(--color-border-gray-dark);
   background: var(--color-border-inverse);
   color: var(--color-text-basic);
@@ -1149,7 +1159,7 @@ h5 {
 }
 
 .btn-text {
-  @extend %button;
+  @include button;
   border: 0 none;
   color: var(--color-text-subcolor);
   height: auto;
@@ -1189,7 +1199,7 @@ h5 {
 }
 
 .btn-top {
-  @extend %button;
+  @include button;
   border: 0 none;
   background: var(--color-border-gray-light);
   color: var(--color-text-basic);
@@ -1376,4 +1386,8 @@ h5 {
   &.small {
     width: 400px;
   }
+}
+
+#container {
+  padding: 16px 0 48px;
 }

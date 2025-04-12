@@ -1,3 +1,5 @@
+@use 'mixin' as *;
+
 /* Root 공통 스타일 */
 html {
   -webkit-text-size-adjust: none;
@@ -8,7 +10,7 @@ html {
   font-size: 14px;
   font-family:
     // 'Montserrat',
-    var(--font-typo-main-font),
+    'Pretendard Variable', Pretendard,
     -apple-system,
     BlinkMacSystemFont,
     system-ui,
@@ -183,8 +185,8 @@ textarea {
   background: transparent;
   // box-shadow: inset 0 0 0 1px #dedede;
   box-shadow: none;
-  border: 1px solid var(--Line-line);
-  background: var(--color-background-white);
+  border: 1px solid $Line-line;
+  background: $color-background-white;
   padding: 10px 12px;
   border-radius: 4px;
   color: #4c4c4c;
@@ -193,7 +195,7 @@ textarea {
   line-height: 22px;
 
   &::placeholder {
-    color: var(--color-divider-gray);
+    color: $color-divider-gray;
   }
 
   &:hover,
@@ -201,13 +203,13 @@ textarea {
   &:focus-visible,
   &:active {
     outline: none;
-    border: 1px solid var(--color-border-gray-dark);
+    border: 1px solid $color-border-gray-dark;
   }
 
   &:disabled,
   &:read-only {
-    border: 1px solid var(--color-border-gray);
-    background: var(--color-background-gray-subtle);
+    border: 1px solid $color-border-gray;
+    background: $color-background-gray-subtle;
   }
 }
 

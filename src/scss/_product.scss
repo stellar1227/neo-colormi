@@ -1,3 +1,4 @@
+@use 'mixin' as *;
 @use 'common';
 
 .breadcrumb {
@@ -22,7 +23,7 @@
 
       a {
         display: inline-block;
-        color: var(--color-text-subcolor);
+        color: $color-text-subcolor;
         @extend %body-xxsmall;
 
         &:hover {
@@ -31,7 +32,7 @@
       }
 
       strong {
-        color: var(--color-text-basic);
+        color: $color-text-basic;
         @extend %body-xxsmall;
       }
     }
@@ -48,113 +49,71 @@
 
 .badge {
   display: inline-block;
-  height: 25px;
+  height: 22px;
   padding: 2px 10px;
   gap: 3px;
   border-radius: 50px;
-  font-family: var(--font-typo-icon-en-font), var(--font-typo-main-font);
-  @extend %body-xsmall;
+  @include typography($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 16px, $family: ($font-typo-icon-en-font, $font-typo-main-font));
   white-space: nowrap;
 
   +.badge {
     margin-left: 8px;
   }
 
+  &.large {
+    height: 25px;
+    padding: 4px 10px;
+    font-size: $font-size-body-xsmall;
+  }
+
   &.fill-display-2 {
-    color: var(--color-text-basic-inverse);
-    background: var(--Display-Status-Display-2);
-  }
-
-  &.line-display-1 {
-    color: var(--Display-Status-Display-1);
-    border: 1px solid var(--Display-Status-Display-1);
-    background: rgba(250, 92, 84, 0.10);
-  }
-
-  &.line-display-3 {
-    color: var(--Display-Status-Display-3);
-    border: 1px solid var(--Display-Status-Display-3);
-    background: rgba(235, 141, 87, 0.10);
-  }
-
-  &.line-display-4 {
-    color: var(--Display-Status-Display-4);
-    border: 1px solid var(--Display-Status-Display-4);
-    background: rgba(132, 200, 96, 0.10);
-  }
-
-  &.line-display-6 {
-    color: var(--Display-Status-Display-6);
-    border: 1px solid var(--Display-Status-Display-6);
-    background: rgba(91, 197, 210, 0.10);
-  }
-
-  &.line-display-7 {
-    color: var(--Display-Status-Display-7);
-    border: 1px solid var(--Display-Status-Display-7);
-    background: rgba(114, 132, 198, 0.10);
-  }
-
-  &.line-display-8 {
-    color: var(--Display-Status-Display-8);
-    border: 1px solid var(--Display-Status-Display-8);
-    background: rgba(164, 84, 221, 0.10);
-  }
-
-  &.line-display-9 {
-    color: var(--Display-Status-Display-9);
-    border: 1px solid var(--Display-Status-Display-9);
-    background: rgba(246, 91, 144, 0.10);
+    color: $color-text-basic-inverse;
+    background: $Display-Status-Display-2;
   }
 
   &.fill-gray-dark {
-    color: var(--color-text-basic-inverse);
-    background: var(--color-border-gray-dark);
+    color: $color-text-basic-inverse;
+    background: $color-border-gray-dark;
+  }
+
+  @each $class, $values in ('line-display-1': ($Display-Status-Display-1, rgba(250, 92, 84, 0.10)),
+    'line-display-3': ($Display-Status-Display-3, rgba(235, 141, 87, 0.10)),
+    'line-display-4': ($Display-Status-Display-4, rgba(132, 200, 96, 0.10)),
+    'line-display-6': ($Display-Status-Display-6, rgba(91, 197, 210, 0.10)),
+    'line-display-7': ($Display-Status-Display-7, rgba(114, 132, 198, 0.10)),
+    'line-display-8': ($Display-Status-Display-8, rgba(164, 84, 221, 0.10)),
+    'line-display-9': ($Display-Status-Display-9, rgba(246, 91, 144, 0.10))) {
+    &.#{$class} {
+      color: nth($values, 1);
+      border: 1px solid nth($values, 1);
+      background: nth($values, 2);
+    }
   }
 
   &:before {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-color: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
+    background-color: #003f6d; // 나중에 삭제 예정
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
     vertical-align: -3px;
   }
 
-  &.recommend {
-    &:before {
-      content: '';
-      background-image: url('');
-    }
-  }
+  /* before에 background-image 적용할 클래스들 (recommend, new, best, discount-1, discount-2) */
+  @each $class, $img in ('recommend': 'recommend.png',
+    'new': 'new.png',
+    'best': 'best.png',
+    'discount-1': 'discount-1.png',
+    'discount-2': 'discount-2.png'
 
-  &.new {
-    &:before {
-      content: '';
-      background-image: url('');
-    }
-  }
-
-  &.best {
-    &:before {
-      content: '';
-      background-image: url('');
-    }
-  }
-
-  &.discount-1 {
-    &:before {
-      content: '';
-      background-image: url('');
-    }
-  }
-
-  &.discount-2 {
-    &:before {
-      content: '';
-      background-image: url('');
+  ) {
+    &.#{$class} {
+      &:before {
+        content: '';
+        background-image: url(#{$img});
+      }
     }
   }
 }
@@ -168,7 +127,7 @@
   .product-img {
     width: 497px;
     height: 407px;
-    border: 1px solid var(--Line-line);
+    border: 1px solid $Line-line;
   }
 
   .product-info {
@@ -176,8 +135,8 @@
 
     .product-name {
       font-weight: 700;
-      font-size: var(--font-size-heading-medium);
-      color: var(--color-text-basic);
+      font-size: $font-size-heading-medium;
+      color: $color-text-basic;
       margin-bottom: 10px;
     }
 
@@ -186,14 +145,14 @@
 
       .text {
         @extend %body-small;
-        color: var(--color-text-subcolor);
+        color: $color-text-subcolor;
       }
     }
 
     .product-text {
       margin-top: 16px;
       @extend %body-xsmall;
-      color: var(--color-text-subcolor-deep);
+      color: $color-text-subcolor-deep;
 
       [class^=text-]+[class^=text-] {
         margin-top: 4px;
@@ -207,16 +166,16 @@
       grid-gap: 16px 0;
       margin-top: 16px;
       padding: 20px 12px;
-      background: var(--color-background-gray-subtler);
+      background: $color-background-gray-subtler;
 
       .discount-title {
         @extend %body-xxsmall;
-        color: var(--color-text-subcolor);
+        color: $color-text-subcolor;
       }
 
       .total-title {
         @extend %body-xsmall-bold;
-        color: var(--color-text-basic);
+        color: $color-text-basic;
       }
 
       [class$=-price] {
@@ -225,12 +184,12 @@
 
       .discount-price {
         @extend %body-xsmall;
-        color: var(--color-text-subcolor);
+        color: $color-text-subcolor;
       }
 
       .total-price {
         @extend %body-large-bold;
-        color: var(--color-text-basic);
+        color: $color-text-basic;
       }
     }
   }
@@ -244,7 +203,7 @@
     &:after {
       content: '*';
       display: inline-flex;
-      color: var(--color-text-primary);
+      color: $color-text-primary;
       @extend %body-small;
       line-height: 12px;
       vertical-align: 2px;
@@ -255,7 +214,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--Line-line);
+    border-bottom: 1px solid $Line-line;
 
     >h5 {
       margin-bottom: 0;
@@ -263,21 +222,13 @@
   }
 
   .desc-guide {
-    display: inline-flex;
-    align-items: center;
-    padding: 4px;
-    border-radius: 2px;
-    background: var(--color-border-gray-light);
-    @extend %body-xxsmall;
-    line-height: 12px;
-    color: var(--color-text-subcolor);
-    // @include desc-guide;
+    @include desc-guide;
 
     &.line-round {
       min-height: 27px;
       padding: 1px 16px;
       border-radius: 12px;
-      border: 1px solid var(--color-border-gray);
+      border: 1px solid $color-border-gray;
 
       >dt {
         @extend %body-xsmall-bold;
@@ -295,7 +246,7 @@
             display: inline-block;
             padding-right: 16px;
             @extend %body-xsmall;
-            color: var(--color-text-subcolor-light);
+            color: $color-text-subcolor-light;
           }
         }
       }
@@ -336,7 +287,7 @@
     .guide {
       padding-left: 8px;
       @extend %body-small;
-      color: var(--color-text-subcolor-deep);
+      color: $color-text-subcolor-deep;
     }
 
     &.columns-4 {
@@ -358,24 +309,24 @@
 .line-box {
   margin-top: 12px;
   padding: 10px 0px;
-  border-top: 1px solid var(--Line-line);
-  border-bottom: 1px solid var(--Line-line);
+  border-top: 1px solid $Line-line;
+  border-bottom: 1px solid $Line-line;
   text-align: center;
 
   .description {
     @extend %body-small;
-    color: var(--color-text-basic);
+    color: $color-text-basic;
   }
 }
 
 .gray-light-box {
   margin-top: 12px;
   padding: 20px 0px;
-  background: var(--color-border-gray-light);
+  background: $color-border-gray-light;
   text-align: center;
 
   .description {
     @extend %body-small;
-    color: var(--color-text-basic);
+    color: $color-text-basic;
   }
 }

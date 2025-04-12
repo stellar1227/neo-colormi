@@ -1,3 +1,4 @@
+@use 'mixin' as *;
 @use 'common';
 
 // header
@@ -63,8 +64,8 @@ header {
         display: flex;
         align-items: flex-end;
         padding: 4px 0;
-        color: var(--color-text-basic);
-        font-size: var(--font-size-navigation-XXS);
+        color: $color-text-basic;
+        font-size: $font-size-navigation-XXS;
         font-weight: 500;
 
         .logo-img {
@@ -120,15 +121,15 @@ header {
       transform: translateX(-50%);
       padding: 10px;
       border-radius: 4px;
-      border: 1px solid var(--Line-line);
-      background: var(--color-text-basic-inverse);
+      border: 1px solid $Line-line;
+      background: $color-text-basic-inverse;
       box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
       z-index: 1;
 
       .user-info {
         margin-bottom: 8px;
         padding-bottom: 8px;
-        border-bottom: 1px solid var(--Line-line);
+        border-bottom: 1px solid $Line-line;
         text-align: center;
 
         .user-img {
@@ -137,7 +138,7 @@ header {
           height: 40px;
           margin-bottom: 8px;
           border-radius: 50%;
-          background: var(--color-border-tertiary); //대신 넣은거임. 나중에 삭제
+          background: $color-border-tertiary; //대신 넣은거임. 나중에 삭제
 
           img {
             display: inline-block;
@@ -149,7 +150,7 @@ header {
 
         .user-name {
           @extend %body-xxsmall-bold;
-          color: var(--color-text-basic);
+          color: $color-text-basic;
         }
       }
 
@@ -164,11 +165,11 @@ header {
 
           a {
             display: block;
-            color: var(--color-text-subcolor);
+            color: $color-text-subcolor;
             white-space: nowrap;
 
             &:hover {
-              color: var(--color-text-basic);
+              color: $color-text-basic;
               font-weight: 600;
             }
           }
@@ -212,7 +213,7 @@ header {
             a {
               display: block;
               padding: 4px 3px;
-              color: var(--color-text-subcolor-deep);
+              color: $color-text-subcolor-deep;
               @extend %depth-medium;
               line-height: 20px;
               white-space: nowrap;
@@ -220,7 +221,7 @@ header {
 
             a:hover,
             &.active a {
-              color: var(--color-text-primary);
+              color: $color-text-primary;
               font-weight: 600;
             }
 
@@ -229,8 +230,8 @@ header {
                 padding: 4px 8px;
                 @extend %depth-xsmall-semibold;
                 border-radius: 24px;
-                border: 1px solid var(--color-border-gray);
-                background: var(--color-border-gray-light);
+                border: 1px solid $color-border-gray;
+                background: $color-border-gray-light;
 
                 &:before {
                   content: '';
@@ -252,11 +253,11 @@ header {
     .util-menu-wrap {
       .util-menu {
         gap: 0;
-        color: var(--color-text-subcolor);
+        color: $color-text-subcolor;
         white-space: nowrap;
 
         [class^=btn-]:hover {
-          color: var(--color-text-basic);
+          color: $color-text-basic;
         }
 
         .btn-customer {
@@ -278,7 +279,7 @@ header {
             display: inline-block;
             width: 1px;
             height: 10px;
-            background: var(--Line-line);
+            background: $Line-line;
             transform: translateY(-50%);
           }
         }
@@ -291,7 +292,7 @@ header {
           padding: 2px 20px 2px 5px;
           @extend %depth-xsmall-semibold;
           border: none;
-          background: var(--color-background-white);
+          background: $color-background-white;
 
           &:after {
             content: '';
@@ -308,7 +309,7 @@ header {
           }
 
           &:hover {
-            background: var(--color-border-gray-light);
+            background: $color-border-gray-light;
           }
         }
 
@@ -334,9 +335,9 @@ header {
     width: 100%;
     padding: 32px;
     border-radius: 6px;
-    background: var(--color-background-white);
+    background: $color-background-white;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
-    color: var(--color-text-basic);
+    color: $color-text-basic;
     z-index: 10;
 
     .banner-wrap {
@@ -368,12 +369,12 @@ header {
         +.category-wrap {
           margin-top: 24px;
           padding-top: 32px;
-          border-top: 1px solid var(--Line-line-2);
+          border-top: 1px solid $Line-line-2;
         }
 
         &:last-child {
           padding-bottom: 24px;
-          border-bottom: 1px solid var(--Line-line-2);
+          border-bottom: 1px solid $Line-line-2;
         }
 
         .category {
@@ -383,7 +384,7 @@ header {
 
           +.category {
             padding-left: 20px;
-            border-left: 1px solid var(--Line-line);
+            border-left: 1px solid $Line-line;
           }
 
           >.depth-1 {
@@ -395,27 +396,19 @@ header {
               display: inline-block;
               width: 5px;
               height: 5px;
-              background: var(--color-border-primary);
+              background: $color-border-primary;
               border-radius: 50%;
               vertical-align: 12px;
             }
 
             .desc-guide {
-              display: inline-block;
-              padding: 4px;
-              border-radius: 2px;
-              background: var(--color-border-gray-light);
-              @extend %body-xxsmall;
-              line-height: 12px;
-              color: var(--color-text-subcolor);
-              // @include desc-guide;
+              @include desc-guide;
               vertical-align: 1px;
 
               i {
                 padding-right: 2px;
-                @extend %body-small;
-                line-height: 12px;
-                color: var(--color-text-tertiary);
+                font-size: $font-size-body-small;
+                color: $color-text-tertiary;
               }
             }
           }
@@ -440,7 +433,7 @@ header {
 
               a:hover,
               &.active a {
-                color: var(--color-text-primary);
+                color: $color-text-primary;
                 text-decoration: underline;
               }
 
@@ -450,11 +443,11 @@ header {
 
                 a {
                   display: block;
-                  color: var(--color-text-subcolor-deep);
+                  color: $color-text-subcolor-deep;
                   @extend %depth-small-medium;
 
                   &:hover {
-                    color: var(--color-text-primary);
+                    color: $color-text-primary;
                     font-weight: 600;
                   }
                 }
@@ -467,7 +460,7 @@ header {
       .product-info {
         width: 566px;
         padding-left: 32px;
-        border-left: 1px solid var(--Line-line);
+        border-left: 1px solid $Line-line;
         border-radius: 6px;
 
         .product-img {
@@ -479,7 +472,7 @@ header {
           li {
             overflow: hidden;
             border-radius: 10px;
-            border: 1px solid var(--Line-line);
+            border: 1px solid $Line-line;
 
             img {
               display: inline-block;
@@ -495,15 +488,15 @@ header {
 
         .product-text {
           margin-top: 20px;
-          color: var(--color-text-basic);
+          color: $color-text-basic;
           @extend %body-xsmall;
-          color: var(--color-text-subcolor);
+          color: $color-text-subcolor;
 
           .title {
             display: block;
             margin-bottom: 14.5px;
             @extend %title-medium;
-            color: var(--color-text-basic);
+            color: $color-text-basic;
 
           }
         }
@@ -523,7 +516,7 @@ header {
 }
 
 footer {
-  background: var(--color-border-gray-darker);
+  background: $color-border-gray-darker;
 
   .footer-wrap {
     display: grid;
@@ -531,7 +524,7 @@ footer {
     padding: 32px 0 64px;
 
     @extend %body-xsmall;
-    color: var(--color-text-subcolor);
+    color: $color-text-subcolor;
 
     .company {
       margin-bottom: 32px;
@@ -568,7 +561,7 @@ footer {
       grid-row: 1 / 3;
       width: 336px;
       @extend %body-xsmall;
-      color: var(--color-text-basic-inverse);
+      color: $color-text-basic-inverse;
 
       >div+div {
         margin-top: 8px;
@@ -579,7 +572,7 @@ footer {
         justify-content: space-between;
         padding: 16px 24px;
         border-radius: 6px;
-        background: var(--color-alpha-base10);
+        background: $color-alpha-base10;
 
         strong {
           display: inline-block;
@@ -601,14 +594,14 @@ footer {
 
           &.center {
             &:before {
-              background-color: var(--color-text-primary);
+              background-color: $color-text-primary;
               background-image: url('');
             }
           }
 
           &.delivery {
             &:before {
-              background-color: var(--color-border-tertiary);
+              background-color: $color-border-tertiary;
               background-image: url('');
             }
           }
@@ -634,7 +627,7 @@ footer {
 
           em {
             display: block;
-            color: var(--color-text-subcolor);
+            color: $color-text-subcolor;
             font-weight: 500;
             font-size: 10px;
             line-height: 12px;
@@ -667,7 +660,7 @@ footer {
         }
 
         &.webhard {
-          background: var(--color-border-secondary);
+          background: $color-border-secondary;
 
           &:before {
             content: '';
@@ -675,7 +668,7 @@ footer {
             width: 42px;
             height: 29px;
             margin-right: 20px;
-            background: var(--color-border-primary) url('') no-repeat center center/100% 100%;
+            background: $color-border-primary url('') no-repeat center center/100% 100%;
           }
 
           .btn-text {
@@ -683,16 +676,16 @@ footer {
             margin-left: auto;
             padding: 4px 4px 4px 8px;
             border-radius: 4px;
-            border: 1px solid var(--color-border-gray-light);
-            background: var(--color-alpha-base25);
+            border: 1px solid $color-border-gray-light;
+            background: $color-alpha-base25;
             @extend %body-xxsmall;
             font-weight: 500;
-            color: var(--color-text-subcolor-inverse);
+            color: $color-text-subcolor-inverse;
           }
         }
 
         &.account {
-          background: var(--Tertiary-tertiary-45, #896F12);
+          background: #896F12;
 
           &:before {
             content: '';
@@ -700,7 +693,7 @@ footer {
             width: 40px;
             height: 24px;
             margin-right: 20px;
-            background: var(--color-border-primary) url('') no-repeat center center/100% 100%;
+            background: $color-border-primary url('') no-repeat center center/100% 100%;
           }
         }
       }
@@ -738,7 +731,7 @@ footer {
   }
 
   .footer-link-wrap {
-    border-bottom: 1px solid var(--Line-line-3);
+    border-bottom: 1px solid $Line-line-3;
 
     .footer-link {
       display: flex;
@@ -759,7 +752,7 @@ footer {
             transform: translateY(-50%);
             width: 1px;
             height: 10px;
-            background: var(--Line-line-3);
+            background: $Line-line-3;
           }
         }
       }
@@ -768,7 +761,7 @@ footer {
         display: block;
         padding: 16px 0;
         @extend %body-xsmall;
-        color: var(--color-text-subcolor-inverse);
+        color: $color-text-subcolor-inverse;
         text-align: center;
       }
     }

@@ -1,3 +1,4 @@
+@use 'mixin' as *;
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap');
 
@@ -6,159 +7,36 @@ main {
   margin: 0 auto;
 }
 
-:root {
-  // line
-  --Line-line: #dedede;
-  --Line-line-2: #969696;
-  --Line-line-3: #565656;
-
-  // Display Status
-  --Display-Status-Display-1: #fa5c54;
-  --Display-Status-Display-2: #ff7373;
-  --Display-Status-Display-3: #eb8d57;
-  --Display-Status-Display-4: #84c860;
-  --Display-Status-Display-5: #6dcda6;
-  --Display-Status-Display-6: #5bc5d2;
-  --Display-Status-Display-7: #7284c6;
-  --Display-Status-Display-8: #a454dd;
-  --Display-Status-Display-9: #f65b90;
-  --Display-Status-Display-10: #2ea73a;
-
-  // font
-  --font-typo-main-font: 'Pretendard Variable', Pretendard;
-  --font-typo-icon-en-font: 'Montserrat';
-
-  --font-size-heading-xsmall: 17px;
-  --font-size-heading-small: 19px;
-  --font-size-heading-medium: 24px;
-  --font-size-heading-large: 32px;
-  --font-size-heading-xlarge: 40px;
-
-  --font-size-navigation-XXS: 12px;
-  --font-size-navigation-XS: 13px;
-  --font-size-navigation-S: 14px;
-  --font-size-navigation-M: 16px;
-  --font-size-navigation-L: 18px;
-
-  --font-size-body-xxsmall: 12px;
-  --font-size-body-xsmall: 13px;
-  --font-size-body-small: 15px;
-  --font-size-body-medium: 17px;
-  --font-size-body-large: 20px;
-
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  --font-letter-spacing-0: 0px;
-  --font-letter-spacing-1: 1px;
-
-  // mode
-  --color-background-white: #fff;
-  --color-background-gray-subtler: #f8f8f8;
-  --color-background-gray-subtle: #f4f5f6;
-  --color-background-inverse: #3c3c3c;
-  --color-background-dim: rgba(0, 0, 0, .75);
-
-  --color-border-transparency: rgba(0, 0, 0, 0);
-  --color-border-inverse: #fff;
-  --color-border-disabled: #a5a5a5;
-  --color-border-gray-light: #f4f5f6;
-  --color-border-gray: #d6d6d6;
-  --color-border-gray-dark: #4c4c4c;
-  --color-border-gray-darker: #292929;
-  --color-border-primary-light: #fbdfe9;
-  --color-border-primary-lighter: #f8c0d2;
-  --color-border-primary: #ed6190;
-  --color-border-secondary-light: #dbf0ff;
-  --color-border-secondary-lighter: #b6e0ff;
-  --color-border-secondary: #007fdb;
-  --color-border-tertiary-light: #FDF6DF;
-  --color-border-tertiary-lighter: #F8E59F;
-  --color-border-tertiary: #EFC220;
-  --color-border-point-light: #f5d6d9;
-  --color-border-point: #d63d4a;
-  --color-border-danger-light: #fbeff0;
-  --color-border-danger: #de3412;
-  --color-border-warning-light: #fff3db;
-  --color-border-warning: #c78500;
-  --color-border-success-light: #d8eedd;
-
-  --color-divider-gray-light: #e6e8ea;
-  --color-divider-gray: #dedede;
-  --color-divider-gray-dark: #a5a5a5;
-  --color-divider-gray-darker: #4c4c4c;
-  --color-divider-inverse: #fff;
-
-  --color-text-basic: #4c4c4c;
-  --color-text-basic-inverse: #fff;
-  --color-text-subcolor: #969696;
-  --color-text-subcolor-inverse: #f4f5f6;
-  --color-text-subcolor-light: #c6c6c6;
-  --color-text-subcolor-inverse-light: #fafafa;
-  --color-text-subcolor-deep: #737373;
-  --color-text-subcolor-inverse-deep: #e6e8ea;
-  --color-text-primary: #ea4279;
-  --color-text-secondary: #24a3ff;
-  --color-text-tertiary: #efc220;
-  --color-text-point: #d63d4a;
-  --color-text-danger: #de3412;
-  --color-text-warning: #c78500;
-  --color-text-success: #3fa654;
-  --color-text-information: #2098f3;
-  --color-link-default: #0094ff;
-  --color-link-hover: #005592;
-  --color-link-pressed: #003f6d;
-  --color-link-visited: #a454dd;
-
-  --color-alpha-base100: rgba(255, 255, 255, 1);
-  --color-alpha-base75: rgba(255, 255, 255, .75);
-  --color-alpha-base50: rgba(255, 255, 255, .5);
-  --color-alpha-base25: rgba(255, 255, 255, .25);
-  --color-alpha-base10: rgba(255, 255, 255, .1);
-  --color-alpha-base0: rgba(255, 255, 255, 0);
-  --color-alpha-inverse100: rgba(0, 0, 0, 1);
-  --color-alpha-inverse75: rgba(0, 0, 0, .75);
-  --color-alpha-inverse50: rgba(0, 0, 0, .5);
-  --color-alpha-inverse25: rgba(0, 0, 0, .25);
-  --color-alpha-inverse10: rgba(0, 0, 0, .1);
-  --color-alpha-inverse0: rgba(0, 0, 0, 0);
-  --color-alpha-shadow1: rgba(0, 0, 0, .05);
-  --color-alpha-shadow2: rgba(0, 0, 0, .08);
-  --color-alpha-shadow3: rgba(0, 0, 0, .12);
-}
-
 // Typography
 // Navigation
 %title-small-regular {
-  font: 400 var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 400 $font-size-navigation-XS/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %title-medium {
-  font: 500 var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 500 $font-size-navigation-M/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %title-semibold {
-  font: 600 var(--font-size-navigation-L)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 600 $font-size-navigation-L/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %depth-xsmall-semibold {
-  font: 600 var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 600 $font-size-navigation-XS/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %depth-small-medium {
-  font: 500 var(--font-size-navigation-S)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 500 $font-size-navigation-S/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %depth-medium {
-  font: 400 var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 400 $font-size-navigation-M/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %depth-medium-bold {
@@ -197,58 +75,58 @@ main {
 // Heading
 h1 {
   margin-bottom: 40px;
-  font: 700 var(--font-size-heading-xlarge)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 700 $font-size-heading-xlarge/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 h2 {
   margin-bottom: 36px;
-  font: 700 var(--font-size-heading-large)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 700 $font-size-heading-large/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 h3 {
   margin-bottom: 30px;
-  font: 700 var(--font-size-heading-medium)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 700 $font-size-heading-medium/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 h4 {
   margin-bottom: 24px;
-  font: 700 var(--font-size-heading-small)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 700 $font-size-heading-small/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 h5 {
   margin-bottom: 20px;
-  font: 700 var(--font-size-heading-xsmall)/normal var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 700 $font-size-heading-xsmall/normal $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 // Body
 %body-xxsmall {
-  font: 400 var(--font-size-body-xxsmall)/19px var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 400 $font-size-body-xxsmall/19px $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %body-xsmall {
-  font: 400 var(--font-size-body-xsmall)/20px var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 400 $font-size-body-xsmall/20px $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %body-small {
-  font: 400 var(--font-size-body-small)/22px var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 400 $font-size-body-small/22px $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %body-medium {
-  font: 400 var(--font-size-body-medium)/24px var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 400 $font-size-body-medium/24px $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %body-large {
-  font: 400 var(--font-size-body-large)/27px var(--font-typo-main-font);
-  letter-spacing: var(--font-letter-spacing-0);
+  font: 400 $font-size-body-large/27px $font-typo-main-font;
+  letter-spacing: $font-letter-spacing-0;
 }
 
 %body-xxsmall-bold {
@@ -330,8 +208,8 @@ h5 {
 
       &:disabled,
       &:read-only {
-        border: 1px solid var(--color-border-gray);
-        background-color: var(--color-background-gray-subtle);
+        border: 1px solid $color-border-gray;
+        background-color: $color-background-gray-subtle;
       }
     }
 
@@ -340,7 +218,7 @@ h5 {
       padding-right: 40px;
       text-align: left;
       line-height: 1;
-      background: var(--color-background-white);
+      background: $color-background-white;
 
       &:after {
         content: '';
@@ -359,13 +237,13 @@ h5 {
       &:focus,
       &:focus-visible,
       &:active {
-        border: 1px solid var(--color-border-secondary);
+        border: 1px solid $color-border-secondary;
       }
 
       &:disabled {
-        border: 1px solid var(--color-border-gray);
-        background: var(--color-background-gray-subtle);
-        color: var(--color-text-basic);
+        border: 1px solid $color-border-gray;
+        background: $color-background-gray-subtle;
+        color: $color-text-basic;
       }
     }
 
@@ -375,8 +253,8 @@ h5 {
       width: 100%;
       padding: 10px 0;
       border-radius: 4px;
-      border: 1px solid var(--color-border-gray);
-      background: var(--color-border-inverse);
+      border: 1px solid $color-border-gray;
+      background: $color-border-inverse;
       z-index: 1;
 
       li {
@@ -391,15 +269,15 @@ h5 {
           align-self: stretch;
           min-height: 40px;
           padding: 0 10px;
-          color: var(--color-text-basic);
+          color: $color-text-basic;
           @extend %body-small;
 
           &:hover {
-            background-color: var(--color-border-gray-light);
+            background-color: $color-border-gray-light;
           }
 
           &:active {
-            color: var(--color-text-primary);
+            color: $color-text-primary;
             font-weight: 600;
           }
         }
@@ -444,13 +322,13 @@ h5 {
       display: inline-block;
       margin-right: 2px;
       @extend %body-xsmall;
-      color: var(--color-text-subcolor);
+      color: $color-text-subcolor;
     }
   }
 
   .description {
     margin-top: 8px;
-    color: var(--color-text-subcolor);
+    color: $color-text-subcolor;
     @extend %body-xsmall;
   }
 
@@ -476,11 +354,11 @@ h5 {
     input,
     select,
     .btn-select {
-      border: 1px solid var(--color-border-danger) !important;
+      border: 1px solid $color-border-danger !important;
     }
 
     .description {
-      color: var(--color-text-danger);
+      color: $color-text-danger;
 
       &:before {
         background-image: url('');
@@ -493,11 +371,11 @@ h5 {
     input,
     select,
     .btn-select {
-      border: 1px solid var(--color-text-success) !important;
+      border: 1px solid $color-text-success !important;
     }
 
     .description {
-      color: var(--color-text-success);
+      color: $color-text-success;
 
       &:before {
         background-image: url('');
@@ -566,7 +444,7 @@ h5 {
 
       label {
         padding: 15px 0;
-        color: var(--color-text-basic);
+        color: $color-text-basic;
         @extend %body-xsmall;
       }
 
@@ -574,19 +452,19 @@ h5 {
         height: 84px;
         padding: 10px 12px;
         border-radius: 4px;
-        background-color: var(--gray-0);
+        // background-color: $gray-0;
       }
     }
 
     .count {
       margin: 8px 0 4px;
       text-align: right;
-      color: var(--color-text-basic);
+      color: $color-text-basic;
       @extend %body-xxsmall;
       font-weight: 500;
 
       >* {
-        color: var(--color-text-basic);
+        color: $color-text-basic;
         @extend %body-xxsmall;
         font-weight: 500;
       }
@@ -613,7 +491,7 @@ h5 {
           width: 100%;
           height: 100%;
           border-radius: 8px;
-          border: 1px solid var(--Line-line-3);
+          border: 1px solid $Line-line-3;
           background-origin: border-box;
           background-clip: content-box, border-box;
           z-index: -1;
@@ -622,7 +500,7 @@ h5 {
         &:focus~.search-bg,
         &:hover~.search-bg {
           border: 2px solid transparent;
-          background-image: linear-gradient(var(--color-background-white), var(--color-background-white)), linear-gradient(180deg, var(--color-border-primary-lighter) 0%, #F4D360 42%, var(--color-border-primary) 100%);
+          background-image: linear-gradient($color-background-white, $color-background-white), linear-gradient(180deg, $color-border-primary-lighter 0%, #F4D360 42%, $color-border-primary 100%);
 
           ~.util .btn-search {
             background-image: url('../img/icon/icon-search-on-24.png');
@@ -649,7 +527,7 @@ h5 {
 
     &.completed input~.search-bg {
       border: 2px solid transparent;
-      background-image: linear-gradient(var(--color-background-white), var(--color-background-white)), conic-gradient(from 180deg at 50% 50%, #F4A0BC 0deg, #F1CB40 101.39984965324402deg, #92D1FF 270.5998492240906deg, #F4A0BC 360deg);
+      background-image: linear-gradient($color-background-white, $color-background-white), conic-gradient(from 180deg at 50% 50%, #F4A0BC 0deg, #F1CB40 101.39984965324402deg, #92D1FF 270.5998492240906deg, #F4A0BC 360deg);
     }
   }
 }
@@ -681,16 +559,16 @@ h5 {
       // disabled
       &:disabled {
         +.toggle-switch {
-          background: var(--color-border-gray-light);
+          background: $color-border-gray-light;
 
           &:before {
-            background: var(--color-border-gray);
+            background: $color-border-gray;
           }
 
         }
 
         ~[class$=-label] {
-          color: var(--color-text-subcolor);
+          color: $color-text-subcolor;
         }
 
       }
@@ -699,11 +577,11 @@ h5 {
       &:focus,
       &:focus-visible {
         +.toggle-switch {
-          outline-color: var(--color-border-primary-light);
-          background: var(--color-border-disabled);
+          outline-color: $color-border-primary-light;
+          background: $color-border-disabled;
 
           &:before {
-            background: var(--color-border-inverse);
+            background: $color-border-inverse;
           }
         }
       }
@@ -711,7 +589,7 @@ h5 {
       // checked
       &:checked {
         +.toggle-switch {
-          background: var(--color-border-primary);
+          background: $color-border-primary;
 
           &:before {
             -webkit-transform: translateX(9px);
@@ -721,10 +599,10 @@ h5 {
 
         &:disabled {
           +.toggle-switch {
-            background: var(--color-border-gray-light);
+            background: $color-border-gray-light;
 
             &:before {
-              background: var(--color-border-gray);
+              background: $color-border-gray;
             }
           }
         }
@@ -732,11 +610,11 @@ h5 {
         &:focus,
         &:focus-visible {
           +.toggle-switch {
-            border-color: var(--color-border-primary-light);
+            border-color: $color-border-primary-light;
             background: #831339;
 
             &:before {
-              background: var(--color-border-inverse);
+              background: $color-border-inverse;
             }
           }
         }
@@ -756,11 +634,11 @@ h5 {
         display: inline-block;
         width: 25px;
         height: 16px;
-        background: var(--color-border-gray);
+        background: $color-border-gray;
         -webkit-transition: .4s;
         transition: .4s;
         border-radius: 8px;
-        outline: 1.6px solid var(--color-border-inverse);
+        outline: 1.6px solid $color-border-inverse;
 
         &:before {
           position: absolute;
@@ -770,7 +648,7 @@ h5 {
           top: 1.5px;
           left: 1.5px;
           bottom: 1.5px;
-          background: var(--color-background-white);
+          background: $color-background-white;
           -webkit-transition: .4s;
           transition: .4s;
           border-radius: 50%;
@@ -785,9 +663,9 @@ h5 {
         display: inline-block;
         width: 16px;
         height: 16px;
-        background: var(--color-background-white);
+        background: $color-background-white;
         border-radius: 50%;
-        border: 1px solid var(--Line-line);
+        border: 1px solid $Line-line;
         -webkit-transition: none;
         transition: none;
 
@@ -822,7 +700,7 @@ h5 {
     [class$=-label] {
       display: inline-block;
       margin-left: 8px;
-      color: var(--color-text-basic);
+      color: $color-text-basic;
       @extend %body-xsmall;
       line-height: 15px;
       vertical-align: 4px;
@@ -846,7 +724,7 @@ h5 {
       // disabled
       &:disabled {
         +.checkbox-icon {
-          background: var(--color-border-gray-light);
+          background: $color-border-gray-light;
 
           &:before {
             background-image: url();
@@ -858,7 +736,7 @@ h5 {
       &:focus,
       &:focus-visible {
         +.checkbox-icon {
-          outline: 2px solid var(--color-border-primary-light);
+          outline: 2px solid $color-border-primary-light;
           border: 0 none;
 
           &:before {
@@ -870,24 +748,24 @@ h5 {
       // checked
       &:checked {
         +.checkbox-icon {
-          background: var(--color-border-primary);
-          border-color: var(--color-border-primary);
+          background: $color-border-primary;
+          border-color: $color-border-primary;
 
           &:before {
             content: '';
             background-image: url('../img/icon/icon-checkbox-12.png');
-            color: var(--color-text-basic-inverse);
+            color: $color-text-basic-inverse;
           }
         }
 
         &:disabled {
           +.checkbox-icon {
-            background-color: var(--color-border-gray-light);
-            border-color: var(--Line-line);
+            background-color: $color-border-gray-light;
+            border-color: $Line-line;
 
             &:before {
               background-image: url();
-              color: var(--color-border-gray);
+              color: $color-border-gray;
             }
           }
         }
@@ -912,8 +790,8 @@ h5 {
       // disabled
       &:disabled {
         +.radio-icon {
-          background: var(--color-border-gray-light);
-          border-color: var(--color-border-gray);
+          background: $color-border-gray-light;
+          border-color: $color-border-gray;
         }
       }
 
@@ -921,19 +799,19 @@ h5 {
       &:focus,
       &:focus-visible {
         +.radio-icon {
-          border: 2px solid var(--color-border-primary-light);
+          border: 2px solid $color-border-primary-light;
         }
       }
 
       // checked
       &:checked {
         +.radio-icon {
-          border: 4px solid var(--color-border-primary);
+          border: 4px solid $color-border-primary;
         }
 
         &:disabled {
           +.radio-icon {
-            border-color: var(--color-border-gray);
+            border-color: $color-border-gray;
           }
         }
       }
@@ -1035,7 +913,7 @@ h5 {
   &:focus-visible {
     outline: none;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05),
-      0px 0px 0px 4px var(--color-border-primary-light);
+      0px 0px 0px 4px $color-border-primary-light;
   }
 
   +[class^=btn-] {
@@ -1049,21 +927,21 @@ h5 {
 
 .btn-primary {
   @include button;
-  border-color: var(--color-border-primary);
-  background: var(--color-border-primary);
-  color: var(--color-text-basic-inverse);
+  border-color: $color-border-primary;
+  background: $color-border-primary;
+  color: $color-text-basic-inverse;
 
   // disabled
   &:disabled,
   &:disabled:hover {
-    border: 1px solid var(--Line-line);
-    color: var(--color-divider-gray);
-    border-color: var(--color-border-gray-light);
-    background: var(--color-border-gray-light);
+    border: 1px solid $Line-line;
+    color: $color-divider-gray;
+    border-color: $color-border-gray-light;
+    background: $color-border-gray-light;
   }
 
   &:hover {
-    color: var(--color-text-basic-inverse);
+    color: $color-text-basic-inverse;
     border-color: #F181A6;
     background: #F181A6;
   }
@@ -1076,58 +954,58 @@ h5 {
 
 .btn-black {
   @include button;
-  border-color: var(--color-border-gray-dark);
-  background: var(--color-border-gray-dark);
-  color: var(--color-text-basic-inverse);
+  border-color: $color-border-gray-dark;
+  background: $color-border-gray-dark;
+  color: $color-text-basic-inverse;
 
   // disabled
   &:disabled,
   &:disabled:hover {
-    border: 1px solid var(--Line-line);
-    color: var(--color-divider-gray);
-    border-color: var(--color-border-gray-light);
-    background: var(--color-border-gray-light);
+    border: 1px solid $Line-line;
+    color: $color-divider-gray;
+    border-color: $color-border-gray-light;
+    background: $color-border-gray-light;
   }
 
   &:hover,
   &:active {
-    border-color: var(--color-border-gray-darker);
-    background: var(--color-border-gray-darker);
+    border-color: $color-border-gray-darker;
+    background: $color-border-gray-darker;
   }
 }
 
 .btn-outline {
   @include button;
-  border-color: var(--color-border-gray-dark);
-  background: var(--color-border-inverse);
-  color: var(--color-text-basic);
+  border-color: $color-border-gray-dark;
+  background: $color-border-inverse;
+  color: $color-text-basic;
 
   // disabled
   &:disabled,
   &:disabled:hover {
-    border: 1px solid var(--Line-line);
-    color: var(--color-divider-gray);
-    border-color: var(--color-border-gray-light);
-    background: var(--color-border-gray-light);
+    border: 1px solid $Line-line;
+    color: $color-divider-gray;
+    border-color: $color-border-gray-light;
+    background: $color-border-gray-light;
   }
 
   &:hover {
-    border-color: var(--color-border-gray-dark);
-    background: var(--color-border-gray-light);
+    border-color: $color-border-gray-dark;
+    background: $color-border-gray-light;
   }
 
   &:active {
-    border-color: var(--color-border-gray-dark);
-    background: var(--color-border-gray-dark);
-    color: var(--color-text-basic-inverse);
+    border-color: $color-border-gray-dark;
+    background: $color-border-gray-dark;
+    color: $color-text-basic-inverse;
   }
 }
 
 .btn-round {
   @include button;
-  border-color: var(--color-border-gray-dark);
-  background: var(--color-border-inverse);
-  color: var(--color-text-basic);
+  border-color: $color-border-gray-dark;
+  background: $color-border-inverse;
+  color: $color-text-basic;
   border-radius: 24px;
   height: 29px;
   padding: 10px 24px;
@@ -1141,7 +1019,7 @@ h5 {
       display: inline-block;
       width: 16px;
       height: 16px;
-      border: 1px solid var(--color-border-gray-dark);
+      border: 1px solid $color-border-gray-dark;
     }
   }
 
@@ -1152,16 +1030,16 @@ h5 {
 
   &:hover,
   &:active {
-    border-color: var(--color-border-gray-dark);
-    background: var(--color-border-gray-dark);
-    color: var(--color-text-basic-inverse);
+    border-color: $color-border-gray-dark;
+    background: $color-border-gray-dark;
+    color: $color-text-basic-inverse;
   }
 }
 
 .btn-text {
   @include button;
   border: 0 none;
-  color: var(--color-text-subcolor);
+  color: $color-text-subcolor;
   height: auto;
   border-radius: 0;
   padding: 0;
@@ -1201,8 +1079,8 @@ h5 {
 .btn-top {
   @include button;
   border: 0 none;
-  background: var(--color-border-gray-light);
-  color: var(--color-text-basic);
+  background: $color-border-gray-light;
+  color: $color-text-basic;
   border-radius: 10px;
   flex-direction: column;
   width: 56px;
@@ -1234,13 +1112,13 @@ h5 {
   }
 
   &:hover {
-    background: var(--color-border-primary-light);
-    color: var(--color-text-basic-inverse);
+    background: $color-border-primary-light;
+    color: $color-text-basic-inverse;
   }
 
   &:active {
-    background: var(--color-border-primary);
-    color: var(--color-text-basic-inverse);
+    background: $color-border-primary;
+    color: $color-text-basic-inverse;
   }
 }
 
@@ -1275,7 +1153,7 @@ h5 {
 
 .alert-danger {
   @extend %alert;
-  background: var(--color-border-danger-light);
+  background: $color-border-danger-light;
 
   &:before {
     background-image: url();
@@ -1289,7 +1167,7 @@ h5 {
 
 .alert-warning {
   @extend %alert;
-  background: var(--color-border-warning-light);
+  background: $color-border-warning-light;
 
   &:before {
     background-image: url();
@@ -1303,7 +1181,7 @@ h5 {
 
 .alert-success {
   @extend %alert;
-  background: var(--color-border-success-light);
+  background: $color-border-success-light;
 
   &:before {
     background-image: url();
@@ -1317,7 +1195,7 @@ h5 {
 
 .alert-information {
   @extend %alert;
-  background: var(--color-border-secondary-light);
+  background: $color-border-secondary-light;
 
   &:before {
     background-image: url();
@@ -1333,8 +1211,8 @@ h5 {
   position: absolute;
   padding: 16px 20px;
   border-radius: 8px;
-  border: 1px solid var(--color-border-gray);
-  background: var(--color-background-white);
+  border: 1px solid $color-border-gray;
+  background: $color-background-white;
 }
 
 .modal {
@@ -1343,11 +1221,11 @@ h5 {
 
   .modal-title {
     margin-bottom: 16px;
-    color: var(--color-text-basic);
+    color: $color-text-basic;
   }
 
   .modal-content {
-    color: var(--color-text-basic);
+    color: $color-text-basic;
     @extend %body-small;
 
     [class^=cont-]+[class^=cont-] {

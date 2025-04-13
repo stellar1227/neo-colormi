@@ -250,7 +250,6 @@
 }
 
 .product-order {
-  gap: 0 16px;
   margin-bottom: 40px;
 
   .required {
@@ -314,7 +313,7 @@
     }
   }
 
-  .option-wrap {
+  .product-option {
     display: grid;
     grid-template-columns: 120px 1fr;
     grid-gap: 20px 0;
@@ -335,8 +334,6 @@
     >dd {
       padding-left: 4px;
     }
-
-    .desc-guide {}
 
     .guide {
       padding-left: 8px;
@@ -360,27 +357,95 @@
   }
 }
 
-.line-box {
+.desc-box {
   margin-top: 12px;
-  padding: 10px 0px;
-  border-top: 1px solid $Line-line;
-  border-bottom: 1px solid $Line-line;
   text-align: center;
+  @include font-body-small;
+  color: $color-text-basic;
 
-  .description {
-    @include font-body-small;
-    color: $color-text-basic;
+  &.line-box {
+    padding: 10px 0px;
+    border-top: 1px solid $Line-line;
+    border-bottom: 1px solid $Line-line;
+  }
+
+  &.gray-light-box {
+    padding: 20px 0px;
+    background: $color-border-gray-light;
+  }
+
+  .description-title {
+    @include font-body-small-bold;
+
+    +.description {
+      margin-top: 16px;
+    }
   }
 }
 
-.gray-light-box {
-  margin-top: 12px;
-  padding: 20px 0px;
-  background: $color-border-gray-light;
-  text-align: center;
+.product-price-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 12px;
+  margin-top: 60px;
+  padding: 32px 16px;
+  border-top: 1px solid var(--Line-line-3);
+  border-bottom: 1px solid var(--Line-line-3);
 
-  .description {
-    @include font-body-small;
-    color: $color-text-basic;
+  .product-order-price {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+
+    [class^=icon-] {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: #003f6d url('') no-repeat center center/100% 100%;
+    }
+
+    .product-price {
+      dt {
+        @include font-body-xsmall;
+        color: $color-text-subcolor-deep;
+
+        &.total-sum {
+          @include font-body-xsmall-bold;
+
+        }
+
+        span {
+          padding-left: 2px;
+          @include font-body-xxsmall;
+          color: $color-text-subcolor-light;
+        }
+      }
+
+      dd {
+        padding-top: 4px;
+        @include font-body-xsmall-bold;
+        color: $color-text-basic;
+        line-height: 20px;
+
+        strong {
+          @include font-body-medium-bold;
+          line-height: 20px;
+        }
+
+        &.total-sum {
+          strong {
+            @include font-body-large-bold;
+            color: var(--color-text-primary);
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-wrap {
+    [class^=btn-] span {
+      min-width: 165px;
+    }
   }
 }

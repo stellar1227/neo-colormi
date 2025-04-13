@@ -68,7 +68,7 @@
       <h5 class="required">기본정보</h5>
       <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
     </div>
-    <dl class="option-wrap columns-4">
+    <dl class="product-option columns-4">
       <dt>구성</dt>
       <dd>
         <div
@@ -155,7 +155,7 @@
     <div class="title-wrap">
       <h5>주문내용</h5>
     </div>
-    <dl class="option-wrap">
+    <dl class="product-option">
       <dt class="required">제목</dt>
       <dd>
         <div class="form-field">
@@ -202,16 +202,47 @@
       </dd>
     </dl>
   </div>
-  <div class="line-box">
+  <div class="desc-box line-box">
     <span class="badge line-display-6">묶음배송가능</span>
     <span class="description">은 장바구니에서 결제 진행 시, 한 번의 배송비만 결제하게 됩니다.</span>
   </div>
-  <div class="gray-light-box">
-    <p class="notice">
+  <div class="desc-box gray-light-box">
+    <p class="description-title">
       오후 6시 이후 접수분은 익일(다음날) 출고됩니다.
     </p>
-    <p class="notice">
+    <p class="description">
       선불택배 - 3만원 미만시, 배송비 3,000원 / 3만원 이상시, 배송비 4,500원<br>정매수를 제작할 경우 견적문의를 이용해 주세요. (48절/64절 주문시 연당 재단비 추가)</p>
     </div>
-    <div class="product-order-sum"></div>
+    <div class="product-price-wrap">
+      <div class="product-order-price">
+        <dl class="product-price">
+          <dt class="total">총 상품 금액</dt>
+          <dd class="total">
+            <strong>100,000,000</strong>원</dd>
+        </dl>
+        <span class="icon-plus">+</span>
+        <dl class="product-price">
+          <dt class="shipping">배송비</dt>
+          <dd class="shipping">결제시 확인하세요</dd>
+        </dl>
+        <span class="icon-sum">=</span>
+        <dl class="product-price">
+          <dt class="total-sum">총 결제 예정금액<span>(VAT포함가)</span>
+          </dt>
+          <dd class="total-sum">
+            <strong>100,000,000</strong>원</dd>
+        </dl>
+      </div>
+      <div class="btn-wrap">
+        <button type="button" class="btn-outline medium">
+          <i>DM</i>
+        </button>
+        <button type="button" class="btn-outline medium">
+          <span>장바구니</span>
+        </button>
+        <button type="button" class="btn-primary medium">
+          <span>바로주문</span>
+        </button>
+      </div>
+    </div>
   {% endblock %}

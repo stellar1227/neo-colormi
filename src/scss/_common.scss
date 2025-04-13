@@ -1,4 +1,5 @@
 @use 'mixin' as *;
+@use 'variables' as *;
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap');
 
@@ -7,191 +8,103 @@ main {
   margin: 0 auto;
 }
 
-// Typography
-// Navigation
-%title-small-regular {
-  font: 400 $font-size-navigation-XS/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
-}
-
-%title-medium {
-  font: 500 $font-size-navigation-M/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
-}
-
-%title-semibold {
-  font: 600 $font-size-navigation-L/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
-}
-
-%depth-xsmall-semibold {
-  font: 600 $font-size-navigation-XS/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
-}
-
-%depth-small-medium {
-  font: 500 $font-size-navigation-S/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
-}
-
-%depth-medium {
-  font: 400 $font-size-navigation-M/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
-}
-
-%depth-medium-bold {
-  @extend %depth-medium;
-  font-weight: 600;
-}
-
-.title-small-regular {
-  @extend %title-small-regular;
-}
-
-.title-medium {
-  @extend %title-medium;
-}
-
-.title-semibold {
-  @extend %title-semibold;
-}
-
-.depth-xsmall-semibold {
-  @extend %depth-xsmall-semibold;
-}
-
-.depth-small-medium {
-  @extend %depth-small-medium;
-}
-
-.depth-medium {
-  @extend %depth-medium;
-}
-
-.depth-medium-bold {
-  @extend %depth-medium-bold;
-}
-
 // Heading
 h1 {
   margin-bottom: 40px;
   font: 700 $font-size-heading-xlarge/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+  letter-spacing: $letter-spacing-0;
 }
 
 h2 {
   margin-bottom: 36px;
   font: 700 $font-size-heading-large/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+  letter-spacing: $letter-spacing-0;
 }
 
 h3 {
   margin-bottom: 30px;
   font: 700 $font-size-heading-medium/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+  letter-spacing: $letter-spacing-0;
 }
 
 h4 {
   margin-bottom: 24px;
   font: 700 $font-size-heading-small/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+  letter-spacing: $letter-spacing-0;
 }
 
 h5 {
   margin-bottom: 20px;
   font: 700 $font-size-heading-xsmall/normal $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+  letter-spacing: $letter-spacing-0;
 }
 
-// Body
-%body-xxsmall {
-  font: 400 $font-size-body-xxsmall/19px $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+.title-small-regular {
+  @include title-small-regular;
 }
 
-%body-xsmall {
-  font: 400 $font-size-body-xsmall/20px $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+.title-medium {
+  @include title-medium;
 }
 
-%body-small {
-  font: 400 $font-size-body-small/22px $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+.title-semibold {
+  @include title-semibold;
 }
 
-%body-medium {
-  font: 400 $font-size-body-medium/24px $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+.depth-xsmall-semibold {
+  @include depth-xsmall-semibold;
 }
 
-%body-large {
-  font: 400 $font-size-body-large/27px $font-typo-main-font;
-  letter-spacing: $font-letter-spacing-0;
+.depth-small-medium {
+  @include depth-small-medium;
 }
 
-%body-xxsmall-bold {
-  @extend %body-xxsmall;
-  font-weight: 600;
+.depth-medium {
+  @include depth-medium;
 }
 
-%body-xsmall-bold {
-  @extend %body-xsmall;
-  font-weight: 600;
-}
-
-%body-small-bold {
-  @extend %body-small;
-  font-weight: 600;
-}
-
-%body-medium-bold {
-  @extend %body-medium;
-  font-weight: 600;
-}
-
-%body-large-bold {
-  @extend %body-large;
-  font-weight: 700;
+.depth-medium-bold {
+  @include depth-medium-bold;
 }
 
 .body-xxsmall {
-  @extend %body-xxsmall;
+  @include font-body-xxsmall;
 }
 
 .body-xsmall {
-  @extend %body-xsmall;
+  @include font-body-xsmall;
 }
 
 .body-small {
-  @extend %body-small;
+  @include font-body-small;
 }
 
 .body-medium {
-  @extend %body-medium;
+  @include font-body-medium;
 }
 
 .body-large {
-  @extend %body-large;
+  @include font-body-large;
 }
 
 .body-xxsmall-bold {
-  @extend %body-xxsmall-bold;
+  @include font-body-xxsmall-bold;
 }
 
 .body-xsmall-bold {
-  @extend %body-xsmall-bold;
+  @include font-body-xsmall-bold;
 }
 
 .body-small-bold {
-  @extend %body-small-bold;
+  @include font-body-small-bold;
 }
 
 .body-medium-bold {
-  @extend %body-medium-bold;
+  @include font-body-medium-bold;
 }
 
 .body-large-bold {
-  @extend %body-large-bold;
+  @include font-body-large-bold;
 }
 
 // input & select & dropdown
@@ -270,7 +183,7 @@ h5 {
           min-height: 40px;
           padding: 0 10px;
           color: $color-text-basic;
-          @extend %body-small;
+          @include font-body-small;
 
           &:hover {
             background-color: $color-border-gray-light;
@@ -321,7 +234,7 @@ h5 {
     .guide {
       display: inline-block;
       margin-right: 2px;
-      @extend %body-xsmall;
+      @include font-body-xsmall;
       color: $color-text-subcolor;
     }
   }
@@ -329,7 +242,7 @@ h5 {
   .description {
     margin-top: 8px;
     color: $color-text-subcolor;
-    @extend %body-xsmall;
+    @include font-body-xsmall;
   }
 
   &.error,
@@ -445,7 +358,7 @@ h5 {
       label {
         padding: 15px 0;
         color: $color-text-basic;
-        @extend %body-xsmall;
+        @include font-body-xsmall;
       }
 
       textarea {
@@ -460,12 +373,12 @@ h5 {
       margin: 8px 0 4px;
       text-align: right;
       color: $color-text-basic;
-      @extend %body-xxsmall;
+      @include font-body-xxsmall;
       font-weight: 500;
 
       >* {
         color: $color-text-basic;
-        @extend %body-xxsmall;
+        @include font-body-xxsmall;
         font-weight: 500;
       }
     }
@@ -701,7 +614,7 @@ h5 {
       display: inline-block;
       margin-left: 8px;
       color: $color-text-basic;
-      @extend %body-xsmall;
+      @include font-body-xsmall;
       line-height: 15px;
       vertical-align: 4px;
     }
@@ -819,108 +732,7 @@ h5 {
   }
 }
 
-@mixin button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 7px;
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  vertical-align: middle;
-  box-sizing: border-box;
-
-
-  i {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: 8px;
-    font-size: 0;
-
-    &:only-child {
-      margin-left: 0;
-    }
-
-    +span {
-      margin-left: 2px;
-      padding-right: 8px;
-    }
-  }
-
-  span {
-    display: inline-block;
-
-    &:only-child {
-      padding: 0 8px;
-    }
-  }
-
-  &.xsmall {
-    height: 32px;
-    @extend %body-xsmall;
-
-    i {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  &.small {
-    height: 40px;
-    @extend %body-xsmall;
-
-    i {
-      width: 16px;
-      height: 16px;
-
-      &:only-child {
-        margin: 4px;
-      }
-    }
-  }
-
-  &.medium {
-    height: 48px;
-    @extend %body-small;
-
-    i {
-      width: 24px;
-      height: 24px;
-
-      &:only-child {
-        margin: 4px;
-      }
-    }
-  }
-
-  &.large {
-    height: 56px;
-    @extend %body-small;
-
-    i {
-      width: 24px;
-      height: 24px;
-
-      &:only-child {
-        margin: 8px;
-      }
-    }
-  }
-
-  &:focus,
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05),
-      0px 0px 0px 4px $color-border-primary-light;
-  }
-
-  +[class^=btn-] {
-    margin-left: 8px;
-  }
-}
-
+// button
 .btn-wrap {
   display: flex;
 }
@@ -1009,7 +821,7 @@ h5 {
   border-radius: 24px;
   height: 29px;
   padding: 10px 24px;
-  @extend %body-xsmall;
+  @include font-body-xsmall;
 
   &.icon {
     height: 36px;
@@ -1043,7 +855,7 @@ h5 {
   height: auto;
   border-radius: 0;
   padding: 0;
-  @extend %body-small;
+  @include font-body-small;
   line-height: 16px;
 
   &:after {
@@ -1056,12 +868,12 @@ h5 {
 
   &.small {
     height: auto;
-    @extend %body-xsmall;
+    @include font-body-xsmall;
   }
 
   &.large {
     height: auto;
-    @extend %body-medium;
+    @include font-body-medium;
     line-height: 20px;
 
     &:after {
@@ -1086,7 +898,7 @@ h5 {
   width: 56px;
   height: 56px;
   padding: 0;
-  @extend %body-xsmall;
+  @include font-body-xsmall;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
 
   i {
@@ -1127,7 +939,7 @@ h5 {
   gap: 0 8px;
   padding: 16px;
   border-radius: 12px;
-  @extend %body-small;
+  @include font-body-small;
 
   &:before {
     content: '';
@@ -1207,16 +1019,8 @@ h5 {
   }
 }
 
-%modal {
-  position: absolute;
-  padding: 16px 20px;
-  border-radius: 8px;
-  border: 1px solid $color-border-gray;
-  background: $color-background-white;
-}
-
 .modal {
-  @extend %modal;
+  @include modal;
   width: 480px;
 
   .modal-title {
@@ -1226,7 +1030,7 @@ h5 {
 
   .modal-content {
     color: $color-text-basic;
-    @extend %body-small;
+    @include font-body-small;
 
     [class^=cont-]+[class^=cont-] {
       margin-top: 16px;

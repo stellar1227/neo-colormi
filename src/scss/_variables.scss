@@ -1,3 +1,4 @@
+@use 'sass:map';
 // 1. Colors Map
 $colors: (
   // line
@@ -136,129 +137,129 @@ $letter-spacing: (
 // 3. (Optional) 개별 SCSS 변수로 할당하여 SCSS 코드에서 쉽게 사용하기
 
 // colors-line&display-status
-$Line-line: map-get($colors, 'Line-line');
-$Line-line-2: map-get($colors, 'Line-line-2');
-$Line-line-3: map-get($colors, 'Line-line-3');
+$Line-line: map.get($colors, 'Line-line');
+$Line-line-2: map.get($colors, 'Line-line-2');
+$Line-line-3: map.get($colors, 'Line-line-3');
 
-$Display-Status-Display-1: map-get($colors, 'Display-Status-Display-1');
-$Display-Status-Display-2: map-get($colors, 'Display-Status-Display-2');
-$Display-Status-Display-3: map-get($colors, 'Display-Status-Display-3');
-$Display-Status-Display-4: map-get($colors, 'Display-Status-Display-4');
-$Display-Status-Display-5: map-get($colors, 'Display-Status-Display-5');
-$Display-Status-Display-6: map-get($colors, 'Display-Status-Display-6');
-$Display-Status-Display-7: map-get($colors, 'Display-Status-Display-7');
-$Display-Status-Display-8: map-get($colors, 'Display-Status-Display-8');
-$Display-Status-Display-9: map-get($colors, 'Display-Status-Display-9');
-$Display-Status-Display-10: map-get($colors, 'Display-Status-Display-10');
+$Display-Status-Display-1: map.get($colors, 'Display-Status-Display-1');
+$Display-Status-Display-2: map.get($colors, 'Display-Status-Display-2');
+$Display-Status-Display-3: map.get($colors, 'Display-Status-Display-3');
+$Display-Status-Display-4: map.get($colors, 'Display-Status-Display-4');
+$Display-Status-Display-5: map.get($colors, 'Display-Status-Display-5');
+$Display-Status-Display-6: map.get($colors, 'Display-Status-Display-6');
+$Display-Status-Display-7: map.get($colors, 'Display-Status-Display-7');
+$Display-Status-Display-8: map.get($colors, 'Display-Status-Display-8');
+$Display-Status-Display-9: map.get($colors, 'Display-Status-Display-9');
+$Display-Status-Display-10: map.get($colors, 'Display-Status-Display-10');
 
 // color-background
-$color-background-white: map-get($colors, 'color-background-white');
-$color-background-gray-subtler: map-get($colors, 'color-background-gray-subtler');
-$color-background-gray-subtle: map-get($colors, 'color-background-gray-subtle');
-$color-background-inverse: map-get($colors, 'color-background-inverse');
-$color-background-dim: map-get($colors, 'color-background-dim');
+$color-background-white: map.get($colors, 'color-background-white');
+$color-background-gray-subtler: map.get($colors, 'color-background-gray-subtler');
+$color-background-gray-subtle: map.get($colors, 'color-background-gray-subtle');
+$color-background-inverse: map.get($colors, 'color-background-inverse');
+$color-background-dim: map.get($colors, 'color-background-dim');
 
 // color-border
-$color-border-transparency: map-get($colors, 'color-border-transparency');
-$color-border-inverse: map-get($colors, 'color-border-inverse');
-$color-border-disabled: map-get($colors, 'color-border-disabled');
-$color-border-gray-light: map-get($colors, 'color-border-gray-light');
-$color-border-gray: map-get($colors, 'color-border-gray');
-$color-border-gray-dark: map-get($colors, 'color-border-gray-dark');
-$color-border-gray-darker: map-get($colors, 'color-border-gray-darker');
-$color-border-primary-light: map-get($colors, 'color-border-primary-light');
-$color-border-primary-lighter: map-get($colors, 'color-border-primary-lighter');
-$color-border-primary: map-get($colors, 'color-border-primary');
-$color-border-secondary-light: map-get($colors, 'color-border-secondary-light');
-$color-border-secondary-lighter: map-get($colors, 'color-border-secondary-lighter');
-$color-border-secondary: map-get($colors, 'color-border-secondary');
-$color-border-tertiary-light: map-get($colors, 'color-border-tertiary-light');
-$color-border-tertiary-lighter: map-get($colors, 'color-border-tertiary-lighter');
-$color-border-tertiary: map-get($colors, 'color-border-tertiary');
-$color-border-point-light: map-get($colors, 'color-border-point-light');
-$color-border-point: map-get($colors, 'color-border-point');
-$color-border-danger-light: map-get($colors, 'color-border-danger-light');
-$color-border-danger: map-get($colors, 'color-border-danger');
-$color-border-warning-light: map-get($colors, 'color-border-warning-light');
-$color-border-warning: map-get($colors, 'color-border-warning');
-$color-border-success-light: map-get($colors, 'color-border-success-light');
+$color-border-transparency: map.get($colors, 'color-border-transparency');
+$color-border-inverse: map.get($colors, 'color-border-inverse');
+$color-border-disabled: map.get($colors, 'color-border-disabled');
+$color-border-gray-light: map.get($colors, 'color-border-gray-light');
+$color-border-gray: map.get($colors, 'color-border-gray');
+$color-border-gray-dark: map.get($colors, 'color-border-gray-dark');
+$color-border-gray-darker: map.get($colors, 'color-border-gray-darker');
+$color-border-primary-light: map.get($colors, 'color-border-primary-light');
+$color-border-primary-lighter: map.get($colors, 'color-border-primary-lighter');
+$color-border-primary: map.get($colors, 'color-border-primary');
+$color-border-secondary-light: map.get($colors, 'color-border-secondary-light');
+$color-border-secondary-lighter: map.get($colors, 'color-border-secondary-lighter');
+$color-border-secondary: map.get($colors, 'color-border-secondary');
+$color-border-tertiary-light: map.get($colors, 'color-border-tertiary-light');
+$color-border-tertiary-lighter: map.get($colors, 'color-border-tertiary-lighter');
+$color-border-tertiary: map.get($colors, 'color-border-tertiary');
+$color-border-point-light: map.get($colors, 'color-border-point-light');
+$color-border-point: map.get($colors, 'color-border-point');
+$color-border-danger-light: map.get($colors, 'color-border-danger-light');
+$color-border-danger: map.get($colors, 'color-border-danger');
+$color-border-warning-light: map.get($colors, 'color-border-warning-light');
+$color-border-warning: map.get($colors, 'color-border-warning');
+$color-border-success-light: map.get($colors, 'color-border-success-light');
 
 // color-divider
-$color-divider-gray-light: map-get($colors, 'color-divider-gray-light');
-$color-divider-gray: map-get($colors, 'color-divider-gray');
-$color-divider-gray-dark: map-get($colors, 'color-divider-gray-dark');
-$color-divider-gray-darker: map-get($colors, 'color-divider-gray-darker');
-$color-divider-inverse: map-get($colors, 'color-divider-inverse');
+$color-divider-gray-light: map.get($colors, 'color-divider-gray-light');
+$color-divider-gray: map.get($colors, 'color-divider-gray');
+$color-divider-gray-dark: map.get($colors, 'color-divider-gray-dark');
+$color-divider-gray-darker: map.get($colors, 'color-divider-gray-darker');
+$color-divider-inverse: map.get($colors, 'color-divider-inverse');
 
 // color-text
-$color-text-basic: map-get($colors, 'color-text-basic');
-$color-text-basic-inverse: map-get($colors, 'color-text-basic-inverse');
-$color-text-subcolor: map-get($colors, 'color-text-subcolor');
-$color-text-subcolor-inverse: map-get($colors, 'color-text-subcolor-inverse');
-$color-text-subcolor-light: map-get($colors, 'color-text-subcolor-light');
-$color-text-subcolor-inverse-light: map-get($colors, 'color-text-subcolor-inverse-light');
-$color-text-subcolor-deep: map-get($colors, 'color-text-subcolor-deep');
-$color-text-subcolor-inverse-deep: map-get($colors, 'color-text-subcolor-inverse-deep');
-$color-text-primary: map-get($colors, 'color-text-primary');
-$color-text-secondary: map-get($colors, 'color-text-secondary');
-$color-text-tertiary: map-get($colors, 'color-text-tertiary');
-$color-text-point: map-get($colors, 'color-text-point');
-$color-text-danger: map-get($colors, 'color-text-danger');
-$color-text-warning: map-get($colors, 'color-text-warning');
-$color-text-success: map-get($colors, 'color-text-success');
-$color-text-information: map-get($colors, 'color-text-information');
-$color-link-default: map-get($colors, 'color-link-default');
-$color-link-hover: map-get($colors, 'color-link-hover');
-$color-link-pressed: map-get($colors, 'color-link-pressed');
-$color-link-visited: map-get($colors, 'color-link-visited');
+$color-text-basic: map.get($colors, 'color-text-basic');
+$color-text-basic-inverse: map.get($colors, 'color-text-basic-inverse');
+$color-text-subcolor: map.get($colors, 'color-text-subcolor');
+$color-text-subcolor-inverse: map.get($colors, 'color-text-subcolor-inverse');
+$color-text-subcolor-light: map.get($colors, 'color-text-subcolor-light');
+$color-text-subcolor-inverse-light: map.get($colors, 'color-text-subcolor-inverse-light');
+$color-text-subcolor-deep: map.get($colors, 'color-text-subcolor-deep');
+$color-text-subcolor-inverse-deep: map.get($colors, 'color-text-subcolor-inverse-deep');
+$color-text-primary: map.get($colors, 'color-text-primary');
+$color-text-secondary: map.get($colors, 'color-text-secondary');
+$color-text-tertiary: map.get($colors, 'color-text-tertiary');
+$color-text-point: map.get($colors, 'color-text-point');
+$color-text-danger: map.get($colors, 'color-text-danger');
+$color-text-warning: map.get($colors, 'color-text-warning');
+$color-text-success: map.get($colors, 'color-text-success');
+$color-text-information: map.get($colors, 'color-text-information');
+$color-link-default: map.get($colors, 'color-link-default');
+$color-link-hover: map.get($colors, 'color-link-hover');
+$color-link-pressed: map.get($colors, 'color-link-pressed');
+$color-link-visited: map.get($colors, 'color-link-visited');
 
 // color-alpha
-$color-alpha-base100: map-get($colors, 'color-alpha-base100');
-$color-alpha-base75: map-get($colors, 'color-alpha-base75');
-$color-alpha-base50: map-get($colors, 'color-alpha-base50');
-$color-alpha-base25: map-get($colors, 'color-alpha-base25');
-$color-alpha-base10: map-get($colors, 'color-alpha-base10');
-$color-alpha-base0: map-get($colors, 'color-alpha-base0');
-$color-alpha-inverse100: map-get($colors, 'color-alpha-inverse100');
-$color-alpha-inverse75: map-get($colors, 'color-alpha-inverse75');
-$color-alpha-inverse50: map-get($colors, 'color-alpha-inverse50');
-$color-alpha-inverse25: map-get($colors, 'color-alpha-inverse25');
-$color-alpha-inverse10: map-get($colors, 'color-alpha-inverse10');
-$color-alpha-inverse0: map-get($colors, 'color-alpha-inverse0');
-$color-alpha-shadow1: map-get($colors, 'color-alpha-shadow1');
-$color-alpha-shadow2: map-get($colors, 'color-alpha-shadow2');
-$color-alpha-shadow3: map-get($colors, 'color-alpha-shadow3');
+$color-alpha-base100: map.get($colors, 'color-alpha-base100');
+$color-alpha-base75: map.get($colors, 'color-alpha-base75');
+$color-alpha-base50: map.get($colors, 'color-alpha-base50');
+$color-alpha-base25: map.get($colors, 'color-alpha-base25');
+$color-alpha-base10: map.get($colors, 'color-alpha-base10');
+$color-alpha-base0: map.get($colors, 'color-alpha-base0');
+$color-alpha-inverse100: map.get($colors, 'color-alpha-inverse100');
+$color-alpha-inverse75: map.get($colors, 'color-alpha-inverse75');
+$color-alpha-inverse50: map.get($colors, 'color-alpha-inverse50');
+$color-alpha-inverse25: map.get($colors, 'color-alpha-inverse25');
+$color-alpha-inverse10: map.get($colors, 'color-alpha-inverse10');
+$color-alpha-inverse0: map.get($colors, 'color-alpha-inverse0');
+$color-alpha-shadow1: map.get($colors, 'color-alpha-shadow1');
+$color-alpha-shadow2: map.get($colors, 'color-alpha-shadow2');
+$color-alpha-shadow3: map.get($colors, 'color-alpha-shadow3');
 
 // font
-$font-typo-main-font: map-get($fonts, 'font-typo-main-font');
-$font-typo-icon-en-font: map-get($fonts, 'font-typo-icon-en-font');
+$font-typo-main-font: map.get($fonts, 'font-typo-main-font');
+$font-typo-icon-en-font: map.get($fonts, 'font-typo-icon-en-font');
 
 // font-size
-$font-size-heading-xsmall: map-get($font-size, 'font-size-heading-xsmall');
-$font-size-heading-small: map-get($font-size, 'font-size-heading-small');
-$font-size-heading-medium: map-get($font-size, 'font-size-heading-medium');
-$font-size-heading-large: map-get($font-size, 'font-size-heading-large');
-$font-size-heading-xlarge: map-get($font-size, 'font-size-heading-xlarge');
-$font-size-navigation-XXS: map-get($font-size, 'font-size-navigation-XXS');
-$font-size-navigation-XS: map-get($font-size, 'font-size-navigation-XS');
-$font-size-navigation-S: map-get($font-size, 'font-size-navigation-S');
-$font-size-navigation-M: map-get($font-size, 'font-size-navigation-M');
-$font-size-navigation-L: map-get($font-size, 'font-size-navigation-L');
-$font-size-body-xxsmall: map-get($font-size, 'font-size-body-xxsmall');
-$font-size-body-xsmall: map-get($font-size, 'font-size-body-xsmall');
-$font-size-body-small: map-get($font-size, 'font-size-body-small');
-$font-size-body-medium: map-get($font-size, 'font-size-body-medium');
-$font-size-body-large: map-get($font-size, 'font-size-body-large');
+$font-size-heading-xsmall: map.get($font-size, 'font-size-heading-xsmall');
+$font-size-heading-small: map.get($font-size, 'font-size-heading-small');
+$font-size-heading-medium: map.get($font-size, 'font-size-heading-medium');
+$font-size-heading-large: map.get($font-size, 'font-size-heading-large');
+$font-size-heading-xlarge: map.get($font-size, 'font-size-heading-xlarge');
+$font-size-navigation-XXS: map.get($font-size, 'font-size-navigation-XXS');
+$font-size-navigation-XS: map.get($font-size, 'font-size-navigation-XS');
+$font-size-navigation-S: map.get($font-size, 'font-size-navigation-S');
+$font-size-navigation-M: map.get($font-size, 'font-size-navigation-M');
+$font-size-navigation-L: map.get($font-size, 'font-size-navigation-L');
+$font-size-body-xxsmall: map.get($font-size, 'font-size-body-xxsmall');
+$font-size-body-xsmall: map.get($font-size, 'font-size-body-xsmall');
+$font-size-body-small: map.get($font-size, 'font-size-body-small');
+$font-size-body-medium: map.get($font-size, 'font-size-body-medium');
+$font-size-body-large: map.get($font-size, 'font-size-body-large');
 
 // font-weight
-$font-weight-regular: map-get($font-weight, 'font-weight-regular');
-$font-weight-medium: map-get($font-weight, 'font-weight-medium');
-$font-weight-semibold: map-get($font-weight, 'font-weight-semibold');
-$font-weight-bold: map-get($font-weight, 'font-weight-bold');
+$font-weight-regular: map.get($font-weight, 'font-weight-regular');
+$font-weight-medium: map.get($font-weight, 'font-weight-medium');
+$font-weight-semibold: map.get($font-weight, 'font-weight-semibold');
+$font-weight-bold: map.get($font-weight, 'font-weight-bold');
 
 // font-letter-spacing-
-$letter-spacing-0: map-get($letter-spacing, 'font-letter-spacing-0');
-$letter-spacing-1: map-get($letter-spacing, 'font-letter-spacing-1');
+$letter-spacing-0: map.get($letter-spacing, 'font-letter-spacing-0');
+$letter-spacing-1: map.get($letter-spacing, 'font-letter-spacing-1');
 
 // 4. Output CSS 커스텀 프로퍼티 (HTML, 인라인 스타일 등에서 var() 사용)
 :root {

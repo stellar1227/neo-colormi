@@ -176,6 +176,7 @@ h5 {
       @include font-body-xsmall;
       color: $color-text-subcolor;
     }
+
   }
 
   &.error,
@@ -374,6 +375,28 @@ h5 {
     &.completed input~.search-bg {
       border: 2px solid transparent;
       background-image: linear-gradient($color-background-white, $color-background-white), conic-gradient(from 180deg at 50% 50%, #F4A0BC 0deg, #F1CB40 101.39984965324402deg, #92D1FF 270.5998492240906deg, #F4A0BC 360deg);
+    }
+  }
+
+  &.file {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    [class^=btn-] {
+      width: 100px;
+    }
+
+    .guide {
+      flex: 1;
+      @include ellipsis;
+      -webkit-line-clamp: 1;
+    }
+    
+    .btn-del {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
     }
   }
 }

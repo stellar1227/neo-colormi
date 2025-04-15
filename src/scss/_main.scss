@@ -442,7 +442,8 @@ header {
                 padding: 3px 0;
 
                 a {
-                  display: block;
+                  display: inline-flex;
+                  align-items: center;
                   color: $color-text-subcolor-deep;
                   @include depth-small-medium;
 
@@ -493,7 +494,8 @@ header {
           color: $color-text-subcolor;
 
           .title {
-            display: block;
+            display: flex;
+            align-items: center;
             margin-bottom: 14.5px;
             @include title-medium;
             color: $color-text-basic;
@@ -504,13 +506,52 @@ header {
     }
 
     .status {
+      position: relative;
       display: inline-block;
-      width: 16px;
-      height: 16px;
       margin-left: 2px;
-      vertical-align: -3px;
-      background: url() no-repeat center center/100% 100%;
-      background: #003f6d; //대신 넣은거임. 나중에 삭제
+      line-height: 0;
+      
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url() no-repeat center center/100% 100%;
+        background: #003f6d; //대신 넣은거임. 나중에 삭제
+      }
+
+      &:hover {
+        i {
+          display: block;
+        }
+      }
+
+      i {
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: -45px;
+        height: 24px;
+        padding: 3px 8px;
+        white-space: nowrap;
+        @include font-body-xxsmall;
+        color: $color-text-basic-inverse;
+        border-radius: 4px;
+        background: $color-border-gray-darker;
+        transform: translateX(-35%);
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: -1.7px;
+          left: 50%;
+          width: 10px;
+          height: 10px;
+          background: #292929;
+          border-radius: 2px 0 0 0;
+          transform: rotate(45deg) translateX(-50%);
+        }
+      }
     }
   }
 }

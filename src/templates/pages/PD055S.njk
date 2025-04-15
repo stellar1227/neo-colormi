@@ -210,13 +210,13 @@
     </dl>
   </div>
   <div class="desc-box line-box">
-    <span class="badge line-display-6">묶음배송가능</span>
-    <span class="guide">은 장바구니에서 결제 진행 시, 한 번의 배송비만 결제하게 됩니다.</span>
+    <p class="guide">
+      <span class="badge line-display-6">묶음배송가능</span>
+      은 장바구니에서 결제 진행 시, 한 번의 배송비만 결제하게 됩니다.
+    </p>
   </div>
   <div class="desc-box gray-light-box">
-    <p class="guide-title">
-      오후 6시 이후 접수분은 익일(다음날) 출고됩니다.
-    </p>
+    <p class="guide-title">오후 6시 이후 접수분은 익일(다음날) 출고됩니다.</p>
     <p class="guide">
       선불택배 - 3만원 미만시, 배송비 3,000원 / 3만원 이상시, 배송비 4,500원<br>정매수를 제작할 경우 견적문의를 이용해 주세요. (48절/64절 주문시 연당 재단비 추가)</p>
   </div>
@@ -255,8 +255,8 @@
   <div class="tab-wrap">
     <a href="#product-detail" class="btn-tab active"><span>상품상세</span></a>
     <a href="#product-review" class="btn-tab"><span>이용후기<em>(1,200)</em></span></a>
-    <a href="#" class="btn-tab"><span>상품문의</span></a>
-    <a href="#" class="btn-tab"><span>출고/배송/기타</span></a>
+    <a href="#product-contact" class="btn-tab"><span>상품문의</span></a>
+    <a href="#product-delivery" class="btn-tab"><span>출고/배송/기타</span></a>
   </div>
   <div id="product-detail" class="product-detail"><!-- //더보기 버튼 누르면 .more 추가 -->
     <section class="img-cont">
@@ -363,5 +363,43 @@
         </ul>
       </div>
     </div>
+  </div>
+  <div id="product-contact" class="product-contact">
+    <div class="title-wrap">
+      <p class="cont-title">상품문의</p>
+    </div>
+    <div class="desc-box tertiary-light-box">
+      <p class="guide">
+        상품에 대한 문의는 ‘마이페이지 > 1:1문의’에서 받고 있습니다.<br>작성하신 문의의 대한 답변까지 확인이 가능하니 1:1문의를 이용해주시기 바랍니다.
+      </p>
+      <div class="btn-wrap">
+        <button type="button" class="btn-outline large">
+          <span>1:1 문의</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="product-delivery" class="product-delivery">
+    <div class="title-wrap">
+      <p class="cont-title">출고/배송/기타</p>
+    </div>
+    <div class="desc-box border-box">
+      <p class="guide-title">상품주문 시 유의사항</p>
+      <ul class="guide">
+        <li>- 장바구니 담긴 상품은 최대 7일동안 보관 후 삭제</li>
+        <li>- 상품 결제가 완료된 후에 접수가 진행됩니다.</li>
+        <li>- 주문사양이 같고 배송지가 다른 경우 장바구니 안에서는 주문 불가</li>
+      </ul>
+      <p class="guide-title">취소/환불 안내</p>
+      <ul class="guide">
+        <li>- 결제완료 후 조판이 진행된 주문건 환불/취소 불가</li>
+        <li>- 교정확인 완료 후 제작 진행된 제품, 화면과 색상차이로 인한 재작업 모두 환불/취소 불가</li>
+        <li>- 300dpi 저해상도 이하 파일첨부 경우, 오타 및 내용오류로 인한 환불/취소 불가</li>
+      </ul>
+    </div>
+    <ul class="description">
+      <li>*고객의 실수로 인한 환불/반품/교환/취소 불가합니다.</li>
+      <li>*이미 출고한 상품은 환불/반품/교환/취소 불가합니다.</li>
+    </ul>
   </div>
   {% endblock %}

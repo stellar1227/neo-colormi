@@ -1015,6 +1015,8 @@ h5 {
 
 // description box
 .desc-box {
+  display: flex;
+  flex-direction: column;
   margin-top: 12px;
   text-align: center;
   @include font-body-small;
@@ -1036,6 +1038,25 @@ h5 {
     border-radius: 4px;
     border: 1px solid $Line-line;
     background: $color-background-white;
+    text-align: left;
+    .guide {
+      @include font-body-xsmall;
+    }
+  }
+  
+  &.tertiary-light-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    border-radius: 4px;
+    background: $color-border-tertiary-light;
+    @include font-body-small;
+    text-align: left;
+
+    .btn-outline {
+      width: 175px;
+    }
   }
 
   .guide-title {
@@ -1045,11 +1066,18 @@ h5 {
       margin-top: 16px;
     }
   }
+  .guide {
+    +.guide-title {
+      margin-top: 32px;
+    }
+  }
   .rating-wrap {
     justify-content: center;
 
     +.guide {
       margin-top: 8px;
+      text-align: center;
+      @include font-body-small;
     }
   }
 }

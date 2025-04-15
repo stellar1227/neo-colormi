@@ -130,8 +130,8 @@ $font-weight: (
 );
 
 $letter-spacing: (
-  'font-letter-spacing-0': 0px,
-  'font-letter-spacing-1': 1px
+  'letter-spacing-0': 0px,
+  'letter-spacing-1': 1px
 );
 
 // 3. (Optional) 개별 SCSS 변수로 할당하여 SCSS 코드에서 쉽게 사용하기
@@ -257,9 +257,9 @@ $font-weight-medium: map.get($font-weight, 'font-weight-medium');
 $font-weight-semibold: map.get($font-weight, 'font-weight-semibold');
 $font-weight-bold: map.get($font-weight, 'font-weight-bold');
 
-// font-letter-spacing-
-$letter-spacing-0: map.get($letter-spacing, 'font-letter-spacing-0');
-$letter-spacing-1: map.get($letter-spacing, 'font-letter-spacing-1');
+// letter-spacing-
+$letter-spacing-0: map.get($letter-spacing, 'letter-spacing-0');
+$letter-spacing-1: map.get($letter-spacing, 'letter-spacing-1');
 
 // 4. Output CSS 커스텀 프로퍼티 (HTML, 인라인 스타일 등에서 var() 사용)
 :root {

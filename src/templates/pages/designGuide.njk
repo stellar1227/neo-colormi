@@ -620,44 +620,43 @@
         <h2 class="d-sys">select</h2>
         <!-- form-field button select :active -->
         <div
-          class="form-field active">
-          <!-- 선택누르면 active 클래스 추가 -->
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택</span>
-            </button>
-            <ul class="option-list" style="position: relative;">
-              <li>
-                <button type="button" class="btn-option">option 1</button>
-              </li>
-              <li>
-                <button type="button" class="btn-option">option 2</button>
-              </li>
-            </ul>
+          class="form-field">
+          <div class="form-wrap select">
+            <select name="fruits" class="btn-select">
+              <option selected>선택</option>
+              <option value="apple">옵션 1</option>
+              <option value="orange">옵션 2</option>
+            </select>
           </div>
         </div>
         <!-- form-field button select :error -->
         <div class="form-field error">
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택 :error</span>
-            </button>
+          <div class="form-wrap select">
+            <select name="fruits" class="btn-select">
+              <option selected>선택</option>
+              <option value="apple">옵션 1</option>
+              <option value="orange">옵션 2</option>
+            </select>
           </div>
         </div>
         <!-- form-field button select :disabled -->
         <div class="form-field">
-          <div class="form-wrap">
-            <button type="button" class="btn-select" disabled="disabled">
-              <span>선택 :disabled</span>
-            </button>
+          <div class="form-wrap select">
+            <select name="fruits" class="btn-select" disabled="disabled">
+              <option selected>선택 :disabled</option>
+              <option value="apple">옵션 1</option>
+              <option value="orange">옵션 2</option>
+            </select>
           </div>
         </div>
         <!-- form-field button select :success -->
         <div class="form-field success">
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택 :success</span>
-            </button>
+          <div class="form-wrap select">
+            <select name="fruits" class="btn-select">
+              <option selected>선택 :success</option>
+              <option value="apple">옵션 1</option>
+              <option value="orange">옵션 2</option>
+            </select>
           </div>
         </div>
         <h2 class="d-sys">search</h2>

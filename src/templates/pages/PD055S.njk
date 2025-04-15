@@ -91,18 +91,12 @@
         <div
           class="form-field">
           <!-- 선택누르면 active 클래스 추가 -->
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>메모장</span>
-            </button>
-            <ul class="option-list">
-              <li>
-                <button type="button" class="btn-option">메모장 커버</button>
-              </li>
-              <li>
-                <button type="button" class="btn-option">메모장 세트(커버1개+메모장2부)</button>
-              </li>
-            </ul>
+          <div class="form-wrap select">
+            <select name="fruits" class="btn-select">
+              <option selected>메모장</option>
+              <option value="apple">메모장 커버</option>
+              <option value="orange">메모장 세트(커버1개+메모장2부)</option>
+            </select>
           </div>
         </div>
       </dd>
@@ -300,7 +294,7 @@
       <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품상세 이미지"/>
     </section>
     <div class="btn-wrap">
-      <button type="button" class="btn-outline">
+      <button type="button" class="btn-more">
           <span>상세정보 더보기</span>
         </button>
     </div>

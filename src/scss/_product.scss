@@ -614,12 +614,16 @@
       overflow: visible;
     }
   }
-  .btn-outline {
+  .btn-more {
+    @include button;
+    background: $color-border-inverse;
+    color: $color-text-basic;
     width: 100%;
     height: 60px;
     border-radius: 0;
     border: 1px solid $Line-line;
     @include font-body-small-bold;
+    box-shadow: none;
     span {
       padding: 0;
       &:after {
@@ -778,7 +782,6 @@
     }
     >.btn-title {
       @include font-body-small;
-      &:hover,
       &.active {
         @include font-body-small-bold;
       }

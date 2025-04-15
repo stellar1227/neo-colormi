@@ -301,7 +301,7 @@ header {
             right: 0;
             width: 16px;
             height: 16px;
-            background-image: url(../img/icon/icon-arrow-triangle-16-down.png);
+            background-image: url(../img/icon/icon-arrow-triangle-24-down.png);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 100% 100%;
@@ -316,7 +316,7 @@ header {
         .quick-menu-wrap.active {
           .btn-select {
             &:after {
-              background-image: url(../img/icon/icon-arrow-triangle-16-up.png);
+              transform: rotate(180deg) translateY(50%);
             }
           }
         }

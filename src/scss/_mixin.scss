@@ -1,0 +1,259 @@
+@use 'variables' as *;
+
+// typography
+@mixin font($weight: $font-weight-regular,
+  $size: $font-size-body-medium,
+  $line-height: normal,
+  $family: $font-typo-main-font,
+  $letter-spacing: $letter-spacing-0) {
+  font: #{$weight} #{$size}/#{$line-height} #{$family};
+  letter-spacing: #{$letter-spacing};
+}
+
+// Typography
+// navigation
+@mixin title-small-regular {
+  font: #{$font-weight-regular} #{$font-size-navigation-XS}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+
+@mixin title-medium {
+  font: #{$font-weight-medium} #{$font-size-navigation-M}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin title-semibold {
+  font: #{$font-weight-semibold} #{$font-size-navigation-L}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+// Depth
+@mixin depth-xsmall-semibold {
+  font: #{$font-weight-semibold} #{$font-size-navigation-XS}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin depth-small-medium {
+  font: #{$font-weight-medium} #{$font-size-navigation-S}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin depth-medium {
+  font: #{$font-weight-regular} #{$font-size-navigation-M}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin depth-medium-bold {
+  @include depth-medium;
+  font-weight: #{$font-weight-semibold};
+}
+
+// body
+@mixin font-body-xxsmall {
+  font: #{$font-weight-regular} #{$font-size-body-xxsmall}#{'/'}19px #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-body-xsmall {
+  font: #{$font-weight-regular} #{$font-size-body-xsmall}#{'/'}20px #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-body-small {
+  font: #{$font-weight-regular} #{$font-size-body-small}#{'/'}22px #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-body-medium {
+  font: #{$font-weight-regular} #{$font-size-body-medium}#{'/'}24px #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-body-large {
+  font: #{$font-weight-regular} #{$font-size-body-large}#{'/'}27px #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-body-xxsmall-bold {
+  @include font-body-xxsmall;
+  font-weight: #{$font-weight-semibold};
+}
+
+@mixin font-body-xsmall-bold {
+  @include font-body-xsmall;
+  font-weight: #{$font-weight-semibold};
+}
+
+@mixin font-body-small-bold {
+  @include font-body-small;
+  font-weight: #{$font-weight-semibold};
+}
+
+@mixin font-body-medium-bold {
+  @include font-body-medium;
+  font-weight: #{$font-weight-semibold};
+}
+
+@mixin font-body-large-bold {
+  @include font-body-large;
+  font-weight: #{$font-weight-bold};
+}
+
+// heading
+@mixin font-heading-xlarge-bold {
+  font: #{$font-weight-bold} #{$font-size-heading-xlarge}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-heading-large-bold {
+  font: #{$font-weight-bold} #{$font-size-heading-large}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-heading-medium-bold {
+  font: #{$font-weight-bold} #{$font-size-heading-medium}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-heading-small-bold {
+  font: #{$font-weight-bold} #{$font-size-heading-small}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin font-heading-xsmall-bold {
+  font: #{$font-weight-bold} #{$font-size-heading-xsmall}#{'/'}normal #{$font-typo-main-font};
+  letter-spacing: $letter-spacing-0;
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  // -webkit-line-clamp: 라인 수; 원하는 라인 수 추가해서 사용
+}
+
+// desc-guide text
+@mixin desc-guide {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 4px;
+  border-radius: 2px;
+  background: $color-border-gray-light;
+  // @extend %body-xxsmall;
+  @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 12px);
+  color: $color-text-subcolor;
+}
+
+// button
+@mixin icon-size($width, $height, $only-child-margin: 0) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  font-size: 0;
+
+  &:only-child {
+    margin: $only-child-margin;
+  }
+
+  +span {
+    margin-left: 2px;
+    padding-right: 8px;
+  }
+}
+
+@mixin button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  i {
+    @include icon-size(16px, 16px);
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.plus:before {
+      content: '+';
+      font-size: 12px;
+      background: url('') no-repeat center center/cover;
+    }
+  }
+
+  span {
+    display: inline-block;
+
+    &:only-child {
+      padding: 0 8px;
+    }
+  }
+
+  // 사이즈
+  &.xsmall {
+    height: 32px;
+    @include font-body-xsmall;
+
+    i {
+      @include icon-size(16px, 16px);
+    }
+  }
+
+  &.small {
+    height: 40px;
+    @include font-body-xsmall;
+
+    i {
+      @include icon-size(16px, 16px, 4px);
+    }
+  }
+
+  &.medium {
+    height: 48px;
+    @include font-body-small;
+
+    i {
+      @include icon-size(24px, 24px, 4px);
+    }
+  }
+
+  &.large {
+    height: 56px;
+    @include font-body-small;
+
+    i {
+      @include icon-size(24px, 24px, 8px);
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05),
+      0px 0px 0px 4px $color-border-primary-light;
+  }
+
+  +[class^=btn-] {
+    margin-left: 4px;
+  }
+}
+
+@mixin modal {
+  position: absolute;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid $color-border-gray;
+  background: $color-background-white;
+}

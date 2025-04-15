@@ -1,66 +1,78 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>workSheet</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <style>
-    body{
-        padding:20px;
-    }
-    table{
-        width:100%;
-        table-layout:fixed;
-    }
-    td, th{
-        border:1px solid #ccc;
-        padding:10px 15px;
-        text-align:center;
-    }
-    th{
-        background:#eaeaea;
-    }
-  </style>
-</head>
-<body>
-  <h1>SiteInfo</h1>
-  <table>
-    <tr>
-        <th>
-            Type
-        </th>
-        <th>1depth</th>
-        <th>2depth</th>
-        <th>3depth</th>
-        <th>url</th>
-        <th>status</th>
-        <th>comments</th>
-    </tr>
-    <tr>
-        <td colspan='4'>
-            designSystem
-        </td>
-        <td><a href='./designGuide.html'>pages/designGuide.html</a></td>
-        <td>작성중</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan='4'>
-            code snippets
-        </td>
-        <td><a href='./snippets.html'>pages/snippets.html</a></td>
-        <td>작성중</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan='4'>
-            main
-        </td>
-        <td><a href='./main.html'>pages/main.html</a></td>
-        <td>작성중</td>
-        <td></td>
-    </tr>
-  </table>
-  <script src="/js/colormi-ui.js"></script>
-</body>
-</html>
+{% extends "layouts/base.njk" %}
+{% block content %}
+    <style>
+        .worksheet {
+            padding: 20px;
+        }
+        table {
+            table-fixed: layout;
+            width: 100%;
+        }
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+        }
+        th {
+            background: #ececec;
+        }
+        td {}
+    </style>
+    <div class="worksheet">
+        <h1>SiteInfo</h1>
+        <table>
+            <tr>
+                <th>
+                    Type
+                </th>
+                <th>1depth</th>
+                <th>2depth</th>
+                <th>3depth</th>
+                <th>url</th>
+                <th>status</th>
+                <th>comments</th>
+            </tr>
+            <tr>
+                <td colspan='4'>
+                    designSystem
+                </td>
+                <td>
+                    <a href='./designGuide.html'>pages/designGuide.html</a>
+                </td>
+                <td>작성중</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan='4'>
+                    code snippets
+                </td>
+                <td>
+                    <a href='./snippets.html'>pages/snippets.html</a>
+                </td>
+                <td>작성중</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan='4'>
+                    main
+                </td>
+                <td>
+                    <a href='./main.html'>pages/main.html</a>
+                </td>
+                <td>작성중</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan='4'>
+                    메모장
+                </td>
+                <td>
+                    <a href='./PD055S.html'>pages/PD055S.html</a>
+                </td>
+                <td>작성중</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <script src="/js/colormi-ui.js"></script>
+{% endblock %}

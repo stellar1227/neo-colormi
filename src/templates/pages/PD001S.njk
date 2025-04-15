@@ -11,7 +11,7 @@
         <a href="/">카테고리</a>
       </li>
       <li>
-        <strong>메모장</strong>
+        <strong>무선제본</strong>
       </li>
     </ol>
   </nav>
@@ -22,9 +22,6 @@
       <div class="product-img">이미지</div>
       <div class="product-info">
         <div class="top-area">
-          <div class="badge-wrap">
-            <span class="badge fill-display-2 large">10% SALE</span>
-          </div>
           <p class="product-name">상품명</p>
           <div class="btn-wrap">
             <a href="" class="btn-share">공유하기</a>
@@ -59,12 +56,52 @@
         </div>
         <div class="product-text">
           <p class="text-default">기본정보가 노출되는 줄입니다.</p>
+          <p class="text-content">표지 옵션이 노출되는 줄입니다.</p>
+          <p class="text-content">내지 옵션이 노출되는 줄입니다.</p>
+          <p class="text-content">간지5 / 면지5</p>
+          <p class="text-content">간지5 / 면지5</p>
           <p class="text-content">제목 및 내용이 노출되는 줄입니다.</p>
         </div>
+        <div class="desc-box tertiary-light-box small">
+          <div class="quote-wrap">
+            <div class="quote-title">
+              <p class="title">한눈에<strong>견적보기</strong></p>
+              <p class="description">공급가+부가세 포함</p>
+            </div>
+            <div class="quote-check">
+              <div class="checkbox-wrap">
+                <label class="checkbox" for="check-0-1">
+                  <input type="checkbox" id="check-0-1"/>
+                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-label">흑백</span>
+                </label>
+                <span class="price"><em>100,000,000</em>원</span>
+              </div>
+              <div class="checkbox-wrap">
+                <label class="checkbox" for="check-0-2">
+                  <input type="checkbox" id="check-0-2"/>
+                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-label">인디고</span>
+                </label>
+                <span class="price"><em>100,000,000</em>원</span>
+              </div>
+              <div class="checkbox-wrap">
+                <label class="checkbox" for="check-0-3">
+                  <input type="checkbox" id="check-0-3"/>
+                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-label">캐논IX</span>
+                </label>
+                <span class="price"><em>100,000,000</em>원</span>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn-black xsmall">
+              <span>적용</span>
+            </button>
+          </div>
+        </div>
         <dl class="product-price">
-          <dt class="discount-title">할인금액</dt>
-          <dd class="discount-price">
-            <strong>100,000,000</strong>원</dd>
           <dt class="total-title">총 상품 금액</dt>
           <dd class="total-price">
             <strong>100,000,000</strong>원</dd>
@@ -163,10 +200,103 @@
       </dd>
     </dl>
   </div>
+  <!-- 표지/내지 -->
+  <div class="product-order-wrap">
+    <div class="product-order">
+      <div class="title-wrap">
+        <h5 class="required">표지</h5>
+      </div>
+      <dl class="product-option">
+        <dt class="required">제목</dt>
+        <dd>
+          <div class="form-field width-436">
+            <input type="text" placeholder="Placeholder"/>
+          </div>
+        </dd>
+        <dt>웹하드</dt>
+        <dd>
+          <button type="button" class="btn-outline xsmall">
+            <span>웹하드 업로드</span>
+          </button>
+          <dl class="desc-guide line-round">
+            <dt>ID</dt>
+            <dd>colomi</dd>
+            <dt>PW</dt>
+            <dd>1234</dd>
+          </dl>
+          <span class="guide-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+        </dd>
+        <dt>요청사항</dt>
+        <dd>
+          <div class="form-field textarea">
+            <div class="form-wrap">
+              <textarea id="textarea" placeholder="Placeholder"></textarea>
+            </div>
+          </div>
+        </dd>
+        <dt>배송방법</dt>
+        <dd>
+          <div
+            class="form-field width-436">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>선불택배</option>
+              </select>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div class="product-order">
+      <div class="title-wrap">
+        <h5>내지</h5>
+      </div>
+      <dl class="product-option">
+        <dt class="required">제목</dt>
+        <dd>
+          <div class="form-field width-436">
+            <input type="text" placeholder="Placeholder"/>
+          </div>
+        </dd>
+        <dt>웹하드</dt>
+        <dd>
+          <button type="button" class="btn-outline xsmall">
+            <span>웹하드 업로드</span>
+          </button>
+          <dl class="desc-guide line-round">
+            <dt>ID</dt>
+            <dd>colomi</dd>
+            <dt>PW</dt>
+            <dd>1234</dd>
+          </dl>
+          <span class="guide-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+        </dd>
+        <dt>요청사항</dt>
+        <dd>
+          <div class="form-field textarea">
+            <div class="form-wrap">
+              <textarea id="textarea" placeholder="Placeholder"></textarea>
+            </div>
+          </div>
+        </dd>
+        <dt>배송방법</dt>
+        <dd>
+          <div
+            class="form-field width-436">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>선불택배</option>
+              </select>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </div>
+  </div>
   <!-- 주문내용 -->
   <div class="product-order">
     <div class="title-wrap">
-      <h5>주문내용</h5>
+      <h5 class="required">주문내용</h5>
     </div>
     <dl class="product-option">
       <dt class="required">제목</dt>

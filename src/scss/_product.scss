@@ -228,6 +228,10 @@
     flex-direction: row;
     gap: 0 56px;
     margin-bottom: 48px;
+
+    >.btn-wrap {
+      display: none;
+    }
   }
 
   .rating-wrap {
@@ -246,9 +250,25 @@
     flex-direction: column;
     flex: 1;
 
+    .top-area {
+      position: relative;
+      padding-right: 48px;
+
+      .btn-wrap {
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+        .btn-share {
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+
     .product-name {
       @include font-heading-medium-bold;
-      // font-weight: 700;
       color: $color-text-basic;
       margin-bottom: 10px;
     }
@@ -296,10 +316,10 @@
         color: $color-text-basic;
       }
     }
-  }
 
-  .btn-wrap {
-    display: none;
+    .desc-box {
+      margin-top:16px;
+    }
   }
 
   &.scroll {
@@ -364,6 +384,13 @@
   justify-content: space-between;
 }
 
+.product-order-wrap {
+  display: flex;
+  gap: 0 80px;
+  >* {
+    flex: 1 1 50%;
+  }
+}
 .product-order {
   margin-bottom: 40px;
 
@@ -770,6 +797,52 @@
       }
       +.btn-title {
         margin-left: 24px;
+      }
+    }
+  }
+}
+
+.quote-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  .quote-title {
+    flex: 0 auto;
+    min-width: 180px;
+
+    .title {
+      color: $color-text-tertiary;
+      @include font-body-large;
+
+      strong {
+        display: block;
+        @include font-heading-small-bold;
+      }
+    }
+    
+    .description {
+      margin-top: 20px;
+      @include font-body-xxsmall;
+    }
+  }
+
+  .quote-check {
+    flex: 1;
+
+    .checkbox-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2px 0;
+      margin: 4px 0;
+
+      .checkbox-label {
+        font-weight: $font-weight-bold;
+        color: $color-text-subcolor-deep;
+      }
+      .price {
+        @include font-body-small-bold;
       }
     }
   }

@@ -1080,6 +1080,12 @@ h5 {
     .btn-outline {
       width: 175px;
     }
+
+    &.small {
+      gap: 32px;
+      padding: 16px 24px;
+      border-radius: 6px;
+    }
   }
 
   .guide-title {

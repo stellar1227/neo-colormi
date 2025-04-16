@@ -191,6 +191,18 @@
       font-size: 12px;
       background: url('') no-repeat center center/cover;
     }
+
+    &.step-ing:before {
+      background: olivedrab url('') no-repeat center center/cover;
+    }
+    
+    &.step-end:before {
+      background: #fff url('') no-repeat center center/cover;
+    }
+    
+    &.step-cart:before {
+      background: #fff url('') no-repeat center center/cover;
+    }
   }
 
   span {

@@ -686,6 +686,21 @@ h5 {
 }
 
 // button
+#container {
+  >.btn-wrap {
+    justify-content: center;
+    margin-top: 48px;
+
+    [class^=btn-] {
+      min-width: 180px;
+    }
+
+    [class^=btn-] + [class^=btn-] {
+      margin-left: 8px;
+    }
+  }
+}
+
 .btn-wrap {
   display: flex;
 }
@@ -739,10 +754,39 @@ h5 {
   }
 }
 
+.btn-secondary {
+  @include button;
+  border-color: $color-border-secondary;
+  background: $color-border-secondary;
+  color: $color-text-subcolor-inverse;
+}
+.btn-tertiary {
+  @include button;
+  border-color: $color-border-tertiary;
+  background: $color-border-tertiary;
+  color: $color-text-subcolor-inverse;
+}
+.btn-outline-tertiary {
+  @include button;
+  padding: 0 10px;
+  border-color: $color-border-tertiary;
+  background: $color-background-white;
+  color: $color-text-tertiary;
+  box-shadow: none;
+
+  span {
+    padding: 0;
+
+    +i {
+      margin-left: 2px;
+    }
+  }
+}
+
 .btn-outline {
   @include button;
   border-color: $color-border-gray-dark;
-  background: $color-border-inverse;
+  background: $color-background-white;
   color: $color-text-basic;
 
   // disabled
@@ -1223,4 +1267,11 @@ h5 {
       }
     }
   }
+}
+
+// table
+.util-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }

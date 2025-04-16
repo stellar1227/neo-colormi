@@ -1007,6 +1007,11 @@
           }
         }
       }
+
+      &:before {
+        content: attr(data-label);
+        display: none;
+      }
     }
   }
 

@@ -46,6 +46,7 @@
 
   .cont-title {
     @include font-body-large-bold;
+
     span {
       padding-left: 4px;
       color: $color-text-primary;
@@ -54,11 +55,14 @@
     &.small {
       @include font-body-small-bold;
     }
+
     >.btn-title {
       @include font-body-small;
+
       &.active {
         @include font-body-small-bold;
       }
+
       +.btn-title {
         margin-left: 24px;
       }
@@ -83,13 +87,18 @@
 }
 
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   height: 22px;
   padding: 2px 10px;
-  gap: 3px;
+  // gap: 3px;
   border-radius: 50px;
   @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 16px, $family: ($font-typo-icon-en-font, $font-typo-main-font));
   white-space: nowrap;
+
+  i {
+    font-size: 0;
+  }
 
   +.badge {
     margin-left: 8px;
@@ -99,6 +108,22 @@
     height: 25px;
     padding: 4px 10px;
     font-size: $font-size-body-xsmall;
+  }
+
+  &.square {
+    height: 32px;
+    padding: 0 10px;
+    font-size: $font-size-body-xsmall;
+    border-radius: 4px;
+
+    &:before {
+      order: 2;
+      margin: 0 0 0 2px;
+    }
+
+    &:has(i):before {
+      margin: 0;
+    }
   }
 
   &.fill-display-2 {
@@ -111,13 +136,26 @@
     background: $color-border-gray-dark;
   }
 
+  &.fill-secondary {
+    border-color: $color-border-secondary;
+    background: $color-border-secondary;
+    color: $color-text-subcolor-inverse;
+  }
+
+  &.fill-tertiary {
+    border-color: $color-border-tertiary;
+    background: $color-border-tertiary;
+    color: $color-text-subcolor-inverse;
+  }
+
   @each $class, $values in ('line-display-1': ($Display-Status-Display-1, rgba(250, 92, 84, 0.10)),
     'line-display-3': ($Display-Status-Display-3, rgba(235, 141, 87, 0.10)),
     'line-display-4': ($Display-Status-Display-4, rgba(132, 200, 96, 0.10)),
     'line-display-6': ($Display-Status-Display-6, rgba(91, 197, 210, 0.10)),
     'line-display-7': ($Display-Status-Display-7, rgba(114, 132, 198, 0.10)),
     'line-display-8': ($Display-Status-Display-8, rgba(164, 84, 221, 0.10)),
-    'line-display-9': ($Display-Status-Display-9, rgba(246, 91, 144, 0.10))) {
+    'line-display-9': ($Display-Status-Display-9, rgba(246, 91, 144, 0.10)),
+    'line-tertiary': ($color-border-tertiary, $color-background-white)) {
     &.#{$class} {
       color: nth($values, 1);
       border: 1px solid nth($values, 1);
@@ -129,19 +167,22 @@
     display: inline-block;
     width: 16px;
     height: 16px;
+    margin-right: 3px;
     background-color: #003f6d; // 나중에 삭제 예정
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
-    vertical-align: -3px;
   }
 
-  /* before에 background-image 적용할 클래스들 (recommend, new, best, discount-1, discount-2) */
+  /* before에 background-image 적용할 클래스들 (recommend, new, best, discount-1, discount-2, step-ing, step-end, step-cart) */
   @each $class, $img in ('recommend': 'recommend.png',
     'new': 'new.png',
     'best': 'best.png',
     'discount-1': 'discount-1.png',
-    'discount-2': 'discount-2.png'
+    'discount-2': 'discount-2.png',
+    'step-ing': 'step-ing.png',
+    'step-end': 'step-end.png',
+    'step-cart': 'step-cart.png'
 
   ) {
     &.#{$class} {
@@ -203,12 +244,13 @@
       }
     }
   }
+
   .text {
     padding-left: 10px;
     @include font-body-small-bold;
     color: $color-text-subcolor;
   }
-  
+
   .user-name {
     padding-left: 8px;
     @include font-body-xsmall;
@@ -219,7 +261,7 @@
     .rating-container {
       width: 120px;
       height: 24px;
-  
+
       &.input {
         label {
           display: inline-block;
@@ -234,7 +276,7 @@
     .rating-container {
       width: 160px;
       height: 32px;
-  
+
       &.input {
         label {
           display: inline-block;
@@ -243,6 +285,7 @@
         }
       }
     }
+
     .text {
       padding-left: 8px;
       @include font-body-large-bold;
@@ -293,7 +336,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        
+
         .btn-share {
           display: inline-block;
           width: 36px;
@@ -313,7 +356,7 @@
       @include font-body-xsmall;
       color: $color-text-subcolor-deep;
 
-      .text + .text {
+      .text+.text {
         margin-top: 4px;
       }
     }
@@ -353,7 +396,7 @@
     }
 
     .desc-box {
-      margin-top:16px;
+      margin-top: 16px;
     }
   }
 
@@ -417,10 +460,12 @@
 .product-order-wrap {
   display: flex;
   gap: 0 80px;
+
   >* {
     flex: 1 1 50%;
   }
 }
+
 .product-order {
   margin-bottom: 40px;
 
@@ -508,6 +553,7 @@
       .width-436 {
         width: 436px;
       }
+
       .form-field {
         &.file {
           max-width: 436px;
@@ -525,6 +571,7 @@
       }
     }
   }
+
   [class^=btn-] {
 
     input[type=file] {
@@ -581,6 +628,7 @@
         content: none;
       }
     }
+
     .icon-sum {
       color: $color-text-basic-inverse;
       background: $color-border-gray-dark;
@@ -646,6 +694,7 @@
   align-items: center;
   margin-top: 48px;
   border: 1px solid $Line-line;
+
   .btn-tab {
     display: inline-flex;
     align-items: center;
@@ -653,13 +702,16 @@
     flex: 1;
     height: 60px;
     border-left: 1px solid $Line-line;
+
     span {
       display: inline-block;
       @include font-body-medium;
       color: $color-text-basic;
     }
+
     &.active {
       background: $color-border-gray-dark;
+
       span {
         font-weight: $font-weight-semibold;
         color: $color-text-basic-inverse;
@@ -670,20 +722,24 @@
 
 .product-detail {
   margin-top: 48px;
+
   .img-cont {
     overflow: hidden;
     max-height: 488px;
     padding: 0 100px;
+
     img {
       width: 100%;
     }
   }
+
   &.more {
     .img-cont {
       max-height: max-content;
       overflow: visible;
     }
   }
+
   .btn-more {
     @include button;
     background: $color-border-inverse;
@@ -694,8 +750,10 @@
     border: 1px solid $Line-line;
     @include font-body-small-bold;
     box-shadow: none;
+
     span {
       padding: 0;
+
       &:after {
         content: '';
         display: inline-block;
@@ -720,11 +778,11 @@
       gap: 0 15px;
       overflow: hidden;
       height: 120px;
-      
+
       li {
         flex: 0 120px;
         border-radius: 4px;
-        
+
         a {
           overflow: hidden;
           display: block;
@@ -733,13 +791,14 @@
           border-radius: 4px;
           border: 1px solid $Line-line;
           background: $color-border-gray-light;
-          
+
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
         }
+
         &.btn-more {
           a {
             display: flex;
@@ -769,7 +828,8 @@
 
   &-list {
     border-top: 1px solid $Line-line-3;
-    .list { 
+
+    .list {
       .list-item a {
         display: flex;
         gap: 0 24px;
@@ -819,6 +879,7 @@
             @include ellipsis;
             -webkit-line-clamp: 2;
           }
+
           .text-content {
             @include font-body-small;
             color: $color-text-basic;
@@ -854,7 +915,7 @@
         @include font-heading-small-bold;
       }
     }
-    
+
     .description {
       margin-top: 20px;
       @include font-body-xxsmall;
@@ -875,6 +936,7 @@
         font-weight: $font-weight-bold;
         color: $color-text-subcolor-deep;
       }
+
       .price {
         @include font-body-small-bold;
       }
@@ -888,10 +950,10 @@
     display: grid;
     grid-template-columns: 4.2% 1fr 11.7% 16.7% 11.7% 11.7%;
     border-bottom: 1px solid $color-border-gray;
-    
+
     &.header {
       border-bottom-color: $color-border-gray-dark;
-      
+
       .item {
         padding: 14px 16px;
         @include font-body-small-bold;
@@ -899,7 +961,7 @@
         color: $color-text-basic;
       }
     }
-    
+
     .item {
       display: flex;
       align-items: center;
@@ -961,7 +1023,7 @@
         align-items: center;
 
         dt {
-  
+
           &.total-sum {
             @include font-body-small-bold;
 

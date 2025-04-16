@@ -458,7 +458,7 @@ header {
         }
       }
 
-      .product-info {
+      .product-wrap {
         width: 566px;
         padding-left: 32px;
         border-left: 1px solid $Line-line;
@@ -469,6 +469,9 @@ header {
           align-items: center;
           justify-content: center;
           gap: 0 16px;
+          width: auto;
+          height: auto;
+          border: none;
 
           li {
             overflow: hidden;
@@ -487,19 +490,23 @@ header {
 
         }
 
-        .product-text {
+        .product-info {
           margin-top: 20px;
           color: $color-text-basic;
           @include font-body-xsmall;
           color: $color-text-subcolor;
 
-          .title {
+          .product-name {
             display: flex;
             align-items: center;
-            margin-bottom: 14.5px;
+            margin-bottom: 12px;
             @include title-medium;
             color: $color-text-basic;
 
+          }
+
+          [class^=guide] {
+            padding: 0;
           }
         }
       }

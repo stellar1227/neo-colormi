@@ -278,7 +278,7 @@
       @include font-body-xsmall;
       color: $color-text-subcolor-deep;
 
-      [class^=text-]+[class^=text-] {
+      .text + .text {
         margin-top: 4px;
       }
     }
@@ -483,17 +483,6 @@
           max-width: 436px;
         }
       }
-    }
-
-    .guide {
-      padding-left: 8px;
-      @include font-body-small;
-      color: $color-text-subcolor;
-      &-deep {
-        padding-left: 8px;
-        @include font-body-small;
-        color: $color-text-subcolor;
-        color: $color-text-subcolor-deep;}
     }
 
     &.columns-4 {

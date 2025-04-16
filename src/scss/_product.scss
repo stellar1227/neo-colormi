@@ -91,7 +91,6 @@
   align-items: center;
   height: 22px;
   padding: 2px 10px;
-  // gap: 3px;
   border-radius: 50px;
   @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 16px, $family: ($font-typo-icon-en-font, $font-typo-main-font));
   white-space: nowrap;

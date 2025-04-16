@@ -7,123 +7,105 @@
   $family: $font-typo-main-font,
   $letter-spacing: $letter-spacing-0) {
   font: #{$weight} #{$size}/#{$line-height} #{$family};
-  letter-spacing: #{$letter-spacing};
+  letter-spacing: $letter-spacing;
 }
 
 // Typography
-// navigation
-@mixin title-small-regular {
-  font: #{$font-weight-regular} #{$font-size-navigation-XS}#{'/'}normal #{$font-typo-main-font};
+@mixin build-font($weight, $size, $lineHeight, $family: $font-typo-main-font) {
+  font: #{$weight} #{$size}/#{$lineHeight} #{$family};
   letter-spacing: $letter-spacing-0;
 }
 
+// navigation
+@mixin title-small-regular {
+  @include build-font($font-weight-regular, $font-size-navigation-XS, normal);
+}
 
 @mixin title-medium {
-  font: #{$font-weight-medium} #{$font-size-navigation-M}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-medium, $font-size-navigation-M, normal);
 }
 
 @mixin title-semibold {
-  font: #{$font-weight-semibold} #{$font-size-navigation-L}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-semibold, $font-size-navigation-L, normal);
 }
 
 // Depth
 @mixin depth-xsmall-semibold {
-  font: #{$font-weight-semibold} #{$font-size-navigation-XS}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-semibold, $font-size-navigation-XS, normal);
 }
 
 @mixin depth-small-medium {
-  font: #{$font-weight-medium} #{$font-size-navigation-S}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-medium, $font-size-navigation-S, normal);
 }
 
 @mixin depth-medium {
-  font: #{$font-weight-regular} #{$font-size-navigation-M}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-navigation-M, normal);
 }
 
 @mixin depth-medium-bold {
-  @include depth-medium;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-navigation-M, normal);
 }
 
 // body
 @mixin font-body-xxsmall {
-  font: #{$font-weight-regular} #{$font-size-body-xxsmall}#{'/'}19px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-xxsmall, 19px);
 }
 
 @mixin font-body-xsmall {
-  font: #{$font-weight-regular} #{$font-size-body-xsmall}#{'/'}20px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-xsmall, 20px);
 }
 
 @mixin font-body-small {
-  font: #{$font-weight-regular} #{$font-size-body-small}#{'/'}22px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-small, 22px);
 }
 
 @mixin font-body-medium {
-  font: #{$font-weight-regular} #{$font-size-body-medium}#{'/'}24px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-medium, 24px);
 }
 
 @mixin font-body-large {
-  font: #{$font-weight-regular} #{$font-size-body-large}#{'/'}27px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-large, 27px);
 }
 
 @mixin font-body-xxsmall-bold {
-  @include font-body-xxsmall;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-xxsmall, 19px);
 }
 
 @mixin font-body-xsmall-bold {
-  @include font-body-xsmall;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-xsmall, 20px);
 }
 
 @mixin font-body-small-bold {
-  @include font-body-small;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-small, 22px);
 }
 
 @mixin font-body-medium-bold {
-  @include font-body-medium;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-medium, 24px);
 }
 
 @mixin font-body-large-bold {
-  @include font-body-large;
-  font-weight: #{$font-weight-bold};
+  @include build-font($font-weight-bold, $font-size-body-large, 27px);
 }
 
 // heading
 @mixin font-heading-xlarge-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-xlarge}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-xlarge, normal);
 }
 
 @mixin font-heading-large-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-large}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-large, normal);
 }
 
 @mixin font-heading-medium-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-medium}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-medium, normal);
 }
 
 @mixin font-heading-small-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-small}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-small, normal);
 }
 
 @mixin font-heading-xsmall-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-xsmall}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-xsmall, normal);
 }
 
 @mixin ellipsis {
@@ -142,7 +124,6 @@
   padding: 1px 4px;
   border-radius: 2px;
   background: $color-border-gray-light;
-  // @extend %body-xxsmall;
   @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 12px);
   color: $color-text-subcolor;
 }
@@ -195,11 +176,11 @@
     &.step-ing:before {
       background: olivedrab url('') no-repeat center center/cover;
     }
-    
+
     &.step-end:before {
       background: #fff url('') no-repeat center center/cover;
     }
-    
+
     &.step-cart:before {
       background: #fff url('') no-repeat center center/cover;
     }
@@ -262,10 +243,51 @@
   }
 }
 
+// disabled
+@mixin button-disabled {
+
+  &:disabled,
+  &:disabled:hover {
+    border: 1px solid $Line-line;
+    color: $color-divider-gray;
+    border-color: $color-border-gray-light;
+    background: $color-border-gray-light;
+  }
+}
+
 @mixin modal {
   position: absolute;
   padding: 16px 20px;
   border-radius: 8px;
   border: 1px solid $color-border-gray;
   background: $color-background-white;
+}
+
+@mixin alert {
+  display: flex;
+  gap: 0 8px;
+  padding: 16px;
+  border-radius: 12px;
+  @include font-body-small;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+
+  dl {
+    flex: 1 0 auto;
+    margin: 1px 0;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
 }

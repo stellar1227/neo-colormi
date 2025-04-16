@@ -714,17 +714,9 @@ h5 {
   background: $color-border-primary;
   color: $color-text-basic-inverse;
 
-  // disabled
-  &:disabled,
-  &:disabled:hover {
-    border: 1px solid $Line-line;
-    color: $color-divider-gray;
-    border-color: $color-border-gray-light;
-    background: $color-border-gray-light;
-  }
+  @include button-disabled;
 
   &:hover {
-    color: $color-text-basic-inverse;
     border-color: #F181A6;
     background: #F181A6;
   }
@@ -741,14 +733,7 @@ h5 {
   background: $color-border-gray-dark;
   color: $color-text-basic-inverse;
 
-  // disabled
-  &:disabled,
-  &:disabled:hover {
-    border: 1px solid $Line-line;
-    color: $color-divider-gray;
-    border-color: $color-border-gray-light;
-    background: $color-border-gray-light;
-  }
+  @include button-disabled;
 
   &:hover,
   &:active {
@@ -763,14 +748,7 @@ h5 {
   background: $color-background-white;
   color: $color-text-basic;
 
-  // disabled
-  &:disabled,
-  &:disabled:hover {
-    border: 1px solid $Line-line;
-    color: $color-divider-gray;
-    border-color: $color-border-gray-light;
-    background: $color-border-gray-light;
-  }
+  @include button-disabled;
 
   &:hover {
     border-color: $color-border-gray-dark;
@@ -821,7 +799,7 @@ h5 {
 
 .btn-text {
   @include button;
-  border: 0 none;
+  border: 0;
   color: $color-text-subcolor;
   height: auto;
   border-radius: 0;
@@ -861,7 +839,7 @@ h5 {
 
 .btn-top {
   @include button;
-  border: 0 none;
+  border: 0;
   background: $color-border-gray-light;
   color: $color-text-basic;
   border-radius: 10px;
@@ -905,37 +883,8 @@ h5 {
   }
 }
 
-%alert {
-  display: flex;
-  gap: 0 8px;
-  padding: 16px;
-  border-radius: 12px;
-  @include font-body-small;
-
-  &:before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 2px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
-  }
-
-  dl {
-    flex: 1 0 auto;
-    margin: 1px 0;
-  }
-
-  .title {
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-}
-
 .alert-danger {
-  @extend %alert;
+  @include alert;
   background: $color-border-danger-light;
 
   &:before {
@@ -949,7 +898,7 @@ h5 {
 }
 
 .alert-warning {
-  @extend %alert;
+  @include alert;
   background: $color-border-warning-light;
 
   &:before {
@@ -963,7 +912,7 @@ h5 {
 }
 
 .alert-success {
-  @extend %alert;
+  @include alert;
   background: $color-border-success-light;
 
   &:before {
@@ -977,7 +926,7 @@ h5 {
 }
 
 .alert-information {
-  @extend %alert;
+  @include alert;
   background: $color-border-secondary-light;
 
   &:before {
@@ -1050,8 +999,8 @@ h5 {
   &-sub {
     @include font-body-small;
     color: $color-text-subcolor;
-
     /* #969696 */
+
     *+& {
       padding-left: 8px;
     }
@@ -1160,6 +1109,10 @@ h5 {
     +[class$=-title] {
       margin-top: 32px;
     }
+  }
+
+  ul[class^=guide-] {
+    padding: 0;
   }
 
   .rating-wrap {

@@ -235,8 +235,7 @@ h5 {
     select,
     .btn-select {
       &:after {
-        // transform: rotate(180deg) translateY(50%);
-        background-image: url(../img/icon/icon-arrow-16-up.png);
+        transform: rotate(180deg) translateY(50%);
       }
     }
 
@@ -299,7 +298,6 @@ h5 {
         height: 84px;
         padding: 10px 12px;
         border-radius: 4px;
-        // background-color: $gray-0;
       }
     }
 
@@ -325,7 +323,6 @@ h5 {
       input {
         height: 48px;
         padding-right: 86px;
-        // box-shadow: none;
         border: none;
         border-radius: 8px;
         background: transparent;
@@ -744,6 +741,7 @@ h5 {
 
 .btn-outline {
   @include button;
+  box-shadow: none;
   border-color: $color-border-gray-dark;
   background: $color-background-white;
   color: $color-text-basic;
@@ -764,7 +762,8 @@ h5 {
 
 .btn-round {
   @include button;
-  border-color: $color-border-gray-dark;
+  box-shadow: none;
+  border-color: $color-border-gray;
   background: $color-border-inverse;
   color: $color-text-basic;
   border-radius: 24px;
@@ -774,13 +773,35 @@ h5 {
 
   &.icon {
     height: 36px;
+    
+    span {
+      position: relative;
+      padding-right: 16px !important;
 
-    &:after {
-      content: '';
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 1px solid $color-border-gray-dark;
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 5.5px;
+        top: calc(50% - 1.5px);
+        width: 1px;
+        height: 5px;
+        border-radius: 1px;
+        background: $color-text-basic;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 5.5px;
+        top: calc(50% + 1.5px);
+        width: 1px;
+        height: 5px;
+        border-radius: 1px;
+        background: $color-text-basic;
+        transform: translateY(-50%)  rotate(45deg);
+      }
     }
   }
 
@@ -794,6 +815,15 @@ h5 {
     border-color: $color-border-gray-dark;
     background: $color-border-gray-dark;
     color: $color-text-basic-inverse;
+
+    &.icon {
+      span {
+        &:before,
+        &:after {
+          background: $color-background-white;
+        }
+      }
+    }
   }
 }
 
@@ -995,15 +1025,16 @@ h5 {
 }
 
 // guide text
+*+span.guide-sub,
+*+span.guide-sub-deep,
+*+span.guide-basic {
+  padding-left: 8px;
+}
 .guide {
   &-sub {
     @include font-body-small;
     color: $color-text-subcolor;
     /* #969696 */
-
-    *+& {
-      padding-left: 8px;
-    }
 
     &.small {
       @include font-body-xsmall
@@ -1013,11 +1044,7 @@ h5 {
   &-sub-deep {
     @include font-body-small;
     color: $color-text-subcolor-deep;
-
     /* #737373 */
-    *+& {
-      padding-left: 8px;
-    }
 
     &.small {
       @include font-body-xsmall
@@ -1027,11 +1054,7 @@ h5 {
   &-basic {
     @include font-body-small;
     color: $color-text-basic;
-
     /* #4c4c4c */
-    *+& {
-      padding-left: 8px;
-    }
 
     &-title {
       @include font-body-small-bold;
@@ -1109,10 +1132,6 @@ h5 {
     +[class$=-title] {
       margin-top: 32px;
     }
-  }
-
-  ul[class^=guide-] {
-    padding: 0;
   }
 
   .rating-wrap {

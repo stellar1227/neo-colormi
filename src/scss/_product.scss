@@ -1012,6 +1012,28 @@
         content: attr(data-label);
         display: none;
       }
+
+      &.no-item {
+        grid-column: 1/7;
+        flex-direction: column;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 216px;
+          height: 161px;
+          margin-bottom: 20px;
+          border: 1px solid $color-border-gray;
+        }
+
+        .guide-sub-deep {
+          margin-top: 12px;
+        }
+
+        .btn-wrap {
+          margin-top: 20px;
+        }
+      }
     }
   }
 

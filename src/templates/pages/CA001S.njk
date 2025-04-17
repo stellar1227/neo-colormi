@@ -1,11 +1,9 @@
 {% extends "layouts/base.njk" %}
 {% set title = "장바구니" %}
 {% block content %}
-  <section class="content-box">
-    <div class="title center">
-      <h3>장바구니</h3>
-    </div>
-  </section>
+  <div class="title-box center">
+    <h3>장바구니</h3>
+  </div>
   <section class="content-box">
     <div class="util-wrap">
       <div class="btn-wrap">
@@ -138,14 +136,12 @@
       </div>
     </div>
   </section>
-  <section class="content-box">
-    <div class="btn-wrap confirm">
-      <button type="button" class="btn-outline medium">
-        <span>견적문의</span>
-      </button>
-      <button type="button" class="btn-primary medium">
-        <span>주문하기</span>
-      </button>
-    </div>
-  </section>
+  <div class="btn-wrap confirm">
+    <button type="button" class="btn-outline medium">
+      <span>견적문의</span>
+    </button>
+    <button type="button" class="btn-primary medium">
+      <span>주문하기</span>
+    </button>
+  </div>
 {% endblock %}

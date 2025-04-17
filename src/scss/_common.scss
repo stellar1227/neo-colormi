@@ -37,6 +37,8 @@ h5 {
 #container {
   margin: 48px auto;
 
+  >.title-box + section.content-box,
+  section.content-box + .btn-wrap.confirm,
   section.content-box + section.content-box {
     margin-top: 48px;
   }

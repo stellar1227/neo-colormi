@@ -2,7 +2,7 @@
 @use 'variables' as *;
 
 .breadcrumb {
-  margin-bottom: 16px;
+  margin: -32px 0 16px;
   padding: 3px 0 2px;
 
   >ol {
@@ -42,7 +42,10 @@
 .title-wrap {
   display: flex;
   justify-content: space-between;
-  margin: 40px 0 16px;
+  
+  &:not(:first-of-type) {
+    margin: 40px 0 16px;
+  }
 
   .cont-title {
     @include font-body-large-bold;
@@ -71,7 +74,6 @@
 }
 
 .title {
-  margin: 32px 0 48px;
 
   &.center {
     text-align: center;
@@ -300,11 +302,11 @@
 }
 
 .product-wrap {
+
   .product-inner {
     display: flex;
     flex-direction: row;
     gap: 0 56px;
-    margin-bottom: 48px;
 
     >.btn-wrap {
       display: none;
@@ -393,10 +395,6 @@
         color: $color-text-basic;
       }
     }
-
-    .desc-box {
-      margin-top: 16px;
-    }
   }
 
   &.scroll {
@@ -468,6 +466,10 @@
 .product-order {
   margin-bottom: 40px;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   .required {
     &:after {
       content: '*';
@@ -480,6 +482,7 @@
   }
 
   .title-wrap {
+    margin: 0;
     padding-bottom: 20px;
     border-bottom: 1px solid $Line-line;
 
@@ -680,18 +683,11 @@
       }
     }
   }
-
-  .btn-wrap {
-    [class^=btn-] span {
-      min-width: 165px;
-    }
-  }
 }
 
 .tab-wrap {
   display: flex;
   align-items: center;
-  margin-top: 48px;
   border: 1px solid $Line-line;
 
   .btn-tab {
@@ -720,7 +716,6 @@
 }
 
 .product-detail {
-  margin-top: 48px;
 
   .img-cont {
     overflow: hidden;
@@ -767,8 +762,6 @@
 }
 
 .product-review {
-  margin-top: 48px;
-  padding-bottom: 16px;
 
   &-photo {
     ul {
@@ -965,6 +958,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
       padding: 24px 16px;
       @include font-body-small;
       color: $color-text-subcolor-deep;

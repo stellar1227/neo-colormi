@@ -15,8 +15,7 @@
       </li>
     </ol>
   </nav>
-  <div
-    class="product-wrap">
+  <section class="product-wrap">
     <!-- //스크롤이벤트 .scroll추가 -->
     <div class="product-inner">
       <div class="product-img">이미지</div>
@@ -82,140 +81,143 @@
         </button>
       </div>
     </div>
-  </div>
-  <!-- 기본정보 -->
-  <div class="product-order">
-    <div class="title-wrap">
-      <h5 class="required">기본정보</h5>
-      <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+  </section>
+  <section class="product-order-box">
+    <!-- 기본정보 -->
+    <div class="product-order">
+      <div class="title-wrap">
+        <h5 class="required">기본정보</h5>
+        <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+      </div>
+      <dl class="product-option columns-4">
+        <dt>구성</dt>
+        <dd>
+          <div class="form-field">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>메모장</option>
+                <option>메모장 커버</option>
+                <option>메모장 세트(커버1개+메모장2부)</option>
+              </select>
+            </div>
+          </div>
+        </dd>
+        <dt>매수</dt>
+        <dd>
+          <div class="form-field">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>50매</option>
+              </select>
+            </div>
+          </div>
+        </dd>
+        <dt>사이즈</dt>
+        <dd>
+          <div class="form-field">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>A5</option>
+                <option>B5</option>
+                <option>A4</option>
+              </select>
+            </div>
+          </div>
+        </dd>
+        <dt>수량</dt>
+        <dd>
+          <div class="form-field">
+            <input type="number" placeholder="Placeholder"/>
+            <p class="description">10부 단위로 주문 가능</p>
+          </div>
+        </dd>
+        <dt>커버각인</dt>
+        <dd>
+          <div class="form-field">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>안함</option>
+                <option>추가</option>
+              </select>
+            </div>
+          </div>
+        </dd>
+        <dt>파일첨부</dt>
+        <dd>
+          <div class="form-field file">
+            <label class="btn-primary small">
+              <input type="file"/>
+              <span>파일첨부</span>
+            </label>
+            <span class="guide-sub">선택한 파일이 없습니다.</span>
+            <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+            <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+            <button type="button" class="btn-del">
+              <i class="delete">삭제</i>
+            </button>
+            <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+          </div>
+        </dd>
+      </dl>
     </div>
-    <dl class="product-option columns-4">
-      <dt>구성</dt>
-      <dd>
-        <div class="form-field">
-          <div class="form-wrap select">
-            <select class="btn-select">
-              <option>메모장</option>
-              <option>메모장 커버</option>
-              <option>메모장 세트(커버1개+메모장2부)</option>
-            </select>
+    <!-- 주문내용 -->
+    <div class="product-order">
+      <div class="title-wrap">
+        <h5>주문내용</h5>
+      </div>
+      <dl class="product-option">
+        <dt class="required">제목</dt>
+        <dd>
+          <div class="form-field width-436">
+            <input type="text" placeholder="Placeholder"/>
           </div>
-        </div>
-      </dd>
-      <dt>매수</dt>
-      <dd>
-        <div class="form-field">
-          <div class="form-wrap select">
-            <select class="btn-select">
-              <option>50매</option>
-            </select>
-          </div>
-        </div>
-      </dd>
-      <dt>사이즈</dt>
-      <dd>
-        <div class="form-field">
-          <div class="form-wrap select">
-            <select class="btn-select">
-              <option>A5</option>
-              <option>B5</option>
-              <option>A4</option>
-            </select>
-          </div>
-        </div>
-      </dd>
-      <dt>수량</dt>
-      <dd>
-        <div class="form-field">
-          <input type="number" placeholder="Placeholder"/>
-          <p class="description">10부 단위로 주문 가능</p>
-        </div>
-      </dd>
-      <dt>커버각인</dt>
-      <dd>
-        <div class="form-field">
-          <div class="form-wrap select">
-            <select class="btn-select">
-              <option>안함</option>
-              <option>추가</option>
-            </select>
-          </div>
-        </div>
-      </dd>
-      <dt>파일첨부</dt>
-      <dd>
-        <div class="form-field file">
-          <label class="btn-primary small">
-            <input type="file"/>
-            <span>파일첨부</span>
-          </label>
-          <span class="guide-sub">선택한 파일이 없습니다.</span>
-          <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-          <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-          <button type="button" class="btn-del">
-            <i class="delete">삭제</i>
+        </dd>
+        <dt>웹하드</dt>
+        <dd>
+          <button type="button" class="btn-outline xsmall">
+            <span>웹하드 업로드</span>
           </button>
-          <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
-        </div>
-      </dd>
-    </dl>
-  </div>
-  <!-- 주문내용 -->
-  <div class="product-order">
-    <div class="title-wrap">
-      <h5>주문내용</h5>
+          <div class="guide-wrap">
+            <dl class="desc-guide line-round">
+              <dt>ID</dt>
+              <dd>colomi</dd>
+              <dt>PW</dt>
+              <dd>1234</dd>
+            </dl>
+            <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+          </div>
+        </dd>
+        <dt>요청사항</dt>
+        <dd>
+          <div class="form-field textarea">
+            <div class="form-wrap">
+              <textarea id="textarea" placeholder="Placeholder"></textarea>
+            </div>
+          </div>
+        </dd>
+        <dt>배송방법</dt>
+        <dd>
+          <div class="form-field width-436">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>선불택배</option>
+              </select>
+            </div>
+          </div>
+        </dd>
+      </dl>
     </div>
-    <dl class="product-option">
-      <dt class="required">제목</dt>
-      <dd>
-        <div class="form-field width-436">
-          <input type="text" placeholder="Placeholder"/>
-        </div>
-      </dd>
-      <dt>웹하드</dt>
-      <dd>
-        <button type="button" class="btn-outline xsmall">
-          <span>웹하드 업로드</span>
-        </button>
-        <dl class="desc-guide line-round">
-          <dt>ID</dt>
-          <dd>colomi</dd>
-          <dt>PW</dt>
-          <dd>1234</dd>
-        </dl>
-        <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
-      </dd>
-      <dt>요청사항</dt>
-      <dd>
-        <div class="form-field textarea">
-          <div class="form-wrap">
-            <textarea id="textarea" placeholder="Placeholder"></textarea>
-          </div>
-        </div>
-      </dd>
-      <dt>배송방법</dt>
-      <dd>
-        <div class="form-field width-436">
-          <div class="form-wrap select">
-            <select class="btn-select">
-              <option>선불택배</option>
-            </select>
-          </div>
-        </div>
-      </dd>
-    </dl>
-  </div>
-  <!-- 안내 -->
-  <div class="desc-box line-box">
-    <p class="guide-basic">
-      <span class="badge line-display-6">묶음배송가능</span>
-      은 장바구니에서 결제 진행 시, 한 번의 배송비만 결제하게 됩니다.
-    </p>
-  </div>
-  <div class="desc-box gray-light-box">
-    <p class="guide-basic-title">오후 6시 이후 접수분은 익일(다음날) 출고됩니다.</p>
-    <p class="guide-basic">
-      선불택배 - 3만원 미만시, 배송비 3,000원 / 3만원 이상시, 배송비 4,500원<br>정매수를 제작할 경우 견적문의를 이용해 주세요. (48절/64절 주문시 연당 재단비 추가)</p>
+    <!-- 안내 -->
+    <div class="desc-box line-box">
+      <p class="guide-basic">
+        <span class="badge line-display-6">묶음배송가능</span>
+        은 장바구니에서 결제 진행 시, 한 번의 배송비만 결제하게 됩니다.
+      </p>
+    </div>
+    <div class="desc-box gray-light-box">
+      <p class="guide-basic-title">오후 6시 이후 접수분은 익일(다음날) 출고됩니다.</p>
+      <p class="guide-basic">
+        선불택배 - 3만원 미만시, 배송비 3,000원 / 3만원 이상시, 배송비 4,500원<br>정매수를 제작할 경우 견적문의를 이용해 주세요. (48절/64절 주문시 연당 재단비 추가)</p>
     </div>
     <!-- 상품 금액 -->
     <div class="product-price-wrap">
@@ -238,7 +240,7 @@
             <strong>100,000,000</strong>원</dd>
         </dl>
       </div>
-      <div class="btn-wrap">
+      <div class="btn-wrap confirm">
         <button type="button" class="btn-outline medium">
           <i>DM</i>
         </button>
@@ -250,199 +252,203 @@
         </button>
       </div>
     </div>
-    <!-- 상세 -->
-    <div class="tab-wrap">
-      <a href="#product-detail" class="btn-tab active">
-        <span>상품상세</span>
-      </a>
-      <a href="#product-review" class="btn-tab">
-        <span>이용후기<em>(1,200)</em>
-        </span>
-      </a>
-      <a href="#product-contact" class="btn-tab">
-        <span>상품문의</span>
-      </a>
-      <a href="#product-delivery" class="btn-tab">
-        <span>출고/배송/기타</span>
-      </a>
+  </section>
+  <!-- tab -->
+  <section class="tab-wrap">
+    <a href="#product-detail" class="btn-tab active">
+      <span>상품상세</span>
+    </a>
+    <a href="#product-review" class="btn-tab">
+      <span>이용후기<em>(1,200)</em>
+      </span>
+    </a>
+    <a href="#product-contact" class="btn-tab">
+      <span>상품문의</span>
+    </a>
+    <a href="#product-delivery" class="btn-tab">
+      <span>출고/배송/기타</span>
+    </a>
+  </section>
+  <!-- 상품상세정보 -->
+  <section
+    id="product-detail" class="product-detail">
+    <!-- //더보기 버튼 누르면 .more 추가 -->
+    <div class="img-cont">
+      <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품상세 이미지"/>
     </div>
-    <div
-      id="product-detail" class="product-detail">
-      <!-- //더보기 버튼 누르면 .more 추가 -->
-      <section class="img-cont">
-        <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품상세 이미지"/>
-      </section>
+    <div class="btn-wrap">
+      <button type="button" class="btn-more">
+        <span>상세정보 더보기</span>
+      </button>
+    </div>
+  </section>
+  <!-- 이용후기 -->
+  <section id="product-review" class="product-review">
+    <div class="title-wrap">
+      <p class="cont-title">이용후기<span>1,200</span>
+      </p>
+    </div>
+    <div class="desc-box border-box">
+      <div class="rating-wrap large">
+        <p class="rating-container">
+          <em class="rating-num" style="width: 52%;"></em>
+        </p>
+        <strong class="text">5.2</strong>
+      </div>
+      <p class="guide-basic">최근 6개월
+        <span>(1,200건)</span>
+      </p>
+    </div>
+    <p class="description">※ 이용후기 등록/수정/삭제는 [마이페이지 > 이용후기]에서 확인하실 수 있습니다.</p>
+    <div class="title-wrap">
+      <p class="cont-title small">포토리뷰<span>200</span>
+      </p>
+    </div>
+    <div class="product-review-photo">
+      <ul>
+        <li>
+          <a href="/"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="포토리뷰 이미지"/> </a>
+        </li>
+        <li>
+          <a href="/"><img src="" alt="포토리뷰 이미지"/> </a>
+        </li>
+        <!-- 포토리뷰 이미지 8개까지 -->
+        <li class="btn-more">
+          <a href="/">
+            <em>1천</em>
+          </a>
+        </li>
+        <!-- //9개 이상일때만 노출 됨 -->
+      </ul>
+    </div>
+    <div class="title-wrap">
+      <p class="cont-title small">
+        <a href="" class="btn-title active">전체<span>200</span>
+        </a>
+        <!-- // 현재 상태 .active -->
+        <a href="" class="btn-title">포토<span>200</span>
+        </a>
+        <a href="" class="btn-title">일반<span>200</span>
+        </a>
+      </p>
+    </div>
+    <div class="product-review-list">
+      <ul
+        class="list">
+        <!-- 후기 -->
+        <li class="list-item">
+          <a href="">
+            <p class="review-img">
+              <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="포토리뷰 이미지"/>
+              <span class="count">2</span>
+              <!-- //사진 1개 이상일때 -->
+            </p>
+            <div class="review-text">
+              <div class="rating-wrap medium black">
+                <p class="rating-container">
+                  <em class="rating-num" style="width: 60%;"></em>
+                </p>
+                <span class="user-name">3자리*****</span>
+              </div>
+              <div class="product-option">
+                옵션 값이 나타나는 칸입니다. 두줄까지 나옴.
+              </div>
+              <div class="text-content">
+                후기 텍스트가 나타나는 칸입니다. 세줄까지 나옴.
+              </div>
+              <p class="review-date">작성일
+                <span>2025-00-00</span>
+              </p>
+            </div>
+          </a>
+        </li>
+        <!-- //후기 -->
+        <li class="list-item">
+          <a href="">
+            <p class="review-img">
+              <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="포토리뷰 이미지"/>
+              <span class="count">2</span>
+              <!-- //사진 1개 이상일때 -->
+            </p>
+            <div class="review-text">
+              <div class="rating-wrap medium black">
+                <p class="rating-container">
+                  <em class="rating-num" style="width: 80%;"></em>
+                </p>
+                <span class="user-name">3자리*****</span>
+              </div>
+              <div class="product-option">
+                옵션 값이 나타나는 칸입니다. 두줄까지 나옴.
+              </div>
+              <div class="text-content">
+                후기 텍스트가 나타나는 칸입니다. 세줄까지 나옴.
+              </div>
+              <p class="review-date">작성일
+                <span>2025-00-00</span>
+              </p>
+            </div>
+          </a>
+        </li>
+        <!-- //후기 -->
+      </ul>
+      <div class="pagination">
+        <ul class="item-wrap">
+          <li class="item">
+            <a href="">이전</a>
+          </li>
+          <li class="item active">
+            <a href="">1</a>
+          </li>
+          <li class="item">
+            <a href="">2</a>
+          </li>
+          <li class="item">
+            <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+          </li>
+          <li class="item disabled">
+            <a href="">다음</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- 상품문의 -->
+  <section id="product-contact" class="product-contact">
+    <div class="title-wrap">
+      <p class="cont-title">상품문의</p>
+    </div>
+    <div class="desc-box tertiary-light-box">
+      <p class="guide-sub">
+      상품에 대한 문의는 ‘마이페이지 > 1:1문의’에서 받고 있습니다.<br>작성하신 문의의 대한 답변까지 확인이 가능하니 1:1문의를 이용해주시기 바랍니다.
+      </p>
       <div class="btn-wrap">
-        <button type="button" class="btn-more">
-          <span>상세정보 더보기</span>
+        <button type="button" class="btn-outline large">
+          <span>1:1 문의</span>
         </button>
       </div>
     </div>
-    <div id="product-review" class="product-review">
-      <div class="title-wrap">
-        <p class="cont-title">이용후기<span>1,200</span>
-        </p>
-      </div>
-      <div class="desc-box border-box">
-        <div class="rating-wrap large">
-          <p class="rating-container">
-            <em class="rating-num" style="width: 52%;"></em>
-          </p>
-          <strong class="text">5.2</strong>
-        </div>
-        <p class="guide-basic">최근 6개월
-          <span>(1,200건)</span>
-        </p>
-      </div>
-      <p class="description">※ 이용후기 등록/수정/삭제는 [마이페이지 > 이용후기]에서 확인하실 수 있습니다.</p>
-      <div class="title-wrap">
-        <p class="cont-title small">포토리뷰<span>200</span>
-        </p>
-      </div>
-      <div class="product-review-photo">
-        <ul>
-          <li>
-            <a href="/"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="포토리뷰 이미지"/> </a>
-          </li>
-          <li>
-            <a href="/"><img src="" alt="포토리뷰 이미지"/> </a>
-          </li>
-          <!-- 포토리뷰 이미지 8개까지 -->
-          <li class="btn-more">
-            <a href="/">
-              <em>1천</em>
-            </a>
-          </li>
-          <!-- //9개 이상일때만 노출 됨 -->
-        </ul>
-      </div>
-      <div class="title-wrap">
-        <p class="cont-title small">
-          <a href="" class="btn-title active">전체<span>200</span>
-          </a>
-          <!-- // 현재 상태 .active -->
-          <a href="" class="btn-title">포토<span>200</span>
-          </a>
-          <a href="" class="btn-title">일반<span>200</span>
-          </a>
-        </p>
-      </div>
-      <div class="product-review-list">
-        <ul
-          class="list">
-          <!-- 후기 -->
-          <li class="list-item">
-            <a href="">
-              <p class="review-img">
-                <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="포토리뷰 이미지"/>
-                <span class="count">2</span>
-                <!-- //사진 1개 이상일때 -->
-              </p>
-              <div class="review-text">
-                <div class="rating-wrap medium black">
-                  <p class="rating-container">
-                    <em class="rating-num" style="width: 60%;"></em>
-                  </p>
-                  <span class="user-name">3자리*****</span>
-                </div>
-                <div class="product-option">
-                  옵션 값이 나타나는 칸입니다. 두줄까지 나옴.
-                </div>
-                <div class="text-content">
-                  후기 텍스트가 나타나는 칸입니다. 세줄까지 나옴.
-                </div>
-                <p class="review-date">작성일
-                  <span>2025-00-00</span>
-                </p>
-              </div>
-            </a>
-          </li>
-          <!-- //후기 -->
-          <li class="list-item">
-            <a href="">
-              <p class="review-img">
-                <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="포토리뷰 이미지"/>
-                <span class="count">2</span>
-                <!-- //사진 1개 이상일때 -->
-              </p>
-              <div class="review-text">
-                <div class="rating-wrap medium black">
-                  <p class="rating-container">
-                    <em class="rating-num" style="width: 80%;"></em>
-                  </p>
-                  <span class="user-name">3자리*****</span>
-                </div>
-                <div class="product-option">
-                  옵션 값이 나타나는 칸입니다. 두줄까지 나옴.
-                </div>
-                <div class="text-content">
-                  후기 텍스트가 나타나는 칸입니다. 세줄까지 나옴.
-                </div>
-                <p class="review-date">작성일
-                  <span>2025-00-00</span>
-                </p>
-              </div>
-            </a>
-          </li>
-          <!-- //후기 -->
-        </ul>
-        <div class="pagination">
-          <ul class="item-wrap">
-            <li class="item">
-              <a href="">이전</a>
-            </li>
-            <li class="item active">
-              <a href="">1</a>
-            </li>
-            <li class="item">
-              <a href="">2</a>
-            </li>
-            <li class="item">
-              <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
-            </li>
-            <li class="item disabled">
-              <a href="">다음</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  </section>
+  <section id="product-delivery" class="product-delivery">
+    <div class="title-wrap">
+      <p class="cont-title">출고/배송/기타</p>
     </div>
-    <div id="product-contact" class="product-contact">
-      <div class="title-wrap">
-        <p class="cont-title">상품문의</p>
-      </div>
-      <div class="desc-box tertiary-light-box">
-        <p class="guide-sub">
-          상품에 대한 문의는 ‘마이페이지 > 1:1문의’에서 받고 있습니다.<br>작성하신 문의의 대한 답변까지 확인이 가능하니 1:1문의를 이용해주시기 바랍니다.
-          </p>
-          <div class="btn-wrap">
-            <button type="button" class="btn-outline large">
-              <span>1:1 문의</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div id="product-delivery" class="product-delivery">
-        <div class="title-wrap">
-          <p class="cont-title">출고/배송/기타</p>
-        </div>
-        <div class="desc-box border-box">
-          <p class="guide-basic-title">상품주문 시 유의사항</p>
-          <ul class="guide-sub">
-            <li>- 장바구니 담긴 상품은 최대 7일동안 보관 후 삭제</li>
-            <li>- 상품 결제가 완료된 후에 접수가 진행됩니다.</li>
-            <li>- 주문사양이 같고 배송지가 다른 경우 장바구니 안에서는 주문 불가</li>
-          </ul>
-          <p class="guide-basic-title">취소/환불 안내</p>
-          <ul class="guide-sub">
-            <li>- 결제완료 후 조판이 진행된 주문건 환불/취소 불가</li>
-            <li>- 교정확인 완료 후 제작 진행된 제품, 화면과 색상차이로 인한 재작업 모두 환불/취소 불가</li>
-            <li>- 300dpi 저해상도 이하 파일첨부 경우, 오타 및 내용오류로 인한 환불/취소 불가</li>
-          </ul>
-        </div>
-        <ul class="description">
-          <li>*고객의 실수로 인한 환불/반품/교환/취소 불가합니다.</li>
-          <li>*이미 출고한 상품은 환불/반품/교환/취소 불가합니다.</li>
-        </ul>
-      </div>
-    {% endblock %}
+    <div class="desc-box border-box">
+      <p class="guide-basic-title">상품주문 시 유의사항</p>
+      <ul class="guide-sub">
+        <li>- 장바구니 담긴 상품은 최대 7일동안 보관 후 삭제</li>
+        <li>- 상품 결제가 완료된 후에 접수가 진행됩니다.</li>
+        <li>- 주문사양이 같고 배송지가 다른 경우 장바구니 안에서는 주문 불가</li>
+      </ul>
+      <p class="guide-basic-title">취소/환불 안내</p>
+      <ul class="guide-sub">
+        <li>- 결제완료 후 조판이 진행된 주문건 환불/취소 불가</li>
+        <li>- 교정확인 완료 후 제작 진행된 제품, 화면과 색상차이로 인한 재작업 모두 환불/취소 불가</li>
+        <li>- 300dpi 저해상도 이하 파일첨부 경우, 오타 및 내용오류로 인한 환불/취소 불가</li>
+      </ul>
+    </div>
+    <ul class="description">
+      <li>*고객의 실수로 인한 환불/반품/교환/취소 불가합니다.</li>
+      <li>*이미 출고한 상품은 환불/반품/교환/취소 불가합니다.</li>
+    </ul>
+  </section>
+  {% endblock %}

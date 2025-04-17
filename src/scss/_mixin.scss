@@ -257,7 +257,6 @@
 
 @mixin modal {
   position: absolute;
-  padding: 16px 20px;
   border-radius: 8px;
   border: 1px solid $color-border-gray;
   background: $color-background-white;
@@ -287,7 +286,7 @@
   }
 
   .title {
-    margin-bottom: 8px;
+    margin: 0 0 8px;
     font-weight: 600;
   }
 }

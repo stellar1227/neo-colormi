@@ -37,7 +37,7 @@ h5 {
 #container {
   margin: 48px auto;
 
-  >section+section {
+  section.content-box + section.content-box {
     margin-top: 48px;
   }
 }
@@ -983,125 +983,93 @@ h5 {
 
 .modal {
   @include modal;
-  width: 480px;
 
-  .modal-header {
-    padding: 16px 44px 16px 20px;
+  .modal-wrap {
 
-    .modal-title {
-      margin-bottom: 0;
+    .modal-header {
+      padding: 16px 44px 16px 20px;
+
+      .modal-title {
+        margin-bottom: 0;
+        color: $color-text-basic;
+      }
+    }
+
+    .modal-container {
+      padding: 0 20px 16px;
       color: $color-text-basic;
-    }
-  }
+      @include font-body-small;
 
-  .modal-container {
-    padding: 0 20px 16px;
-    color: $color-text-basic;
-    @include font-body-small;
-
-    [class^=cont-]+[class^=cont-] {
-      margin-top: 16px;
-    }
-
-    &:first-of-type {
-      padding-top: 40px;
-    }
-  }
-
-  .modal-footer {
-    padding: 16px;
-
-    .btn-wrap {
-      justify-content: flex-end;
-    }
-  }
-
-  .btn-wrap.close {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-
-    .btn-close {
-      position: relative;
-      width: 24px;
-      height: 24px;
-      font-size: 0;
-
-      &:before,
-      &:after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 1px;
-        height: 13px;
-        border-radius: 1px;
-        background: $color-border-gray-dark;
-        transform: translate(-50%, -50%) rotate(45deg);
+      [class^=cont-]+[class^=cont-] {
+        margin-top: 16px;
       }
-      
-      &:after {
-        transform: translate(-50%, -50%) rotate(-45deg);
+
+      &:first-of-type {
+        padding-top: 40px;
       }
     }
-  }
 
-  &.large {
-    width: 540px;
-  }
+    .modal-footer {
+      padding: 16px;
 
-  &.small {
-    width: 400px;
+      .btn-wrap {
+        justify-content: flex-end;
+      }
+    }
   }
 
   &.--full {
-    position: relative;
-    margin: 0 auto;
-    // border: none;
+    
+    .modal-wrap {
+      max-height: calc(100vh - 200px);
+      margin: 0 auto;
+      border: none;
+      z-index: 10;
 
-    .modal-header {
-      min-height: 56px;
-      padding: 18px 56px 18px 20px;
-    }
-    .modal-container {
-      padding: 20px;
-    }
-    .modal-footer {
-      padding: 20px;
-
-      .btn-wrap {
-        justify-content: center;
+      .modal-header {
+        min-height: 56px;
+        padding: 18px 56px 18px 20px;
       }
-    }
+      .modal-container {
+        overflow-y: auto;
+        padding: 20px;
 
-    .btn-wrap.close {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-  
-      .btn-close {
-        position: relative;
-        width: 36px;
-        height: 36px;
-        font-size: 0;
-  
-        &:before,
-        &:after {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 1px;
-          height: 19px;
-          border-radius: 1px;
-          background: $color-border-gray-dark;
-          transform: translate(-50%, -50%) rotate(45deg);
+        .product-order {
+          margin-bottom: 20px;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          .guide-wrap {
+
+            [class^=guide-] {
+              display: block;
+              padding: 8px 0 0;
+            }
+          }
         }
-        
-        &:after {
-          transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      .modal-footer {
+        padding: 20px;
+
+        .btn-wrap {
+          justify-content: center;
+        }
+      }
+
+      .btn-wrap.close {
+        top: 10px;
+        right: 20px;
+    
+        .btn-close {
+          width: 36px;
+          height: 36px;
+    
+          &:before,
+          &:after {
+            height: 19px;
+          }
         }
       }
     }
@@ -1117,6 +1085,8 @@ h5 {
 
 .guide-wrap {
   display: inline-block;
+  margin-left: 12px;
+  vertical-align: middle;
 }
 
 .guide {

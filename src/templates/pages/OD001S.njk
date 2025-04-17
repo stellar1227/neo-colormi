@@ -1,0 +1,235 @@
+{% extends "layouts/base.njk" %}
+{% set title = "주문·결제" %}
+{% block content %}
+  <section class="content-box">
+    <div class="title center">
+      <h3>주문·결제</h3>
+    </div>
+  </section>
+  <section class="content-box">
+    <!-- 장바구니 목록 :선택 목록 -->
+    <div class="product-list step-2">
+      <div class="list-item header">
+        <div class="item">
+          <p>상품명</p>
+        </div>
+        <div class="item">
+          <p>수량</p>
+        </div>
+        <div class="item">
+          <p>주문금액</p>
+        </div>
+        <div class="item">
+          <p>배송안내</p>
+        </div>
+        <div class="item">
+          <p>배송비</p>
+        </div>
+      </div>
+      <!-- // list-header -->
+      <div class="list-item">
+        <div class="item product" data-label="상품명">
+          <div class="product-wrap">
+            <div class="product-inner-item">
+              <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
+              </div>
+              <div class="product-info">
+                <div class="badge-wrap">
+                  <span class="badge line-display-4 new">신상품</span>
+                </div>
+                <p class="product-name">상품명</p>
+                <div class="product-text">
+                  <p class="text">기본정보가 노출되는 줄입니다.</p>
+                  <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
+                </div>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-outline xsmall">
+                    <span>옵션변경</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-label="수량">
+          <p><span>1</span>건</p>
+        </div>
+        <div class="item" data-label="주문금액">
+          <p><span>100,000,000</span>원</p>
+        </div>
+        <div class="item" data-label="배송안내">
+          <div class="form-field">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>선불택배</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-label="배송비">
+          <p><span>3,000</span>원</p>
+        </div>
+      </div>
+      <!-- // list-item -->
+    </div>
+  </section>
+  <section class="content-box">
+    <!-- 주문자 정보 -->
+    <div class="product-order-wrap">
+      <div class="product-order">
+        <div class="title-wrap">
+          <h5>주문자 정보</h5>
+        </div>
+        <dl class="product-option columns-4">
+          <dt>구성</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>메모장</option>
+                  <option>메모장 커버</option>
+                  <option>메모장 세트(커버1개+메모장2부)</option>
+                </select>
+              </div>
+            </div>
+          </dd>
+          <dt>매수</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>50매</option>
+                </select>
+              </div>
+            </div>
+          </dd>
+          <dt>사이즈</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>A5</option>
+                  <option>B5</option>
+                  <option>A4</option>
+                </select>
+              </div>
+            </div>
+          </dd>
+          <dt>수량</dt>
+          <dd>
+            <div class="form-field">
+              <input type="number" placeholder="Placeholder"/>
+              <p class="description">10부 단위로 주문 가능</p>
+            </div>
+          </dd>
+          <dt>커버각인</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>안함</option>
+                  <option>추가</option>
+                </select>
+              </div>
+            </div>
+          </dd>
+          <dt>파일첨부</dt>
+          <dd>
+            <div class="form-field file">
+              <label class="btn-primary small">
+                <input type="file"/>
+                <span>파일첨부</span>
+              </label>
+              <span class="guide-sub">선택한 파일이 없습니다.</span>
+              <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+              <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+              <button type="button" class="btn-del">
+                <i class="delete">삭제</i>
+              </button>
+              <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <!-- 배송지 정보 -->
+      <div class="product-order">
+        <div class="title-wrap">
+          <h5 class="required">배송지 정보</h5>
+          <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+        </div>
+        <dl class="product-option">
+          <dt class="required">제목</dt>
+          <dd>
+            <div class="form-field width-436">
+              <input type="text" placeholder="Placeholder"/>
+            </div>
+          </dd>
+          <dt>웹하드</dt>
+          <dd>
+            <button type="button" class="btn-outline xsmall">
+              <span>웹하드 업로드</span>
+            </button>
+            <div class="guide-wrap">
+              <dl class="desc-guide line-round">
+                <dt>ID</dt>
+                <dd>colomi</dd>
+                <dt>PW</dt>
+                <dd>1234</dd>
+              </dl>
+              <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+            </div>
+          </dd>
+          <dt>요청사항</dt>
+          <dd>
+            <div class="form-field textarea">
+              <div class="form-wrap">
+                <textarea id="textarea" placeholder="Placeholder"></textarea>
+              </div>
+            </div>
+          </dd>
+          <dt>배송방법</dt>
+          <dd>
+            <div class="form-field width-436">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>선불택배</option>
+                </select>
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+  <!-- 상품 금액 -->
+  <section class="content-box">
+    <div class="product-price-wrap __step">
+      <div class="product-order-price">
+        <dl class="product-price">
+          <dt class="total">총 상품 금액</dt>
+          <dd class="total">
+            <strong>100,000,000</strong>원</dd>
+        </dl>
+        <span class="icon-plus">+</span>
+        <dl class="product-price">
+          <dt class="shipping">배송비</dt>
+          <dd class="shipping">
+            <strong>7,000</strong>원</dd>
+        </dl>
+        <span class="icon-minus">-</span>
+        <dl class="product-price">
+          <dt class="shipping">할인 금액</dt>
+          <dd class="shipping">
+            <strong>12,000</strong>원</dd>
+        </dl>
+        <span class="icon-sum">=</span>
+        <dl class="product-price">
+          <dt class="total-sum">총 결제 예정금액<span>(VAT포함가)</span>
+          </dt>
+          <dd class="total-sum">
+            <strong>100,000,000</strong>원</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

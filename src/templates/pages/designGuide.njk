@@ -87,6 +87,22 @@
       }
       .modal {
         position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        transform: none;
+
+        &:before {
+          content: none;
+        }
+
+        .modal-wrap {
+          position: relative;
+          top: auto;
+          left: auto;
+          transform: none;
+        }
       }
       /* Typography navigation */
       .title-small-regular {
@@ -1252,100 +1268,36 @@
     </section>
     <section class="design-system modal-popup">
       <h1 class="d-sys">Modal</h1>
-      <h2 class="d-sys">large :540</h2>
+      <h2 class="d-sys">normal-width :480/large :540/small :400</h2>
       <!-- modal large -->
-      <div
-        class="modal large">
-        <!-- modal container -->
-        <div
-          class="modal-container">
-          <h5 class="modal-title">타이틀</h5>
-          <!-- photo -->
-          <p class="cont-photo"><img src="" alt="이미지"/>
-          </p>
-          <!-- text -->
-          <p class="cont-text">modal content</p>
-        </div>
-        <!-- modal footer -->
-        <div class="modal-footer">
-          <div class="btn-wrap">
-            <button type="button" class="btn-outline medium">
-              <span>btn-outline</span>
-            </button>
-            <button type="button" class="btn-primary medium">
-              <span>btn-primary</span>
+      <div class="modal"><!-- // .large, .small -->
+        <div class="modal-wrap">
+          <!-- modal container -->
+          <div class="modal-container">
+            <h5 class="modal-title">타이틀</h5>
+            <!-- photo -->
+            <p class="cont-photo"><img src="" alt="이미지"/>
+            </p>
+            <!-- text -->
+            <p class="cont-text">modal content</p>
+          </div>
+          <!-- modal footer -->
+          <div class="modal-footer">
+            <div class="btn-wrap">
+              <button type="button" class="btn-outline medium">
+                <span>btn-outline</span>
+              </button>
+              <button type="button" class="btn-primary medium">
+                <span>btn-primary</span>
+              </button>
+            </div>
+          </div>
+          <!-- btn-wrap close -->
+          <div class="btn-wrap close">
+            <button type="button" class="btn-close">
+              <i>닫기</i>
             </button>
           </div>
-        </div>
-        <!-- btn-wrap close -->
-        <div class="btn-wrap close">
-          <button type="button" class="btn-close">
-            <i>닫기</i>
-          </button>
-        </div>
-      </div>
-      <h2 class="d-sys">normal :480</h2>
-      <!-- modal -->
-      <div
-        class="modal">
-        <!-- modal container -->
-        <div
-          class="modal-container">
-          <h5 class="modal-title">타이틀</h5>
-          <!-- photo -->
-          <p class="cont-photo"><img src="" alt="이미지"/>
-          </p>
-          <!-- text -->
-          <p class="cont-text">modal content</p>
-        </div>
-        <!-- modal footer -->
-        <div class="modal-footer">
-          <div class="btn-wrap">
-            <button type="button" class="btn-outline medium">
-              <span>btn-outline</span>
-            </button>
-            <button type="button" class="btn-primary medium">
-              <span>btn-primary</span>
-            </button>
-          </div>
-        </div>
-        <!-- btn-wrap close -->
-        <div class="btn-wrap close">
-          <button type="button" class="btn-close">
-            <i>닫기</i>
-          </button>
-        </div>
-      </div>
-      <h2 class="d-sys">small :400</h2>
-      <!-- modal small -->
-      <div
-        class="modal small">
-        <!-- modal container -->
-        <div
-          class="modal-container">
-          <h5 class="modal-title">타이틀</h5>
-          <!-- photo -->
-          <p class="cont-photo"><img src="" alt="이미지"/>
-          </p>
-          <!-- text -->
-          <p class="cont-text">modal content</p>
-        </div>
-        <!-- modal footer -->
-        <div class="modal-footer">
-          <div class="btn-wrap">
-            <button type="button" class="btn-outline medium">
-              <span>btn-outline</span>
-            </button>
-            <button type="button" class="btn-primary medium">
-              <span>btn-primary</span>
-            </button>
-          </div>
-        </div>
-        <!-- btn-wrap close -->
-        <div class="btn-wrap close">
-          <button type="button" class="btn-close">
-            <i>닫기</i>
-          </button>
         </div>
       </div>
     {% endblock %}

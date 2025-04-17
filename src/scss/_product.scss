@@ -496,7 +496,7 @@
 
     &.line-round {
       min-height: 27px;
-      margin-left: 12px;
+      // margin-left: 12px;
       padding: 1px 16px;
       border-radius: 12px;
       border: 1px solid $color-border-gray;
@@ -678,6 +678,48 @@
             @include font-body-large-bold;
             color: $color-text-primary;
             line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &.__step {
+    margin-top: 20px;
+    justify-content: center;
+
+    .product-order-price {
+      gap: 0 20px;
+
+      .product-price {
+        display: flex;
+        align-items: center;
+
+        dt {
+
+          &.total-sum {
+            @include font-body-small-bold;
+
+            span {
+              font-weight: $font-weight-medium;
+            }
+          }
+        }
+
+        dd {
+          padding: 0 0 0 8px;
+
+          strong {
+            @include font-body-large-bold;
+          }
+
+          &.total-sum {
+            padding: 0 0 0 20px;
+            @include font-body-small-bold;
+
+            strong {
+              @include font-heading-medium-bold;
+            }
           }
         }
       }
@@ -938,11 +980,14 @@
 
 // 장바구니
 .product-list {
+  &.step-2 .list-item {
+    grid-template-columns: 1fr 11.7% 16.7% 11.7% 11.7%;
+  }
   .list-item {
     display: grid;
     grid-template-columns: 4.2% 1fr 11.7% 16.7% 11.7% 11.7%;
     border-bottom: 1px solid $color-border-gray;
-
+    
     &.header {
       border-bottom-color: $color-border-gray-dark;
 
@@ -1026,48 +1071,6 @@
 
         .btn-wrap {
           margin-top: 20px;
-        }
-      }
-    }
-  }
-
-  ~.product-price-wrap {
-    margin-top: 20px;
-    justify-content: center;
-
-    .product-order-price {
-      gap: 0 20px;
-
-      .product-price {
-        display: flex;
-        align-items: center;
-
-        dt {
-
-          &.total-sum {
-            @include font-body-small-bold;
-
-            span {
-              font-weight: $font-weight-medium;
-            }
-          }
-        }
-
-        dd {
-          padding: 0 0 0 8px;
-
-          strong {
-            @include font-body-large-bold;
-          }
-
-          &.total-sum {
-            padding: 0 0 0 20px;
-            @include font-body-small-bold;
-
-            strong {
-              @include font-heading-medium-bold;
-            }
-          }
         }
       }
     }

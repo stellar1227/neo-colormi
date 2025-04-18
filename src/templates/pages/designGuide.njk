@@ -78,7 +78,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            width: calc(50% - 15px);
+            width: calc(33.33% - 15px);
             p {
               margin-left: 20px;
             }
@@ -612,7 +612,7 @@
           <p class="description">Helper Text</p>
         </div>
         <!-- form-field input :error -->
-        <div class="form-field error">
+        <div class="form-field --error">
           <input type="text" placeholder="error"/>
           <p class="description">Helper Text</p>
         </div>
@@ -627,7 +627,7 @@
           <p class="description">Helper Text</p>
         </div>
         <!-- form-field input :success -->
-        <div class="form-field success">
+        <div class="form-field --success">
           <input type="text" placeholder="success"/>
           <p class="description">Helper Text</p>
         </div>
@@ -646,7 +646,7 @@
           </div>
         </div>
         <!-- form-field button select :error -->
-        <div class="form-field error">
+        <div class="form-field --error">
           <div class="form-wrap select">
             <select class="btn-select">
               <option>선택</option>
@@ -666,7 +666,7 @@
           </div>
         </div>
         <!-- form-field button select :success -->
-        <div class="form-field success">
+        <div class="form-field --success">
           <div class="form-wrap select">
             <select class="btn-select">
               <option>선택 :success</option>
@@ -697,7 +697,7 @@
             <input type="text" placeholder="search"/>
             <i class="search-bg"></i>
             <div class="util">
-              <span class="guide-sub small">총
+              <span class="guide-sub --small">총
                 <em>00</em>개의 상품이 검색되었어요</span>
               <button type="button" class="btn-del">
                 <i>삭제</i>
@@ -712,22 +712,22 @@
       <div class="d-sys-list">
         <h2 class="d-sys">size</h2>
         <!-- form-field input :small -->
-        <div class="form-field small">
+        <div class="form-field --small">
           <input type="text" placeholder="Placeholder"/>
           <p class="description">Helper Text</p>
         </div>
         <!-- form-field input :large -->
-        <div class="form-field large">
+        <div class="form-field --large">
           <input type="text" placeholder="Placeholder"/>
           <p class="description">Helper Text</p>
         </div>
         <!-- form-field input :xlarge -->
-        <div class="form-field xlarge">
+        <div class="form-field --xlarge">
           <input type="text" placeholder="Placeholder"/>
           <p class="description">Helper Text</p>
         </div>
         <!-- form-field button select :small -->
-        <div class="form-field small">
+        <div class="form-field --small">
           <div class="form-wrap">
             <button type="button" class="btn-select">
               <span>선택</span>
@@ -735,7 +735,7 @@
           </div>
         </div>
         <!-- form-field button select :large -->
-        <div class="form-field large">
+        <div class="form-field --large">
           <div class="form-wrap">
             <button type="button" class="btn-select">
               <span>선택</span>
@@ -743,7 +743,7 @@
           </div>
         </div>
         <!-- form-field button select :xlarge -->
-        <div class="form-field xlarge">
+        <div class="form-field --xlarge">
           <div class="form-wrap">
             <button type="button" class="btn-select">
               <span>선택</span>
@@ -916,293 +916,143 @@
     </section>
     <section class="design-system button">
       <h1 class="d-sys">Buttons</h1>
-      <p>32, 40, 48, 56 사이즈별로 Type을 Only Text / Normal / Only Icon 으로 나누어 사용한다.</p>
-      <p>Default는 Primary button, Black/Outline은 Secondary button으로 활용된다.</p>
+      <p>height - --xsmall :32px / --small :40px / --medium :48px / --large :56px</p>
+      <p>OnlyText / Normal / OnlyIcon type</p>
+      <p>Default는 Primary, Black/Outline은 Secondary button으로 활용된다.</p>
+      <h2 class="d-sys">Outline</h2>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <!-- btn-outline --large -->
+          <button type="button" class="btn-outline --large">
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline --large</p>
+        </div>
+        <div class="d-sys-list">
+          <!-- btn-outline --large -->
+          <button type="button" class="btn-outline --large">
+            <i class="plus"></i>
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline --large</p>
+        </div>
+        <div class="d-sys-list">
+          <!-- btn-outline --large -->
+          <button type="button" class="btn-outline --large">
+            <i class="plus"></i>
+          </button>
+          <p>btn-outline --large</p>
+        </div>
+      </div>
       <h2 class="d-sys">Primary</h2>
       <div class="d-sys-list-wrap">
-        <div
-          class="d-sys-list">
-          <!-- btn-primary xsmall -->
-          <button type="button" class="btn-primary xsmall">
+        <div class="d-sys-list">
+          <!-- btn-primary --medium -->
+          <button type="button" class="btn-primary --medium">
+            <span>btn-primary</span>
+          </button>
+          <p>.btn-primary.--medium</p>
+        </div>
+        <div class="d-sys-list">
+          <!-- btn-primary --medium -->
+          <button type="button" class="btn-primary --medium">
             <i class="plus"></i>
             <span>btn-primary</span>
           </button>
-          <p>btn-primary xsmall</p>
+          <p>.btn-primary.--medium</p>
         </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary small -->
-          <button type="button" class="btn-primary small">
+        <div class="d-sys-list">
+          <!-- btn-primary --medium -->
+          <button type="button" class="btn-primary --medium">
             <i class="plus"></i>
-            <span>btn-primary</span>
           </button>
-          <p>btn-primary small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary medium -->
-          <button type="button" class="btn-primary medium">
-            <i class="plus"></i>
-            <span>btn-primary</span>
-          </button>
-          <p>btn-primary medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary large -->
-          <button type="button" class="btn-primary large">
-            <i class="plus"></i>
-            <span>btn-primary</span>
-          </button>
-          <p>btn-primary large</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary xsmall -->
-          <button type="button" class="btn-primary xsmall">
-            <i>button</i>
-          </button>
-          <p>btn-primary xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary small -->
-          <button type="button" class="btn-primary small">
-            <i>button</i>
-          </button>
-          <p>btn-primary small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary medium -->
-          <button type="button" class="btn-primary medium">
-            <i>button</i>
-          </button>
-          <p>btn-primary medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary large -->
-          <button type="button" class="btn-primary large">
-            <i>button</i>
-          </button>
-          <p>btn-primary large</p>
+          <p>.btn-primary.--medium</p>
         </div>
       </div>
       <h2 class="d-sys">Black</h2>
       <div class="d-sys-list-wrap">
-        <div
-          class="d-sys-list">
-          <!-- btn-black xsmall -->
-          <button type="button" class="btn-black xsmall">
+        <div class="d-sys-list">
+          <!-- btn-black --small -->
+          <button type="button" class="btn-black --small">
+            <span>btn-black</span>
+          </button>
+          <p>.btn-black.--small</p>
+        </div>
+        <div class="d-sys-list">
+          <!-- btn-black --small -->
+          <button type="button" class="btn-black --small">
             <i class="plus"></i>
             <span>btn-black</span>
           </button>
-          <p>btn-black xsmall</p>
+          <p>.btn-black.--small</p>
         </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black small -->
-          <button type="button" class="btn-black small">
+        <div class="d-sys-list">
+          <!-- btn-black --small -->
+          <button type="button" class="btn-black --small">
             <i class="plus"></i>
-            <span>btn-black</span>
           </button>
-          <p>btn-black small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black medium -->
-          <button type="button" class="btn-black medium">
-            <i class="plus"></i>
-            <span>btn-black</span>
-          </button>
-          <p>btn-black medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black large -->
-          <button type="button" class="btn-black large">
-            <i class="plus"></i>
-            <span>btn-black</span>
-          </button>
-          <p>btn-black large</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black xsmall -->
-          <button type="button" class="btn-black xsmall">
-            <i>button</i>
-          </button>
-          <p>btn-black xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black small -->
-          <button type="button" class="btn-black small">
-            <i>button</i>
-          </button>
-          <p>btn-black small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black medium -->
-          <button type="button" class="btn-black medium">
-            <i>button</i>
-          </button>
-          <p>btn-black medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black large -->
-          <button type="button" class="btn-black large">
-            <i>button</i>
-          </button>
-          <p>btn-black large</p>
-        </div>
-      </div>
-      <h2 class="d-sys">Outline</h2>
-      <div class="d-sys-list-wrap">
-        <div
-          class="d-sys-list">
-          <!-- btn-outline xsmall -->
-          <button type="button" class="btn-outline xsmall">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline small -->
-          <button type="button" class="btn-outline small">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline medium -->
-          <button type="button" class="btn-outline medium">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline large -->
-          <button type="button" class="btn-outline large">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline large</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline xsmall -->
-          <button type="button" class="btn-outline xsmall">
-            <i>button</i>
-          </button>
-          <p>btn-outline xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline small -->
-          <button type="button" class="btn-outline small">
-            <i>button</i>
-          </button>
-          <p>btn-outline small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline medium -->
-          <button type="button" class="btn-outline medium">
-            <i>button</i>
-          </button>
-          <p>btn-outline medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline large -->
-          <button type="button" class="btn-outline large">
-            <i>button</i>
-          </button>
-          <p>btn-outline large</p>
+          <p>.btn-black.--small</p>
         </div>
       </div>
       <h2 class="d-sys">primary/black/outline :disabled 스타일공통사용</h2>
       <div class="d-sys-list-wrap">
         <div class="d-sys-list">
-          <button type="button" class="btn-primary xsmall" disabled="disabled">
-            <i class="plus"></i>
+          <button type="button" class="btn-primary --xsmall" disabled="disabled">
             <span>[class^=btn-]</span>
           </button>
-          <p>[class^=btn-] xsmall :disabled</p>
+          <p>[class^=btn-].--xsmall :disabled</p>
         </div>
         <div class="d-sys-list">
-          <button type="button" class="btn-primary small" disabled="disabled">
+          <button type="button" class="btn-primary --xsmall" disabled="disabled">
             <i class="plus"></i>
             <span>[class^=btn-]</span>
           </button>
-          <p>[class^=btn-] small :disabled</p>
+          <p>[class^=btn-].--xsmall :disabled</p>
         </div>
         <div class="d-sys-list">
-          <button type="button" class="btn-primary medium" disabled="disabled">
+          <button type="button" class="btn-primary --xsmall" disabled="disabled">
             <i class="plus"></i>
-            <span>[class^=btn-]</span>
           </button>
-          <p>[class^=btn-] medium :disabled</p>
-        </div>
-        <div class="d-sys-list">
-          <button type="button" class="btn-primary large" disabled="disabled">
-            <i class="plus"></i>
-            <span>[class^=btn-]</span>
-          </button>
-          <p>[class^=btn-] large :disabled</p>
+          <p>[class^=btn-].--xsmall :disabled</p>
         </div>
       </div>
       <h2 class="d-sys">round/더보기</h2>
       <div class="d-sys-list-wrap">
-        <div
-          class="d-sys-list">
+        <div class="d-sys-list">
           <!-- btn-round -->
           <button type="button" class="btn-round icon">
             <span>더보기</span>
           </button>
-          <p>btn-round icon</p>
+          <p>.btn-round.icon</p>
         </div>
-        <div
-          class="d-sys-list">
+        <div class="d-sys-list">
           <!-- btn-round -->
           <button type="button" class="btn-round">
             <span>더보기</span>
           </button>
-          <p>btn-round</p>
+          <p>.btn-round</p>
         </div>
-        <div
-          class="d-sys-list">
+        <div class="d-sys-list"></div>
+        <div class="d-sys-list">
           <!-- btn-text -->
           <button type="button" class="btn-text">
             <span>더보기</span>
           </button>
-          <p>btn-text default</p>
+          <p>.btn-text</p>
         </div>
-        <div
-          class="d-sys-list">
+        <div class="d-sys-list">
           <!-- btn-text -->
-          <button type="button" class="btn-text small">
+          <button type="button" class="btn-text --large">
             <span>더보기</span>
           </button>
-          <p>btn-text small</p>
+          <p>.btn-text.--large</p>
         </div>
-        <div
-          class="d-sys-list">
+        <div class="d-sys-list">
           <!-- btn-text -->
-          <button type="button" class="btn-text large">
+          <button type="button" class="btn-text --small">
             <span>더보기</span>
           </button>
-          <p>btn-text large</p>
+          <p>.btn-text.--small</p>
         </div>
       </div>
       <h2 class="d-sys">TopButton</h2>
@@ -1222,7 +1072,7 @@
             <i class="top"></i>
             <span>위로</span>
           </button>
-          <p>btn-top label</p>
+          <p>btn-top +label</p>
         </div>
       </div>
     </section>
@@ -1269,8 +1119,8 @@
     <section class="design-system modal-popup">
       <h1 class="d-sys">Modal</h1>
       <h2 class="d-sys">normal-width :480/large :540/small :400</h2>
-      <!-- modal large -->
-      <div class="modal"><!-- // .large, .small -->
+      <!-- modal --large -->
+      <div class="modal"><!-- // .--large, .--small -->
         <div class="modal-wrap">
           <!-- modal container -->
           <div class="modal-container">
@@ -1284,10 +1134,10 @@
           <!-- modal footer -->
           <div class="modal-footer">
             <div class="btn-wrap">
-              <button type="button" class="btn-outline medium">
+              <button type="button" class="btn-outline --medium">
                 <span>btn-outline</span>
               </button>
-              <button type="button" class="btn-primary medium">
+              <button type="button" class="btn-primary --medium">
                 <span>btn-primary</span>
               </button>
             </div>

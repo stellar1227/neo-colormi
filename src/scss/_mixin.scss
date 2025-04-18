@@ -114,7 +114,8 @@
   word-break: break-word;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  // -webkit-line-clamp: 라인 수; 원하는 라인 수 추가해서 사용
+  -webkit-line-clamp: 1;
+  // -webkit-line-clamp: 원하는 라인 수; 추가해서 사용
 }
 
 // desc-guide text
@@ -126,6 +127,15 @@
   background: $color-border-gray-light;
   @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 12px);
   color: $color-text-subcolor;
+}
+
+@mixin desc-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  text-align: center;
+  @include font-body-small;
+  color: $color-text-basic;
 }
 
 // button
@@ -146,6 +156,7 @@
 }
 
 @mixin button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -158,6 +169,7 @@
   box-sizing: border-box;
 
   i {
+    position: relative;
     @include icon-size(16px, 16px);
 
     &:before {
@@ -167,12 +179,23 @@
       height: 100%;
     }
 
-    &.plus:before {
-      content: '+';
-      font-size: 12px;
-      background: url('') no-repeat center center/cover;
+    &.plus:before,
+    &.plus:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 1px;
+      border-radius: 1px;
+      background: $color-background-white;
+      transform: translate(-50%, -50%);
     }
-
+    &.plus:after {
+      width: 1px;
+      height: 10px;
+    }
+    
     &.step-ing:before {
       background: olivedrab url('') no-repeat center center/cover;
     }
@@ -195,7 +218,7 @@
   }
 
   // 사이즈
-  &.xsmall {
+  &.--xsmall {
     height: 32px;
     @include font-body-xsmall;
 
@@ -204,7 +227,7 @@
     }
   }
 
-  &.small {
+  &.--small {
     height: 40px;
     @include font-body-xsmall;
 
@@ -213,7 +236,7 @@
     }
   }
 
-  &.medium {
+  &.--medium {
     height: 48px;
     @include font-body-small;
 
@@ -222,7 +245,7 @@
     }
   }
 
-  &.large {
+  &.--large {
     height: 56px;
     @include font-body-small;
 
@@ -308,7 +331,7 @@
           width: 1px;
           height: 13px;
           border-radius: 1px;
-          background: $color-border-gray-dark;
+          background: $color-divider-gray-darker;
           transform: translate(-50%, -50%) rotate(45deg);
         }
         
@@ -319,13 +342,13 @@
     }
   }
 
-  &.large {
+  &.--large {
     .modal-wrap {
       width: 540px;
     }
   }
 
-  &.small {
+  &.--small {
     .modal-wrap {
       width: 400px;
     }

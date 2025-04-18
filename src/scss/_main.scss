@@ -301,10 +301,10 @@ header {
             right: 0;
             width: 16px;
             height: 16px;
-            background-image: url(../img/icon/icon-sprite.svg#icon-arrow);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: 100% 100%;
+            // background-image: url(../img/icon/icon-sprite.svg#icon-arrow);
+            // background-repeat: no-repeat;
+            // background-position: center center;
+            // background-size: 100% 100%;
             transform: translateY(-50%);
           }
 
@@ -316,7 +316,7 @@ header {
         .quick-menu-wrap.active {
           .btn-select {
             &:after {
-              transform: rotate(180deg) translateY(50%);
+              // transform: translateY(50%) rotate(180deg);
             }
           }
         }
@@ -552,7 +552,7 @@ header {
           height: 10px;
           background: #292929;
           border-radius: 2px 0 0 0;
-          transform: rotate(45deg) translateX(-50%);
+          transform: translateX(-50%) rotate(45deg);
         }
       }
     }

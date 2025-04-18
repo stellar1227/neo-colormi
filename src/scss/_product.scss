@@ -55,7 +55,7 @@
       color: $color-text-primary;
     }
 
-    &.small {
+    &.--small {
       @include font-body-small-bold;
     }
 
@@ -109,7 +109,7 @@
     margin-left: 8px;
   }
 
-  &.large {
+  &.--large {
     height: 25px;
     padding: 4px 10px;
     font-size: $font-size-body-xsmall;
@@ -262,7 +262,7 @@
     color: $color-text-subcolor;
   }
 
-  &.medium {
+  &.--medium {
     .rating-container {
       width: 120px;
       height: 24px;
@@ -277,7 +277,7 @@
     }
   }
 
-  &.large {
+  &.--large {
     .rating-container {
       width: 160px;
       height: 32px;
@@ -311,10 +311,6 @@
     display: flex;
     flex-direction: row;
     gap: 0 56px;
-
-    >.btn-wrap {
-      display: none;
-    }
   }
 
   .rating-wrap {
@@ -399,6 +395,10 @@
         color: $color-text-basic;
       }
     }
+
+    .btn-wrap.--hide {
+      display: none;
+    }
   }
 
   &.scroll {
@@ -410,6 +410,7 @@
     background: $color-background-white;
     z-index: 1;
     box-shadow: 0px 2px 4px 0px $color-alpha-shadow1, 0px 8px 20px 0px $color-alpha-shadow1;
+    z-index: 9;
 
     .product-inner {
       gap: 0 20px;
@@ -424,36 +425,73 @@
     }
 
     .product-info {
-      .top-area {
-        display: flex;
-        align-items: center;
+      flex-direction: row;
 
-        .badge-wrap,
-        .product-name {
-          display: inline-flex;
-          margin-bottom: 0;
-          margin-right: 8px;
+      .item {
+
+        &:first-of-type {
+          flex: 1;
+        }
+
+        +.item {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          margin-left: 20px;
+          padding-left: 20px;
+          border-left: 1px solid $Line-line;
+        }
+
+        .top-area {
+          display: flex;
+          align-items: center;
+          padding: 0;
+
+          .badge-wrap,
+          .product-name {
+            display: inline-flex;
+            margin-bottom: 0;
+            margin-right: 8px;
+          }
+
+          .btn-wrap {
+            display: none;
+          }
+        }
+
+        .product-text {
+          margin-top: 8px;
+
+          .text {
+            @include ellipsis;
+          }
+        }
+
+        >.badge-wrap {
+          order: 1;
+          margin: 10px 0 0 0;
+        }
+
+        .rating-wrap.badge,
+        .badge-wrap {
+          display: none;
+        }
+
+        .product-price {
+          background: none;
         }
       }
 
-      .product-text {
-        margin-top: 8px;
-      }
+      .btn-wrap.--hide {
+        display: flex;
+        margin-top: 10px;
 
-      >.badge-wrap {
-        order: 1;
-        margin: 10px 0 0 0;
+        [class^=btn-] {
+          span {
+            width: 136px;
+          }
+        }
       }
-
-      .rating-wrap,
-      .product-price {
-        display: none;
-      }
-    }
-
-    .btn-wrap {
-      display: flex;
-      align-items: center;
     }
   }
 }
@@ -464,6 +502,10 @@
 
   >* {
     flex: 1 1 50%;
+  }
+
+  .product-order {
+    margin-bottom: 0;
   }
 }
 
@@ -554,19 +596,40 @@
     }
 
     >dd {
+      display: flex;
+      align-items: center;
+      min-height: 100%;
       padding-left: 4px;
 
       .width-436 {
-        width: 436px;
+        width: calc(50% - 100px);
       }
 
       .form-field {
+        flex: 1;
         &.file {
-          max-width: 436px;
+          max-width: 100%;
+        }
+      }
+
+      .desc-box {
+        flex: 1;
+        margin: 0;
+
+        +button {
+          margin-left: 8px;
         }
       }
     }
 
+    &.columns-1 {
+      grid-template-columns: 1fr;
+
+      dd {
+        padding-left: 0;
+      }
+    }
+    
     &.columns-4 {
       grid-template-columns: 120px 1fr 200px 1fr;
 
@@ -575,6 +638,10 @@
           margin-left: 80px;
         }
       }
+    }
+
+    & + .title-wrap {
+      margin-top: 40px;
     }
   }
 
@@ -688,9 +755,13 @@
     }
   }
 
-  &.__step {
+  &.--step {
     margin-top: 20px;
-    justify-content: center;
+    justify-content: right;
+
+    &.--end {
+      justify-content: center;
+    }
 
     .product-order-price {
       gap: 0 20px;

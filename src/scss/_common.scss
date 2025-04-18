@@ -49,9 +49,14 @@ h5 {
   +.form-field {
     margin-top: 37px;
   }
-
+  
+  
   .form-wrap {
     position: relative;
+    
+    +.checkbox-wrap {
+      margin-top: 8px;
+    }
 
     input {
       padding-right: 40px;
@@ -63,18 +68,24 @@ h5 {
       }
     }
 
-    &.select:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      width: 16px;
-      height: 16px;
-      background-image: url('../img/icon/icon-arrow-16-down.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 100% 100%;
-      transform: translateY(-50%);
+    &.select {
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 19.5px;
+        width: 1px;
+        height: 5.5px;
+        background: $color-divider-gray-darker;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        z-index: 1;
+      }
+    
+      &:after {
+        right: 15.5px;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
     }
 
     .btn-select {
@@ -84,19 +95,19 @@ h5 {
       line-height: 1;
       background: $color-background-white;
 
-      &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 12px;
-        width: 16px;
-        height: 16px;
-        background-image: url('../img/icon/icon-arrow-16-down.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100% 100%;
-        transform: translateY(-50%);
-      }
+      // &:after {
+      //   content: '';
+      //   position: absolute;
+      //   top: 50%;
+      //   right: 12px;
+      //   width: 16px;
+      //   height: 16px;
+      //   background-image: url('../img/icon/icon-arrow-16-down.png');
+      //   background-repeat: no-repeat;
+      //   background-position: center center;
+      //   background-size: 100% 100%;
+      //   transform: translateY(-50%);
+      // }
 
       &:focus,
       &:focus-visible,
@@ -172,6 +183,7 @@ h5 {
         }
 
         &.btn-visible {
+          background-color: $color-border-gray-dark;
           background-image: url('');
         }
 
@@ -189,8 +201,8 @@ h5 {
 
   }
 
-  &.error,
-  &.success {
+  &.--error,
+  &.--success {
     .description {
       &:before {
         content: '!!'; //background-image 대신 넣은거임. 나중에 삭제
@@ -206,7 +218,7 @@ h5 {
     }
   }
 
-  &.error {
+  &.--error {
 
     input,
     select,
@@ -223,7 +235,7 @@ h5 {
     }
   }
 
-  &.success {
+  &.--success {
 
     input,
     select,
@@ -245,7 +257,7 @@ h5 {
     select,
     .btn-select {
       &:after {
-        transform: rotate(180deg) translateY(50%);
+        // transform: translateY(50%) rotate(180deg);
       }
     }
 
@@ -255,7 +267,7 @@ h5 {
   }
 
   // size
-  &.small {
+  &.--small {
 
     input,
     select,
@@ -264,7 +276,7 @@ h5 {
     }
   }
 
-  &.large {
+  &.--large {
 
     input,
     select,
@@ -273,7 +285,7 @@ h5 {
     }
   }
 
-  &.xlarge {
+  &.--xlarge {
 
     input,
     select,
@@ -311,6 +323,20 @@ h5 {
       }
     }
 
+    .textarea-bottom {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+
+      .count {
+        order: 1;
+        margin: 0;
+      }
+
+      [class^=guide-] {
+        flex: 1;
+      }
+    }
     .count {
       margin: 8px 0 4px;
       text-align: right;
@@ -322,6 +348,24 @@ h5 {
         color: $color-text-basic;
         @include font-body-xxsmall;
         font-weight: 500;
+      }
+    }
+  }
+
+  &.address {
+    >*+* {
+      margin-top: 8px;
+    }
+
+    .address-item {
+      input {
+        width: 46%;
+      }
+
+      [class^=btn-] {
+        width: 110px;
+        margin-left: 8px;
+        vertical-align: top;
       }
     }
   }
@@ -397,7 +441,6 @@ h5 {
     [class^=guide] {
       flex: 1;
       @include ellipsis;
-      -webkit-line-clamp: 1;
     }
 
     .btn-del {
@@ -539,6 +582,7 @@ h5 {
         display: inline-block;
         width: 16px;
         height: 16px;
+        margin: 2px 0;
         background: $color-background-white;
         border-radius: 50%;
         border: 1px solid $Line-line;
@@ -578,8 +622,6 @@ h5 {
       margin-left: 8px;
       color: $color-text-basic;
       @include font-body-xsmall;
-      line-height: 15px;
-      vertical-align: 4px;
     }
   }
 }
@@ -721,11 +763,10 @@ h5 {
 
 .btn-primary {
   @include button;
+  @include button-disabled;
   border-color: $color-border-primary;
   background: $color-border-primary;
   color: $color-text-basic-inverse;
-
-  @include button-disabled;
 
   &:hover {
     border-color: #F181A6;
@@ -740,11 +781,10 @@ h5 {
 
 .btn-black {
   @include button;
+  @include button-disabled;
   border-color: $color-border-gray-dark;
   background: $color-border-gray-dark;
   color: $color-text-basic-inverse;
-
-  @include button-disabled;
 
   &:hover,
   &:active {
@@ -755,12 +795,30 @@ h5 {
 
 .btn-outline {
   @include button;
+  @include button-disabled;
   box-shadow: none;
   border-color: $color-border-gray-dark;
   background: $color-background-white;
   color: $color-text-basic;
+  
+  i {
+    &.plus:before,
+    &.plus:after {
+      background: $color-border-gray-dark !important;
+    }
+  }
 
-  @include button-disabled;
+  &.--medium,
+  &.--large {
+    i {
+      &.plus:before {
+        width: 15px;
+      }
+      &.plus:after {
+        height: 15px;
+      }
+    } 
+  }
 
   &:hover {
     border-color: $color-border-gray-dark;
@@ -792,7 +850,8 @@ h5 {
       position: relative;
       padding-right: 16px !important;
 
-      &:before {
+      &:before,
+      &:after {
         content: '';
         display: inline-block;
         position: absolute;
@@ -801,20 +860,12 @@ h5 {
         width: 1px;
         height: 5px;
         border-radius: 1px;
-        background: $color-text-basic;
+        background: $color-border-gray-dark;
         transform: translateY(-50%) rotate(-45deg);
       }
       &:after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        right: 5.5px;
         top: calc(50% + 1.5px);
-        width: 1px;
-        height: 5px;
-        border-radius: 1px;
-        background: $color-text-basic;
-        transform: translateY(-50%)  rotate(45deg);
+        transform: translateY(-50%) rotate(45deg);
       }
     }
   }
@@ -843,35 +894,54 @@ h5 {
 
 .btn-text {
   @include button;
-  border: 0;
-  color: $color-text-subcolor;
   height: auto;
+  border: 0;
+  box-shadow: none;
+  color: $color-text-subcolor;
   border-radius: 0;
-  padding: 0;
+  padding: 0 16px 0 0;
   @include font-body-small;
   line-height: 16px;
 
+  &:before,
   &:after {
     content: '';
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: #ddd;
+    position: absolute;
+    right: 5.5px;
+    top: calc(50% - 1.5px);
+    width: 1px;
+    height: 5px;
+    border-radius: 1px;
+    background: $Line-line-2;
+    transform: translateY(-50%) rotate(-45deg);
   }
 
-  &.small {
+  &:after {
+    top: calc(50% + 1.5px);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &.--small {
     height: auto;
     @include font-body-xsmall;
   }
 
-  &.large {
+  &.--large {
     height: auto;
+    padding-right: 24px;
     @include font-body-medium;
     line-height: 20px;
 
+    &:before,
     &:after {
-      width: 24px;
-      height: 24px;
+      top: calc(50% - 2.1px);
+      right: 9.5px;
+      height: 7px;
+    }
+
+    &:after {
+      top: calc(50% + 2.1px);
     }
   }
 
@@ -1097,7 +1167,7 @@ h5 {
     color: $color-text-subcolor;
     /* #969696 */
 
-    &.small {
+    &.--small {
       @include font-body-xsmall
     }
   }
@@ -1107,7 +1177,7 @@ h5 {
     color: $color-text-subcolor-deep;
     /* #737373 */
 
-    &.small {
+    &.--small {
       @include font-body-xsmall
     }
   }
@@ -1132,41 +1202,43 @@ h5 {
 
 // description box
 .desc-box {
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-  text-align: center;
-  @include font-body-small;
-  color: $color-text-basic;
 
   &+.desc-box {
     margin-top: 12px;
   }
 
   &.line-box {
+    @include desc-box;
     padding: 10px 0px;
     border-top: 1px solid $Line-line;
     border-bottom: 1px solid $Line-line;
   }
-
+  
   &.gray-light-box {
+    @include desc-box;
     padding: 20px 0px;
     background: $color-border-gray-light;
   }
-
+  
   &.border-box {
+    @include desc-box;
     padding: 32px;
     border-radius: 4px;
     border: 1px solid $Line-line;
     background: $color-background-white;
     text-align: left;
-
+    
     .guide {
       @include font-body-xsmall;
     }
+    
+    &.--small {
+      padding: 9px 12px;
+    }
   }
-
+  
   &.tertiary-light-box {
+    @include desc-box;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -1180,7 +1252,7 @@ h5 {
       width: 175px;
     }
 
-    &.small {
+    &.--small {
       gap: 32px;
       padding: 16px 24px;
       border-radius: 6px;
@@ -1207,6 +1279,15 @@ h5 {
       padding: 0;
       text-align: center;
     }
+  }
+
+  &.scroll-box {
+    max-height: 240px;
+    overflow-y: auto;
+  }
+
+  +.checkbox-wrap {
+    margin-top: 20px;
   }
 }
 

@@ -21,65 +21,69 @@
       <div class="product-inner">
         <div class="product-img">이미지</div>
         <div class="product-info">
-          <div class="top-area">
+          <div class="item">
+            <div class="top-area">
+              <div class="badge-wrap">
+                <span class="badge fill-display-2 --large">10% SALE</span>
+              </div>
+              <p class="product-name">상품명</p>
+              <div class="btn-wrap">
+                <a href="" class="btn-share">공유하기</a>
+              </div>
+            </div>
+            <div class="rating-wrap">
+              <p class="rating-container">
+                <em class="rating-num" style="width: 52%;"></em>
+              </p>
+              <strong class="text">5.2</strong>
+            </div>
             <div class="badge-wrap">
-              <span class="badge fill-display-2 large">10% SALE</span>
+              <span class="badge line-display-1">묶음배송불가</span>
+              <span class="badge line-display-3 recommend">MD추천</span>
+              <span class="badge line-display-4 new">신상품</span>
+              <span class="badge line-display-4">시즌신상품</span>
+              <span class="badge line-display-6">배송비무료</span>
+              <span class="badge line-display-6">묶음배송가능</span>
+              <span class="badge line-display-6 best">베스트</span>
+              <span class="badge line-display-6">주간베스트</span>
+              <span class="badge line-display-7 discount-1">폭풍할인</span>
+              <span class="badge line-display-7 discount-2">즉시할인중</span>
+              <span class="badge line-display-8">쿠폰할인불가</span>
+              <span class="badge line-display-9">인기상품</span>
+              <span class="badge line-display-9">최다판매</span>
+              <span class="badge line-display-9">주문폭주</span>
+              <span class="badge line-display-9">별도문의</span>
+              <span class="badge fill-gray-dark">당일출고</span>
+              <span class="badge fill-gray-dark">익일출고</span>
+              <span class="badge fill-gray-dark">자체제작</span>
+              <span class="badge fill-gray-dark">사은품증정</span>
             </div>
-            <p class="product-name">상품명</p>
-            <div class="btn-wrap">
-              <a href="" class="btn-share">공유하기</a>
+            <div class="product-text">
+              <p class="text">기본정보가 노출되는 줄입니다.</p>
+              <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
             </div>
           </div>
-          <div class="rating-wrap">
-            <p class="rating-container">
-              <em class="rating-num" style="width: 52%;"></em>
-            </p>
-            <strong class="text">5.2</strong>
+          <div class="item">
+            <dl class="product-price">
+              <dt class="discount-title">할인금액</dt>
+              <dd class="discount-price">
+                <strong>100,000,000</strong>원</dd>
+              <dt class="total-title">총 상품 금액</dt>
+              <dd class="total-price">
+                <strong>100,000,000</strong>원</dd>
+            </dl>
+            <div class="btn-wrap --hide">
+              <button type="button" class="btn-outline --medium">
+                <i>DM</i>
+              </button>
+              <button type="button" class="btn-outline --medium">
+                <span>장바구니</span>
+              </button>
+              <button type="button" class="btn-primary --medium">
+                <span>바로주문</span>
+              </button>
+            </div>
           </div>
-          <div class="badge-wrap">
-            <span class="badge line-display-1">묶음배송불가</span>
-            <span class="badge line-display-3 recommend">MD추천</span>
-            <span class="badge line-display-4 new">신상품</span>
-            <span class="badge line-display-4">시즌신상품</span>
-            <span class="badge line-display-6">배송비무료</span>
-            <span class="badge line-display-6">묶음배송가능</span>
-            <span class="badge line-display-6 best">베스트</span>
-            <span class="badge line-display-6">주간베스트</span>
-            <span class="badge line-display-7 discount-1">폭풍할인</span>
-            <span class="badge line-display-7 discount-2">즉시할인중</span>
-            <span class="badge line-display-8">쿠폰할인불가</span>
-            <span class="badge line-display-9">인기상품</span>
-            <span class="badge line-display-9">최다판매</span>
-            <span class="badge line-display-9">주문폭주</span>
-            <span class="badge line-display-9">별도문의</span>
-            <span class="badge fill-gray-dark">당일출고</span>
-            <span class="badge fill-gray-dark">익일출고</span>
-            <span class="badge fill-gray-dark">자체제작</span>
-            <span class="badge fill-gray-dark">사은품증정</span>
-          </div>
-          <div class="product-text">
-            <p class="text">기본정보가 노출되는 줄입니다.</p>
-            <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
-          </div>
-          <dl class="product-price">
-            <dt class="discount-title">할인금액</dt>
-            <dd class="discount-price">
-              <strong>100,000,000</strong>원</dd>
-            <dt class="total-title">총 상품 금액</dt>
-            <dd class="total-price">
-              <strong>100,000,000</strong>원</dd>
-          </dl>
-        </div>
-        <div class="btn-wrap">
-          <button type="button" class="btn-outline medium">
-            <i>DM</i>
-          </button>
-          <button type="button" class="btn-outline medium">
-            <span>장바구니</span>
-          </button>
-          <button type="button" class="btn-primary medium">
-            <span>바로주문</span>
-          </button>
         </div>
       </div>
     </div>
@@ -147,7 +151,7 @@
         <dt>파일첨부</dt>
         <dd>
           <div class="form-field file">
-            <label class="btn-primary small">
+            <label class="btn-primary --small">
               <input type="file"/>
               <span>파일첨부</span>
             </label>
@@ -170,13 +174,14 @@
       <dl class="product-option">
         <dt class="required">제목</dt>
         <dd>
-          <div class="form-field width-436">
+          <div class="form-field width-436 --error"><!-- // .error 추가 -->
             <input type="text" placeholder="Placeholder"/>
+            <p class="description">에러메세지</p><!-- // 에러메세지 -->
           </div>
         </dd>
         <dt>웹하드</dt>
         <dd>
-          <button type="button" class="btn-outline xsmall">
+          <button type="button" class="btn-outline --xsmall">
             <span>웹하드 업로드</span>
           </button>
           <div class="guide-wrap">
@@ -193,18 +198,38 @@
         <dd>
           <div class="form-field textarea">
             <div class="form-wrap">
-              <textarea id="textarea" placeholder="Placeholder"></textarea>
+              <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
             </div>
           </div>
         </dd>
         <dt>배송방법</dt>
         <dd>
-          <div class="form-field width-436">
-            <div class="form-wrap select">
-              <select class="btn-select">
-                <option>선불택배</option>
-              </select>
-            </div>
+          <div class="radio-wrap">
+            <label class="radio" for="radio-0-1">
+              <input type="radio" id="radio-0-1" name="radio"/>
+              <span class="radio-icon"></span>
+              <span class="radio-label">방문수령</span>
+            </label>
+            <label class="radio" for="radio-0-2">
+              <input type="radio" id="radio-0-2" name="radio"/>
+              <span class="radio-icon"></span>
+              <span class="radio-label">택배(선불)</span>
+            </label>
+            <label class="radio" for="radio-0-3">
+              <input type="radio" id="radio-0-3" name="radio"/>
+              <span class="radio-icon"></span>
+              <span class="radio-label">택배(착불)</span>
+            </label>
+            <label class="radio" for="radio-0-3">
+              <input type="radio" id="radio-0-3" name="radio"/>
+              <span class="radio-icon"></span>
+              <span class="radio-label">퀵(선불)</span>
+            </label>
+            <label class="radio" for="radio-0-4">
+              <input type="radio" id="radio-0-4" name="radio"/>
+              <span class="radio-icon"></span>
+              <span class="radio-label">퀵(착불)</span>
+            </label>
           </div>
         </dd>
       </dl>
@@ -243,13 +268,13 @@
         </dl>
       </div>
       <div class="btn-wrap confirm">
-        <button type="button" class="btn-outline medium">
+        <button type="button" class="btn-outline --medium">
           <i>DM</i>
         </button>
-        <button type="button" class="btn-outline medium">
+        <button type="button" class="btn-outline --medium">
           <span>장바구니</span>
         </button>
-        <button type="button" class="btn-primary medium">
+        <button type="button" class="btn-primary --medium">
           <span>바로주문</span>
         </button>
       </div>
@@ -295,7 +320,7 @@
         </p>
       </div>
       <div class="desc-box border-box">
-        <div class="rating-wrap large">
+        <div class="rating-wrap --large">
           <p class="rating-container">
             <em class="rating-num" style="width: 52%;"></em>
           </p>
@@ -307,7 +332,7 @@
       </div>
       <p class="description">※ 이용후기 등록/수정/삭제는 [마이페이지 > 이용후기]에서 확인하실 수 있습니다.</p>
       <div class="title-wrap">
-        <p class="cont-title small">포토리뷰<span>200</span>
+        <p class="cont-title --small">포토리뷰<span>200</span>
         </p>
       </div>
       <div class="product-review-photo">
@@ -328,7 +353,7 @@
         </ul>
       </div>
       <div class="title-wrap">
-        <p class="cont-title small">
+        <p class="cont-title --small">
           <a href="" class="btn-title active">전체<span>200</span>
           </a>
           <!-- // 현재 상태 .active -->
@@ -350,7 +375,7 @@
                 <!-- //사진 1개 이상일때 -->
               </p>
               <div class="review-text">
-                <div class="rating-wrap medium black">
+                <div class="rating-wrap --medium black">
                   <p class="rating-container">
                     <em class="rating-num" style="width: 60%;"></em>
                   </p>
@@ -377,7 +402,7 @@
                 <!-- //사진 1개 이상일때 -->
               </p>
               <div class="review-text">
-                <div class="rating-wrap medium black">
+                <div class="rating-wrap --medium black">
                   <p class="rating-container">
                     <em class="rating-num" style="width: 80%;"></em>
                   </p>
@@ -430,7 +455,7 @@
         상품에 대한 문의는 ‘마이페이지 > 1:1문의’에서 받고 있습니다.<br>작성하신 문의의 대한 답변까지 확인이 가능하니 1:1문의를 이용해주시기 바랍니다.
         </p>
         <div class="btn-wrap">
-          <button type="button" class="btn-outline large">
+          <button type="button" class="btn-outline --large">
             <span>1:1 문의</span>
           </button>
         </div>

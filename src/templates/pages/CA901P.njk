@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% set title = "장바구니" %}
 {% block content %}
-  <div class="modal --full large">
+  <div class="modal --full --large">
     <div class="modal-wrap">
       <div class="modal-header">
         <h5 class="modal-title">옵션변경</h5>
@@ -69,7 +69,7 @@
             <dt>파일첨부</dt>
             <dd>
               <div class="form-field file">
-                <label class="btn-primary small">
+                <label class="btn-primary --small">
                   <input type="file"/>
                   <span>파일첨부</span>
                 </label>
@@ -98,7 +98,7 @@
             </dd>
             <dt>웹하드</dt>
             <dd>
-              <button type="button" class="btn-outline xsmall">
+              <button type="button" class="btn-outline --xsmall">
                 <span>웹하드 업로드</span>
               </button>
               <div class="guide-wrap">
@@ -115,17 +115,16 @@
             <dd>
               <div class="form-field textarea">
                 <div class="form-wrap">
-                  <textarea id="textarea" placeholder="Placeholder"></textarea>
+                  <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
                 </div>
-              </div>
-            </dd>
-            <dt>배송방법</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>선불택배</option>
-                  </select>
+                <div class="textarea-bottom">
+                  <div class="count">
+                    <em>1</em>/<span>100</span>
+                  </div>
+                  <ul class="guide-sub --small">
+                    <li>- 자세한 견적을 원하시면, 인쇄정보는 모두 작성해주세요.</li>
+                    <li>- 파일을 첨부해주시면 보다 빠른 상담이 가능합니다.</li>
+                  </ul>
                 </div>
               </div>
             </dd>
@@ -134,10 +133,10 @@
       </div>
       <div class="modal-footer">
         <div class="btn-wrap confirm">
-          <button type="button" class="btn-outline medium">
+          <button type="button" class="btn-outline --medium">
             <span>취소</span>
           </button>
-          <button type="button" class="btn-primary medium">
+          <button type="button" class="btn-primary --medium">
             <span>변경</span>
           </button>
         </div>

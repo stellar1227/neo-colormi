@@ -1,10 +1,33 @@
 {% extends "layouts/base.njk" %}
 {% set title = "주문·결제" %}
 {% block content %}
+  <div class="step-wrap">
+    <ol class="step-status">
+      <li>
+        <p class="item">
+          <i class="item-number"></i>
+          <strong>장바구니</strong>
+        </p>
+      </li>
+      <li class="current">
+        <p class="item">
+          <i class="item-number"></i>
+          <strong>주문·결제</strong>
+        </p>
+      </li>
+      <li>
+        <p class="item">
+          <i class="item-number"></i>
+          <strong>주문완료</strong>
+        </p>
+      </li>
+    </ol>
+  </div>
   <div class="title-box center">
     <h3>주문·결제</h3>
   </div>
-  <section class="content-box">
+  <section
+    class="content-box">
     <!-- 장바구니 목록 :선택 목록 -->
     <div class="product-list step-2">
       <div class="list-item header">
@@ -40,20 +63,17 @@
                   <p class="text">기본정보가 노출되는 줄입니다.</p>
                   <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
                 </div>
-                <div class="btn-wrap">
-                  <button type="button" class="btn-outline --xsmall">
-                    <span>옵션변경</span>
-                  </button>
-                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="item" data-label="수량">
-          <p><span>1</span>건</p>
+          <p>
+            <span>1</span>건</p>
         </div>
         <div class="item" data-label="주문금액">
-          <p><span>100,000,000</span>원</p>
+          <p>
+            <span>100,000,000</span>원</p>
         </div>
         <div class="item" data-label="배송안내">
           <div class="form-field">
@@ -65,7 +85,8 @@
           </div>
         </div>
         <div class="item" data-label="배송비">
-          <p><span>3,000</span>원</p>
+          <p>
+            <span>3,000</span>원</p>
         </div>
       </div>
       <!-- // list-item -->
@@ -73,7 +94,8 @@
   </section>
   <section class="content-box">
     <div class="product-order-wrap">
-      <div class="product-order">
+      <div
+        class="product-order">
         <!-- 주문자 정보 -->
         <div class="title-wrap">
           <h5>주문자 정보</h5>
@@ -156,9 +178,12 @@
         <dl class="product-option">
           <dt class="required">수령인</dt>
           <dd>
-            <div class="form-field --error"><!-- // .error 추가 -->
+            <div
+              class="form-field --error">
+              <!-- // .error 추가 -->
               <input type="text" placeholder="Placeholder"/>
-              <p class="description">error text</p><!-- // 에러메세지 -->
+              <p class="description">error text</p>
+              <!-- // 에러메세지 -->
             </div>
           </dd>
           <dt class="required">연락처</dt>
@@ -289,7 +314,8 @@
         <li>5. 특이사항이 없을 경우, 인쇄 작업은 결제완료 후 별도의 확인절차 없이 진행됩니다.</li>
         <li>6. 당사가 제공하는 최종 인쇄 데이터의 오탈자, 컨텐츠 오류 등에 대한 검수 책임은 고객에게 있으며, 제작 완료 후 발견된 오탈자 및 컨텐츠 오류 등의 인쇄사고에 대해서 당사는 일체의 책임을 지지 않습니다.</li>
         <li>7. 칼라미는 저작권(이미지, 디자인, 원고 등)과 서체(타입페이스, 폰트 등) 사용권의 법적 문제가 없는 데이터만 인쇄,제작하며 저작권 문제발생 시 당사는 일체의 책임을 지지 않습니다.</li>
-        <li>8. 불법 성매매에 관한 인쇄제작물, 청소년 유해매체 인쇄물 등 국가기관의 심의 내용에 해당되는 인쇄물은 접수받지 않습니다. 임의로 주문된 불건전 유해매체물은 인쇄가 진행되더라도 자체 파기되며, 환불 및 재작업 처리가 되지 않습니다.</li>
+        <li>8. 불법 성매매에 관한 인쇄제작물, 청소년 유해매체 인쇄물 등 국가기관의 심의 내용에 해당되는 인쇄물은 접수받지 않습니다. 임의로 주문된 불건전 유해매체물은 인쇄가 진행되더라도 자체 파기되며, 환불 및
+          재작업 처리가 되지 않습니다.</li>
       </ul>
       <br/>
       <p class="guide-sub-deep --small">[편집디자인]</p>
@@ -317,4 +343,9 @@
       </label>
     </div>
   </section>
-  {% endblock %}
+  <div class="btn-wrap confirm">
+    <button type="button" class="btn-primary --medium">
+      <span>결제하기</span>
+    </button>
+  </div>
+{% endblock %}

@@ -48,7 +48,7 @@
 
 // body
 @mixin font-body-xxsmall {
-  @include build-font($font-weight-regular, $font-size-body-xxsmall, 19px);
+  @include build-font($font-weight-medium, $font-size-body-xxsmall, 19px);
 }
 
 @mixin font-body-xsmall {
@@ -191,11 +191,12 @@
       background: $color-background-white;
       transform: translate(-50%, -50%);
     }
+
     &.plus:after {
       width: 1px;
       height: 10px;
     }
-    
+
     &.step-ing:before {
       background: olivedrab url('') no-repeat center center/cover;
     }
@@ -334,7 +335,7 @@
           background: $color-divider-gray-darker;
           transform: translate(-50%, -50%) rotate(45deg);
         }
-        
+
         &:after {
           transform: translate(-50%, -50%) rotate(-45deg);
         }

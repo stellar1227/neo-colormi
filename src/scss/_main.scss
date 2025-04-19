@@ -40,6 +40,7 @@
 
 header {
   position: relative;
+  border-bottom: 1px solid $Line-line;
 
   .util-menu-wrap {
     position: relative;
@@ -220,7 +221,7 @@ header {
             }
 
             a:hover,
-            &.active a {
+            &.--active a {
               color: $color-text-primary;
               font-weight: 600;
             }
@@ -313,7 +314,7 @@ header {
           }
         }
 
-        .quick-menu-wrap.active {
+        .quick-menu-wrap.--active {
           .btn-select {
             &:after {
               // transform: translateY(50%) rotate(180deg);
@@ -432,7 +433,7 @@ header {
               }
 
               a:hover,
-              &.active a {
+              &.--active a {
                 color: $color-text-primary;
                 text-decoration: underline;
               }
@@ -513,7 +514,7 @@ header {
       display: inline-block;
       margin-left: 2px;
       line-height: 0;
-      
+
       &:before {
         content: '';
         display: inline-block;

@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% set title = "장바구니" %}
 {% block content %}
-  <div class="title-box center">
+  <div class="page-title">
     <h3>장바구니</h3>
   </div>
   <section class="content-box">
@@ -81,10 +81,12 @@
           </div>
         </div>
         <div class="item" data-label="수량">
-          <p><span>1</span>건</p>
+          <p>
+            <span>1</span>건</p>
         </div>
         <div class="item" data-label="주문금액">
-          <p><span>100,000,000</span>원</p>
+          <p>
+            <span>100,000,000</span>원</p>
         </div>
         <div class="item" data-label="배송방법">
           <p>선불택배</p>
@@ -93,7 +95,9 @@
           <span class="badge line-tertiary square step-ing">견적중</span>
           <span class="badge line-tertiary square">견적요청</span>
           <span class="badge fill-tertiary square step-end">견적완료</span>
-          <span class="badge fill-secondary square step-cart"> <i>장바구니</i> </span>
+          <span class="badge fill-secondary square step-cart">
+            <i>장바구니</i>
+          </span>
         </div>
       </div>
       <!-- // list-item -->
@@ -103,7 +107,9 @@
           <p class="guide-basic-title">장바구니에 담긴 상품이 없어요.</p>
           <p class="guide-sub-deep --small">새로운 상품으로 채워주세요!</p>
           <div class="btn-wrap">
-            <button type="button" class="btn-round icon"><span>메인으로</span></button>
+            <button type="button" class="btn-round icon">
+              <span>메인으로</span>
+            </button>
           </div>
         </div>
       </div>
@@ -111,25 +117,26 @@
     </div>
     <!-- 상품 금액 -->
     <div class="product-price-wrap --step">
-      <div class="product-order-price">
+      <div
+        class="product-order-price">
         {# <dl class="product-price">
-          <dt class="total">총 상품 금액</dt>
-          <dd class="total">
-            <strong>100,000,000</strong>원</dd>
-        </dl>
-        <span class="icon-plus">+</span>
-        <dl class="product-price">
-          <dt class="shipping">배송비</dt>
-          <dd class="shipping">
-            <strong>7,000</strong>원</dd>
-        </dl>
-        <span class="icon-minus">-</span>
-        <dl class="product-price">
-          <dt class="shipping">할인 금액</dt>
-          <dd class="shipping">
-            <strong>12,000</strong>원</dd>
-        </dl>
-        <span class="icon-sum">=</span> #}
+                                  <dt class="total">총 상품 금액</dt>
+                                  <dd class="total">
+                                    <strong>100,000,000</strong>원</dd>
+                                </dl>
+                                <span class="icon-plus">+</span>
+                                <dl class="product-price">
+                                  <dt class="shipping">배송비</dt>
+                                  <dd class="shipping">
+                                    <strong>7,000</strong>원</dd>
+                                </dl>
+                                <span class="icon-minus">-</span>
+                                <dl class="product-price">
+                                  <dt class="shipping">할인 금액</dt>
+                                  <dd class="shipping">
+                                    <strong>12,000</strong>원</dd>
+                                </dl>
+                                <span class="icon-sum">=</span> #}
         <dl class="product-price">
           <dt class="total-sum">총 결제 예정금액<span>(VAT포함가)</span>
           </dt>

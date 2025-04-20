@@ -49,7 +49,7 @@
       </div>
       <!-- // list-header -->
       <div class="list-item">
-        <div class="item product" data-label="상품명">
+        <div class="item --product" data-label="상품명">
           <div class="product-wrap">
             <div class="product-inner-item">
               <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
@@ -139,6 +139,7 @@
                   <option>쿠폰을 선택해주세요.</option>
                 </select>
               </div>
+              <p class="description --primary">- 1,200원 할인</p>
             </div>
           </dd>
         </dl>
@@ -154,7 +155,7 @@
             <div class="desc-box border-box --small">
               <div class="radio-wrap">
                 <label class="radio" for="radio-0-1">
-                  <input type="radio" id="radio-0-1" name="radio-0">
+                  <input type="radio" id="radio-0-1" name="radio-0" checked="checked">
                   <span class="radio-icon"></span>
                   <span class="radio-label">홍길동(기본배송지)</span>
                 </label>
@@ -253,6 +254,29 @@
             </label>
           </div>
         </dd>
+        <dd>
+          <!-- 무통장 입금 시 -->
+          <div class="desc-box gray-light-box">
+            <div class="item-box-wrap --center">
+              <div class="item-box">
+                <div class="item-box-inner">
+                  <p class="guide-basic --large-bold">국민은행 412701-01-227972</p>
+                  <p class="guide-sub --bold">빌포스트(주)</p>
+                </div>
+              </div>
+              <div class=" item-box">
+                <div class="item-box-inner">
+                  <input type="text" placeholder="입금자명" value="입금자명"/>
+                  <ul class="guide-sub-deep --small --dot">
+                    <li>입금은행/계좌번호/예금주를 미리 메모해 두시기 바랍니다.</li>
+                    <li>무통장 입금 시 ‘신청자명’과 ‘입금자명’이 다를 경우 반드시 연락 주셔야 합니다.</li>
+                    <li>무통장 입금 시 '입금'까지 완료하셔야 합니다.</li>
+                  </ul>
+                </div>
+              </p>
+            </div>
+          </div>
+        </dd>
       </dl>
     </div>
   </section>
@@ -286,9 +310,7 @@
         </dl>
       </div>
     </div>
-  </section>
-  <!-- 안내 -->
-  <section class="content-box">
+  </section><!-- 안내 --><section class="content-box">
     <div class="desc-box">
       <p class="guide-basic-title">※ 꼭 확인하세요.</p>
       <ul class="guide-sub">

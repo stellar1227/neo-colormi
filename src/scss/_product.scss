@@ -1131,17 +1131,19 @@
   }
 }
 
-// 장바구니
-.product-list {
+// 장바구니, 주문결제, 배송지 변경
+.util-wrap+.product-list {
   margin-top: 20px;
+}
 
-  &.step-2 .list-item {
-    grid-template-columns: 1fr 11.7% 16.7% 11.7% 11.7%;
-  }
+.desc-box+.product-list {
+  margin-top: 24px;
+}
+
+.product-list {
 
   .list-item {
     display: grid;
-    grid-template-columns: 4.2% 1fr 11.7% 16.7% 11.7% 11.7%;
     border-bottom: 1px solid $color-border-gray;
 
     &.header {
@@ -1165,7 +1167,7 @@
       color: $color-text-subcolor-deep;
       background: $color-border-inverse;
 
-      &.product {
+      &.--product {
         justify-content: left;
       }
 
@@ -1229,6 +1231,136 @@
           margin-top: 20px;
         }
       }
+    }
+  }
+
+  // 장바구니
+  &.step-1 {
+    .list-item {
+      grid-template-columns: 4.2% 1fr 11.7% 16.7% 11.7% 11.7%;
+    }
+  }
+
+  // 주문결제
+  &.step-2 {
+    .list-item {
+      grid-template-columns: 1fr 11.7% 16.7% 11.7% 11.7%;
+    }
+  }
+
+  // 배송지 변경
+  &.list-1 {
+    .list-item {
+      grid-template-columns: 5.6% 20% 17.8% 1fr;
+
+      &.selected {
+        .--name {
+          >span {
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 13px;
+              height: 13px;
+              margin: 0 4px 0 0;
+              background: $color-border-gray-dark url('') no-repeat center center/6.5px auto;
+              vertical-align: -2px;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.selected-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0 48px;
+
+  dt {
+    @include font-body-small-bold;
+    color: $color-text-subcolor-deep;
+
+    +dd {
+      @include font-heading-xsmall-bold;
+    }
+  }
+
+  dd {
+    @include font-body-small;
+    color: $color-text-basic;
+  }
+}
+
+.item-box-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  .item-box {
+    &:nth-child(odd) {
+      padding-right: 48px;
+    }
+
+    &:nth-child(even) {
+      padding-left: 48px;
+      border-left: 1px solid $Line-line;
+    }
+
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+
+    &:first-child {
+      align-items: flex-end;
+    }
+
+    .item-box-inner {
+      flex: 0;
+
+      >input {
+        width: 415px;
+      }
+    }
+  }
+}
+
+.product-order-item {
+  +.product-order-item {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid $Line-line-2;
+  }
+
+  >h5 {
+    text-align: left;
+  }
+
+  .order-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 20px 0;
+
+    dt {
+      text-align: left;
+      @include font-body-small-bold;
+      color: $color-text-basic;
+    }
+
+    dd {
+      text-align: right;
+      @include font-body-small;
+      color: $color-text-subcolor-deep;
+    }
+
+    .account {
+      color: $color-text-secondary;
+    }
+
+    .total-sum {
+      color: $color-text-primary;
+      font-weight: $font-weight-semibold;
     }
   }
 }

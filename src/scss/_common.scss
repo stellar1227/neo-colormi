@@ -40,6 +40,7 @@ h5 {
   .page-title+section.content-box,
   section.content-box+.btn-wrap.confirm,
   section.content-box+.btn-wrap.vertical,
+  .btn-wrap.link+section.content-box,
   section.content-box+section.content-box {
     margin-top: 48px;
   }
@@ -782,6 +783,17 @@ h5 {
     }
   }
 
+  &.link {
+    justify-content: center;
+    margin-top: 24px;
+
+    [class^=btn-] {
+      span {
+        min-width: 132px;
+      }
+    }
+  }
+
   &.vertical {
     flex-direction: column;
 
@@ -1150,6 +1162,10 @@ h5 {
       &:first-of-type {
         padding-top: 40px;
       }
+
+      >.desc-box:first-of-type {
+        margin-top: 0;
+      }
     }
 
     .modal-footer {
@@ -1223,6 +1239,12 @@ h5 {
         }
       }
     }
+
+    &.--xlarge {
+      .modal-wrap {
+        width: 940px;
+      }
+    }
   }
 }
 
@@ -1243,31 +1265,66 @@ h5 {
   &-sub {
     @include font-body-small;
     color: $color-text-subcolor;
-    /* #969696 */
+    margin-top: 16px;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &.--small {
-      @include font-body-xsmall
+      @include font-body-xsmall;
+    }
+
+    &.--bold {
+      font-weight: $font-weight-semibold;
     }
   }
 
   &-sub-deep {
     @include font-body-small;
     color: $color-text-subcolor-deep;
-    /* #737373 */
+    margin-top: 16px;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &.--small {
-      @include font-body-xsmall
+      @include font-body-xsmall;
+    }
+
+    &.--dot {
+      li {
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          margin: 0 8px;
+          background: $color-text-subcolor-deep;
+          border-radius: 50%;
+          vertical-align: 2px;
+        }
+      }
     }
   }
 
   &-basic {
     @include font-body-small;
     color: $color-text-basic;
-    /* #4c4c4c */
+    margin-top: 16px;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &-title {
       @include font-body-small-bold;
       color: $color-text-basic;
+    }
+
+    &.--large-bold {
+      @include font-body-large-bold;
     }
   }
 }
@@ -1276,6 +1333,10 @@ h5 {
   margin-top: 8px;
   color: $color-text-subcolor;
   @include font-body-xsmall;
+
+  &.--primary {
+    color: $color-text-primary;
+  }
 }
 
 // description box
@@ -1296,6 +1357,19 @@ h5 {
     @include desc-box;
     padding: 20px 0px;
     background: $color-border-gray-light;
+
+    &.--receipt {
+      width: 590px;
+      margin: 0 auto;
+      padding: 48px 32px;
+    }
+  }
+
+  &.gray-sub-box {
+    @include desc-box;
+    padding: 32px;
+    background: $color-background-gray-subtler;
+    text-align: left;
   }
 
   &.border-box {
@@ -1337,12 +1411,6 @@ h5 {
     }
   }
 
-  [class$=-title] {
-    +[class^=guide-] {
-      margin-top: 16px;
-    }
-  }
-
   [class^=guide-] {
     +[class$=-title] {
       margin-top: 32px;
@@ -1354,7 +1422,6 @@ h5 {
 
     +[class^=guide] {
       margin-top: 8px;
-      padding: 0;
       text-align: center;
     }
   }

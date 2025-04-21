@@ -94,20 +94,16 @@ h5 {
 
       &:before,
       &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 19.5px;
-        width: 1px;
+        @include cross-line-base-1px;
+        left: auto;
+        right: 15.5px;
         height: 5.5px;
-        background: $color-divider-gray-darker;
-        transform: translate(-50%, -50%) rotate(-45deg);
         z-index: 1;
       }
 
       &:after {
-        right: 15.5px;
-        transform: translate(-50%, -50%) rotate(45deg);
+        @include cross-line-after-1px;
+        right: 19.1px;
       }
     }
 
@@ -191,20 +187,12 @@ h5 {
 
           &:before,
           &:after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 1px;
+            @include cross-line-base-1px;
             height: 6px;
-            border-radius: 1px;
-            background: $color-border-gray-dark;
-            transform: translate(-50%, -50%) rotate(45deg);
           }
 
           &:after {
-            transform: translate(-50%, -50%) rotate(-45deg);
+            @include cross-line-after-1px;
           }
         }
 
@@ -450,7 +438,6 @@ h5 {
 
   &.file {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
 
     [class^=btn-] {
@@ -460,12 +447,30 @@ h5 {
     [class^=guide] {
       flex: 1;
       @include ellipsis;
+      height: 40px;
+      margin-top: 0;
+      line-height: 40px;
     }
 
     .btn-del {
+      position: relative;
       width: 24px;
       height: 24px;
-      margin-left: 8px;
+      margin: 0 0 0 8px;
+
+      &:before,
+      &:after {
+        @include cross-line-base-1px;
+        height: 13px;
+      }
+
+      &:after {
+        @include cross-line-after-1px;
+      }
+
+      i {
+        font-size: 0;
+      }
     }
   }
 
@@ -479,6 +484,7 @@ h5 {
 .checkbox-wrap,
 .radio-wrap {
   display: inline-flex;
+  align-items: center;
 
   +[class$=-wrap] {
     margin-left: 34px;
@@ -901,21 +907,14 @@ h5 {
 
       &:before,
       &:after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        right: 5.5px;
+        @include next-line-base-1px;
         top: calc(50% - 1.5px);
-        width: 1px;
         height: 5px;
-        border-radius: 1px;
-        background: $color-border-gray-dark;
-        transform: translateY(-50%) rotate(-45deg);
       }
 
       &:after {
+        @include next-line-after-1px;
         top: calc(50% + 1.5px);
-        transform: translateY(-50%) rotate(45deg);
       }
     }
   }
@@ -956,21 +955,15 @@ h5 {
 
   &:before,
   &:after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    right: 5.5px;
+    @include next-line-base-1px;
     top: calc(50% - 1.5px);
-    width: 1px;
     height: 5px;
-    border-radius: 1px;
     background: $Line-line-2;
-    transform: translateY(-50%) rotate(-45deg);
   }
 
   &:after {
+    @include next-line-after-1px;
     top: calc(50% + 1.5px);
-    transform: translateY(-50%) rotate(45deg);
   }
 
   &.--small {
@@ -986,13 +979,13 @@ h5 {
 
     &:before,
     &:after {
-      top: calc(50% - 2.1px);
+      top: calc(50% - 2.3px);
       right: 9.5px;
       height: 7px;
     }
 
     &:after {
-      top: calc(50% + 2.1px);
+      top: calc(50% + 2.3px);
     }
   }
 

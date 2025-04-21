@@ -1,5 +1,6 @@
 @use 'mixin' as *;
 @use 'variables' as *;
+@use "sass:list";
 
 .breadcrumb {
   margin: -32px 0 16px;
@@ -239,9 +240,9 @@
     'line-display-9': ($Display-Status-Display-9, rgba(246, 91, 144, 0.10)),
     'line-tertiary': ($color-border-tertiary, $color-background-white)) {
     &.#{$class} {
-      color: nth($values, 1);
-      border: 1px solid nth($values, 1);
-      background: nth($values, 2);
+      color: list.nth($values, 1);
+      border: 1px solid list.nth($values, 1);
+      background: list.nth($values, 2);
     }
   }
 
@@ -396,9 +397,103 @@
 
   .product-img {
     flex: 0 0 auto;
-    width: 497px;
-    height: 407px;
-    border: 1px solid $Line-line;
+    display: flex;
+    gap: 0 20px;
+
+    .product-img-detail {
+      overflow: hidden;
+      width: 407px;
+      height: 407px;
+      border-radius: 10px;
+
+      img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .product-img-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px 0;
+      height: 407px;
+
+      .img-item-wrap {
+        flex: 1;
+        overflow-y: hidden;
+
+        .img-item {
+          +.img-item {
+            margin-top: 12px;
+          }
+
+          overflow: hidden;
+          width: 70px;
+          height: 70px;
+          border-radius: 10px;
+          border: 1px solid transparent;
+
+          &:hover {
+            border-color: $color-border-gray-dark;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .button-item {
+        text-align: center;
+
+        &:first-child {
+
+          [class^=btn-]:before {
+            background-image: url('');
+          }
+        }
+
+        &:last-child {
+
+          [class^=btn-]:before {
+            background-image: url('');
+          }
+        }
+
+        [class^=btn-] {
+          display: inline-block;
+          position: relative;
+          width: 24px;
+          height: 24px;
+          border-radius: 100%;
+          border: 1px solid $color-border-gray;
+          background: $color-border-gray-light;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background-color: #003f6d;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+          }
+
+          i {
+            font-size: 0;
+          }
+        }
+      }
+    }
   }
 
   .product-info {
@@ -576,6 +671,7 @@
 .product-order-wrap {
   display: flex;
   gap: 0 80px;
+  margin-bottom: 40px;
 
   >* {
     flex: 1 1 50%;
@@ -657,6 +753,7 @@
   .product-option {
     display: grid;
     grid-template-columns: 120px 1fr;
+    grid-template-rows: minmax(40px, auto);
     grid-gap: 20px 0;
     padding-top: 20px;
 
@@ -674,12 +771,14 @@
 
     >dd {
       display: flex;
-      align-items: center;
+      // align-items: center;
       min-height: 100%;
       padding-left: 4px;
 
       .width-436 {
-        width: calc(50% - 100px);
+        input {
+          width: calc(50% - 100px);
+        }
       }
 
       .form-field {
@@ -698,6 +797,15 @@
           margin-left: 8px;
         }
       }
+
+      [class^=guide-] {
+        margin-top: 0;
+      }
+
+      >.inner-wrap {
+        display: inline-flex;
+        align-items: center;
+      }
     }
 
     &.columns-1 {
@@ -711,7 +819,7 @@
     &.columns-4 {
       grid-template-columns: 120px 1fr 200px 1fr;
 
-      dt {
+      >dt {
         &:nth-of-type(even) {
           margin-left: 80px;
         }
@@ -721,12 +829,82 @@
     &+.title-wrap {
       margin-top: 40px;
     }
+
+    .row-span-2 {
+      grid-row: 1 / 3;
+
+      ~dt:nth-of-type(odd) {
+        margin-left: 80px;
+      }
+    }
+
+    .--add-option {
+      margin-top: 20px;
+
+      .option-item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 20px 0;
+        @include font-body-small;
+        color: $color-text-basic;
+
+        dt {
+          padding: 9px 0;
+        }
+
+        .form-option {
+          display: flex;
+          align-items: center;
+          gap: 0 8px;
+
+          strong {
+            @include font-body-small;
+            color: $color-text-subcolor;
+          }
+
+          input[type=text] {
+            width: 87px;
+          }
+
+          .icon {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+
+            &:before,
+            &:after {
+              @include cross-line-base-1px;
+              height: 9px;
+            }
+
+            &:after {
+              @include cross-line-after-1px;
+            }
+
+            i {
+              font-size: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
   [class^=btn-] {
 
     input[type=file] {
       display: none;
+    }
+  }
+
+  .print-option {
+    .option-form {
+      display: inline-block;
+
+      input {
+        width: 100px;
+      }
     }
   }
 }
@@ -1132,128 +1310,149 @@
 }
 
 // 장바구니, 주문결제, 배송지 변경
-.util-wrap+.product-list {
+.util-wrap+.table-list {
   margin-top: 20px;
 }
 
-.desc-box+.product-list {
+.desc-box+.table-list {
   margin-top: 24px;
 }
 
-.product-list {
+.table-list {
 
-  .list-item {
-    display: grid;
-    border-bottom: 1px solid $color-border-gray;
+  .list-item-wrap {
+    &.--header {
+      .list-item {
+        border-bottom-color: $color-border-gray-dark;
 
-    &.header {
-      border-bottom-color: $color-border-gray-dark;
-
-      .item {
-        padding: 14px 16px;
-        @include font-body-small-bold;
-        background: $color-border-gray-light;
-        color: $color-text-basic;
+        .item {
+          padding: 14px 16px;
+          @include font-body-small-bold;
+          background: $color-border-gray-light;
+          color: $color-text-basic;
+        }
       }
     }
 
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 24px 16px;
-      @include font-body-small;
-      color: $color-text-subcolor-deep;
-      background: $color-border-inverse;
+    &.--body {
+      .list-item {
+        .item {
 
-      &.--product {
-        justify-content: left;
+          &.--product,
+          &.--address {
+            justify-content: left;
+          }
+        }
+      }
+    }
+
+    .list-item {
+      display: grid;
+      border-bottom: 1px solid $color-border-gray;
+      display: flex;
+
+      .--checkbox {
+        width: 50px;
       }
 
-      .product-wrap {
-        .product-inner-item {
-          display: flex;
-          flex-direction: row;
-          gap: 0 16px;
-        }
+      .--product,
+      .--address {
+        flex: 1;
+      }
 
-        .product-img {
-          overflow: hidden;
-          width: 120px;
-          height: 120px;
-          border-radius: 4px;
-          border: none;
+      .--quantity,
+      .--delivery,
+      .--status,
+      .--delivery-fee {
+        width: 140px;
+      }
 
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+      .--tel {
+        width: 160px;
+      }
+
+      .--name {
+        width: 180px;
+      }
+
+      .--amount {
+        width: 200px;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 24px 16px;
+        @include font-body-small;
+        color: $color-text-subcolor-deep;
+        background: $color-border-inverse;
+
+        .product-wrap {
+          .product-inner-item {
+            display: flex;
+            flex-direction: row;
+            gap: 0 16px;
+          }
+
+          .product-img {
+            overflow: hidden;
+            width: 120px;
+            height: 120px;
+            border-radius: 4px;
+            border: none;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .product-info {
+            .product-name {
+              margin: 0;
+              @include font-body-small-bold;
+            }
+
+            .product-text,
+            .btn-wrap {
+              margin-top: 20px;
+            }
           }
         }
 
-        .product-info {
-          .product-name {
-            margin: 0;
-            @include font-body-small-bold;
+        &:before {
+          content: attr(data-label);
+          display: none;
+        }
+
+        &.--no-item {
+          flex: 1;
+          flex-direction: column;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            width: 216px;
+            height: 161px;
+            margin-bottom: 20px;
+            border: 1px solid $color-border-gray;
           }
 
-          .product-text,
+          .guide-sub-deep {
+            margin-top: 12px;
+          }
+
           .btn-wrap {
             margin-top: 20px;
           }
         }
       }
 
-      &:before {
-        content: attr(data-label);
-        display: none;
-      }
-
-      &.no-item {
-        grid-column: 1/7;
-        flex-direction: column;
-
-        &:before {
-          content: '';
-          display: inline-block;
-          width: 216px;
-          height: 161px;
-          margin-bottom: 20px;
-          border: 1px solid $color-border-gray;
-        }
-
-        .guide-sub-deep {
-          margin-top: 12px;
-        }
-
-        .btn-wrap {
-          margin-top: 20px;
-        }
-      }
-    }
-  }
-
-  // 장바구니
-  &.step-1 {
-    .list-item {
-      grid-template-columns: 4.2% 1fr 11.7% 16.7% 11.7% 11.7%;
-    }
-  }
-
-  // 주문결제
-  &.step-2 {
-    .list-item {
-      grid-template-columns: 1fr 11.7% 16.7% 11.7% 11.7%;
-    }
-  }
-
-  // 배송지 변경
-  &.list-1 {
-    .list-item {
-      grid-template-columns: 5.6% 20% 17.8% 1fr;
-
-      &.selected {
+      // 배송지 변경
+      &.--selected {
         .--name {
           >span {
             &:before {

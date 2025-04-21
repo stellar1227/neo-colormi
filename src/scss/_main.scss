@@ -551,7 +551,7 @@ header {
           left: 50%;
           width: 10px;
           height: 10px;
-          background: #292929;
+          background: $color-border-gray-darker;
           border-radius: 2px 0 0 0;
           transform: translateX(-50%) rotate(45deg);
         }

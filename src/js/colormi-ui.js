@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //상품페이지 갤러리
+  productImages();
+
+  //상품페이지 스티키 정보
+  productStickyInfo();
+  
+
+  
+});
+
+
+function productImages(){
   const thumbNailGallery = document.getElementById("thumbNailGallery");
   const imgItemWrap = thumbNailGallery.querySelector(".img-item-wrap");
   const imgItems = imgItemWrap.querySelectorAll(".img-item");
@@ -36,4 +48,27 @@ document.addEventListener("DOMContentLoaded", () => {
       imgDetail.src = item.querySelector("img").src;
     });
   });
-});
+}
+
+function productStickyInfo(){
+  const productImgDetail = document.querySelector(".product-wrap");
+  const productInfo = document.querySelector(".product-inner");
+  const productInfoHeight = productInfo.offsetHeight;
+  const productInfoTop = productInfo.getBoundingClientRect().top + window.scrollY;
+
+  let timer = null;
+
+  window.addEventListener("scroll", () => {
+    if (!timer) {
+      timer = setTimeout(() => {
+        const scrollTop = window.scrollY;
+        if (scrollTop > productInfoTop + productInfoHeight) {
+          productImgDetail.classList.add("scroll");
+        } else {
+          productImgDetail.classList.remove("scroll");
+        }
+        timer = null;
+      },0); 
+    }
+  });
+}

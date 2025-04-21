@@ -614,8 +614,10 @@
       margin-bottom: 0;
       padding: 20px 0;
     }
-
-    .product-img {
+    .product-img-items{
+      display: none;
+    }
+    .product-img-detail {
       width: 104px;
       height: 104px;
       border-radius: 20px;

@@ -10,17 +10,37 @@
     display: flex;
 
     li {
+      position: relative;
       display: flex;
       align-items: center;
 
-      +li::before {
-        content: '';
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin: 0 2px;
-        background: #003f6d url('') no-repeat center center/100% 100%;
+      +li {
+        padding-left: 20px;
+
+        &:before,
+        &:after {
+          @include next-line-base-1px;
+          height: 5px;
+          top: calc(50% - 1.6px);
+          left: 8px;
+          right: auto;
+          background: $color-border-gray;
+        }
+
+        &:after {
+          @include next-line-after-1px;
+          top: calc(50% + 1.6px);
+        }
       }
+
+      // +li:before {
+      //   content: '';
+      //   display: inline-block;
+      //   width: 16px;
+      //   height: 16px;
+      //   margin: 0 2px;
+      //   background: #003f6d url('') no-repeat center center/100% 100%;
+      // }
 
       a {
         display: inline-block;
@@ -405,6 +425,7 @@
       width: 407px;
       height: 407px;
       border-radius: 10px;
+      background: $color-border-gray-light; // 나중에 삭제 예정
 
       img {
         display: inline-block;
@@ -425,6 +446,8 @@
         overflow-y: hidden;
 
         .img-item {
+          background: $color-border-gray-light; // 나중에 삭제 예정
+
           +.img-item {
             margin-top: 12px;
           }
@@ -673,8 +696,8 @@
   gap: 0 80px;
   margin-bottom: 40px;
 
-  >* {
-    flex: 1 1 50%;
+  >.product-order {
+    flex: 1 50%;
   }
 
   .product-order {
@@ -762,6 +785,11 @@
       border-top: 1px solid $Line-line;
     }
 
+    .--v-center {
+      display: flex;
+      align-items: center;
+    }
+
     >dt {
       padding: 9px 0;
       @include font-body-small;
@@ -776,12 +804,11 @@
 
     >dd {
       display: flex;
-      // align-items: center;
+      flex-direction: column;
       min-height: 100%;
       padding-left: 4px;
 
       .form-field {
-        flex: 1;
         display: flex;
         flex-direction: column;
 
@@ -794,10 +821,13 @@
           align-items: center;
         }
 
-        &.button-option {
+        .button-option {
+          display: flex;
 
           >input,
           .form-wrap {
+            display: flex;
+            align-items: center;
             width: calc(100% - 108px);
           }
 
@@ -808,10 +838,66 @@
               width: 84px;
             }
           }
+
+          .--edge-round {
+            width: 132px;
+            gap: 8px;
+
+            .checkbox {
+              margin: 0;
+
+              .checkbox-label {
+                display: flex;
+                padding: 10px;
+                border-width: 2px;
+                border-style: solid;
+                border-color: transparent;
+              }
+
+              &:nth-of-type(1) .checkbox-label {
+                border-radius: 10px 0 0 0;
+                border-width: 2px 0 0 2px;
+              }
+
+              &:nth-of-type(2) .checkbox-label {
+                justify-content: flex-end;
+                border-radius: 0 10px 0 0;
+                border-width: 2px 2px 0 0;
+              }
+
+              &:nth-of-type(3) .checkbox-label {
+                align-items: flex-end;
+                border-radius: 0 0 0 10px;
+                border-width: 0 0 2px 2px;
+              }
+
+              &:nth-child(4) .checkbox-label {
+                justify-content: flex-end;
+                align-items: flex-end;
+                border-radius: 0 0 10px 0;
+                border-width: 0 2px 2px 0;
+              }
+            }
+
+            input:checked~.checkbox-label {
+              border-color: $color-border-primary;
+              background: $color-border-primary-light;
+            }
+
+
+            .checkbox-label {
+              width: 62px;
+              height: 62px;
+              margin: 0;
+              background: $color-border-gray-light;
+            }
+          }
         }
 
-        &.multi-option {
+        .multi-option {
+          display: flex;
           gap: 8px;
+          height: 40px;
 
           >.form-wrap {
             flex: 1;
@@ -819,7 +905,9 @@
           }
         }
 
-        &.print-option {
+        .print-option {
+          display: flex;
+          align-items: center;
 
           .option-form {
             display: inline-block;
@@ -866,6 +954,12 @@
         display: inline-flex;
         align-items: center;
       }
+
+      >.checkbox-wrap,
+      >.radio-wrap,
+      >.toggle-wrap {
+        min-height: 40px;
+      }
     }
 
     &.columns-1 {
@@ -891,16 +985,32 @@
     }
 
     .row-span-2 {
-      grid-row: 1 / 3;
+      grid-row: 1 / 4;
       grid-row-end: span 3;
 
-      ~dt:nth-of-type(odd) {
+      +dt+dd+dt {
         margin-left: 80px;
+      }
+
+      &.--end {
+        grid-row: 2 / 5;
+        grid-column: 3;
+
+      }
+
+    }
+
+    dd.row-span-2.--end {
+      grid-column: 4;
+
+      +dt+dd+dt {
+        margin-left: 0;
       }
     }
   }
 
   .--add-option {
+    width: 100%;
     margin-top: 20px;
 
     &.--item {
@@ -911,26 +1021,17 @@
       .title-wrap {
 
         .icon-plus {
-          position: relative;
-          display: inline-block;
-          width: 20px;
-          height: 20px;
-          margin: 4px 8px 4px 4px;
-          vertical-align: -8px;
-          border-radius: 100%;
-          background: $color-border-gray;
-
-          &:before,
-          &:after {
-            @include plus-line-base-1px;
-            height: 9px;
-          }
-
-          &:after {
-            @include plus-line-after-1px;
-          }
+          margin-right: 6px;
         }
       }
+
+      .img-option.option-item {
+        gap: 20px 4px;
+      }
+    }
+
+    .img-option.option-item {
+      gap: 20px;
     }
   }
 
@@ -939,14 +1040,13 @@
       margin-top: 20px;
     }
 
+    >.product-option {
+      padding: 0;
+    }
+
     display: grid;
-    gap: 20px;
     @include font-body-small;
     color: $color-text-basic;
-
-    &.columns-2 {
-      grid-template-columns: 100px 1fr;
-    }
 
     dt {
       padding: 9px 0;

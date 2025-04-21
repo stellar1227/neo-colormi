@@ -450,10 +450,7 @@
         transform: translateY(-12px);
 
         .img-item {
-          +.img-item {
-            margin-top: 12px;
-          }
-
+          margin-top:12px;
           overflow: hidden;
           width: 70px;
           height: 70px;

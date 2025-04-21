@@ -16,10 +16,35 @@
     </ol>
   </nav>
   <section class="content-box">
-    <div class="product-wrap">
-    <!-- //스크롤이벤트 .scroll추가 -->
+    <div
+      class="product-wrap">
+      <!-- //스크롤이벤트 .scroll추가 -->
       <div class="product-inner">
-        <div class="product-img">이미지</div>
+        <div class="product-img">
+          <div class="product-img-items">
+            <div class="button-item">
+              <button type="button" class="btn-prev">
+                <i>이전</i>
+              </button>
+            </div>
+            <div class="img-item-wrap">
+              <div class="img-item">
+                <img src="/img/product/C015-01.jpg" alt="상품 이미지"/>
+              </div>
+              <div class="img-item">
+                <img src="/img/product/C015-02.jpg" alt="상품 이미지"/>
+              </div>
+            </div>
+            <div class="button-item">
+              <button type="button" class="btn-next">
+                <i>다음</i>
+              </button>
+            </div>
+          </div>
+          <div class="product-img-detail">
+            <img src="/img/product/C015-01.jpg" alt="상품 이미지"/>
+          </div>
+        </div>
         <div class="product-info">
           <div class="item">
             <div class="top-area">
@@ -66,7 +91,8 @@
             <div class="desc-box tertiary-light-box --small">
               <div class="quote-wrap">
                 <div class="quote-title">
-                  <p class="title">한눈에<strong>견적보기</strong></p>
+                  <p class="title">한눈에<strong>견적보기</strong>
+                  </p>
                   <p class="description">공급가+부가세 포함</p>
                 </div>
                 <div class="quote-check">
@@ -76,7 +102,8 @@
                       <span class="checkbox-icon"></span>
                       <span class="checkbox-label">흑백</span>
                     </label>
-                    <span class="price"><em>100,000,000</em>원</span>
+                    <span class="price">
+                      <em>100,000,000</em>원</span>
                   </div>
                   <div class="checkbox-wrap">
                     <label class="checkbox" for="check-0-2">
@@ -84,7 +111,8 @@
                       <span class="checkbox-icon"></span>
                       <span class="checkbox-label">인디고</span>
                     </label>
-                    <span class="price"><em>100,000,000</em>원</span>
+                    <span class="price">
+                      <em>100,000,000</em>원</span>
                   </div>
                   <div class="checkbox-wrap">
                     <label class="checkbox" for="check-0-3">
@@ -92,7 +120,8 @@
                       <span class="checkbox-icon"></span>
                       <span class="checkbox-label">캐논IX</span>
                     </label>
-                    <span class="price"><em>100,000,000</em>원</span>
+                    <span class="price">
+                      <em>100,000,000</em>원</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +154,8 @@
       </div>
     </div>
   </section>
-  <section class="content-box">
+  <section
+    class="content-box">
     <!-- 기본정보 -->
     <div class="product-order">
       <div class="title-wrap">
@@ -133,34 +163,9 @@
         <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
       </div>
       <dl class="product-option columns-4">
-        <dt>구성</dt>
-        <dd>
-          <div
-            class="form-field">
-            <div class="form-wrap select">
-              <select class="btn-select">
-                <option>메모장</option>
-                <option>메모장 커버</option>
-                <option>메모장 세트(커버1개+메모장2부)</option>
-              </select>
-            </div>
-          </div>
-        </dd>
-        <dt>매수</dt>
-        <dd>
-          <div
-            class="form-field">
-            <div class="form-wrap select">
-              <select class="btn-select">
-                <option>50매</option>
-              </select>
-            </div>
-          </div>
-        </dd>
-        <dt>사이즈</dt>
-        <dd>
-          <div
-            class="form-field">
+        <dt class="row-span-2">사이즈</dt>
+        <dd class="row-span-2">
+          <div class="form-field">
             <div class="form-wrap select">
               <select class="btn-select">
                 <option>A5</option>
@@ -168,40 +173,59 @@
                 <option>A4</option>
               </select>
             </div>
+            <div class="--add-option">
+              <dl class="option-item">
+                <dt>재단사이즈</dt>
+                <dd class="form-option">
+                  <strong>가로</strong>
+                  <input type="text" placeholder="Placeholder"/>
+                  <span class="icon">
+                    <i>X</i>
+                  </span>
+                  <strong>세로</strong>
+                  <input type="text" placeholder="Placeholder"/>
+                  <span>mm</span>
+                </dd>
+                <dt>작업사이즈</dt>
+                <dd class="form-option">
+                  <strong>가로</strong>
+                  <input type="text" placeholder="Placeholder"/>
+                  <span class="icon">
+                    <i>X</i>
+                  </span>
+                  <strong>세로</strong>
+                  <input type="text" placeholder="Placeholder"/>
+                  <span>mm</span>
+                </dd>
+              </dl>
+            </div>
           </div>
         </dd>
         <dt>수량</dt>
         <dd>
-          <div class="form-field">
-            <input type="number" placeholder="Placeholder"/>
-            <p class="description">10부 단위로 주문 가능</p>
+          <div class="form-field print-option">
+            <p class="option-form">
+              <input type="number" placeholder="Placeholder"/>
+              <span class="guide-basic">부</span>
+            </p>
+            <span class="guide-sub --small">총 인쇄페이지수
+              <em>120</em>
+              총 인쇄 장수
+              <em>110</em>
+            </span>
           </div>
         </dd>
-        <dt>커버각인</dt>
+        <dt>제본방향</dt>
         <dd>
-          <div
-            class="form-field">
+          <div class="form-field">
             <div class="form-wrap select">
               <select class="btn-select">
-                <option>안함</option>
-                <option>추가</option>
+                <option>선택</option>
               </select>
             </div>
-          </div>
-        </dd>
-        <dt>파일첨부</dt>
-        <dd>
-          <div class="form-field file">
-            <label class="btn-primary --small">
-              <input type="file"/>
-              <span>파일첨부</span>
-            </label>
-            <span class="guide-sub">선택한 파일이 없습니다.</span><!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-            <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-            <button type="button" class="btn-del">
-              <i class="delete">삭제</i>
+            <button type="button" class="btn-primary --small">
+              <span>상세보기</span>
             </button>
-            <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
           </div>
         </dd>
       </dl>
@@ -221,16 +245,20 @@
           </dd>
           <dt>웹하드</dt>
           <dd>
-            <button type="button" class="btn-outline --xsmall">
-              <span>웹하드 업로드</span>
-            </button>
-            <dl class="desc-guide line-round">
-              <dt>ID</dt>
-              <dd>colomi</dd>
-              <dt>PW</dt>
-              <dd>1234</dd>
-            </dl>
-            <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+            <div class="inner-wrap">
+              <button type="button" class="btn-outline --xsmall">
+                <span>웹하드 업로드</span>
+              </button>
+              <div class="guide-wrap">
+                <dl class="desc-guide line-round">
+                  <dt>ID</dt>
+                  <dd>colomi</dd>
+                  <dt>PW</dt>
+                  <dd>1234</dd>
+                </dl>
+                <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+              </div>
+            </div>
           </dd>
           <dt>요청사항</dt>
           <dd>
@@ -242,8 +270,7 @@
           </dd>
           <dt>배송방법</dt>
           <dd>
-            <div
-              class="form-field width-436">
+            <div class="form-field width-436">
               <div class="form-wrap select">
                 <select class="btn-select">
                   <option>선불택배</option>
@@ -266,16 +293,20 @@
           </dd>
           <dt>웹하드</dt>
           <dd>
-            <button type="button" class="btn-outline --xsmall">
-              <span>웹하드 업로드</span>
-            </button>
-            <dl class="desc-guide line-round">
-              <dt>ID</dt>
-              <dd>colomi</dd>
-              <dt>PW</dt>
-              <dd>1234</dd>
-            </dl>
-            <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+            <div class="inner-wrap">
+              <button type="button" class="btn-outline --xsmall">
+                <span>웹하드 업로드</span>
+              </button>
+              <div class="guide-wrap">
+                <dl class="desc-guide line-round">
+                  <dt>ID</dt>
+                  <dd>colomi</dd>
+                  <dt>PW</dt>
+                  <dd>1234</dd>
+                </dl>
+                <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+              </div>
+            </div>
           </dd>
           <dt>요청사항</dt>
           <dd>
@@ -287,8 +318,7 @@
           </dd>
           <dt>배송방법</dt>
           <dd>
-            <div
-              class="form-field width-436">
+            <div class="form-field width-436">
               <div class="form-wrap select">
                 <select class="btn-select">
                   <option>선불택배</option>
@@ -309,20 +339,25 @@
         <dd>
           <div class="form-field width-436">
             <input type="text" placeholder="Placeholder"/>
+            <p class="description">에러메세지</p>
           </div>
         </dd>
         <dt>웹하드</dt>
         <dd>
-          <button type="button" class="btn-outline --xsmall">
-            <span>웹하드 업로드</span>
-          </button>
-          <dl class="desc-guide line-round">
-            <dt>ID</dt>
-            <dd>colomi</dd>
-            <dt>PW</dt>
-            <dd>1234</dd>
-          </dl>
-          <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+          <div class="inner-wrap">
+            <button type="button" class="btn-outline --xsmall">
+              <span>웹하드 업로드</span>
+            </button>
+            <div class="guide-wrap">
+              <dl class="desc-guide line-round">
+                <dt>ID</dt>
+                <dd>colomi</dd>
+                <dt>PW</dt>
+                <dd>1234</dd>
+              </dl>
+              <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+            </div>
+          </div>
         </dd>
         <dt>요청사항</dt>
         <dd>
@@ -334,8 +369,7 @@
         </dd>
         <dt>배송방법</dt>
         <dd>
-          <div
-            class="form-field width-436">
+          <div class="form-field width-436">
             <div class="form-wrap select">
               <select class="btn-select">
                 <option>선불택배</option>
@@ -356,39 +390,39 @@
       <p class="guide-basic-title">오후 6시 이후 접수분은 익일(다음날) 출고됩니다.</p>
       <p class="guide-basic">
         선불택배 - 3만원 미만시, 배송비 3,000원 / 3만원 이상시, 배송비 4,500원<br>정매수를 제작할 경우 견적문의를 이용해 주세요. (48절/64절 주문시 연당 재단비 추가)</p>
-    </div>
-    <!-- 상품 금액 -->
-    <div class="product-price-wrap">
-      <div class="product-order-price">
-        <dl class="product-price">
-          <dt class="total">총 상품 금액</dt>
-          <dd class="total">
-            <strong>100,000,000</strong>원</dd>
-        </dl>
-        <span class="icon-plus">+</span>
-        <dl class="product-price">
-          <dt class="shipping">배송비</dt>
-          <dd class="shipping">결제시 확인하세요</dd>
-        </dl>
-        <span class="icon-sum">=</span>
-        <dl class="product-price">
-          <dt class="total-sum">총 결제 예정금액<span>(VAT포함가)</span>
-          </dt>
-          <dd class="total-sum">
-            <strong>100,000,000</strong>원</dd>
-        </dl>
       </div>
-      <div class="btn-wrap confirm">
-        <button type="button" class="btn-outline --medium">
-          <i>DM</i>
-        </button>
-        <button type="button" class="btn-outline --medium">
-          <span>장바구니</span>
-        </button>
-        <button type="button" class="btn-primary --medium">
-          <span>바로주문</span>
-        </button>
+      <!-- 상품 금액 -->
+      <div class="product-price-wrap">
+        <div class="product-order-price">
+          <dl class="product-price">
+            <dt class="total">총 상품 금액</dt>
+            <dd class="total">
+              <strong>100,000,000</strong>원</dd>
+          </dl>
+          <span class="icon-plus">+</span>
+          <dl class="product-price">
+            <dt class="shipping">배송비</dt>
+            <dd class="shipping">결제시 확인하세요</dd>
+          </dl>
+          <span class="icon-sum">=</span>
+          <dl class="product-price">
+            <dt class="total-sum">총 결제 예정금액<span>(VAT포함가)</span>
+            </dt>
+            <dd class="total-sum">
+              <strong>100,000,000</strong>원</dd>
+          </dl>
+        </div>
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <i>DM</i>
+          </button>
+          <button type="button" class="btn-outline --medium">
+            <span>장바구니</span>
+          </button>
+          <button type="button" class="btn-primary --medium">
+            <span>바로주문</span>
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   {% endblock %}

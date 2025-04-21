@@ -111,7 +111,6 @@ h5 {
       position: relative;
       padding-right: 40px;
       text-align: left;
-      line-height: 1;
       background: $color-background-white;
 
       &:focus,
@@ -437,7 +436,8 @@ h5 {
   }
 
   &.file {
-    display: flex;
+    flex-direction: row !important;
+    align-items: center;
     flex-wrap: wrap;
 
     [class^=btn-] {
@@ -485,6 +485,7 @@ h5 {
 .radio-wrap {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
 
   +[class$=-wrap] {
     margin-left: 34px;
@@ -651,6 +652,87 @@ h5 {
       margin-left: 8px;
       color: $color-text-basic;
       @include font-body-xsmall;
+    }
+  }
+
+  &.img-option {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .checkbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+
+      +.checkbox {
+        margin: 0;
+      }
+
+      .checkbox-img {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        width: 132px;
+        height: 132px;
+        border-radius: 4px;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 4px;
+          border: 1px solid $Line-line;
+          box-sizing: border-box;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .checkbox-label {
+        margin: 0;
+        @include font-body-small;
+        color: $color-text-subcolor-deep;
+      }
+
+      input:checked+.checkbox-img {
+        &:after {
+          border-color: $color-border-primary;
+        }
+      }
+
+      input:checked~.checkbox-label {
+        color: $color-text-primary;
+      }
+
+      input:disabled~.checkbox-img {
+        &:after {
+          background: $color-alpha-inverse50;
+        }
+
+        em {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          @include font-body-xsmall;
+          color: $color-text-subcolor-inverse-deep;
+          transform: translateY(-50%);
+          z-index: 1;
+        }
+      }
+
+      input:disabled~.checkbox-label {
+        color: $color-text-subcolor-light;
+      }
     }
   }
 }
@@ -858,17 +940,15 @@ h5 {
 
     &.plus:before,
     &.plus:after {
-      background: $color-border-gray-dark !important;
+      background: $color-border-gray-dark;
     }
   }
 
   &.--medium,
   &.--large {
     i {
-      &.plus:before {
-        width: 15px;
-      }
 
+      &.plus:before,
       &.plus:after {
         height: 15px;
       }
@@ -1073,6 +1153,33 @@ h5 {
   }
 }
 
+.btn-close {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+
+  &:before,
+  &:after {
+    @include cross-line-base-1px;
+    height: 13px;
+  }
+
+  &:after {
+    @include cross-line-after-1px;
+  }
+
+  &.--large {
+    width: 36px;
+    height: 36px;
+
+    &:before,
+    &:after {
+      height: 19px;
+    }
+  }
+}
+
 .alert-danger {
   @include alert;
   background: $color-border-danger-light;
@@ -1220,16 +1327,6 @@ h5 {
       .btn-wrap.close {
         top: 10px;
         right: 20px;
-
-        .btn-close {
-          width: 36px;
-          height: 36px;
-
-          &:before,
-          &:after {
-            height: 19px;
-          }
-        }
       }
     }
 
@@ -1524,6 +1621,77 @@ h5 {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
+}
+
+// tooltip
+$tooltip-icons: (
+  new: '../img/icon/icon-tooltip-new.svg',
+  discount-1: '../img/icon/icon-tooltip-discount-1.svg',
+  discount-2: '../img/icon/icon-tooltip-discount-2.svg',
+  best: '../img/icon/icon-tooltip-best.svg',
+  contact: '../img/icon/icon-tooltip-contact.svg',
+  info: '../img/icon/icon-tooltip-info.svg',
+);
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 2px;
+  line-height: 0;
+  vertical-align: -3px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #096AB3; //background-image 대신 넣은거임. 나중에 삭제
+  }
+
+  // 각 아이콘 스타일
+  @each $name, $url in $tooltip-icons {
+    &.--#{$name} {
+      &:before {
+        background-image: url(#{$url});
+      }
+    }
+  }
+
+  &:hover i {
+    display: block;
+  }
+
+  i {
+    @include tooltip;
+    bottom: -32px;
+    transform: translateX(calc(-50% + 8px));
+    z-index: 2;
+  }
+
+  &.--multiline {
+
+    i {
+      top: auto;
+      bottom: calc(-100% - 35px);
+    }
+  }
+
+  &.--top {
+
+    i {
+      top: calc(-100% - 35px);
+      bottom: auto;
+
+      &:before {
+        top: auto;
+        bottom: -2.5px;
+        transform: translateX(-50%) rotate(-135deg);
+      }
+    }
+  }
 }
 
 // login

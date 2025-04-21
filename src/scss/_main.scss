@@ -27,14 +27,6 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-
-    .btn-close {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      background: url('../img/icon/icon-close-24.png') no-repeat center center/100% 100%;
-      font-size: 0;
-    }
   }
 }
 
@@ -510,51 +502,9 @@ header {
     }
 
     .status {
-      position: relative;
-      display: inline-block;
-      margin-left: 2px;
-      line-height: 0;
-
-      &:before {
-        content: '';
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background: url() no-repeat center center/100% 100%;
-        background: #003f6d; //대신 넣은거임. 나중에 삭제
-      }
-
-      &:hover {
-        i {
-          display: block;
-        }
-      }
 
       i {
-        display: none;
-        position: absolute;
-        left: 0;
         bottom: -45px;
-        height: 24px;
-        padding: 3px 8px;
-        white-space: nowrap;
-        @include font-body-xxsmall;
-        color: $color-text-basic-inverse;
-        border-radius: 4px;
-        background: $color-border-gray-darker;
-        transform: translateX(-35%);
-
-        &:before {
-          content: '';
-          position: absolute;
-          top: -1.7px;
-          left: 50%;
-          width: 10px;
-          height: 10px;
-          background: $color-border-gray-darker;
-          border-radius: 2px 0 0 0;
-          transform: translateX(-50%) rotate(45deg);
-        }
       }
     }
   }

@@ -757,6 +757,11 @@
     grid-gap: 20px 0;
     padding-top: 20px;
 
+    +.product-option {
+      margin-top: 20px;
+      border-top: 1px solid $Line-line;
+    }
+
     >dt {
       padding: 9px 0;
       @include font-body-small;
@@ -775,17 +780,72 @@
       min-height: 100%;
       padding-left: 4px;
 
-      .width-436 {
-        input {
-          width: calc(50% - 100px);
-        }
-      }
-
       .form-field {
         flex: 1;
+        display: flex;
+        flex-direction: column;
 
         &.file {
           max-width: 100%;
+        }
+
+        &[class$=-option] {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        &.button-option {
+
+          >input,
+          .form-wrap {
+            width: calc(100% - 108px);
+          }
+
+          >[class^=btn-] {
+            margin: 0 0 0 8px;
+
+            span {
+              width: 84px;
+            }
+          }
+        }
+
+        &.multi-option {
+          gap: 8px;
+
+          >.form-wrap {
+            flex: 1;
+            margin: 0;
+          }
+        }
+
+        &.print-option {
+
+          .option-form {
+            display: inline-block;
+
+            input {
+              width: 100px;
+            }
+          }
+        }
+      }
+
+      .btn-wrap {
+        &.multi-option {
+          flex: 1;
+          gap: 8px;
+
+          [class^=btn-] {
+            flex: 1;
+            margin: 0;
+          }
+        }
+      }
+
+      .width-436 {
+        input {
+          width: calc(50% - 100px);
         }
       }
 
@@ -832,60 +892,104 @@
 
     .row-span-2 {
       grid-row: 1 / 3;
+      grid-row-end: span 3;
 
       ~dt:nth-of-type(odd) {
         margin-left: 80px;
       }
     }
+  }
 
-    .--add-option {
+  .--add-option {
+    margin-top: 20px;
+
+    &.--item {
+      padding: 20px 16px;
+      border-radius: 10px;
+      background: $color-border-gray-light;
+
+      .title-wrap {
+
+        .icon-plus {
+          position: relative;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin: 4px 8px 4px 4px;
+          vertical-align: -8px;
+          border-radius: 100%;
+          background: $color-border-gray;
+
+          &:before,
+          &:after {
+            @include plus-line-base-1px;
+            height: 9px;
+          }
+
+          &:after {
+            @include plus-line-after-1px;
+          }
+        }
+      }
+    }
+  }
+
+  .option-item {
+    +.option-item {
       margin-top: 20px;
+    }
 
-      .option-item {
-        display: grid;
-        grid-template-columns: 120px 1fr;
-        gap: 20px 0;
+    display: grid;
+    gap: 20px;
+    @include font-body-small;
+    color: $color-text-basic;
+
+    &.columns-2 {
+      grid-template-columns: 100px 1fr;
+    }
+
+    dt {
+      padding: 9px 0;
+    }
+
+    .form-option {
+      display: flex;
+      align-items: center;
+      gap: 0 8px;
+
+      strong {
         @include font-body-small;
-        color: $color-text-basic;
+        color: $color-text-subcolor;
+      }
 
-        dt {
-          padding: 9px 0;
+      input[type=text] {
+        width: 87px;
+      }
+
+      .icon {
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+
+        &:before,
+        &:after {
+          @include cross-line-base-1px;
+          height: 9px;
         }
 
-        .form-option {
-          display: flex;
-          align-items: center;
-          gap: 0 8px;
+        &:after {
+          @include cross-line-after-1px;
+        }
 
-          strong {
-            @include font-body-small;
-            color: $color-text-subcolor;
-          }
+        i {
+          font-size: 0;
+        }
+      }
 
-          input[type=text] {
-            width: 87px;
-          }
-
-          .icon {
-            position: relative;
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-
-            &:before,
-            &:after {
-              @include cross-line-base-1px;
-              height: 9px;
-            }
-
-            &:after {
-              @include cross-line-after-1px;
-            }
-
-            i {
-              font-size: 0;
-            }
-          }
+      &.--selected {
+        input {
+          border-color: $color-border-primary;
         }
       }
     }
@@ -895,16 +999,6 @@
 
     input[type=file] {
       display: none;
-    }
-  }
-
-  .print-option {
-    .option-form {
-      display: inline-block;
-
-      input {
-        width: 100px;
-      }
     }
   }
 }

@@ -181,20 +181,12 @@
 
     &.plus:before,
     &.plus:after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 10px;
-      height: 1px;
-      border-radius: 1px;
-      background: $color-background-white;
-      transform: translate(-50%, -50%);
+      @include plus-line-base-1px;
+      height: 10px;
     }
 
     &.plus:after {
-      width: 1px;
-      height: 10px;
+      @include plus-line-after-1px;
     }
 
     &.step-ing:before {
@@ -315,23 +307,6 @@
       position: absolute;
       top: 16px;
       right: 20px;
-
-      .btn-close {
-        position: relative;
-        width: 24px;
-        height: 24px;
-        font-size: 0;
-
-        &:before,
-        &:after {
-          @include cross-line-base-1px;
-          height: 13px;
-        }
-
-        &:after {
-          @include cross-line-after-1px;
-        }
-      }
     }
   }
 
@@ -364,6 +339,22 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+@mixin plus-line-base-1px {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  border-radius: 1px;
+  background: $color-border-inverse;
+  transform: translate(-50%, -50%);
+}
+
+@mixin plus-line-after-1px {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
 @mixin next-line-base-1px {
   content: '';
   display: inline-block;
@@ -377,6 +368,33 @@
 
 @mixin next-line-after-1px {
   transform: translateY(-50%) rotate(45deg);
+}
+
+@mixin tooltip {
+  display: none;
+  position: absolute;
+  left: 0;
+  min-height: 24px;
+  padding: 3px 8px;
+  white-space: nowrap;
+  @include font-body-xxsmall;
+  color: $color-text-basic-inverse;
+  border-radius: 4px;
+  background: $color-border-gray-darker;
+  ;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2.5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: $color-border-gray-darker;
+    border-radius: 2px 0 0 0;
+    transform: translateX(-50%) rotate(45deg);
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+  }
 }
 
 @mixin alert {

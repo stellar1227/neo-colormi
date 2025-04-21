@@ -20,31 +20,16 @@
       class="product-wrap">
       <!-- //스크롤이벤트 .scroll추가 -->
       <div class="product-inner">
-        <div class="product-img">
-          <div class="product-img-items">
-            <div class="button-item">
-              <button type="button" class="btn-prev">
-                <i>이전</i>
-              </button>
-            </div>
-            <div class="img-item-wrap">
-              <div class="img-item">
-                <img src="/img/product/C015-01.jpg" alt="상품 이미지"/>
-              </div>
-              <div class="img-item">
-                <img src="/img/product/C015-02.jpg" alt="상품 이미지"/>
-              </div>
-            </div>
-            <div class="button-item">
-              <button type="button" class="btn-next">
-                <i>다음</i>
-              </button>
-            </div>
-          </div>
-          <div class="product-img-detail">
-            <img src="/img/product/C015-01.jpg" alt="상품 이미지"/>
-          </div>
-        </div>
+        {% set itemList = [
+          { fileName: "C015-01.jpg", alt: "상품 이미지 1" },
+          { fileName: "C015-02.jpg", alt: "상품 이미지 2" },
+          { fileName: "C015-01.jpg", alt: "상품 이미지 1" },
+          { fileName: "C015-02.jpg", alt: "상품 이미지 2" },
+          { fileName: "C015-01.jpg", alt: "상품 이미지 1" },
+          { fileName: "C015-02.jpg", alt: "상품 이미지 2" }
+        ] %}
+
+        {% include "components/productImage.njk" %}
         <div class="product-info">
           <div class="item">
             <div class="top-area">

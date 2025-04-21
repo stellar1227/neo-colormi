@@ -66,7 +66,7 @@ function styles() {
 function scripts() {
   return gulp.src(paths.scripts.src)
     .pipe(plumber())
-    .pipe(concat('main.js'))
+    .pipe(concat('colormi-ui.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(browserSync.stream());

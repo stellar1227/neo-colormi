@@ -441,13 +441,15 @@
       gap: 20px 0;
       height: 407px;
 
-      .img-item-wrap {
-        flex: 1;
+      .img-item-screen {
+        flex: 0 0 316px;
         overflow-y: hidden;
+      }
+
+      .img-item-wrap {
+        transform: translateY(-12px);
 
         .img-item {
-          background: $color-border-gray-light; // 나중에 삭제 예정
-
           +.img-item {
             margin-top: 12px;
           }

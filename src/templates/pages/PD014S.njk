@@ -2,23 +2,24 @@
 {% set title = "낱장인쇄(제본없이)" %}
 {% block content %}
   {# A005 #}
-  <nav class="breadcrumb">
-    <ol>
-      <li>
-        <a href="/">카테고리</a>
-      </li>
-      <li>
-        <a href="/">카테고리</a>
-      </li>
-      <li>
-        <strong>낱장인쇄(제본없이)</strong>
-      </li>
-    </ol>
-  </nav>
-  <section class="content-box">
-    <div class="product-wrap">
-      <div class="product-inner">
-        {% set itemList = [
+  <div class="content">
+    <nav class="breadcrumb">
+      <ol>
+        <li>
+          <a href="/">카테고리</a>
+        </li>
+        <li>
+          <a href="/">카테고리</a>
+        </li>
+        <li>
+          <strong>낱장인쇄(제본없이)</strong>
+        </li>
+      </ol>
+    </nav>
+    <section class="content-box">
+      <div class="product-wrap">
+        <div class="product-inner">
+          {% set itemList = [
           { fileName: "A005-01.jpg", alt: "상품 이미지 1" },
           { fileName: "A005-02.jpg", alt: "상품 이미지 2" },
           { fileName: "A005-01.jpg", alt: "상품 이미지 1" },
@@ -26,401 +27,402 @@
           { fileName: "A005-01.jpg", alt: "상품 이미지 1" },
           { fileName: "A005-02.jpg", alt: "상품 이미지 2" }
         ] %}
-        {% include "components/productImage.njk" %}
-        <div class="product-info">
-          <div class="item">
-            <div class="top-area">
-              <p class="product-name">상품명</p>
-              <div class="btn-wrap">
-                <a href="" class="btn-share">공유하기</a>
-              </div>
-            </div>
-            <div class="rating-wrap">
-              <p class="rating-container">
-                <em class="rating-num" style="width: 52%;"></em>
-              </p>
-              <strong class="text">5.2</strong>
-            </div>
-            <div class="badge-wrap">
-              <span class="badge line-display-1">묶음배송불가</span>
-              <span class="badge line-display-3 recommend">MD추천</span>
-              <span class="badge line-display-4 new">신상품</span>
-              <!-- <span class="badge line-display-4">시즌신상품</span> <span class="badge line-display-6">배송비무료</span> <span class="badge
-              line-display-6">묶음배송가능</span> <span class="badge line-display-6 best">베스트</span> <span class="badge
-              line-display-6">주간베스트</span> <span class="badge line-display-7 discount-1">폭풍할인</span> <span class="badge
-              line-display-7 discount-2">즉시할인중</span> <span class="badge line-display-8">쿠폰할인불가</span> <span class="badge
-              line-display-9">인기상품</span> <span class="badge line-display-9">최다판매</span> <span class="badge
-              line-display-9">주문폭주</span> <span class="badge line-display-9">별도문의</span> <span class="badge
-              fill-gray-dark">당일출고</span> <span class="badge fill-gray-dark">익일출고</span> <span class="badge
-              fill-gray-dark">자체제작</span> <span class="badge fill-gray-dark">사은품증정</span> -->
-            </div>
-            <div class="product-text">
-              <p class="text">기본정보가 노출되는 줄입니다.</p>
-              <p class="text">후가공 옵션이 노출되는 줄입니다.</p>
-              <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
-            </div>
-            <div class="desc-box tertiary-light-box --small">
-              <div class="quote-wrap">
-                <div class="quote-title">
-                  <p class="title">한눈에<strong>견적보기</strong>
-                  </p>
-                  <p class="description">공급가+부가세 포함</p>
-                </div>
-                <div class="quote-check">
-                  <div class="checkbox-wrap">
-                    <label class="checkbox" for="check-1">
-                      <input type="checkbox" id="check-1"/>
-                      <span class="checkbox-icon"></span>
-                      <span class="checkbox-label">흑백</span>
-                    </label>
-                    <span class="price">
-                      <em>100,000,000</em>원</span>
-                  </div>
-                  <div class="checkbox-wrap">
-                    <label class="checkbox" for="check-2">
-                      <input type="checkbox" id="check-2"/>
-                      <span class="checkbox-icon"></span>
-                      <span class="checkbox-label">인디고</span>
-                    </label>
-                    <span class="price">
-                      <em>100,000,000</em>원</span>
-                  </div>
-                  <div class="checkbox-wrap">
-                    <label class="checkbox" for="check-3">
-                      <input type="checkbox" id="check-3"/>
-                      <span class="checkbox-icon"></span>
-                      <span class="checkbox-label">캐논IX</span>
-                    </label>
-                    <span class="price">
-                      <em>100,000,000</em>원</span>
-                  </div>
+          {% include "components/productImage.njk" %}
+          <div class="product-info">
+            <div class="item">
+              <div class="top-area">
+                <p class="product-name">상품명</p>
+                <div class="btn-wrap">
+                  <a href="" class="btn-share">공유하기</a>
                 </div>
               </div>
-              <div class="btn-wrap" style="display: none;">
-                <button type="button" class="btn-black --xsmall">
-                  <span>적용</span>
+              <div class="rating-wrap">
+                <p class="rating-container">
+                  <em class="rating-num" style="width: 52%;"></em>
+                </p>
+                <strong class="text">5.2</strong>
+              </div>
+              <div class="badge-wrap">
+                <span class="badge line-display-1">묶음배송불가</span>
+                <span class="badge line-display-3 recommend">MD추천</span>
+                <span class="badge line-display-4 new">신상품</span>
+                <!-- <span class="badge line-display-4">시즌신상품</span> <span class="badge line-display-6">배송비무료</span> <span class="badge
+                line-display-6">묶음배송가능</span> <span class="badge line-display-6 best">베스트</span> <span class="badge
+                line-display-6">주간베스트</span> <span class="badge line-display-7 discount-1">폭풍할인</span> <span class="badge
+                line-display-7 discount-2">즉시할인중</span> <span class="badge line-display-8">쿠폰할인불가</span> <span class="badge
+                line-display-9">인기상품</span> <span class="badge line-display-9">최다판매</span> <span class="badge
+                line-display-9">주문폭주</span> <span class="badge line-display-9">별도문의</span> <span class="badge
+                fill-gray-dark">당일출고</span> <span class="badge fill-gray-dark">익일출고</span> <span class="badge
+                fill-gray-dark">자체제작</span> <span class="badge fill-gray-dark">사은품증정</span> -->
+              </div>
+              <div class="product-text">
+                <p class="text">기본정보가 노출되는 줄입니다.</p>
+                <p class="text">후가공 옵션이 노출되는 줄입니다.</p>
+                <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
+              </div>
+              <div class="desc-box tertiary-light-box --small">
+                <div class="quote-wrap">
+                  <div class="quote-title">
+                    <p class="title">한눈에<strong>견적보기</strong>
+                    </p>
+                    <p class="description">공급가+부가세 포함</p>
+                  </div>
+                  <div class="quote-check">
+                    <div class="checkbox-wrap">
+                      <label class="checkbox" for="check-1">
+                        <input type="checkbox" id="check-1"/>
+                        <span class="checkbox-icon"></span>
+                        <span class="checkbox-label">흑백</span>
+                      </label>
+                      <span class="price">
+                        <em>100,000,000</em>원</span>
+                    </div>
+                    <div class="checkbox-wrap">
+                      <label class="checkbox" for="check-2">
+                        <input type="checkbox" id="check-2"/>
+                        <span class="checkbox-icon"></span>
+                        <span class="checkbox-label">인디고</span>
+                      </label>
+                      <span class="price">
+                        <em>100,000,000</em>원</span>
+                    </div>
+                    <div class="checkbox-wrap">
+                      <label class="checkbox" for="check-3">
+                        <input type="checkbox" id="check-3"/>
+                        <span class="checkbox-icon"></span>
+                        <span class="checkbox-label">캐논IX</span>
+                      </label>
+                      <span class="price">
+                        <em>100,000,000</em>원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-wrap" style="display: none;">
+                  <button type="button" class="btn-black --xsmall">
+                    <span>적용</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <dl class="product-price">
+                <dt class="total-title">총 상품 금액</dt>
+                <dd class="total-price">
+                  <strong>100,000,000</strong>원</dd>
+              </dl>
+              <div class="btn-wrap --hide">
+                <button type="button" class="btn-outline --medium">
+                  <i>DM</i>
+                </button>
+                <button type="button" class="btn-outline --medium">
+                  <span>장바구니</span>
+                </button>
+                <button type="button" class="btn-primary --medium">
+                  <span>바로주문</span>
                 </button>
               </div>
             </div>
           </div>
-          <div class="item">
-            <dl class="product-price">
-              <dt class="total-title">총 상품 금액</dt>
-              <dd class="total-price">
-                <strong>100,000,000</strong>원</dd>
-            </dl>
-            <div class="btn-wrap --hide">
-              <button type="button" class="btn-outline --medium">
-                <i>DM</i>
-              </button>
-              <button type="button" class="btn-outline --medium">
-                <span>장바구니</span>
-              </button>
-              <button type="button" class="btn-primary --medium">
-                <span>바로주문</span>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section
-    class="content-box">
-    <!-- 기본정보 -->
-    <div class="product-order">
-      <div class="title-wrap">
-        <h5 class="required">기본정보</h5>
-        <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+    </section>
+    <section
+      class="content-box">
+      <!-- 기본정보 -->
+      <div class="product-order">
+        <div class="title-wrap">
+          <h5 class="required">기본정보</h5>
+          <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+        </div>
+        <dl class="product-option columns-4">
+          <dt class="row-span-2">사이즈</dt>
+          <dd class="row-span-2">
+            <div class="form-field">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>A5</option>
+                  <option>B5</option>
+                  <option>A4</option>
+                </select>
+              </div>
+            </div>
+            <!-- 사이즈 옵션 -->
+            <div class="--add-option">
+              <div class="option-item">
+                <dl class="product-option">
+                  <dt>재단사이즈</dt>
+                  <!-- //사이즈 옵션 비규격 선택 시 클래스 추가 .--selected -->
+                  <dd>
+                    <div class="form-option --selected">
+                      <strong>가로</strong>
+                      <input type="text" placeholder="Placeholder"/>
+                      <span class="icon">
+                        <i>X</i>
+                      </span>
+                      <strong>세로</strong>
+                      <input type="text" placeholder="Placeholder"/>
+                      <span>mm</span>
+                    </div>
+                  </dd>
+                  <dt>작업사이즈</dt>
+                  <dd>
+                    <div class="form-option">
+                      <strong>가로</strong>
+                      <input type="text" placeholder="Placeholder"/>
+                      <span class="icon">
+                        <i>X</i>
+                      </span>
+                      <strong>세로</strong>
+                      <input type="text" placeholder="Placeholder"/>
+                      <span>mm</span>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </dd>
+          <dt>수량</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner print-option">
+                <p class="option-form">
+                  <input type="number" placeholder="Placeholder"/>
+                  <span class="guide-basic">부</span>
+                </p>
+                <span class="guide-sub --small">총 인쇄페이지수
+                  <em>120</em>
+                  총 인쇄 장수
+                  <em>110</em>
+                </span>
+              </div>
+            </div>
+          </dd>
+          <dt>페이지 수</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner print-option">
+                <p class="option-form">
+                  <input type="number" placeholder="Placeholder"/>
+                </p>
+                <span class="guide-sub --small">인쇄 장수
+                  <em>5</em>
+                </span>
+              </div>
+            </div>
+          </dd>
+          <dt>용지</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner multi-option">
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>일반지</option>
+                  </select>
+                </div>
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>스노우지</option>
+                  </select>
+                </div>
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>150g</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </dd>
+          <dt>파일첨부</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-wrap file">
+                <label class="btn-primary --small">
+                  <input type="file"/>
+                  <span>파일첨부</span>
+                </label>
+                <span class="guide-sub">선택한 파일이 없습니다.</span>
+                <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+                <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+                <button type="button" class="btn-del">
+                  <i class="delete">삭제</i>
+                </button>
+                <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                <!-- div.--add-option 추가버튼 -->
+                <button type="button" class="btn-util-add">
+                  <i class="icon-plus"></i>
+                  <span>추가</span>
+                </button>
+              </div>
+              <!-- 파일첨부 추가 -->
+              <div class="form-wrap file">
+                <label class="btn-primary --small">
+                  <input type="file"/>
+                  <span>파일첨부</span>
+                </label>
+                <span class="guide-sub">선택한 파일이 없습니다.</span>
+                <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+                <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+                <button type="button" class="btn-del">
+                  <i class="delete">삭제</i>
+                </button>
+                <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                <button type="button" class="btn-util-del">
+                  <i class="icon-minus"></i>
+                  <span>삭제</span>
+                </button>
+              </div>
+            </div>
+          </dd>
+          <dt>인쇄도수</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner multi-option">
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>컬러</option>
+                  </select>
+                </div>
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>단면</option>
+                  </select>
+                </div>
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>캐논IX</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </dd>
+        </dl>
       </div>
-      <dl class="product-option columns-4">
-        <dt class="row-span-2">사이즈</dt>
-        <dd class="row-span-2">
-          <div class="form-field">
-            <div class="form-wrap select">
-              <select class="btn-select">
-                <option>A5</option>
-                <option>B5</option>
-                <option>A4</option>
-              </select>
-            </div>
-          </div>
-          <!-- 사이즈 옵션 -->
-          <div class="--add-option">
-            <div class="option-item">
-              <dl class="product-option">
-                <dt>재단사이즈</dt>
-                <!-- //사이즈 옵션 비규격 선택 시 클래스 추가 .--selected -->
-                <dd>
-                  <div class="form-option --selected">
-                    <strong>가로</strong>
-                    <input type="text" placeholder="Placeholder"/>
-                    <span class="icon">
-                      <i>X</i>
-                    </span>
-                    <strong>세로</strong>
-                    <input type="text" placeholder="Placeholder"/>
-                    <span>mm</span>
-                  </div>
-                </dd>
-                <dt>작업사이즈</dt>
-                <dd>
-                  <div class="form-option">
-                    <strong>가로</strong>
-                    <input type="text" placeholder="Placeholder"/>
-                    <span class="icon">
-                      <i>X</i>
-                    </span>
-                    <strong>세로</strong>
-                    <input type="text" placeholder="Placeholder"/>
-                    <span>mm</span>
-                  </div>
-                </dd>
-              </dl>
-            </div>
-          </div>
-        </dd>
-        <dt>수량</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner print-option">
-              <p class="option-form">
-                <input type="number" placeholder="Placeholder"/>
-                <span class="guide-basic">부</span>
-              </p>
-              <span class="guide-sub --small">총 인쇄페이지수
-                <em>120</em>
-                총 인쇄 장수
-                <em>110</em>
-              </span>
-            </div>
-          </div>
-        </dd>
-        <dt>페이지 수</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner print-option">
-              <p class="option-form">
-                <input type="number" placeholder="Placeholder"/>
-              </p>
-              <span class="guide-sub --small">인쇄 장수
-                <em>5</em>
-              </span>
-            </div>
-          </div>
-        </dd>
-        <dt>용지</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner multi-option">
-              <div class="form-wrap select">
-                <select class="btn-select">
-                  <option>일반지</option>
-                </select>
-              </div>
-              <div class="form-wrap select">
-                <select class="btn-select">
-                  <option>스노우지</option>
-                </select>
-              </div>
-              <div class="form-wrap select">
-                <select class="btn-select">
-                  <option>150g</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </dd>
-        <dt>파일첨부</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-wrap file">
-              <label class="btn-primary --small">
-                <input type="file"/>
-                <span>파일첨부</span>
-              </label>
-              <span class="guide-sub">선택한 파일이 없습니다.</span>
-              <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-              <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-              <button type="button" class="btn-del">
-                <i class="delete">삭제</i>
-              </button>
-              <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
-              <!-- div.--add-option 추가버튼 -->
-              <button type="button" class="btn-util-add">
-                <i class="icon-plus"></i>
-                <span>추가</span>
-              </button>
-            </div>
-            <!-- 파일첨부 추가 -->
-            <div class="form-wrap file">
-              <label class="btn-primary --small">
-                <input type="file"/>
-                <span>파일첨부</span>
-              </label>
-              <span class="guide-sub">선택한 파일이 없습니다.</span>
-              <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-              <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-              <button type="button" class="btn-del">
-                <i class="delete">삭제</i>
-              </button>
-              <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
-              <button type="button" class="btn-util-del">
-                <i class="icon-minus"></i>
-                <span>삭제</span>
-              </button>
-            </div>
-          </div>
-        </dd>
-        <dt>인쇄도수</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner multi-option">
-              <div class="form-wrap select">
-                <select class="btn-select">
-                  <option>컬러</option>
-                </select>
-              </div>
-              <div class="form-wrap select">
-                <select class="btn-select">
-                  <option>단면</option>
-                </select>
-              </div>
-              <div class="form-wrap select">
-                <select class="btn-select">
-                  <option>캐논IX</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </dd>
-      </dl>
-    </div>
-    <!-- 후가공 -->
-    <div class="product-order">
-      <div class="title-wrap">
-        <h5>후가공</h5>
-      </div>
-      <dl class="product-option columns-4">
-        <dt>재단<span class="tooltip --info --top --multiline">
-            <i>재단 '사용안함'을 선택하시면<br/>467*315mm 용지에 출력만 됩니다.</i>
-          </span>
-        </dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-wrap select">
-              <select class="btn-select">
-                <option>사용안함</option>
-              </select>
-            </div>
-          </div>
-        </dd>
-        <dt>타공<span class="tooltip --info --top --multiline-3">
-            <i>
-              &lt;정확한 타공이 필요한 경우&gt;<br/>바인더를 ‘방문’ 또는 ‘택배’로 보내주시면<br/>정확한 타공이 가능합니다.</i>
-          </span>
-        </dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner button-option">
+      <!-- 후가공 -->
+      <div class="product-order">
+        <div class="title-wrap">
+          <h5>후가공</h5>
+        </div>
+        <dl class="product-option columns-4">
+          <dt>재단<span class="tooltip --info --top --multiline">
+              <i>재단 '사용안함'을 선택하시면<br/>467*315mm 용지에 출력만 됩니다.</i>
+            </span>
+          </dt>
+          <dd>
+            <div class="form-field">
               <div class="form-wrap select">
                 <select class="btn-select">
                   <option>사용안함</option>
                 </select>
               </div>
-              <button type="button" class="btn-primary --small">
-                <span>상세보기</span>
-              </button>
             </div>
-          </div>
-        </dd>
-        <dt>접지</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner button-option">
-              <div class="form-wrap select">
-                <select class="btn-select">
-                  <option>사용안함</option>
-                </select>
-              </div>
-              <button type="button" class="btn-primary --small">
-                <span>상세보기</span>
-              </button>
-            </div>
-          </div>
-        </dd>
-        <dt class="row-span-2 --end">라운딩</dt>
-        <dd class="row-span-2 --end">
-          <div class="form-field">
-            <div class="form-inner button-option --v-center">
-              <div class="form-wrap">
-                <div class="checkbox-wrap --edge-round">
-                  <label class="checkbox" for="check-round-1">
-                    <input type="checkbox" id="check-round-1"/>
-                    <span class="checkbox-label">좌상</span>
-                  </label>
-                  <label class="checkbox" for="check-round-2">
-                    <input type="checkbox" id="check-round-2"/>
-                    <span class="checkbox-label">우상</span>
-                  </label>
-                  <label class="checkbox" for="check-round-3">
-                    <input type="checkbox" id="check-round-3"/>
-                    <span class="checkbox-label">좌하</span>
-                  </label>
-                  <label class="checkbox" for="check-round-4">
-                    <input type="checkbox" id="check-round-4"/>
-                    <span class="checkbox-label">우하</span>
-                  </label>
+          </dd>
+          <dt>타공<span class="tooltip --info --top --multiline-3">
+              <i>
+                &lt;정확한 타공이 필요한 경우&gt;<br/>바인더를 ‘방문’ 또는 ‘택배’로 보내주시면<br/>정확한 타공이 가능합니다.</i>
+            </span>
+          </dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner button-option">
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>사용안함</option>
+                  </select>
                 </div>
-                <div class="checkbox-wrap">
-                  <label class="checkbox" for="check-round-all">
-                    <input type="checkbox" id="check-round-all"/>
-                    <span class="checkbox-icon"></span>
-                    <span class="checkbox-label">전체 라운딩</span>
-                  </label>
+                <button type="button" class="btn-primary --small">
+                  <span>상세보기</span>
+                </button>
+              </div>
+            </div>
+          </dd>
+          <dt>접지</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner button-option">
+                <div class="form-wrap select">
+                  <select class="btn-select">
+                    <option>사용안함</option>
+                  </select>
                 </div>
+                <button type="button" class="btn-primary --small">
+                  <span>상세보기</span>
+                </button>
               </div>
-              <button type="button" class="btn-primary --small">
-                <span>상세보기</span>
-              </button>
             </div>
-          </div>
-        </dd>
-        <dt>누름자국(오시)</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner button-option">
-              <div class="form-wrap select">
-                <select class="btn-select" disabled="disabled">
-                  <option>선택</option>
-                </select>
+          </dd>
+          <dt class="row-span-2 --end">라운딩</dt>
+          <dd class="row-span-2 --end">
+            <div class="form-field">
+              <div class="form-inner button-option --v-center">
+                <div class="form-wrap">
+                  <div class="checkbox-wrap --edge-round">
+                    <label class="checkbox" for="check-round-1">
+                      <input type="checkbox" id="check-round-1"/>
+                      <span class="checkbox-label">좌상</span>
+                    </label>
+                    <label class="checkbox" for="check-round-2">
+                      <input type="checkbox" id="check-round-2"/>
+                      <span class="checkbox-label">우상</span>
+                    </label>
+                    <label class="checkbox" for="check-round-3">
+                      <input type="checkbox" id="check-round-3"/>
+                      <span class="checkbox-label">좌하</span>
+                    </label>
+                    <label class="checkbox" for="check-round-4">
+                      <input type="checkbox" id="check-round-4"/>
+                      <span class="checkbox-label">우하</span>
+                    </label>
+                  </div>
+                  <div class="checkbox-wrap">
+                    <label class="checkbox" for="check-round-all">
+                      <input type="checkbox" id="check-round-all"/>
+                      <span class="checkbox-icon"></span>
+                      <span class="checkbox-label">전체 라운딩</span>
+                    </label>
+                  </div>
+                </div>
+                <button type="button" class="btn-primary --small">
+                  <span>상세보기</span>
+                </button>
               </div>
-              <button type="button" class="btn-primary --small">
-                <span>상세보기</span>
-              </button>
             </div>
-            <p class="description">150g 이상부터 선택 가능합니다.</p>
-          </div>
-        </dd>
-        <dt>코팅</dt>
-        <dd>
-          <div class="form-field">
-            <div class="form-inner button-option">
-              <div class="form-wrap select">
-                <select class="btn-select" disabled="disabled">
-                  <option>선택</option>
-                </select>
+          </dd>
+          <dt>누름자국(오시)</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner button-option">
+                <div class="form-wrap select">
+                  <select class="btn-select" disabled="disabled">
+                    <option>선택</option>
+                  </select>
+                </div>
+                <button type="button" class="btn-primary --small">
+                  <span>상세보기</span>
+                </button>
               </div>
-              <button type="button" class="btn-primary --small">
-                <span>상세보기</span>
-              </button>
+              <p class="description">150g 이상부터 선택 가능합니다.</p>
             </div>
-            <p class="description">150g 이상부터 선택 가능합니다.</p>
-          </div>
-        </dd>
-      </dl>
-    </div>
-    {% include "components/productOrderBottom.njk" %}
-  </section>
-  {% include "components/productBottom.njk" %}
-{% endblock %}</dt>
+          </dd>
+          <dt>코팅</dt>
+          <dd>
+            <div class="form-field">
+              <div class="form-inner button-option">
+                <div class="form-wrap select">
+                  <select class="btn-select" disabled="disabled">
+                    <option>선택</option>
+                  </select>
+                </div>
+                <button type="button" class="btn-primary --small">
+                  <span>상세보기</span>
+                </button>
+              </div>
+              <p class="description">150g 이상부터 선택 가능합니다.</p>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      {% include "components/productOrderBottom.njk" %}
+    </section>
+    {% include "components/productBottom.njk" %}
+  </div>
+{% endblock %}

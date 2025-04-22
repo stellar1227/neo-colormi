@@ -35,7 +35,12 @@ h5 {
 }
 
 #container {
+  display: flex;
   margin: 48px auto;
+
+  >.content {
+    flex: 1;
+  }
 
   .page-title+section.content-box,
   section.content-box+.btn-wrap.confirm,
@@ -1465,21 +1470,6 @@ h5 {
     &.--small {
       @include font-body-xsmall;
     }
-
-    &.--dot {
-      li {
-        &:before {
-          content: '';
-          display: inline-block;
-          width: 4px;
-          height: 4px;
-          margin: 0 8px;
-          background: $color-text-subcolor-deep;
-          border-radius: 50%;
-          vertical-align: 2px;
-        }
-      }
-    }
   }
 
   &-basic {
@@ -1606,6 +1596,21 @@ h5 {
 
   +.checkbox-wrap {
     margin-top: 20px;
+  }
+
+  .--dot {
+    li {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin: 0 8px;
+        background: $color-text-subcolor-deep;
+        border-radius: 50%;
+        vertical-align: 3px;
+      }
+    }
   }
 }
 

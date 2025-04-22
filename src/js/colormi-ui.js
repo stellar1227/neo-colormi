@@ -23,6 +23,8 @@ function productImages() {
   const itemListNum = 4;
   const imgItemHeight = imgItems[0].offsetHeight + MARGIN_TOP;
 
+  imgItems[0].classList.add("--selected");
+
   btnPrev.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
@@ -41,14 +43,16 @@ function productImages() {
     alert('마지막 이미지입니다.')
   });
 
-
   // imgItems에 마우스엔터 시 product-img-detail에 해당 이미지 보여주기
   imgItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
+      imgItems.forEach(i => i.classList.remove("--selected"));
+      item.classList.add("--selected");
       imgDetail.src = item.querySelector("img").src;
     });
   });
 }
+
 
 function productStickyInfo() {
   const productImgDetail = document.querySelector(".product-wrap");

@@ -457,6 +457,7 @@
           border-radius: 10px;
           border: 1px solid transparent;
 
+          &.--selected,
           &:hover {
             border-color: $color-border-gray-dark;
           }

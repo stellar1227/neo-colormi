@@ -69,21 +69,26 @@ h5 {
     margin-top: 8px;
   }
 
+  input {
+    padding-right: 40px;
+
+    // &:disabled,
+    // &:read-only {
+    //   border: 1px solid $color-border-gray;
+    //   background-color: $color-background-gray-subtle;
+    // }
+
+    &.--basic {
+      border: 1px solid $Line-line;
+      background: $color-background-white;
+    }
+  }
+
   .form-wrap {
     position: relative;
 
     +.checkbox-wrap {
       margin-top: 8px;
-    }
-
-    input {
-      padding-right: 40px;
-
-      &:disabled,
-      &:read-only {
-        border: 1px solid $color-border-gray;
-        background-color: $color-background-gray-subtle;
-      }
     }
 
     input[type=password] {
@@ -1840,23 +1845,21 @@ $tooltip-icons: (
     margin-top: 16px;
 
     .btn-sns {
-      display: inline-block;
       position: relative;
-      min-width: 48px;
-      margin-top: 48px;
-      padding-top: 12px;
+      display: inline-flex;
+      flex-direction: column;
       @include font-body-xxsmall;
+
+      >span {
+        display: block;
+        padding-top: 12px;
+      }
 
       &:before {
         content: '';
         display: inline-block;
-        position: absolute;
-        top: -48px;
-        left: 50%;
-        transform: translateX(-50%);
         width: 48px;
         height: 48px;
-        margin-bottom: 4px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 100% 100%;
@@ -1877,32 +1880,67 @@ $tooltip-icons: (
     }
   }
 
+  // 공유하기
   &.--share {
     .item-list {
       gap: 0 20px;
+      margin-top: 20px;
 
       .btn-sns {
-        margin-top: 0;
-        padding-top: 0;
-        width: 32px;
-        height: 32px;
+        >span {
+          padding-top: 9px;
+        }
 
         &:before {
+          width: 50px;
+          height: 50px;
+          border-radius: 10px;
+          border: 1px solid $Line-line;
+          background: $color-border-inverse;
+        }
+
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 11px;
+          left: 50%;
+          transform: translateX(-50%);
           width: 32px;
-          height: 32px;
-          margin-bottom: 0;
+          height: 30px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 100% 100%;
+          border-radius: 10px;
+        }
+
+        &.--naver:after {
+          background-color: #02C63D;
+        }
+
+        &.--kakao:after {
+          background-color: #F8E049;
+        }
+
+        &.--instagram:after {
+          background-color: #C837AB;
+        }
+
+        &.--facebook:after {
+          background-color: #1877F2;
         }
       }
     }
+  }
+}
 
-    .btn-sns {
-      min-width: 50px;
+.copy-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 20px;
 
-      &:before {
-        border-radius: 10px;
-        border: 1px solid var(--Line-line, #DEDEDE);
-        background: var(--color-border-inverse, #FFF);
-      }
-    }
+  .form-field {
+    flex: 1;
   }
 }

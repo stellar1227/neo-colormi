@@ -17,19 +17,13 @@
       +li {
         padding-left: 20px;
 
+        @include line-icon(next, 5px);
+
         &:before,
         &:after {
-          @include next-line-base-1px;
-          height: 5px;
-          top: calc(50% - 1.6px);
-          left: 8px;
           right: auto;
+          left: 8px;
           background: $color-border-gray;
-        }
-
-        &:after {
-          @include next-line-after-1px;
-          top: calc(50% + 1.6px);
         }
       }
 
@@ -564,7 +558,17 @@
     }
 
     .product-price {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      grid-gap: 16px 0;
       margin-top: 16px;
+      padding: 20px 10px;
+      background: $color-background-gray-subtler;
+
+      [class$=-price] {
+        text-align: right;
+      }
 
       .discount-title {
         @include font-body-xxsmall;
@@ -690,44 +694,6 @@
           }
         }
       }
-    }
-  }
-}
-
-.product-price {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  grid-gap: 16px 0;
-  padding: 20px 10px;
-  background: $color-background-gray-subtler;
-
-  [class$=-price] {
-    text-align: right;
-  }
-
-  &.--round {
-    border-radius: 4px;
-
-    .title {
-      @include font-body-xxsmall;
-      color: $color-text-subcolor-deep;
-    }
-
-    [class$=-price] {
-      @include font-body-xsmall-bold;
-
-      strong {
-        @include font-body-small-bold;
-      }
-    }
-
-    .deposit-price {
-      color: $color-text-secondary;
-    }
-
-    .receivable-price {
-      color: $color-text-primary;
     }
   }
 }
@@ -1114,16 +1080,7 @@
         display: inline-block;
         width: 16px;
         height: 16px;
-
-        &:before,
-        &:after {
-          @include cross-line-base-1px;
-          height: 9px;
-        }
-
-        &:after {
-          @include cross-line-after-1px;
-        }
+        @include line-icon(cross, 9px);
 
         i {
           font-size: 0;

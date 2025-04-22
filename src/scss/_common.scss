@@ -111,6 +111,44 @@ h5 {
       margin-top: 40px;
     }
   }
+
+  .product-price {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-gap: 16px 0;
+    padding: 20px 10px;
+    background: $color-background-gray-subtler;
+
+    [class$=-price] {
+      text-align: right;
+    }
+
+    &.--round {
+      border-radius: 4px;
+
+      .title {
+        @include font-body-xxsmall;
+        color: $color-text-subcolor-deep;
+      }
+
+      [class$=-price] {
+        @include font-body-xsmall-bold;
+
+        strong {
+          @include font-body-small-bold;
+        }
+      }
+
+      .deposit-price {
+        color: $color-text-secondary;
+      }
+
+      .receivable-price {
+        color: $color-text-primary;
+      }
+    }
+  }
 }
 
 // top title area
@@ -167,18 +205,15 @@ h5 {
     }
 
     &.select {
+      @include line-icon(cross, 5.5px);
 
       &:before,
       &:after {
-        @include cross-line-base-1px;
         left: auto;
         right: 15.5px;
-        height: 5.5px;
-        z-index: 1;
       }
 
       &:after {
-        @include cross-line-after-1px;
         right: 19.1px;
       }
     }
@@ -259,16 +294,16 @@ h5 {
           position: relative;
           background: $color-divider-gray-light;
           border-radius: 50%;
+          @include line-icon(cross, 6px);
 
-          &:before,
-          &:after {
-            @include cross-line-base-1px;
-            height: 6px;
-          }
+          // &:before,
+          // &:after {
+          //   height: 6px;
+          // }
 
-          &:after {
-            @include cross-line-after-1px;
-          }
+          // &:after {
+          //   @include cross-line-after-1px;
+          // }
         }
 
         &.btn-visible {
@@ -534,16 +569,7 @@ h5 {
       width: 24px;
       height: 24px;
       margin: 0 0 0 8px;
-
-      &:before,
-      &:after {
-        @include cross-line-base-1px;
-        height: 13px;
-      }
-
-      &:after {
-        @include cross-line-after-1px;
-      }
+      @include line-icon(cross, 13px);
 
       i {
         font-size: 0;
@@ -584,16 +610,7 @@ h5 {
   vertical-align: -8px;
   border-radius: 100%;
   background: $color-border-gray;
-
-  &:before,
-  &:after {
-    @include plus-line-base-1px;
-    height: 9px;
-  }
-
-  &:after {
-    @include plus-line-after-1px;
-  }
+  @include line-icon(plus, 9px);
 }
 
 .icon-minus {
@@ -605,12 +622,7 @@ h5 {
   vertical-align: -8px;
   border-radius: 100%;
   background: $color-border-gray;
-
-  &:before {
-    @include plus-line-base-1px;
-    height: 1px;
-    width: 9px;
-  }
+  @include line-icon(minus, 9px);
 }
 
 // toggle
@@ -1074,17 +1086,6 @@ h5 {
     }
   }
 
-  &.--medium,
-  &.--large {
-    i {
-
-      &.plus:before,
-      &.plus:after {
-        height: 15px;
-      }
-    }
-  }
-
   &:hover {
     border-color: $color-border-gray-dark;
     background: $color-border-gray-light;
@@ -1122,18 +1123,7 @@ h5 {
     span {
       position: relative;
       padding-right: 16px !important;
-
-      &:before,
-      &:after {
-        @include next-line-base-1px;
-        top: calc(50% - 1.5px);
-        height: 5px;
-      }
-
-      &:after {
-        @include next-line-after-1px;
-        top: calc(50% + 1.5px);
-      }
+      @include line-icon(next, 5px);
     }
   }
 
@@ -1170,18 +1160,11 @@ h5 {
   padding: 0 16px 0 0;
   @include font-body-small;
   line-height: 16px;
+  @include line-icon(next, 5px);
 
   &:before,
   &:after {
-    @include next-line-base-1px;
-    top: calc(50% - 1.5px);
-    height: 5px;
     background: $Line-line-2;
-  }
-
-  &:after {
-    @include next-line-after-1px;
-    top: calc(50% + 1.5px);
   }
 
   &.--small {
@@ -1296,16 +1279,7 @@ h5 {
   width: 24px;
   height: 24px;
   font-size: 0;
-
-  &:before,
-  &:after {
-    @include cross-line-base-1px;
-    height: 13px;
-  }
-
-  &:after {
-    @include cross-line-after-1px;
-  }
+  @include line-icon(cross, 13px);
 
   &.--large {
     width: 36px;
@@ -1730,34 +1704,35 @@ h5 {
         }
       }
 
-      &:first-of-type {
+      &.prev {
 
         a,
         span {
-          padding: 12px 12px 12px 4px;
+          position: relative;
+          padding: 12px 12px 12px 22px;
+          @include line-icon(prev, 5px);
 
-          &:before {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin-right: 2px;
-            background: #003f6d;
+          &:before,
+          &:after {
+            // @include prev-line-base-1px;
+            left: 9.5px;
           }
+
+          // &:after {
+          //   @include prev-line-after-1px;
+          // }
         }
       }
 
-      &:last-of-type {
+      &.next {
         a {
-          padding: 12px 4px 12px 12px;
+          position: relative;
+          padding: 12px 22px 12px 12px;
+          @include line-icon(next, 5px);
 
+          &:before,
           &:after {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin-left: 2px;
-            background: #003f6d;
+            right: 9.5px;
           }
         }
       }
@@ -1767,7 +1742,12 @@ h5 {
         a,
         span {
           background: $color-background-white;
-          color: $color-text-subcolor-light;
+          color: $color-text-subcolor;
+
+          &:before,
+          &:after {
+            background: $color-text-subcolor;
+          }
         }
       }
 
@@ -1777,6 +1757,11 @@ h5 {
         span {
           background: $color-border-gray-dark;
           color: $color-text-basic-inverse;
+
+          &:before,
+          &:after {
+            background: $color-text-basic-inverse;
+          }
         }
       }
     }

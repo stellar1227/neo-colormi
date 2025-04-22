@@ -3,18 +3,37 @@
 {% block content %}
   {% include "components/sideNav.njk" %}
   <div class="content">
-    <div class="page-title">
+    <div class="page-title --left">
       <h3>주문배송조회</h3>
     </div>
     <section class="content-box">
+      <div class="desc-box line-box --large">
+        <div class="form-field">
+          <div class="form-option util-option">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>전체</option>
+                <option>견적요청</option>
+              </select>
+            </div>
+            <div class="form-wrap date">
+              <input type="date" data-placeholder="시작일 선택" required aria-required="true"/>
+            </div>
+            <i>~</i>
+            <div class="form-wrap date">
+              <input type="date" data-placeholder="종료일 선택" required aria-required="true" value="2025-04-22"/>
+            </div>
+            <button type="button" class="btn-outline --small">
+              <span>조회</span>
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="table-list">
         <div class="list-item-wrap --header">
           <div class="list-item">
             <div class="item --product">
-              <p>상품명</p>
-            </div>
-            <div class="item --quantity">
-              <p>수량</p>
+              <p>주문정보</p>
             </div>
             <div class="item --amount">
               <p>주문금액</p>
@@ -22,56 +41,109 @@
             <div class="item --delivery">
               <p>배송안내</p>
             </div>
-            <div class="item --delivery-fee">
-              <p>배송비</p>
+            <div class="item --total-price">
+              <p>총 결제금액</p>
+            </div>
+            <div class="item --status">
+              <p>상태</p>
             </div>
           </div>
         </div>
         <!-- // list header -->
         <div class="list-item-wrap --body">
           <div class="list-item">
-            <div class="item --product" data-label="상품명">
-              <div class="product-wrap">
+            <div class="item --product" data-label="주문정보">
+              <div class="product-wrap --order-info">
                 <div class="product-inner-item">
                   <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
                   </div>
                   <div class="product-info">
-                    <div class="badge-wrap">
-                      <span class="badge line-display-4 new">신상품</span>
-                    </div>
                     <p class="product-name">상품명</p>
                     <div class="product-text">
-                      <p class="text">기본정보가 노출되는 줄입니다.</p>
-                      <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
+                      <p class="text">수량 5부</p>
+                      <p class="text">제목명이 나타나게 됩니다.</p>
+                    </div>
+                    <div class="product-text --end">
+                      <p class="text">주문일
+                        <span>2025.00.00</span>
+                      </p>
+                      <button type="button" class="btn-text --small">
+                        <span>상세보기</span>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="item --quantity" data-label="수량">
-              <p>
-                <span>1</span>건</p>
-            </div>
             <div class="item --amount" data-label="주문금액">
-              <p>
-                <span>100,000,000</span>원</p>
-            </div>
-            <div class="item --delivery" data-label="배송안내">
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>선불택배</option>
-                  </select>
-                </div>
+              <div class="item-inner">
+                <p>
+                  <span>100,000,000</span>원</p>
               </div>
             </div>
-            <div class="item --delivery-fee" data-label="배송비">
-              <p>
-                <span>3,000</span>원</p>
+            <div class="item --delivery" data-label="배송안내">
+              <div class="item-inner">
+                <p>선불택배</p>
+                <p>
+                  <span>7,000</span>원</p>
+                <button type="button" class="btn-outline --xsmall">
+                  <span>배송조회</span>
+                </button>
+              </div>
+            </div>
+            <div class="item --total-price" data-label="총 결제금액">
+              <div class="item-inner">
+                <p class="total-price">
+                  <span>100,000</span>원</p>
+                <p>신용카드</p>
+              </div>
+            </div>
+            <div class="item --status" data-label="상태">
+              <p class="order-status --ing">견적요청</p>
+              <p class="order-status --end">제작완료</p>
+              <p class="order-status --error">주문취소</p>
+              <p class="order-status --upload">출력용파일업로드</p>
+              <p class="order-status --complete">출고완료</p>
+              <!-- .order-ing 견적요청,견적중,견적완료 / .order-end 결제대기중,결제완료,제작준비,상품제작중,제작완료 / .order-error 주문취소,파일에러,폰트에러,주문오류,접수보류,재작업요청,삭제 /
+              .order-upload 출력용파일업로드 / .order-complete 출고완료 -->
             </div>
           </div>
         </div>
         <!-- // list body -->
+        <!-- 주문배송 내역 없음 -->
+        <div class="list-item-wrap">
+          <div class="list-item">
+            <div class="item --no-item">
+              <p class="guide-sub-deep">주문 내역이 없어요.</p>
+            </div>
+          </div>
+        </div>
+        <!-- // 주문배송 내역 없음 -->
+      </div>
+      <!-- pagination -->
+      <div class="pagination">
+        <ul class="item-wrap">
+          <li class="item">
+            <a href="">이전</a>
+          </li>
+          <li class="item --active">
+            <a href="">1</a>
+          </li>
+          <li class="item">
+            <a href="">2</a>
+          </li>
+          <li class="item">
+            <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+          </li>
+          <li class="item disabled">
+            <a href="">다음</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-wrap">
+        <button type="button" class="btn-outline --small">
+          <span>과거 주문내역 확인</span>
+        </button>
       </div>
     </section>
     <!-- 안내 -->

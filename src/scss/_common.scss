@@ -51,9 +51,75 @@ h5 {
   }
 }
 
+.side-wrap {
+  width: 183px;
+  margin-right: 20px;
+
+  .side-nav {
+    margin-top: 40px;
+
+    .depth-2 {
+      margin-bottom: 24px;
+      @include title-semibold;
+      color: $color-text-basic;
+    }
+
+    .item {
+      position: relative;
+
+      +.item {
+        margin-top: 32px;
+        padding-top: 32px;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80px;
+          height: 1px;
+          background: $color-divider-gray-light;
+        }
+      }
+
+      li {
+        margin-top: 12px;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          color: $color-text-subcolor-deep;
+          @include depth-small-medium;
+
+          &:hover {
+            color: $color-text-primary;
+            text-decoration: underline;
+          }
+        }
+
+        &.--active {
+          a {
+            color: $color-text-primary;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    +.item {
+      margin-top: 40px;
+    }
+  }
+}
+
 // top title area
 .page-title {
   text-align: center;
+
+  &.--left {
+    text-align: left;
+  }
 
   h3 {
     margin-bottom: 0;
@@ -497,6 +563,15 @@ h5 {
 
   +.btn-wrap {
     margin-top: 16px;
+  }
+
+  .form-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 8px;
+    @include font-body-small;
+    color: $color-text-basic;
   }
 }
 
@@ -1514,6 +1589,10 @@ h5 {
     padding: 10px 0px;
     border-top: 1px solid $Line-line;
     border-bottom: 1px solid $Line-line;
+
+    &.--large {
+      padding: 20px 0;
+    }
   }
 
   &.gray-light-box {

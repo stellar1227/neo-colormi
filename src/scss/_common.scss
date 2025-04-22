@@ -1826,53 +1826,82 @@ $tooltip-icons: (
       text-align: center;
     }
   }
+}
 
-  .sns-login {
-    @include font-body-xxsmall;
-    color: $color-text-subcolor-deep;
-    text-align: center;
+.sns-login {
+  @include font-body-xxsmall;
+  color: $color-text-subcolor-deep;
+  text-align: center;
 
+  .item-list {
+    display: flex;
+    justify-content: center;
+    gap: 0 32px;
+    margin-top: 16px;
+
+    .btn-sns {
+      display: inline-block;
+      position: relative;
+      min-width: 48px;
+      margin-top: 48px;
+      padding-top: 12px;
+      @include font-body-xxsmall;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: -48px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 48px;
+        height: 48px;
+        margin-bottom: 4px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% 100%;
+        border-radius: 50%;
+      }
+
+      &.--naver:before {
+        background-color: #02C63D;
+      }
+
+      &.--kakao:before {
+        background-color: #F8E049;
+      }
+
+      &.--google:before {
+        background-color: #F4F5F6;
+      }
+    }
+  }
+
+  &.--share {
     .item-list {
-      display: flex;
-      justify-content: center;
-      gap: 0 32px;
-      margin-top: 16px;
+      gap: 0 20px;
 
       .btn-sns {
-        display: inline-block;
-        position: relative;
-        min-width: 48px;
-        margin-top: 48px;
-        padding-top: 12px;
-        @include font-body-xxsmall;
+        margin-top: 0;
+        padding-top: 0;
+        width: 32px;
+        height: 32px;
 
         &:before {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          top: -48px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 48px;
-          height: 48px;
-          margin-bottom: 4px;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: 100% 100%;
-          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          margin-bottom: 0;
         }
+      }
+    }
 
-        &.--naver:before {
-          background-color: #02C63D;
-        }
+    .btn-sns {
+      min-width: 50px;
 
-        &.--kakao:before {
-          background-color: #F8E049;
-        }
-
-        &.--google:before {
-          background-color: #F4F5F6;
-        }
+      &:before {
+        border-radius: 10px;
+        border: 1px solid var(--Line-line, #DEDEDE);
+        background: var(--color-border-inverse, #FFF);
       }
     }
   }

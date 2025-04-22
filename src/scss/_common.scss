@@ -540,9 +540,10 @@ h5 {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 8px 20px;
 
   +[class$=-wrap] {
-    margin-left: 34px;
+    margin-left: 20px;
   }
 
   .toggle,
@@ -637,6 +638,7 @@ h5 {
         display: inline-block;
         width: 25px;
         height: 16px;
+        margin: 2px 0;
         background: $color-border-gray;
         -webkit-transition: .4s;
         transition: .4s;
@@ -793,14 +795,11 @@ h5 {
 
 // checkbox
 .checkbox-wrap {
-  +[class$=-wrap] {
-    margin-left: 20px;
-  }
+  // +[class$=-wrap] {
+  //   margin-left: 20px;
+  // }
 
   .checkbox {
-    +.checkbox {
-      margin-left: 20px;
-    }
 
     input {
 
@@ -859,14 +858,11 @@ h5 {
 
 // radio
 .radio-wrap {
-  +[class$=-wrap] {
-    margin-left: 28px;
-  }
+  // +[class$=-wrap] {
+  //   margin-left: 28px;
+  // }
 
   .radio {
-    +.radio {
-      margin-left: 28px;
-    }
 
     input {
 

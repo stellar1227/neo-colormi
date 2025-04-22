@@ -1,34 +1,10 @@
 {% extends "layouts/base.njk" %}
-{% set title = "주문·결제" %}
+{% set title = "주문배송조회" %}
 {% block content %}
-  <div class="step-wrap">
-    <ol class="step-status">
-      <li>
-        <p class="item">
-          <i class="item-number"></i>
-          <strong>장바구니</strong>
-        </p>
-      </li>
-      <li class="current">
-        <p class="item">
-          <i class="item-number"></i>
-          <strong>주문·결제</strong>
-        </p>
-      </li>
-      <li>
-        <p class="item">
-          <i class="item-number"></i>
-          <strong>주문완료</strong>
-        </p>
-      </li>
-    </ol>
-  </div>
   <div class="page-title">
-    <h3>주문·결제</h3>
+    <h3>주문배송조회</h3>
   </div>
-  <section
-    class="content-box">
-    <!-- 장바구니 목록 :선택 목록 -->
+  <section class="content-box">
     <div class="table-list">
       <div class="list-item-wrap --header">
         <div class="list-item">
@@ -156,32 +132,28 @@
         </div>
         <dl class="product-option columns-1">
           <dd>
-            <div class="form-field">
-              <div class="form-inner button-option">
-                <div class="desc-box border-box --small">
-                  <div class="radio-wrap">
-                    <label class="radio" for="radio-0-1">
-                      <input type="radio" id="radio-0-1" name="radio-0" checked="checked">
-                      <span class="radio-icon"></span>
-                      <span class="radio-label">홍길동(기본배송지)</span>
-                    </label>
-                    <label class="radio" for="radio-0-2">
-                      <input type="radio" id="radio-0-2" name="radio-0">
-                      <span class="radio-icon"></span>
-                      <span class="radio-label">김지아</span>
-                    </label>
-                    <label class="radio" for="radio-0-3">
-                      <input type="radio" id="radio-0-3" name="radio-0">
-                      <span class="radio-icon"></span>
-                      <span class="radio-label">김초롱이</span>
-                    </label>
-                  </div>
-                </div>
-                <button type="button" class="btn-primary --small">
-                  <span>배송지 변경</span>
-                </button>
+            <div class="desc-box border-box --small">
+              <div class="radio-wrap">
+                <label class="radio" for="radio-0-1">
+                  <input type="radio" id="radio-0-1" name="radio-0" checked="checked">
+                  <span class="radio-icon"></span>
+                  <span class="radio-label">홍길동(기본배송지)</span>
+                </label>
+                <label class="radio" for="radio-0-2">
+                  <input type="radio" id="radio-0-2" name="radio-0">
+                  <span class="radio-icon"></span>
+                  <span class="radio-label">김지아</span>
+                </label>
+                <label class="radio" for="radio-0-3">
+                  <input type="radio" id="radio-0-3" name="radio-0">
+                  <span class="radio-icon"></span>
+                  <span class="radio-label">김초롱이</span>
+                </label>
               </div>
             </div>
+            <button type="button" class="btn-primary --small">
+              <span>배송지 변경</span>
+            </button>
           </dd>
         </dl>
         <dl class="product-option">
@@ -262,28 +234,30 @@
             </label>
           </div>
         </dd>
-      </dl>
-      <!-- 무통장 입금 시 -->
-      <div class="desc-box gray-light-box">
-        <div class="item-box-wrap --center">
-          <div class="item-box">
-            <div class="item-box-inner">
-              <p class="guide-basic --large-bold">국민은행 412701-01-227972</p>
-              <p class="guide-sub --bold">빌포스트(주)</p>
+        <dd>
+          <!-- 무통장 입금 시 -->
+          <div class="desc-box gray-light-box">
+            <div class="item-box-wrap --center">
+              <div class="item-box">
+                <div class="item-box-inner">
+                  <p class="guide-basic --large-bold">국민은행 412701-01-227972</p>
+                  <p class="guide-sub --bold">빌포스트(주)</p>
+                </div>
+              </div>
+              <div class=" item-box">
+                <div class="item-box-inner">
+                  <input type="text" placeholder="입금자명" value="입금자명"/>
+                  <ul class="guide-sub-deep --small --dot">
+                    <li>입금은행/계좌번호/예금주를 미리 메모해 두시기 바랍니다.</li>
+                    <li>무통장 입금 시 ‘신청자명’과 ‘입금자명’이 다를 경우 반드시 연락 주셔야 합니다.</li>
+                    <li>무통장 입금 시 '입금'까지 완료하셔야 합니다.</li>
+                  </ul>
+                </div>
+              </p>
             </div>
           </div>
-          <div class="item-box">
-            <div class="item-box-inner">
-              <input type="text" placeholder="입금자명" value="입금자명"/>
-              <ul class="guide-sub-deep --small --dot">
-                <li>입금은행/계좌번호/예금주를 미리 메모해 두시기 바랍니다.</li>
-                <li>무통장 입금 시 ‘신청자명’과 ‘입금자명’이 다를 경우 반드시 연락 주셔야 합니다.</li>
-                <li>무통장 입금 시 '입금'까지 완료하셔야 합니다.</li>
-              </ul>
-            </div>
-          </p>
-        </div>
-      </div>
+        </dd>
+      </dl>
     </div>
   </section>
   <!-- 상품 금액 -->
@@ -316,9 +290,7 @@
         </dl>
       </div>
     </div>
-  </section>
-  <!-- 안내 -->
-  <section class="content-box">
+  </section><!-- 안내 --><section class="content-box">
     <div class="desc-box">
       <p class="guide-basic-title">※ 꼭 확인하세요.</p>
       <ul class="guide-sub">

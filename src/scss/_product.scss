@@ -659,6 +659,8 @@
 
         .product-text {
           margin-top: 8px;
+          overflow: hidden; // 나중에 삭제 예정
+          max-height: 68px; // 나중에 삭제 예정
 
           .text {
             @include ellipsis;
@@ -670,7 +672,7 @@
           margin: 10px 0 0 0;
         }
 
-        .rating-wrap.badge,
+        .rating-wrap,
         .badge-wrap {
           display: none;
         }

@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //상품페이지 스티키 정보
   productStickyInfo();
-  
 
-  
+
+
 });
 
 
-function productImages(){
+function productImages() {
   const thumbNailGallery = document.getElementById("thumbNailGallery");
   const imgItemWrap = thumbNailGallery.querySelector(".img-item-wrap");
   const imgItems = imgItemWrap.querySelectorAll(".img-item");
@@ -22,11 +22,11 @@ function productImages(){
   const MARGIN_TOP = 12;
   const itemListNum = 4;
   const imgItemHeight = imgItems[0].offsetHeight + MARGIN_TOP;
-  
+
   btnPrev.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
-      imgItemWrap.style.transform = `translateY(-${currentIndex === 0 ? MARGIN_TOP : (currentIndex * imgItemHeight) + MARGIN_TOP }px)`;
+      imgItemWrap.style.transform = `translateY(-${currentIndex === 0 ? MARGIN_TOP : (currentIndex * imgItemHeight) + MARGIN_TOP}px)`;
       return;
     }
     alert('첫번째 이미지입니다.')
@@ -35,7 +35,7 @@ function productImages(){
   btnNext.addEventListener("click", () => {
     if (currentIndex < imgItemLength - itemListNum) {
       currentIndex++;
-      imgItemWrap.style.transform = `translateY(-${currentIndex === imgItemLength - itemListNum ? MARGIN_TOP : (currentIndex * imgItemHeight) + MARGIN_TOP }px)`;
+      imgItemWrap.style.transform = `translateY(-${currentIndex === imgItemLength - itemListNum ? MARGIN_TOP : (currentIndex * imgItemHeight) + MARGIN_TOP}px)`;
       return;
     }
     alert('마지막 이미지입니다.')
@@ -50,11 +50,18 @@ function productImages(){
   });
 }
 
-function productStickyInfo(){
+function productStickyInfo() {
   const productImgDetail = document.querySelector(".product-wrap");
   const productInfo = document.querySelector(".product-inner");
   const productInfoHeight = productInfo.offsetHeight;
   const productInfoTop = productInfo.getBoundingClientRect().top + window.scrollY;
+
+  const parentContentBox = productImgDetail.closest(".content-box");
+  const nextContentBox = parentContentBox && parentContentBox.nextElementSibling;
+
+  if (parentContentBox) {
+    parentContentBox.style.height = `${productImgDetail.offsetHeight}px`;
+  }
 
   let timer = null;
 
@@ -64,11 +71,19 @@ function productStickyInfo(){
         const scrollTop = window.scrollY;
         if (scrollTop > productInfoTop + productInfoHeight) {
           productImgDetail.classList.add("scroll");
+
+          if (nextContentBox && nextContentBox.classList.contains("content-box")) {
+            nextContentBox.style.paddingTop = `${productImgDetail.offsetHeight}px`;
+          }
         } else {
           productImgDetail.classList.remove("scroll");
+
+          if (nextContentBox && nextContentBox.classList.contains("content-box")) {
+            nextContentBox.style.paddingTop = "";
+          }
         }
         timer = null;
-      },0); 
+      }, 0);
     }
   });
 }

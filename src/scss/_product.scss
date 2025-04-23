@@ -942,6 +942,10 @@
       >.inner-wrap {
         display: inline-flex;
         align-items: center;
+
+        +.inner-wrap {
+          margin-top: 12px;
+        }
       }
 
       >.checkbox-wrap,

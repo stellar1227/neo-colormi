@@ -13,56 +13,67 @@
             <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
           </div>
           <dl class="product-option">
-            <dt>구성</dt>
+            <dt class="required">제목</dt>
+            <dd>
+              <div class="form-field">
+                <input type="text" placeholder="Placeholder"/>
+              </div>
+            </dd>
+            <dt class="required">상담종류</dt>
             <dd>
               <div class="form-field">
                 <div class="form-wrap select">
                   <select class="btn-select">
-                    <option>메모장</option>
-                    <option>메모장 커버</option>
-                    <option>메모장 세트(커버1개+메모장2부)</option>
+                    <option>선택</option>
                   </select>
                 </div>
               </div>
             </dd>
-            <dt>매수</dt>
+            <dt class="required">인쇄물종류</dt>
             <dd>
               <div class="form-field">
                 <div class="form-wrap select">
                   <select class="btn-select">
-                    <option>50매</option>
+                    <option>선택</option>
                   </select>
                 </div>
               </div>
             </dd>
-            <dt>사이즈</dt>
+            <dt>내용</dt>
             <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>A5</option>
-                    <option>B5</option>
-                    <option>A4</option>
-                  </select>
+              <div class="form-field textarea">
+                <div class="form-wrap">
+                  <textarea id="textarea" placeholder="상품에 대한 문의 내용을 자세히 작성해주세요."></textarea>
+                </div>
+                <div class="textarea-bottom">
+                  <div class="count">
+                    <em>1</em>/<span>100</span>
+                  </div>
+                  <ul class="guide-sub --small">
+                    <li>- 자세한 견적을 원하시면, 인쇄정보는 모두 작성해주세요.</li>
+                    <li>- 파일을 첨부해주시면 보다 빠른 상담이 가능합니다.</li>
+                  </ul>
                 </div>
               </div>
             </dd>
-            <dt>수량</dt>
+            <dt>웹하드 경로</dt>
             <dd>
-              <div class="form-field">
-                <input type="number" placeholder="Placeholder"/>
-                <p class="description">10부 단위로 주문 가능</p>
-              </div>
-            </dd>
-            <dt>커버각인</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>안함</option>
-                    <option>추가</option>
-                  </select>
+              <div class="inner-wrap">
+                <button type="button" class="btn-outline --xsmall">
+                  <span>웹하드 업로드</span>
+                </button>
+                <div class="guide-wrap">
+                  <dl class="desc-guide line-round">
+                    <dt>ID</dt>
+                    <dd>colomi</dd>
+                    <dt>PW</dt>
+                    <dd>1234</dd>
+                  </dl>
+                  <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
                 </div>
+              </div>
+              <div class="inner-wrap">
+                <input type="text" placeholder="외장하드 경로를 입력해주세요."/>
               </div>
             </dd>
             <dt>파일첨부</dt>
@@ -85,54 +96,6 @@
             </dd>
           </dl>
         </div>
-        <!-- 주문내용 -->
-        <div class="product-order">
-          <div class="title-wrap">
-            <h5>주문내용</h5>
-          </div>
-          <dl class="product-option">
-            <dt class="required">제목</dt>
-            <dd>
-              <div class="form-field">
-                <input type="text" placeholder="Placeholder"/>
-              </div>
-            </dd>
-            <dt>웹하드</dt>
-            <dd>
-              <div class="inner-wrap">
-                <button type="button" class="btn-outline --xsmall">
-                  <span>웹하드 업로드</span>
-                </button>
-                <div class="guide-wrap">
-                  <dl class="desc-guide line-round">
-                    <dt>ID</dt>
-                    <dd>colomi</dd>
-                    <dt>PW</dt>
-                    <dd>1234</dd>
-                  </dl>
-                  <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
-                </div>
-              </div>
-            </dd>
-            <dt>요청사항</dt>
-            <dd>
-              <div class="form-field textarea">
-                <div class="form-wrap">
-                  <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
-                </div>
-                <div class="textarea-bottom">
-                  <div class="count">
-                    <em>1</em>/<span>100</span>
-                  </div>
-                  <ul class="guide-sub --small">
-                    <li>- 자세한 견적을 원하시면, 인쇄정보는 모두 작성해주세요.</li>
-                    <li>- 파일을 첨부해주시면 보다 빠른 상담이 가능합니다.</li>
-                  </ul>
-                </div>
-              </div>
-            </dd>
-          </dl>
-        </div>
       </div>
       <div class="modal-footer">
         <div class="btn-wrap confirm">
@@ -140,7 +103,7 @@
             <span>취소</span>
           </button>
           <button type="button" class="btn-primary --medium">
-            <span>변경</span>
+            <span>문의하기</span>
           </button>
         </div>
       </div>

@@ -113,43 +113,116 @@ section.content-box+section.content-box {
       margin-top: 40px;
     }
   }
+}
 
-  .product-price {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    grid-gap: 16px 0;
-    padding: 20px 10px;
-    background: $color-background-gray-subtler;
+.product-price {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  grid-gap: 16px 0;
+  margin-top: 16px;
+  padding: 20px 10px;
+  background: $color-background-gray-subtler;
+
+  .count,
+  [class$=-price] {
+    text-align: right;
+  }
+
+  &.--round {
+    border-radius: 4px;
+
+    .title {
+      @include font-body-xxsmall;
+      color: $color-text-subcolor-deep;
+    }
+
+    .count,
+    [class$=-price] {
+      @include font-body-xsmall-bold;
+
+      strong {
+        @include font-body-small-bold;
+      }
+    }
+  }
+
+  &.--bg-white {
+    gap: 0;
+    margin: 10px 0;
+    padding: 0;
+    background: $color-background-white;
+
+    dt,
+    dd {
+      display: flex;
+      align-items: center;
+      height: 62px;
+
+      >p {
+        flex: 1;
+      }
+    }
+
+    dt:not(:last-of-type),
+    dd:not(:last-of-type) {
+      border-bottom: 1px solid $Line-line;
+    }
+
+    .count,
+    .title {
+      @include font-body-small;
+      color: $color-text-subcolor-deep;
+    }
 
     [class$=-price] {
-      text-align: right;
-    }
+      @include font-body-large-bold;
 
-    &.--round {
-      border-radius: 4px;
-
-      .title {
-        @include font-body-xxsmall;
-        color: $color-text-subcolor-deep;
-      }
-
-      [class$=-price] {
-        @include font-body-xsmall-bold;
-
-        strong {
-          @include font-body-small-bold;
-        }
-      }
-
-      .deposit-price {
-        color: $color-text-secondary;
-      }
-
-      .receivable-price {
-        color: $color-text-primary;
+      strong {
+        font-weight: $font-weight-bold;
       }
     }
+
+    &.--small {
+      margin: 6px 0 0;
+
+      dt,
+      dd {
+        height: 38px;
+      }
+
+      dt:last-of-type,
+      dd:last-of-type {
+        border-bottom: 1px solid $Line-line;
+      }
+    }
+  }
+
+  .deposit-price {
+    color: $color-text-secondary;
+  }
+
+  .receivable-price {
+    color: $color-text-primary;
+  }
+}
+
+.check-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+  margin-top: 12px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: $color-divider-gray-light;
+  }
+
+  .check-item {
+    @include font-body-small-bold;
   }
 }
 
@@ -996,6 +1069,7 @@ section.content-box+section.content-box {
 
 .btn-wrap {
   display: flex;
+  align-items: center;
 
   &.confirm {
     justify-content: center;
@@ -1146,7 +1220,7 @@ section.content-box+section.content-box {
 
 .btn-text {
   @include button;
-  height: auto;
+  height: 15px;
   border: 0;
   box-shadow: none;
   color: $color-text-subcolor;
@@ -1162,12 +1236,11 @@ section.content-box+section.content-box {
   }
 
   &.--small {
-    height: auto;
-    @include font-body-xsmall;
+    height: 13px;
   }
 
   &.--large {
-    height: auto;
+    height: 17px;
     padding-right: 24px;
     @include font-body-medium;
     line-height: 20px;

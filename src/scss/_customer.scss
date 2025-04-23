@@ -1,0 +1,54 @@
+@use 'mixin' as *;
+@use 'variables' as *;
+@use "sass:list";
+
+.product-step-wrap {
+  .step-status {
+    display: flex;
+    gap: 0 46px;
+    padding: 26px 16px;
+    border-top: 1px solid $Line-line;
+    border-bottom: 1px solid $Line-line;
+
+    li {
+      position: relative;
+      flex: 1;
+      text-align: center;
+
+      &.--active {
+        .item-number {
+          color: $color-text-primary;
+        }
+      }
+
+      .item-title {
+        margin-bottom: 20px;
+        @include font-body-small-bold;
+        color: $color-text-basic;
+      }
+
+      .item-number {
+        @include font-heading-medium-bold;
+        color: $color-text-subcolor-light;
+      }
+
+      +li {
+        @include line-icon(next, 12px);
+
+        &::before {
+          top: calc(50% - 4px);
+          right: auto;
+          left: -21px;
+          background: $color-border-gray;
+        }
+
+        &::after {
+          top: calc(50% + 4px);
+          right: auto;
+          left: -21px;
+          background: $color-border-gray;
+        }
+      }
+    }
+  }
+}

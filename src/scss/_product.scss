@@ -996,6 +996,12 @@
         margin-left: 0;
       }
     }
+
+    &:not(.columns-4) {
+      .form-wrap.file {
+        width: calc(50% - 100px);
+      }
+    }
   }
 
   .--add-option {
@@ -1501,6 +1507,10 @@
   +.table-list {
     margin-top: 20px;
   }
+
+  &.--right {
+    justify-content: flex-end;
+  }
 }
 
 .table-list {
@@ -1511,7 +1521,7 @@
         border-bottom-color: $color-border-gray-dark;
 
         .item {
-          padding: 14px 16px;
+          padding: 14px 10px;
           @include font-body-small-bold;
           background: $color-border-gray-light;
           color: $color-text-basic;
@@ -1536,11 +1546,13 @@
       border-bottom: 1px solid $color-border-gray;
       display: flex;
 
-      .--checkbox {
+      .--checkbox,
+      .--number {
         width: 50px;
       }
 
       .--product,
+      .--title,
       .--address {
         flex: 1;
       }
@@ -1548,7 +1560,8 @@
       .--quantity,
       .--delivery,
       .--status,
-      .--delivery-fee {
+      .--delivery-fee,
+      .--manager {
         width: 11%;
       }
 
@@ -1556,12 +1569,16 @@
         width: 17.5%;
       }
 
+      .--category,
       .--name {
         width: 20%;
       }
 
+      .--date,
       .--amount,
-      .--total-price {
+      .--total-price,
+      .--request,
+      .--confirm {
         width: 16%;
       }
 
@@ -1570,7 +1587,7 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 24px 16px;
+        padding: 19px 16px;
         @include font-body-small;
         color: $color-text-subcolor-deep;
         background: $color-border-inverse;
@@ -1667,6 +1684,12 @@
               margin-bottom: 20px;
               border: 1px solid $color-border-gray;
             }
+
+            &.--customer {
+              &::before {
+                background: $color-border-gray-light;
+              }
+            }
           }
 
           .guide-basic-title+.guide-sub-deep {
@@ -1685,7 +1708,8 @@
             font-weight: $font-weight-semibold;
           }
 
-          >.payment {
+          .payment,
+          .date {
             >span {
               display: block;
             }
@@ -1693,6 +1717,13 @@
 
           >*+* {
             margin-top: 12px;
+          }
+        }
+
+        .title {
+          a {
+            @include ellipsis;
+            -webkit-line-clamp: 1;
           }
         }
       }

@@ -1,0 +1,116 @@
+{% extends "layouts/base.njk" %}
+{% set title = "견적문의" %}
+{% block content %}
+  {% include "components/sideNavCustomer.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>견적문의</h3>
+    </div>
+    <section class="content-box">
+      <div class="util-wrap --right">
+        <div class="btn-wrap">
+          <a href="" class="btn-outline --xsmall">
+            <span>문의하기</span>
+          </a>
+        </div>
+      </div>
+      <div class="table-list">
+        <div class="list-item-wrap --header">
+          <div class="list-item">
+            <div class="item --number">
+              <p>번호</p>
+            </div>
+            <div class="item --category">
+              <p>상담종류</p>
+            </div>
+            <div class="item --title">
+              <p>문의제목</p>
+            </div>
+            <div class="item --date">
+              <p>등록일</p>
+            </div>
+            <div class="item --status">
+              <p>처리상태</p>
+            </div>
+          </div>
+        </div>
+        <!-- // list header -->
+        <div class="list-item-wrap --body">
+          <div class="list-item">
+            <div class="item --number" data-label="번호">
+              <div class="item-inner">
+                <p>1</p>
+              </div>
+            </div>
+            <div class="item --category" data-label="상담종류">
+              <div class="item-inner">
+                <p>기업/대량인쇄 상담</p>
+              </div>
+            </div>
+            <div class="item --title" data-label="문의제목">
+              <p class="title">
+                <a href="">문의 제목이 나타나는 칸입니다. 고객이 작성한 제목이 길어지는 경우 생략되어 나타나게 됩니다.</a>
+              </p>
+            </div>
+            <div class="item --date" data-label="등록일">
+              <div class="item-inner">
+                <p class="date">
+                  <span>25.00.00</span>
+                </p>
+              </div>
+            </div>
+            <div class="item --status" data-label="처리상태">
+              <div class="item-inner">
+                <p class="order-status --ing">답변대기</p>
+                <p class="order-status --complete">답변완료</p>
+              </div>
+            </div>
+          </div>
+          <!-- // list body -->
+          <!-- 내역 없음 -->
+          <div class="list-item-wrap">
+            <div class="list-item">
+              <div class="item --no-item --icon --customer">
+                <p class="guide-basic-title">견적문의 내역이 없어요.</p>
+                <p class="guide-sub-deep">궁금한 상품의 견적을 문의해보세요!</p>
+              </div>
+            </div>
+          </div>
+          <!-- // 내역 없음 -->
+        </div>
+      </section>
+      <!-- pagination -->
+      <section class="content-box">
+        <div class="pagination">
+          <ul class="item-wrap">
+            <li class="item prev">
+              <a href="">이전</a>
+            </li>
+            <li class="item --active">
+              <a href="">1</a>
+            </li>
+            <li class="item">
+              <a href="">2</a>
+            </li>
+            <li class="item">
+              <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+            </li>
+            <li class="item next disabled">
+              <a href="">다음</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- 안내 -->
+      <section class="content-box">
+        <div class="desc-box">
+          <p class="guide-basic-title">※ 꼭 확인하세요.</p>
+          <ul class="guide-sub-deep --small --dot">
+            <li>상품 금액과 배송비 모두 VAT포함가로 되어 있습니다.</li>
+            <li>교정한 파일에 문제가 없는 경우 [상세보기]를 선택하여 [시안확정] 버튼을 클릭하시면 상품 제작을 진행합니다.</li>
+            <li>파일을 재접수할 때에는 상세내역에서 파일 업로드 후 [파일재접수]을 눌러주시면 담당자가 확인합니다.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  {% endblock %}

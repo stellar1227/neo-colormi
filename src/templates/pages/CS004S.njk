@@ -1,0 +1,156 @@
+{% extends "layouts/base.njk" %}
+{% set title = "교정확인" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>교정확인</h3>
+    </div>
+    <section class="content-box">
+      <div class="util-wrap">
+        <div class="desc-box line-box --large">
+          <div class="form-field">
+            <div class="form-option util-option">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>전체</option>
+                  <option>견적요청</option>
+                </select>
+              </div>
+              <div class="form-wrap date">
+                <input type="date" data-placeholder="시작일 선택" required aria-required="true"/>
+              </div>
+              <i>~</i>
+              <div class="form-wrap date">
+                <input type="date" data-placeholder="종료일 선택" required aria-required="true" value="2025-04-22"/>
+              </div>
+              <button type="button" class="btn-outline --small">
+                <span>조회</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-list">
+        <div class="list-item-wrap --header">
+          <div class="list-item">
+            <div class="item --product">
+              <p>주문정보</p>
+            </div>
+            <div class="item --request">
+              <p>검수요청일</p>
+            </div>
+            <div class="item --confirm">
+              <p>고객확인일</p>
+            </div>
+            <div class="item --manager">
+              <p>담당자</p>
+            </div>
+            <div class="item --status">
+              <p>상태</p>
+            </div>
+          </div>
+        </div>
+        <!-- // list header -->
+        <div class="list-item-wrap --body">
+          <div class="list-item">
+            <div class="item --product" data-label="주문정보">
+              <div class="product-wrap --order-info">
+                <div class="product-inner-item">
+                  <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
+                  </div>
+                  <div class="product-info">
+                    <p class="product-name">
+                      <span>(주문번호)</span>상품명이 나타나게 됩니다. 상품명이 나타나게 됩니다.
+                    </p>
+                    <div class="product-text">
+                      <p class="text">제목명이 나타나게 됩니다. 제목명이 나타나게 됩니다. 제목명이 나타나게 됩니다.</p>
+                    </div>
+                    <div class="product-text --end">
+                      <p class="text">주문일
+                        <span>2025.00.00</span>
+                      </p>
+                      <a href="" class="btn-text --small">
+                        <span>상세보기</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item --request" data-label="검수요청일">
+              <div class="item-inner">
+                <p class="date">
+                  <span>2025-00-00</span>
+                  <span>00:00:00</span>
+                </p>
+              </div>
+            </div>
+            <div class="item --confirm" data-label="고객확인일">
+              <div class="item-inner">
+                <p class="date">
+                  <span>2025-00-00</span>
+                  <span>00:00:00</span>
+                </p>
+              </div>
+            </div>
+            <div class="item --manager" data-label="담당자">
+              <div class="item-inner">
+                <p>담당자</p>
+              </div>
+            </div>
+            <div class="item --status" data-label="상태">
+              <div class="item-inner">
+                <p class="order-status --ing">검수요청</p>
+                <p class="order-status --error">인쇄보류</p>
+                <p class="order-status --complete">시안확정</p>
+              </div>
+            </div>
+          </div>
+          <!-- // list body -->
+          <!-- 내역 없음 -->
+          <div class="list-item-wrap">
+            <div class="list-item">
+              <div class="item --no-item">
+                <p class="guide-sub-deep">교정 확인할 내역이 없어요.</p>
+              </div>
+            </div>
+          </div>
+          <!-- // 내역 없음 -->
+        </div>
+      </section>
+      <!-- pagination -->
+      <section class="content-box">
+        <div class="pagination">
+          <ul class="item-wrap">
+            <li class="item prev">
+              <a href="">이전</a>
+            </li>
+            <li class="item --active">
+              <a href="">1</a>
+            </li>
+            <li class="item">
+              <a href="">2</a>
+            </li>
+            <li class="item">
+              <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+            </li>
+            <li class="item next disabled">
+              <a href="">다음</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- 안내 -->
+      <section class="content-box">
+        <div class="desc-box">
+          <p class="guide-basic-title">※ 꼭 확인하세요.</p>
+          <ul class="guide-sub-deep --small --dot">
+            <li>상품 금액과 배송비 모두 VAT포함가로 되어 있습니다.</li>
+            <li>교정한 파일에 문제가 없는 경우 [상세보기]를 선택하여 [시안확정] 버튼을 클릭하시면 상품 제작을 진행합니다.</li>
+            <li>파일을 재접수할 때에는 상세내역에서 파일 업로드 후 [파일재접수]을 눌러주시면 담당자가 확인합니다.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  {% endblock %}

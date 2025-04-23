@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% set title = "결제대기" %}
 {% block content %}
-  {% include "components/sideNav.njk" %}
+  {% include "components/sideNavMypage.njk" %}
   <div class="content">
     <div class="page-title --left">
       <h3>결제대기</h3>
@@ -100,8 +100,9 @@
                   <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
                   </div>
                   <div class="product-info">
-                    <p class="product-num">(주문번호)</p>
-                    <p class="product-name">상품명</p>
+                    <p class="product-name">
+                      <span>(주문번호)</span>상품명
+                    </p>
                     <div class="product-text">
                       <p class="text">제목명이 나타나게 됩니다.</p>
                     </div>

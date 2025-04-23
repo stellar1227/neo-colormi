@@ -1396,7 +1396,7 @@ section.content-box+section.content-box {
       .modal-header {
         min-height: 56px;
         padding: 18px 56px 18px 20px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $Line-line;
 
         &+.modal-container {
           margin-top: 0;

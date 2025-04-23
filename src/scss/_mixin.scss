@@ -132,10 +132,23 @@
 @mixin desc-box {
   display: flex;
   flex-direction: column;
+  flex: 1;
   margin-top: 16px;
   text-align: center;
   @include font-body-small;
   color: $color-text-basic;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &+.desc-box {
+    margin-top: 12px;
+  }
+
+  +.table-list {
+    margin-top: 24px;
+  }
 }
 
 // button
@@ -267,6 +280,8 @@
 // disabled
 @mixin button-disabled {
 
+  &.--disabled,
+  &.--disabled:hover,
   &:disabled,
   &:disabled:hover {
     border: 1px solid $Line-line;
@@ -285,7 +300,7 @@
   transform: translate(-50%, -50%);
   z-index: 10;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -329,7 +344,6 @@
 }
 
 // -----------------------------------------------------------------------------
-// line-icon 믹스인: next | prev | up | down | plus | cross | minus 지원
 // @param $type : next, prev, up, down, plus, cross, minus
 // @param $size : arrow 높이(next/prev), caret 폭(up/down), 선 길이(plus/cross/minus)
 // -----------------------------------------------------------------------------
@@ -346,7 +360,6 @@
     z-index: 1;
   }
 
-  // ▶ / ◀
   @if $type ==next or $type ==prev {
 
     &::before,
@@ -357,60 +370,52 @@
     }
 
     &::before {
-      top: calc(50% - 1.6px);
+      top: calc(50% - 1.9px);
       transform: translateY(-50%) rotate(if($type ==next, -45deg, 45deg));
     }
 
     &::after {
-      top: calc(50% + 1.6px);
+      top: calc(50% + 1.9px);
       transform: translateY(-50%) rotate(if($type ==next, 45deg, -45deg));
     }
   }
 
-  // ▲ / ▼
   @else if $type ==up or $type ==down {
 
     &::before,
     &::after {
       width: $size;
       height: 1px;
-      left: calc(50% - 1.6px);
+      top: 50%;
     }
 
     @if $type ==up {
 
-      &::before,
-      &::after {
-        bottom: 5.5px;
-      }
-
       &::before {
-        transform: translateX(-50%) rotate(-45deg);
+        left: calc(50% - 1.9px);
+        transform: translate(-50%, -50%) rotate(-45deg);
       }
 
       &::after {
-        transform: translateX(-50%) rotate(45deg);
+        left: calc(50% + 1.9px);
+        transform: translate(-50%, -50%) rotate(45deg);
       }
     }
 
     @else {
 
-      &::before,
-      &::after {
-        top: 5.5px;
-      }
-
       &::before {
-        transform: translateX(-50%) rotate(45deg);
+        left: calc(50% - 1.9px);
+        transform: translate(-50%, -50%) rotate(45deg);
       }
 
       &::after {
-        transform: translateX(-50%) rotate(-45deg);
+        left: calc(50% + 1.9px);
+        transform: translate(-50%, -50%) rotate(-45deg);
       }
     }
   }
 
-  // + (플러스)
   @else if $type ==plus {
 
     &::before,
@@ -430,7 +435,6 @@
     }
   }
 
-  // ✕ (크로스)
   @else if $type ==cross {
 
     &::before,
@@ -450,10 +454,8 @@
     }
   }
 
-  // − (마이너스)
   @else if $type ==minus {
 
-    // ::before만 사용
     &::before {
       width: $size;
       height: 1px;
@@ -465,10 +467,6 @@
     &::after {
       display: none;
     }
-  }
-
-  @else {
-    @error "지원하지 않는 타입 `#{$type}` 입니다.";
   }
 }
 
@@ -485,7 +483,7 @@
   background: $color-border-gray-darker;
   ;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: -2.5px;
@@ -506,7 +504,7 @@
   border-radius: 12px;
   @include font-body-small;
 
-  &:before {
+  &::before {
     content: '';
     display: inline-block;
     width: 20px;

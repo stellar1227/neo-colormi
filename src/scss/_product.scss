@@ -19,22 +19,13 @@
 
         @include line-icon(next, 5px);
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
           right: auto;
           left: 8px;
           background: $color-border-gray;
         }
       }
-
-      // +li:before {
-      //   content: '';
-      //   display: inline-block;
-      //   width: 16px;
-      //   height: 16px;
-      //   margin: 0 2px;
-      //   background: #003f6d url('') no-repeat center center/100% 100%;
-      // }
 
       a {
         display: inline-block;
@@ -119,7 +110,7 @@
           border-radius: 50%;
           background-color: $color-border-gray;
 
-          &:after {
+          &::after {
             content: counter(steplist);
             counter-increment: steplist 1;
             position: absolute;
@@ -146,7 +137,7 @@
 
         .item-number {
 
-          &:before {
+          &::before {
             content: '';
             display: inline-block;
             position: absolute;
@@ -213,7 +204,7 @@
     font-size: $font-size-body-xsmall;
     border-radius: 4px;
 
-    &:before {
+    &::before {
       order: 2;
       margin: 0 0 0 2px;
     }
@@ -260,7 +251,7 @@
     }
   }
 
-  &:before {
+  &::before {
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -283,7 +274,7 @@
 
   ) {
     &.#{$class} {
-      &:before {
+      &::before {
         content: '';
         background-image: url(#{$img});
       }
@@ -322,7 +313,7 @@
         background: url('../img/icon/icon-star-off-24.png') no-repeat left center/auto 100%;
         cursor: pointer;
 
-        &:before {
+        &::before {
           content: '';
           display: inline-block;
           width: 100%;
@@ -491,7 +482,7 @@
           border: 1px solid $color-border-gray;
           background: $color-border-gray-light;
 
-          &:before {
+          &::before {
             content: '';
             display: inline-block;
             position: absolute;
@@ -720,7 +711,7 @@
   }
 
   .required {
-    &:after {
+    &::after {
       content: '*';
       display: inline-flex;
       color: $color-text-primary;
@@ -761,7 +752,7 @@
         +dt {
           padding-left: 16px;
 
-          &:before {
+          &::before {
             content: '/';
             display: inline-block;
             padding-right: 16px;
@@ -773,7 +764,7 @@
     }
 
     &.required {
-      &:after {
+      &::after {
         order: -1;
         padding: 1px 2px 0 0;
       }
@@ -802,7 +793,7 @@
       @include font-body-small;
 
       &.required {
-        &:after {
+        &::after {
           float: left;
           padding: 3px 4px 0 0;
         }
@@ -941,15 +932,6 @@
       .width-436 {
         input {
           width: calc(50% - 100px);
-        }
-      }
-
-      .desc-box {
-        flex: 1;
-        margin: 0;
-
-        +button {
-          margin-left: 8px;
         }
       }
 
@@ -1127,8 +1109,8 @@
       background: $color-border-gray;
       font-size: 0;
 
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         content: '';
         position: absolute;
         left: 50%;
@@ -1140,14 +1122,14 @@
         transform: translate(-50%, -50%);
       }
 
-      &:after {
+      &::after {
         width: 1px;
         height: 9px;
       }
     }
 
     .icon-minus {
-      &:after {
+      &::after {
         content: none;
       }
     }
@@ -1156,11 +1138,11 @@
       color: $color-text-basic-inverse;
       background: $color-border-gray-dark;
 
-      &:before {
+      &::before {
         top: calc(50% - 2px);
       }
 
-      &:after {
+      &::after {
         top: calc(50% + 2px);
         width: 9px;
         height: 1px;
@@ -1318,7 +1300,7 @@
     span {
       padding: 0;
 
-      &:after {
+      &::after {
         content: '';
         display: inline-block;
         width: 24px;
@@ -1372,7 +1354,7 @@
             @include font-body-small;
 
             em {
-              &:before {
+              &::before {
                 content: '';
                 display: inline-block;
                 width: 16px;
@@ -1507,12 +1489,18 @@
 }
 
 // 장바구니, 주문결제, 배송지 변경
-.util-wrap+.table-list {
-  margin-top: 20px;
-}
+.util-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 
-.desc-box+.table-list {
-  margin-top: 24px;
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  +.table-list {
+    margin-top: 20px;
+  }
 }
 
 .table-list {
@@ -1609,6 +1597,23 @@
           }
 
           .product-info {
+            .top-area {
+              padding: 0;
+
+              .product-num {
+                display: inline-flex;
+
+                +.product-name {
+                  display: inline-flex;
+                }
+              }
+            }
+
+            .product-num {
+              @include font-body-small;
+              color: $color-text-basic;
+            }
+
             .product-name {
               margin: 0;
               @include font-body-small-bold;
@@ -1628,7 +1633,7 @@
           }
         }
 
-        &:before {
+        &::before {
           content: attr(data-label);
           display: none;
         }
@@ -1641,7 +1646,7 @@
           &.--icon {
             padding: 24px 16px;
 
-            &:before {
+            &::before {
               content: '';
               display: inline-block;
               width: 216px;
@@ -1663,6 +1668,16 @@
         .item-inner {
           text-align: center;
 
+          .total-price {
+            font-weight: $font-weight-semibold;
+          }
+
+          >.payment {
+            >span {
+              display: block;
+            }
+          }
+
           >*+* {
             margin-top: 12px;
           }
@@ -1673,7 +1688,7 @@
       &.--selected {
         .--name {
           >span {
-            &:before {
+            &::before {
               content: '';
               display: inline-block;
               width: 13px;
@@ -1687,6 +1702,10 @@
         }
       }
     }
+  }
+
+  +.btn-wrap {
+    margin-top: 20px;
   }
 }
 

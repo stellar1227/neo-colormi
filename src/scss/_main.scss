@@ -41,7 +41,6 @@ header {
       display: flex;
       gap: 0 16px;
     }
-
   }
 
   .header-top {
@@ -226,7 +225,7 @@ header {
                 border: 1px solid $color-border-gray;
                 background: $color-border-gray-light;
 
-                &:before {
+                &::before {
                   content: '';
                   display: inline-block;
                   width: 16px;
@@ -264,7 +263,7 @@ header {
           padding-left: 5px;
           line-height: 20px;
 
-          &:before {
+          &::before {
             content: '';
             position: absolute;
             left: 0;
@@ -287,7 +286,7 @@ header {
           border: none;
           background: $color-background-white;
 
-          &:after {
+          &::after {
             content: '';
             position: absolute;
             top: 50%;
@@ -308,7 +307,7 @@ header {
 
         .quick-menu-wrap.--active {
           .btn-select {
-            &:after {
+            &::after {
               // transform: translateY(50%) rotate(180deg);
             }
           }
@@ -574,7 +573,7 @@ footer {
           margin-bottom: 8px;
           @include font-body-small-bold;
 
-          &:before {
+          &::before {
             content: '';
             display: inline-block;
             width: 24px;
@@ -588,14 +587,14 @@ footer {
           }
 
           &.center {
-            &:before {
+            &::before {
               background-color: $color-text-primary;
               background-image: url('');
             }
           }
 
           &.delivery {
-            &:before {
+            &::before {
               background-color: $color-border-tertiary;
               background-image: url('');
             }
@@ -657,7 +656,7 @@ footer {
         &.webhard {
           background: $color-border-secondary;
 
-          &:before {
+          &::before {
             content: '';
             display: inline-block;
             width: 42px;
@@ -682,7 +681,7 @@ footer {
         &.account {
           background: #896F12;
 
-          &:before {
+          &::before {
             content: '';
             display: inline-block;
             width: 40px;
@@ -738,7 +737,7 @@ footer {
         position: relative;
 
         +li {
-          &:before {
+          &::before {
             content: '';
             display: inline-block;
             position: absolute;

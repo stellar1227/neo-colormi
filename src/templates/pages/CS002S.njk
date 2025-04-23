@@ -7,25 +7,27 @@
       <h3>주문배송조회</h3>
     </div>
     <section class="content-box">
-      <div class="desc-box line-box --large">
-        <div class="form-field">
-          <div class="form-option util-option">
-            <div class="form-wrap select">
-              <select class="btn-select">
-                <option>전체</option>
-                <option>견적요청</option>
-              </select>
+      <div class="util-wrap">
+        <div class="desc-box line-box --large">
+          <div class="form-field">
+            <div class="form-option util-option">
+              <div class="form-wrap select">
+                <select class="btn-select">
+                  <option>전체</option>
+                  <option>견적요청</option>
+                </select>
+              </div>
+              <div class="form-wrap date">
+                <input type="date" data-placeholder="시작일 선택" required aria-required="true"/>
+              </div>
+              <i>~</i>
+              <div class="form-wrap date">
+                <input type="date" data-placeholder="종료일 선택" required aria-required="true" value="2025-04-22"/>
+              </div>
+              <button type="button" class="btn-outline --small">
+                <span>조회</span>
+              </button>
             </div>
-            <div class="form-wrap date">
-              <input type="date" data-placeholder="시작일 선택" required aria-required="true"/>
-            </div>
-            <i>~</i>
-            <div class="form-wrap date">
-              <input type="date" data-placeholder="종료일 선택" required aria-required="true" value="2025-04-22"/>
-            </div>
-            <button type="button" class="btn-outline --small">
-              <span>조회</span>
-            </button>
           </div>
         </div>
       </div>
@@ -58,7 +60,10 @@
                   <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
                   </div>
                   <div class="product-info">
-                    <p class="product-name">상품명</p>
+                    <div class="top-area">
+                      <p class="product-num">(주문번호)</p>
+                      <p class="product-name">상품명</p>
+                    </div>
                     <div class="product-text">
                       <p class="text">수량 5부</p>
                       <p class="text">제목명이 나타나게 됩니다.</p>
@@ -67,9 +72,9 @@
                       <p class="text">주문일
                         <span>2025.00.00</span>
                       </p>
-                      <button type="button" class="btn-text --small">
+                      <a href="" class="btn-text --small">
                         <span>상세보기</span>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -78,39 +83,44 @@
             <div class="item --amount" data-label="주문금액">
               <div class="item-inner">
                 <p>
-                  <span>100,000,000</span>원</p>
+                  <span>100,000,000</span>원
+                </p>
               </div>
             </div>
             <div class="item --delivery" data-label="배송안내">
               <div class="item-inner">
                 <p>선불택배</p>
                 <p>
-                  <span>7,000</span>원</p>
-                <button type="button" class="btn-outline --xsmall">
+                  <span>3,000</span>원
+                </p>
+                <a href="" class="btn-outline --xsmall">
                   <span>배송조회</span>
-                </button>
+                </a>
               </div>
             </div>
             <div class="item --total-price" data-label="총 결제금액">
               <div class="item-inner">
                 <p class="total-price">
-                  <span>100,000</span>원</p>
-                <p>신용카드</p>
+                  <span>100,000</span>원
+                </p>
+                <p class="payment">신용카드</p>
               </div>
             </div>
             <div class="item --status" data-label="상태">
-              <p class="order-status --ing">견적요청</p>
-              <p class="order-status --end">제작완료</p>
-              <p class="order-status --error">주문취소</p>
-              <p class="order-status --upload">출력용파일업로드</p>
-              <p class="order-status --complete">출고완료</p>
+              <div class="item-inner">
+                <p class="order-status --ing">견적요청</p>
+                <p class="order-status --end">제작완료</p>
+                <p class="order-status --error">주문취소</p>
+                <p class="order-status --upload">출력용파일업로드</p>
+                <p class="order-status --complete">출고완료</p>
+              </div>
               <!-- .order-ing 견적요청,견적중,견적완료 / .order-end 결제대기중,결제완료,제작준비,상품제작중,제작완료 / .order-error 주문취소,파일에러,폰트에러,주문오류,접수보류,재작업요청,삭제 /
               .order-upload 출력용파일업로드 / .order-complete 출고완료 -->
             </div>
           </div>
         </div>
         <!-- // list body -->
-        <!-- 주문배송 내역 없음 -->
+        <!-- 내역 없음 -->
         <div class="list-item-wrap">
           <div class="list-item">
             <div class="item --no-item">
@@ -118,9 +128,28 @@
             </div>
           </div>
         </div>
-        <!-- // 주문배송 내역 없음 -->
+        <!-- // 내역 없음 -->
       </div>
-      <!-- pagination -->
+      <div class="btn-wrap">
+        <button type="button" class="btn-outline --small">
+          <span>과거 주문내역 확인</span>
+        </button>
+      </div>
+    </section>
+    <!-- 안내 -->
+    <section class="content-box">
+      <div class="desc-box">
+        <p class="guide-basic-title">※ 꼭 확인하세요.</p>
+        <ul class="guide-sub-deep --small --dot">
+          <li>상품 금액과 배송비 모두 VAT포함가로 되어 있습니다.</li>
+          <li>주문 상세 내역은 [상세보기]를 선택하여 확인하실 수 있습니다.</li>
+          <li>결제완료 후에 배송지 변경을 원하시는 경우, 고객상담센터(02-2266-0671)로 연락 부탁드립니다.</li>
+          <li>출고완료 상태가 되면 [배송조회] 버튼이 나타나게 되며, 배송 위치를 확인하실 수 있습니다.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- pagination -->
+    <section class="content-box">
       <div class="pagination">
         <ul class="item-wrap">
           <li class="item prev">
@@ -138,23 +167,6 @@
           <li class="item next disabled">
             <a href="">다음</a>
           </li>
-        </ul>
-      </div>
-      <div class="btn-wrap">
-        <button type="button" class="btn-outline --small">
-          <span>과거 주문내역 확인</span>
-        </button>
-      </div>
-    </section>
-    <!-- 안내 -->
-    <section class="content-box">
-      <div class="desc-box">
-        <p class="guide-basic-title">※ 꼭 확인하세요.</p>
-        <ul class="guide-sub-deep --small --dot">
-          <li>상품 금액과 배송비 모두 VAT포함가로 되어 있습니다.</li>
-          <li>주문 상세 내역은 [상세보기]를 선택하여 확인하실 수 있습니다.</li>
-          <li>결제완료 후에 배송지 변경을 원하시는 경우, 고객상담센터(02-2266-0671)로 연락 부탁드립니다.</li>
-          <li>출고완료 상태가 되면 [배송조회] 버튼이 나타나게 되며, 배송 위치를 확인하실 수 있습니다.</li>
         </ul>
       </div>
     </section>

@@ -226,7 +226,7 @@ input[type='date'] {
     z-index: 1;
   }
 
-  &:before {
+  &::before {
     content: attr(data-placeholder);
     position: absolute;
     top: 50%;
@@ -236,7 +236,7 @@ input[type='date'] {
     background: $color-background-white;
   }
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     top: 50%;

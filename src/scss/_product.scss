@@ -997,11 +997,11 @@
       }
     }
 
-    &:not(.columns-4) {
-      .form-wrap.file {
-        width: calc(50% - 100px);
-      }
-    }
+    // &:not(.columns-4) {
+    //   .form-wrap.file {
+    //     width: calc(50% - 100px);
+    //   }
+    // }
   }
 
   .--add-option {

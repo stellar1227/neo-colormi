@@ -286,8 +286,16 @@
   &:disabled:hover {
     border: 1px solid $Line-line;
     color: $color-divider-gray;
-    border-color: $color-border-gray-light;
     background: $color-border-gray-light;
+    box-shadow: none;
+
+    i {
+
+      &::before,
+      &::after {
+        background: $color-border-gray;
+      }
+    }
   }
 }
 
@@ -370,12 +378,12 @@
     }
 
     &::before {
-      top: calc(50% - 1.9px);
+      top: calc(50% - 1.8px);
       transform: translateY(-50%) rotate(if($type ==next, -45deg, 45deg));
     }
 
     &::after {
-      top: calc(50% + 1.9px);
+      top: calc(50% + 1.8px);
       transform: translateY(-50%) rotate(if($type ==next, 45deg, -45deg));
     }
   }

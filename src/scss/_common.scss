@@ -209,18 +209,18 @@ section.content-box+section.content-box {
 
       &::before {
         left: auto;
-        right: 18.8px;
+        right: 15.8px;
       }
 
       &::after {
         left: auto;
-        right: 15px;
+        right: 12px;
       }
     }
 
     .btn-select {
       position: relative;
-      padding-right: 40px;
+      padding-right: 28px;
       text-align: left;
       background: $color-background-white;
 

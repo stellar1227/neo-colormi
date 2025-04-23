@@ -212,6 +212,7 @@ textarea {
 }
 
 input[type='date'] {
+  min-width: 153px;
   padding-right: 12px !important;
 
   &:focus:before,

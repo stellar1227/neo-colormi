@@ -114,10 +114,69 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- // list body -->
-        <!-- 장바구니 상품 없음 -->
-        <div class="list-item-wrap">
+          <!-- 판매중지 상품: --disabled 클래스 추가 + .guide-text -->
+          <div class="list-item --disabled">
+            <!-- 판매중지 상품 안내 텍스트 -->
+            <p class="guide-text">판매중지 상품</p>
+            <!-- // 판매중지 상품 안내 텍스트 -->
+            <div class="item --checkbox">
+              <div class="checkbox-wrap">
+                <label class="checkbox" for="check-1">
+                  <input type="checkbox" id="check-1" title="선택"/>
+                  <span class="checkbox-icon"></span>
+                </label>
+              </div>
+            </div>
+            <div class="item --product" data-label="상품명">
+              <div class="product-wrap">
+                <div class="product-inner-item">
+                  <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
+                  </div>
+                  <div class="product-info">
+                    <div class="badge-wrap">
+                      <span class="badge line-display-4 new">신상품</span>
+                    </div>
+                    <p class="product-name">상품명</p>
+                    <div class="product-text">
+                      <p class="text">기본정보가 노출되는 줄입니다.</p>
+                      <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
+                    </div>
+                    <div class="btn-wrap">
+                      <button type="button" class="btn-outline --xsmall">
+                        <span>옵션변경</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item --quantity" data-label="수량">
+              <div class="item-inner">
+                <p>
+                  <span>1</span>건
+                </p>
+              </div>
+            </div>
+            <div class="item --amount" data-label="주문금액">
+              <div class="item-inner">
+                <p>
+                  <span>100,000,000</span>원
+                </p>
+              </div>
+            </div>
+            <div class="item --delivery" data-label="배송방법">
+              <div class="item-inner">
+                <p>선불택배</p>
+              </div>
+            </div>
+            <div class="item --status" data-label="상태">
+              <div class="item-inner">
+                <span class="badge line-tertiary square step-ing">견적중</span>
+              </div>
+            </div>
+          </div>
+          <!-- // list body -->
+          <!-- 장바구니 상품 없음 -->
           <div class="list-item">
             <div class="item --no-item --icon">
               <p class="guide-basic-title">장바구니에 담긴 상품이 없어요.</p>
@@ -129,8 +188,9 @@
               </div>
             </div>
           </div>
+          <!-- // 장바구니 상품 없음 -->
         </div>
-        <!-- // 장바구니 상품 없음 -->
+        <!-- // list body -->
       </div>
       <!-- 상품 금액 -->
       <div class="product-price-wrap --step --end">

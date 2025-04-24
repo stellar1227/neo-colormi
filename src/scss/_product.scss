@@ -1250,10 +1250,10 @@
 
   &.--step {
     margin-top: 20px;
-    justify-content: right;
-
+    justify-content: center;
+    
     &.--end {
-      justify-content: center;
+      justify-content: right;
     }
 
     .product-order-price {

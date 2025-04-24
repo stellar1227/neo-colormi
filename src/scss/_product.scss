@@ -116,8 +116,6 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            height: 24px;
-            padding: 6px 0;
             color: $color-text-basic-inverse;
             @include font-body-medium;
             transform: translate(-50%, -50%);
@@ -152,7 +150,7 @@
         }
       }
 
-      &.current {
+      &.--active {
         .item {
           .item-number {
             background-color: $color-border-gray-dark;
@@ -722,74 +720,13 @@
     .division-item {
       padding: 0 32px;
       background: $color-background-gray-subtler;
-
+      
       +.division-item {
         flex: 0 356px;
-        background: transparent;
-      }
-
-      .user-level-wrap {
         display: flex;
-        align-items: center;
-        gap: 0 32px;
-        padding: 38px 0;
-
-        .user-level-img {
-          flex: 0 0 120px;
-          height: 130px;
-
-          >img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-
-        .user-level-info {
-          flex: 1;
-          @include font-body-large;
-          color: $color-text-basic;
-
-          .user-item {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-          }
-
-          .user {
-            padding-right: 6px;
-            font-weight: $font-weight-bold;
-          }
-
-          .level {
-            padding: 0 12px;
-            font: 800 28px/28px 'Pretendard';
-
-            &.--vip {
-              color: #8B31FF;
-            }
-
-            &.--first {
-              color: #2B71FF;
-            }
-
-            &.--gold {
-              color: #FEBF60;
-            }
-
-            &.--silver {
-              color: #FF663F;
-            }
-
-            &.--bronze {
-              color: #5A9E41;
-            }
-
-            &.--metal {
-              color: #8A939B;
-            }
-          }
-        }
+        flex-direction: column;
+        justify-content: center;
+        background: $color-background-white;
       }
     }
   }

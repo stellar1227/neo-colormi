@@ -484,7 +484,7 @@
   position: absolute;
   left: 0;
   min-height: 24px;
-  padding: 3px 8px;
+  padding: 3px 8px !important;
   white-space: nowrap;
   @include font-body-xxsmall;
   color: $color-text-basic-inverse;

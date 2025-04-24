@@ -752,6 +752,7 @@
 
           .user-item {
             display: flex;
+            flex-wrap: wrap;
             margin-bottom: 16px;
           }
 
@@ -764,28 +765,28 @@
             padding: 0 12px;
             font: 800 28px/28px 'Pretendard';
 
-            &.--vvip {
-              color: #8B84F1;
+            &.--vip {
+              color: #8B31FF;
             }
 
-            &.--vip {
-              color: #E695CD;
+            &.--first {
+              color: #2B71FF;
             }
 
             &.--gold {
-              color: #DCCB94;
+              color: #FEBF60;
             }
 
             &.--silver {
-              color: #BABABA;
+              color: #FF663F;
             }
 
             &.--bronze {
-              color: #B99E9E;
+              color: #5A9E41;
             }
 
-            &.--family {
-              color: #BDD17E;
+            &.--metal {
+              color: #8A939B;
             }
           }
         }
@@ -799,6 +800,9 @@
     .division-item {
       +.division-item {
         flex: 0 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
       }
     }
   }

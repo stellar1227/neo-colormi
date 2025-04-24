@@ -170,11 +170,6 @@ section.content-box+section.content-box {
     }
 
     .count,
-    .title {
-      @include font-body-small;
-      color: $color-text-subcolor-deep;
-    }
-
     [class$=-price] {
       @include font-body-large-bold;
 
@@ -195,6 +190,12 @@ section.content-box+section.content-box {
       dd:last-of-type {
         border-bottom: 1px solid $Line-line;
       }
+
+      .count,
+      .title {
+        @include font-body-small;
+        color: $color-text-subcolor-deep;
+      }
     }
   }
 
@@ -211,7 +212,6 @@ section.content-box+section.content-box {
   display: flex;
   align-items: center;
   gap: 0 8px;
-  margin-top: 12px;
 
   &:before {
     content: '';

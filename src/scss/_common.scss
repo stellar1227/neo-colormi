@@ -373,11 +373,16 @@ section.content-box+section.content-box {
         }
 
         &.btn-visible {
-          background-color: $color-border-gray-dark;
-          background-image: url('');
           background-repeat: no-repeat;
           background-position: center center;
           background-size: 100% 100%;
+
+          &.on {
+            background-image: url('../img/icon/icon-eye-on.png');
+          }
+          &.off {
+            background-image: url('../img/icon/icon-eye-off.png');
+          }
         }
 
         i {
@@ -584,7 +589,7 @@ section.content-box+section.content-box {
           background-image: linear-gradient($color-background-white, $color-background-white), linear-gradient(180deg, $color-border-primary-lighter 0%, #F4D360 42%, $color-border-primary 100%);
 
           ~.util .btn-search {
-            background-image: url('../img/icon/icon-search-on-24.png');
+            background-image: url('../img/icon/icon-search-on.png');
           }
         }
       }
@@ -597,7 +602,7 @@ section.content-box+section.content-box {
           width: 44px;
           height: 44px;
           margin-left: 14px;
-          background-image: url('../img/icon/icon-search-24.png');
+          background-image: url('../img/icon/icon-search.png');
           background-repeat: no-repeat;
           background-position: center center;
           background-size: 24px 24px;
@@ -966,9 +971,9 @@ section.content-box+section.content-box {
       &:disabled {
         +.checkbox-icon {
           background: $color-border-gray-light;
-
+          
           &::before {
-            background-image: url();
+            background-image: url('../img/icon/icon-checkbox-disabled.png');
           }
         }
       }
@@ -994,7 +999,7 @@ section.content-box+section.content-box {
 
           &::before {
             content: '';
-            background-image: url('../img/icon/icon-checkbox-12.png');
+            background-image: url('../img/icon/icon-checkbox.png');
             color: $color-text-basic-inverse;
           }
         }
@@ -1316,7 +1321,7 @@ section.content-box+section.content-box {
     padding: 0;
     line-height: 1;
     font-size: 0;
-    background: url('../img/icon/icon-arrow-line-24-up.png') no-repeat center center/100% 100%;
+    background: url('../img/icon/icon-arrow-line-up.png') no-repeat center center/100% 100%;
 
     +span {
       margin: 4px 0 0;

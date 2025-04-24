@@ -84,20 +84,29 @@ header {
           height: 36px;
 
           span {
-            // font-size: 0; // 아이콘 작업 후 적용
+            font-size: 0;
           }
         }
 
         .btn-search {
-          // background: url('../img/icon/icon-search-24.png') no-repeat center center/24px 24px;
+          background: url('../img/icon/icon-search.png') no-repeat center center/24px 24px;
         }
 
         .btn-login {
-          // background: url('../img/icon/icon-user-24.png') no-repeat center center/24px 24px;
+          
+          &.--login {
+            background: svgIcon(user, '4c4c4c', 'transparent') no-repeat center center/36px 36px;
+          }
+          &.--logout {
+            background: svgIcon(user, '4c4c4c', 'ed6190') no-repeat center center/36px 36px;
+          }
+          &.--active {
+            background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
+          }
         }
 
         .btn-cart {
-          // background: url('../img/icon/icon-cart-24.png') no-repeat center center/24px 24px;
+          background: url('../img/icon/icon-cart.png') no-repeat center center/24px 24px;
         }
       }
 
@@ -183,14 +192,31 @@ header {
 
       .btn-menu-all {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 3.5px 0;
         width: 36px;
         height: 36px;
-        background: url('../img/icon/icon-menu-pc.png') no-repeat center center/100% auto;
+        position: relative;
 
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 12px;
+          height: 1.5px;
+          border-radius: 1px;
+          background: $color-border-gray-dark;
+        }
+        
         span {
           font-size: 0;
+          display: block;
+          width: 12px;
+          height: 1.5px;
+          border-radius: 1px;
+          background: $color-border-gray-dark;
         }
       }
 
@@ -231,8 +257,12 @@ header {
                   width: 16px;
                   height: 16px;
                   margin-right: 4px;
-                  background: #003f6d url('') no-repeat center center/100% 100%;
+                  background: url('../img/icon/icon-briefcase.png') no-repeat center center/100% 100%;
                   vertical-align: -3px;
+                }
+
+                &:hover {
+                  color: $color-text-subcolor-deep;
                 }
               }
             }
@@ -293,10 +323,10 @@ header {
             right: 0;
             width: 16px;
             height: 16px;
-            // background-image: url(../img/icon/icons.svg#icon-arrow);
-            // background-repeat: no-repeat;
-            // background-position: center center;
-            // background-size: 100% 100%;
+            background-image: url('../img/icon/icon-arrow-triangle.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
             transform: translateY(-50%);
           }
 
@@ -308,7 +338,7 @@ header {
         .quick-menu-wrap.--active {
           .btn-select {
             &::after {
-              // transform: translateY(50%) rotate(180deg);
+              transform: translateY(-50%) rotate(180deg);
             }
           }
         }

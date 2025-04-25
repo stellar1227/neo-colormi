@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% set title = "로그인" %}
 {% block content %}
-  <div class="modal --full">
+  <div class="modal --full --large">
     <div class="modal-wrap">
       <div class="modal-container">
         <div class="login-wrap">
@@ -26,7 +26,9 @@
                   <button type="button" class="btn-del">
                     <i>삭제</i>
                   </button>
-                  <button type="button" class="btn-visible off"><!-- // 클릭 시 on/off 클래스 변경 -->
+                  <button
+                    type="button" class="btn-visible off">
+                    <!-- // 클릭 시 on/off 클래스 변경 -->
                     <i>보기</i>
                   </button>
                 </div>

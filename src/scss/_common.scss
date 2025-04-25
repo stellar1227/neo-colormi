@@ -1469,10 +1469,9 @@ section.content-box+section.content-box {
   &.--full {
 
     .modal-wrap {
-      margin: 0 auto;
       padding-bottom: 20px;
       border: none;
-      z-index: 10;
+      border-radius: 10px;
 
       .modal-header {
         min-height: 56px;
@@ -1520,12 +1519,6 @@ section.content-box+section.content-box {
       .btn-wrap.close {
         top: 10px;
         right: 20px;
-      }
-    }
-
-    &.--xlarge {
-      .modal-wrap {
-        width: 940px;
       }
     }
   }

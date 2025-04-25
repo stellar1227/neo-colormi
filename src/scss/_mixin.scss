@@ -330,7 +330,9 @@
     border-radius: 8px;
     border: 1px solid $color-border-gray;
     background: $color-background-white;
-    width: 480px;
+    width: 100%;
+    max-width: 480px;
+    z-index: 10;
 
     .btn-wrap.close {
       position: absolute;
@@ -339,15 +341,24 @@
     }
   }
 
+  &.--xlarge {
+    .modal-wrap {
+      width: 100%;
+      max-width: 940px;
+    }
+  }
+
   &.--large {
     .modal-wrap {
-      width: 540px;
+      width: 100%;
+      max-width: 540px;
     }
   }
 
   &.--small {
     .modal-wrap {
-      width: 400px;
+      width: 100%;
+      max-width: 400px;
     }
   }
 }

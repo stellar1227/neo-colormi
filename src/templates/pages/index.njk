@@ -27,10 +27,13 @@
             background: #f4f5f6;
         }
         td {
-            padding: 14px 16px;
+            padding: 12px 14px;
         }
         td:nth-child(6) {
             text-align: center;
+        }
+        td a {
+            word-wrap: break-word;
         }
         @media(max-width:565px) {
             #container {
@@ -49,9 +52,10 @@
             tbody tr {
                 display: flex;
                 flex-wrap: wrap;
-                padding: 3px 0;
+                padding: 6px 0 0;
             }
             tr.depth-1 {
+                padding: 3px 0;
                 background: #f4f5f6;
                 border-bottom: 1px solid #4c4c4c;
             }
@@ -60,7 +64,7 @@
                 flex: 0 0 100%;
             }
             td {
-                padding: 3px 8px;
+                padding: 3px 5px;
             }
             td:nth-child(1) {
                 display: none;
@@ -68,22 +72,23 @@
             td:nth-child(2),
             td:nth-child(3),
             td:nth-child(4) {
-                width: 20%;
+                width: 16%;
             }
             td:nth-child(5) {
                 display: block;
                 width: 40%;
             }
             td:nth-child(6) {
-                width: 20%;
+                width: 12%;
                 text-align: left;
             }
             td:nth-child(7) {
-                width: 80%;
+                width: 100%;
+                padding: 3px 8px;
             }
             td:nth-child(7) p {
                 position: relative;
-                display: inline-block;
+                display: inline;
             }
             td:nth-child(7) p::after {
                 content: '';
@@ -192,7 +197,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>낱장인쇄(제본없이)</td>
+                    <td>낱장인쇄</td>
                     <td>
                         <a href='./PD014S.html'>pages/PD014S.html</a>
                     </td>

@@ -330,8 +330,6 @@
     border-radius: 8px;
     border: 1px solid $color-border-gray;
     background: $color-background-white;
-    width: 100%;
-    max-width: 480px;
     z-index: 10;
 
     .btn-wrap.close {
@@ -352,6 +350,13 @@
     .modal-wrap {
       width: 100%;
       max-width: 540px;
+    }
+  }
+
+  &.--normal {
+    .modal-wrap {
+      width: 100%;
+      max-width: 480px;
     }
   }
 

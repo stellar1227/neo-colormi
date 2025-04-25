@@ -1611,6 +1611,10 @@ section.content-box+section.content-box {
       color: $color-text-basic;
     }
 
+    &.--medium-bold {
+      @include font-body-medium-bold;
+    }
+
     &.--large-bold {
       @include font-body-large-bold;
     }
@@ -1735,6 +1739,23 @@ section.content-box+section.content-box {
         border-radius: 50%;
         vertical-align: 3px;
       }
+    }
+  }
+
+  &.--icon-box {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 64px;
+    }
+
+    &.--coupon::after {
+      background: $Line-line;
     }
   }
 }

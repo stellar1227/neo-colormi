@@ -8,324 +8,462 @@
             table-fixed: layout;
             width: 100%;
         }
-        th {
-            padding: 14px 16px;
+        tr {
+            display: grid;
+            grid-template-columns: 13% 13% 13% 13% 1fr 10% 15%;
+            border-bottom: 1px solid #d6d6d6;
+        }
+        thead tr {
             border-bottom: 1px solid #4c4c4c;
+        }
+        thead th {
+            padding: 14px 16px;
+            background: #f4f5f6;
+        }
+        tbody tr {
+            border-bottom: 1px solid #d6d6d6;
+        }
+        tr.depth-1 {
             background: #f4f5f6;
         }
         td {
-            border-bottom: 1px solid #d6d6d6;
             padding: 14px 16px;
         }
         td:nth-child(6) {
             text-align: center;
         }
+        @media(max-width:565px) {
+            #container {
+                margin: 20px auto;
+            }
+            h1 {
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
+            thead {
+                display: none;
+            }
+            tbody {
+                border-top: 1px solid #4c4c4c;
+            }
+            tbody tr {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 3px 0;
+            }
+            tr.depth-1 {
+                background: #f4f5f6;
+                border-bottom: 1px solid #4c4c4c;
+            }
+            tr.depth-1 td {
+                display: block;
+                flex: 0 0 100%;
+            }
+            td {
+                padding: 3px 8px;
+            }
+            td:nth-child(1) {
+                display: none;
+            }
+            td:nth-child(2),
+            td:nth-child(3),
+            td:nth-child(4) {
+                width: 20%;
+            }
+            td:nth-child(5) {
+                display: block;
+                width: 40%;
+            }
+            td:nth-child(6) {
+                width: 20%;
+                text-align: left;
+            }
+            td:nth-child(7) {
+                width: 80%;
+            }
+            td:nth-child(7) p {
+                position: relative;
+                display: inline-block;
+            }
+            td:nth-child(7) p::after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 10px;
+                background: #5bc5d2;
+                filter: opacity(0.3);
+                z-index: -1;
+            }
+        }
     </style>
     <div class="worksheet">
         <h1>SiteInfo</h1>
         <table>
-            <colgroup>
+            <!-- <colgroup>
                 <col span="4" style="width: 13%;"/>
                 <col style="width: auto"/>
                 <col style="width: 10%;"/>
                 <col style="width: 15%;"/>
-            </colgroup>
-            <tr>
-                <th>1depth</th>
-                <th>2depth</th>
-                <th>3depth</th>
-                <th>4depth</th>
-                <th>url</th>
-                <th>status</th>
-                <th>comments</th>
-            </tr>
-            <tr>
-                <td colspan="4">designSystem</td>
-                <td>
-                    <a href='./designGuide.html'>pages/designGuide.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="4">code snippets</td>
-                <td>
-                    <a href='./snippets.html'>pages/snippets.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>main</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./main.html'>pages/main.html</a>
-                </td>
-                <td>작성중</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="7">제품</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>메모장</td>
-                <td>
-                    <a href='./PD055S.html'>pages/PD055S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>무선제본</td>
-                <td>
-                    <a href='./PD001S.html'>pages/PD001S.html</a>
-                </td>
-                <td>완료</td>
-                <td>내지 추가</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>낱장인쇄(제본없이)</td>
-                <td>
-                    <a href='./PD014S.html'>pages/PD014S.html</a>
-                </td>
-                <td>완료</td>
-                <td>후가공-라운딩, 파일첨부 추가/삭제</td>
-            </tr>
-            <tr>
-                <td colspan="7">장바구니</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>리스트</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CA001S.html'>pages/CA001S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>옵션변경</td>
-                <td></td>
-                <td>
-                    <a href='./CA901P.html'>pages/CA901P.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="7">주문/결제</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>메인</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./OD001S.html'>pages/OD001S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>배송지 변경</td>
-                <td></td>
-                <td>
-                    <a href='./OD100P.html'>pages/OD100P.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>주문 완료</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./OD002S.html'>pages/OD002S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="7">마이페이지</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>대시보드</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CS001S.html'>pages/CS001S.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>주문배송조회</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CS002S.html'>pages/CS002S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>주문상세 (팝업)</td>
-                <td></td>
-                <td>
-                    <a href='./.html'>pages/.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>배송조회 (팝업)</td>
-                <td></td>
-                <td>
-                    <a href='./.html'>pages/.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>결제대기</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CS003S.html'>pages/CS003S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>교정확인</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CS004S.html'>pages/CS004S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>쿠폰</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CS005S.html'>pages/CS005S.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>이용후기</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CS006S.html'>pages/CS006S.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>후기 리스트</td>
-                <td></td>
-                <td>
-                    <a href='./CS007S.html'>pages/CS007S.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="7">고객센터</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>견적문의</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./CS017S.html'>pages/CS017S.html</a>
-                </td>
-                <td>작업중</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>견적문의하기</td>
-                <td></td>
-                <td>
-                    <a href='./CS907P.html'>pages/CS907P.html</a>
-                </td>
-                <td>작업중</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>견적문의 상세</td>
-                <td></td>
-                <td>
-                    <a href='./.html'>pages/.html</a>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="7">회원</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>로그인</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./MB002S.html'>pages/MB002S.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>로그인</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href='./MB002P.html'>pages/MB002P.html</a>
-                </td>
-                <td>완료</td>
-                <td></td>
-            </tr>
+            </colgroup> -->
+            <thead>
+                <tr>
+                    <th>1depth</th>
+                    <th>2depth</th>
+                    <th>3depth</th>
+                    <th>4depth</th>
+                    <th>url</th>
+                    <th>status</th>
+                    <th>comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>designSystem</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./designGuide.html'>pages/designGuide.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>code snippets</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./snippets.html'>pages/snippets.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>main</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./main.html'>pages/main.html</a>
+                    </td>
+                    <td>작성중</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr class="depth-1">
+                    <td colspan="7">제품</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>메모장</td>
+                    <td>
+                        <a href='./PD055S.html'>pages/PD055S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>무선제본</td>
+                    <td>
+                        <a href='./PD001S.html'>pages/PD001S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p>내지 추가</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>낱장인쇄(제본없이)</td>
+                    <td>
+                        <a href='./PD014S.html'>pages/PD014S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p>후가공-라운딩, 파일첨부 추가/삭제</p>
+                    </td>
+                </tr>
+                <tr class="depth-1">
+                    <td colspan="7">장바구니</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>리스트</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CA001S.html'>pages/CA001S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>옵션변경</td>
+                    <td></td>
+                    <td>
+                        <a href='./CA901P.html'>pages/CA901P.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr class="depth-1">
+                    <td colspan="7">주문/결제</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>메인</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./OD001S.html'>pages/OD001S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>배송지 변경</td>
+                    <td></td>
+                    <td>
+                        <a href='./OD100P.html'>pages/OD100P.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>주문 완료</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./OD002S.html'>pages/OD002S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr class="depth-1">
+                    <td colspan="7">마이페이지</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>대시보드</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CS001S.html'>pages/CS001S.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>주문배송조회</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CS002S.html'>pages/CS002S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>주문상세 (팝업)</td>
+                    <td></td>
+                    <td>
+                        <a href='./.html'>pages/.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>배송조회 (팝업)</td>
+                    <td></td>
+                    <td>
+                        <a href='./.html'>pages/.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>결제대기</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CS003S.html'>pages/CS003S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>교정확인</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CS004S.html'>pages/CS004S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>쿠폰</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CS005S.html'>pages/CS005S.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>이용후기</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CS006S.html'>pages/CS006S.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>후기 리스트</td>
+                    <td></td>
+                    <td>
+                        <a href='./CS007S.html'>pages/CS007S.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr class="depth-1">
+                    <td colspan="7">고객센터</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>견적문의</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./CS017S.html'>pages/CS017S.html</a>
+                    </td>
+                    <td>작업중</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>견적문의하기</td>
+                    <td></td>
+                    <td>
+                        <a href='./CS907P.html'>pages/CS907P.html</a>
+                    </td>
+                    <td>작업중</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>견적문의 상세</td>
+                    <td></td>
+                    <td>
+                        <a href='./.html'>pages/.html</a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr class="depth-1">
+                    <td colspan="7">회원</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>로그인</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./MB002S.html'>pages/MB002S.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>로그인</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href='./MB002P.html'>pages/MB002P.html</a>
+                    </td>
+                    <td>완료</td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
     <script src="/js/colormi-ui.js"></script>

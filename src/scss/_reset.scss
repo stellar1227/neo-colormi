@@ -213,6 +213,10 @@ textarea {
   }
 }
 
+input[type='number'] {
+  padding-right: 12px !important;
+}
+
 input[type='date'] {
   min-width: 153px;
   padding-right: 12px !important;
@@ -272,27 +276,27 @@ button {
   cursor: pointer;
 }
 
-@media (max-width:565px) {
+// @media (max-width:565px) {
 
-  .top-banner,
-  .header-inner,
-  .footer-wrap,
-  .footer-link,
-  #container,
-  .product-inner {
-    width: 100%;
-  }
-}
+//   .top-banner,
+//   .header-inner,
+//   .footer-wrap,
+//   .footer-link,
+//   #container,
+//   .product-inner {
+//     width: 100%;
+//   }
+// }
 
-@media (min-width:566px) {
+// @media (min-width:566px) {
 
-  .top-banner,
-  .header-inner,
-  .footer-wrap,
-  .footer-link,
-  #container,
-  .product-inner {
-    width: 1200px;
-    margin: 0 auto;
-  }
-}
+//   .top-banner,
+//   .header-inner,
+//   .footer-wrap,
+//   .footer-link,
+//   #container,
+//   .product-inner {
+//     width: 1200px;
+//     margin: 0 auto;
+//   }
+// }

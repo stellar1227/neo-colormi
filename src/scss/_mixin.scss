@@ -536,10 +536,10 @@
 }
 
 // icons
-@function svgIcon($iconName, $color-text-basic:4c4c4c, $color-border-primary:ed6190) {
-  $iconList: ( 
+@function svgIcon($iconName, $color-text-basic: #4c4c4c, $color-border-primary: #ed6190) {
+  $iconList: (
     user: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none'%3E%3Cpath stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round' d='M26 27v-2a4 4 0 0 0-4-4h-8a4 4 0 0 0-4 4v2M18 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z'/%3E%3Cpath stroke='%23#{$color-border-primary}' d='M25 8.5h5M27.5 6v5'/%3E%3C/svg%3E"
   );
-  $icon: map-get($iconList, $iconName);
-  @return url("data:image/svg+xml;charset=utf8,#{$icon}");
+$icon: map-get($iconList, $iconName);
+@return url("data:image/svg+xml;charset=utf8,#{$icon}");
 }

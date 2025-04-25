@@ -93,13 +93,15 @@ header {
         }
 
         .btn-login {
-          
+
           &.--login {
             background: svgIcon(user, '4c4c4c', 'transparent') no-repeat center center/36px 36px;
           }
+
           &.--logout {
             background: svgIcon(user, '4c4c4c', 'ed6190') no-repeat center center/36px 36px;
           }
+
           &.--active {
             background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
           }
@@ -181,7 +183,7 @@ header {
 
   .gnb-wrap {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -189,6 +191,7 @@ header {
       display: flex;
       align-items: center;
       gap: 0 8px;
+      overflow-x: auto;
 
       .btn-menu-all {
         display: flex;
@@ -209,7 +212,7 @@ header {
           border-radius: 1px;
           background: $color-border-gray-dark;
         }
-        
+
         span {
           font-size: 0;
           display: block;

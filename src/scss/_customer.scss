@@ -12,10 +12,10 @@
   .user-level-img {
     flex: 0 0 120px;
     height: 130px;
-    
+
     .img-item {
       font-size: 0;
-      
+
       &::before {
         content: '';
         display: block;
@@ -47,7 +47,7 @@
       font: 800 28px/28px 'Pretendard';
     }
   }
-  
+
   // 등급별
   &.--vip {
     .user-level-img {
@@ -55,6 +55,7 @@
         background: #8B31FF;
       }
     }
+
     .level {
       color: #8B31FF;
     }
@@ -66,50 +67,55 @@
         background: #2B71FF;
       }
     }
+
     .level {
       color: #2B71FF;
     }
   }
-  
+
   &.--gold {
     .user-level-img {
       .img-item::before {
         background: #FEBF60;
       }
     }
+
     .level {
       color: #FEBF60;
     }
   }
-    
+
   &.--silver {
     .user-level-img {
       .img-item::before {
         background: #FF663F;
       }
     }
+
     .level {
       color: #FF663F;
     }
   }
-    
+
   &.--bronze {
     .user-level-img {
       .img-item::before {
         background: #5A9E41;
       }
     }
+
     .level {
       color: #5A9E41;
     }
   }
-    
+
   &.--metal {
     .user-level-img {
       .img-item::before {
         background: #8A939B;
       }
     }
+
     .level {
       color: #8A939B;
     }
@@ -120,6 +126,7 @@
 .product-step-wrap {
   .step-status {
     display: flex;
+    flex-wrap: wrap;
     gap: 0 46px;
     padding: 26px 16px;
     border-top: 1px solid $Line-line;
@@ -140,6 +147,7 @@
         margin-bottom: 20px;
         @include font-body-small-bold;
         color: $color-text-basic;
+        white-space: nowrap;
       }
 
       .item-number {

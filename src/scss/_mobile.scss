@@ -1,0 +1,257 @@
+@use 'mixin' as *;
+@use 'variables' as *;
+
+@media (max-width:565px) {
+
+  .top-banner,
+  .header-inner,
+  .footer-wrap,
+  .footer-link,
+  #container,
+  .product-inner {
+    width: 100%;
+  }
+
+  #container>.content {
+    padding: 0 20px
+  }
+
+  .btn-wrap.link+section.content-box,
+  .page-title+section.content-box,
+  section.content-box+.btn-wrap.confirm,
+  section.content-box+.btn-wrap.vertical,
+  section.content-box+section.content-box {
+    margin-top: 20px;
+  }
+
+  .product-wrap {
+    .product-inner {
+      flex-direction: column;
+    }
+
+    .product-img {
+      flex: 0 0 auto;
+    }
+
+    &.scroll {
+      .product-inner {
+        display: block;
+        padding: 20px;
+      }
+
+      .product-img {
+        float: left;
+
+        .product-img-detail {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .product-info {
+        display: block;
+
+        .item+.item {
+          margin-left: 0;
+          padding-left: 0;
+          border: none;
+        }
+
+        .btn-wrap.--hide [class^=btn-] span {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .product-order-wrap {
+    flex-direction: column;
+
+    .product-order {
+      margin-bottom: inherit;
+    }
+  }
+
+  .product-price-wrap {
+    flex-direction: column;
+
+    .product-order-price {
+      display: grid;
+      grid-template-columns: 1fr 24px 1fr;
+      place-items: center;
+
+      .product-price:last-of-type {
+        grid-column: 2/4;
+      }
+    }
+  }
+
+
+  .product-order {
+    .product-option {
+      grid-template-columns: 80px 1fr !important;
+
+      .row-span-2+dt+dd+dt,
+      >dt:nth-of-type(even) {
+        margin-left: 0;
+      }
+
+      .row-span-2.--end {
+        grid-row: auto;
+        grid-column: auto;
+      }
+
+      &.columns-4 {
+
+        .row-span-2+dt+dd+dt,
+        >dt:nth-of-type(even) {
+          margin-left: 0;
+        }
+
+        .row-span-2.--end {
+          grid-row: auto;
+          grid-column: auto;
+        }
+      }
+
+      >dd {
+        .guide-wrap {
+
+          .guide-sub-deep {
+            display: block;
+            margin: 4px 0 0;
+            padding: 0;
+          }
+        }
+
+        .width-436 {
+          width: 100%;
+        }
+
+        .form-field {
+          .button-option {
+            &.--v-center {
+              flex-direction: column;
+              align-items: flex-start;
+
+              .form-wrap {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product-detail {
+    .img-cont {
+      padding: 0;
+    }
+  }
+
+  .product-review {
+    &-list {
+      .list {
+        .list-item {
+          >a {
+            .review-img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btn-wrap.confirm [class^=btn-]>span {
+    min-width: 84px;
+  }
+
+  .desc-box {
+
+    &.tertiary-light-box {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  .item-box-wrap {
+    grid-template-columns: 1fr;
+
+    &::after {
+      display: none;
+    }
+
+    .item-box {
+      align-items: flex-start !important;
+      padding: 0 !important;
+
+      .item-box-inner>input {
+        width: 100%;
+      }
+    }
+  }
+
+  .step-wrap {
+    .step-status {
+      gap: 80px;
+
+      li {
+        +li {
+          .item-number::before {
+            left: -80px;
+            width: 64px;
+          }
+        }
+      }
+    }
+  }
+
+  .division-item-wrap {
+    flex-direction: column;
+    gap: 40px 0;
+
+    &.--type-01 {
+      gap: 40px 0;
+
+      .division-item {
+        padding: 0;
+
+        +.division-item {
+          flex: 1;
+        }
+      }
+    }
+
+    &.--type-02 {
+      gap: 40px 0;
+
+      .division-item+.division-item {
+        justify-content: normal;
+        flex: auto;
+      }
+    }
+  }
+
+  .modal.--large .modal-wrap {
+    width: calc(100% - 40px);
+  }
+
+  .side-wrap {
+    display: none;
+  }
+}
+
+@media (min-width:566px) {
+
+  .top-banner,
+  .header-inner,
+  .footer-wrap,
+  .footer-link,
+  #container,
+  .product-inner {
+    width: 1200px;
+  }
+}

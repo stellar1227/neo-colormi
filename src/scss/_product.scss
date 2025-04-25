@@ -87,6 +87,7 @@
     counter-reset: steplist 0;
     display: flex;
     justify-content: center;
+    gap: 234px;
 
     li {
       position: relative;
@@ -131,7 +132,6 @@
       }
 
       +li {
-        margin-left: 234px;
 
         .item-number {
 
@@ -392,7 +392,7 @@
   .product-inner {
     display: flex;
     flex-direction: row;
-    gap: 0 56px;
+    gap: 20px 56px;
   }
 
   .rating-wrap {
@@ -400,18 +400,26 @@
   }
 
   .product-img {
-    flex: 0 0 auto;
+    flex: 0 0 497px;
     display: flex;
     gap: 0 20px;
 
     .product-img-detail {
       overflow: hidden;
-      width: 407px;
-      height: 407px;
+      position: relative;
+      width: 100%;
+      height: 100%;
       border-radius: 10px;
-      background: $color-border-gray-light; // 나중에 삭제 예정
+
+      &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
 
       img {
+        position: absolute;
+        top: 0;
         display: inline-block;
         width: 100%;
         height: 100%;
@@ -720,7 +728,7 @@
     .division-item {
       padding: 0 32px;
       background: $color-background-gray-subtler;
-      
+
       +.division-item {
         flex: 0 356px;
         display: flex;
@@ -831,11 +839,6 @@
       border-top: 1px solid $Line-line;
     }
 
-    .--v-center {
-      display: flex;
-      align-items: center;
-    }
-
     >dt {
       padding: 9px 0;
       @include font-body-small;
@@ -869,6 +872,11 @@
 
         .button-option {
           display: flex;
+          gap: 8px;
+
+          &.--v-center {
+            align-items: center;
+          }
 
           >input,
           .form-wrap {
@@ -877,8 +885,16 @@
             width: calc(100% - 108px);
           }
 
+          .form-wrap {
+            flex-wrap: wrap;
+            gap: 8px 20px;
+
+            .checkbox-wrap+[class$=-wrap] {
+              margin: 0;
+            }
+          }
+
           >[class^=btn-] {
-            margin: 0 0 0 8px;
 
             span {
               width: 84px;
@@ -954,6 +970,8 @@
         .print-option {
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
+          gap: 8px;
 
           .option-form {
             display: inline-block;
@@ -981,16 +999,19 @@
         width: calc(50% - 100px);
       }
 
-      [class^=guide-] {
-        margin-top: 0;
-      }
+      // [class^=guide-] {
+      //   margin-top: 0;
+      // }
 
       >.inner-wrap {
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        gap: 12px 8px;
+        margin: 4px 0;
 
         +.inner-wrap {
-          margin-top: 12px;
+          margin-top: 8px;
         }
       }
 
@@ -1087,13 +1108,14 @@
   }
 
   .option-item {
-    +.option-item {
-      margin-top: 20px;
-    }
-
     display: grid;
     @include font-body-small;
     color: $color-text-basic;
+    align-items: self-start;
+
+    +.option-item {
+      margin-top: 20px;
+    }
 
     dt {
       padding: 9px 0;
@@ -1102,7 +1124,8 @@
     .form-option {
       display: flex;
       align-items: center;
-      gap: 0 8px;
+      flex-wrap: wrap;
+      gap: 8px;
 
       strong {
         @include font-body-small;
@@ -1144,7 +1167,7 @@
 .product-price-wrap {
   display: flex;
   justify-content: space-between;
-  gap: 0 12px;
+  gap: 12px;
   margin-top: 60px;
   padding: 32px 16px;
   border-top: 1px solid var(--Line-line-3);
@@ -1153,9 +1176,10 @@
   .product-order-price {
     display: flex;
     align-items: center;
-    gap: 0 12px;
+    gap: 12px;
 
     [class^=icon-] {
+      flex: 0 0 20px;
       position: relative;
       display: inline-block;
       width: 20px;
@@ -1251,7 +1275,7 @@
   &.--step {
     margin-top: 20px;
     justify-content: center;
-    
+
     &.--end {
       justify-content: right;
     }
@@ -1307,6 +1331,7 @@
     flex: 1;
     height: 60px;
     border-left: 1px solid $Line-line;
+    text-align: center;
 
     span {
       display: inline-block;
@@ -1325,6 +1350,7 @@
   }
 }
 
+// 상품상세
 .product-detail {
 
   .img-cont {
@@ -1371,6 +1397,7 @@
   }
 }
 
+// 이용후기
 .product-review {
 
   &-photo {
@@ -1432,66 +1459,68 @@
     border-top: 1px solid $Line-line-3;
 
     .list {
-      .list-item a {
-        display: flex;
-        gap: 0 24px;
-        padding: 16px 0 32px;
-        border-bottom: 1px solid $Line-line;
-
-        .review-img {
-          flex: 0 0 auto;
-          position: relative;
-          overflow: hidden;
-          width: 148px;
-          height: 148px;
-          border-radius: 4px;
-          border: 1px solid $Line-line;
-          background: $color-border-gray-light;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-
-          .count {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            min-width: 20px;
-            padding: 3px 6px;
-            border-radius: 4px;
-            background: $color-border-disabled;
-            @include font-body-xsmall;
-            line-height: 14px;
-            color: $color-text-basic-inverse;
-          }
-        }
-
-        .review-text {
-          flex: 1 1 auto;
+      .list-item {
+        >a {
           display: flex;
-          flex-direction: column;
-          gap: 15px 0;
-          min-width: 0;
+          gap: 0 24px;
+          padding: 16px 0 32px;
+          border-bottom: 1px solid $Line-line;
 
-          .product-option {
-            @include font-body-xsmall;
-            color: $color-text-subcolor-light;
-            @include ellipsis;
-            -webkit-line-clamp: 2;
+          .review-img {
+            flex: 0 0 auto;
+            position: relative;
+            overflow: hidden;
+            width: 148px;
+            height: 148px;
+            border-radius: 4px;
+            border: 1px solid $Line-line;
+            background: $color-border-gray-light;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            .count {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              min-width: 20px;
+              padding: 3px 6px;
+              border-radius: 4px;
+              background: $color-border-disabled;
+              @include font-body-xsmall;
+              line-height: 14px;
+              color: $color-text-basic-inverse;
+            }
           }
 
-          .text-content {
-            @include font-body-small;
-            color: $color-text-basic;
-            @include ellipsis;
-            -webkit-line-clamp: 3;
-          }
+          .review-text {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px 0;
+            min-width: 0;
 
-          .review-date {
-            @include font-body-xsmall;
-            color: $color-text-subcolor;
+            .product-option {
+              @include font-body-xsmall;
+              color: $color-text-subcolor-light;
+              @include ellipsis;
+              -webkit-line-clamp: 2;
+            }
+
+            .text-content {
+              @include font-body-small;
+              color: $color-text-basic;
+              @include ellipsis;
+              -webkit-line-clamp: 3;
+            }
+
+            .review-date {
+              @include font-body-xsmall;
+              color: $color-text-subcolor;
+            }
           }
         }
       }
@@ -1499,6 +1528,7 @@
   }
 }
 
+// 견적보기
 .quote-wrap {
   display: flex;
   align-items: center;
@@ -1801,7 +1831,7 @@
 
       &.--disabled {
         position: relative;
-        
+
         .guide-text {
           position: absolute;
           top: 50%;
@@ -1811,7 +1841,7 @@
           transform: translate(-50%, -50%);
           z-index: 1;
         }
-        
+
         &::after {
           content: '';
           position: absolute;
@@ -1932,7 +1962,7 @@
   .order-item {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 20px 0;
+    grid-gap: 20px 10px;
 
     dt {
       text-align: left;

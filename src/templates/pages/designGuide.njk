@@ -2,9 +2,6 @@
 {% set title = "designGuide" %}
 {% block content %}
   <style>
-    #container {
-      padding: 20px;
-    }
     .design-system {
       h1.d-sys {
         margin: 20px -20px;
@@ -100,6 +97,8 @@
           top: auto;
           left: auto;
           transform: none;
+          width: 100%;
+          max-width: 480px;
         }
       }
       /* Typography navigation */
@@ -771,7 +770,9 @@
                 <button type="button" class="btn-del">
                   <i>삭제</i>
                 </button>
-                <button type="button" class="btn-visible on"><!-- // 클릭 시 on/off 클래스 변경 -->
+                <button
+                  type="button" class="btn-visible on">
+                  <!-- // 클릭 시 on/off 클래스 변경 -->
                   <i>보기</i>
                 </button>
               </div>

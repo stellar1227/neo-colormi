@@ -1,0 +1,22 @@
+{% extends "layouts/base.njk" %}
+{% set title = "loadingSpinner" %}
+{% block content %}
+  <!-- 일부 적용 시 -->
+  <div class="loading-box">
+    <dl class="product-price">
+      <dt class="discount-title">할인금액</dt>
+      <dd class="discount-price">
+        <strong>100,000,000</strong>원</dd>
+      <dt class="total-title">총 상품 금액</dt>
+      <dd class="total-price">
+        <strong>100,000,000</strong>원</dd>
+    </dl>
+    <div class="loading-item">
+      <div class="loadingSpinner spinner"></div>
+    </div>
+  </div>
+  <!-- 전체 적용 시 -->
+  <div class="loading-item">
+    <div class="loadingSpinner spinner"></div>
+  </div>
+{% endblock %}

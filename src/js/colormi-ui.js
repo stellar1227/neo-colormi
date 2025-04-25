@@ -91,3 +91,18 @@ function productStickyInfo() {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loadingElements = document.querySelectorAll('.loadingSpinner');
+
+  loadingElements.forEach((element) => {
+    const loading = lottie.loadAnimation({
+      container: element,
+      renderer: 'svg', // 'svg' | 'canvas' | 'html'
+      loop: true,
+      autoplay: true,
+      path: './img/assets/loading.json'
+    });
+    loading.setSpeed(1);
+  });
+});

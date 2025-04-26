@@ -93,16 +93,46 @@ function productStickyInfo() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const loadingElements = document.querySelectorAll('.loadingSpinner');
+  const activeClass = '--active';
+  const initialized = new WeakSet();
 
-  loadingElements.forEach((element) => {
-    const loading = lottie.loadAnimation({
-      container: element,
-      renderer: 'svg', // 'svg' | 'canvas' | 'html'
+  const initSpinner = (parent) => {
+    const spinner = parent.querySelector('.loadingSpinner');
+    if (!spinner || initialized.has(spinner)) return;
+    const anim = lottie.loadAnimation({
+      container: spinner,
+      renderer: 'svg',
       loop: true,
       autoplay: true,
       path: './img/assets/loading.json'
     });
-    loading.setSpeed(1);
+    anim.setSpeed(1);
+    initialized.add(spinner);
+  };
+
+  document.querySelectorAll(`.loading-item.${activeClass}`)
+    .forEach(initSpinner);
+
+  const observer = new MutationObserver(mutations => {
+    for (const m of mutations) {
+      if (
+        m.type === 'attributes' &&
+        m.attributeName === 'class'
+      ) {
+        const el = m.target;
+        if (
+          el.classList.contains('loading-item') &&
+          el.classList.contains(activeClass)
+        ) {
+          initSpinner(el);
+        }
+      }
+    }
+  });
+
+  observer.observe(document.body, {
+    attributes: true,
+    subtree: true,
+    attributeFilter: ['class']
   });
 });

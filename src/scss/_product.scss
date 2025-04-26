@@ -545,8 +545,12 @@
       @include font-body-xsmall;
       color: $color-text-subcolor-deep;
 
-      .text+.text {
-        margin-top: 4px;
+      .text {
+        @include ellipsis;
+
+        +.text {
+          margin-top: 4px;
+        }
       }
 
       &.--end {
@@ -652,10 +656,6 @@
           margin-top: 8px;
           overflow: hidden; // 나중에 삭제 예정
           max-height: 68px; // 나중에 삭제 예정
-
-          .text {
-            @include ellipsis;
-          }
         }
 
         >.badge-wrap {
@@ -1684,13 +1684,6 @@
             display: flex;
             flex-direction: row;
             gap: 0 16px;
-
-            .product-text {
-              .text {
-                @include ellipsis;
-                -webkit-line-clamp: 1;
-              }
-            }
           }
 
           .product-img {

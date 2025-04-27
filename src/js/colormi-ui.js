@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function startAnimation(item) {
     const type = getAnimType(item);
     if (!type) return;
-    const container = item.querySelector('.item');
+    const container = item.querySelector('.anim-item');
     if (!container || animMap.has(container)) return;
 
     fetchAnimData(type).then(data => {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function stopAnimation(item) {
-    const container = item.querySelector('.item');
+    const container = item.querySelector('.anim-item');
     const anim = container && animMap.get(container);
     if (anim) {
       anim.destroy();
@@ -145,14 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  document.querySelectorAll(`.anim-item.${ACTIVE_CLASS}`)
+  document.querySelectorAll(`.anim-item-wrap.${ACTIVE_CLASS}`)
     .forEach(startAnimation);
 
   const observer = new MutationObserver(mutations => {
     mutations.forEach(m => {
       if (m.type === 'attributes' && m.attributeName === 'class') {
         const el = m.target;
-        if (!el.classList.contains('anim-item')) return;
+        if (!el.classList.contains('anim-item-wrap')) return;
         if (el.classList.contains(ACTIVE_CLASS)) startAnimation(el);
         else stopAnimation(el);
       }

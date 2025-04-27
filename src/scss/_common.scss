@@ -2108,7 +2108,7 @@ button[type='button'] {
   }
 }
 
-.anim-item {
+.anim-item-wrap {
   position: fixed;
   top: 0;
   left: 0;
@@ -2124,7 +2124,7 @@ button[type='button'] {
     display: flex;
   }
 
-  .item {
+  .anim-item {
     position: relative;
     width: 50px;
 
@@ -2145,11 +2145,11 @@ button[type='button'] {
 .anim-item-box {
   position: relative;
 
-  .anim-item {
+  .anim-item-wrap {
     position: absolute;
     z-index: 9;
 
-    &[data-anim-type='loading'] .item {
+    &[data-anim-type='loading'] .anim-item {
       width: 30px;
     }
   }

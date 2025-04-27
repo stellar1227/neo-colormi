@@ -2108,7 +2108,7 @@ button[type='button'] {
   }
 }
 
-.loading-item {
+.anim-item {
   position: fixed;
   top: 0;
   left: 0;
@@ -2124,7 +2124,7 @@ button[type='button'] {
     display: flex;
   }
 
-  .spinner {
+  .item {
     position: relative;
     width: 50px;
 
@@ -2142,15 +2142,15 @@ button[type='button'] {
   }
 }
 
-.loading-box {
+.anim-item-box {
   position: relative;
 
-  .loading-item {
+  .anim-item {
     position: absolute;
     z-index: 9;
-  }
 
-  .spinner {
-    width: 30px;
+    &[data-anim-type='loading'] .item {
+      width: 30px;
+    }
   }
 }

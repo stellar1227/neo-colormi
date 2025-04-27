@@ -93,41 +93,70 @@ function productStickyInfo() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const activeClass = '--active';
-  const initialized = new WeakSet();
+  const ACTIVE_CLASS = '--active';
 
-  const initSpinner = (parent) => {
-    const spinner = parent.querySelector('.loadingSpinner');
-    if (!spinner || initialized.has(spinner)) return;
-    const anim = lottie.loadAnimation({
-      container: spinner,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: './img/assets/loading.json'
-    });
-    anim.setSpeed(1);
-    initialized.add(spinner);
+  const animConfig = {
+    loading: './img/assets/loading.json',
   };
 
-  document.querySelectorAll(`.loading-item.${activeClass}`)
-    .forEach(initSpinner);
+  const animDataCache = new Map();
+  function fetchAnimData(type) {
+    if (!animConfig[type]) return Promise.reject(new Error(`Unknown anim type: ${type}`));
+    if (animDataCache.has(type)) return animDataCache.get(type);
+    const p = fetch(animConfig[type]).then(res => res.json());
+    animDataCache.set(type, p);
+    return p;
+  }
+
+  const animMap = new WeakMap();
+
+  function getAnimType(item) {
+    return item.dataset.animType;
+  }
+
+  function startAnimation(item) {
+    const type = getAnimType(item);
+    if (!type) return;
+    const container = item.querySelector('.item');
+    if (!container || animMap.has(container)) return;
+
+    fetchAnimData(type).then(data => {
+      if (!item.classList.contains(ACTIVE_CLASS)) return;
+
+      const anim = lottie.loadAnimation({
+        container,
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        animationData: data
+      });
+      anim.play();
+      animMap.set(container, anim);
+    }).catch(console.error);
+  }
+
+  function stopAnimation(item) {
+    const container = item.querySelector('.item');
+    const anim = container && animMap.get(container);
+    if (anim) {
+      anim.destroy();
+      container.innerHTML = '';
+      animMap.delete(container);
+    }
+  }
+
+  document.querySelectorAll(`.anim-item.${ACTIVE_CLASS}`)
+    .forEach(startAnimation);
 
   const observer = new MutationObserver(mutations => {
-    for (const m of mutations) {
-      if (
-        m.type === 'attributes' &&
-        m.attributeName === 'class'
-      ) {
+    mutations.forEach(m => {
+      if (m.type === 'attributes' && m.attributeName === 'class') {
         const el = m.target;
-        if (
-          el.classList.contains('loading-item') &&
-          el.classList.contains(activeClass)
-        ) {
-          initSpinner(el);
-        }
+        if (!el.classList.contains('anim-item')) return;
+        if (el.classList.contains(ACTIVE_CLASS)) startAnimation(el);
+        else stopAnimation(el);
       }
-    }
+    });
   });
 
   observer.observe(document.body, {

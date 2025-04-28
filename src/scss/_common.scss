@@ -1757,6 +1757,10 @@ section.content-box+section.content-box {
     &.--coupon::after {
       background: $Line-line;
     }
+
+    .list-top-item {
+      display: flex;
+    }
   }
 }
 

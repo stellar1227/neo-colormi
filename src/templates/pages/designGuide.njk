@@ -38,7 +38,7 @@
           width: calc(50% - 10px);
         }
       }
-      &.color {
+      &.--color {
         .d-sys-list {
           width: calc(33.33% - 15px);
           min-width: 300px;
@@ -62,20 +62,20 @@
           }
         }
       }
-      &.typography {
+      &.--typography {
         .d-sys-list {
           width: calc(33.33% - 15px);
           min-width: 300px;
         }
       }
-      &.icon {
+      &.--icon {
         .d-sys-list {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
         }
       }
-      &.button {
+      &.--button {
         .d-sys-list-wrap {
           gap: 10px 20px;
           .d-sys-list {
@@ -87,6 +87,11 @@
               margin-left: 20px;
             }
           }
+        }
+      }
+      &.--tooltip {
+        .d-sys-list-wrap {
+          display: block;
         }
       }
       .modal {
@@ -184,7 +189,7 @@
     }
   </style>
   <div class="content">
-    <section class="design-system color">
+    <section class="design-system --color">
       <h1 class="d-sys">color</h1>
       <h2 class="d-sys">color</h2>
       <div class="d-sys-list-wrap">
@@ -471,7 +476,7 @@
         </ul>
       </div>
     </section>
-    <section class="design-system color">
+    <section class="design-system --color">
       <h1 class="d-sys">font</h1>
       <h2 class="d-sys">font-family</h2>
       <ul class="d-sys-list">
@@ -562,7 +567,7 @@
         </ul>
       </div>
     </section>
-    <section class="design-system typography">
+    <section class="design-system --typography">
       <h1 class="d-sys">typography</h1>
       <p>Baseline 정렬을 기준으로 진행해주세요.</p>
       <p>각 헤드라인 값은 Margin-Bottom의 고정 값으로 적용한다. 헤드라인으로 영문이 사용되는 경우, 대문자로 고정한다.</p>
@@ -600,7 +605,98 @@
         </div>
       </div>
     </section>
-    <section class="design-system icon">
+    <section class="design-system --desc-box">
+      <h1 class="d-sys">desc box</h1>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <div class="desc-box line-box">
+            <p class="guide-basic">
+              desc-box line-box
+            </p>
+          </div>
+          <div class="desc-box line-box --large">
+            <p class="guide-basic">
+              desc-box line-box --large
+            </p>
+          </div>
+          <div class="desc-box gray-light-box">
+            <p class="guide-basic-title">desc-box gray-light-box</p>
+            <p class="guide-basic">텍스트</p>
+          </div>
+          <div class="desc-box gray-sub-box">
+            <p class="guide-basic-title">desc-box gray-sub-box</p>
+            <p class="guide-basic">텍스트</p>
+          </div>
+        </div>
+        <div class="d-sys-list">
+          <div class="desc-box tertiary-light-box">
+            <p class="guide-sub">
+              desc-box tertiary-light-box
+            </p>
+            <div class="btn-wrap">
+              <button type="button" class="btn-outline --large">
+                <span>버튼</span>
+              </button>
+            </div>
+          </div>
+          <div class="desc-box border-box">
+            <p class="guide-basic-title">desc-box border-box</p>
+            <ul class="guide-sub">
+              <li>- 텍스트</li>
+              <li>- 텍스트</li>
+            </ul>
+            <p class="guide-basic-title">타이틀</p>
+            <ul class="guide-sub">
+              <li>- 텍스트</li>
+            </ul>
+          </div>
+          <div class="desc-box border-box --small">
+            <div class="radio-wrap">
+              <label class="radio" for="radio-0-1">
+                <input type="radio" id="radio-0-1" name="radio-0" checked="checked">
+                <span class="radio-icon"></span>
+                <span class="radio-label">desc-box border-box --small</span>
+              </label>
+              <label class="radio" for="radio-0-2">
+                <input type="radio" id="radio-0-2" name="radio-0">
+                <span class="radio-icon"></span>
+                <span class="radio-label">김지아</span>
+              </label>
+              <label class="radio" for="radio-0-3">
+                <input type="radio" id="radio-0-3" name="radio-0">
+                <span class="radio-icon"></span>
+                <span class="radio-label">김초롱이</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="design-system --guide-text">
+      <h1 class="d-sys">guide text</h1>
+      <p>사이즈 --small / --large-bold</p>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <h2 class="d-sys">guide</h2>
+          <p class="guide-basic-title">.guide-basic-title</p>
+          <p class="guide-basic">.guide-basic</p>
+          <p class="guide-sub">.guide-sub</p>
+          <p class="guide-sub-deep">.guide-sub-deep</p>
+        </div>
+        <div class="d-sys-list">
+          <h2 class="d-sys">size guide</h2>
+          <p class="guide-sub-deep --xsmall">.guide-sub-deep.--xsmall</p>
+          <p class="guide-sub-deep --small">.guide-sub-deep.--small</p>
+          <p class="guide-sub-deep --medium-bold">.guide-sub-deep.--medium-bold</p>
+          <p class="guide-sub-deep --large-bold">.guide-sub-deep.--large-bold</p>
+          <p class="guide-sub-deep --bold">.guide-sub-deep.--bold</p>
+          <ul class="guide-sub-deep --small --dot">
+            <li>리스트 dot</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="design-system --icon">
       <h1 class="d-sys">Icon</h1>
       <p>사이즈별 --small :16px / --medium :24px / --large :36px / --xlarge :46px / --xxlarge :64px</p>
       <p>icon-1부터 순서대로 +1</p>
@@ -680,7 +776,7 @@
         <i class="icon --large icon-72"></i>
       </div>
     </section>
-    <section class="design-system input">
+    <section class="design-system --input">
       <h1 class="d-sys">Input/Select/Drop Down/Textarea</h1>
       <p>close , eye 아이콘은 로그인 시에만 사용하며 close은 값을 입력했을 때 나타나게 된다. select의 초기 기본 형태는 ‘선택’으로 표시된다.</p>
       <div class="d-sys-list-wrap">
@@ -884,7 +980,7 @@
         </div>
       </div>
     </section>
-    <section class="design-system rating" style="display: none;">
+    <section class="design-system --rating" style="display: none;">
       <h1 class="d-sys">rating</h1>
       <div
         class="rating-wrap">
@@ -904,7 +1000,7 @@
         </fieldset>
       </div>
     </section>
-    <section class="design-system toggle">
+    <section class="design-system --toggle">
       <h1 class="d-sys">Toggle/Checkbox/Radio</h1>
       <h2 class="d-sys">Toggle</h2>
       <!-- toggle-wrap -->
@@ -993,10 +1089,35 @@
         </label>
       </div>
     </section>
-    <section class="design-system -tooltip">
+    <section class="design-system --tooltip">
       <h1 class="d-sys">Tooltip</h1>
+      <p>라인 --multiline :두줄 / --multiline-3 :세줄</p>
+      <p>위치 --top :상단</p>
+      <div class="d-sys-list">
+        <h2 class="d-sys">아이콘 버튼 툴팁</h2>
+        <button type="button" class="btn-outline --medium tooltip">
+          <i class="contact">
+            <span class="item">아이콘 버튼 툴팁</span>
+          </i>
+        </button>
+      </div>
+      <div class="d-sys-list">
+        <h2 class="d-sys">아이콘 가이드 툴팁</h2>
+        <span class="tooltip icon-info">
+          <i class="item">내용 한줄</i>
+        </span>
+        <span class="tooltip icon-info --multiline">
+          <i class="item">내용 두줄<br/>내용 두줄</i>
+        </span>
+        <span class="tooltip icon-info --multiline">
+          <i class="item">내용 두줄<br/>내용 두줄</i>
+        </span>
+        <span class="tooltip icon-info --multiline-3 --top">
+          <i class="item">내용 세줄<br/>내용 세줄<br/>위치 상단</i>
+        </span>
+      </div>
     </section>
-    <section class="design-system button">
+    <section class="design-system --button">
       <h1 class="d-sys">Buttons</h1>
       <p>높이별 --xsmall :32px / --small :40px / --medium :48px / --large :56px</p>
       <p>OnlyText / Normal / OnlyIcon type</p>
@@ -1172,47 +1293,53 @@
         </div>
       </div>
     </section>
-    <section class="design-system alert">
+    <section class="design-system --alert">
       <h1 class="d-sys">Alert</h1>
-      <h2 class="d-sys">Danger</h2>
-      <!-- alert-danger -->
-      <div class="alert-danger">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
-      </div>
-      <div class="alert-danger">
-        <dl>
-          <dd class="content">메시지 내용 최대 1줄</dd>
-        </dl>
-      </div>
-      <h2 class="d-sys">Warning</h2>
-      <!-- alert-warning -->
-      <div class="alert-warning">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
-      </div>
-      <h2 class="d-sys">Success</h2>
-      <!-- alert-success -->
-      <div class="alert-success">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
-      </div>
-      <h2 class="d-sys">Information</h2>
-      <!-- alert-information -->
-      <div class="alert-information">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <h2 class="d-sys">Danger</h2>
+          <!-- alert-danger -->
+          <div class="alert-danger">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+          <div class="alert-danger">
+            <dl>
+              <dd class="content">메시지 내용 최대 1줄</dd>
+            </dl>
+          </div>
+          <h2 class="d-sys">Warning</h2>
+          <!-- alert-warning -->
+          <div class="alert-warning">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="d-sys-list">
+          <h2 class="d-sys">Success</h2>
+          <!-- alert-success -->
+          <div class="alert-success">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+          <h2 class="d-sys">Information</h2>
+          <!-- alert-information -->
+          <div class="alert-information">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="design-system modal-popup">
+    <section class="design-system --modal-popup">
       <h1 class="d-sys">Modal</h1>
       <h2 class="d-sys">--xlarge :940/--large :540/--normal :480/--small :400</h2>
       <!-- modal --large -->

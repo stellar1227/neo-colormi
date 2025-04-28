@@ -1567,45 +1567,11 @@ section.content-box+section.content-box {
 }
 
 .guide {
-  &-sub {
-    @include font-body-small;
-    color: $color-text-subcolor;
-    margin-top: 16px;
 
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &.--xsmall {
-      @include font-body-xxsmall;
-    }
-
-    &.--small {
-      @include font-body-xsmall;
-    }
-
-    &.--bold {
-      font-weight: $font-weight-semibold;
-    }
-  }
-
-  &-sub-deep {
-    @include font-body-small;
-    color: $color-text-subcolor-deep;
-    margin-top: 16px;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &.--small {
-      @include font-body-xsmall;
-    }
-  }
-
+  &-sub,
+  &-sub-deep,
   &-basic {
     @include font-body-small;
-    color: $color-text-basic;
     margin-top: 16px;
 
     &:first-child {
@@ -1617,6 +1583,14 @@ section.content-box+section.content-box {
       color: $color-text-basic;
     }
 
+    &.--xsmall {
+      @include font-body-xxsmall;
+    }
+
+    &.--small {
+      @include font-body-xsmall;
+    }
+
     &.--medium-bold {
       @include font-body-medium-bold;
     }
@@ -1624,6 +1598,37 @@ section.content-box+section.content-box {
     &.--large-bold {
       @include font-body-large-bold;
     }
+
+    &.--bold {
+      font-weight: $font-weight-semibold;
+    }
+
+    &.--dot {
+      li {
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          margin: 0 8px;
+          background: $color-text-subcolor-deep;
+          border-radius: 50%;
+          vertical-align: 3px;
+        }
+      }
+    }
+  }
+
+  &-sub {
+    color: $color-text-subcolor;
+  }
+
+  &-sub-deep {
+    color: $color-text-subcolor-deep;
+  }
+
+  &-basic {
+    color: $color-text-basic;
   }
 }
 
@@ -1731,21 +1736,6 @@ section.content-box+section.content-box {
 
   +.checkbox-wrap {
     margin-top: 20px;
-  }
-
-  .--dot {
-    li {
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 4px;
-        height: 4px;
-        margin: 0 8px;
-        background: $color-text-subcolor-deep;
-        border-radius: 50%;
-        vertical-align: 3px;
-      }
-    }
   }
 
   &.--icon-box {

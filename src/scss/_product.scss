@@ -388,6 +388,7 @@
 
 .product-wrap {
   flex: 1;
+  width: 100%;
 
   .product-inner {
     display: flex;
@@ -1403,6 +1404,8 @@
 
 // 이용후기
 .product-review {
+  flex: 1;
+  width: 100%;
 
   &-photo {
     ul {
@@ -1443,14 +1446,19 @@
             @include font-body-small;
 
             em {
-              &::before {
-                content: '';
+              i {
+                position: relative;
                 display: inline-block;
                 width: 16px;
                 height: 16px;
                 margin-right: 2px;
-                background: #003f6d url('') no-repeat center center/100% 100%;
                 vertical-align: -3px;
+                @include line-icon(plus, 10px);
+
+                &::before,
+                &::after {
+                  background: $color-text-basic;
+                }
               }
             }
           }
@@ -1462,73 +1470,83 @@
   &-list {
     border-top: 1px solid $Line-line-3;
 
-    .list {
-      .list-item {
-        >a {
-          display: flex;
-          gap: 0 24px;
-          padding: 16px 0 32px;
-          border-bottom: 1px solid $Line-line;
+    .list-item {
 
-          .review-img {
-            flex: 0 0 auto;
-            position: relative;
-            overflow: hidden;
-            width: 148px;
-            height: 148px;
-            border-radius: 4px;
-            border: 1px solid $Line-line;
-            background: $color-border-gray-light;
-
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-
-            .count {
-              position: absolute;
-              right: 0;
-              bottom: 0;
-              min-width: 20px;
-              padding: 3px 6px;
-              border-radius: 4px;
-              background: $color-border-disabled;
-              @include font-body-xsmall;
-              line-height: 14px;
-              color: $color-text-basic-inverse;
-            }
-          }
-
-          .review-text {
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px 0;
-            min-width: 0;
-
-            .product-option {
-              @include font-body-xsmall;
-              color: $color-text-subcolor-light;
-              @include ellipsis;
-              -webkit-line-clamp: 2;
-            }
-
-            .text-content {
-              @include font-body-small;
-              color: $color-text-basic;
-              @include ellipsis;
-              -webkit-line-clamp: 3;
-            }
-
-            .review-date {
-              @include font-body-xsmall;
-              color: $color-text-subcolor;
-            }
-          }
-        }
+      >a {
+        display: flex;
+        gap: 24px;
+        padding: 16px 0 32px;
+        border-bottom: 1px solid $Line-line;
       }
     }
+  }
+
+  .review-img {
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 148px;
+    height: 148px;
+    border-radius: 4px;
+    border: 1px solid $Line-line;
+    background: $color-border-gray-light;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .count {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 20px;
+      padding: 3px 6px;
+      border-radius: 4px;
+      background: $color-border-disabled;
+      @include font-body-xsmall;
+      line-height: 14px;
+      color: $color-text-basic-inverse;
+    }
+  }
+
+  .review-text {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 0;
+
+    .product-option {
+      @include font-body-xsmall;
+      color: $color-text-subcolor-light;
+      @include ellipsis;
+      -webkit-line-clamp: 2;
+    }
+
+    .text-content {
+      @include font-body-small;
+      color: $color-text-basic;
+      @include ellipsis;
+      -webkit-line-clamp: 3;
+    }
+
+    .review-date {
+      @include font-body-xsmall;
+      color: $color-text-subcolor;
+    }
+
+    .review-date-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .product-inner-item {
+    display: flex;
+    gap: 24px;
   }
 }
 
@@ -1590,12 +1608,14 @@
     margin-top: 0;
   }
 
-  +.table-list {
-    margin-top: 20px;
-  }
-
   &.--right {
     justify-content: flex-end;
+  }
+
+  +.box-list,
+  +.table-list,
+  +.util-wrap {
+    margin-top: 20px;
   }
 }
 
@@ -1623,6 +1643,20 @@
           &.--address,
           &.--title {
             justify-content: left;
+          }
+
+          &.--product {
+            flex-direction: column;
+            padding: 0;
+
+            .product-wrap {
+              padding: 19px 16px;
+            }
+
+            .product-review {
+              padding: 19px 16px;
+              border-top: 1px solid $color-border-gray;
+            }
           }
         }
       }
@@ -1665,7 +1699,8 @@
       .--amount,
       .--total-price,
       .--request,
-      .--confirm {
+      .--confirm,
+      .--count-num {
         width: 16%;
       }
 
@@ -1766,9 +1801,24 @@
               border: 1px solid $color-border-gray;
             }
 
-            &.--customer {
+            // 1:1 문의
+            &.--customer-1 {
+              &::before {
+                background: $color-border-gray;
+              }
+            }
+
+            // 견적문의
+            &.--customer-2 {
               &::before {
                 background: $color-border-gray-light;
+              }
+            }
+
+            // 이용후기
+            &.--review {
+              &::before {
+                background: $color-border-gray;
               }
             }
           }
@@ -1887,7 +1937,7 @@
   grid-template-columns: auto auto 1fr;
   gap: 0 48px;
 
-  dt {
+  dt.item {
     @include font-body-small-bold;
     color: $color-text-subcolor-deep;
 
@@ -1896,9 +1946,17 @@
     }
   }
 
-  dd {
+  dd.item {
     @include font-body-small;
     color: $color-text-basic;
+  }
+
+  [class^=guide-]+[class^=guide-] {
+    margin: 0;
+  }
+
+  +.list-top-item {
+    margin-left: 80px;
   }
 }
 

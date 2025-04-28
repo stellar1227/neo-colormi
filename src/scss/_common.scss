@@ -36,7 +36,6 @@ h5 {
 
 #container {
   display: flex;
-  margin: 48px auto;
 
   >.content {
     flex: 1;
@@ -527,6 +526,7 @@ section.content-box+section.content-box {
 
       [class^=guide-] {
         flex: 1;
+        margin: 0;
       }
     }
 
@@ -604,10 +604,6 @@ section.content-box+section.content-box {
           width: 44px;
           height: 44px;
           margin-left: 14px;
-          background-image: url('../img/icon/icon-search.png');
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: 24px 24px;
         }
       }
 
@@ -671,6 +667,12 @@ section.content-box+section.content-box {
     gap: 0 8px;
     @include font-body-small;
     color: $color-text-basic;
+
+    &.util-option {
+      input[type='text'] {
+        width: 280px;
+      }
+    }
   }
 }
 
@@ -1574,6 +1576,10 @@ section.content-box+section.content-box {
       margin-top: 0;
     }
 
+    &.--xsmall {
+      @include font-body-xxsmall;
+    }
+
     &.--small {
       @include font-body-xsmall;
     }
@@ -1747,20 +1753,17 @@ section.content-box+section.content-box {
     flex-direction: row;
     align-items: center;
 
-    &::after {
-      content: '';
-      display: block;
-      width: 64px;
-      height: 64px;
-    }
-
-    &.--coupon::after {
-      background: $Line-line;
+    .icon::before {
+      filter: opacity(0.2);
     }
 
     .list-top-item {
-      display: flex;
+      display: inline-flex;
     }
+  }
+
+  .no-item-text {
+    @include font-heading-xsmall-bold;
   }
 }
 
@@ -2156,5 +2159,27 @@ button[type='button'] {
     &[data-anim-type='loading'] .anim-item {
       width: 30px;
     }
+  }
+}
+
+.icon {
+  &.--small {
+    @include sprite-icons(16px);
+  }
+
+  &.--medium {
+    @include sprite-icons(24px);
+  }
+
+  &.--large {
+    @include sprite-icons(36px);
+  }
+
+  &.--xlarge {
+    @include sprite-icons(46px);
+  }
+
+  &.--xxlarge {
+    @include sprite-icons(64px);
   }
 }

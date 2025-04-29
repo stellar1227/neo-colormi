@@ -1052,8 +1052,10 @@
     grid-template-columns: 120px 1fr;
     gap: 20px 4px;
     width: 100%;
+    margin-top: 20px;
 
     &.--item {
+      margin-top: 0;
       padding: 20px 16px;
       border-radius: 10px;
       background: $color-border-gray-light;

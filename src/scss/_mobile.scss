@@ -16,11 +16,11 @@
     padding: 0 20px
   }
 
-  .btn-wrap.link+section.content-box,
-  .page-title+section.content-box,
-  section.content-box+.btn-wrap.confirm,
-  section.content-box+.btn-wrap.vertical,
-  section.content-box+section.content-box {
+  .btn-wrap.link+.content-box,
+  .page-title+sectin.content-box,
+  .content-box+.btn-wrap.confirm,
+  .content-box+.btn-wrap.vertical,
+  .content-box+.content-box {
     margin-top: 20px;
   }
 

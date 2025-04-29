@@ -1026,7 +1026,7 @@
       }
     }
 
-    &.columns-1 {
+    &.columns-1 .column-item {
       grid-template-columns: 1fr;
     }
 

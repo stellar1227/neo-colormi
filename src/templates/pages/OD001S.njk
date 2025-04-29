@@ -116,49 +116,59 @@
           <div class="title-wrap">
             <h5>주문자 정보</h5>
           </div>
-          <dl class="product-option">
-            <dt>이름</dt>
-            <dd>
-              <div class="form-field">
-                <input type="text" placeholder="Placeholder"/>
-              </div>
-            </dd>
-            <dt>회사</dt>
-            <dd>
-              <div class="form-field">
-                <input type="text" placeholder="Placeholder"/>
-              </div>
-            </dd>
-            <dt>휴대폰번호</dt>
-            <dd>
-              <div class="form-field">
-                <input type="number" placeholder="Placeholder"/>
-              </div>
-            </dd>
-            <dt>이메일</dt>
-            <dd>
-              <div class="form-field">
-                <input type="email" placeholder="Placeholder"/>
-              </div>
-            </dd>
-          </dl>
+          <div class="product-option">
+            <dl class="column-item">
+              <dt>이름</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="text" placeholder="Placeholder"/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>회사</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="text" placeholder="Placeholder"/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>휴대폰번호</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="tel" placeholder="Placeholder"/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>이메일</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="email" placeholder="Placeholder"/>
+                </div>
+              </dd>
+            </dl>
+          </div>
           <!-- 쿠폰 할인 -->
           <div class="title-wrap">
             <h5>쿠폰 할인</h5>
           </div>
-          <dl class="product-option">
-            <dt>쿠폰 선택</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>쿠폰을 선택해주세요.</option>
-                  </select>
+          <div class="product-option">
+            <dl class="column-item">
+              <dt>쿠폰 선택</dt>
+              <dd>
+                <div class="form-field">
+                  <div class="form-wrap select">
+                    <select class="btn-select">
+                      <option>쿠폰을 선택해주세요.</option>
+                    </select>
+                  </div>
+                  <p class="description --primary">- 1,200원 할인</p>
                 </div>
-                <p class="description --primary">- 1,200원 할인</p>
-              </div>
-            </dd>
-          </dl>
+              </dd>
+            </dl>
+          </div>
         </div>
         <!-- 배송지 정보 -->
         <div class="product-order">
@@ -166,85 +176,95 @@
             <h5 class="required">배송지 정보</h5>
             <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
           </div>
-          <dl class="product-option columns-1">
-            <dd>
-              <div class="form-field">
-                <div class="form-inner button-option">
-                  <div class="desc-box border-box --small">
-                    <div class="radio-wrap">
-                      <label class="radio" for="radio-0-1">
-                        <input type="radio" id="radio-0-1" name="radio-0" checked="checked">
-                        <span class="radio-icon"></span>
-                        <span class="radio-label">홍길동(기본배송지)</span>
-                      </label>
-                      <label class="radio" for="radio-0-2">
-                        <input type="radio" id="radio-0-2" name="radio-0">
-                        <span class="radio-icon"></span>
-                        <span class="radio-label">김지아</span>
-                      </label>
-                      <label class="radio" for="radio-0-3">
-                        <input type="radio" id="radio-0-3" name="radio-0">
-                        <span class="radio-icon"></span>
-                        <span class="radio-label">김초롱이</span>
-                      </label>
+          <div class="product-option columns-1">
+            <dl class="column-item">
+              <dd>
+                <div class="form-field">
+                  <div class="form-inner button-option">
+                    <div class="desc-box border-box --small">
+                      <div class="radio-wrap">
+                        <label class="radio" for="radio-0-1">
+                          <input type="radio" id="radio-0-1" name="radio-0" checked="checked">
+                          <span class="radio-icon"></span>
+                          <span class="radio-label">홍길동(기본배송지)</span>
+                        </label>
+                        <label class="radio" for="radio-0-2">
+                          <input type="radio" id="radio-0-2" name="radio-0">
+                          <span class="radio-icon"></span>
+                          <span class="radio-label">김지아</span>
+                        </label>
+                        <label class="radio" for="radio-0-3">
+                          <input type="radio" id="radio-0-3" name="radio-0">
+                          <span class="radio-icon"></span>
+                          <span class="radio-label">김초롱이</span>
+                        </label>
+                      </div>
                     </div>
+                    <button type="button" class="btn-primary --small">
+                      <span>배송지 변경</span>
+                    </button>
                   </div>
-                  <button type="button" class="btn-primary --small">
-                    <span>배송지 변경</span>
-                  </button>
                 </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="product-option">
-            <dt class="required">수령인</dt>
-            <dd>
-              <div
-                class="form-field --error">
-                <!-- // .error 추가 -->
-                <input type="text" placeholder="Placeholder"/>
-                <p class="description">error text</p>
-                <!-- // 에러메세지 -->
-              </div>
-            </dd>
-            <dt class="required">연락처</dt>
-            <dd>
-              <div class="form-field">
-                <input type="text" placeholder="Placeholder"/>
-              </div>
-            </dd>
-            <dt class="required">주소</dt>
-            <dd>
-              <div class="form-field address">
-                <p class="address-item">
+              </dd>
+            </dl>
+          </div>
+          <div class="product-option">
+            <dl class="column-item">
+              <dt class="required">수령인</dt>
+              <dd>
+                <div
+                  class="form-field --error">
+                  <!-- // .error 추가 -->
                   <input type="text" placeholder="Placeholder"/>
-                  <button type="button" class="btn-outline --small">
-                    <span>우편번호 검색</span>
-                  </button>
-                </p>
-                <input type="text" placeholder="Placeholder"/>
-                <input type="text" placeholder="Placeholder"/>
-              </div>
-            </dd>
-            <dt>배송메세지</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>선택안함</option>
-                  </select>
+                  <p class="description">error text</p>
+                  <!-- // 에러메세지 -->
                 </div>
-                <!-- checkbox -->
-                <div class="checkbox-wrap">
-                  <label class="checkbox" for="check-0-1">
-                    <input type="checkbox" id="check-0-1"/>
-                    <span class="checkbox-icon"></span>
-                    <span class="checkbox-label">다음에도 동일한 메세지 사용하기</span>
-                  </label>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt class="required">연락처</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="text" placeholder="Placeholder"/>
                 </div>
-              </div>
-            </dd>
-          </dl>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt class="required">주소</dt>
+              <dd>
+                <div class="form-field address">
+                  <p class="address-item">
+                    <input type="text" placeholder="Placeholder"/>
+                    <button type="button" class="btn-outline --small">
+                      <span>우편번호 검색</span>
+                    </button>
+                  </p>
+                  <input type="text" placeholder="Placeholder"/>
+                  <input type="text" placeholder="Placeholder"/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>배송메세지</dt>
+              <dd>
+                <div class="form-field">
+                  <div class="form-wrap select">
+                    <select class="btn-select">
+                      <option>선택안함</option>
+                    </select>
+                  </div>
+                  <!-- checkbox -->
+                  <div class="checkbox-wrap">
+                    <label class="checkbox" for="check-0-1">
+                      <input type="checkbox" id="check-0-1"/>
+                      <span class="checkbox-icon"></span>
+                      <span class="checkbox-label">다음에도 동일한 메세지 사용하기</span>
+                    </label>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
         </div>
       </div>
     </section>
@@ -254,27 +274,29 @@
         <div class="title-wrap">
           <h5>결제수단</h5>
         </div>
-        <dl class="product-option columns-1">
-          <dd>
-            <div class="radio-wrap">
-              <label class="radio" for="radio-1-1">
-                <input type="radio" id="radio-1-1" name="radio-1"/>
-                <span class="radio-icon"></span>
-                <span class="radio-label">신용카드</span>
-              </label>
-              <label class="radio" for="radio-1-2">
-                <input type="radio" id="radio-1-2" name="radio-1"/>
-                <span class="radio-icon"></span>
-                <span class="radio-label">무통장입금 (전용계좌)</span>
-              </label>
-              <label class="radio" for="radio-1-3">
-                <input type="radio" id="radio-1-3" name="radio-1"/>
-                <span class="radio-icon"></span>
-                <span class="radio-label">가상계좌</span>
-              </label>
-            </div>
-          </dd>
-        </dl>
+        <div class="product-option columns-1">
+          <dl class="column-item">
+            <dd>
+              <div class="radio-wrap">
+                <label class="radio" for="radio-1-1">
+                  <input type="radio" id="radio-1-1" name="radio-1"/>
+                  <span class="radio-icon"></span>
+                  <span class="radio-label">신용카드</span>
+                </label>
+                <label class="radio" for="radio-1-2">
+                  <input type="radio" id="radio-1-2" name="radio-1"/>
+                  <span class="radio-icon"></span>
+                  <span class="radio-label">무통장입금 (전용계좌)</span>
+                </label>
+                <label class="radio" for="radio-1-3">
+                  <input type="radio" id="radio-1-3" name="radio-1"/>
+                  <span class="radio-icon"></span>
+                  <span class="radio-label">가상계좌</span>
+                </label>
+              </div>
+            </dd>
+          </dl>
+        </div>
         <!-- 무통장 입금 시 -->
         <div class="desc-box gray-light-box">
           <div class="item-box-wrap --center">
@@ -346,7 +368,7 @@
       <div class="title-wrap">
         <p class="cont-title">인쇄/제작 동의</p>
       </div>
-      <div class="desc-box border-box scroll-box">
+      <div class="desc-box border-box --scroll-box">
         <p class="guide-sub-deep --small">[인쇄/제작]</p>
         <ul class="guide-sub-deep --small">
           <li>1. 모든 작업은 결제완료 후 진행됩니다. 무통장입금의 경우 입금이 확인된 후 진행됩니다.</li>

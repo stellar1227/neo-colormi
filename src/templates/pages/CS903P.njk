@@ -14,79 +14,89 @@
             <h5 class="required">문의 내용</h5>
             <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
           </div>
-          <dl class="product-option">
-            <dt class="required">문의유형</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>선택</option>
-                  </select>
-                </div>
-              </div>
-            </dd>
-            <dt class="required">제목</dt>
-            <dd>
-              <div class="form-field">
-                <input type="text" placeholder="제목을 입력해주세요."/>
-              </div>
-            </dd>
-            <dt>내용</dt>
-            <dd>
-              <div class="form-field textarea">
-                <div class="form-wrap">
-                  <textarea id="textarea" placeholder="상품에 대한 문의 내용을 자세히 작성해주세요."></textarea>
-                </div>
-                <div class="textarea-bottom">
-                  <div class="count">
-                    <em>1</em>/<span>100</span>
+          <div class="product-option">
+            <dl class="column-item">
+              <dt class="required">문의유형</dt>
+              <dd>
+                <div class="form-field">
+                  <div class="form-wrap select">
+                    <select class="btn-select">
+                      <option>선택</option>
+                    </select>
                   </div>
-                  <ul class="guide-sub --small">
-                    <li>- 자세한 견적을 원하시면, 인쇄정보는 모두 작성해주세요.</li>
-                    <li>- 파일을 첨부해주시면 보다 빠른 상담이 가능합니다.</li>
-                  </ul>
                 </div>
-              </div>
-            </dd>
-            <dt>웹하드 경로</dt>
-            <dd>
-              <div class="inner-wrap">
-                <button type="button" class="btn-outline --xsmall">
-                  <span>웹하드 업로드</span>
-                </button>
-                <div class="guide-wrap">
-                  <dl class="desc-guide line-round">
-                    <dt>ID</dt>
-                    <dd>colomi</dd>
-                    <dt>PW</dt>
-                    <dd>1234</dd>
-                  </dl>
-                  <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt class="required">제목</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="text" placeholder="제목을 입력해주세요."/>
                 </div>
-              </div>
-              <div class="inner-wrap">
-                <input type="text" placeholder="외장하드 경로를 입력해주세요."/>
-              </div>
-            </dd>
-            <dt>파일첨부</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap file">
-                  <label class="btn-primary --small">
-                    <input type="file"/>
-                    <span>파일첨부</span>
-                  </label>
-                  <span class="guide-sub">선택한 파일이 없습니다.</span>
-                  <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-                  <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-                  <button type="button" class="btn-del">
-                    <i class="delete">삭제</i>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>내용</dt>
+              <dd>
+                <div class="form-field textarea">
+                  <div class="form-wrap">
+                    <textarea id="textarea" placeholder="상품에 대한 문의 내용을 자세히 작성해주세요."></textarea>
+                  </div>
+                  <div class="textarea-bottom">
+                    <div class="count">
+                      <em>1</em>/<span>100</span>
+                    </div>
+                    <ul class="guide-sub --small">
+                      <li>- 자세한 견적을 원하시면, 인쇄정보는 모두 작성해주세요.</li>
+                      <li>- 파일을 첨부해주시면 보다 빠른 상담이 가능합니다.</li>
+                    </ul>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>웹하드 경로</dt>
+              <dd>
+                <div class="inner-wrap">
+                  <button type="button" class="btn-outline --xsmall">
+                    <span>웹하드 업로드</span>
                   </button>
-                  <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                  <div class="guide-wrap">
+                    <dl class="desc-guide line-round">
+                      <dt>ID</dt>
+                      <dd>colomi</dd>
+                      <dt>PW</dt>
+                      <dd>1234</dd>
+                    </dl>
+                    <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+                  </div>
                 </div>
-              </div>
-            </dd>
-          </dl>
+                <div class="inner-wrap">
+                  <input type="text" placeholder="외장하드 경로를 입력해주세요."/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>파일첨부</dt>
+              <dd>
+                <div class="form-field">
+                  <div class="form-wrap file">
+                    <label class="btn-primary --small">
+                      <input type="file"/>
+                      <span>파일첨부</span>
+                    </label>
+                    <span class="guide-sub">선택한 파일이 없습니다.</span>
+                    <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+                    <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+                    <button type="button" class="btn-del">
+                      <i class="delete">삭제</i>
+                    </button>
+                    <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
         </div>
       </div>
       <div class="modal-footer">

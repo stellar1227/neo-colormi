@@ -7,10 +7,16 @@
     <dl class="column-item">
       <dt class="required">제목</dt>
       <dd>
-        <div
-          class="form-field width-436 --error">
+        <div class="form-field width-436 --error">
           <!-- // .error 추가 -->
-          <input type="text" placeholder="Placeholder"/>
+          <div class="form-wrap">
+            <input type="text" placeholder="Placeholder"/>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+            </div>
+          </div>
           <p class="description">에러메세지</p>
           <!-- // 에러메세지 -->
         </div>

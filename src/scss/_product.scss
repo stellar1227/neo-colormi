@@ -842,6 +842,7 @@
       margin-top: 20px;
       border-top: 1px solid $Line-line;
     }
+
     .column-item {
       display: grid;
       grid-template-columns: 120px 1fr;
@@ -880,10 +881,6 @@
           .button-option {
             display: flex;
             gap: 8px;
-
-            &.--v-center {
-              align-items: center;
-            }
 
             >input,
             .form-wrap {
@@ -1039,7 +1036,15 @@
     }
 
     .row-span-2 {
+      grid-row-end: span 2;
+    }
+    
+    .row-span-3 {
       grid-row-end: span 3;
+    }
+
+    .--v-center {
+      align-items: center;
     }
   }
 

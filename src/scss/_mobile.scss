@@ -87,32 +87,16 @@
     }
   }
 
-
   .product-order {
     .product-option {
-      // .row-span-2+dt+dd+dt,
-      // >dt:nth-of-type(even) {
-        //   margin-left: 0;
-        // }
-        
         .row-span-2,
-        .row-span-2.--end {
+        .row-span-3 {
           grid-row: auto;
           grid-column: auto;
         }
         
         &.columns-4 {
         grid-template-columns: 1fr;
-
-        .row-span-2+dt+dd+dt,
-        >dt:nth-of-type(even) {
-          margin-left: 0;
-        }
-
-        .row-span-2.--end {
-          grid-row: auto;
-          grid-column: auto;
-        }
       }
       .column-item {
         >dd {

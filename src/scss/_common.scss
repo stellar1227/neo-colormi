@@ -1540,6 +1540,7 @@ section.content-box+section.content-box {
   border: 1px solid $color-border-gray-light;
   background: $color-border-inverse;
   box-shadow: 0px 2px 4px 0px $color-alpha-shadow1, 0px 8px 20px 0px $color-alpha-shadow1;
+  z-index: 10;
 
   .layer-container {
     .title {
@@ -1898,7 +1899,7 @@ $tooltip-icons: (
     @include tooltip;
     bottom: -32px;
     transform: translateX(calc(-50% + 8px));
-    z-index: 2;
+    z-index: 9;
   }
 
   &.--multiline {

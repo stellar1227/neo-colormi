@@ -3,114 +3,124 @@
   <div class="title-wrap">
     <h5>주문내용</h5>
   </div>
-  <dl class="product-option">
-    <dt class="required">제목</dt>
-    <dd>
-      <div
-        class="form-field width-436 --error">
-        <!-- // .error 추가 -->
-        <input type="text" placeholder="Placeholder"/>
-        <p class="description">에러메세지</p>
-        <!-- // 에러메세지 -->
-      </div>
-    </dd>
-    <dt>파일첨부</dt>
-    <dd>
-      <div class="form-field width-436">
-        <div class="form-wrap file">
-          <label class="btn-primary --small">
-            <input type="file"/>
-            <span>파일첨부</span>
+  <div class="product-option">
+    <dl class="column-item">
+      <dt class="required">제목</dt>
+      <dd>
+        <div
+          class="form-field width-436 --error">
+          <!-- // .error 추가 -->
+          <input type="text" placeholder="Placeholder"/>
+          <p class="description">에러메세지</p>
+          <!-- // 에러메세지 -->
+        </div>
+      </dd>
+    </dl>
+    <dl class="column-item">
+      <dt>파일첨부</dt>
+      <dd>
+        <div class="form-field width-436">
+          <div class="form-wrap file">
+            <label class="btn-primary --small">
+              <input type="file"/>
+              <span>파일첨부</span>
+            </label>
+            <span class="guide-sub">선택한 파일이 없습니다.</span>
+            <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+            <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+            <button type="button" class="btn-del">
+              <i class="delete">삭제</i>
+            </button>
+            <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+            <!-- div.--add-option 추가버튼 -->
+            <button type="button" class="btn-util-add">
+              <i class="icon-plus"></i>
+              <span>추가</span>
+            </button>
+          </div>
+          <!-- 파일첨부 추가 -->
+          <div class="form-wrap file">
+            <label class="btn-primary --small">
+              <input type="file"/>
+              <span>파일첨부</span>
+            </label>
+            <span class="guide-sub">선택한 파일이 없습니다.</span>
+            <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+            <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+            <button type="button" class="btn-del">
+              <i class="delete">삭제</i>
+            </button>
+            <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+            <button type="button" class="btn-util-del">
+              <i class="icon-minus"></i>
+              <span>삭제</span>
+            </button>
+          </div>
+        </div>
+      </dd>
+    </dl>
+    <dl class="column-item">
+      <dt>웹하드</dt>
+      <dd>
+        <div class="inner-wrap">
+          <button type="button" class="btn-outline --xsmall">
+            <span>웹하드 업로드</span>
+          </button>
+          <div class="guide-wrap">
+            <dl class="desc-guide line-round">
+              <dt>ID</dt>
+              <dd>colomi</dd>
+              <dt>PW</dt>
+              <dd>1234</dd>
+            </dl>
+            <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
+          </div>
+        </div>
+      </dd>
+    </dl>
+    <dl class="column-item">
+      <dt>요청사항</dt>
+      <dd>
+        <div class="form-field textarea">
+          <div class="form-wrap">
+            <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
+          </div>
+        </div>
+      </dd>
+    </dl>
+    <dl class="column-item">
+      <dt>배송방법</dt>
+      <dd>
+        <div class="radio-wrap">
+          <label class="radio" for="radio-0-1">
+            <input type="radio" id="radio-0-1" name="radio"/>
+            <span class="radio-icon"></span>
+            <span class="radio-label">선불택배</span>
           </label>
-          <span class="guide-sub">선택한 파일이 없습니다.</span>
-          <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-          <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-          <button type="button" class="btn-del">
-            <i class="delete">삭제</i>
-          </button>
-          <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
-          <!-- div.--add-option 추가버튼 -->
-          <button type="button" class="btn-util-add">
-            <i class="icon-plus"></i>
-            <span>추가</span>
-          </button>
-        </div>
-        <!-- 파일첨부 추가 -->
-        <div class="form-wrap file">
-          <label class="btn-primary --small">
-            <input type="file"/>
-            <span>파일첨부</span>
+          <label class="radio" for="radio-0-2">
+            <input type="radio" id="radio-0-2" name="radio"/>
+            <span class="radio-icon"></span>
+            <span class="radio-label">착불택배</span>
           </label>
-          <span class="guide-sub">선택한 파일이 없습니다.</span>
-          <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-          <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-          <button type="button" class="btn-del">
-            <i class="delete">삭제</i>
-          </button>
-          <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
-          <button type="button" class="btn-util-del">
-            <i class="icon-minus"></i>
-            <span>삭제</span>
-          </button>
+          <label class="radio" for="radio-0-3">
+            <input type="radio" id="radio-0-3" name="radio"/>
+            <span class="radio-icon"></span>
+            <span class="radio-label">선불 퀵</span>
+          </label>
+          <label class="radio" for="radio-0-4">
+            <input type="radio" id="radio-0-4" name="radio"/>
+            <span class="radio-icon"></span>
+            <span class="radio-label">후불 퀵</span>
+          </label>
+          <label class="radio" for="radio-0-5">
+            <input type="radio" id="radio-0-5" name="radio"/>
+            <span class="radio-icon"></span>
+            <span class="radio-label">방문수령</span>
+          </label>
         </div>
-      </div>
-    </dd>
-    <dt>웹하드</dt>
-    <dd>
-      <div class="inner-wrap">
-        <button type="button" class="btn-outline --xsmall">
-          <span>웹하드 업로드</span>
-        </button>
-        <div class="guide-wrap">
-          <dl class="desc-guide line-round">
-            <dt>ID</dt>
-            <dd>colomi</dd>
-            <dt>PW</dt>
-            <dd>1234</dd>
-          </dl>
-          <span class="guide-sub-deep">*웹하드 자료는 한폴더에 넣어 올려주세요</span>
-        </div>
-      </div>
-    </dd>
-    <dt>요청사항</dt>
-    <dd>
-      <div class="form-field textarea">
-        <div class="form-wrap">
-          <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
-        </div>
-      </div>
-    </dd>
-    <dt>배송방법</dt>
-    <dd>
-      <div class="radio-wrap">
-        <label class="radio" for="radio-0-1">
-          <input type="radio" id="radio-0-1" name="radio"/>
-          <span class="radio-icon"></span>
-          <span class="radio-label">선불택배</span>
-        </label>
-        <label class="radio" for="radio-0-2">
-          <input type="radio" id="radio-0-2" name="radio"/>
-          <span class="radio-icon"></span>
-          <span class="radio-label">착불택배</span>
-        </label>
-        <label class="radio" for="radio-0-3">
-          <input type="radio" id="radio-0-3" name="radio"/>
-          <span class="radio-icon"></span>
-          <span class="radio-label">선불 퀵</span>
-        </label>
-        <label class="radio" for="radio-0-4">
-          <input type="radio" id="radio-0-4" name="radio"/>
-          <span class="radio-icon"></span>
-          <span class="radio-label">후불 퀵</span>
-        </label>
-        <label class="radio" for="radio-0-5">
-          <input type="radio" id="radio-0-5" name="radio"/>
-          <span class="radio-icon"></span>
-          <span class="radio-label">방문수령</span>
-        </label>
-      </div>
-    </dd>
-  </dl>
+      </dd>
+    </dl>
+  </div>
 </div>
 <!-- 안내 -->
 <div class="desc-box line-box">

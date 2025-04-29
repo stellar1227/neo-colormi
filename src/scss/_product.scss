@@ -797,7 +797,6 @@
 
     &.line-round {
       min-height: 27px;
-      // margin-left: 12px;
       padding: 1px 16px;
       border-radius: 12px;
       border: 1px solid $color-border-gray;
@@ -834,215 +833,205 @@
 
   .product-option {
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: minmax(40px, auto);
-    grid-gap: 20px 0;
+    gap: 20px 80px;
     padding-top: 20px;
 
     +.product-option {
       margin-top: 20px;
       border-top: 1px solid $Line-line;
     }
+    .column-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 4px;
+    
+      >dt {
+        padding: 9px 0;
+        @include font-body-small;
 
-    >dt {
-      padding: 9px 0;
-      @include font-body-small;
-
-      &.required {
-        &::after {
-          float: left;
-          padding: 3px 4px 0 0;
+        &.required {
+          &::after {
+            float: left;
+            padding: 3px 4px 0 0;
+          }
         }
       }
-    }
 
-    >dd {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      padding-left: 4px;
-
-      .form-field {
+      >dd {
         display: flex;
         flex-direction: column;
+        min-height: 100%;
 
-        &.file {
-          max-width: 100%;
-        }
-
-        &[class$=-option] {
-          flex-direction: row;
-          align-items: center;
-        }
-
-        .button-option {
+        .form-field {
           display: flex;
-          gap: 8px;
+          flex-direction: column;
 
-          &.--v-center {
+          &.file {
+            max-width: 100%;
+          }
+
+          &[class$=-option] {
+            flex-direction: row;
             align-items: center;
           }
 
-          >input,
-          .form-wrap {
+          .button-option {
             display: flex;
-            align-items: center;
-            width: calc(100% - 108px);
-          }
-
-          .form-wrap {
-            flex-wrap: wrap;
-            gap: 8px 20px;
-
-            .checkbox-wrap+[class$=-wrap] {
-              margin: 0;
-            }
-          }
-
-          >[class^=btn-] {
-
-            span {
-              width: 84px;
-            }
-          }
-
-          .--edge-round {
-            width: 132px;
             gap: 8px;
 
-            .checkbox {
-              margin: 0;
+            &.--v-center {
+              align-items: center;
+            }
+
+            >input,
+            .form-wrap {
+              display: flex;
+              align-items: center;
+              width: calc(100% - 108px);
+            }
+
+            .form-wrap {
+              flex-wrap: wrap;
+              gap: 8px 20px;
+
+              .checkbox-wrap+[class$=-wrap] {
+                margin: 0;
+              }
+            }
+
+            >[class^=btn-] {
+
+              span {
+                width: 84px;
+              }
+            }
+
+            .--edge-round {
+              width: 132px;
+              gap: 8px;
+
+              .checkbox {
+                margin: 0;
+
+                .checkbox-label {
+                  display: flex;
+                  padding: 10px;
+                  border-width: 2px;
+                  border-style: solid;
+                  border-color: transparent;
+                }
+
+                &:nth-of-type(1) .checkbox-label {
+                  border-radius: 10px 0 0 0;
+                  border-width: 2px 0 0 2px;
+                }
+
+                &:nth-of-type(2) .checkbox-label {
+                  justify-content: flex-end;
+                  border-radius: 0 10px 0 0;
+                  border-width: 2px 2px 0 0;
+                }
+
+                &:nth-of-type(3) .checkbox-label {
+                  align-items: flex-end;
+                  border-radius: 0 0 0 10px;
+                  border-width: 0 0 2px 2px;
+                }
+
+                &:nth-child(4) .checkbox-label {
+                  justify-content: flex-end;
+                  align-items: flex-end;
+                  border-radius: 0 0 10px 0;
+                  border-width: 0 2px 2px 0;
+                }
+              }
+
+              input:checked~.checkbox-label {
+                border-color: $color-border-primary;
+                background: $color-border-primary-light;
+              }
+
 
               .checkbox-label {
-                display: flex;
-                padding: 10px;
-                border-width: 2px;
-                border-style: solid;
-                border-color: transparent;
-              }
-
-              &:nth-of-type(1) .checkbox-label {
-                border-radius: 10px 0 0 0;
-                border-width: 2px 0 0 2px;
-              }
-
-              &:nth-of-type(2) .checkbox-label {
-                justify-content: flex-end;
-                border-radius: 0 10px 0 0;
-                border-width: 2px 2px 0 0;
-              }
-
-              &:nth-of-type(3) .checkbox-label {
-                align-items: flex-end;
-                border-radius: 0 0 0 10px;
-                border-width: 0 0 2px 2px;
-              }
-
-              &:nth-child(4) .checkbox-label {
-                justify-content: flex-end;
-                align-items: flex-end;
-                border-radius: 0 0 10px 0;
-                border-width: 0 2px 2px 0;
+                width: 62px;
+                height: 62px;
+                margin: 0;
+                background: $color-border-gray-light;
               }
             }
+          }
 
-            input:checked~.checkbox-label {
-              border-color: $color-border-primary;
-              background: $color-border-primary-light;
-            }
+          .multi-option {
+            display: flex;
+            gap: 8px;
+            height: 40px;
 
-
-            .checkbox-label {
-              width: 62px;
-              height: 62px;
+            >.form-wrap {
+              flex: 1;
               margin: 0;
-              background: $color-border-gray-light;
+            }
+          }
+
+          .print-option {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            .option-form {
+              display: inline-block;
+
+              input {
+                width: 100px;
+              }
             }
           }
         }
 
-        .multi-option {
-          display: flex;
-          gap: 8px;
-          height: 40px;
-
-          >.form-wrap {
+        .btn-wrap {
+          &.multi-option {
             flex: 1;
-            margin: 0;
+            gap: 8px;
+
+            [class^=btn-] {
+              flex: 1;
+              margin: 0;
+            }
           }
         }
 
-        .print-option {
+        .width-436 {
+          width: calc(50% - 100px);
+        }
+
+        >.inner-wrap {
           display: flex;
-          align-items: center;
           flex-wrap: wrap;
-          gap: 8px;
+          align-items: center;
+          gap: 12px 8px;
+          margin: 4px 0;
 
-          .option-form {
-            display: inline-block;
-
-            input {
-              width: 100px;
-            }
+          +.inner-wrap {
+            margin-top: 8px;
           }
         }
-      }
 
-      .btn-wrap {
-        &.multi-option {
-          flex: 1;
-          gap: 8px;
-
-          [class^=btn-] {
-            flex: 1;
-            margin: 0;
-          }
+        >.checkbox-wrap,
+        >.radio-wrap,
+        >.toggle-wrap {
+          min-height: 40px;
         }
-      }
-
-      .width-436 {
-        width: calc(50% - 100px);
-      }
-
-      // [class^=guide-] {
-      //   margin-top: 0;
-      // }
-
-      >.inner-wrap {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 12px 8px;
-        margin: 4px 0;
-
-        +.inner-wrap {
-          margin-top: 8px;
-        }
-      }
-
-      >.checkbox-wrap,
-      >.radio-wrap,
-      >.toggle-wrap {
-        min-height: 40px;
       }
     }
 
     &.columns-1 {
       grid-template-columns: 1fr;
-
-      dd {
-        padding-left: 0;
-      }
     }
 
     &.columns-4 {
-      grid-template-columns: 120px 1fr 200px 1fr;
-
-      >dt {
-        &:nth-of-type(even) {
-          margin-left: 80px;
-        }
-      }
+      grid-template-columns: 1fr 1fr;
     }
 
     &+.title-wrap {
@@ -1050,37 +1039,13 @@
     }
 
     .row-span-2 {
-      grid-row: 1 / 4;
       grid-row-end: span 3;
-
-      +dt+dd+dt {
-        margin-left: 80px;
-      }
-
-      &.--end {
-        grid-row: 2 / 5;
-        grid-column: 3;
-
-      }
-
     }
-
-    dd.row-span-2.--end {
-      grid-column: 4;
-
-      +dt+dd+dt {
-        margin-left: 0;
-      }
-    }
-
-    // &:not(.columns-4) {
-    //   .form-wrap.file {
-    //     width: calc(50% - 100px);
-    //   }
-    // }
   }
 
   .--add-option {
+    grid-template-columns: 120px 1fr;
+    gap: 20px 4px;
     width: 100%;
     margin-top: 20px;
 
@@ -1107,7 +1072,12 @@
 
     >.option-item:first-of-type {
       >.product-option {
+        grid-template-columns: 120px 1fr;
+        gap: 20px 4px;
         padding: 0;
+        >dt {
+          padding: 9px 0;
+        }
       }
     }
   }
@@ -1120,10 +1090,6 @@
 
     +.option-item {
       margin-top: 20px;
-    }
-
-    dt {
-      padding: 9px 0;
     }
 
     .form-option {

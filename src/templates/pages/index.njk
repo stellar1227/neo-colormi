@@ -10,7 +10,7 @@
         }
         tr {
             display: grid;
-            grid-template-columns: 13% 13% 13% 13% 1fr 10% 15%;
+            grid-template-columns: 13% 13% 13% 1fr 10% 15%;
             border-bottom: 1px solid #d6d6d6;
         }
         thead tr {
@@ -29,7 +29,7 @@
         td {
             padding: 12px 14px;
         }
-        td:nth-child(6) {
+        td:nth-child(5) {
             text-align: center;
         }
         td a {
@@ -87,31 +87,28 @@
             td {
                 padding: 3px 5px;
             }
-            td:nth-child(1) {
-                display: none;
-            }
+            td:nth-child(1),
             td:nth-child(2),
-            td:nth-child(3),
-            td:nth-child(4) {
+            td:nth-child(3) {
                 width: 16%;
             }
-            td:nth-child(5) {
+            td:nth-child(4) {
                 display: block;
                 width: 40%;
             }
-            td:nth-child(6) {
+            td:nth-child(5) {
                 width: 12%;
                 text-align: left;
             }
-            td:nth-child(7) {
+            td:nth-child(6) {
                 width: 100%;
                 padding: 3px 8px;
             }
-            td:nth-child(7) p {
+            td:nth-child(6) p {
                 position: relative;
                 display: inline;
             }
-            td:nth-child(7) p::after {
+            td:nth-child(6) p::after {
                 content: '';
                 display: inline-block;
                 position: absolute;
@@ -130,7 +127,6 @@
         <table>
             <thead>
                 <tr>
-                    <th>1depth</th>
                     <th>2depth</th>
                     <th>3depth</th>
                     <th>4depth</th>
@@ -141,7 +137,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
                     <td>designSystem</td>
                     <td></td>
                     <td></td>
@@ -154,7 +149,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>code snippets</td>
                     <td></td>
                     <td></td>
@@ -167,7 +161,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>loadingSpinner</td>
                     <td></td>
                     <td></td>
@@ -180,7 +173,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>main</td>
                     <td></td>
                     <td></td>
@@ -195,11 +187,10 @@
                     </td>
                 </tr>
                 <tr class="depth-1">
-                    <td colspan="7">제품</td>
+                    <td colspan="6">제품</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>오피스/문구</td>
                     <td></td>
                     <td>메모장</td>
                     <td>
@@ -215,6 +206,19 @@
                 <tr>
                     <td></td>
                     <td></td>
+                    <td>카드/편지지</td>
+                    <td>
+                        <a href='./PD057S.html'>pages/PD057S.html</a>
+                    </td>
+                    <td>
+                        <span></span>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>책자</td>
                     <td></td>
                     <td>무선제본</td>
                     <td>
@@ -224,12 +228,11 @@
                         <span>완료</span>
                     </td>
                     <td>
-                        <p>내지 추가</p>
+                        <p>내지 추가, 간편주문 옵션</p>
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>출력</td>
                     <td></td>
                     <td>낱장인쇄</td>
                     <td>
@@ -242,11 +245,52 @@
                         <p>후가공-라운딩, 파일첨부 추가/삭제</p>
                     </td>
                 </tr>
-                <tr class="depth-1">
-                    <td colspan="7">장바구니</td>
+                <tr>
+                    <td>판촉물</td>
+                    <td></td>
+                    <td>단체티셔츠</td>
+                    <td>
+                        <a href='./PD059S.html'>pages/PD059S.html</a>
+                    </td>
+                    <td>
+                        <span></span>
+                    </td>
+                    <td>
+                        <p>별도 견적문의</p>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
+                    <td></td>
+                    <td>용지 사이즈 안내</td>
+                    <td>
+                        <a href='./P.html'>pages/P.html</a>
+                    </td>
+                    <td>
+                        <span></span>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>연당 매수 안내</td>
+                    <td>
+                        <a href='./P.html'>pages/P.html</a>
+                    </td>
+                    <td>
+                        <span></span>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr class="depth-1">
+                    <td colspan="6">장바구니</td>
+                </tr>
+                <tr>
                     <td>리스트</td>
                     <td></td>
                     <td></td>
@@ -262,7 +306,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>옵션변경</td>
                     <td></td>
                     <td>
@@ -276,10 +319,9 @@
                     </td>
                 </tr>
                 <tr class="depth-1">
-                    <td colspan="7">주문/결제</td>
+                    <td colspan="6">주문/결제</td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>메인</td>
                     <td></td>
                     <td></td>
@@ -295,7 +337,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>배송지 변경</td>
                     <td></td>
                     <td>
@@ -309,7 +350,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>주문 완료</td>
                     <td></td>
                     <td></td>
@@ -324,10 +364,9 @@
                     </td>
                 </tr>
                 <tr class="depth-1">
-                    <td colspan="7">마이페이지</td>
+                    <td colspan="6">마이페이지</td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>대시보드</td>
                     <td></td>
                     <td></td>
@@ -342,7 +381,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>주문배송조회</td>
                     <td></td>
                     <td></td>
@@ -358,7 +396,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>주문상세 (팝업)</td>
                     <td></td>
                     <td>
@@ -371,7 +408,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>배송조회</td>
                     <td></td>
                     <td>
@@ -383,7 +419,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>결제대기</td>
                     <td></td>
                     <td></td>
@@ -398,7 +433,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>교정확인</td>
                     <td></td>
                     <td></td>
@@ -413,7 +447,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>쿠폰</td>
                     <td>리스트</td>
                     <td></td>
@@ -428,7 +461,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>이용후기</td>
                     <td>리스트</td>
                     <td></td>
@@ -443,7 +475,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>이용후기</td>
                     <td>작성/수정</td>
@@ -460,7 +491,6 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td>조회</td>
                     <td>
                         <a href='./CS902P.html'>pages/CS902P.html</a>
@@ -473,7 +503,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>1:1 문의</td>
                     <td>리스트</td>
                     <td></td>
@@ -489,7 +518,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>상세보기</td>
                     <td></td>
                     <td>
@@ -504,7 +532,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>1:1 문의하기</td>
                     <td></td>
                     <td>
@@ -518,7 +545,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>배송지관리</td>
                     <td>리스트</td>
                     <td></td>
@@ -534,7 +560,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>배송지</td>
                     <td>추가/변경</td>
                     <td>
@@ -548,10 +573,9 @@
                     </td>
                 </tr>
                 <tr class="depth-1">
-                    <td colspan="7">고객센터</td>
+                    <td colspan="6">고객센터</td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>견적문의</td>
                     <td>리스트</td>
                     <td></td>
@@ -567,7 +591,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>작성</td>
                     <td></td>
                     <td>
@@ -582,7 +605,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>상세</td>
                     <td></td>
                     <td>
@@ -594,7 +616,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>공지사항</td>
                     <td></td>
                     <td></td>
@@ -609,7 +630,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>이벤트</td>
                     <td></td>
                     <td></td>
@@ -625,7 +645,6 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>상세</td>
                     <td></td>
                     <td>
@@ -639,10 +658,9 @@
                     </td>
                 </tr>
                 <tr class="depth-1">
-                    <td colspan="7">회원</td>
+                    <td colspan="6">회원</td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>로그인</td>
                     <td></td>
                     <td></td>
@@ -657,7 +675,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>로그인</td>
                     <td></td>
                     <td></td>

@@ -573,13 +573,25 @@
       }
 
       .discount-price {
-        @include font-body-xsmall;
+        @include font-body-xxsmall;
         color: $color-text-subcolor;
+
+        strong {
+          padding-right: 4px;
+          @include font-body-xsmall;
+          vertical-align: -1px;
+        }
       }
 
       .total-price {
-        @include font-body-large-bold;
+        @include font-body-small-bold;
         color: $color-text-basic;
+
+        strong {
+          padding-right: 4px;
+          @include font-body-large-bold;
+          vertical-align: -1px;
+        }
       }
     }
 
@@ -773,11 +785,13 @@
     margin-bottom: 0;
   }
 }
+
 .util-wrap {
   +.product-order {
     margin-top: 40px;
   }
 }
+
 .product-order {
   margin-bottom: 40px;
 
@@ -851,7 +865,7 @@
       display: grid;
       grid-template-columns: 120px 1fr;
       gap: 0 4px;
-    
+
       >dt {
         padding: 9px 0;
         @include font-body-small;
@@ -1068,6 +1082,7 @@
 
         .icon-plus {
           margin-right: 6px;
+          vertical-align: -6px;
         }
       }
 
@@ -1085,6 +1100,7 @@
         grid-template-columns: 120px 1fr;
         gap: 20px 4px;
         padding: 0;
+
         >dt {
           padding: 9px 0;
         }
@@ -1361,6 +1377,7 @@
           left: auto;
           right: 6.5px;
         }
+
         &::after {
           right: 2px;
         }
@@ -1378,7 +1395,7 @@
     border: 1px solid $Line-line;
     @include font-body-small-bold;
     box-shadow: none;
-    
+
     span {
       position: relative;
       padding: 0 24px 0 0 !important;
@@ -1389,6 +1406,7 @@
         left: auto;
         right: 6.5px;
       }
+
       &::after {
         right: 2px;
       }

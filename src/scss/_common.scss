@@ -547,13 +547,15 @@ h5 {
   &.address {
 
     .address-item {
+      display: flex;
+      gap: 8px;
+
       input {
         width: 46%;
       }
 
       [class^=btn-] {
         width: 110px;
-        margin-left: 8px;
         vertical-align: top;
       }
     }
@@ -663,7 +665,7 @@ h5 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0 8px;
+    gap: 8px;
     @include font-body-small;
     color: $color-text-basic;
 
@@ -1142,18 +1144,10 @@ h5 {
 }
 
 // button
-.content {
-  >.btn-wrap {
-
-    [class^=btn-]+[class^=btn-] {
-      margin-left: 8px;
-    }
-  }
-}
-
 .btn-wrap {
   display: flex;
   align-items: center;
+  gap: 8px;
 
   &.confirm {
     justify-content: center;
@@ -1181,11 +1175,6 @@ h5 {
 
     [class^=btn-] {
       width: 100%;
-      margin-left: 0;
-
-      +[class^=btn-] {
-        margin-top: 8px;
-      }
     }
   }
 }
@@ -1588,10 +1577,7 @@ h5 {
 
         .btn-wrap {
           justify-content: center;
-
-          [class^=btn-]+[class^=btn-] {
-            margin-left: 8px;
-          }
+          // gap: 8px;
         }
       }
 

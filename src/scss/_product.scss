@@ -535,6 +535,12 @@
       }
     }
 
+    .item {
+      .btn-wrap {
+        gap: 4px;
+      }
+    }
+
     .product-name {
       @include font-heading-medium-bold;
       color: $color-text-basic;
@@ -790,6 +796,10 @@
   +.product-order {
     margin-top: 40px;
   }
+
+  .btn-wrap {
+    gap: 4px;
+  }
 }
 
 .product-order {
@@ -1012,7 +1022,6 @@
 
             [class^=btn-] {
               flex: 1;
-              margin: 0;
             }
           }
         }
@@ -1119,11 +1128,6 @@
     }
 
     .form-option {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-
       strong {
         @include font-body-small;
         color: $color-text-subcolor;
@@ -1313,6 +1317,10 @@
         }
       }
     }
+  }
+
+  .btn-wrap {
+    gap: 4px;
   }
 }
 

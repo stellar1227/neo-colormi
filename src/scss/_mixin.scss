@@ -51,43 +51,47 @@
 
 // body
 @mixin font-body-xxsmall {
-  @include build-font($font-weight-medium, $font-size-body-xxsmall, 19px);
+  @include build-font($font-weight-medium, $font-size-body-xxsmall, 1.9rem);
 }
 
 @mixin font-body-xsmall {
-  @include build-font($font-weight-regular, $font-size-body-xsmall, 20px);
+  @include build-font($font-weight-regular, $font-size-body-xsmall, 2rem);
 }
 
 @mixin font-body-small {
-  @include build-font($font-weight-regular, $font-size-body-small, 22px);
+  @include build-font($font-weight-regular, $font-size-body-small, 2.2rem);
 }
 
 @mixin font-body-medium {
-  @include build-font($font-weight-regular, $font-size-body-medium, 24px);
+  @include build-font($font-weight-regular, $font-size-body-medium, 2.4rem);
 }
 
 @mixin font-body-large {
-  @include build-font($font-weight-regular, $font-size-body-large, 27px);
+  @include build-font($font-weight-regular, $font-size-body-large, 2.7rem);
 }
 
 @mixin font-body-xxsmall-bold {
-  @include build-font($font-weight-semibold, $font-size-body-xxsmall, 19px);
+  @include build-font($font-weight-semibold, $font-size-body-xxsmall, 1.9rem);
 }
 
 @mixin font-body-xsmall-bold {
-  @include build-font($font-weight-semibold, $font-size-body-xsmall, 20px);
+  @include build-font($font-weight-semibold, $font-size-body-xsmall, 2rem);
 }
 
 @mixin font-body-small-bold {
-  @include build-font($font-weight-semibold, $font-size-body-small, 22px);
+  @include build-font($font-weight-semibold, $font-size-body-small, 2.2rem);
 }
 
 @mixin font-body-medium-bold {
-  @include build-font($font-weight-semibold, $font-size-body-medium, 24px);
+  @include build-font($font-weight-semibold, $font-size-body-medium, 2.4rem);
 }
 
 @mixin font-body-large-bold {
-  @include build-font($font-weight-bold, $font-size-body-large, 27px);
+  @include build-font($font-weight-bold, $font-size-body-large, 2.7rem);
+}
+
+@mixin font-body-regular {
+  @include build-font($font-weight-regular, $font-size-body-regular, normal);
 }
 
 // heading
@@ -128,7 +132,7 @@
   padding: 1px 4px;
   border-radius: 2px;
   background: $color-border-gray-light;
-  @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 12px);
+  @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 1.2rem);
   color: $color-text-subcolor;
 }
 
@@ -309,7 +313,7 @@
   width: 100vw;
   height: 100vh;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 12;
   background: rgba(0, 0, 0, .5);
 
   // &::before {
@@ -333,7 +337,6 @@
     border-radius: 8px;
     border: 1px solid $color-border-gray;
     background: $color-background-white;
-    z-index: 10;
 
     .btn-wrap.close {
       position: absolute;

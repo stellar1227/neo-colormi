@@ -3,12 +3,15 @@
 
 /* Root 공통 스타일 */
 html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   -webkit-text-size-adjust: none;
-  background-color: #fff;
-  color: #4c4c4c;
-
+  background-color: $color-background-white;
+  color: $color-text-basic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 10px;
   font-family:
     // 'Montserrat',
     'Pretendard Variable', Pretendard,
@@ -27,16 +30,18 @@ html {
     sans-serif;
   line-height: normal;
   letter-spacing: 0;
+  box-sizing: border-box;
 }
 
-html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  color: #4c4c4c;
+  height: auto;
+  color: $color-text-basic;
+  font-size: 1.4rem;
+  @include font-body-regular;
 }
 
 body,
@@ -90,7 +95,6 @@ iframe,
 ::after {
   margin: 0;
   padding: 0;
-  font: inherit;
   box-sizing: border-box;
 }
 

@@ -133,102 +133,31 @@
     <section
       class="content-box">
       <!-- 기본정보 -->
-      <div class="product-order">
-        <div class="title-wrap">
-          <h5 class="required">기본정보</h5>
-          <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+      <div class="product-order-wrap">
+        <div class="product-order">
+          <div class="title-wrap">
+            <h5 class="required">기본정보</h5>
+            <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+          </div>
+          <div class="product-option">
+            <dl class="column-item">
+              <dt>종류</dt>
+              <dd>
+                <div class="form-field">
+                  <div class="form-wrap select">
+                    <select class="btn-select">
+                      <option>선택</option>
+                    </select>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
         </div>
-        <div class="product-option columns-4">
-          <dl class="column-item">
-            <dt>구성</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>메모장</option>
-                    <option>메모장 커버</option>
-                    <option>메모장 세트(커버1개+메모장2부)</option>
-                  </select>
-                </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>매수</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>50매</option>
-                  </select>
-                </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>사이즈</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>A5</option>
-                    <option>B5</option>
-                    <option>A4</option>
-                  </select>
-                </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>수량</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-inner print-option">
-                  <p class="option-form">
-                    <input
-                    type="number" placeholder="Placeholder"/>
-                  <!-- <span class="guide-basic">부</span> -->
-                  </p>
-                  <span class="guide-sub --small">
-                    <em>10</em>부 단위로 주문 가능
-                  </span>
-                </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>커버각인</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>안함</option>
-                    <option>추가</option>
-                  </select>
-                </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>파일첨부</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap file">
-                  <label class="btn-primary --small">
-                    <input type="file"/>
-                    <span>파일첨부</span>
-                  </label>
-                  <span class="guide-sub">선택한 파일이 없습니다.</span>
-                  <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-                  <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-                  <button type="button" class="btn-del">
-                    <i class="delete">삭제</i>
-                  </button>
-                  <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
-                </div>
-              </div>
-            </dd>
-          </dl>
+        <div class="product-order">
+          <div class="util-wrap --right">
+            선택옵션
+          </div>
         </div>
       </div>
       {% include "components/productOrderBottom.njk" %}

@@ -396,7 +396,6 @@ h5 {
         padding-right: 2px;
       }
     }
-
   }
 
   &.--error,
@@ -624,7 +623,7 @@ h5 {
     gap: 8px;
     // width: calc(50% - 100px);
 
-    [class^=btn-] {
+    .btn-primary {
       width: 100px;
     }
 
@@ -636,21 +635,8 @@ h5 {
       line-height: 40px;
     }
 
-    .btn-del {
-      position: relative;
-      width: 24px;
-      height: 24px;
-      @include line-icon(cross, 13px);
-
-      i {
-        font-size: 0;
-      }
-    }
-
     .btn-util-add,
     .btn-util-del {
-      width: auto;
-
       span {
         vertical-align: -2px;
       }
@@ -674,6 +660,17 @@ h5 {
         width: 280px;
       }
     }
+  }
+}
+
+.btn-del {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  @include line-icon(cross, 13px);
+
+  i {
+    font-size: 0;
   }
 }
 
@@ -1634,7 +1631,8 @@ h5 {
 
   &-sub,
   &-sub-deep,
-  &-basic {
+  &-basic,
+  &-primary {
     @include font-body-small;
     margin-top: 16px;
 
@@ -1694,6 +1692,10 @@ h5 {
   &-basic {
     color: $color-text-basic;
   }
+
+  &-primary {
+    color: $color-text-primary;
+  }
 }
 
 .description {
@@ -1714,6 +1716,21 @@ h5 {
     padding: 10px 0px;
     border-top: 1px solid $Line-line;
     border-bottom: 1px solid $Line-line;
+
+    &.--large {
+      padding: 20px 0;
+    }
+  }
+
+  &.line-box-deep {
+    @include desc-box;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 32px 16px;
+    border-top: 1px solid $Line-line-3;
+    border-bottom: 1px solid $Line-line-3;
 
     &.--large {
       padding: 20px 0;

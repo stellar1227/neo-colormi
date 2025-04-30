@@ -536,6 +536,10 @@
     }
 
     .item {
+      >.desc-box {
+        margin-top: 16px;
+      }
+
       .btn-wrap {
         gap: 4px;
       }
@@ -652,6 +656,10 @@
           margin-left: 20px;
           padding-left: 20px;
           border-left: 1px solid $Line-line;
+
+          >.desc-box {
+            margin-top: 0;
+          }
         }
 
         .top-area {
@@ -1006,7 +1014,9 @@
             gap: 8px;
 
             .option-form {
-              display: inline-block;
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
 
               input {
                 width: 100px;
@@ -1072,6 +1082,41 @@
 
     .--v-center {
       align-items: center;
+    }
+
+    &.--select-option {
+      gap: 0;
+      margin-top: 20px;
+      padding-top: 0;
+      border-top: 1px solid $Line-line-2;
+
+      .column-item-wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 20px;
+        background: $color-background-gray-subtler;
+        border-bottom: 1px solid $Line-line-2;
+
+        .column-item {
+          flex: 1;
+
+          >dd {
+            align-items: flex-end;
+          }
+        }
+
+        &.--no-item {
+          .column-item {
+            grid-template-columns: 1fr;
+
+            [class^=guide-] {
+              padding: 9px 0;
+              text-align: center;
+            }
+          }
+        }
+      }
     }
   }
 

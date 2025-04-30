@@ -34,25 +34,27 @@ h5 {
   @include font-heading-xsmall-bold;
 }
 
+.page-title+.content-box,
+.content-box+.btn-wrap.confirm,
+.content-box+.btn-wrap.vertical,
+.btn-wrap.link+.content-box,
+.content-box+.content-box {
+  margin-top: 48px;
+}
+
 #container {
   display: flex;
+  gap: 0 20px;
 
   >.content {
     flex: 1;
+    margin: 48px 0;
   }
-}
-
-.page-title+section.content-box,
-section.content-box+.btn-wrap.confirm,
-section.content-box+.btn-wrap.vertical,
-.btn-wrap.link+section.content-box,
-section.content-box+section.content-box {
-  margin-top: 48px;
 }
 
 .side-wrap {
   width: 183px;
-  margin-right: 20px;
+  margin: 48px 0;
 
   .side-nav {
     margin-top: 40px;
@@ -253,6 +255,7 @@ section.content-box+section.content-box {
   }
 
   input {
+
     // readonly
     &.--basic {
       border: 1px solid $Line-line;
@@ -1075,18 +1078,21 @@ section.content-box+section.content-box {
           height: 106px;
         }
       }
+
       &.--a5 {
         .radio-img {
           width: 53px;
           height: 76px;
         }
       }
+
       &.--b5 {
         .radio-img {
           width: 65px;
           height: 92px;
         }
       }
+
       &.--none {
         .radio-img {
           width: 88px;
@@ -1125,7 +1131,7 @@ section.content-box+section.content-box {
         top: 50%;
         left: 50%;
         margin: 0;
-        @include font-body-small;
+        @include font-body-xxsmall;
         color: $color-text-subcolor-deep;
         transform: translate(-50%, -50%);
       }
@@ -1144,7 +1150,7 @@ section.content-box+section.content-box {
 }
 
 // button
-#container {
+.content {
   >.btn-wrap {
 
     [class^=btn-]+[class^=btn-] {
@@ -2053,12 +2059,12 @@ button[type='button'] {
   max-width: 386px;
   margin: 120px auto;
 
-  .page-title+section.content-box,
-  section.content-box+section.content-box {
+  .page-title+.content-box,
+  .content-box+.content-box {
     margin-top: 40px;
   }
 
-  section.content-box+.btn-wrap.vertical {
+  .content-box+.btn-wrap.vertical {
     padding-top: 40px;
     margin-top: 40px;
     border-top: 1px solid $Line-line;

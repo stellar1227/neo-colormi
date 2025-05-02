@@ -597,12 +597,15 @@ h5 {
         }
 
         &:focus~.search-bg,
+        // &:not(:placeholder-shown)~.search-bg,
         &:hover~.search-bg {
           border: 2px solid transparent;
           background-image: linear-gradient($color-background-white, $color-background-white), linear-gradient(180deg, $color-border-primary-lighter 0%, #F4D360 42%, $color-border-primary 100%);
 
           ~.util .btn-search {
-            background-image: url('../img/icon/icon-search-on.png');
+            &::before {
+              background: svgIcon(search, '24A3FF') no-repeat center center/24px 24px;
+            }
           }
         }
       }
@@ -615,12 +618,21 @@ h5 {
           width: 44px;
           height: 44px;
           margin-left: 14px;
+          align-items: center;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: svgIcon(search, '4c4c4c') no-repeat center center/24px 24px;
+          }
         }
       }
 
     }
 
-    &.completed input~.search-bg {
+    &.--completed input~.search-bg {
       border: 2px solid transparent;
       background-image: linear-gradient($color-background-white, $color-background-white), conic-gradient(from 180deg at 50% 50%, #F4A0BC 0deg, #F1CB40 101.39984965324402deg, #92D1FF 270.5998492240906deg, #F4A0BC 360deg);
     }
@@ -2264,24 +2276,24 @@ button[type='button'] {
   }
 }
 
-.icon {
-  &.--small {
-    @include sprite-icons(16px);
-  }
+// .icon {
+//   &.--small {
+//     @include sprite-icons(16px);
+//   }
 
-  &.--medium {
-    @include sprite-icons(24px);
-  }
+//   &.--medium {
+//     @include sprite-icons(24px);
+//   }
 
-  &.--large {
-    @include sprite-icons(36px);
-  }
+//   &.--large {
+//     @include sprite-icons(36px);
+//   }
 
-  &.--xlarge {
-    @include sprite-icons(46px);
-  }
+//   &.--xlarge {
+//     @include sprite-icons(46px);
+//   }
 
-  &.--xxlarge {
-    @include sprite-icons(64px);
-  }
-}
+//   &.--xxlarge {
+//     @include sprite-icons(64px);
+//   }
+// }

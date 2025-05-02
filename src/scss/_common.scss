@@ -576,11 +576,13 @@ h5 {
       position: relative;
 
       input {
+        position: relative;
         height: 48px;
         padding-right: 86px;
         border: none;
         border-radius: 8px;
         background: transparent;
+        z-index: 1;
 
         ~.search-bg {
           display: block;
@@ -593,7 +595,7 @@ h5 {
           border: 1px solid $Line-line-3;
           background-origin: border-box;
           background-clip: content-box, border-box;
-          z-index: -1;
+          z-index: 0;
         }
 
         &:focus~.search-bg,

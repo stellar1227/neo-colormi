@@ -122,15 +122,28 @@ header {
 .search-wrap {
   position: fixed;
   top: 0;
-  display: flex;
-  flex-direction: row;
   width: 100%;
-  background: $color-background-white;
+  height: 100vh;
+  background: $color-alpha-inverse25;
   z-index: 11;
 
-  .search-content {
+  >.search {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: $color-background-white;
+  }
+
+  .search-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 1200px;
     margin: 0 auto;
+  }
+
+  .search-content {
+    flex: 1;
 
     .form-field.search {
       margin: 12px 0;
@@ -139,12 +152,47 @@ header {
     .result-item {
       display: flex;
       flex-wrap: wrap;
-      gap: 0 32px;
       margin: 48px 0;
 
       .result-item-list {
+        overflow-y: auto;
         display: flex;
+        flex-direction: column;
         flex: 1;
+        max-height: 336px;
+        padding-right: 32px;
+
+        .no-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 48px 16px;
+          text-align: center;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            margin-bottom: 40px;
+            border: 1px solid $color-border-gray;
+          }
+
+          &.--default {
+            &::before {
+              width: 261px;
+              height: 193px;
+              background: $color-border-gray;
+            }
+          }
+
+          &.--no-result {
+            &::before {
+              width: 161px;
+              height: 133px;
+              background: $color-border-gray;
+            }
+          }
+        }
 
         >ul {
           width: 100%;
@@ -189,10 +237,10 @@ header {
     }
   }
 
-  .btn-close {
+  .btn-wrap {
     position: absolute;
-    top: 24px;
-    right: 26px;
+    top: 11px;
+    right: 0;
   }
 }
 

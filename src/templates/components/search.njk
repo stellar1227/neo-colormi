@@ -1,69 +1,85 @@
-<div class="search-wrap" style="display: none;">
-  <div class="logo hide">
-    <a href="/" class="logo-link">
-      <img src="/img/img/colormi-logo.png" alt="칼라미" class="logo-img"/>
-      <p>고품질 디지털 인쇄 전문</p>
-    </a>
-  </div>
-  <div class="search-content">
-    <div
-      class="form-field search --completed">
-      <!-- 검색 버튼 누른 후 클래스 추가 .--completed -->
-      <div class="form-wrap">
-        <input type="text" placeholder="search"/>
-        <i class="search-bg"></i>
-        <div class="util">
-          <button type="button" class="btn-del">
-            <i>삭제</i>
-          </button>
-          <button type="button" class="btn-search icon">
-            <i>검색</i>
-          </button>
+<div class="search-wrap">
+  <div class="search">
+    <div class="search-inner">
+      <div class="logo">
+        <a href="/" class="logo-link">
+          <img src="/img/img/colormi-logo.png" alt="칼라미" class="logo-img"/>
+          <p>고품질 디지털 인쇄 전문</p>
+        </a>
+      </div>
+      <div class="search-content">
+        <div
+          class="form-field search --completed">
+          <!-- 검색 버튼 누른 후 클래스 추가 .--completed -->
+          <div class="form-wrap">
+            <input type="text" placeholder="search"/>
+            <i class="search-bg"></i>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+              <button type="button" class="btn-search icon">
+                <i>검색</i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="result-item-list">
+            <div
+              class="no-item --default">
+              <!-- 검색결과없음 .--no-result/초기 화면 .--default -->
+              <p class="guide-basic --large-bold">찾으시는 상품이 있으신가요?</p>
+              <p class="guide-basic">상품명을 검색해보세요.<br/>다양한 상품이 준비되어 있습니다.</p>
+            </div>
+            <div
+              class="no-item --no-result">
+              <!-- 검색결과없음 .--no-result/초기 화면 .--default -->
+              <p class="guide-basic --large-bold">조건에 맞는 검색 결과가 없어요.</p>
+              <p class="guide-basic">찾으시는 검색 결과가 없네요.<br/>다른 검색어를 검색해보는 건 어떠세요?</p>
+            </div>
+            <ul>
+              <li>
+                <p class="item">
+                  <a href="#">결과(제품)</a>
+                </p>
+                <nav class="breadcrumb">
+                  <ol>
+                    <li>
+                      <strong>카테고리</strong>
+                    </li>
+                    <li>
+                      <strong>카테고리</strong>
+                    </li>
+                    <li>
+                      <strong>카테고리</strong>
+                    </li>
+                    <li>
+                      <strong>카테고리</strong>
+                    </li>
+                  </ol>
+                </nav>
+              </li>
+            </ul>
+          </div>
+          <div class="header-product-wrap">
+            <ul class="product-img">
+              <li><img src="" alt="상품이미지1 미리보기"></li>
+              <li><img src="" alt="상품이미지2 미리보기"></li>
+            </ul>
+            <div class="product-info">
+              <strong class="product-name">상품명</strong>
+              <p class="guide-sub --small">설명글이 나타나는 칸입니다.<br/>상품 설명은 필수 두 줄로 진행되며, 불가피할 경우 한 줄로 마무리 한다.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="result-item">
-      <div class="result-item-list">
-        <ul>
-          <li>
-            <p class="item">
-              <a href="#">결과(제품)</a>
-            </p>
-            <nav class="breadcrumb">
-              <ol>
-                <li>
-                  <strong>카테고리</strong>
-                </li>
-                <li>
-                  <strong>카테고리</strong>
-                </li>
-                <li>
-                  <strong>카테고리</strong>
-                </li>
-                <li>
-                  <strong>카테고리</strong>
-                </li>
-              </ol>
-            </nav>
-          </li>
-        </ul>
-      </div>
-      <div class="header-product-wrap">
-        <ul class="product-img">
-          <li><img src="" alt="상품이미지1 미리보기"></li>
-          <li><img src="" alt="상품이미지2 미리보기"></li>
-        </ul>
-        <div class="product-info">
-          <strong class="product-name">상품명</strong>
-          <p class="guide-sub --small">설명글이 나타나는 칸입니다.<br/>상품 설명은 필수 두 줄로 진행되며, 불가피할 경우 한 줄로 마무리 한다.</p>
-        </div>
+      <div class="btn-wrap">
+        <button class="btn-close">
+          <i>닫기</i>
+        </button>
       </div>
     </div>
-  </div>
-  <div class="search-close">
-    <button class="btn-close">
-      <i>닫기</i>
-    </button>
   </div>
 </div>
 <!-- // search -->

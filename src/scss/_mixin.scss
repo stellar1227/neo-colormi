@@ -90,10 +90,6 @@
   @include build-font($font-weight-bold, $font-size-body-large, 2.7rem);
 }
 
-@mixin font-body-regular {
-  @include build-font($font-weight-regular, $font-size-body-regular, normal);
-}
-
 // heading
 @mixin font-heading-xlarge-bold {
   @include build-font($font-weight-bold, $font-size-heading-xlarge, normal);
@@ -185,6 +181,7 @@
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
+  text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
 

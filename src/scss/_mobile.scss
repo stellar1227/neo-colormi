@@ -16,7 +16,7 @@
 
   #container {
     >.content {
-      margin: 20px;
+      margin: 40px 20px;
     }
   }
 
@@ -242,6 +242,140 @@
 
   .side-wrap {
     display: none;
+  }
+
+  // header
+  .top-banner-wrap {
+    display: none;
+  }
+
+  .header-top {
+    padding: 8px 20px;
+
+    .logo {
+      .logo-link {
+        padding: 0;
+
+        .logo-img {
+          width: 49px;
+        }
+
+        p {
+          display: none;
+        }
+      }
+    }
+
+    .util-menu-wrap .util-menu [class^=btn-] {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  header {
+    .gnb-wrap {
+      .gnb {
+        padding: 0 20px;
+      }
+
+      .util-menu-wrap {
+        display: none;
+      }
+    }
+  }
+
+  // footer
+  footer {
+    .footer-link-wrap {
+      .footer-link {
+        a {
+          padding: 8px 0;
+        }
+      }
+    }
+
+    .footer-wrap {
+      display: block;
+      padding: 32px 17px;
+      @include font-body-xxsmall;
+
+      .company {
+        text-align: center;
+      }
+
+      .contact {
+        width: 100%;
+      }
+
+      .info {
+        .info-inner {
+          margin: 24px 0;
+          text-align: center;
+
+          .info-chkbox {
+
+            &:checked {
+              ~dl {
+                display: block;
+              }
+
+              ~.info-label .checkbox-icon {
+                @include line-icon(up, 5px);
+
+                &::before,
+                &::after {
+                  background: $color-border-disabled;
+                }
+
+                &::before {
+                  left: calc(50% - 1.8px);
+                }
+
+                &::after {
+                  left: calc(50% + 1.8px);
+                }
+              }
+            }
+          }
+
+          .info-label {
+            display: inline-flex;
+            align-items: center;
+            margin: 10px 0;
+
+            .checkbox-label {
+              color: $color-text-subcolor-light;
+            }
+
+            .checkbox-icon {
+              position: relative;
+              width: 16px;
+              height: 16px;
+              font-size: 0;
+              @include line-icon(down, 5px);
+
+              &::before,
+              &::after {
+                background: $color-border-disabled;
+              }
+
+              &::before {
+                left: calc(50% - 1.8px);
+              }
+
+              &::after {
+                left: calc(50% + 1.8px);
+              }
+            }
+          }
+
+          dl {
+            display: none;
+          }
+        }
+      }
+
+    }
   }
 }
 

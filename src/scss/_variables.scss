@@ -119,8 +119,7 @@ $font-size: (
   'font-size-body-xsmall': 1.3rem,
   'font-size-body-small': 1.5rem,
   'font-size-body-medium': 1.7rem,
-  'font-size-body-large': 2rem,
-  'font-size-body-regular': 1.4rem
+  'font-size-body-large': 2rem
 );
 
 $font-weight: (
@@ -251,7 +250,6 @@ $font-size-body-xsmall: map.get($font-size, 'font-size-body-xsmall');
 $font-size-body-small: map.get($font-size, 'font-size-body-small');
 $font-size-body-medium: map.get($font-size, 'font-size-body-medium');
 $font-size-body-large: map.get($font-size, 'font-size-body-large');
-$font-size-body-regular: map.get($font-size, 'font-size-body-regular');
 
 // font-weight
 $font-weight-regular: map.get($font-weight, 'font-weight-regular');

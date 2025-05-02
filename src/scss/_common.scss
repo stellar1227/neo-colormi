@@ -348,6 +348,16 @@ h5 {
       }
     }
 
+    input {
+      &:not(:placeholder-shown) {
+        +.util {
+          .btn-del {
+            display: inline-flex;
+          }
+        }
+      }
+    }
+
     .util {
       position: absolute;
       right: 12px;
@@ -365,6 +375,7 @@ h5 {
         height: 16px;
 
         &.btn-del {
+          display: none;
           position: relative;
           background: $color-divider-gray-light;
           border-radius: 50%;
@@ -621,7 +632,13 @@ h5 {
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
-    // width: calc(50% - 100px);
+
+    [class^=btn-] {
+
+      input[type='file'] {
+        display: none;
+      }
+    }
 
     .btn-primary {
       width: 100px;
@@ -671,6 +688,17 @@ h5 {
 
   i {
     font-size: 0;
+  }
+
+  &.--small {
+    width: 20px;
+    height: 20px;
+
+    &::before,
+    &::after {
+      height: 11px;
+      background: $color-border-disabled;
+    }
   }
 }
 

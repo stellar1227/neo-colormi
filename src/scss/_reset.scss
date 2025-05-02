@@ -41,7 +41,7 @@ body {
   height: auto;
   color: $color-text-basic;
   font-size: 1.4rem;
-  @include font-body-regular;
+  @include font-body-small;
 }
 
 body,
@@ -164,6 +164,10 @@ address {
   overflow: hidden;
   font-size: 0;
   line-height: 0;
+}
+
+.hide {
+  display: none;
 }
 
 #skipnavi {

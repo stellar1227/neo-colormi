@@ -1,6 +1,6 @@
 {
   "name": "neo-colormi",
-  "type": "module", 
+  "type": "module",
   "scripts": {
     "dev": "gulp dev",
     "copy:images": "node scripts/copy-images.js"

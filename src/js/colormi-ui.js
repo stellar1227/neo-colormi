@@ -165,3 +165,35 @@ document.addEventListener('DOMContentLoaded', () => {
     attributeFilter: ['class']
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper('.my-swiper', {
+    loop: true,
+    centeredSlides: true,    // 활성 슬라이드를 가운데로
+    slidesPerView: 1,      // 한 화면에 1.2개 보여줘서 옆에 0.2개 보이게
+    spaceBetween: 20,        // 슬라이드 사이 간격
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      renderFraction: function (currentClass, totalClass) {
+        const realSlides = Array.from(this.slides).filter(
+          slide => !slide.classList.contains('swiper-slide-duplicate')
+        );
+        const realTotal = realSlides.length;
+        const current = this.realIndex + 1;
+
+        return `<span class="${currentClass}">${current}</span>` +
+          ` / ` +
+          `<span class="${totalClass}">${realTotal}</span>`;
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+});

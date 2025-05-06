@@ -280,25 +280,32 @@
   }
 }
 
+$icon-star-off: '../img/icon/icon-star-off.png';
+$icon-star-on: '../img/icon/icon-star-on.png';
+$icon-star-on-black: '../img/icon/icon-star-on-black.png';
+
+%star-base {
+  background: var(--star-off) repeat-x left center/auto 100%;
+
+  .rating-num {
+    background: var(--star-on) repeat-x left center/auto 100%;
+  }
+}
+
 .rating-wrap {
   display: flex;
   align-items: center;
 
   .rating-container {
     display: inline-flex;
-    width: 80px;
-    height: 16px;
-    background: url('../img/icon/icon-star-off.png') repeat-x left center/auto 100%;
-
-    .rating-num {
-      display: inline-block;
-      height: 100%;
-      background: url('../img/icon/icon-star-on.png') repeat-x left center/auto 100%;
-    }
+    --star-off: url(#{$icon-star-off});
+    --star-on: url(#{$icon-star-on});
+    @extend %star-base;
+    @include rating-size(16px);
 
     &.input {
-      flex-direction: row-reverse;
       background: none;
+      flex-direction: row-reverse;
 
       .ipt-rating {
         display: none;
@@ -306,17 +313,14 @@
 
       label {
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        background: url('../img/icon/icon-star-off.png') no-repeat left center/auto 100%;
         cursor: pointer;
+        background: var(--star-off) no-repeat left center/auto 100%;
 
         &::before {
           content: '';
           display: inline-block;
           width: 100%;
           height: 100%;
-          margin: 0;
         }
       }
 
@@ -326,7 +330,7 @@
       .ipt-rating:checked+label:hover,
       .ipt-rating:checked~label:hover~label,
       label:hover~.ipt-rating:checked~label {
-        background: url('../img/icon/icon-star-on.png') no-repeat left center / auto 100%;
+        background: var(--star-on) no-repeat left center/auto 100%;
       }
     }
   }
@@ -350,31 +354,13 @@
 
   &.--medium {
     .rating-container {
-      width: 120px;
-      height: 24px;
-
-      &.input {
-        label {
-          display: inline-block;
-          width: 24px;
-          height: 24px;
-        }
-      }
+      @include rating-size(24px);
     }
   }
 
   &.--large {
     .rating-container {
-      width: 160px;
-      height: 32px;
-
-      &.input {
-        label {
-          display: inline-block;
-          width: 32px;
-          height: 32px;
-        }
-      }
+      @include rating-size(32px);
     }
 
     .text {
@@ -385,8 +371,8 @@
   }
 
   &.black {
-    .rating-num {
-      background-image: url('../img/icon/icon-star-on-black.png');
+    .rating-container {
+      --star-on: url(#{$icon-star-on-black});
     }
   }
 }
@@ -890,6 +876,10 @@
 
   .btn-wrap {
     gap: 4px;
+
+    &.--tab {
+      gap: 8px;
+    }
   }
 }
 

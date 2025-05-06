@@ -1,5 +1,10 @@
 {% extends "layouts/base.njk" %}
 {% set title = "메인" %}
 {% block content %}
+  <link rel="stylesheet" href="/css/swiper-bundle.min.css"/>
+  <script src="/js/swiper-bundle.min.js"></script>
+  <div class="main-banner-wrap">
+    {% include "components/mainSwiper.njk" %}
+  </div>
   <div class="content"></div>
 {% endblock %}

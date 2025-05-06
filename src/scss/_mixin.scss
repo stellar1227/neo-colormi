@@ -554,6 +554,16 @@
   }
 }
 
+@mixin rating-size($h) {
+  width: $h * 5;
+  height: $h;
+
+  &.input label {
+    width: $h;
+    height: $h;
+  }
+}
+
 // sprite-icons
 $sprite-path: '../img/icon/icon-sprite.png';
 $sprite-cols: 17; // 한 줄에 아이콘 갯수

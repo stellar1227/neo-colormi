@@ -940,4 +940,41 @@ footer {
   }
 }
 
-@media (max-width:700px) {}
+.main-banner-wrap {
+  max-width: 2560px;
+  min-width: 1200px;
+
+  .swiper-wrapper {
+    // width: 1200px;
+
+    .swiper-slide {
+
+      .item {
+        display: flex;
+        width: 996px;
+        height: 420px;
+        background: $color-border-gray-light;
+      }
+    }
+  }
+
+  .swiper-util {
+    display: flex;
+    justify-content: center;
+
+    .swiper-pagination {
+      position: relative;
+      display: inline-flex;
+      width: auto;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: relative;
+      display: inline-flex;
+      left: auto;
+      right: auto;
+    }
+  }
+
+}

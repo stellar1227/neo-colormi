@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  //searchMenu Open, Close
+  //searchMenu Open, Close - header
   const searchMenu = document.querySelector('#searchWrap');
   const searchBtn = document.querySelector('#btnSearch');
   const searchCloseBtn = document.querySelector('#btnSearchClose');
@@ -56,18 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchMenu.classList.remove('--active');
   });
 
-  //header gnb
-  const allMenu = document.querySelector('#allMenuWrap');
-  const allMenuBtn = document.querySelector('#btnAllMenu');
-  const allMenuCloseBtn = document.querySelector('#btnAllMenuClose');
-  
-  allMenuBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    allMenu.classList.toggle('--active');
-  }
-  );
-
-  //family site
+  //family site - header
   const familySite = document.querySelector('#quickMenu');
   const familySiteBtn = document.querySelector('#btnQuickMenuSelect');
   familySiteBtn.addEventListener('click', (e) => {
@@ -76,6 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.closest('.quick-menu-wrap').classList.toggle('--active');
   }
   );
+
+  //gnb menu - header
+  initGnb();
 
 });
 
@@ -235,8 +227,7 @@ function loadingLottie() {
   });
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
+function initGnb(){
   const links = document.querySelectorAll('.gnb-menu .depth-1 a[data-menu-index]');
   const wraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
 
@@ -265,4 +256,4 @@ document.addEventListener('DOMContentLoaded', () => {
       links.forEach(a => a.parentElement.classList.remove('--active'));
     }
   });
-});
+}

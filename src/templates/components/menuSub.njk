@@ -71,9 +71,23 @@
           update(+ link.dataset.index);
         });
       });
-      if (menuData.length) 
+      if (menuData.length) {
         update(0);
-      
+      }
+      const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+          if (mutation.attributeName === 'style' || mutation.attributeName === 'class') {
+            const disp = getComputedStyle(wrapper).display;
+            if (disp === 'none' && menuData.length) {
+              update(0);
+            }
+          }
+        });
+      });
+      observer.observe(wrapper, {
+        attributes: true,
+        attributeFilter: ['style', 'class']
+      });
     });
   });
 </script>

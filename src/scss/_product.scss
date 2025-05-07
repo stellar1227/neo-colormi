@@ -1255,6 +1255,7 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
       strong {
         @include font-body-small;
         color: $color-text-subcolor;
+        white-space: nowrap;
       }
 
       input {

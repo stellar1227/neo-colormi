@@ -169,9 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.my-swiper', {
     loop: true,
-    centeredSlides: true,    // 활성 슬라이드를 가운데로
-    slidesPerView: 1,      // 한 화면에 1.2개 보여줘서 옆에 0.2개 보이게
-    spaceBetween: 20,        // 슬라이드 사이 간격
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,

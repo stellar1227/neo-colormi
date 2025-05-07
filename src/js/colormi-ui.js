@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
   
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    searchMenu.classList.add('active');
+    searchMenu.classList.add('--active');
   }
   );
   searchCloseBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    searchMenu.classList.remove('active');
+    searchMenu.classList.remove('--active');
   });
 
   //header gnb
@@ -63,10 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
   
   allMenuBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    allMenu.classList.toggle('active');
+    allMenu.classList.toggle('--active');
   }
   );
 
+  //family site
+  const familySite = document.querySelector('#quickMenu');
+  const familySiteBtn = document.querySelector('#btnQuickMenuSelect');
+  familySiteBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    familySite.classList.toggle('--active');
+    e.target.closest('.quick-menu-wrap').classList.toggle('--active');
+  }
+  );
 
 });
 

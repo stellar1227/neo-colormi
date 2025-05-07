@@ -53,7 +53,6 @@ function productImages() {
   });
 }
 
-
 function productStickyInfo() {
   const productImgDetail = document.querySelector(".product-wrap");
   const productInfo = document.querySelector(".product-inner");
@@ -170,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.my-swiper', {
     loop: true,
     centeredSlides: true,
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     spaceBetween: 20,
     autoplay: {
       delay: 3000,
@@ -197,3 +196,66 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 });
+
+(function () {
+  function init() {
+    const templateEl = document.getElementById('menu-data');
+    if (!templateEl) return;
+
+    let menuData;
+    try {
+      const raw = templateEl.innerHTML.trim();
+      menuData = JSON.parse(raw);
+    } catch (e) {
+      return;
+    }
+
+    const container = document.getElementById('thumbNailGnb');
+    if (!container) return;
+
+    const links = container.querySelectorAll('.depth-3 > a[data-index]');
+    const imgEls = container.querySelectorAll('.product-img img[data-img-index]');
+    const nameEl = container.querySelector('.product-info [data-name]');
+    const subEls = container.querySelectorAll('.guide-sub[data-sub-index]');
+
+    function update(idx) {
+      const data = menuData[idx];
+      if (!data) return;
+
+      imgEls.forEach(img => {
+        const i = parseInt(img.dataset.imgIndex, 10);
+        const item = data.itemList[i];
+        if (item) {
+          img.src = '/img/product/' + item.fileName;
+          img.alt = item.alt;
+          img.parentElement.style.display = '';
+        } else {
+          img.parentElement.style.display = 'none';
+        }
+      });
+
+      nameEl.innerHTML = data.name + (data.tooltipList || []).join('');
+
+      subEls.forEach(p => {
+        const i = parseInt(p.dataset.subIndex, 10);
+        p.textContent = data.subs[i] || '';
+      });
+    }
+
+    links.forEach(link => {
+      const idx = parseInt(link.dataset.index, 10);
+      link.addEventListener('mouseenter', e => {
+        e.preventDefault();
+        update(idx);
+      });
+    });
+
+    if (menuData.length) update(0);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

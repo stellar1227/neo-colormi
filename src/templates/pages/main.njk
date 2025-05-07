@@ -3,8 +3,10 @@
 {% block content %}
   <link rel="stylesheet" href="/css/swiper-bundle.min.css"/>
   <script src="/js/swiper-bundle.min.js"></script>
-  <div class="main-banner-wrap">
-    {% include "components/mainSwiper.njk" %}
+  <div class="main-wrap">
+    <div class="main-banner-wrap">
+      {% include "components/mainSwiper.njk" %}
+    </div>
+    <div class="content">dd</div>
   </div>
-  <div class="content"></div>
 {% endblock %}

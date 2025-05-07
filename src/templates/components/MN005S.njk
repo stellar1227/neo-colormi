@@ -1,0 +1,111 @@
+<!-- tooltipList: [
+      '<span class="tooltip status --new"><i class="item">신상품</i></span>',
+      '<span class="tooltip status --discount-1"><i class="item">폭풍할인</i></span>',
+      '<span class="tooltip status --discount-2"><i class="item">할인</i></span>',
+      '<span class="tooltip status --best"><i class="item">베스트</i></span>',
+      '<span class="tooltip status --contact"><i class="item">별도문의</i></span>'
+    ] -->
+{% set menuData = [
+  {
+    name: "일반명함",
+    subs: ["일반명함 안내 문구 1", "일반명함 안내 문구 2"],
+    itemList: [
+      { fileName: "C001-01.jpg", alt: "일반명함 이미지 1" },
+      { fileName: "C001-02.jpg", alt: "일반명함 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "고급명함",
+    subs: ["고급명함 안내 문구 1", "고급명함 안내 문구 2"],
+    itemList: [
+      { fileName: "C002-01.jpg", alt: "고급명함 이미지 1" },
+      { fileName: "C002-02.jpg", alt: "고급명함 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "특수명함",
+    subs: ["특수명함 안내 문구 1", "특수명함 안내 문구 2"],
+    itemList: [
+      { fileName: "C003-01.jpg", alt: "특수명함 이미지 1" },
+      { fileName: "C003-02.jpg", alt: "특수명함 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "정사각명함",
+    subs: ["정사각명함 안내 문구 1", "정사각명함 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "정사각명함 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "정사각명함 이미지 2" }
+    ],
+    tooltipList: []
+  }
+] %}
+<script id="menu-data" type="application/json" hidden>
+  {{ menuData | dump | safe }}
+</script>
+<nav class="all-menu-wrap">
+  <div class="all-menu" id="thumbNailGnb">
+    <div class="category-wrap">
+      <div class="category">
+        <strong class="depth-1">명함</strong>
+        <ul>
+          <li>
+            <p class="depth-2">특가명함</p>
+            <ul>
+              {% for i in range(0,2) %}
+                <li class="depth-3">
+                  <a href="#" data-index="{{ i }}">
+                    {{ menuData[i].name }}
+                    {% for templateEl in menuData[i].tooltipList %}
+                      {{ templateEl | safe }}
+                    {% endfor %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <p class="depth-2">디자인명함</p>
+            <ul>
+              {% for i in range(2, menuData|length) %}
+                <li class="depth-3">
+                  <a href="#" data-index="{{ i }}">
+                    {{ menuData[i].name }}
+                    {% for templateEl in menuData[i].tooltipList %}
+                      {{ templateEl | safe }}
+                    {% endfor %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-product-wrap">
+      <ul class="product-img">
+        {% for i in [0,1] %}
+          <li>
+            <img data-img-index="{{ i }}" src="/img/product/{{ menuData[0].itemList[i].fileName }}" alt="{{ menuData[0].itemList[i].alt }}"/>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="product-info">
+        <strong class="product-name" data-name>
+          {{ menuData[0].name }}
+          {% for templateEl in menuData[0].tooltipList %}
+            {{ templateEl | safe }}
+          {% endfor %}
+        </strong>
+        {% for k in [0,1] %}
+          <p class="guide-sub --small" data-sub-index="{{ k }}">
+            {{ menuData[0].subs[k] }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</nav>

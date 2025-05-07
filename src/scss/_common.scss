@@ -47,14 +47,14 @@ h5 {
   justify-content: center;
   gap: 0 20px;
 
-  >.side-wrap+.content {
+  .side-wrap+.content {
     width: 997px;
     margin: 48px 0;
   }
 
-  >.content {
+  .content {
     width: 1200px;
-    margin: 48px 0;
+    margin: 48px auto;
   }
 }
 

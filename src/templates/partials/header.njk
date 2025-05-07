@@ -1,7 +1,7 @@
 <!-- header -->
 <!-- top-banner -->
   <div
-  class="top-banner-wrap" style="background: #D7E7FE;"> <!-- //배너 변경 시 background color 변경 -->
+  class="top-banner-wrap" style="background: #D7E7FE; display: none;"> <!-- //배너 변경 시 background color 변경 -->
   <div class="top-banner">
     <a href="#" class="top-banner-link">
       <img src="/img/img" alt="리뉴얼 오픈세일 5/10 단 하루, 최대 60% 할인"/>
@@ -87,40 +87,40 @@
             <li
               class="depth-1">
               <!-- 선택되면 --active 클래스 추가 -->
-              <a href="#">전체상품</a>
+              <a href="#" data-menu-index="0">전체상품</a>
             </li>
             <li class="depth-1">
-              <a href="#">책자</a>
+              <a href="#" data-menu-index="1">책자</a>
             </li>
             <li class="depth-1">
-              <a href="#">출력</a>
+              <a href="#" data-menu-index="2">출력</a>
             </li>
             <li class="depth-1">
-              <a href="#">명함</a>
+              <a href="#" data-menu-index="3">명함</a>
             </li>
             <li class="depth-1">
-              <a href="#">홍보물</a>
+              <a href="#" data-menu-index="4">홍보물</a>
             </li>
             <li class="depth-1">
-              <a href="#">달력·수첩</a>
+              <a href="#" data-menu-index="5">달력·수첩</a>
             </li>
             <li class="depth-1">
-              <a href="#">봉투·쇼핑백</a>
+              <a href="#" data-menu-index="6">봉투·쇼핑백</a>
             </li>
             <li class="depth-1">
-              <a href="#">엽서·카드</a>
+              <a href="#" data-menu-index="7">엽서·카드</a>
             </li>
             <li class="depth-1">
-              <a href="#">문구점</a>
+              <a href="#" data-menu-index="8">문구점</a>
             </li>
             <li class="depth-1">
-              <a href="#">판촉물</a>
+              <a href="#" data-menu-index="9">판촉물</a>
             </li>
             <li class="depth-1">
-              <a href="#">옵셋인쇄</a>
+              <a href="#" data-menu-index="10">옵셋인쇄</a>
             </li>
             <li class="depth-1 product">
-              <a href="#">오피스·문구</a>
+              <a href="#" data-menu-index="11">오피스·문구</a>
             </li>
           </ul>
         </nav>
@@ -159,7 +159,6 @@
     </div>
     <!-- // gnb-wrap -->
     <!-- 전체메뉴, SNB -->
-    {% include "components/MN002S.njk" %}
-    {% include "components/MN005S.njk" %}
+    {% include "components/menuSub.njk" %}
   </div>
 </header>

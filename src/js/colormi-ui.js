@@ -197,65 +197,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-(function () {
-  function init() {
-    const templateEl = document.getElementById('menu-data');
-    if (!templateEl) return;
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.gnb-menu .depth-1 a[data-menu-index]');
+  const wraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
 
-    let menuData;
-    try {
-      const raw = templateEl.innerHTML.trim();
-      menuData = JSON.parse(raw);
-    } catch (e) {
-      return;
-    }
+  wraps.forEach(w => w.style.display = 'none');
 
-    const container = document.getElementById('thumbNailGnb');
-    if (!container) return;
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const idx = link.dataset.menuIndex;
 
-    const links = container.querySelectorAll('.depth-3 > a[data-index]');
-    const imgEls = container.querySelectorAll('.product-img img[data-img-index]');
-    const nameEl = container.querySelector('.product-info [data-name]');
-    const subEls = container.querySelectorAll('.guide-sub[data-sub-index]');
-
-    function update(idx) {
-      const data = menuData[idx];
-      if (!data) return;
-
-      imgEls.forEach(img => {
-        const i = parseInt(img.dataset.imgIndex, 10);
-        const item = data.itemList[i];
-        if (item) {
-          img.src = '/img/product/' + item.fileName;
-          img.alt = item.alt;
-          img.parentElement.style.display = '';
+      wraps.forEach(w => {
+        if (w.dataset.menuIndex === idx) {
+          w.style.display = 'block';
         } else {
-          img.parentElement.style.display = 'none';
+          w.style.display = 'none';
         }
       });
-
-      nameEl.innerHTML = data.name + (data.tooltipList || []).join('');
-
-      subEls.forEach(p => {
-        const i = parseInt(p.dataset.subIndex, 10);
-        p.textContent = data.subs[i] || '';
-      });
-    }
-
-    links.forEach(link => {
-      const idx = parseInt(link.dataset.index, 10);
-      link.addEventListener('mouseenter', e => {
-        e.preventDefault();
-        update(idx);
-      });
+      links.forEach(a => a.parentElement.classList.remove('--active'));
+      link.parentElement.classList.add('--active');
     });
+  });
 
-    if (menuData.length) update(0);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.gnb-menu') && !e.target.closest('.all-menu-wrap')) {
+      wraps.forEach(w => w.style.display = 'none');
+      links.forEach(a => a.parentElement.classList.remove('--active'));
+    }
+  });
+});

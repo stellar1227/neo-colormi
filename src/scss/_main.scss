@@ -376,8 +376,8 @@ header {
               white-space: nowrap;
             }
 
-            a:hover,
-            &.--active a {
+            &:not(.product) a:hover,
+            &.--active:not(.product) a {
               color: $color-text-primary;
               font-weight: 600;
             }
@@ -398,10 +398,6 @@ header {
                   margin-right: 4px;
                   background: url('../img/icon/icon-briefcase.png') no-repeat center center/100% 100%;
                   vertical-align: -3px;
-                }
-
-                &:hover {
-                  color: $color-text-subcolor-deep;
                 }
               }
             }
@@ -493,6 +489,7 @@ header {
 }
 
 .all-menu-wrap {
+  display: none;
   overflow-y: auto;
   position: absolute;
   top: 40px;
@@ -593,6 +590,7 @@ header {
 
           .desc-guide {
             @include desc-guide;
+            margin-left: 8px;
             vertical-align: 1px;
 
             i {

@@ -1,0 +1,113 @@
+{% set menuData009 = [
+  {
+    name: "사진엽서",
+    subs: ["사진엽서 안내 문구 1", "사진엽서 안내 문구 2"],
+    itemList: [
+      { fileName: "C001-01.jpg", alt: "사진엽서 이미지 1" },
+      { fileName: "C001-02.jpg", alt: "사진엽서 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "엽서세트",
+    subs: ["엽서세트 안내 문구 1", "엽서세트 안내 문구 2"],
+    itemList: [
+      { fileName: "C002-01.jpg", alt: "엽서세트 이미지 1" },
+      { fileName: "C002-02.jpg", alt: "엽서세트 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "청첩장",
+    subs: ["청첩장 안내 문구 1", "청첩장 안내 문구 2"],
+    itemList: [
+      { fileName: "C003-01.jpg", alt: "청첩장 이미지 1" },
+      { fileName: "C003-02.jpg", alt: "청첩장 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "초대장",
+    subs: ["초대장 안내 문구 1", "초대장 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "초대장 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "초대장 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "안내카드",
+    subs: ["안내카드 안내 문구 1", "안내카드 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "안내카드 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "안내카드 이미지 2" }
+    ],
+    tooltipList: []
+  }
+] %}
+<script id="menu-data-009" type="application/json" hidden>
+  {{ menuData009 | dump | safe }}
+</script>
+<nav class="all-menu-wrap" data-menu-index="7">
+  <div class="all-menu">
+    <div class="category-wrap">
+      <div class="category">
+        <strong class="depth-1">엽서·카드</strong>
+        <ul>
+          <li>
+            <p class="depth-2">엽서</p>
+            <ul>
+              {% for i in range(0,2) %}
+                <li class="depth-3">
+                  <a href="#" data-index="{{ i }}">
+                    {{ menuData009[i].name }}
+                    {% for templateEl in menuData009[i].tooltipList %}
+                      {{ templateEl | safe }}
+                    {% endfor %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <p class="depth-2">안내장</p>
+            <ul>
+              {% for i in range(2, menuData009|length) %}
+                <li class="depth-3">
+                  <a href="#" data-index="{{ i }}">
+                    {{ menuData009[i].name }}
+                    {% for templateEl in menuData009[i].tooltipList %}
+                      {{ templateEl | safe }}
+                    {% endfor %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-product-wrap">
+      <ul class="product-img">
+        {% for i in [0,1] %}
+          <li>
+            <img data-img-index="{{ i }}" src="/img/product/{{ menuData009[0].itemList[i].fileName }}" alt="{{ menuData009[0].itemList[i].alt }}"/>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="product-info">
+        <strong class="product-name" data-name>
+          {{ menuData009[0].name }}
+          {% for templateEl in menuData009[0].tooltipList %}
+            {{ templateEl | safe }}
+          {% endfor %}
+        </strong>
+        {% for k in [0,1] %}
+          <p class="guide-sub --small" data-sub-index="{{ k }}">
+            {{ menuData009[0].subs[k] }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</nav>

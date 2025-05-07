@@ -1,0 +1,79 @@
+{% include "components/MN002S.njk" %}
+{% include "components/MN003S.njk" %}
+{% include "components/MN004S.njk" %}
+{% include "components/MN005S.njk" %}
+{% include "components/MN006S.njk" %}
+{% include "components/MN007S.njk" %}
+{% include "components/MN008S.njk" %}
+{% include "components/MN009S.njk" %}
+{% include "components/MN010S.njk" %}
+{% include "components/MN011S.njk" %}
+{% include "components/MN012S.njk" %}
+{% include "components/MN013S.njk" %}
+<!-- tooltipList: [ '<span class="tooltip status --new"><i class="item">신상품</i></span>', '<span class="tooltip status
+--discount-1"><i class="item">폭풍할인</i></span>', '<span class="tooltip status --discount-2"><i
+    class="item">할인</i></span>', '<span class="tooltip status --best"><i class="item">베스트</i></span>', '<span
+    class="tooltip status --contact"><i class="item">별도문의</i></span>' ] -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('script[id^="menu-data-"]').forEach(tpl => {
+      let menuData;
+      try {
+        menuData = JSON.parse(tpl.textContent.trim());
+      } catch (e) {
+        return;
+      }
+      const wrapper = tpl.nextElementSibling;
+      if (! wrapper || ! wrapper.classList.contains('all-menu-wrap')) {
+        return;
+      }
+      const container = wrapper.querySelector('.all-menu');
+      if (! container) {
+        return;
+      }
+      const links = container.querySelectorAll('.depth-3 > a[data-index]');
+      const imgs = container.querySelectorAll('.product-img img[data-img-index]');
+      const nameEl = container.querySelector('.product-info [data-name]');
+      const subs = container.querySelectorAll('.guide-sub[data-sub-index]');
+      function update(idx) {
+        const data = menuData[idx];
+        if (! data) 
+          return;
+        
+        imgs.forEach(img => {
+          const i = + img.dataset.imgIndex;
+          const item = data.itemList[i];
+          if (item) {
+            img.src = `/img/product/${
+              item.fileName
+            }`;
+            img.alt = item.alt;
+            img
+              .parentElement
+              .style
+              .display = '';
+          } else {
+            img
+              .parentElement
+              .style
+              .display = 'none';
+          }
+        });
+        nameEl.innerHTML = data.name + (data.tooltipList || []).join('');
+        subs.forEach(p => {
+          const i = + p.dataset.subIndex;
+          p.textContent = data.subs[i] || '';
+        });
+      }
+      links.forEach(link => {
+        link.addEventListener('mouseenter', e => {
+          e.preventDefault();
+          update(+ link.dataset.index);
+        });
+      });
+      if (menuData.length) 
+        update(0);
+      
+    });
+  });
+</script>

@@ -120,13 +120,16 @@ header {
 }
 
 .search-wrap {
+  display: none;
   position: fixed;
   top: 0;
   width: 100%;
   height: 100vh;
   background: $color-alpha-inverse25;
   z-index: 11;
-
+  &.active{
+    display: block;
+  }
   >.search {
     display: flex;
     flex-direction: row;

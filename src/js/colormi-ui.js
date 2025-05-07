@@ -1,17 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
   //상품페이지 갤러리
-  productImages();
+  const thumbNailGallery = document.getElementById("thumbNailGallery");
+  if(thumbNailGallery) return productImages(thumbNailGallery);
 
   //상품페이지 스티키 정보
-  productStickyInfo();
+  const productImgDetail = document.querySelector(".product-wrap");
+  if(productImgDetail) return productStickyInfo(productImgDetail);
 
+  //loading lottie
+  loadingLottie();
 
+  //main swiper
+  new Swiper('.my-swiper', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      renderFraction: function (currentClass, totalClass) {
+        const realSlides = Array.from(this.slides).filter(
+          slide => !slide.classList.contains('swiper-slide-duplicate')
+        );
+        const realTotal = realSlides.length;
+        const current = this.realIndex + 1;
+
+        return `<span class="${currentClass}">${current}</span>` +
+          ` / ` +
+          `<span class="${totalClass}">${realTotal}</span>`;
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  //searchMenu Open, Close
+  const searchMenu = document.querySelector('#searchWrap');
+  const searchBtn = document.querySelector('#btnSearch');
+  const searchCloseBtn = document.querySelector('#btnSearchClose');
+  
+  searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchMenu.classList.add('active');
+  }
+  );
+  searchCloseBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchMenu.classList.remove('active');
+  });
 
 });
 
 
-function productImages() {
-  const thumbNailGallery = document.getElementById("thumbNailGallery");
+function productImages(target) {
+  const thumbNailGallery = target;
   const imgItemWrap = thumbNailGallery.querySelector(".img-item-wrap");
   const imgItems = imgItemWrap.querySelectorAll(".img-item");
   const btnPrev = thumbNailGallery.querySelector(".btn-prev");
@@ -53,8 +102,8 @@ function productImages() {
   });
 }
 
-function productStickyInfo() {
-  const productImgDetail = document.querySelector(".product-wrap");
+function productStickyInfo(target) {
+  const productImgDetail = target;
   const productInfo = document.querySelector(".product-inner");
   const productInfoHeight = productInfo.offsetHeight;
   const productInfoTop = productInfo.getBoundingClientRect().top + window.scrollY;
@@ -91,7 +140,7 @@ function productStickyInfo() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function loadingLottie() {
   const ACTIVE_CLASS = '--active';
 
   const animConfig = {
@@ -163,39 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
     subtree: true,
     attributeFilter: ['class']
   });
-});
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.my-swiper', {
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
-        const realSlides = Array.from(this.slides).filter(
-          slide => !slide.classList.contains('swiper-slide-duplicate')
-        );
-        const realTotal = realSlides.length;
-        const current = this.realIndex + 1;
-
-        return `<span class="${currentClass}">${current}</span>` +
-          ` / ` +
-          `<span class="${totalClass}">${realTotal}</span>`;
-      }
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-});
 
 (function () {
   function init() {

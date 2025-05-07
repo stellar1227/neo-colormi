@@ -1,0 +1,69 @@
+{% extends "layouts/base.njk" %}
+{% set title = "이벤트" %}
+{% block content %}
+  {% include "components/sideNavCustomer.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>이벤트</h3>
+    </div>
+    <section class="content-box">
+      <div class="util-wrap">
+        <div class="btn-wrap --tab">
+          <button type="button" class="btn-round --active">
+            <span>진행중 이벤트</span>
+          </button>
+          <button type="button" class="btn-round">
+            <span>종료된 이벤트</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="box-list --large">
+        <!-- 이벤트 리스트 -->
+        <div class="item">
+          <a href="" class="event">
+            <div class="event-img">
+              <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="이벤트 이미지"/>
+            </div>
+            <p class="guide-basic">스터디플래너 40% 할인받고, 100일 목표 달성하기!</p>
+            <p class="guide-basic-title">2025.03.06~2025.04.05</p>
+          </a>
+        </div>
+        <!-- // 이벤트 리스트 -->
+        <!-- 종료된 이벤트 --inactive 추가 -->
+        <div class="item --inactive">
+          <div href="" class="event">
+            <div class="event-img">
+              <img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="이벤트 이미지"/>
+            </div>
+            <p class="guide-basic">스터디플래너 40% 할인받고, 100일 목표 달성하기!</p>
+            <p class="guide-basic-title">2025.03.06~2025.04.05</p>
+          </div>
+        </div>
+        <!-- // 종료된 이벤트 -->
+      </div>
+    </section>
+    <!-- pagination -->
+    <section class="content-box">
+      <div class="pagination">
+        <ul class="item-wrap">
+          <li class="item prev">
+            <a href="">이전</a>
+          </li>
+          <li class="item --active">
+            <a href="">1</a>
+          </li>
+          <li class="item">
+            <a href="">2</a>
+          </li>
+          <li class="item">
+            <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+          </li>
+          <li class="item next disabled">
+            <a href="">다음</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+{% endblock %}

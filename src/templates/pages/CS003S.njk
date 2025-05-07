@@ -1,0 +1,199 @@
+{% extends "layouts/base.njk" %}
+{% set title = "결제대기" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>결제대기</h3>
+    </div>
+    <section class="content-box">
+      <div class="table-list">
+        <div class="list-item-wrap --header">
+          <div class="list-item">
+            <div class="item --product">
+              <p>주문정보</p>
+            </div>
+            <div class="item --status">
+              <p>결제사유</p>
+            </div>
+            <div class="item --amount">
+              <p>주문금액</p>
+            </div>
+            <div class="item --delivery">
+              <p>배송안내</p>
+            </div>
+            <div class="item --total-price">
+              <p>총 결제금액</p>
+            </div>
+            <div class="item --status">
+              <p>결제</p>
+            </div>
+          </div>
+        </div>
+        <!-- // list header -->
+        <div class="list-item-wrap --body">
+          <div class="list-item">
+            <div class="item --product" data-label="주문정보">
+              <div class="product-wrap --order-info">
+                <div class="product-inner-item">
+                  <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
+                  </div>
+                  <div class="product-info">
+                    <p class="product-name">
+                      <span>(주문번호)</span>상품명이 나타나게 됩니다. 상품명이 나타나게 됩니다.
+                    </p>
+                    <div class="product-text">
+                      <p class="text">제목명이 나타나게 됩니다. 제목명이 나타나게 됩니다. 제목명이 나타나게 됩니다.</p>
+                    </div>
+                    <div class="product-text --end">
+                      <p class="text">일자
+                        <span>2025.00.00</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item --status" data-label="결제사유">
+              <div class="item-inner">
+                <p>운송비</p>
+              </div>
+            </div>
+            <div class="item --amount" data-label="주문금액">
+              <div class="item-inner">
+                <p>
+                  <span>10,000</span>원
+                </p>
+              </div>
+            </div>
+            <div class="item --delivery" data-label="배송안내">
+              <div class="item-inner">
+                <p>선불택배</p>
+                <p>
+                  <span>3,000</span>원
+                </p>
+              </div>
+            </div>
+            <div class="item --total-price" data-label="총 결제금액">
+              <div class="item-inner">
+                <p class="total-price">
+                  <span>100,000</span>원
+                </p>
+                <p class="payment">
+                  (무통장입금)<span>전용계좌</span>
+                </p>
+              </div>
+            </div>
+            <div class="item --status" data-label="결제">
+              <div class="item-inner">
+                <a href="" class="btn-black --xsmall">
+                  <span>결제하기</span>
+                </a>
+                <!-- 링크버튼 .--disabled -->
+              </div>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="item --product" data-label="주문정보">
+              <div class="product-wrap --order-info">
+                <div class="product-inner-item">
+                  <div class="product-img"><img src="https://www.colormi.co.kr/resources/fe/img/productDetail/memopad_24_05.jpg" alt="상품이미지"/>
+                  </div>
+                  <div class="product-info">
+                    <p class="product-name">
+                      <span>(주문번호)</span>상품명
+                    </p>
+                    <div class="product-text">
+                      <p class="text">제목명이 나타나게 됩니다.</p>
+                    </div>
+                    <div class="product-text --end">
+                      <p class="text">일자
+                        <span>2025.00.00</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item --status" data-label="결제사유">
+              <div class="item-inner">
+                <p>운송비</p>
+              </div>
+            </div>
+            <div class="item --amount" data-label="주문금액">
+              <div class="item-inner">
+                <p>
+                  <span>10,000</span>원
+                </p>
+              </div>
+            </div>
+            <div class="item --delivery" data-label="배송안내">
+              <div class="item-inner">
+                <p>-</p>
+              </div>
+            </div>
+            <div class="item --total-price" data-label="총 결제금액">
+              <div class="item-inner">
+                <p class="total-price">
+                  <span>100,000</span>원
+                </p>
+                <p class="payment">
+                  신용카드
+                </p>
+              </div>
+            </div>
+            <div class="item --status" data-label="결제">
+              <div class="item-inner">
+                <a href="" class="btn-black --xsmall --disabled">
+                  <span>결제하기</span>
+                </a>
+                <!-- 링크버튼 .--disabled -->
+              </div>
+            </div>
+          </div>
+          <!-- 내역 없음 -->
+          <div class="list-item">
+            <div class="item --no-item">
+              <p class="guide-sub-deep">결제 대기 상태인 내역이 없어요.</p>
+            </div>
+          </div>
+          <!-- // 내역 없음 -->
+        </div>
+        <!-- // list body -->
+      </div>
+    </section>
+    <!-- pagination -->
+    <section class="content-box">
+      <div class="pagination">
+        <ul class="item-wrap">
+          <li class="item prev">
+            <a href="">이전</a>
+          </li>
+          <li class="item --active">
+            <a href="">1</a>
+          </li>
+          <li class="item">
+            <a href="">2</a>
+          </li>
+          <li class="item">
+            <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+          </li>
+          <li class="item next disabled">
+            <a href="">다음</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 안내 -->
+    <section class="content-box">
+      <div class="desc-box">
+        <p class="guide-basic-title">※ 꼭 확인하세요.</p>
+        <ul class="guide-sub-deep --small --dot">
+          <li>상품 금액과 배송비 모두 VAT포함가로 되어 있습니다.</li>
+          <li>결제대기에서 추가결제시 홈페이지 내에서는 ‘신용카드’로만 결제가 가능합니다.</li>
+          <li>신용카드 결제 외에 무통장입금/방문 결제는 고객상담센터(02-2266-0671)로 문의 후에 결제해주세요.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+{% endblock %}

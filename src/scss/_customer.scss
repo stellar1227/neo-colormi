@@ -1,0 +1,220 @@
+@use 'mixin' as *;
+@use 'variables' as *;
+@use "sass:list";
+
+// 마이페이지 사용자 등급안내
+.user-level-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0 32px;
+  padding: 38px 0;
+
+  .user-level-img {
+    flex: 0 0 120px;
+    height: 130px;
+
+    .img-item {
+      font-size: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .user-level-info {
+    flex: 1;
+    @include font-body-large;
+    color: $color-text-basic;
+
+    .user-item {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .user {
+      padding-right: 6px;
+      font-weight: $font-weight-bold;
+    }
+
+    .level {
+      padding: 0 12px;
+      font: 800 28px/28px 'Pretendard';
+    }
+  }
+
+  // 등급별
+  &.--vip {
+    .user-level-img {
+      .img-item::before {
+        background: #8B31FF;
+      }
+    }
+
+    .level {
+      color: #8B31FF;
+    }
+  }
+
+  &.--first {
+    .user-level-img {
+      .img-item::before {
+        background: #2B71FF;
+      }
+    }
+
+    .level {
+      color: #2B71FF;
+    }
+  }
+
+  &.--gold {
+    .user-level-img {
+      .img-item::before {
+        background: #FEBF60;
+      }
+    }
+
+    .level {
+      color: #FEBF60;
+    }
+  }
+
+  &.--silver {
+    .user-level-img {
+      .img-item::before {
+        background: #FF663F;
+      }
+    }
+
+    .level {
+      color: #FF663F;
+    }
+  }
+
+  &.--bronze {
+    .user-level-img {
+      .img-item::before {
+        background: #5A9E41;
+      }
+    }
+
+    .level {
+      color: #5A9E41;
+    }
+  }
+
+  &.--metal {
+    .user-level-img {
+      .img-item::before {
+        background: #8A939B;
+      }
+    }
+
+    .level {
+      color: #8A939B;
+    }
+  }
+}
+
+// 상품 주문 상태
+.product-step-wrap {
+  .step-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 46px;
+    padding: 26px 16px;
+    border-top: 1px solid $Line-line;
+    border-bottom: 1px solid $Line-line;
+
+    li {
+      position: relative;
+      flex: 1;
+      text-align: center;
+
+      &.--active {
+        .item-number {
+          color: $color-text-primary;
+        }
+      }
+
+      .item-title {
+        margin-bottom: 20px;
+        @include font-body-small-bold;
+        color: $color-text-basic;
+        white-space: nowrap;
+      }
+
+      .item-number {
+        @include font-heading-medium-bold;
+        color: $color-text-subcolor-light;
+      }
+
+      +li {
+        @include line-icon(next, 12px);
+
+        &::before {
+          top: calc(50% - 4px);
+          right: auto;
+          left: -21px;
+          background: $color-border-gray;
+        }
+
+        &::after {
+          top: calc(50% + 4px);
+          right: auto;
+          left: -21px;
+          background: $color-border-gray;
+        }
+      }
+    }
+  }
+}
+
+// 쿠폰
+.box-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  &.--large {
+    gap: 48px 20px;
+  }
+
+  .item {
+    .coupon {
+      height: 200px;
+      background-color: $color-border-gray; // 나중에 삭제
+    }
+
+    .event {
+      display: block;
+
+      .event-img {
+        overflow: hidden;
+        height: 215px;
+        border-radius: 8px;
+      }
+
+      .guide-basic-title {
+        margin-top: 12px;
+        font-family: $font-typo-icon-en-font;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.--inactive {
+      filter: grayscale(1);
+    }
+  }
+}

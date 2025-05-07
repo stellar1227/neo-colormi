@@ -1,0 +1,98 @@
+{% set menuData012 = [
+  {
+    name: "단체티셔츠",
+    subs: ["단체티셔츠 안내 문구 1", "단체티셔츠 안내 문구 2"],
+    itemList: [
+      { fileName: "C001-01.jpg", alt: "단체티셔츠 이미지 1" },
+      { fileName: "C001-02.jpg", alt: "단체티셔츠 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "에코백",
+    subs: ["에코백 안내 문구 1", "에코백 안내 문구 2"],
+    itemList: [
+      { fileName: "C002-01.jpg", alt: "에코백 이미지 1" },
+      { fileName: "C002-02.jpg", alt: "에코백 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "텀블러",
+    subs: ["텀블러 안내 문구 1", "텀블러 안내 문구 2"],
+    itemList: [
+      { fileName: "C003-01.jpg", alt: "텀블러 이미지 1" },
+      { fileName: "C003-02.jpg", alt: "텀블러 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "보조배터리",
+    subs: ["보조배터리 안내 문구 1", "보조배터리 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "보조배터리 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "보조배터리 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "골프공",
+    subs: ["골프공 안내 문구 1", "골프공 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "골프공 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "골프공 이미지 2" }
+    ],
+    tooltipList: []
+  }
+] %}
+<script id="menu-data-012" type="application/json" hidden>
+  {{ menuData012 | dump | safe }}
+</script>
+<nav class="all-menu-wrap" data-menu-index="9">
+  <div class="all-menu">
+    <div class="category-wrap">
+      <div class="category">
+        <strong class="depth-1">판촉물</strong>
+        <ul>
+          <li>
+            <p class="depth-2">기프트</p>
+            <ul>
+              {% for i in range(0, menuData012|length) %}
+                <li class="depth-3">
+                  <a href="#" data-index="{{ i }}">
+                    {{ menuData012[i].name }}
+                    {% for templateEl in menuData012[i].tooltipList %}
+                      {{ templateEl | safe }}
+                    {% endfor %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-product-wrap">
+      <ul class="product-img">
+        {% for i in [0,1] %}
+          <li>
+            <img data-img-index="{{ i }}" src="{{ menuData012[0].itemList[i].fileName }}" alt="{{ menuData012[0].itemList[i].alt }}"/>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="product-info">
+        <strong class="product-name" data-name>
+          {{ menuData012[0].name }}
+          {% for templateEl in menuData012[0].tooltipList %}
+            {{ templateEl | safe }}
+          {% endfor %}
+        </strong>
+        {% for k in [0,1] %}
+          <p class="guide-sub --small" data-sub-index="{{ k }}">
+            {{ menuData012[0].subs[k] }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</nav>

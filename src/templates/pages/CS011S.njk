@@ -1,0 +1,148 @@
+{% extends "layouts/base.njk" %}
+{% set title = "배송지관리" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>배송지관리</h3>
+    </div>
+    <section class="content-box">
+      <div class="desc-box gray-sub-box --icon-box">
+        <div class="list-top-item-wrap">
+          <dl class="list-top-item">
+            <dt class="item">기본배송지</dt>
+            <dd class="item">(주소별칭) 이름</dd>
+            <dd class="item">경기도 남양주시 호평로 201, 1101동 401호</dd>
+          </dl>
+          <!-- 기본배송지 없음 -->
+          <p class="no-item-text">
+            기본 배송지가 지정되지 않았습니다.
+          </p>
+          <!-- // 기본배송지 없음 -->
+        </div>
+        <i class="icon --xxlarge icon-42"></i>
+      </div>
+    </section>
+    <section class="content-box">
+      <div class="util-wrap">
+        <div class="btn-wrap">
+          <button type="button" class="btn-primary --xsmall">
+            <i class="check"></i>
+            <span>기본배송지 지정</span>
+          </button>
+        </div>
+        <div class="btn-wrap">
+          <button type="button" class="btn-outline --xsmall">
+            <span>선택삭제</span>
+          </button>
+          <a href="" class="btn-black --xsmall">
+            <i class="plus"></i>
+            <span>배송지 추가</span>
+          </a>
+        </div>
+      </div>
+      <!-- 리스트 -->
+      <div class="table-list">
+        <div class="list-item-wrap --header">
+          <div class="list-item">
+            <div class="item --checkbox">
+              <div class="checkbox-wrap">
+                <label class="checkbox" for="check-all">
+                  <input type="checkbox" id="check-all"/>
+                  <span class="checkbox-icon"></span>
+                </label>
+              </div>
+            </div>
+            <div class="item --name">
+              <p>받으실 분</p>
+            </div>
+            <div class="item --tel">
+              <p>휴대폰번호</p>
+            </div>
+            <div class="item --address">
+              <p>주소</p>
+            </div>
+            <div class="item --status">
+              <p>변경</p>
+            </div>
+          </div>
+        </div>
+        <!-- // list header -->
+        <div class="list-item-wrap --body">
+          <div
+            class="list-item --selected">
+            <!-- // 현재 기본배송지로 선택 된 아이템 .selected -->
+            <div class="item --checkbox">
+              <div class="checkbox-wrap">
+                <label class="checkbox" for="check-1">
+                  <input type="checkbox" id="check-1"/>
+                  <span class="checkbox-icon"></span>
+                </label>
+              </div>
+            </div>
+            <div class="item --name">
+              <span>(주소별칭) 이름</span>
+            </div>
+            <div class="item --tel">010-0000-0000</div>
+            <div class="item --address">경기도 남양주시 호평로 201, 1101동 401호</div>
+            <div class="item --status">
+              <a href="" class="btn-outline --xsmall">
+                <span>변경</span>
+              </a>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="item --checkbox">
+              <div class="checkbox-wrap">
+                <label class="checkbox" for="check-2">
+                  <input type="checkbox" id="check-2"/>
+                  <span class="checkbox-icon"></span>
+                </label>
+              </div>
+            </div>
+            <div class="item --name">
+              <span>(주소별칭) 이름</span>
+            </div>
+            <div class="item --tel">010-0000-0000</div>
+            <div class="item --address">경기도 남양주시 호평로 201, 1101동 401호</div>
+            <div class="item --status">
+              <a href="" class="btn-outline --xsmall">
+                <span>변경</span>
+              </a>
+            </div>
+          </div>
+          <!-- 내역 없음 -->
+          <div class="list-item">
+            <div class="item --no-item">
+              <p class="guide-sub-deep">등록된 배송지가 없어요.</p>
+            </div>
+          </div>
+          <!-- // 내역 없음 -->
+        </div>
+        <!-- // list body -->
+      </div>
+    </section>
+    <!-- pagination -->
+    <section class="content-box">
+      <div class="pagination">
+        <ul class="item-wrap">
+          <li class="item prev">
+            <a href="">이전</a>
+          </li>
+          <li class="item --active">
+            <a href="">1</a>
+          </li>
+          <li class="item">
+            <a href="">2</a>
+          </li>
+          <li class="item">
+            <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+          </li>
+          <li class="item next disabled">
+            <a href="">다음</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+{% endblock %}

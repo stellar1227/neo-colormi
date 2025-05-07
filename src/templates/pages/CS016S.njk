@@ -1,0 +1,104 @@
+{% extends "layouts/base.njk" %}
+{% set title = "1:1 문의" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>1:1 문의</h3>
+    </div>
+    <section class="content-box">
+      <div class="table-list --detail">
+        <div class="list-item-wrap --body">
+          <div class="list-item">
+            <div class="item --title">
+              <p>문의제목</p>
+              <div class="util">
+                <p class="date">
+                  작성일<span>2025-00-00</span>
+                </p>
+              </div>
+            </div>
+            <div class="item --content">
+              <p class="title">
+                Q. 문의내용
+              </p>
+              <p class="text">
+                문의내용
+              </p>
+              <p class="category">
+                <span>문의유형 :</span>
+                <em>[선택한 항목]</em>
+              </p>
+              <div class="product-order">
+                <div class="product-option">
+                  <dl class="column-item">
+                    <dt>웹하드 경로</dt>
+                    <dd>
+                      <div class="inner-wrap">
+                        <p>https://dev.colormi.co.kr/000</p>
+                      </div>
+                    </dd>
+                  </dl>
+                  <dl class="column-item">
+                    <dt>파일첨부</dt>
+                    <dd>
+                      <div class="inner-wrap --file">
+                        <a href="" alt="">250000_리플렛_최종_outline.pdf</a>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-item --answer">
+            <div class="item --title">
+              <p>A. 답변</p>
+              <div class="util">
+                <p class="date">
+                  답변일<span>2025-00-00</span>
+                </p>
+              </div>
+            </div>
+            <!-- 답변 전 -->
+            <div class="item --content --no-item">
+              <p class="guide-basic-title">
+                문의하신 내용에 정확한 답변드릴게요!
+              </p>
+              <p class="guide-sub-deep --small">
+                빠른 답변을 원하시는 경우, 고객상담센터(02-2266-0671)로 연락 부탁드립니다.
+              </p>
+            </div>
+            <!-- // 답변 전 -->
+            <!-- 답변 후 -->
+            <div class="item --content">
+              <p class="text">
+                안녕하세요. 칼라미 입니다.
+              </p>
+            </div>
+            <!-- // 답변 후 -->
+          </div>
+        </div>
+        <!-- // list body -->
+      </div>
+      <div
+        class="util-wrap">
+        <!-- 답변 후 삭제 클래스 추가 .hide -->
+        <div class="btn-wrap">
+          <a href="" class="btn-outline --small">
+            <span>수정</span>
+          </a>
+          <button type="button" class="btn-outline --small">
+            <span>삭제</span>
+          </button>
+        </div>
+        <!-- // 답변 후 삭제 -->
+        <div class="btn-wrap">
+          <a href="" class="btn-black --small">
+            <span>목록</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

@@ -105,21 +105,21 @@ $fonts: (
 );
 
 $font-size: (
-  'font-size-heading-xsmall': 17px,
-  'font-size-heading-small': 19px,
-  'font-size-heading-medium': 24px,
-  'font-size-heading-large': 32px,
-  'font-size-heading-xlarge': 40px,
-  'font-size-navigation-XXS': 12px,
-  'font-size-navigation-XS': 13px,
-  'font-size-navigation-S': 14px,
-  'font-size-navigation-M': 16px,
-  'font-size-navigation-L': 18px,
-  'font-size-body-xxsmall': 12px,
-  'font-size-body-xsmall': 13px,
-  'font-size-body-small': 15px,
-  'font-size-body-medium': 17px,
-  'font-size-body-large': 20px
+  'font-size-heading-xsmall': 1.7rem,
+  'font-size-heading-small': 1.9rem,
+  'font-size-heading-medium': 2.4rem,
+  'font-size-heading-large': 3.2rem,
+  'font-size-heading-xlarge': 4rem,
+  'font-size-navigation-XXS': 1.2rem,
+  'font-size-navigation-XS': 1.3rem,
+  'font-size-navigation-S': 1.4rem,
+  'font-size-navigation-M': 1.6rem,
+  'font-size-navigation-L': 1.8rem,
+  'font-size-body-xxsmall': 1.2rem,
+  'font-size-body-xsmall': 1.3rem,
+  'font-size-body-small': 1.5rem,
+  'font-size-body-medium': 1.7rem,
+  'font-size-body-large': 2rem
 );
 
 $font-weight: (
@@ -130,8 +130,8 @@ $font-weight: (
 );
 
 $letter-spacing: (
-  'font-letter-spacing-0': 0px,
-  'font-letter-spacing-1': 1px
+  'letter-spacing-0': 0px,
+  'letter-spacing-1': 1px
 );
 
 // 3. (Optional) 개별 SCSS 변수로 할당하여 SCSS 코드에서 쉽게 사용하기
@@ -257,9 +257,9 @@ $font-weight-medium: map.get($font-weight, 'font-weight-medium');
 $font-weight-semibold: map.get($font-weight, 'font-weight-semibold');
 $font-weight-bold: map.get($font-weight, 'font-weight-bold');
 
-// font-letter-spacing-
-$letter-spacing-0: map.get($letter-spacing, 'font-letter-spacing-0');
-$letter-spacing-1: map.get($letter-spacing, 'font-letter-spacing-1');
+// letter-spacing-
+$letter-spacing-0: map.get($letter-spacing, 'letter-spacing-0');
+$letter-spacing-1: map.get($letter-spacing, 'letter-spacing-1');
 
 // 4. Output CSS 커스텀 프로퍼티 (HTML, 인라인 스타일 등에서 var() 사용)
 :root {

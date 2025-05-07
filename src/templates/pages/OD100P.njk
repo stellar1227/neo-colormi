@@ -1,0 +1,97 @@
+{% extends "layouts/base.njk" %}
+{% set title = "배송지 변경" %}
+{% block content %}
+  <div class="modal --full --xlarge">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">배송지 변경</h5>
+      </div>
+      <div class="modal-container">
+        <div class="desc-box gray-sub-box">
+          <div class="list-top-item-wrap">
+            <dl class="list-top-item">
+              <dt class="item">기본배송지</dt>
+              <dd class="item">(주소별칭) 이름</dd>
+              <dd class="item">경기도 남양주시 호평로 201, 1101동 401호</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="table-list">
+          <div class="list-item-wrap --header">
+            <div class="list-item">
+              <div class="item --checkbox">
+                <div class="checkbox-wrap">
+                  <label class="checkbox" for="check-all">
+                    <input type="checkbox" id="check-all" title="선택"/>
+                    <span class="checkbox-icon"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="item --name">
+                <p>받으실 분</p>
+              </div>
+              <div class="item --tel">
+                <p>휴대폰번호</p>
+              </div>
+              <div class="item --address">
+                <p>주소</p>
+              </div>
+            </div>
+          </div>
+          <!-- // list header -->
+          <div class="list-item-wrap --body">
+            <div
+              class="list-item --selected">
+              <!-- // 현재 기본배송지로 선택 된 아이템 .selected -->
+              <div class="item --checkbox">
+                <div class="checkbox-wrap">
+                  <label class="checkbox" for="check-1">
+                    <input type="checkbox" id="check-1" title="선택"/>
+                    <span class="checkbox-icon"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="item --name">
+                <span>(주소별칭) 이름</span>
+              </div>
+              <div class="item --tel">010-0000-0000</div>
+              <div class="item --address">경기도 남양주시 호평로 201, 1101동 401호</div>
+            </div>
+            <div class="list-item">
+              <div class="item --checkbox">
+                <div class="checkbox-wrap">
+                  <label class="checkbox" for="check-1">
+                    <input type="checkbox" id="check-1" title="선택"/>
+                    <span class="checkbox-icon"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="item --name">
+                <span>(주소별칭) 이름</span>
+              </div>
+              <div class="item --tel">010-0000-0000</div>
+              <div class="item --address">경기도 남양주시 호평로 201, 1101동 401호</div>
+            </div>
+          </div>
+          <!-- // list body -->
+        </div>
+        <p class="description">*배송지 변경/삭제/추가 는 [마이페이지 > 배송지관리] 에서 진행됩니다.</p>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>취소</span>
+          </button>
+          <button type="button" class="btn-primary --medium">
+            <span>변경</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close --large">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

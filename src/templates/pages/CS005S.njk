@@ -1,0 +1,50 @@
+{% extends "layouts/base.njk" %}
+{% set title = "쿠폰" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>쿠폰</h3>
+    </div>
+    <section class="content-box">
+      <div class="desc-box gray-sub-box --icon-box">
+        <div class="list-top-item-wrap">
+          <dl class="list-top-item">
+            <dt class="item">보유한 쿠폰</dt>
+            <dd class="item">4건</dd>
+          </dl>
+        </div>
+        <i class="icon --xxlarge icon-18"></i>
+      </div>
+    </section>
+    <section class="content-box">
+      <div
+        class="box-list">
+        <!-- 쿠폰 리스트 -->
+        <div class="item">
+          <div class="coupon">
+            <img src="" alt="쿠폰 이미지"/>
+          </div>
+        </div>
+        <!-- // 쿠폰 리스트 -->
+      </div>
+    </section>
+    <!-- 안내 -->
+    <section class="content-box">
+      <div class="desc-box">
+        <p class="guide-basic-title">※ 쿠폰 유의사항</p>
+        <ul class="guide-sub-deep --small --dot">
+          <li>쿠폰의 유효기간을 반드시 확인해 주세요. (쿠폰 증정 시 명시된 기간에 한해 사용 가능)</li>
+          <li>동일한 쿠폰인 경우, ‘쿠폰할인율 별 적용상품’이 다를 수 있으며, 할인율 별로 쿠폰의 개수가 합산됩니다.</li>
+          <li>1개의 주문번호에 1개의 쿠폰만 적용됩니다.</li>
+          <li>주문결제 화면에서 쿠폰을 선택하여 사용하시기 바랍니다.</li>
+          <li>주문 결제하실 때 ‘쿠폰’을 직접 선택하여 사용하기를 하지 않은 경우, 쿠폰 할인 금액은 자동으로 할인되지 않습니다.</li>
+          <li>주문 결제하실 때 사용한 쿠폰은 주문취소 및 반품하실 경우 재발급되지 않습니다.</li>
+          <li>결제할인쿠폰은 상품권, 서비스상품, 행사상품, 특가상품 등 일부 상품에는 적용되지 않습니다.</li>
+          <li>등급별 할인쿠폰은 서비스상품, 행사상품, 특가상품등 일부 상품에는 적용되지 않습니다.</li>
+          <li>쿠폰 할인은 제품 금액에만 적용되며 배송비는 별도입니다.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+{% endblock %}

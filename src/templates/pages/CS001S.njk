@@ -1,0 +1,220 @@
+{% extends "layouts/base.njk" %}
+{% set title = "마이페이지" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <section class="content-box">
+      <div class="division-item-wrap --type-01">
+        <div class="division-item">
+          <div
+            class="user-level-wrap --vip">
+            <!-- 등급별 클래스 : --vip 숲 / --first 나무 / --gold 열매 / --silver 꽃 / --bronze 새싹 / --metal 씨앗 -->
+            <div class="user-level-img">
+              <i class="img-item">등급 아이콘</i>
+            </div>
+            <div class="user-level-info">
+              <p class="user-item">
+                <strong class="user">사용자</strong>
+                <span>님은</span>
+                <em class="level">숲</em>
+                <span>입니다.</span>
+              </p>
+              <div class="btn-wrap">
+                <a href="" alt="" class="btn-outline --xsmall">
+                  <span>등급혜택보기</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="division-item">
+          <dl class="product-price --bg-white">
+            <dt class="title">쿠폰</dt>
+            <dd class="count">
+              <p>
+                <strong>0</strong>장
+              </p>
+            </dd>
+            <dt class="title">선입금액</dt>
+            <dd class="deposit-price">
+              <p>
+                <strong>100,000,000</strong>원
+              </p>
+            </dd>
+            <dt class="title">미수금액</dt>
+            <dd class="receivable-price">
+              <p>
+                <strong>-100,000,000</strong>원
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="content-box">
+      <div class="division-item-wrap --type-02">
+        <div class="division-item">
+          <div class="product-step-wrap">
+            <ol class="step-status">
+              <li
+                class="--active">
+                <!-- 현재 상태 : --active 클래스 추가 -->
+                <p class="item-title">결제대기중</p>
+                <p class="item-number">1</p>
+              </li>
+              <li>
+                <p class="item-title">결제완료</p>
+                <p class="item-number">0</p>
+              </li>
+              <li>
+                <p class="item-title">제작준비</p>
+                <p class="item-number">0</p>
+              </li>
+              <li>
+                <p class="item-title">상품제작중</p>
+                <p class="item-number">0</p>
+              </li>
+              <li>
+                <p class="item-title">제작완료</p>
+                <p class="item-number">0</p>
+              </li>
+              <li>
+                <p class="item-title">발송완료</p>
+                <p class="item-number">0</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="division-item">
+          <div class="check-wrap">
+            <p class="check-item">확인해주세요!</p>
+          </div>
+          <dl class="product-price --bg-white --small">
+            <dt class="title">에러/오류</dt>
+            <dd class="count">
+              <p>0</p>
+            </dd>
+            <dt class="title">주문취소</dt>
+            <dd class="count">
+              <p>0</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="content-box">
+      <div class="division-item-wrap">
+        <div class="division-item">
+          <div class="title-wrap">
+            <h5>1:1 문의</h5>
+            <div class="btn-wrap">
+              <a href="" class="btn-text">
+                <span>전체보기</span>
+              </a>
+            </div>
+          </div>
+          <div class="table-list">
+            <div class="list-item-wrap --header">
+              <div class="list-item">
+                <div class="item --title">
+                  <p>제목</p>
+                </div>
+                <div class="item --date">
+                  <p>등록일</p>
+                </div>
+                <div class="item --status">
+                  <p>답변여부</p>
+                </div>
+              </div>
+            </div>
+            <!-- // list header -->
+            <div class="list-item-wrap --body">
+              <div class="list-item">
+                <div class="item --title" data-label="제목">
+                  <p class="title">
+                    <a href="">문의 제목이 나타나는 칸입니다. 고객이 작성한 제목이 길어지는 경우 생략되어 나타나게 됩니다.</a>
+                  </p>
+                </div>
+                <div class="item --date" data-label="등록일">
+                  <div class="item-inner">
+                    <p class="date">
+                      <span>25.00.00</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="item --status" data-label="답변여부">
+                  <div class="item-inner">
+                    <p>Y</p>
+                  </div>
+                </div>
+              </div>
+              <!-- 내역 없음 -->
+              <div class="list-item">
+                <div class="item --no-item">
+                  <p class="guide-sub-deep">1:1 문의 내역이 없습니다.</p>
+                </div>
+              </div>
+              <!-- // 내역 없음 -->
+            </div>
+            <!-- // list body -->
+          </div>
+        </div>
+        <div class="division-item">
+          <div class="title-wrap">
+            <h5>이용후기</h5>
+            <div class="btn-wrap">
+              <a href="" class="btn-text">
+                <span>전체보기</span>
+              </a>
+            </div>
+          </div>
+          <div class="table-list">
+            <div class="list-item-wrap --header">
+              <div class="list-item">
+                <div class="item --title">
+                  <p>제목</p>
+                </div>
+                <div class="item --date">
+                  <p>등록일</p>
+                </div>
+                <div class="item --status">
+                  <p>답변여부</p>
+                </div>
+              </div>
+            </div>
+            <!-- // list header -->
+            <div class="list-item-wrap --body">
+              <div class="list-item">
+                <div class="item --title" data-label="제목">
+                  <p class="title">
+                    <a href="">문의 제목이 나타나는 칸입니다. 고객이 작성한 제목이 길어지는 경우 생략되어 나타나게 됩니다.</a>
+                  </p>
+                </div>
+                <div class="item --date" data-label="등록일">
+                  <div class="item-inner">
+                    <p class="date">
+                      <span>25.00.00</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="item --status" data-label="답변여부">
+                  <div class="item-inner">
+                    <p>N</p>
+                  </div>
+                </div>
+              </div>
+              <!-- 내역 없음 -->
+              <div class="list-item">
+                <div class="item --no-item">
+                  <p class="guide-sub-deep">현재 이용후기가 없습니다.</p>
+                </div>
+              </div>
+              <!-- // 내역 없음 -->
+            </div>
+            <!-- // list body -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

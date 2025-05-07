@@ -1,0 +1,27 @@
+<div class="product-img" id="thumbNailGallery">
+  <div class="product-img-items">
+    <div class="button-item">
+      <button type="button" class="btn-prev">
+        <i>이전</i>
+      </button>
+    </div>
+    <div class="img-item-screen">
+        <div class="img-item-wrap">
+        {% for item in itemList %}
+            <div class="img-item">
+            <img src="/img/product/{{ item.fileName }}" alt="{{ item.alt }}"/>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="button-item">
+      <button type="button" class="btn-next">
+        <i>다음</i>
+      </button>
+    </div>
+  </div>
+
+  <div class="product-img-detail">
+    <img src="/img/product/{{ itemList[0].fileName }}" alt="{{ itemList[0].alt }}"/>
+  </div>
+</div>

@@ -1,4 +1,7 @@
 @use 'variables' as *;
+@use "sass:math";
+@use "sass:list";
+@use "sass:map";
 
 // typography
 @mixin font($weight: $font-weight-regular,
@@ -7,123 +10,105 @@
   $family: $font-typo-main-font,
   $letter-spacing: $letter-spacing-0) {
   font: #{$weight} #{$size}/#{$line-height} #{$family};
-  letter-spacing: #{$letter-spacing};
+  letter-spacing: $letter-spacing;
 }
 
 // Typography
-// navigation
-@mixin title-small-regular {
-  font: #{$font-weight-regular} #{$font-size-navigation-XS}#{'/'}normal #{$font-typo-main-font};
+@mixin build-font($weight, $size, $lineHeight, $family: $font-typo-main-font) {
+  font: #{$weight} #{$size}/#{$lineHeight} #{$family};
   letter-spacing: $letter-spacing-0;
 }
 
+// navigation
+@mixin title-small-regular {
+  @include build-font($font-weight-regular, $font-size-navigation-XS, normal);
+}
 
 @mixin title-medium {
-  font: #{$font-weight-medium} #{$font-size-navigation-M}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-medium, $font-size-navigation-M, normal);
 }
 
 @mixin title-semibold {
-  font: #{$font-weight-semibold} #{$font-size-navigation-L}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-semibold, $font-size-navigation-L, normal);
 }
 
 // Depth
 @mixin depth-xsmall-semibold {
-  font: #{$font-weight-semibold} #{$font-size-navigation-XS}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-semibold, $font-size-navigation-XS, normal);
 }
 
 @mixin depth-small-medium {
-  font: #{$font-weight-medium} #{$font-size-navigation-S}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-medium, $font-size-navigation-S, normal);
 }
 
 @mixin depth-medium {
-  font: #{$font-weight-regular} #{$font-size-navigation-M}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-navigation-M, normal);
 }
 
 @mixin depth-medium-bold {
-  @include depth-medium;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-navigation-M, normal);
 }
 
 // body
 @mixin font-body-xxsmall {
-  font: #{$font-weight-regular} #{$font-size-body-xxsmall}#{'/'}19px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-medium, $font-size-body-xxsmall, 1.9rem);
 }
 
 @mixin font-body-xsmall {
-  font: #{$font-weight-regular} #{$font-size-body-xsmall}#{'/'}20px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-xsmall, 2rem);
 }
 
 @mixin font-body-small {
-  font: #{$font-weight-regular} #{$font-size-body-small}#{'/'}22px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-small, 2.2rem);
 }
 
 @mixin font-body-medium {
-  font: #{$font-weight-regular} #{$font-size-body-medium}#{'/'}24px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-medium, 2.4rem);
 }
 
 @mixin font-body-large {
-  font: #{$font-weight-regular} #{$font-size-body-large}#{'/'}27px #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-regular, $font-size-body-large, 2.7rem);
 }
 
 @mixin font-body-xxsmall-bold {
-  @include font-body-xxsmall;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-xxsmall, 1.9rem);
 }
 
 @mixin font-body-xsmall-bold {
-  @include font-body-xsmall;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-xsmall, 2rem);
 }
 
 @mixin font-body-small-bold {
-  @include font-body-small;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-small, 2.2rem);
 }
 
 @mixin font-body-medium-bold {
-  @include font-body-medium;
-  font-weight: #{$font-weight-semibold};
+  @include build-font($font-weight-semibold, $font-size-body-medium, 2.4rem);
 }
 
 @mixin font-body-large-bold {
-  @include font-body-large;
-  font-weight: #{$font-weight-bold};
+  @include build-font($font-weight-bold, $font-size-body-large, 2.7rem);
 }
 
 // heading
 @mixin font-heading-xlarge-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-xlarge}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-xlarge, normal);
 }
 
 @mixin font-heading-large-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-large}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-large, normal);
 }
 
 @mixin font-heading-medium-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-medium}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-medium, normal);
 }
 
 @mixin font-heading-small-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-small}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-small, normal);
 }
 
 @mixin font-heading-xsmall-bold {
-  font: #{$font-weight-bold} #{$font-size-heading-xsmall}#{'/'}normal #{$font-typo-main-font};
-  letter-spacing: $letter-spacing-0;
+  @include build-font($font-weight-bold, $font-size-heading-xsmall, normal);
 }
 
 @mixin ellipsis {
@@ -132,7 +117,8 @@
   word-break: break-word;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  // -webkit-line-clamp: 라인 수; 원하는 라인 수 추가해서 사용
+  -webkit-line-clamp: 1;
+  // -webkit-line-clamp: 원하는 라인 수; 추가해서 사용
 }
 
 // desc-guide text
@@ -142,9 +128,30 @@
   padding: 1px 4px;
   border-radius: 2px;
   background: $color-border-gray-light;
-  // @extend %body-xxsmall;
-  @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 12px);
+  @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 1.2rem);
   color: $color-text-subcolor;
+}
+
+@mixin desc-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 16px;
+  text-align: center;
+  @include font-body-small;
+  color: $color-text-basic;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &+.desc-box {
+    margin-top: 12px;
+  }
+
+  +.table-list {
+    margin-top: 24px;
+  }
 }
 
 // button
@@ -165,6 +172,7 @@
 }
 
 @mixin button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -173,23 +181,46 @@
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
+  text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
 
+  &.--medium,
+  &.--large {
+    i {
+
+      &.plus:before,
+      &.plus:after {
+        height: 15px;
+      }
+    }
+  }
+
   i {
+    position: relative;
     @include icon-size(16px, 16px);
 
-    &:before {
+    &.plus {
+      @include line-icon(plus, 10px);
+    }
+
+    &:not(.plus):before {
       content: '';
       display: inline-block;
       width: 100%;
       height: 100%;
     }
 
-    &.plus:before {
-      content: '+';
-      font-size: 12px;
-      background: url('') no-repeat center center/cover;
+    &.step-ing:before {
+      background: olivedrab url('') no-repeat center center/cover;
+    }
+
+    &.step-end:before {
+      background: #fff url('') no-repeat center center/cover;
+    }
+
+    &.step-cart:before {
+      background: #fff url('') no-repeat center center/cover;
     }
   }
 
@@ -202,16 +233,20 @@
   }
 
   // 사이즈
-  &.xsmall {
+  &.--xsmall {
     height: 32px;
     @include font-body-xsmall;
 
     i {
       @include icon-size(16px, 16px);
     }
+
+    &.--round {
+      border-radius: 16px;
+    }
   }
 
-  &.small {
+  &.--small {
     height: 40px;
     @include font-body-xsmall;
 
@@ -220,7 +255,7 @@
     }
   }
 
-  &.medium {
+  &.--medium {
     height: 48px;
     @include font-body-small;
 
@@ -229,7 +264,7 @@
     }
   }
 
-  &.large {
+  &.--large {
     height: 56px;
     @include font-body-small;
 
@@ -244,16 +279,403 @@
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05),
       0px 0px 0px 4px $color-border-primary-light;
   }
+}
 
-  +[class^=btn-] {
-    margin-left: 4px;
+// disabled
+@mixin button-disabled {
+
+  &.--disabled,
+  &.--disabled:hover,
+  &:disabled,
+  &:disabled:hover {
+    border: 1px solid $Line-line;
+    color: $color-divider-gray;
+    background: $color-border-gray-light;
+    box-shadow: none;
+
+    i {
+
+      &::before,
+      &::after {
+        background: $color-border-gray;
+      }
+    }
   }
 }
 
 @mixin modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  background: rgba(0, 0, 0, .5);
+
+  // &::before {
+  //   content: '';
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: $color-alpha-inverse50;
+  // }
+
+  .modal-wrap {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    border: 1px solid $color-border-gray;
+    background: $color-background-white;
+
+    .btn-wrap.close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+    }
+  }
+
+  &.--xlarge {
+    .modal-wrap {
+      width: 100%;
+      max-width: 940px;
+    }
+  }
+
+  &.--large {
+    .modal-wrap {
+      width: 100%;
+      max-width: 540px;
+    }
+  }
+
+  &.--normal {
+    .modal-wrap {
+      width: 100%;
+      max-width: 480px;
+    }
+  }
+
+  &.--small {
+    .modal-wrap {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// @param $type : next, prev, up, down, cross, plus, minus
+// @param $size : arrow 높이(next/prev), caret 폭(up/down), 선 길이(plus/cross/minus)
+// -----------------------------------------------------------------------------
+@mixin line-icon($type, $size: 5px) {
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-radius: 1px;
+    background: if($type ==plus or $type ==minus, $color-border-inverse, $color-border-gray-dark);
+    transform-origin: center;
+    z-index: 1;
+  }
+
+  @if $type ==next or $type ==prev {
+
+    &::before,
+    &::after {
+      width: 1px;
+      height: $size;
+      #{if($type == next, right, left)}: 5.5px;
+    }
+
+    &::before {
+      top: calc(50% - 1.8px);
+      transform: translateY(-50%) rotate(if($type ==next, -45deg, 45deg));
+    }
+
+    &::after {
+      top: calc(50% + 1.8px);
+      transform: translateY(-50%) rotate(if($type ==next, 45deg, -45deg));
+    }
+  }
+
+  @else if $type ==up or $type ==down {
+
+    &::before,
+    &::after {
+      width: $size;
+      height: 1px;
+      top: 50%;
+    }
+
+    @if $type ==up {
+
+      &::before {
+        left: calc(50% - 1.9px);
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        left: calc(50% + 1.9px);
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    @else {
+
+      &::before {
+        left: calc(50% - 1.9px);
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        left: calc(50% + 1.9px);
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  @else if $type ==cross {
+
+    &::before,
+    &::after {
+      width: 1px;
+      height: $size;
+      top: 50%;
+      left: 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  @else if $type ==plus {
+
+    &::before,
+    &::after {
+      width: 1px;
+      height: $size;
+      top: 50%;
+      left: 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  @else if $type ==minus {
+
+    &::before {
+      width: $size;
+      height: 1px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@mixin tooltip {
+  display: none;
   position: absolute;
-  padding: 16px 20px;
-  border-radius: 8px;
-  border: 1px solid $color-border-gray;
-  background: $color-background-white;
+  left: 0;
+  min-height: 24px;
+  padding: 3px 8px !important;
+  white-space: nowrap;
+  @include font-body-xxsmall;
+  color: $color-text-basic-inverse;
+  border-radius: 4px;
+  background: $color-border-gray-darker;
+  ;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2.5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: $color-border-gray-darker;
+    border-radius: 2px 0 0 0;
+    transform: translateX(-50%) rotate(45deg);
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+  }
+}
+
+@mixin alert {
+  display: flex;
+  gap: 0 8px;
+  padding: 16px;
+  border-radius: 12px;
+  @include font-body-small;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+
+  dl {
+    flex: 1 0 auto;
+    margin: 1px 0;
+  }
+
+  .title {
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+}
+
+@mixin rating-size($h) {
+  width: $h * 5;
+  height: $h;
+
+  &.input label {
+    width: $h;
+    height: $h;
+  }
+}
+
+// sprite-icons
+$sprite-path: '../img/icon/icon-sprite.png';
+$sprite-cols: 17; // 한 줄에 아이콘 갯수
+// $sprite-orig: 64px; // 원본 아이콘 크기
+
+// 사용할 아이콘 이름 리스트(순서대로 1부터 시작)
+$icons: (
+  arrow-down,
+  arrow-line,
+  arrow-triangle,
+  menu-pc,
+  menu-mo,
+  close,
+  search,
+  home,
+  bag,
+  cart,
+  phone,
+  phone-call,
+  truck,
+  package,
+  map,
+  pin,
+  gift,
+  download,
+  upload,
+  download-cloud,
+  upload-cloud,
+  link,
+  link2,
+  external-link,
+  unlock,
+  lock,
+  clip,
+  checkbox,
+  folder,
+  folder-plus,
+  folder-minus,
+  file,
+  file-minus,
+  file-plus,
+  file-text,
+  plus,
+  minus,
+  equal,
+  edit,
+  edit2,
+  edit3,
+  message-circle,
+  message-square,
+  book-open,
+  book-close,
+  face-smile,
+  face-meh,
+  face-frown,
+  inform-info,
+  inform-alert-circle,
+  inform-alert-triangle,
+  inform-help-circle,
+  database,
+  mail,
+  bell,
+  slash,
+  check-circle,
+  bookmark,
+  image,
+  award,
+  brifcase,
+  clock,
+  credit-card,
+  send,
+  key,
+  share,
+  share-on,
+  share-hover,
+  eye-on,
+  eye-off,
+  state,
+  calendar,
+);
+
+// 2) index 기반 믹스인: $idx(1~), $size(출력크기), $pseudo(::before|::after)
+@mixin sprite-icons($idx, $size, $pseudo: before) {
+  $sprite-width: $sprite-cols * $size;
+
+  $col: (
+    $idx - 1) % $sprite-cols;
+  $row: math.floor(math.div($idx - 1, $sprite-cols )
+  );
+
+$offset-x: - $col * $size;
+$offset-y: - $row * $size;
+
+&::#{$pseudo} {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: $size;
+  height: $size;
+  background-image: url(#{$sprite-path});
+  background-repeat: no-repeat;
+  background-size: $sprite-width auto;
+  background-position: $offset-x $offset-y;
+}
+}
+
+// svg-icons
+@function svgIcon($iconName, $color-text-basic: #4c4c4c, $color-border-primary: #ed6190) {
+  $iconList: (
+    user: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none'%3E%3Cpath stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round' d='M26 27v-2a4 4 0 0 0-4-4h-8a4 4 0 0 0-4 4v2M18 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z'/%3E%3Cpath stroke='%23#{$color-border-primary}' d='M25 8.5h5M27.5 6v5'/%3E%3C/svg%3E",
+    search: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.9999 21.0004L16.6499 16.6504' stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+  );
+$icon: map.get($iconList, $iconName);
+@return url("data:image/svg+xml;charset=utf8,#{$icon}");
 }

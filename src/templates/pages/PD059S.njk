@@ -1,0 +1,92 @@
+{% extends "layouts/base.njk" %}
+{% set title = "단체티셔츠" %}
+{% block content %}
+  {# C020 #}
+  <div class="content">
+    <nav class="breadcrumb">
+      <ol>
+        <li>
+          <a href="/">카테고리</a>
+        </li>
+        <li>
+          <a href="/">카테고리</a>
+        </li>
+        <li>
+          <strong>단체티셔츠</strong>
+        </li>
+      </ol>
+    </nav>
+    <section class="content-box">
+      <div class="product-wrap">
+        <div class="product-inner">
+          {% set itemList = [
+          { fileName: "C020-01.jpg", alt: "상품 이미지 1" },
+          { fileName: "C020-02.jpg", alt: "상품 이미지 2" },
+          { fileName: "C020-03.jpg", alt: "상품 이미지 3" },
+          { fileName: "C020-04.jpg", alt: "상품 이미지 4" },
+          { fileName: "C020-01.jpg", alt: "상품 이미지 1" },
+          { fileName: "C020-02.jpg", alt: "상품 이미지 2" }
+        ] %}
+          {% include "components/productImage.njk" %}
+          <div class="product-info">
+            <div class="item">
+              <div class="top-area">
+                <p class="product-name">상품명</p>
+                <div class="btn-wrap layer-wrap">
+                  <a href="" class="btn-share">공유하기</a>
+                  <!-- 공유하기 레이어 -->
+                  <div class="layer-item" style="display: none;">
+                    <div class="layer-container">
+                      <p class="title">공유하기</p>
+                      <div class="sns-login --share">
+                        <div class="item-list">
+                          <button type="button" class="btn-sns --kakao">
+                            <span>카카오톡</span>
+                          </button>
+                          <button type="button" class="btn-sns --facebook">
+                            <span>페이스북</span>
+                          </button>
+                          <button type="button" class="btn-sns --instagram">
+                            <span>인스타</span>
+                          </button>
+                          <button type="button" class="btn-sns --naver">
+                            <span>블로그</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="copy-link">
+                        <div class="form-field --small">
+                          <input type="text" class="--basic" value="https://www.colormi.co.kr/......" readonly="readonly"/>
+                        </div>
+                        <button type="button" class="btn-black --xsmall">
+                          <span>복사</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-text">
+                <p class="text">기본정보가 노출되는 줄입니다.</p>
+                <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="desc-box line-box-deep">
+                <p class="guide-primary --large-bold">
+                  별도로 견적문의를 해주세요.
+                </p>
+                <div class="btn-wrap confirm">
+                  <button type="button" class="btn-outline --medium">
+                    <span>견적문의</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include "components/productBottom-2.njk" %}
+  </div>
+{% endblock %}

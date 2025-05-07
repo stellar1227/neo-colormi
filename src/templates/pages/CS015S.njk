@@ -1,0 +1,114 @@
+{% extends "layouts/base.njk" %}
+{% set title = "1:1 문의" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <div class="page-title --left">
+      <h3>1:1 문의</h3>
+    </div>
+    <section class="content-box">
+      <div class="util-wrap --right">
+        <div class="btn-wrap">
+          <a href="" class="btn-outline --xsmall">
+            <span>문의하기</span>
+          </a>
+        </div>
+      </div>
+      <div class="table-list">
+        <div class="list-item-wrap --header">
+          <div class="list-item">
+            <div class="item --number">
+              <p>번호</p>
+            </div>
+            <div class="item --category">
+              <p>상담종류</p>
+            </div>
+            <div class="item --title">
+              <p>문의제목</p>
+            </div>
+            <div class="item --date">
+              <p>등록일</p>
+            </div>
+            <div class="item --status">
+              <p>처리상태</p>
+            </div>
+          </div>
+        </div>
+        <!-- // list header -->
+        <div class="list-item-wrap --body">
+          <div class="list-item">
+            <div class="item --number" data-label="번호">
+              <div class="item-inner">
+                <p>1</p>
+              </div>
+            </div>
+            <div class="item --category" data-label="상담종류">
+              <div class="item-inner">
+                <p>상품문의</p>
+              </div>
+            </div>
+            <div class="item --title" data-label="문의제목">
+              <p class="title">
+                <a href="">문의 제목이 나타나는 칸입니다. 고객이 작성한 제목이 길어지는 경우 생략되어 나타나게 됩니다.</a>
+              </p>
+            </div>
+            <div class="item --date" data-label="등록일">
+              <div class="item-inner">
+                <p class="date">
+                  <span>25.00.00</span>
+                </p>
+              </div>
+            </div>
+            <div class="item --status" data-label="처리상태">
+              <div class="item-inner">
+                <p class="order-status --ing">답변대기</p>
+                <p class="order-status --complete">답변완료</p>
+              </div>
+            </div>
+          </div>
+          <!-- 내역 없음 -->
+          <div class="list-item">
+            <div class="item --no-item --icon --customer-1">
+              <p class="guide-basic-title">1:1 문의 내역이 없어요.</p>
+              <p class="guide-sub-deep">궁금하신 점을 고객센터에서 친절하게 알려드려요.</p>
+            </div>
+          </div>
+          <!-- // 내역 없음 -->
+        </div>
+        <!-- // list body -->
+      </div>
+    </section>
+    <!-- pagination -->
+    <section class="content-box">
+      <div class="pagination">
+        <ul class="item-wrap">
+          <li class="item prev">
+            <a href="">이전</a>
+          </li>
+          <li class="item --active">
+            <a href="">1</a>
+          </li>
+          <li class="item">
+            <a href="">2</a>
+          </li>
+          <li class="item">
+            <span>&middot;&nbsp;&middot;&nbsp;&middot;</span>
+          </li>
+          <li class="item next disabled">
+            <a href="">다음</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 안내 -->
+    <section class="content-box">
+      <div class="desc-box">
+        <p class="guide-basic-title">※ 꼭 확인하세요.</p>
+        <ul class="guide-sub-deep --small --dot">
+          <li>답변처리 평균 1-2일 소요되므로 빠른 답변을 원하실 경우, 고객상담센터(02-2266-0671)로 연락 부탁드립니다.</li>
+          <li>답변이 등록된 글은 수정/삭제가 불가하오니 신중하게 작성해 주세요.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+{% endblock %}

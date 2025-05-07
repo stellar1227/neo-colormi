@@ -1,0 +1,131 @@
+{% set menuData010 = [
+  {
+    name: "떡메모지",
+    subs: ["떡메모지 안내 문구 1", "떡메모지 안내 문구 2"],
+    itemList: [
+      { fileName: "C001-01.jpg", alt: "떡메모지 이미지 1" },
+      { fileName: "C001-02.jpg", alt: "떡메모지 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "무선노트",
+    subs: ["무선노트 안내 문구 1", "무선노트 안내 문구 2"],
+    itemList: [
+      { fileName: "C002-01.jpg", alt: "무선노트 이미지 1" },
+      { fileName: "C002-02.jpg", alt: "무선노트 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "스프링노트",
+    subs: ["스프링노트 안내 문구 1", "스프링노트 안내 문구 2"],
+    itemList: [
+      { fileName: "C003-01.jpg", alt: "스프링노트 이미지 1" },
+      { fileName: "C003-02.jpg", alt: "스프링노트 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "스티커",
+    subs: ["스티커 안내 문구 1", "스티커 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "스티커 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "스티커 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "포토카드",
+    subs: ["포토카드 안내 문구 1", "포토카드 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "포토카드 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "포토카드 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "종이슬로건",
+    subs: ["종이슬로건 안내 문구 1", "종이슬로건 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "종이슬로건 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "종이슬로건 이미지 2" }
+    ],
+    tooltipList: []
+  },
+  {
+    name: "책갈피",
+    subs: ["책갈피 안내 문구 1", "책갈피 안내 문구 2"],
+    itemList: [
+      { fileName: "C004-01.jpg", alt: "책갈피 이미지 1" },
+      { fileName: "C004-02.jpg", alt: "책갈피 이미지 2" }
+    ],
+    tooltipList: []
+  }
+] %}
+<script id="menu-data-010" type="application/json" hidden>
+  {{ menuData010 | dump | safe }}
+</script>
+<nav class="all-menu-wrap" data-menu-index="8">
+  <div class="all-menu">
+    <div class="category-wrap">
+      <div class="category">
+        <strong class="depth-1">문구점</strong>
+        <ul>
+          <li>
+            <p class="depth-2">노트</p>
+            <ul>
+              {% for i in range(0,3) %}
+                <li class="depth-3">
+                  <a href="#" data-index="{{ i }}">
+                    {{ menuData010[i].name }}
+                    {% for templateEl in menuData010[i].tooltipList %}
+                      {{ templateEl | safe }}
+                    {% endfor %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <p class="depth-2">굿즈</p>
+            <ul>
+              {% for i in range(3, menuData010|length) %}
+                <li class="depth-3">
+                  <a href="#" data-index="{{ i }}">
+                    {{ menuData010[i].name }}
+                    {% for templateEl in menuData010[i].tooltipList %}
+                      {{ templateEl | safe }}
+                    {% endfor %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-product-wrap">
+      <ul class="product-img">
+        {% for i in [0,1] %}
+          <li>
+            <img data-img-index="{{ i }}" src="{{ menuData010[0].itemList[i].fileName }}" alt="{{ menuData010[0].itemList[i].alt }}"/>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="product-info">
+        <strong class="product-name" data-name>
+          {{ menuData010[0].name }}
+          {% for templateEl in menuData010[0].tooltipList %}
+            {{ templateEl | safe }}
+          {% endfor %}
+        </strong>
+        {% for k in [0,1] %}
+          <p class="guide-sub --small" data-sub-index="{{ k }}">
+            {{ menuData010[0].subs[k] }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</nav>

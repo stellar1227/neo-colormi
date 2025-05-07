@@ -2,12 +2,13 @@
 {% set title = "designGuide" %}
 {% block content %}
   <style>
-    #container {
-      padding: 20px;
+    #container > .content {
+      margin: 0 auto;
     }
     .design-system {
+      padding: 20px;
       h1.d-sys {
-        margin: 20px -20px;
+        margin: 0 -20px 20px;
         padding: 10px;
         background: var(--color-background-inverse);
         color: var(--color-text-basic-inverse);
@@ -17,7 +18,7 @@
         margin: 30px 0 10px;
         color: var(--color-text-basic);
         font: 600 var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-        &:before {
+        &::before {
           content: '';
           display: inline-block;
           width: 4px;
@@ -41,7 +42,7 @@
           width: calc(50% - 10px);
         }
       }
-      &.color {
+      &.--color {
         .d-sys-list {
           width: calc(33.33% - 15px);
           min-width: 300px;
@@ -65,749 +66,960 @@
           }
         }
       }
-      &.typography {
+      &.--typography {
         .d-sys-list {
           width: calc(33.33% - 15px);
           min-width: 300px;
         }
       }
-      &.button {
+      &.--icon {
+        .d-sys-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+      }
+      &.--button {
         .d-sys-list-wrap {
           gap: 10px 20px;
           .d-sys-list {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            width: calc(50% - 15px);
+            width: calc(33.33% - 15px);
             p {
               margin-left: 20px;
             }
           }
         }
       }
+      &.--tooltip {
+        .d-sys-list-wrap {
+          display: block;
+        }
+      }
       .modal {
         position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        transform: none;
+        &::before {
+          content: none;
+        }
+        .modal-wrap {
+          position: relative;
+          top: auto;
+          left: auto;
+          transform: none;
+        }
       }
       /* Typography navigation */
       .title-small-regular {
         font: var(--font-weight-regular) var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        letter-spacing: var(--letter-spacing-0);
       }
       .title-medium {
         font: var(--font-weight-medium) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        letter-spacing: var(--letter-spacing-0);
       }
       .title-semibold {
         font: var(--font-weight-semibold) var(--font-size-navigation-L)/normal var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        letter-spacing: var(--letter-spacing-0);
       }
       .depth-xsmall-semibold {
         font: var(--font-weight-semibold) var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        letter-spacing: var(--letter-spacing-0);
       }
       .depth-small-medium {
         font: var(--font-weight-medium) var(--font-size-navigation-S)/normal var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        letter-spacing: var(--letter-spacing-0);
       }
       .depth-medium {
         font: var(--font-weight-regular) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        letter-spacing: var(--letter-spacing-0);
       }
       .depth-medium-bold {
         font: var(--font-weight-regular) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        letter-spacing: var(--letter-spacing-0);
         font-weight: var(--font-weight-semibold);
       }
       .font-body-xxsmall {
-        font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 19px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 1.9rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
       }
       .font-body-xxsmall-bold {
-        font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 19px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 1.9rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
         font-weight: var(--font-weight-semibold);
       }
       .font-body-xsmall {
-        font: var(--font-weight-regular) var(--font-size-body-xsmall) / 20px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-xsmall) / 2.0rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
       }
       .font-body-xsmall-bold {
-        font: var(--font-weight-regular) var(--font-size-body-xsmall) / 20px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-xsmall) / 2.0rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
         font-weight: var(--font-weight-semibold);
       }
       .font-body-small {
-        font: var(--font-weight-regular) var(--font-size-body-small) / 22px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-small) / 2.2rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
       }
       .font-body-small-bold {
-        font: var(--font-weight-regular) var(--font-size-body-small) / 22px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-small) / 2.2rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
         font-weight: var(--font-weight-semibold);
       }
       .font-body-medium {
-        font: var(--font-weight-regular) var(--font-size-body-medium) / 24px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-medium) / 2.4rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
       }
       .font-body-medium-bold {
-        font: var(--font-weight-regular) var(--font-size-body-medium) / 24px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-medium) / 2.4rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
         font-weight: var(--font-weight-semibold);
       }
       .font-body-large {
-        font: var(--font-weight-regular) var(--font-size-body-large) / 27px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-large) / 2.7rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
       }
       .font-body-large-bold {
-        font: var(--font-weight-regular) var(--font-size-body-large) / 27px var(--font-typo-main-font);
-        letter-spacing: var(--font-letter-spacing-0);
+        font: var(--font-weight-regular) var(--font-size-body-large) / 2.7rem var(--font-typo-main-font);
+        letter-spacing: var(--letter-spacing-0);
         font-weight: var(--font-weight-bold);
       }
     }
   </style>
-  <section class="design-system color">
-    <h1 class="d-sys">color</h1>
-    <h2 class="d-sys">color</h2>
-    <div class="d-sys-list-wrap">
-      <ul class="d-sys-list">
-        <li>
-          <span style="background: var(--Line-line);"></span>
-          --Line-line
-        </li>
-        <li>
-          <span style="background: var(--Line-line-2);"></span>
-          --Line-line-2
-        </li>
-        <li>
-          <span style="background: var(--Line-line-3);"></span>
-          --Line-line-3
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li>
-          <span style="background: var(--Display-Status-Display-1);"></span>
-          --Display-Status-Display-1
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-2);"></span>
-          --Display-Status-Display-2
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-3);"></span>
-          --Display-Status-Display-3
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-4);"></span>
-          --Display-Status-Display-4
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-5);"></span>
-          --Display-Status-Display-5
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-6);"></span>
-          --Display-Status-Display-6
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-7);"></span>
-          --Display-Status-Display-7
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-8);"></span>
-          --Display-Status-Display-8
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-9);"></span>
-          --Display-Status-Display-9
-        </li>
-        <li>
-          <span style="background: var(--Display-Status-Display-10);"></span>
-          --Display-Status-Display-10
-        </li>
-      </ul>
-    </div>
-    <h2 class="d-sys">mode</h2>
-    <div class="d-sys-list-wrap">
-      <ul class="d-sys-list">
-        <li>
-          <span style="background: var(--color-background-white);"></span>
-          --color-background-white
-        </li>
-        <li>
-          <span style="background: var(--color-background-gray-subtler);"></span>
-          --color-background-gray-subtler
-        </li>
-        <li>
-          <span style="background: var(--color-background-gray-subtle);"></span>
-          --color-background-gray-subtle
-        </li>
-        <li>
-          <span style="background: var(--color-background-inverse);"></span>
-          --color-background-inverse
-        </li>
-        <li>
-          <span style="background: var(--color-background-dim);"></span>
-          --color-background-dim
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li>
-          <span style="background: var(--color-border-transparency);"></span>
-          --color-border-transparency
-        </li>
-        <li>
-          <span style="background: var(--color-border-inverse);"></span>
-          --color-border-inverse
-        </li>
-        <li>
-          <span style="background: var(--color-border-disabled);"></span>
-          --color-border-disabled
-        </li>
-        <li>
-          <span style="background: var(--color-border-gray-light);"></span>
-          --color-border-gray-light
-        </li>
-        <li>
-          <span style="background: var(--color-border-gray);"></span>
-          --color-border-gray
-        </li>
-        <li>
-          <span style="background: var(--color-border-gray-dark);"></span>
-          --color-border-gray-dark
-        </li>
-        <li>
-          <span style="background: var(--color-border-gray-darker);"></span>
-          --color-border-gray-darker
-        </li>
-        <li>
-          <span style="background: var(--color-border-primary-light);"></span>
-          --color-border-primary-light
-        </li>
-        <li>
-          <span style="background: var(--color-border-primary-lighter);"></span>
-          --color-border-primary-lighter
-        </li>
-        <li>
-          <span style="background: var(--color-border-primary);"></span>
-          --color-border-primary
-        </li>
-        <li>
-          <span style="background: var(--color-border-secondary-light);"></span>
-          --color-border-secondary-light
-        </li>
-        <li>
-          <span style="background: var(--color-border-secondary-lighter);"></span>
-          --color-border-secondary-lighter
-        </li>
-        <li>
-          <span style="background: var(--color-border-secondary);"></span>
-          --color-border-secondary
-        </li>
-        <li>
-          <span style="background: var(--color-border-tertiary-light);"></span>
-          --color-border-tertiary-light
-        </li>
-        <li>
-          <span style="background: var(--color-border-tertiary-lighter);"></span>
-          --color-border-tertiary-lighter
-        </li>
-        <li>
-          <span style="background: var(--color-border-tertiary);"></span>
-          --color-border-tertiary
-        </li>
-        <li>
-          <span style="background: var(--color-border-point-light);"></span>
-          --color-border-point-light
-        </li>
-        <li>
-          <span style="background: var(--color-border-point);"></span>
-          --color-border-point
-        </li>
-        <li>
-          <span style="background: var(--color-border-danger-light);"></span>
-          --color-border-danger-light
-        </li>
-        <li>
-          <span style="background: var(--color-border-danger);"></span>
-          --color-border-danger
-        </li>
-        <li>
-          <span style="background: var(--color-border-warning-light);"></span>
-          --color-border-warning-light
-        </li>
-        <li>
-          <span style="background: var(--color-border-warning);"></span>
-          --color-border-warning
-        </li>
-        <li>
-          <span style="background: var(--color-border-success-light);"></span>
-          --color-border-success-light
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li>
-          <span style="background: var(--color-divider-gray-light);"></span>
-          --color-divider-gray-light
-        </li>
-        <li>
-          <span style="background: var(--color-divider-gray);"></span>
-          --color-divider-gray
-        </li>
-        <li>
-          <span style="background: var(--color-divider-gray-dark);"></span>
-          --color-divider-gray-dark
-        </li>
-        <li>
-          <span style="background: var(--color-divider-gray-darker);"></span>
-          --color-divider-gray-darker
-        </li>
-        <li>
-          <span style="background: var(--color-divider-inverse);"></span>
-          --color-divider-inverse
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li>
-          <span style="background: var(--color-text-basic);"></span>
-          --color-text-basic
-        </li>
-        <li>
-          <span style="background: var(--color-text-basic-inverse);"></span>
-          --color-text-basic-inverse
-        </li>
-        <li>
-          <span style="background: var(--color-text-subcolor);"></span>
-          --color-text-subcolor
-        </li>
-        <li>
-          <span style="background: var(--color-text-subcolor-inverse);"></span>
-          --color-text-subcolor-inverse
-        </li>
-        <li>
-          <span style="background: var(--color-text-subcolor-light);"></span>
-          --color-text-subcolor-light
-        </li>
-        <li>
-          <span style="background: var(--color-text-subcolor-inverse-light);"></span>
-          --color-text-subcolor-inverse-light
-        </li>
-        <li>
-          <span style="background: var(--color-text-subcolor-deep);"></span>
-          --color-text-subcolor-deep
-        </li>
-        <li>
-          <span style="background: var(--color-text-subcolor-inverse-deep);"></span>
-          --color-text-subcolor-inverse-deep
-        </li>
-        <li>
-          <span style="background: var(--color-text-primary);"></span>
-          --color-text-primary
-        </li>
-        <li>
-          <span style="background: var(--color-text-secondary);"></span>
-          --color-text-secondary
-        </li>
-        <li>
-          <span style="background: var(--color-text-tertiary);"></span>
-          --color-text-tertiary
-        </li>
-        <li>
-          <span style="background: var(--color-text-point);"></span>
-          --color-text-point
-        </li>
-        <li>
-          <span style="background: var(--color-text-danger);"></span>
-          --color-text-danger
-        </li>
-        <li>
-          <span style="background: var(--color-text-warning);"></span>
-          --color-text-warning
-        </li>
-        <li>
-          <span style="background: var(--color-text-success);"></span>
-          --color-text-success
-        </li>
-        <li>
-          <span style="background: var(--color-text-information);"></span>
-          --color-text-information
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li>
-          <span style="background: var(--color-link-default);"></span>
-          --color-link-default
-        </li>
-        <li>
-          <span style="background: var(--color-link-hover);"></span>
-          --color-link-hover
-        </li>
-        <li>
-          <span style="background: var(--color-link-pressed);"></span>
-          --color-link-pressed
-        </li>
-        <li>
-          <span style="background: var(--color-link-visited);"></span>
-          --color-link-visited
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="design-system color">
-    <h1 class="d-sys">font</h1>
-    <h2 class="d-sys">font-family</h2>
-    <ul class="d-sys-list">
-      <li style="font-family: var(--font-typo-main-font);">
-        --font-typo-main-font
-      </li>
-      <li style="font-family: var(--font-typo-icon-en-font);">
-        --font-typo-icon-en-font
-      </li>
-    </ul>
-    <h2 class="d-sys">font-size</h2>
-    <div class="d-sys-list-wrap">
-      <ul class="d-sys-list">
-        <li style="font-size: var(--font-size-heading-xsmall);">
-          --font-size-heading-xsmall
-        </li>
-        <li style="font-size: var(--font-size-heading-small);">
-          --font-size-heading-small
-        </li>
-        <li style="font-size: var(--font-size-heading-medium);">
-          --font-size-heading-medium
-        </li>
-        <li style="font-size: var(--font-size-heading-large);">
-          --font-size-heading-large
-        </li>
-        <li style="font-size: var(--font-size-heading-xlarge);">
-          --font-size-heading-xlarge
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li style="font-size: var(--font-size-navigation-XXS);">
-          --font-size-navigation-XXS
-        </li>
-        <li style="font-size: var(--font-size-navigation-XS);">
-          --font-size-navigation-XS
-        </li>
-        <li style="font-size: var(--font-size-navigation-S);">
-          --font-size-navigation-S
-        </li>
-        <li style="font-size: var(--font-size-navigation-M);">
-          --font-size-navigation-M
-        </li>
-        <li style="font-size: var(--font-size-navigation-L);">
-          --font-size-navigation-L
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li style="font-size: var(--font-size-body-xxsmall);">
-          --font-size-body-xxsmall
-        </li>
-        <li style="font-size: var(--font-size-body-xsmall);">
-          --font-size-body-xsmall
-        </li>
-        <li style="font-size: var(--font-size-body-small);">
-          --font-size-body-small
-        </li>
-        <li style="font-size: var(--font-size-body-medium);">
-          --font-size-body-medium
-        </li>
-        <li style="font-size: var(--font-size-body-large);">
-          --font-size-body-large
-        </li>
-      </ul>
-    </div>
-    <h2 class="d-sys">font-weight/letter-spacing</h2>
-    <div class="d-sys-list-wrap">
-      <ul class="d-sys-list">
-        <li style="font-weight: var(--font-weight-regular);">
-          --font-weight-regular
-        </li>
-        <li style="font-weight: var(--font-weight-medium);">
-          --font-weight-medium
-        </li>
-        <li style="font-weight: var(--font-weight-semibold);">
-          --font-weight-semibold
-        </li>
-        <li style="font-weight: var(--font-weight-bold);">
-          --font-weight-bold
-        </li>
-      </ul>
-      <ul class="d-sys-list">
-        <li style="letter-spacing: var(--font-letter-spacing-0);">
-          --font-letter-spacing-0
-        </li>
-        <li style="letter-spacing: var(--font-letter-spacing-1);">
-          --font-letter-spacing-1
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="design-system typography">
-    <h1 class="d-sys">typography</h1>
-    <p>Baseline 정렬을 기준으로 진행해주세요.</p>
-    <p>각 헤드라인 값은 Margin-Bottom의 고정 값으로 적용한다. 헤드라인으로 영문이 사용되는 경우, 대문자로 고정한다.</p>
-    <div class="d-sys-list-wrap">
-      <div class="d-sys-list">
-        <h2 class="d-sys">Navigation</h2>
-        <p class="title-semibold">title-semibold</p>
-        <p class="title-medium">title-medium</p>
-        <p class="title-small-regular">title-small-regular</p>
-        <p class="depth-medium-bold">depth-medium-bold</p>
-        <p class="depth-medium">depth-medium</p>
-        <p class="depth-small-medium">depth-small-medium</p>
-        <p class="depth-xsmall-semibold">depth-xsmall-semibold</p>
+  <div class="content">
+    <section class="design-system --color">
+      <h1 class="d-sys">color</h1>
+      <h2 class="d-sys">color</h2>
+      <div class="d-sys-list-wrap">
+        <ul class="d-sys-list">
+          <li>
+            <span style="background: var(--Line-line);"></span>
+            --Line-line
+          </li>
+          <li>
+            <span style="background: var(--Line-line-2);"></span>
+            --Line-line-2
+          </li>
+          <li>
+            <span style="background: var(--Line-line-3);"></span>
+            --Line-line-3
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li>
+            <span style="background: var(--Display-Status-Display-1);"></span>
+            --Display-Status-Display-1
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-2);"></span>
+            --Display-Status-Display-2
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-3);"></span>
+            --Display-Status-Display-3
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-4);"></span>
+            --Display-Status-Display-4
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-5);"></span>
+            --Display-Status-Display-5
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-6);"></span>
+            --Display-Status-Display-6
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-7);"></span>
+            --Display-Status-Display-7
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-8);"></span>
+            --Display-Status-Display-8
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-9);"></span>
+            --Display-Status-Display-9
+          </li>
+          <li>
+            <span style="background: var(--Display-Status-Display-10);"></span>
+            --Display-Status-Display-10
+          </li>
+        </ul>
       </div>
-      <div class="d-sys-list">
-        <h2 class="d-sys">Heading</h2>
-        <h1>h1</h1>
-        <h2>h2</h2>
-        <h3>h3</h3>
-        <h4>h4</h4>
-        <h5>h5</h5>
+      <h2 class="d-sys">mode</h2>
+      <div class="d-sys-list-wrap">
+        <ul class="d-sys-list">
+          <li>
+            <span style="background: var(--color-background-white);"></span>
+            --color-background-white
+          </li>
+          <li>
+            <span style="background: var(--color-background-gray-subtler);"></span>
+            --color-background-gray-subtler
+          </li>
+          <li>
+            <span style="background: var(--color-background-gray-subtle);"></span>
+            --color-background-gray-subtle
+          </li>
+          <li>
+            <span style="background: var(--color-background-inverse);"></span>
+            --color-background-inverse
+          </li>
+          <li>
+            <span style="background: var(--color-background-dim);"></span>
+            --color-background-dim
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li>
+            <span style="background: var(--color-border-transparency);"></span>
+            --color-border-transparency
+          </li>
+          <li>
+            <span style="background: var(--color-border-inverse);"></span>
+            --color-border-inverse
+          </li>
+          <li>
+            <span style="background: var(--color-border-disabled);"></span>
+            --color-border-disabled
+          </li>
+          <li>
+            <span style="background: var(--color-border-gray-light);"></span>
+            --color-border-gray-light
+          </li>
+          <li>
+            <span style="background: var(--color-border-gray);"></span>
+            --color-border-gray
+          </li>
+          <li>
+            <span style="background: var(--color-border-gray-dark);"></span>
+            --color-border-gray-dark
+          </li>
+          <li>
+            <span style="background: var(--color-border-gray-darker);"></span>
+            --color-border-gray-darker
+          </li>
+          <li>
+            <span style="background: var(--color-border-primary-light);"></span>
+            --color-border-primary-light
+          </li>
+          <li>
+            <span style="background: var(--color-border-primary-lighter);"></span>
+            --color-border-primary-lighter
+          </li>
+          <li>
+            <span style="background: var(--color-border-primary);"></span>
+            --color-border-primary
+          </li>
+          <li>
+            <span style="background: var(--color-border-secondary-light);"></span>
+            --color-border-secondary-light
+          </li>
+          <li>
+            <span style="background: var(--color-border-secondary-lighter);"></span>
+            --color-border-secondary-lighter
+          </li>
+          <li>
+            <span style="background: var(--color-border-secondary);"></span>
+            --color-border-secondary
+          </li>
+          <li>
+            <span style="background: var(--color-border-tertiary-light);"></span>
+            --color-border-tertiary-light
+          </li>
+          <li>
+            <span style="background: var(--color-border-tertiary-lighter);"></span>
+            --color-border-tertiary-lighter
+          </li>
+          <li>
+            <span style="background: var(--color-border-tertiary);"></span>
+            --color-border-tertiary
+          </li>
+          <li>
+            <span style="background: var(--color-border-point-light);"></span>
+            --color-border-point-light
+          </li>
+          <li>
+            <span style="background: var(--color-border-point);"></span>
+            --color-border-point
+          </li>
+          <li>
+            <span style="background: var(--color-border-danger-light);"></span>
+            --color-border-danger-light
+          </li>
+          <li>
+            <span style="background: var(--color-border-danger);"></span>
+            --color-border-danger
+          </li>
+          <li>
+            <span style="background: var(--color-border-warning-light);"></span>
+            --color-border-warning-light
+          </li>
+          <li>
+            <span style="background: var(--color-border-warning);"></span>
+            --color-border-warning
+          </li>
+          <li>
+            <span style="background: var(--color-border-success-light);"></span>
+            --color-border-success-light
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li>
+            <span style="background: var(--color-divider-gray-light);"></span>
+            --color-divider-gray-light
+          </li>
+          <li>
+            <span style="background: var(--color-divider-gray);"></span>
+            --color-divider-gray
+          </li>
+          <li>
+            <span style="background: var(--color-divider-gray-dark);"></span>
+            --color-divider-gray-dark
+          </li>
+          <li>
+            <span style="background: var(--color-divider-gray-darker);"></span>
+            --color-divider-gray-darker
+          </li>
+          <li>
+            <span style="background: var(--color-divider-inverse);"></span>
+            --color-divider-inverse
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li>
+            <span style="background: var(--color-text-basic);"></span>
+            --color-text-basic
+          </li>
+          <li>
+            <span style="background: var(--color-text-basic-inverse);"></span>
+            --color-text-basic-inverse
+          </li>
+          <li>
+            <span style="background: var(--color-text-subcolor);"></span>
+            --color-text-subcolor
+          </li>
+          <li>
+            <span style="background: var(--color-text-subcolor-inverse);"></span>
+            --color-text-subcolor-inverse
+          </li>
+          <li>
+            <span style="background: var(--color-text-subcolor-light);"></span>
+            --color-text-subcolor-light
+          </li>
+          <li>
+            <span style="background: var(--color-text-subcolor-inverse-light);"></span>
+            --color-text-subcolor-inverse-light
+          </li>
+          <li>
+            <span style="background: var(--color-text-subcolor-deep);"></span>
+            --color-text-subcolor-deep
+          </li>
+          <li>
+            <span style="background: var(--color-text-subcolor-inverse-deep);"></span>
+            --color-text-subcolor-inverse-deep
+          </li>
+          <li>
+            <span style="background: var(--color-text-primary);"></span>
+            --color-text-primary
+          </li>
+          <li>
+            <span style="background: var(--color-text-secondary);"></span>
+            --color-text-secondary
+          </li>
+          <li>
+            <span style="background: var(--color-text-tertiary);"></span>
+            --color-text-tertiary
+          </li>
+          <li>
+            <span style="background: var(--color-text-point);"></span>
+            --color-text-point
+          </li>
+          <li>
+            <span style="background: var(--color-text-danger);"></span>
+            --color-text-danger
+          </li>
+          <li>
+            <span style="background: var(--color-text-warning);"></span>
+            --color-text-warning
+          </li>
+          <li>
+            <span style="background: var(--color-text-success);"></span>
+            --color-text-success
+          </li>
+          <li>
+            <span style="background: var(--color-text-information);"></span>
+            --color-text-information
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li>
+            <span style="background: var(--color-link-default);"></span>
+            --color-link-default
+          </li>
+          <li>
+            <span style="background: var(--color-link-hover);"></span>
+            --color-link-hover
+          </li>
+          <li>
+            <span style="background: var(--color-link-pressed);"></span>
+            --color-link-pressed
+          </li>
+          <li>
+            <span style="background: var(--color-link-visited);"></span>
+            --color-link-visited
+          </li>
+        </ul>
       </div>
-      <div class="d-sys-list">
-        <h2 class="d-sys">Body</h2>
-        <p class="font-body-large-bold">body-large-bold</p>
-        <p class="font-body-medium-bold">body-medium-bold</p>
-        <p class="font-body-small-bold">body-small-bold</p>
-        <p class="font-body-xsmall-bold">body-xsmall-bold</p>
-        <p class="font-body-xxsmall-bold">body-xxsmall-bold</p>
-        <p class="font-body-large">body-large</p>
-        <p class="font-body-medium">body-medium</p>
-        <p class="font-body-small">body-small</p>
-        <p class="font-body-xsmall">body-xsmall</p>
-        <p class="font-body-xxsmall">body-xxsmall</p>
+    </section>
+    <section class="design-system --color">
+      <h1 class="d-sys">font</h1>
+      <h2 class="d-sys">font-family</h2>
+      <ul class="d-sys-list">
+        <li style="font-family: var(--font-typo-main-font);">
+          --font-typo-main-font
+        </li>
+        <li style="font-family: var(--font-typo-icon-en-font);">
+          --font-typo-icon-en-font
+        </li>
+      </ul>
+      <h2 class="d-sys">font-size</h2>
+      <div class="d-sys-list-wrap">
+        <ul class="d-sys-list">
+          <li style="font-size: var(--font-size-heading-xsmall);">
+            --font-size-heading-xsmall
+          </li>
+          <li style="font-size: var(--font-size-heading-small);">
+            --font-size-heading-small
+          </li>
+          <li style="font-size: var(--font-size-heading-medium);">
+            --font-size-heading-medium
+          </li>
+          <li style="font-size: var(--font-size-heading-large);">
+            --font-size-heading-large
+          </li>
+          <li style="font-size: var(--font-size-heading-xlarge);">
+            --font-size-heading-xlarge
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li style="font-size: var(--font-size-navigation-XXS);">
+            --font-size-navigation-XXS
+          </li>
+          <li style="font-size: var(--font-size-navigation-XS);">
+            --font-size-navigation-XS
+          </li>
+          <li style="font-size: var(--font-size-navigation-S);">
+            --font-size-navigation-S
+          </li>
+          <li style="font-size: var(--font-size-navigation-M);">
+            --font-size-navigation-M
+          </li>
+          <li style="font-size: var(--font-size-navigation-L);">
+            --font-size-navigation-L
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li style="font-size: var(--font-size-body-xxsmall);">
+            --font-size-body-xxsmall
+          </li>
+          <li style="font-size: var(--font-size-body-xsmall);">
+            --font-size-body-xsmall
+          </li>
+          <li style="font-size: var(--font-size-body-small);">
+            --font-size-body-small
+          </li>
+          <li style="font-size: var(--font-size-body-medium);">
+            --font-size-body-medium
+          </li>
+          <li style="font-size: var(--font-size-body-large);">
+            --font-size-body-large
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
-  <section class="design-system icon">
-    <h1 class="d-sys">Icon</h1>
-  </section>
-  <section class="design-system input">
-    <h1 class="d-sys">Input/Select/Drop Down/Textarea</h1>
-    <p>close , eye 아이콘은 로그인 시에만 사용하며 close은 값을 입력했을 때 나타나게 된다. select의 초기 기본 형태는 ‘선택’으로 표시된다.</p>
-    <div class="d-sys-list-wrap">
-      <div class="d-sys-list">
-        <h2 class="d-sys">input</h2>
-        <!-- form-field input -->
-        <div class="form-field">
-          <input type="text" placeholder="Placeholder" value="사용자 입력 값"/>
-          <p class="description">Helper Text</p>
+      <h2 class="d-sys">font-weight/letter-spacing</h2>
+      <div class="d-sys-list-wrap">
+        <ul class="d-sys-list">
+          <li style="font-weight: var(--font-weight-regular);">
+            --font-weight-regular
+          </li>
+          <li style="font-weight: var(--font-weight-medium);">
+            --font-weight-medium
+          </li>
+          <li style="font-weight: var(--font-weight-semibold);">
+            --font-weight-semibold
+          </li>
+          <li style="font-weight: var(--font-weight-bold);">
+            --font-weight-bold
+          </li>
+        </ul>
+        <ul class="d-sys-list">
+          <li style="letter-spacing: var(--letter-spacing-0);">
+            --letter-spacing-0
+          </li>
+          <li style="letter-spacing: var(--letter-spacing-1);">
+            --letter-spacing-1
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="design-system --typography">
+      <h1 class="d-sys">typography</h1>
+      <p>Baseline 정렬을 기준으로 진행해주세요.</p>
+      <p>각 헤드라인 값은 Margin-Bottom의 고정 값으로 적용한다. 헤드라인으로 영문이 사용되는 경우, 대문자로 고정한다.</p>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <h2 class="d-sys">Navigation</h2>
+          <p class="title-semibold">title-semibold</p>
+          <p class="title-medium">title-medium</p>
+          <p class="title-small-regular">title-small-regular</p>
+          <p class="depth-medium-bold">depth-medium-bold</p>
+          <p class="depth-medium">depth-medium</p>
+          <p class="depth-small-medium">depth-small-medium</p>
+          <p class="depth-xsmall-semibold">depth-xsmall-semibold</p>
         </div>
-        <!-- form-field input :error -->
-        <div class="form-field error">
-          <input type="text" placeholder="error"/>
-          <p class="description">Helper Text</p>
+        <div class="d-sys-list">
+          <h2 class="d-sys">Heading</h2>
+          <h1>h1</h1>
+          <h2>h2</h2>
+          <h3>h3</h3>
+          <h4>h4</h4>
+          <h5>h5</h5>
         </div>
-        <!-- form-field input :disabled -->
-        <div class="form-field">
-          <input type="text" placeholder="disabled" disabled="disabled"/>
-          <p class="description">Helper Text</p>
-        </div>
-        <!-- form-field input :readonly -->
-        <div class="form-field">
-          <input type="text" placeholder="readonly" readonly="readonly"/>
-          <p class="description">Helper Text</p>
-        </div>
-        <!-- form-field input :success -->
-        <div class="form-field success">
-          <input type="text" placeholder="success"/>
-          <p class="description">Helper Text</p>
+        <div class="d-sys-list">
+          <h2 class="d-sys">Body</h2>
+          <p class="font-body-large-bold">body-large-bold</p>
+          <p class="font-body-medium-bold">body-medium-bold</p>
+          <p class="font-body-small-bold">body-small-bold</p>
+          <p class="font-body-xsmall-bold">body-xsmall-bold</p>
+          <p class="font-body-xxsmall-bold">body-xxsmall-bold</p>
+          <p class="font-body-large">body-large</p>
+          <p class="font-body-medium">body-medium</p>
+          <p class="font-body-small">body-small</p>
+          <p class="font-body-xsmall">body-xsmall</p>
+          <p class="font-body-xxsmall">body-xxsmall</p>
         </div>
       </div>
-      <div class="d-sys-list">
-        <h2 class="d-sys">select</h2>
-        <!-- form-field button select :active -->
-        <div
-          class="form-field active">
-          <!-- 선택누르면 active 클래스 추가 -->
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택</span>
-            </button>
-            <ul class="option-list" style="position: relative;">
-              <li>
-                <button type="button" class="btn-option">option 1</button>
-              </li>
-              <li>
-                <button type="button" class="btn-option">option 2</button>
-              </li>
+    </section>
+    <section class="design-system --desc-box">
+      <h1 class="d-sys">desc box</h1>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <div class="desc-box line-box">
+            <p class="guide-basic">
+              desc-box line-box
+            </p>
+          </div>
+          <div class="desc-box line-box --large">
+            <p class="guide-basic">
+              desc-box line-box --large
+            </p>
+          </div>
+          <div class="desc-box gray-light-box">
+            <p class="guide-basic-title">desc-box gray-light-box</p>
+            <p class="guide-basic">텍스트</p>
+          </div>
+          <div class="desc-box gray-sub-box">
+            <p class="guide-basic-title">desc-box gray-sub-box</p>
+            <p class="guide-basic">텍스트</p>
+          </div>
+        </div>
+        <div class="d-sys-list">
+          <div class="desc-box tertiary-light-box">
+            <p class="guide-sub">
+              desc-box tertiary-light-box
+            </p>
+            <div class="btn-wrap">
+              <button type="button" class="btn-outline --large">
+                <span>버튼</span>
+              </button>
+            </div>
+          </div>
+          <div class="desc-box border-box">
+            <p class="guide-basic-title">desc-box border-box</p>
+            <ul class="guide-sub">
+              <li>- 텍스트</li>
+              <li>- 텍스트</li>
+            </ul>
+            <p class="guide-basic-title">타이틀</p>
+            <ul class="guide-sub">
+              <li>- 텍스트</li>
             </ul>
           </div>
-        </div>
-        <!-- form-field button select :error -->
-        <div class="form-field error">
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택 :error</span>
-            </button>
-          </div>
-        </div>
-        <!-- form-field button select :disabled -->
-        <div class="form-field">
-          <div class="form-wrap">
-            <button type="button" class="btn-select" disabled="disabled">
-              <span>선택 :disabled</span>
-            </button>
-          </div>
-        </div>
-        <!-- form-field button select :success -->
-        <div class="form-field success">
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택 :success</span>
-            </button>
-          </div>
-        </div>
-        <h2 class="d-sys">search</h2>
-        <!-- form-field button select search -->
-        <div class="form-field search">
-          <div class="form-wrap">
-            <input type="text" placeholder="search"/>
-            <i class="search-bg"></i>
-            <div class="util">
-              <button type="button" class="btn-del">
-                <i>삭제</i>
-              </button>
-              <button type="button" class="btn-search">
-                <i>검색</i>
-              </button>
+          <div class="desc-box border-box --small">
+            <div class="radio-wrap">
+              <label class="radio" for="radio-0-1">
+                <input type="radio" id="radio-0-1" name="radio-0" checked="checked">
+                <span class="radio-icon"></span>
+                <span class="radio-label">desc-box border-box --small</span>
+              </label>
+              <label class="radio" for="radio-0-2">
+                <input type="radio" id="radio-0-2" name="radio-0">
+                <span class="radio-icon"></span>
+                <span class="radio-label">김지아</span>
+              </label>
+              <label class="radio" for="radio-0-3">
+                <input type="radio" id="radio-0-3" name="radio-0">
+                <span class="radio-icon"></span>
+                <span class="radio-label">김초롱이</span>
+              </label>
             </div>
-          </div>
-        </div>
-        <!-- form-field button select search completed -->
-        <div class="form-field search completed">
-          <div class="form-wrap">
-            <input type="text" placeholder="search"/>
-            <i class="search-bg"></i>
-            <div class="util">
-              <span class="guide">총
-                <em>00</em>개의 상품이 검색되었어요</span>
-              <button type="button" class="btn-del">
-                <i>삭제</i>
-              </button>
-              <button type="button" class="btn-search">
-                <i>검색</i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="d-sys-list">
-        <h2 class="d-sys">size</h2>
-        <!-- form-field input :small -->
-        <div class="form-field small">
-          <input type="text" placeholder="Placeholder"/>
-          <p class="description">Helper Text</p>
-        </div>
-        <!-- form-field input :large -->
-        <div class="form-field large">
-          <input type="text" placeholder="Placeholder"/>
-          <p class="description">Helper Text</p>
-        </div>
-        <!-- form-field input :xlarge -->
-        <div class="form-field xlarge">
-          <input type="text" placeholder="Placeholder"/>
-          <p class="description">Helper Text</p>
-        </div>
-        <!-- form-field button select :small -->
-        <div class="form-field small">
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택</span>
-            </button>
-          </div>
-        </div>
-        <!-- form-field button select :large -->
-        <div class="form-field large">
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택</span>
-            </button>
-          </div>
-        </div>
-        <!-- form-field button select :xlarge -->
-        <div class="form-field xlarge">
-          <div class="form-wrap">
-            <button type="button" class="btn-select">
-              <span>선택</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="d-sys-list">
-        <h2 class="d-sys">input > button</h2>
-        <!-- form-field -->
-        <div class="form-field">
-          <div class="form-wrap">
-            <input type="password" placeholder="password"/>
-            <div class="util">
-              <button type="button" class="btn-del">
-                <i>삭제</i>
-              </button>
-            </div>
-          </div>
-          <p class="description">Helper Text</p>
-        </div>
-        <!-- form-field :login -->
-        <div class="form-field login">
-          <div class="form-wrap">
-            <input type="password" placeholder="password"/>
-            <div class="util">
-              <button type="button" class="btn-del">
-                <i>삭제</i>
-              </button>
-              <button type="button" class="btn-visible">
-                <i>보기</i>
-              </button>
-            </div>
-          </div>
-          <p class="description">Helper Text</p>
-        </div>
-        <h2 class="d-sys">textarea</h2>
-        <!-- form-field textarea -->
-        <div class="form-field textarea">
-          <div class="form-wrap">
-            <label for="textarea">Label</label>
-            <textarea id="textarea" placeholder="Placeholder"></textarea>
-          </div>
-          <div class="count">
-            <em>1</em>/<span>100</span>
-          </div>
-        </div>
-        <!-- form-field textarea -->
-        <div class="form-field textarea">
-          <div class="form-wrap">
-            <textarea id="textarea" placeholder="Placeholder"></textarea>
-          </div>
-          <div class="count">
-            <em>1</em>/<span>100</span>
           </div>
         </div>
       </div>
     </section>
-    <section class="design-system rating" style="display: none;">
+    <section class="design-system --guide-text">
+      <h1 class="d-sys">guide text</h1>
+      <p>사이즈 --small / --large-bold</p>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <h2 class="d-sys">guide</h2>
+          <p class="guide-basic-title">.guide-basic-title</p>
+          <p class="guide-basic">.guide-basic</p>
+          <p class="guide-sub">.guide-sub</p>
+          <p class="guide-sub-deep">.guide-sub-deep</p>
+        </div>
+        <div class="d-sys-list">
+          <h2 class="d-sys">size guide</h2>
+          <p class="guide-sub-deep --xsmall">.guide-sub-deep.--xsmall</p>
+          <p class="guide-sub-deep --small">.guide-sub-deep.--small</p>
+          <p class="guide-sub-deep --medium-bold">.guide-sub-deep.--medium-bold</p>
+          <p class="guide-sub-deep --large-bold">.guide-sub-deep.--large-bold</p>
+          <p class="guide-sub-deep --bold">.guide-sub-deep.--bold</p>
+          <ul class="guide-sub-deep --small --dot">
+            <li>리스트 dot</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="design-system --icon">
+      <h1 class="d-sys">Icon</h1>
+      <p>사이즈별 --small :16px / --medium :24px / --large :36px / --xlarge :46px / --xxlarge :64px</p>
+      <p>icon-1부터 순서대로 +1</p>
+      <h2 class="d-sys">sprite icons</h2>
+      <div class="d-sys-list">
+        <i class="icon --large icon-1"></i>
+        <i class="icon --large icon-2"></i>
+        <i class="icon --large icon-3"></i>
+        <i class="icon --large icon-4"></i>
+        <i class="icon --large icon-5"></i>
+        <i class="icon --large icon-6"></i>
+        <i class="icon --large icon-7"></i>
+        <i class="icon --large icon-8"></i>
+        <i class="icon --large icon-9"></i>
+        <i class="icon --large icon-10"></i>
+        <i class="icon --large icon-11"></i>
+        <i class="icon --large icon-12"></i>
+        <i class="icon --large icon-13"></i>
+        <i class="icon --large icon-14"></i>
+        <i class="icon --large icon-15"></i>
+        <i class="icon --large icon-16"></i>
+        <i class="icon --large icon-17"></i>
+        <i class="icon --large icon-18"></i>
+        <i class="icon --large icon-19"></i>
+        <i class="icon --large icon-20"></i>
+        <i class="icon --large icon-21"></i>
+        <i class="icon --large icon-22"></i>
+        <i class="icon --large icon-23"></i>
+        <i class="icon --large icon-24"></i>
+        <i class="icon --large icon-25"></i>
+        <i class="icon --large icon-26"></i>
+        <i class="icon --large icon-27"></i>
+        <i class="icon --large icon-28"></i>
+        <i class="icon --large icon-29"></i>
+        <i class="icon --large icon-30"></i>
+        <i class="icon --large icon-31"></i>
+        <i class="icon --large icon-32"></i>
+        <i class="icon --large icon-33"></i>
+        <i class="icon --large icon-34"></i>
+        <i class="icon --large icon-35"></i>
+        <i class="icon --large icon-36"></i>
+        <i class="icon --large icon-37"></i>
+        <i class="icon --large icon-38"></i>
+        <i class="icon --large icon-39"></i>
+        <i class="icon --large icon-40"></i>
+        <i class="icon --large icon-41"></i>
+        <i class="icon --large icon-42"></i>
+        <i class="icon --large icon-43"></i>
+        <i class="icon --large icon-44"></i>
+        <i class="icon --large icon-45"></i>
+        <i class="icon --large icon-46"></i>
+        <i class="icon --large icon-47"></i>
+        <i class="icon --large icon-48"></i>
+        <i class="icon --large icon-49"></i>
+        <i class="icon --large icon-50"></i>
+        <i class="icon --large icon-51"></i>
+        <i class="icon --large icon-52"></i>
+        <i class="icon --large icon-53"></i>
+        <i class="icon --large icon-54"></i>
+        <i class="icon --large icon-55"></i>
+        <i class="icon --large icon-56"></i>
+        <i class="icon --large icon-57"></i>
+        <i class="icon --large icon-58"></i>
+        <i class="icon --large icon-59"></i>
+        <i class="icon --large icon-60"></i>
+        <i class="icon --large icon-61"></i>
+        <i class="icon --large icon-62"></i>
+        <i class="icon --large icon-63"></i>
+        <i class="icon --large icon-64"></i>
+        <i class="icon --large icon-65"></i>
+        <i class="icon --large icon-66"></i>
+        <i class="icon --large icon-67"></i>
+        <i class="icon --large icon-68"></i>
+        <i class="icon --large icon-69"></i>
+        <i class="icon --large icon-70"></i>
+        <i class="icon --large icon-71"></i>
+        <i class="icon --large icon-72"></i>
+      </div>
+    </section>
+    <section class="design-system --input">
+      <h1 class="d-sys">Input/Select/Drop Down/Textarea</h1>
+      <p>close , eye 아이콘은 로그인 시에만 사용. select의 초기 기본 형태는 ‘선택’으로 표시된다.</p>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <h2 class="d-sys">input</h2>
+          <!-- form-field input -->
+          <div class="form-field">
+            <input type="text" placeholder="Placeholder" value="사용자 입력 값"/>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field input :error -->
+          <div class="form-field --error">
+            <input type="text" placeholder="error"/>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field input :disabled -->
+          <div class="form-field">
+            <input type="text" placeholder="disabled" disabled="disabled"/>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field input :readonly -->
+          <div class="form-field">
+            <input type="text" placeholder="readonly" readonly="readonly"/>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field input :success -->
+          <div class="form-field --success">
+            <input type="text" placeholder="success"/>
+            <p class="description">Helper Text</p>
+          </div>
+        </div>
+        <div class="d-sys-list">
+          <h2 class="d-sys">select</h2>
+          <!-- form-field button select :active -->
+          <div class="form-field">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>선택</option>
+                <option>옵션 1</option>
+                <option>옵션 2</option>
+              </select>
+            </div>
+          </div>
+          <!-- form-field button select :error -->
+          <div class="form-field --error">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>선택</option>
+                <option>옵션 1</option>
+                <option>옵션 2</option>
+              </select>
+            </div>
+          </div>
+          <!-- form-field button select :disabled -->
+          <div class="form-field">
+            <div class="form-wrap select">
+              <select class="btn-select" disabled="disabled">
+                <option>선택 :disabled</option>
+                <option>옵션 1</option>
+                <option>옵션 2</option>
+              </select>
+            </div>
+          </div>
+          <!-- form-field button select :success -->
+          <div class="form-field --success">
+            <div class="form-wrap select">
+              <select class="btn-select">
+                <option>선택 :success</option>
+                <option>옵션 1</option>
+                <option>옵션 2</option>
+              </select>
+            </div>
+          </div>
+          <h2 class="d-sys">search</h2>
+          <!-- form-field button select search -->
+          <div class="form-field search">
+            <div class="form-wrap">
+              <input type="text" placeholder="search"/>
+              <i class="search-bg"></i>
+              <div class="util">
+                <button type="button" class="btn-del">
+                  <i>삭제</i>
+                </button>
+                <button type="button" class="btn-search icon --medium icon-8">
+                  <i>검색</i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- form-field button select search --completed -->
+          <div class="form-field search --completed">
+            <div class="form-wrap">
+              <input type="text" placeholder="search"/>
+              <i class="search-bg"></i>
+              <div class="util">
+                <span class="guide-sub --small">총
+                  <em>00</em>개의 상품이 검색되었어요</span>
+                <button type="button" class="btn-del">
+                  <i>삭제</i>
+                </button>
+                <button type="button" class="btn-search">
+                  <i>검색</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-sys-list">
+          <h2 class="d-sys">size</h2>
+          <!-- form-field input :small -->
+          <div class="form-field --small">
+            <input type="text" placeholder="Placeholder"/>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field input :large -->
+          <div class="form-field --large">
+            <input type="text" placeholder="Placeholder"/>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field input :xlarge -->
+          <div class="form-field --xlarge">
+            <input type="text" placeholder="Placeholder"/>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field button select :small -->
+          <div class="form-field --small">
+            <div class="form-wrap">
+              <button type="button" class="btn-select">
+                <span>선택</span>
+              </button>
+            </div>
+          </div>
+          <!-- form-field button select :large -->
+          <div class="form-field --large">
+            <div class="form-wrap">
+              <button type="button" class="btn-select">
+                <span>선택</span>
+              </button>
+            </div>
+          </div>
+          <!-- form-field button select :xlarge -->
+          <div class="form-field --xlarge">
+            <div class="form-wrap">
+              <button type="button" class="btn-select">
+                <span>선택</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="d-sys-list">
+          <h2 class="d-sys">input > button</h2>
+          <!-- form-field -->
+          <div class="form-field">
+            <div class="form-wrap">
+              <input type="password" placeholder="password"/>
+              <div class="util">
+                <button type="button" class="btn-del">
+                  <i>삭제</i>
+                </button>
+              </div>
+            </div>
+            <p class="description">Helper Text</p>
+          </div>
+          <!-- form-field :login -->
+          <div class="form-field">
+            <div class="form-wrap">
+              <input type="password" placeholder="password"/>
+              <div class="util">
+                <button type="button" class="btn-del">
+                  <i>삭제</i>
+                </button>
+                <button
+                  type="button" class="btn-visible on">
+                  <!-- // 클릭 시 on/off 클래스 변경 -->
+                  <i>보기</i>
+                </button>
+              </div>
+            </div>
+            <p class="description">Helper Text</p>
+          </div>
+          <h2 class="d-sys">textarea</h2>
+          <!-- form-field textarea -->
+          <div class="form-field textarea">
+            <div class="form-wrap">
+              <label for="textarea">Label</label>
+              <textarea id="textarea" placeholder="Placeholder"></textarea>
+            </div>
+            <div class="count">
+              <em>1</em>/<span>100</span>
+            </div>
+          </div>
+          <!-- form-field textarea -->
+          <div class="form-field textarea">
+            <div class="form-wrap">
+              <textarea id="textarea" placeholder="Placeholder"></textarea>
+            </div>
+            <div class="count">
+              <em>1</em>/<span>100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="design-system --rating">
       <h1 class="d-sys">rating</h1>
-      <div
-        class="rating-wrap">
-        <!-- 별점표시 -->
+      <p>default 16px</p>
+      <p>black</p>
+      <p>--medium :24px / --large :36px</p>
+      <!-- 별점표시 -->
+      <div class="rating-wrap">
         <p class="rating-container">
           <span class="rating-num" style="width: 50%;"></span>
         </p>
         <strong class="text">5.2</strong>
-        <!-- 별점주기 -->
+      </div>
+      <div class="rating-wrap black --medium">
+        <p class="rating-container">
+          <span class="rating-num" style="width: 50%;"></span>
+        </p>
+        <strong class="text">5.2</strong>
+      </div>
+      <!-- 별점주기 -->
+      <div class="rating-wrap --large">
+        <span class="title">평점</span>
         <fieldset class="rating-container input">
-          <input type="radio" id="rating5" name="rating" class="ipt-rating" value="5">
+          <input type="radio" id="rating5" name="rating" class="ipt-rating" value="5"/>
           <label for="rating5" title="5점"></label>
-          <input type="radio" id="rating4" name="rating" class="ipt-rating" value="4"><label for="rating4" title="4점"></label>
-          <input type="radio" id="rating3" name="rating" class="ipt-rating" value="3"><label for="rating3" title="3점"></label>
-          <input type="radio" id="rating2" name="rating" class="ipt-rating" value="2"><label for="rating2" title="2점"></label>
-          <input type="radio" id="rating1" name="rating" class="ipt-rating" value="1"><label for="rating1" title="1점"></label>
+          <input type="radio" id="rating4" name="rating" class="ipt-rating" value="4"/>
+          <label for="rating4" title="4점"></label>
+          <input type="radio" id="rating3" name="rating" class="ipt-rating" value="3"/>
+          <label for="rating3" title="3점"></label>
+          <input type="radio" id="rating2" name="rating" class="ipt-rating" value="2"/>
+          <label for="rating2" title="2점"></label>
+          <input type="radio" id="rating1" name="rating" class="ipt-rating" value="1"/>
+          <label for="rating1" title="1점"></label>
         </fieldset>
       </div>
     </section>
-    <section class="design-system toggle">
+    <section class="design-system --toggle">
       <h1 class="d-sys">Toggle/Checkbox/Radio</h1>
       <h2 class="d-sys">Toggle</h2>
       <!-- toggle-wrap -->
@@ -896,255 +1108,143 @@
         </label>
       </div>
     </section>
-    <section class="design-system tooltip">
+    <section class="design-system --tooltip">
       <h1 class="d-sys">Tooltip</h1>
+      <p>라인 --multiline :두줄 / --multiline-3 :세줄</p>
+      <p>위치 --top :상단</p>
+      <div class="d-sys-list">
+        <h2 class="d-sys">아이콘 버튼 툴팁</h2>
+        <button type="button" class="btn-outline --medium tooltip">
+          <i class="contact">
+            <span class="item">아이콘 버튼 툴팁</span>
+          </i>
+        </button>
+      </div>
+      <div class="d-sys-list">
+        <h2 class="d-sys">아이콘 가이드 툴팁</h2>
+        <span class="tooltip icon-info">
+          <i class="item">내용 한줄</i>
+        </span>
+        <span class="tooltip icon-info --multiline">
+          <i class="item">내용 두줄<br/>내용 두줄</i>
+        </span>
+        <span class="tooltip icon-info --multiline">
+          <i class="item">내용 두줄<br/>내용 두줄</i>
+        </span>
+        <span class="tooltip icon-info --multiline-3 --top">
+          <i class="item">내용 세줄<br/>내용 세줄<br/>위치 상단</i>
+        </span>
+      </div>
     </section>
-    <section class="design-system button">
+    <section class="design-system --button">
       <h1 class="d-sys">Buttons</h1>
-      <p>32, 40, 48, 56 사이즈별로 Type을 Only Text / Normal / Only Icon 으로 나누어 사용한다.</p>
-      <p>Default는 Primary button, Black/Outline은 Secondary button으로 활용된다.</p>
+      <p>높이별 --xsmall :32px / --small :40px / --medium :48px / --large :56px</p>
+      <p>OnlyText / Normal / OnlyIcon type</p>
+      <p>Default는 Primary, Black/Outline은 Secondary button으로 활용된다.</p>
+      <h2 class="d-sys">Outline</h2>
+      <div class="d-sys-list-wrap">
+        <div
+          class="d-sys-list">
+          <!-- btn-outline --large -->
+          <button type="button" class="btn-outline --large">
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline --large</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline --large -->
+          <button type="button" class="btn-outline --large">
+            <i class="plus"></i>
+            <span>btn-outline</span>
+          </button>
+          <p>btn-outline --large</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-outline --large -->
+          <button type="button" class="btn-outline --large">
+            <i class="plus"></i>
+          </button>
+          <p>btn-outline --large</p>
+        </div>
+      </div>
       <h2 class="d-sys">Primary</h2>
       <div class="d-sys-list-wrap">
         <div
           class="d-sys-list">
-          <!-- btn-primary xsmall -->
-          <button type="button" class="btn-primary xsmall">
+          <!-- btn-primary --medium -->
+          <button type="button" class="btn-primary --medium">
+            <span>btn-primary</span>
+          </button>
+          <p>.btn-primary.--medium</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-primary --medium -->
+          <button type="button" class="btn-primary --medium">
             <i class="plus"></i>
             <span>btn-primary</span>
           </button>
-          <p>btn-primary xsmall</p>
+          <p>.btn-primary.--medium</p>
         </div>
         <div
           class="d-sys-list">
-          <!-- btn-primary small -->
-          <button type="button" class="btn-primary small">
+          <!-- btn-primary --medium -->
+          <button type="button" class="btn-primary --medium">
             <i class="plus"></i>
-            <span>btn-primary</span>
           </button>
-          <p>btn-primary small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary medium -->
-          <button type="button" class="btn-primary medium">
-            <i class="plus"></i>
-            <span>btn-primary</span>
-          </button>
-          <p>btn-primary medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary large -->
-          <button type="button" class="btn-primary large">
-            <i class="plus"></i>
-            <span>btn-primary</span>
-          </button>
-          <p>btn-primary large</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary xsmall -->
-          <button type="button" class="btn-primary xsmall">
-            <i>button</i>
-          </button>
-          <p>btn-primary xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary small -->
-          <button type="button" class="btn-primary small">
-            <i>button</i>
-          </button>
-          <p>btn-primary small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary medium -->
-          <button type="button" class="btn-primary medium">
-            <i>button</i>
-          </button>
-          <p>btn-primary medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-primary large -->
-          <button type="button" class="btn-primary large">
-            <i>button</i>
-          </button>
-          <p>btn-primary large</p>
+          <p>.btn-primary.--medium</p>
         </div>
       </div>
       <h2 class="d-sys">Black</h2>
       <div class="d-sys-list-wrap">
         <div
           class="d-sys-list">
-          <!-- btn-black xsmall -->
-          <button type="button" class="btn-black xsmall">
+          <!-- btn-black --small -->
+          <button type="button" class="btn-black --small">
+            <span>btn-black</span>
+          </button>
+          <p>.btn-black.--small</p>
+        </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-black --small -->
+          <button type="button" class="btn-black --small">
             <i class="plus"></i>
             <span>btn-black</span>
           </button>
-          <p>btn-black xsmall</p>
+          <p>.btn-black.--small</p>
         </div>
         <div
           class="d-sys-list">
-          <!-- btn-black small -->
-          <button type="button" class="btn-black small">
+          <!-- btn-black --small -->
+          <button type="button" class="btn-black --small">
             <i class="plus"></i>
-            <span>btn-black</span>
           </button>
-          <p>btn-black small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black medium -->
-          <button type="button" class="btn-black medium">
-            <i class="plus"></i>
-            <span>btn-black</span>
-          </button>
-          <p>btn-black medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black large -->
-          <button type="button" class="btn-black large">
-            <i class="plus"></i>
-            <span>btn-black</span>
-          </button>
-          <p>btn-black large</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black xsmall -->
-          <button type="button" class="btn-black xsmall">
-            <i>button</i>
-          </button>
-          <p>btn-black xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black small -->
-          <button type="button" class="btn-black small">
-            <i>button</i>
-          </button>
-          <p>btn-black small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black medium -->
-          <button type="button" class="btn-black medium">
-            <i>button</i>
-          </button>
-          <p>btn-black medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-black large -->
-          <button type="button" class="btn-black large">
-            <i>button</i>
-          </button>
-          <p>btn-black large</p>
-        </div>
-      </div>
-      <h2 class="d-sys">Outline</h2>
-      <div class="d-sys-list-wrap">
-        <div
-          class="d-sys-list">
-          <!-- btn-outline xsmall -->
-          <button type="button" class="btn-outline xsmall">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline small -->
-          <button type="button" class="btn-outline small">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline medium -->
-          <button type="button" class="btn-outline medium">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline large -->
-          <button type="button" class="btn-outline large">
-            <i class="plus"></i>
-            <span>btn-outline</span>
-          </button>
-          <p>btn-outline large</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline xsmall -->
-          <button type="button" class="btn-outline xsmall">
-            <i>button</i>
-          </button>
-          <p>btn-outline xsmall</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline small -->
-          <button type="button" class="btn-outline small">
-            <i>button</i>
-          </button>
-          <p>btn-outline small</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline medium -->
-          <button type="button" class="btn-outline medium">
-            <i>button</i>
-          </button>
-          <p>btn-outline medium</p>
-        </div>
-        <div
-          class="d-sys-list">
-          <!-- btn-outline large -->
-          <button type="button" class="btn-outline large">
-            <i>button</i>
-          </button>
-          <p>btn-outline large</p>
+          <p>.btn-black.--small</p>
         </div>
       </div>
       <h2 class="d-sys">primary/black/outline :disabled 스타일공통사용</h2>
       <div class="d-sys-list-wrap">
         <div class="d-sys-list">
-          <button type="button" class="btn-primary xsmall" disabled="disabled">
-            <i class="plus"></i>
+          <button type="button" class="btn-primary --xsmall" disabled="disabled">
             <span>[class^=btn-]</span>
           </button>
-          <p>[class^=btn-] xsmall :disabled</p>
+          <p>[class^=btn-].--xsmall :disabled</p>
         </div>
         <div class="d-sys-list">
-          <button type="button" class="btn-primary small" disabled="disabled">
+          <button type="button" class="btn-primary --xsmall" disabled="disabled">
             <i class="plus"></i>
             <span>[class^=btn-]</span>
           </button>
-          <p>[class^=btn-] small :disabled</p>
+          <p>[class^=btn-].--xsmall :disabled</p>
         </div>
         <div class="d-sys-list">
-          <button type="button" class="btn-primary medium" disabled="disabled">
+          <button type="button" class="btn-primary --xsmall" disabled="disabled">
             <i class="plus"></i>
-            <span>[class^=btn-]</span>
           </button>
-          <p>[class^=btn-] medium :disabled</p>
-        </div>
-        <div class="d-sys-list">
-          <button type="button" class="btn-primary large" disabled="disabled">
-            <i class="plus"></i>
-            <span>[class^=btn-]</span>
-          </button>
-          <p>[class^=btn-] large :disabled</p>
+          <p>[class^=btn-].--xsmall :disabled</p>
         </div>
       </div>
       <h2 class="d-sys">round/더보기</h2>
@@ -1155,7 +1255,7 @@
           <button type="button" class="btn-round icon">
             <span>더보기</span>
           </button>
-          <p>btn-round icon</p>
+          <p>.btn-round.icon</p>
         </div>
         <div
           class="d-sys-list">
@@ -1163,31 +1263,40 @@
           <button type="button" class="btn-round">
             <span>더보기</span>
           </button>
-          <p>btn-round</p>
+          <p>.btn-round</p>
         </div>
+        <div
+          class="d-sys-list">
+          <!-- btn-round -->
+          <button type="button" class="btn-round --small">
+            <span>더보기</span>
+          </button>
+          <p>.btn-round.--small</p>
+        </div>
+        <div class="d-sys-list"></div>
         <div
           class="d-sys-list">
           <!-- btn-text -->
           <button type="button" class="btn-text">
             <span>더보기</span>
           </button>
-          <p>btn-text default</p>
+          <p>.btn-text</p>
         </div>
         <div
           class="d-sys-list">
           <!-- btn-text -->
-          <button type="button" class="btn-text small">
+          <button type="button" class="btn-text --large">
             <span>더보기</span>
           </button>
-          <p>btn-text small</p>
+          <p>.btn-text.--large</p>
         </div>
         <div
           class="d-sys-list">
           <!-- btn-text -->
-          <button type="button" class="btn-text large">
+          <button type="button" class="btn-text --small">
             <span>더보기</span>
           </button>
-          <p>btn-text large</p>
+          <p>.btn-text.--small</p>
         </div>
       </div>
       <h2 class="d-sys">TopButton</h2>
@@ -1207,149 +1316,92 @@
             <i class="top"></i>
             <span>위로</span>
           </button>
-          <p>btn-top label</p>
+          <p>btn-top +label</p>
         </div>
       </div>
     </section>
-    <section class="design-system alert">
+    <section class="design-system --alert">
       <h1 class="d-sys">Alert</h1>
-      <h2 class="d-sys">Danger</h2>
-      <!-- alert-danger -->
-      <div class="alert-danger">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
-      </div>
-      <div class="alert-danger">
-        <dl>
-          <dd class="content">메시지 내용 최대 1줄</dd>
-        </dl>
-      </div>
-      <h2 class="d-sys">Warning</h2>
-      <!-- alert-warning -->
-      <div class="alert-warning">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
-      </div>
-      <h2 class="d-sys">Success</h2>
-      <!-- alert-success -->
-      <div class="alert-success">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
-      </div>
-      <h2 class="d-sys">Information</h2>
-      <!-- alert-information -->
-      <div class="alert-information">
-        <dl>
-          <dt class="title">타이틀</dt>
-          <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
-        </dl>
+      <div class="d-sys-list-wrap">
+        <div class="d-sys-list">
+          <h2 class="d-sys">Danger</h2>
+          <!-- alert-danger -->
+          <div class="alert-danger">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+          <div class="alert-danger">
+            <dl>
+              <dd class="content">메시지 내용 최대 1줄</dd>
+            </dl>
+          </div>
+          <h2 class="d-sys">Warning</h2>
+          <!-- alert-warning -->
+          <div class="alert-warning">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="d-sys-list">
+          <h2 class="d-sys">Success</h2>
+          <!-- alert-success -->
+          <div class="alert-success">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+          <h2 class="d-sys">Information</h2>
+          <!-- alert-information -->
+          <div class="alert-information">
+            <dl>
+              <dt class="title">타이틀</dt>
+              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+            </dl>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="design-system modal-popup">
+    <section class="design-system --modal-popup">
       <h1 class="d-sys">Modal</h1>
-      <h2 class="d-sys">large :540</h2>
-      <!-- modal large -->
+      <h2 class="d-sys">--xlarge :940/--large :540/--normal :480/--small :400</h2>
+      <!-- modal --large -->
       <div
-        class="modal large">
-        <!-- modal header -->
-        <h5 class="modal-title">타이틀</h5>
-        <!-- modal content -->
+        class="modal --normal">
+        <!-- // --xlarge .--large, .--normal, .--small -->
         <div
-          class="modal-content">
-          <!-- photo -->
-          <p class="cont-photo"><img src="" alt="이미지"/>
-          </p>
-          <!-- text -->
-          <p class="cont-text">modal content</p>
-        </div>
-        <!-- modal footer -->
-        <div class="modal-footer">
-          <div class="btn-wrap">
-            <button type="button" class="btn-outline medium">
-              <span>btn-outline</span>
-            </button>
-            <button type="button" class="btn-primary medium">
-              <span>btn-primary</span>
+          class="modal-wrap">
+          <!-- modal container -->
+          <div class="modal-container">
+            <h5 class="modal-title">타이틀</h5>
+            <!-- photo -->
+            <p class="cont-photo"><img src="" alt="이미지"/>
+            </p>
+            <!-- text -->
+            <p class="cont-text">modal content</p>
+          </div>
+          <!-- modal footer -->
+          <div class="modal-footer">
+            <div class="btn-wrap">
+              <button type="button" class="btn-outline --medium">
+                <span>btn-outline</span>
+              </button>
+              <button type="button" class="btn-primary --medium">
+                <span>btn-primary</span>
+              </button>
+            </div>
+          </div>
+          <!-- btn-wrap close -->
+          <div class="btn-wrap close">
+            <button type="button" class="btn-close">
+              <i>닫기</i>
             </button>
           </div>
         </div>
-        <!-- btn-wrap close -->
-        <div class="btn-wrap close">
-          <button type="button" class="btn-close">
-            <i>닫기</i>
-          </button>
-        </div>
       </div>
-      <h2 class="d-sys">normal :480</h2>
-      <!-- modal -->
-      <div
-        class="modal">
-        <!-- modal header -->
-        <h5 class="modal-title">타이틀</h5>
-        <!-- modal content -->
-        <div
-          class="modal-content">
-          <!-- photo -->
-          <p class="cont-photo"><img src="" alt="이미지"/>
-          </p>
-          <!-- text -->
-          <p class="cont-text">modal content</p>
-        </div>
-        <!-- modal footer -->
-        <div class="modal-footer">
-          <div class="btn-wrap">
-            <button type="button" class="btn-outline medium">
-              <span>btn-outline</span>
-            </button>
-            <button type="button" class="btn-primary medium">
-              <span>btn-primary</span>
-            </button>
-          </div>
-        </div>
-        <!-- btn-wrap close -->
-        <div class="btn-wrap close">
-          <button type="button" class="btn-close">
-            <i>닫기</i>
-          </button>
-        </div>
-      </div>
-      <h2 class="d-sys">small :400</h2>
-      <!-- modal small -->
-      <div
-        class="modal small">
-        <!-- modal header -->
-        <h5 class="modal-title">타이틀</h5>
-        <!-- modal content -->
-        <div
-          class="modal-content">
-          <!-- photo -->
-          <p class="cont-photo"><img src="" alt="이미지"/>
-          </p>
-          <!-- text -->
-          <p class="cont-text">modal content</p>
-        </div>
-        <!-- modal footer -->
-        <div class="modal-footer">
-          <div class="btn-wrap">
-            <button type="button" class="btn-outline medium">
-              <span>btn-outline</span>
-            </button>
-            <button type="button" class="btn-primary medium">
-              <span>btn-primary</span>
-            </button>
-          </div>
-        </div>
-        <!-- btn-wrap close -->
-        <div class="btn-wrap close">
-          <button type="button" class="btn-close">
-            <i>닫기</i>
-          </button>
-        </div>
-      </div>
-    {% endblock %}
+    </div>
+  {% endblock %}

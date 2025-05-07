@@ -1,0 +1,82 @@
+{% extends "layouts/base.njk" %}
+{% set title = "배송지 추가" %}
+{% block content %}
+  <div class="modal --full --large">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">배송지 추가</h5>
+      </div>
+      <div class="modal-container">
+        <div class="product-order">
+          <div class="util-wrap --right">
+            <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+          </div>
+          <div class="product-option">
+            <dl class="column-item">
+              <dt>주소별칭</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="text" placeholder="텍스트를 입력해 주세요."/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt class="required">받으실 분</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="text" placeholder="텍스트를 입력해 주세요."/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt class="required">휴대폰번호</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="tel" placeholder="텍스트를 입력해 주세요."/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>전화번호</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="tel" placeholder="텍스트를 입력해 주세요."/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt class="required">주소</dt>
+              <dd>
+                <div class="form-field address">
+                  <p class="address-item">
+                    <input type="text" placeholder="Placeholder"/>
+                    <button type="button" class="btn-outline --small">
+                      <span>우편번호 검색</span>
+                    </button>
+                  </p>
+                  <input type="text" placeholder="Placeholder"/>
+                  <input type="text" placeholder="상세주소"/>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>취소</span>
+          </button>
+          <button type="button" class="btn-primary --medium">
+            <span>등록</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

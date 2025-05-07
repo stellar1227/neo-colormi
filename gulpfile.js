@@ -38,13 +38,29 @@ const paths = {
     dest: 'dist/img/',
     watch: 'src/img/**/*.*',
   },
+  libs: {
+    js: 'src/libs/js/**/*.js',
+    css: 'src/libs/css/**/*.css',
+  },
 };
 
 // HTML (Nunjucks)
 function templates() {
   return gulp.src(paths.templates.src)
     .pipe(plumber())
-    .pipe(gulpData(() => JSON.parse(fs.readFileSync(paths.templates.data))))
+    .pipe(gulpData(() => {
+      const globalData = JSON.parse(fs.readFileSync(paths.templates.data));
+
+      // libs 파일 읽어서 데이터로 넘김
+      const libJsFiles = fs.readdirSync('src/libs/js').map(file => `/js/${file}`);
+      const libCssFiles = fs.readdirSync('src/libs/css').map(file => `/css/${file}`);
+
+      return {
+        ...globalData,
+        libJsFiles,
+        libCssFiles,
+      };
+    }))
     .pipe(nunjucksRender({ path: ['src/templates/'] }))
     .pipe(rename({ extname: '.html' }))
     .pipe(gulp.dest(paths.templates.dest))
@@ -66,9 +82,23 @@ function styles() {
 function scripts() {
   return gulp.src(paths.scripts.src)
     .pipe(plumber())
-    .pipe(concat('main.js'))
+    .pipe(concat('colormi-ui.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(browserSync.stream());
+}
+
+// libs JS 복사
+function copyLibsJS() {
+  return gulp.src(paths.libs.js)
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(browserSync.stream());
+}
+
+// libs CSS 복사
+function copyLibsCSS() {
+  return gulp.src(paths.libs.css)
+    .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 }
 
@@ -86,10 +116,12 @@ function serve() {
   gulp.watch(paths.templates.watch, templates);
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.libs.js, copyLibsJS);
+  gulp.watch(paths.libs.css, copyLibsCSS);
 }
 
 // 빌드 & 실행 task
-const build = gulp.parallel(templates, styles, scripts);
+const build = gulp.parallel(templates, styles, scripts, copyLibsJS, copyLibsCSS);
 const dev = gulp.series(build, serve);
 
 export { build as default, dev };

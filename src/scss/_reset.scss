@@ -3,12 +3,15 @@
 
 /* Root 공통 스타일 */
 html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   -webkit-text-size-adjust: none;
-  background-color: #fff;
-  color: #4c4c4c;
-
+  background-color: $color-background-white;
+  color: $color-text-basic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 10px;
   font-family:
     // 'Montserrat',
     'Pretendard Variable', Pretendard,
@@ -27,16 +30,18 @@ html {
     sans-serif;
   line-height: normal;
   letter-spacing: 0;
+  box-sizing: border-box;
 }
 
-html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  color: #4c4c4c;
+  height: auto;
+  color: $color-text-basic;
+  font-size: 1.4rem;
+  @include font-body-small;
 }
 
 body,
@@ -85,10 +90,11 @@ figure,
 figcaption,
 nav,
 embed,
-iframe {
+iframe,
+::before,
+::after {
   margin: 0;
   padding: 0;
-  font: inherit;
   box-sizing: border-box;
 }
 
@@ -160,6 +166,10 @@ address {
   line-height: 0;
 }
 
+.hide {
+  display: none;
+}
+
 #skipnavi {
   position: absolute;
   left: 0;
@@ -174,6 +184,7 @@ input[type='number'],
 input[type='email'],
 input[type='url'],
 input[type='search'],
+input[type='date'],
 select,
 .btn-select,
 textarea {
@@ -183,17 +194,13 @@ textarea {
   border: 0;
   width: 100%;
   height: 40px;
-  background: transparent;
-  // box-shadow: inset 0 0 0 1px #dedede;
+  padding: 9px 12px;
   box-shadow: none;
   border: 1px solid $Line-line;
   background: $color-background-white;
-  padding: 10px 12px;
   border-radius: 4px;
-  color: #4c4c4c;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 22px;
+  @include font-body-small;
+  color: $color-text-basic;
 
   &::placeholder {
     color: $color-divider-gray;
@@ -211,6 +218,49 @@ textarea {
   &:read-only {
     border: 1px solid $color-border-gray;
     background: $color-background-gray-subtle;
+  }
+}
+
+input[type='number'] {
+  padding-right: 12px !important;
+}
+
+input[type='date'] {
+  min-width: 153px;
+  padding-right: 12px !important;
+
+  &:focus:before,
+  &:valid:before,
+  &::-webkit-clear-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    background: $color-border-primary;
+    z-index: 1;
+  }
+
+  &::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: calc(100% - 24px);
+    background: $color-background-white;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    background: $color-background-white url() no-repeat center center / 16px 16px;
+    transform: translateY(-50%);
+    z-index: 0;
   }
 }
 
@@ -232,29 +282,4 @@ button {
   border: 0;
   background: transparent;
   cursor: pointer;
-}
-
-@media (max-width:565px) {
-
-  .top-banner,
-  header,
-  .footer-wrap,
-  .footer-link,
-  #container,
-  .product-inner {
-    width: 100%;
-  }
-}
-
-@media (min-width:566px) {
-
-  .top-banner,
-  header,
-  .footer-wrap,
-  .footer-link,
-  #container,
-  .product-inner {
-    width: 1200px;
-    margin: 0 auto;
-  }
 }

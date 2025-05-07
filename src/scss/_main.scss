@@ -1028,13 +1028,13 @@ footer {
         height: 24px;
       }
 
-      .swiper-button-prev {
-        @include line-icon(prev, 8px);
-      }
+      // .swiper-button-prev {
+      //   @include line-icon(prev, 8px);
+      // }
 
-      .swiper-button-next {
-        @include line-icon(next, 8px);
-      }
+      // .swiper-button-next {
+      //   @include line-icon(next, 8px);
+      // }
     }
   }
 }

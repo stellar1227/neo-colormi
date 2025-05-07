@@ -56,6 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
     searchMenu.classList.remove('active');
   });
 
+  //header gnb
+  const allMenu = document.querySelector('#allMenuWrap');
+  const allMenuBtn = document.querySelector('#btnAllMenu');
+  const allMenuCloseBtn = document.querySelector('#btnAllMenuClose');
+  
+  allMenuBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    allMenu.classList.toggle('active');
+  }
+  );
+
+
 });
 
 

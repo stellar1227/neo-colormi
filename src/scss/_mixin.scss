@@ -262,6 +262,10 @@
     i {
       @include icon-size(24px, 24px, 4px);
     }
+
+    i:only-child {
+      @include icon-size(32px, 32px, 0);
+    }
   }
 
   &.--large {
@@ -501,7 +505,7 @@
 @mixin tooltip {
   display: none;
   position: absolute;
-  left: 0;
+  left: 50%;
   min-height: 24px;
   padding: 3px 8px !important;
   white-space: nowrap;
@@ -509,7 +513,7 @@
   color: $color-text-basic-inverse;
   border-radius: 4px;
   background: $color-border-gray-darker;
-  ;
+  transform: translateX(-50%);
 
   &::before {
     content: '';

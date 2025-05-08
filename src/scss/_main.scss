@@ -93,9 +93,7 @@ header {
             content: none;
           }
           .item {
-            left: 50%;
             background: #F181A6;
-            transform: translateX(-50%);
             z-index: 11;
             &::before {
               background: #F181A6;
@@ -670,6 +668,12 @@ header {
                 &:hover {
                   color: $color-text-primary;
                   font-weight: 600;
+
+                  .tooltip {
+                    .item {
+                      display: block;
+                    }
+                  }
                 }
               }
             }
@@ -680,9 +684,8 @@ header {
   }
 
   .status {
-
     i {
-      bottom: -45px;
+      bottom: -37px;
     }
   }
 }

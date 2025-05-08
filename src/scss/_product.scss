@@ -519,9 +519,19 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
         right: 0;
 
         .btn-share {
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           width: 36px;
           height: 36px;
+          font-size: 0;
+          @include sprite-icons(62, 24px);
+          &:hover {
+            @include sprite-icons(63, 24px);
+          }
+          &:active {
+            @include sprite-icons(64, 24px);
+          }
         }
       }
     }

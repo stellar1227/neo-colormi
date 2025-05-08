@@ -897,16 +897,9 @@ h5 {
         &::before {
           position: absolute;
           content: '';
-          width: 12px;
-          height: 12px;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          -webkit-transition: none;
-          transition: none;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: 100% 100%;
         }
       }
 
@@ -933,10 +926,7 @@ h5 {
       &:disabled {
         +.checkbox-icon {
           background: $color-border-gray-light;
-
-          &::before {
-            background-image: url('../img/icon/icon-checkbox-disabled.png');
-          }
+          @include sprite-icons(59, 16px);
         }
       }
 
@@ -946,10 +936,6 @@ h5 {
         +.checkbox-icon {
           outline: 2px solid $color-border-primary-light;
           border: 0 none;
-
-          &::before {
-            background-image: url();
-          }
         }
       }
 
@@ -958,12 +944,7 @@ h5 {
         +.checkbox-icon {
           background: $color-border-primary;
           border-color: $color-border-primary;
-
-          &::before {
-            content: '';
-            background-image: url('../img/icon/icon-checkbox.png');
-            color: $color-text-basic-inverse;
-          }
+          @include sprite-icons(58, 16px);
         }
 
         &:disabled {
@@ -1285,6 +1266,12 @@ h5 {
       &.plus:after {
         background: $color-border-inverse;
       }
+    }
+  }
+
+  &.--medium {
+    .contact {
+      @include sprite-icons(22, 32px);
     }
   }
 }
@@ -2054,7 +2041,7 @@ h5 {
   .item {
     @include tooltip;
     bottom: -32px;
-    transform: translateX(calc(-50% + 8px));
+    // transform: translateX(calc(-50% + 8px));
     z-index: 10;
   }
 
@@ -2117,7 +2104,7 @@ button[type='button'] {
 
     .item {
       bottom: -45px;
-      transform: translateX(calc(-50% + 12px));
+      // transform: translateX(calc(-50% + 12px));
     }
   }
 }

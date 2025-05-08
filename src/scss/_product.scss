@@ -254,30 +254,46 @@
     width: 16px;
     height: 16px;
     margin-right: 3px;
-    background-color: #003f6d; // 나중에 삭제 예정
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
+    // background-color: #003f6d; // 나중에 삭제 예정
+    // background-repeat: no-repeat;
+    // background-position: center center;
+    // background-size: 100% 100%;
+  }
+
+  &.step-ing {
+    @include sprite-icons(24, 16px);
+  }
+  
+  &.step-end {
+    @include sprite-icons(57, 16px);
+    &::before {
+      border: 1px solid $color-border-inverse;
+      border-radius: 50%;
+    }
+  }
+  
+  &.step-cart {
+    @include sprite-icons(17, 16px);
   }
 
   /* before에 background-image 적용할 클래스들 (recommend, new, best, discount-1, discount-2, step-ing, step-end, step-cart) */
-  @each $class, $img in ('recommend': 'recommend.png',
-    'new': 'new.png',
-    'best': 'best.png',
-    'discount-1': 'discount-1.png',
-    'discount-2': 'discount-2.png',
-    'step-ing': 'step-ing.png',
-    'step-end': 'step-end.png',
-    'step-cart': 'step-cart.png'
+  // @each $class, $img in ('recommend': 'recommend.png',
+  //   'new': 'new.png',
+  //   'best': 'best.png',
+  //   'discount-1': 'discount-1.png',
+  //   'discount-2': 'discount-2.png',
+  //   'step-ing': 'step-ing.png',
+  //   'step-end': 'step-end.png',
+  //   'step-cart': 'step-cart.png'
 
-  ) {
-    &.#{$class} {
-      &::before {
-        content: '';
-        background-image: url(#{$img});
-      }
-    }
-  }
+  // ) {
+  //   &.#{$class} {
+  //     &::before {
+  //       content: '';
+  //       background-image: url(#{$img});
+  //     }
+  //   }
+  // }
 }
 
 $icon-star-off: '../img/icon/icon-star-off.png';

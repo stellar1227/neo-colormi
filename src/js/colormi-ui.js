@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const current = this.realIndex + 1;
 
         return `<span class="${currentClass}">${current}</span>` +
-          ` / ` +
           `<span class="${totalClass}">${realTotal}</span>`;
       }
     },

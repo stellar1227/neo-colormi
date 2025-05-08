@@ -566,28 +566,56 @@
 
 // sprite-icons
 $sprite-path: '../img/icon/icon-sprite.png';
-$sprite-cols: 17; // 한 줄에 아이콘 갯수
-// $sprite-orig: 64px; // 원본 아이콘 크기
+$sprite-cols: 10; // 한 줄에 아이콘 갯수
+$sprite-orig: 64px; // 원본 아이콘 크기
 
 // 사용할 아이콘 이름 리스트(순서대로 1부터 시작)
 $icons: (
+  arrow-up,
   arrow-down,
-  arrow-line,
-  arrow-triangle,
-  menu-pc,
-  menu-mo,
-  close,
-  search,
-  home,
-  bag,
-  cart,
-  phone,
+  arrow-left,
+  arrow-right,
+  arrow-line-up-white,
+  arrow-line-down-white,
+  arrow-line-left-white,
+  arrow-line-right-white,
+  arrow-line-top,
+  arrow-line-top-hover,
+  arrow-line-top-active,
+  arrow-triangle-up,
+  arrow-triangle-down,
+  arrow-triangle-left,
+  arrow-triangle-right,
+  menu,
+  shopping-cart,
+  edit,
+  edit-opacity,
+  parcelservice-opacity,
+  gift-opacity,
+  message-circle,
+  message-square,
+  message-square-yellow,
+  book-open,
+  book-close,
+  folder,
+  folder-plus,
+  folder-minus,
+  file,
+  file-minus,
+  file-plus,
+  file-text,
+  face-smile,
+  face-meh,
+  face-frown,
+  inform-info,
+  inform-alert-circle,
+  inform-alert,
+  inform-alert-triangle,
+  inform-help-circle,
+  phone-call-white,
   phone-call,
-  truck,
-  package,
+  parcelservice-white,
   map,
-  pin,
-  gift,
   download,
   upload,
   download-cloud,
@@ -598,83 +626,99 @@ $icons: (
   unlock,
   lock,
   clip,
+  check,
+  check-white,
   checkbox,
-  folder,
-  folder-plus,
-  folder-minus,
-  file,
-  file-minus,
-  file-plus,
-  file-text,
-  plus,
-  minus,
-  equal,
-  edit,
-  edit2,
-  edit3,
-  message-circle,
-  message-square,
-  book-open,
-  book-close,
-  face-smile,
-  face-meh,
-  face-frown,
-  inform-info,
-  inform-alert-circle,
-  inform-alert-triangle,
-  inform-help-circle,
-  database,
-  mail,
-  bell,
-  slash,
-  check-circle,
-  bookmark,
-  image,
-  award,
-  brifcase,
-  clock,
-  credit-card,
-  send,
-  key,
+  checkbox-disabled,
+  eye-on,
+  eye-off,
   share,
   share-on,
   share-hover,
-  eye-on,
-  eye-off,
-  state,
+  mail,
+  bell,
+  check-circle,
+  bookmark,
+  brifcase,
+  clock,
+  credit-card,
   calendar,
+  ellipsis,
+  face-smile-yellow,
+  new,
+  status-best,
+  status-recommend,
+  status-discount-01,
+  status-discount-02,
+  status-new,
+  status-discount-11,
+  status-discount-12,
+  status-contact,
+  system-danger,
+  system-info,
+  system-success,
+  system-warning,
 );
 
-// 2) index 기반 믹스인: $idx(1~), $size(출력크기), $pseudo(::before|::after)
+// index 기반 믹스인: $idx(1~), $size(출력크기), $pseudo(::before|::after)
 @mixin sprite-icons($idx, $size, $pseudo: before) {
   $sprite-width: $sprite-cols * $size;
 
-  $col: (
-    $idx - 1) % $sprite-cols;
-  $row: math.floor(math.div($idx - 1, $sprite-cols )
-  );
+  $col: ($idx - 1) % $sprite-cols;
+  $row: math.floor(math.div($idx - 1, $sprite-cols ));
 
-$offset-x: - $col * $size;
-$offset-y: - $row * $size;
+  $offset-x: - $col * $size;
+  $offset-y: - $row * $size;
 
-&::#{$pseudo} {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  width: $size;
-  height: $size;
-  background-image: url(#{$sprite-path});
-  background-repeat: no-repeat;
-  background-size: $sprite-width auto;
-  background-position: $offset-x $offset-y;
+  &::#{$pseudo} {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: $size;
+    height: $size;
+    background-image: url(#{$sprite-path});
+    background-repeat: no-repeat;
+    background-size: $sprite-width auto;
+    background-position: $offset-x $offset-y;
+  }
 }
+// $size만 지정
+@mixin sprite-icons-size($size, $cols: $sprite-cols, $orig: $sprite-orig) {
+  $scale: math.div($size, $orig);
+
+  display: inline-block;
+  line-height: 0;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: $size;
+    height: $size;
+    background-image: url(#{$sprite-path});
+    background-repeat: no-repeat;
+    background-size: ($cols * $orig * $scale) auto;
+  }
+
+  $total: list.length($icons);
+
+  @for $i from 1 through $total {
+    $colIndex: ($i - 1) % $cols;
+    $rowIndex: math.floor(math.div($i - 1, $cols));
+    $posX: -$colIndex * $orig * $scale;
+    $posY: -$rowIndex * $orig * $scale;
+
+    &.icon-#{$i}::before {
+      background-position: $posX $posY;
+    }
+  }
 }
 
 // svg-icons
 @function svgIcon($iconName, $color-text-basic: #4c4c4c, $color-border-primary: #ed6190) {
   $iconList: (
     user: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none'%3E%3Cpath stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round' d='M26 27v-2a4 4 0 0 0-4-4h-8a4 4 0 0 0-4 4v2M18 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z'/%3E%3Cpath stroke='%23#{$color-border-primary}' d='M25 8.5h5M27.5 6v5'/%3E%3C/svg%3E",
-    search: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.9999 21.0004L16.6499 16.6504' stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    search: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.9999 21.0004L16.6499 16.6504' stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+    cart: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='22' fill='none'%3E%3Cpath stroke='%23#{$color-text-basic}' stroke-linecap='round' stroke-linejoin='round' d='M9 21.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM20 21.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM1 .5h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 5.5H6'/%3E%3C/svg%3E"
   );
 $icon: map.get($iconList, $iconName);
 @return url("data:image/svg+xml;charset=utf8,#{$icon}");

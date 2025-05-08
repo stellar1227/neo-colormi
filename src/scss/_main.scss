@@ -84,32 +84,75 @@ header {
         width: 36px;
         height: 36px;
 
-        span {
+        span:not(.item) {
           font-size: 0;
+        }
+        
+        &.tooltip {
+          &::before {
+            content: none;
+          }
+          .item {
+            left: 50%;
+            background: #F181A6;
+            transform: translateX(-50%);
+            z-index: 11;
+            &::before {
+              background: #F181A6;
+            }
+          }
+        }
+
+        .badge {
+          position: absolute;
+          top: 0;
+          right: 0;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          padding: 0;
+          border-radius: 50%;
+          background: $color-border-primary;
+          color: $color-text-basic-inverse;
+          font-weight: $font-weight-regular;
         }
       }
 
       .btn-search {
-        background: url('../img/icon/icon-search.png') no-repeat center center/24px 24px;
+        background: svgIcon(search, '4c4c4c') no-repeat center center/24px 24px;
+        &:hover {
+          background: svgIcon(search, 'ed6190') no-repeat center center/24px 24px;
+        }
       }
 
       .btn-login {
 
         &.--login {
           background: svgIcon(user, '4c4c4c', 'transparent') no-repeat center center/36px 36px;
+          &:hover {
+            background: svgIcon(user, 'ed6190', 'transparent') no-repeat center center/36px 36px;
+          }
         }
-
+        
         &.--logout {
           background: svgIcon(user, '4c4c4c', 'ed6190') no-repeat center center/36px 36px;
+          &:hover {
+            background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
+          }
         }
 
         &.--active {
           background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
         }
+        
       }
 
       .btn-cart {
-        background: url('../img/icon/icon-cart.png') no-repeat center center/24px 24px;
+        background: svgIcon(cart, '4c4c4c') no-repeat center center/24px 24px;
+
+        &:hover {
+          background: svgIcon(cart, 'ed6190') no-repeat center center/24px 24px;
+        }
       }
     }
 
@@ -342,32 +385,18 @@ header {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: 3.5px 0;
           width: 36px;
           height: 36px;
           border-radius: 8px;
-  
-          &::before,
-          &::after {
-            content: '';
-            display: block;
-            width: 12px;
-            height: 1.5px;
-            border-radius: 1px;
-            background: $color-border-gray-dark;
-          }
-
+            
           &:hover {
             background: $color-background-gray-subtle;
           }
-  
+          
           span {
             font-size: 0;
             display: block;
-            width: 12px;
-            height: 1.5px;
-            border-radius: 1px;
-            background: $color-border-gray-dark;
+            @include sprite-icons(16, 36px);
           }
         }
         &.--active {
@@ -408,14 +437,10 @@ header {
                 border-radius: 24px;
                 border: 1px solid $color-border-gray;
                 background: $color-border-gray-light;
+                @include sprite-icons(69, 16px);
 
                 &::before {
-                  content: '';
-                  display: inline-block;
-                  width: 16px;
-                  height: 16px;
                   margin-right: 4px;
-                  background: url('../img/icon/icon-briefcase.png') no-repeat center center/100% 100%;
                   vertical-align: -3px;
                 }
               }
@@ -465,24 +490,11 @@ header {
           text-align: left;
           line-height: 1;
           height: 20px;
-          padding: 2px 20px 2px 5px;
+          padding: 2px 5px;
           @include depth-xsmall-semibold;
           border: none;
           background: $color-background-white;
-
-          &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 0;
-            width: 16px;
-            height: 16px;
-            background-image: url('../img/icon/icon-arrow-triangle.png');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: 100% 100%;
-            transform: translateY(-50%);
-          }
+          @include sprite-icons(13, 16px, after);
 
           &:hover {
             background: $color-border-gray-light;
@@ -491,9 +503,7 @@ header {
 
         .quick-menu-wrap.--active {
           .btn-select {
-            &::after {
-              transform: translateY(-50%) rotate(180deg);
-            }
+            @include sprite-icons(12, 16px, after);
           }
         }
       }
@@ -1030,30 +1040,66 @@ footer {
     .swiper-util {
       display: flex;
       justify-content: center;
+      margin-top: 12px;
 
       .swiper-pagination {
         position: relative;
         display: inline-flex;
         width: auto;
+        top: auto;
+        bottom: auto;
+        margin: 0 4px;
+
+        .swiper-pagination-current {
+          @include font-body-small-bold;
+          color: $color-text-basic;
+        }
+        .swiper-pagination-total {
+          @include font-body-small-bold;
+          color: $color-text-subcolor-light;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 11px;
+            margin: 0 8px;
+            background: $color-border-gray;
+          }
+        }
       }
 
       .swiper-button-prev,
       .swiper-button-next {
         position: relative;
         display: inline-flex;
+        top: auto;
         left: auto;
         right: auto;
         width: 24px;
         height: 24px;
+        margin-top: 0;
       }
 
-      // .swiper-button-prev {
-      //   @include line-icon(prev, 8px);
-      // }
-
-      // .swiper-button-next {
-      //   @include line-icon(next, 8px);
-      // }
+      .swiper-button-prev {
+        @include sprite-icons(3, 24px, after);
+      }
+      
+      .swiper-button-next {
+        @include sprite-icons(4, 24px, after);
+      }
     }
   }
+}
+
+.floting-nav {
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  z-index: 1000;
+  transition: .4s;
 }

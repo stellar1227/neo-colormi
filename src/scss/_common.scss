@@ -285,16 +285,13 @@ h5 {
     }
 
     &.select {
-      @include line-icon(down, 5.5px);
-
-      &::before {
-        left: auto;
-        right: 15.8px;
-      }
+      @include sprite-icons(2, 16px, after);
 
       &::after {
-        left: auto;
+        position: absolute;
         right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
@@ -394,11 +391,11 @@ h5 {
           background-size: 100% 100%;
 
           &.on {
-            background-image: url('../img/icon/icon-eye-on.png');
+            @include sprite-icons(60, 16px);
           }
-
+          
           &.off {
-            background-image: url('../img/icon/icon-eye-off.png');
+            @include sprite-icons(61, 16px);
           }
         }
 
@@ -1438,7 +1435,7 @@ h5 {
     padding: 0;
     line-height: 1;
     font-size: 0;
-    background: url('../img/icon/icon-arrow-line-up.png') no-repeat center center/100% 100%;
+    @include sprite-icons(9, 24px);
 
     +span {
       margin: 4px 0 0;
@@ -1455,11 +1452,22 @@ h5 {
   &:hover {
     background: $color-border-primary-light;
     color: $color-text-basic-inverse;
+    i {
+      @include sprite-icons(10, 24px);
+    }
   }
 
   &:active {
     background: $color-border-primary;
     color: $color-text-basic-inverse;
+    i {
+      @include sprite-icons(11, 24px);
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    box-shadow: none;
   }
 }
 
@@ -1478,6 +1486,25 @@ h5 {
     &::after {
       height: 19px;
     }
+  }
+}
+
+.btn-talk-contact {
+  display: flex;
+  flex-direction: column;
+  .icon {
+    display: inline-block;
+    width: 63px;
+    height: 72px;
+    margin-bottom: 4px;
+  }
+  span {
+    display: inline-block;
+    padding: 0 9px;
+    border-radius: 8px;
+    background: #583738;
+    @include font-body-xsmall-bold;
+    color: $color-border-inverse;
   }
 }
 
@@ -1984,21 +2011,12 @@ h5 {
 }
 
 // tooltip
-$tooltip-icons: (
-  new: '../img/icon/icon-tooltip-new.svg',
-  discount-1: '../img/icon/icon-tooltip-discount-1.svg',
-  discount-2: '../img/icon/icon-tooltip-discount-2.svg',
-  best: '../img/icon/icon-tooltip-best.svg',
-  contact: '../img/icon/icon-tooltip-contact.svg',
-  info: '../img/icon/icon-tooltip-info.svg',
-);
-
 .tooltip {
   position: relative;
   display: inline-block;
   margin-left: 2px;
   line-height: 0;
-  vertical-align: -3px;
+  // vertical-align: -3px;
 
   &::before {
     content: '';
@@ -2008,16 +2026,25 @@ $tooltip-icons: (
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-color: #096AB3; //background-image 대신 넣은거임. 나중에 삭제
   }
 
-  // 각 아이콘 스타일
-  @each $name, $url in $tooltip-icons {
-    &.--#{$name} {
-      &::before {
-        background-image: url(#{$url});
-      }
-    }
+  &.--new {
+    @include sprite-icons(37, 16px);
+  }
+  &.--discount-1 {
+    @include sprite-icons(37, 16px);
+  }
+  &.--discount-1 {
+    @include sprite-icons(37, 16px);
+  }
+  &.--best {
+    @include sprite-icons(37, 16px);
+  }
+  &.--contact {
+    @include sprite-icons(37, 16px);
+  }
+  &.--info {
+    @include sprite-icons(37, 16px);
   }
 
   &:hover .item {
@@ -2285,24 +2312,24 @@ button[type='button'] {
   }
 }
 
-// .icon {
-//   &.--small {
-//     @include sprite-icons(16px);
-//   }
+.icon {
+  &.--small {
+    @include sprite-icons-size(16px);
+  }
 
-//   &.--medium {
-//     @include sprite-icons(24px);
-//   }
+  &.--medium {
+    @include sprite-icons-size(24px);
+  }
 
-//   &.--large {
-//     @include sprite-icons(36px);
-//   }
+  &.--large {
+    @include sprite-icons-size(36px);
+  }
 
-//   &.--xlarge {
-//     @include sprite-icons(46px);
-//   }
+  &.--xlarge {
+    @include sprite-icons-size(46px);
+  }
 
-//   &.--xxlarge {
-//     @include sprite-icons(64px);
-//   }
-// }
+  &.--xxlarge {
+    @include sprite-icons-size(64px);
+  }
+}

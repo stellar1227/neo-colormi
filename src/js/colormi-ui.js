@@ -228,7 +228,7 @@ function loadingLottie() {
 }
 
 function initGnb(){
-  const links = document.querySelectorAll('.gnb-menu .depth-1 a[data-menu-index]');
+  const links = document.querySelectorAll('.gnb .depth-1 a[data-menu-index]');
   const wraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
 
   wraps.forEach(w => w.style.display = 'none');
@@ -251,7 +251,7 @@ function initGnb(){
   });
 
   document.addEventListener('click', e => {
-    if (!e.target.closest('.gnb-menu') && !e.target.closest('.all-menu-wrap')) {
+    if (!e.target.closest('.gnb') && !e.target.closest('.all-menu-wrap')) {
       wraps.forEach(w => w.style.display = 'none');
       links.forEach(a => a.parentElement.classList.remove('--active'));
     }

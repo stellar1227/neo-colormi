@@ -951,6 +951,10 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
       margin-top: 20px;
       border-top: 1px solid $Line-line;
     }
+    
+    >.product-option {
+      padding-top: 0;
+    }
 
     .column-item {
       display: grid;

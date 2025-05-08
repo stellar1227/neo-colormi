@@ -77,120 +77,383 @@
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
-        }
-      }
-      &.--button {
-        .d-sys-list-wrap {
-          gap: 10px 20px;
-          .d-sys-list {
+          .d-sys-list-item {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
-            width: calc(33.33% - 15px);
-            p {
-              margin-left: 20px;
+            gap: 4px;
+            em {
+              font: 400 var(--font-size-body-xxsmall)/normal var(--font-typo-main-font);
+              color: var(--color-text-subcolor);
             }
           }
         }
-      }
-      &.--tooltip {
-        .d-sys-list-wrap {
-          display: block;
+        .icon--img-blog {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 72px;
+            height: 44px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: 0 0;
+          }
+        }
+        .icon--img-blog-gray {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -72px 0;
+          }
+        }
+        .icon--img-kakao-gray {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -96px 0;
+          }
+        }
+        .icon--img-cloud {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 42px;
+            height: 29px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -120px 0;
+          }
+        }
+        .icon--img-account {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 24px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -162px 0;
+          }
+        }
+        .icon--img-kakao-contact {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 63px;
+            height: 72px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -202px 0;
+          }
+        }
+        .icon--img-search-no-list {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 261px;
+            height: 194px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -265px 0;
+          }
+        }
+        .icon--img-search-list {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 172px;
+            height: 133px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -526px 0;
+          }
+        }
+        .icon--img-cart-no-list {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 192px;
+            height: 151px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -698px 0;
+          }
+        }
+        .icon--img-thumbnail-no-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 112px;
+            height: 118px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -890px 0;
+          }
+        }
+        .icon--img-mypage-check {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: 0 -194px;
+          }
+        }
+        .icon--img-review-no-list {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 100px;
+            height: 108px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -30px -194px;
+          }
+        }
+        .icon--img-customer-1-no-list {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 85px;
+            height: 100px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -130px -194px;
+          }
+        }
+        .icon--img-error {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 81px;
+            height: 134px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -215px -194px;
+          }
+        }
+        .icon--img-customer-center-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 402px;
+            height: 213px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -296px -194px;
+          }
+        }
+        .icon--img-customer-delivery-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 99px;
+            height: 90px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -698px -194px;
+          }
+        }
+        .icon--img-customer-privacy-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 104px;
+            height: 91px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -797px -194px;
+          }
+        }
+        .icon--img-sns-kakao-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -901px -194px;
+          }
+        }
+        .icon--img-sns-facebook-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -931px -194px;
+          }
+        }
+        .icon--img-sns-instagram-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -961px -194px;
+          }
+        }
+        .icon--img-sns-blog-img {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 33px;
+            height: 30px;
+            background-image: url('../img/icon/img-sprite.png');
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -991px -194px;
+          }
         }
       }
-      .modal {
+    }
+    &.--button {
+      .d-sys-list-wrap {
+        gap: 10px 20px;
+        .d-sys-list {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          width: calc(33.33% - 15px);
+          p {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    &.--tooltip {
+      .d-sys-list-wrap {
+        display: block;
+      }
+    }
+    .modal {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: auto;
+      height: auto;
+      transform: none;
+      &::before {
+        content: none;
+      }
+      .modal-wrap {
         position: relative;
         top: auto;
         left: auto;
-        width: auto;
-        height: auto;
         transform: none;
-        &::before {
-          content: none;
-        }
-        .modal-wrap {
-          position: relative;
-          top: auto;
-          left: auto;
-          transform: none;
-        }
-      }
-      /* Typography navigation */
-      .title-small-regular {
-        font: var(--font-weight-regular) var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .title-medium {
-        font: var(--font-weight-medium) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .title-semibold {
-        font: var(--font-weight-semibold) var(--font-size-navigation-L)/normal var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .depth-xsmall-semibold {
-        font: var(--font-weight-semibold) var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .depth-small-medium {
-        font: var(--font-weight-medium) var(--font-size-navigation-S)/normal var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .depth-medium {
-        font: var(--font-weight-regular) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .depth-medium-bold {
-        font: var(--font-weight-regular) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-        font-weight: var(--font-weight-semibold);
-      }
-      .font-body-xxsmall {
-        font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 1.9rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .font-body-xxsmall-bold {
-        font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 1.9rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-        font-weight: var(--font-weight-semibold);
-      }
-      .font-body-xsmall {
-        font: var(--font-weight-regular) var(--font-size-body-xsmall) / 2.0rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .font-body-xsmall-bold {
-        font: var(--font-weight-regular) var(--font-size-body-xsmall) / 2.0rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-        font-weight: var(--font-weight-semibold);
-      }
-      .font-body-small {
-        font: var(--font-weight-regular) var(--font-size-body-small) / 2.2rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .font-body-small-bold {
-        font: var(--font-weight-regular) var(--font-size-body-small) / 2.2rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-        font-weight: var(--font-weight-semibold);
-      }
-      .font-body-medium {
-        font: var(--font-weight-regular) var(--font-size-body-medium) / 2.4rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .font-body-medium-bold {
-        font: var(--font-weight-regular) var(--font-size-body-medium) / 2.4rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-        font-weight: var(--font-weight-semibold);
-      }
-      .font-body-large {
-        font: var(--font-weight-regular) var(--font-size-body-large) / 2.7rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-      }
-      .font-body-large-bold {
-        font: var(--font-weight-regular) var(--font-size-body-large) / 2.7rem var(--font-typo-main-font);
-        letter-spacing: var(--letter-spacing-0);
-        font-weight: var(--font-weight-bold);
       }
     }
+    /* Typography navigation */
+    .title-small-regular {
+      font: var(--font-weight-regular) var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .title-medium {
+      font: var(--font-weight-medium) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .title-semibold {
+      font: var(--font-weight-semibold) var(--font-size-navigation-L)/normal var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .depth-xsmall-semibold {
+      font: var(--font-weight-semibold) var(--font-size-navigation-XS)/normal var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .depth-small-medium {
+      font: var(--font-weight-medium) var(--font-size-navigation-S)/normal var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .depth-medium {
+      font: var(--font-weight-regular) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .depth-medium-bold {
+      font: var(--font-weight-regular) var(--font-size-navigation-M)/normal var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+      font-weight: var(--font-weight-semibold);
+    }
+    .font-body-xxsmall {
+      font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 1.9rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .font-body-xxsmall-bold {
+      font: var(--font-weight-regular) var(--font-size-body-xxsmall) / 1.9rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+      font-weight: var(--font-weight-semibold);
+    }
+    .font-body-xsmall {
+      font: var(--font-weight-regular) var(--font-size-body-xsmall) / 2.0rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .font-body-xsmall-bold {
+      font: var(--font-weight-regular) var(--font-size-body-xsmall) / 2.0rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+      font-weight: var(--font-weight-semibold);
+    }
+    .font-body-small {
+      font: var(--font-weight-regular) var(--font-size-body-small) / 2.2rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .font-body-small-bold {
+      font: var(--font-weight-regular) var(--font-size-body-small) / 2.2rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+      font-weight: var(--font-weight-semibold);
+    }
+    .font-body-medium {
+      font: var(--font-weight-regular) var(--font-size-body-medium) / 2.4rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .font-body-medium-bold {
+      font: var(--font-weight-regular) var(--font-size-body-medium) / 2.4rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+      font-weight: var(--font-weight-semibold);
+    }
+    .font-body-large {
+      font: var(--font-weight-regular) var(--font-size-body-large) / 2.7rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+    }
+    .font-body-large-bold {
+      font: var(--font-weight-regular) var(--font-size-body-large) / 2.7rem var(--font-typo-main-font);
+      letter-spacing: var(--letter-spacing-0);
+      font-weight: var(--font-weight-bold);
+    }
+  }
   </style>
   <div class="content">
     <section class="design-system --color">
@@ -706,93 +969,395 @@
       <p>icon-1부터 순서대로 +1</p>
       <h2 class="d-sys">sprite icons</h2>
       <div class="d-sys-list">
-        <i class="icon --medium icon-1"></i>
-        <i class="icon --medium icon-2"></i>
-        <i class="icon --medium icon-3"></i>
-        <i class="icon --medium icon-4"></i>
-        <i class="icon --medium icon-5" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-6" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-7" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-8" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-9"></i>
-        <i class="icon --medium icon-10"></i>
-        <i class="icon --medium icon-11" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-12"></i>
-        <i class="icon --medium icon-13"></i>
-        <i class="icon --medium icon-14"></i>
-        <i class="icon --medium icon-15"></i>
-        <i class="icon --medium icon-16"></i>
-        <i class="icon --medium icon-17" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-18"></i>
-        <i class="icon --medium icon-19"></i>
-        <i class="icon --medium icon-20"></i>
-        <i class="icon --medium icon-21"></i>
-        <i class="icon --medium icon-22"></i>
-        <i class="icon --medium icon-23"></i>
-        <i class="icon --medium icon-24"></i>
-        <i class="icon --medium icon-25"></i>
-        <i class="icon --medium icon-26"></i>
-        <i class="icon --medium icon-27"></i>
-        <i class="icon --medium icon-28"></i>
-        <i class="icon --medium icon-29"></i>
-        <i class="icon --medium icon-30"></i>
-        <i class="icon --medium icon-31"></i>
-        <i class="icon --medium icon-32"></i>
-        <i class="icon --medium icon-33"></i>
-        <i class="icon --medium icon-34"></i>
-        <i class="icon --medium icon-35"></i>
-        <i class="icon --medium icon-36"></i>
-        <i class="icon --medium icon-37"></i>
-        <i class="icon --medium icon-38"></i>
-        <i class="icon --medium icon-39" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-40"></i>
-        <i class="icon --medium icon-41"></i>
-        <i class="icon --medium icon-42" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-43"></i>
-        <i class="icon --medium icon-44" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-45"></i>
-        <i class="icon --medium icon-46"></i>
-        <i class="icon --medium icon-47"></i>
-        <i class="icon --medium icon-48"></i>
-        <i class="icon --medium icon-49"></i>
-        <i class="icon --medium icon-50"></i>
-        <i class="icon --medium icon-51"></i>
-        <i class="icon --medium icon-52"></i>
-        <i class="icon --medium icon-53"></i>
-        <i class="icon --medium icon-54"></i>
-        <i class="icon --medium icon-55"></i>
-        <i class="icon --medium icon-56"></i>
-        <i class="icon --medium icon-57" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-58" style="background: var(--color-background-inverse);"></i>
-        <i class="icon --medium icon-59"></i>
-        <i class="icon --medium icon-60"></i>
-        <i class="icon --medium icon-61"></i>
-        <i class="icon --medium icon-62"></i>
-        <i class="icon --medium icon-63"></i>
-        <i class="icon --medium icon-64"></i>
-        <i class="icon --medium icon-65"></i>
-        <i class="icon --medium icon-66"></i>
-        <i class="icon --medium icon-67"></i>
-        <i class="icon --medium icon-68"></i>
-        <i class="icon --medium icon-69"></i>
-        <i class="icon --medium icon-70"></i>
-        <i class="icon --medium icon-71"></i>
-        <i class="icon --medium icon-72"></i>
-        <i class="icon --medium icon-73"></i>
-        <i class="icon --medium icon-74"></i>
-        <i class="icon --medium icon-75"></i>
-        <i class="icon --medium icon-76"></i>
-        <i class="icon --medium icon-77"></i>
-        <i class="icon --medium icon-78"></i>
-        <i class="icon --medium icon-79"></i>
-        <i class="icon --medium icon-80"></i>
-        <i class="icon --medium icon-81"></i>
-        <i class="icon --medium icon-82"></i>
-        <i class="icon --medium icon-83"></i>
-        <i class="icon --medium icon-84"></i>
-        <i class="icon --medium icon-85"></i>
-        <i class="icon --medium icon-86"></i>
-        <i class="icon --medium icon-87"></i>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-1"></i>
+          <em>1</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-2"></i>
+          <em>2</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-3"></i>
+          <em>3</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-4"></i>
+          <em>4</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-5" style="background: var(--color-background-inverse);"></i>
+          <em>5</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-6" style="background: var(--color-background-inverse);"></i>
+          <em>6</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-7" style="background: var(--color-background-inverse);"></i>
+          <em>7</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-8" style="background: var(--color-background-inverse);"></i>
+          <em>8</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-9"></i>
+          <em>9</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-10"></i>
+          <em>10</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-11" style="background: var(--color-background-inverse);"></i>
+          <em>11</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-12"></i>
+          <em>12</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-13"></i>
+          <em>13</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-14"></i>
+          <em>14</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-15"></i>
+          <em>15</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-16"></i>
+          <em>16</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-17" style="background: var(--color-background-inverse);"></i>
+          <em>17</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-18"></i>
+          <em>18</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-19"></i>
+          <em>19</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-20"></i>
+          <em>20</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-21"></i>
+          <em>21</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-22"></i>
+          <em>22</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-23" style="background: var(--color-background-inverse);"></i>
+          <em>23</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-24"></i>
+          <em>24</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-25"></i>
+          <em>25</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-26"></i>
+          <em>26</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-27"></i>
+          <em>27</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-28"></i>
+          <em>28</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-29"></i>
+          <em>29</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-30"></i>
+          <em>30</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-31"></i>
+          <em>31</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-32"></i>
+          <em>32</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-33"></i>
+          <em>33</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-34"></i>
+          <em>34</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-35"></i>
+          <em>35</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-36"></i>
+          <em>36</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-37"></i>
+          <em>37</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-38"></i>
+          <em>38</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-39"></i>
+          <em>39</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-40" style="background: var(--color-background-inverse);"></i>
+          <em>40</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-41"></i>
+          <em>41</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-42"></i>
+          <em>42</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-43" style="background: var(--color-background-inverse);"></i>
+          <em>43</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-44"></i>
+          <em>44</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-45" style="background: var(--color-background-inverse);"></i>
+          <em>45</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-46"></i>
+          <em>46</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-47"></i>
+          <em>47</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-48"></i>
+          <em>48</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-49"></i>
+          <em>49</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-50"></i>
+          <em>50</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-51"></i>
+          <em>51</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-52"></i>
+          <em>52</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-53"></i>
+          <em>53</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-54"></i>
+          <em>54</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-55"></i>
+          <em>55</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-56"></i>
+          <em>56</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-57"></i>
+          <em>57</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-58" style="background: var(--color-background-inverse);"></i>
+          <em>58</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-59" style="background: var(--color-background-inverse);"></i>
+          <em>59</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-60"></i>
+          <em>60</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-61"></i>
+          <em>61</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-62"></i>
+          <em>62</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-63"></i>
+          <em>63</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-64"></i>
+          <em>64</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-65"></i>
+          <em>65</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-66"></i>
+          <em>66</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-67"></i>
+          <em>67</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-68"></i>
+          <em>68</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-69"></i>
+          <em>69</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-70"></i>
+          <em>70</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-71"></i>
+          <em>71</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-72"></i>
+          <em>72</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-73"></i>
+          <em>73</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-74"></i>
+          <em>74</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-75"></i>
+          <em>75</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-76"></i>
+          <em>76</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-77"></i>
+          <em>77</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-78"></i>
+          <em>78</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-79"></i>
+          <em>79</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-80"></i>
+          <em>80</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-81"></i>
+          <em>81</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-82"></i>
+          <em>82</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-83"></i>
+          <em>83</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-84"></i>
+          <em>84</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-85"></i>
+          <em>85</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-86"></i>
+          <em>86</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-87"></i>
+          <em>87</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-88"></i>
+          <em>88</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-89"></i>
+          <em>89</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-90"></i>
+          <em>90</em>
+        </span>
+        <span class="d-sys-list-item">
+          <i class="icon --medium icon-91"></i>
+          <em>91</em>
+        </span>
+      </div>
+      <h2 class="d-sys">sprite img</h2>
+      <p>필요한곳에 css만 사용</p>
+      <div class="d-sys-list">
+        <i class="icon--img-blog"></i>
+        <i class="icon--img-blog-gray"></i>
+        <i class="icon--img-kakao-gray"></i>
+        <i class="icon--img-cloud"></i>
+        <i class="icon--img-account"></i>
+        <i class="icon--img-kakao-contact"></i>
+        <i class="icon--img-search-no-list"></i>
+        <i class="icon--img-search-list"></i>
+        <i class="icon--img-cart-no-list"></i>
+        <i class="icon--img-thumbnail-no-img"></i>
+        <i class="icon--img-mypage-check"></i>
+        <i class="icon--img-review-no-list"></i>
+        <i class="icon--img-customer-1-no-list"></i>
+        <i class="icon--img-error"></i>
+        <i class="icon--img-customer-center-img"></i>
+        <i class="icon--img-customer-delivery-img"></i>
+        <i class="icon--img-customer-privacy-img"></i>
+        <i class="icon--img-sns-kakao-img"></i>
+        <i class="icon--img-sns-facebook-img"></i>
+        <i class="icon--img-sns-instagram-img"></i>
+        <i class="icon--img-sns-blog-img"></i>
       </div>
     </section>
     <section class="design-system --input">
@@ -1288,7 +1853,6 @@
           </button>
           <p>.btn-round.--small</p>
         </div>
-        <div class="d-sys-list"></div>
         <div
           class="d-sys-list">
           <!-- btn-text -->
@@ -1344,12 +1908,12 @@
           <div class="alert-danger">
             <dl>
               <dt class="title">타이틀</dt>
-              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+              <dd class="alert-content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
             </dl>
           </div>
           <div class="alert-danger">
             <dl>
-              <dd class="content">메시지 내용 최대 1줄</dd>
+              <dd class="alert-content">메시지 내용 최대 1줄</dd>
             </dl>
           </div>
           <h2 class="d-sys">Warning</h2>
@@ -1357,7 +1921,7 @@
           <div class="alert-warning">
             <dl>
               <dt class="title">타이틀</dt>
-              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+              <dd class="alert-content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
             </dl>
           </div>
         </div>
@@ -1367,7 +1931,7 @@
           <div class="alert-success">
             <dl>
               <dt class="title">타이틀</dt>
-              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+              <dd class="alert-content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
             </dl>
           </div>
           <h2 class="d-sys">Information</h2>
@@ -1375,7 +1939,7 @@
           <div class="alert-information">
             <dl>
               <dt class="title">타이틀</dt>
-              <dd class="content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
+              <dd class="alert-content">콘텐츠 내 알럿은 최대 2줄 이내로 작성합니다.</dd>
             </dl>
           </div>
         </div>

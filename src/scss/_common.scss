@@ -225,7 +225,10 @@ h5 {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: $color-divider-gray-light;
+    background-image: url('../img/icon/img-sprite.png');
+    background-repeat: no-repeat;
+    background-size: 1024px auto;
+    background-position: 0 -194px;
   }
 
   .check-item {
@@ -391,11 +394,11 @@ h5 {
           background-size: 100% 100%;
 
           &.on {
-            @include sprite-icons(60, 16px);
-          }
-          
-          &.off {
             @include sprite-icons(61, 16px);
+          }
+
+          &.off {
+            @include sprite-icons(62, 16px);
           }
         }
 
@@ -926,7 +929,7 @@ h5 {
       &:disabled {
         +.checkbox-icon {
           background: $color-border-gray-light;
-          @include sprite-icons(59, 16px);
+          @include sprite-icons(60, 16px);
         }
       }
 
@@ -944,18 +947,14 @@ h5 {
         +.checkbox-icon {
           background: $color-border-primary;
           border-color: $color-border-primary;
-          @include sprite-icons(58, 16px);
+          @include sprite-icons(59, 16px);
         }
 
         &:disabled {
           +.checkbox-icon {
             background-color: $color-border-gray-light;
             border-color: $Line-line;
-
-            &::before {
-              background-image: url();
-              color: $color-border-gray;
-            }
+            @include sprite-icons(60, 16px);
           }
         }
       }
@@ -1272,6 +1271,10 @@ h5 {
   &.--medium {
     .contact {
       @include sprite-icons(22, 32px);
+
+      &:active {
+        @include sprite-icons(23, 32px);
+      }
     }
   }
 }
@@ -1439,6 +1442,7 @@ h5 {
   &:hover {
     background: $color-border-primary-light;
     color: $color-text-basic-inverse;
+
     i {
       @include sprite-icons(10, 24px);
     }
@@ -1447,6 +1451,7 @@ h5 {
   &:active {
     background: $color-border-primary;
     color: $color-text-basic-inverse;
+
     i {
       @include sprite-icons(11, 24px);
     }
@@ -1479,12 +1484,19 @@ h5 {
 .btn-talk-contact {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
   .icon {
     display: inline-block;
     width: 63px;
     height: 72px;
     margin-bottom: 4px;
+    background-image: url(../img/icon/img-sprite.png);
+    background-repeat: no-repeat;
+    background-size: 1024px auto;
+    background-position: -202px 0;
   }
+
   span {
     display: inline-block;
     padding: 0 9px;
@@ -1498,11 +1510,7 @@ h5 {
 .alert-danger {
   @include alert;
   background: $color-border-danger-light;
-
-  &::before {
-    background-image: url();
-    background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
-  }
+  @include sprite-icons(85, 24px);
 
   .title {
     color: #BD2C0F;
@@ -1512,11 +1520,7 @@ h5 {
 .alert-warning {
   @include alert;
   background: $color-border-warning-light;
-
-  &::before {
-    background-image: url();
-    background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
-  }
+  @include sprite-icons(88, 24px);
 
   .title {
     color: #8A5C00;
@@ -1526,11 +1530,7 @@ h5 {
 .alert-success {
   @include alert;
   background: $color-border-success-light;
-
-  &::before {
-    background-image: url();
-    background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
-  }
+  @include sprite-icons(87, 24px);
 
   .title {
     color: #267337;
@@ -1540,11 +1540,7 @@ h5 {
 .alert-information {
   @include alert;
   background: $color-border-secondary-light;
-
-  &::before {
-    background-image: url();
-    background: #003f6d; //background-image 대신 넣은거임. 나중에 삭제
-  }
+  @include sprite-icons(86, 24px);
 
   .title {
     color: #096AB3;
@@ -1887,8 +1883,18 @@ h5 {
     flex-direction: row;
     align-items: center;
 
-    .icon::before {
-      filter: opacity(0.2);
+    .icon {
+      &.--coupon {
+        @include sprite-icons(21, 64px);
+      }
+
+      &.--review {
+        @include sprite-icons(19, 64px);
+      }
+
+      &.--delivery {
+        @include sprite-icons(20, 64px);
+      }
     }
 
     .list-top-item {
@@ -2016,22 +2022,27 @@ h5 {
   }
 
   &.--new {
-    @include sprite-icons(80, 16px);
-  }
-  &.--discount-1 {
     @include sprite-icons(81, 16px);
   }
+
   &.--discount-1 {
     @include sprite-icons(82, 16px);
   }
-  &.--best {
-    @include sprite-icons(76, 16px);
-  }
-  &.--contact {
+
+  &.--discount-2 {
     @include sprite-icons(83, 16px);
   }
+
+  &.--best {
+    @include sprite-icons(77, 16px);
+  }
+
+  &.--contact {
+    @include sprite-icons(84, 16px);
+  }
+
   &.--info {
-    @include sprite-icons(37, 16px);
+    @include sprite-icons(38, 16px);
   }
 
   &:hover .item {
@@ -2160,26 +2171,19 @@ button[type='button'] {
       }
 
       &::before {
-        content: '';
-        display: inline-block;
-        width: 48px;
-        height: 48px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100% 100%;
         border-radius: 50%;
       }
 
-      &.--naver:before {
-        background-color: #02C63D;
+      &.--naver {
+        @include sprite-icons(89, 48px);
       }
 
-      &.--kakao:before {
-        background-color: #F8E049;
+      &.--kakao {
+        @include sprite-icons(90, 48px);
       }
 
-      &.--google:before {
-        background-color: #F4F5F6;
+      &.--google {
+        @include sprite-icons(91, 48px);
       }
     }
   }
@@ -2196,6 +2200,9 @@ button[type='button'] {
         }
 
         &::before {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
           width: 50px;
           height: 50px;
           border-radius: 10px;
@@ -2210,28 +2217,49 @@ button[type='button'] {
           top: 11px;
           left: 50%;
           transform: translateX(-50%);
-          width: 32px;
+          width: 30px;
           height: 30px;
           background-repeat: no-repeat;
           background-position: center center;
           background-size: 100% 100%;
-          border-radius: 10px;
         }
 
-        &.--naver:after {
-          background-color: #02C63D;
+        &.--kakao {
+          &::after {
+            background-image: url(../img/icon/img-sprite.png);
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -901px -194px;
+          }
         }
 
-        &.--kakao:after {
-          background-color: #F8E049;
+        &.--facebook {
+          &::after {
+            background-image: url(../img/icon/img-sprite.png);
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -931px -194px;
+          }
         }
 
-        &.--instagram:after {
-          background-color: #C837AB;
+        &.--instagram {
+          &::after {
+            background-image: url(../img/icon/img-sprite.png);
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -961px -194px;
+          }
         }
 
-        &.--facebook:after {
-          background-color: #1877F2;
+        &.--naver {
+          &::after {
+            width: 33px;
+            height: 30px;
+            background-image: url(../img/icon/img-sprite.png);
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -991px -194px;
+          }
         }
       }
     }

@@ -237,7 +237,7 @@ input[type='date'] {
   }
 
   &::-webkit-calendar-picker-indicator {
-    background: $color-border-primary;
+    background: transparent;
     z-index: 1;
   }
 
@@ -251,14 +251,12 @@ input[type='date'] {
     background: $color-background-white;
   }
 
+  @include sprite-icons(73, 20px, after);
+
   &::after {
-    content: '';
     position: absolute;
     top: 50%;
     right: 12px;
-    width: 20px;
-    height: 20px;
-    background: $color-background-white url() no-repeat center center / 16px 16px;
     transform: translateY(-50%);
     z-index: 0;
   }

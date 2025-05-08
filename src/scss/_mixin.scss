@@ -210,6 +210,30 @@
       width: 100%;
       height: 100%;
     }
+
+    &.check {
+      position: relative;
+      @include sprite-icons(58, 18px, after);
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 4px 0 0;
+        border-radius: 50%;
+        border: 1px solid $color-border-inverse;
+        vertical-align: -2px;
+        border-radius: 50%;
+      }
+    }
   }
 
   span {
@@ -524,17 +548,6 @@
   border-radius: 12px;
   @include font-body-small;
 
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 2px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
-  }
-
   dl {
     flex: 1 0 auto;
     margin: 1px 0;
@@ -585,6 +598,7 @@ $icons: (
   parcelservice-opacity,
   gift-opacity,
   message-circle,
+  message-circle-white,
   message-square,
   message-square-yellow,
   book-open,
@@ -601,7 +615,7 @@ $icons: (
   face-frown,
   inform-info,
   inform-alert-circle,
-  inform-alert,
+  inform-alert-white,
   inform-alert-triangle,
   inform-help-circle,
   phone-call-white,
@@ -613,7 +627,7 @@ $icons: (
   download-cloud,
   upload-cloud,
   link,
-  link2,
+  link-2,
   external-link,
   unlock,
   lock,
@@ -625,8 +639,8 @@ $icons: (
   eye-on,
   eye-off,
   share,
-  share-on,
   share-hover,
+  share-active,
   mail,
   bell,
   check-circle,
@@ -650,30 +664,36 @@ $icons: (
   system-info,
   system-success,
   system-warning,
+  sns-naver,
+  sns-kakao,
+  sns-google
 );
 
 // index 기반 믹스인: $idx(1~), $size(출력크기), $pseudo(::before|::after)
 @mixin sprite-icons($idx, $size, $pseudo: before) {
   $sprite-width: $sprite-cols * $size;
 
-  $col: ($idx - 1) % $sprite-cols;
-  $row: math.floor(math.div($idx - 1, $sprite-cols ));
+  $col: (
+    $idx - 1) % $sprite-cols;
+  $row: math.floor(math.div($idx - 1, $sprite-cols )
+  );
 
-  $offset-x: - $col * $size;
-  $offset-y: - $row * $size;
+$offset-x: - $col * $size;
+$offset-y: - $row * $size;
 
-  &::#{$pseudo} {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: $size;
-    height: $size;
-    background-image: url(#{$sprite-path});
-    background-repeat: no-repeat;
-    background-size: $sprite-width auto;
-    background-position: $offset-x $offset-y;
-  }
+&::#{$pseudo} {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: $size;
+  height: $size;
+  background-image: url(#{$sprite-path});
+  background-repeat: no-repeat;
+  background-size: $sprite-width auto;
+  background-position: $offset-x $offset-y;
 }
+}
+
 // $size만 지정
 @mixin sprite-icons-size($size, $cols: $sprite-cols, $orig: $sprite-orig) {
   $scale: math.div($size, $orig);
@@ -694,15 +714,17 @@ $icons: (
   $total: list.length($icons);
 
   @for $i from 1 through $total {
-    $colIndex: ($i - 1) % $cols;
-    $rowIndex: math.floor(math.div($i - 1, $cols));
-    $posX: -$colIndex * $orig * $scale;
-    $posY: -$rowIndex * $orig * $scale;
+    $colIndex: (
+      $i - 1) % $cols;
+    $rowIndex: math.floor(math.div($i - 1, $cols)
+    );
+  $posX: -$colIndex * $orig * $scale;
+  $posY: -$rowIndex * $orig * $scale;
 
-    &.icon-#{$i}::before {
-      background-position: $posX $posY;
-    }
+  &.icon-#{$i}::before {
+    background-position: $posX $posY;
   }
+}
 }
 
 // svg-icons

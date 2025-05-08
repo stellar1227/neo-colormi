@@ -253,47 +253,47 @@
     display: inline-block;
     width: 16px;
     height: 16px;
-    margin-right: 3px;
-    // background-color: #003f6d; // 나중에 삭제 예정
-    // background-repeat: no-repeat;
-    // background-position: center center;
-    // background-size: 100% 100%;
+  }
+
+  &.new {
+    @include sprite-icons(76, 16px);
+  }
+
+  &.best {
+    @include sprite-icons(77, 16px);
+  }
+
+  &.recommend {
+    @include sprite-icons(78, 16px);
+  }
+
+  &.discount-1 {
+    @include sprite-icons(79, 16px);
+  }
+
+  &.discount-2 {
+    @include sprite-icons(80, 16px);
   }
 
   &.step-ing {
-    @include sprite-icons(24, 16px);
+    @include sprite-icons(25, 16px);
   }
-  
+
   &.step-end {
-    @include sprite-icons(57, 16px);
+    @include sprite-icons(58, 20px);
+
     &::before {
+      width: 16px;
+      height: 16px;
       border: 1px solid $color-border-inverse;
       border-radius: 50%;
+      background-position: -143px -103px;
     }
   }
-  
+
   &.step-cart {
     @include sprite-icons(17, 16px);
   }
-
-  /* before에 background-image 적용할 클래스들 (recommend, new, best, discount-1, discount-2, step-ing, step-end, step-cart) */
-  // @each $class, $img in ('recommend': 'recommend.png',
-  //   'new': 'new.png',
-  //   'best': 'best.png',
-  //   'discount-1': 'discount-1.png',
-  //   'discount-2': 'discount-2.png',
-  //   'step-ing': 'step-ing.png',
-  //   'step-end': 'step-end.png',
-  //   'step-cart': 'step-cart.png'
-
-  // ) {
-  //   &.#{$class} {
-  //     &::before {
-  //       content: '';
-  //       background-image: url(#{$img});
-  //     }
-  //   }
-  // }
 }
 
 $icon-star-off: '../img/icon/icon-star-off.png';
@@ -541,12 +541,14 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
           width: 36px;
           height: 36px;
           font-size: 0;
-          @include sprite-icons(62, 24px);
+          @include sprite-icons(63, 24px);
+
           &:hover {
-            @include sprite-icons(63, 24px);
-          }
-          &:active {
             @include sprite-icons(64, 24px);
+          }
+
+          &:active {
+            @include sprite-icons(65, 24px);
           }
         }
       }
@@ -977,7 +979,7 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
       margin-top: 20px;
       border-top: 1px solid $Line-line;
     }
-    
+
     >.product-option {
       padding-top: 0;
     }
@@ -1934,16 +1936,18 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
             &::before {
               content: '';
               display: inline-block;
-              width: 216px;
-              height: 161px;
               margin-bottom: 20px;
-              border: 1px solid $color-border-gray;
             }
 
             // 1:1 문의
             &.--customer-1 {
               &::before {
-                background: $color-border-gray;
+                width: 85px;
+                height: 100px;
+                background-image: url('../img/icon/img-sprite.png');
+                background-repeat: no-repeat;
+                background-size: 1024px auto;
+                background-position: -130px -194px;
               }
             }
 
@@ -1957,7 +1961,12 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
             // 이용후기
             &.--review {
               &::before {
-                background: $color-border-gray;
+                width: 100px;
+                height: 108px;
+                background-image: url('../img/icon/img-sprite.png');
+                background-repeat: no-repeat;
+                background-size: 1024px auto;
+                background-position: -30px -194px;
               }
             }
           }
@@ -2002,6 +2011,15 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
       &.--selected {
         .--name {
           >span {
+            position: relative;
+            @include sprite-icons(58, 16px, after);
+
+            &::after {
+              position: absolute;
+              top: 3px;
+              left: -1px;
+            }
+
             &::before {
               content: '';
               display: inline-block;

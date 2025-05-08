@@ -87,14 +87,16 @@ header {
         span:not(.item) {
           font-size: 0;
         }
-        
+
         &.tooltip {
           &::before {
             content: none;
           }
+
           .item {
             background: #F181A6;
             z-index: 11;
+
             &::before {
               background: #F181A6;
             }
@@ -118,6 +120,7 @@ header {
 
       .btn-search {
         background: svgIcon(search, '4c4c4c') no-repeat center center/24px 24px;
+
         &:hover {
           background: svgIcon(search, 'ed6190') no-repeat center center/24px 24px;
         }
@@ -127,13 +130,15 @@ header {
 
         &.--login {
           background: svgIcon(user, '4c4c4c', 'transparent') no-repeat center center/36px 36px;
+
           &:hover {
             background: svgIcon(user, 'ed6190', 'transparent') no-repeat center center/36px 36px;
           }
         }
-        
+
         &.--logout {
           background: svgIcon(user, '4c4c4c', 'ed6190') no-repeat center center/36px 36px;
+
           &:hover {
             background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
           }
@@ -142,7 +147,7 @@ header {
         &.--active {
           background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
         }
-        
+
       }
 
       .btn-cart {
@@ -168,9 +173,11 @@ header {
   height: 100vh;
   background: $color-alpha-inverse25;
   z-index: 11;
-  &.--active{
+
+  &.--active {
     display: block;
   }
+
   >.search {
     display: flex;
     flex-direction: row;
@@ -298,9 +305,11 @@ header {
     background: $color-text-basic-inverse;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
     z-index: 11;
-    &.--active{
+
+    &.--active {
       display: block;
     }
+
     .user-info {
       margin-bottom: 8px;
       padding-bottom: 8px;
@@ -386,17 +395,18 @@ header {
           width: 36px;
           height: 36px;
           border-radius: 8px;
-            
+
           &:hover {
             background: $color-background-gray-subtle;
           }
-          
+
           span {
             font-size: 0;
             display: block;
             @include sprite-icons(16, 36px);
           }
         }
+
         &.--active {
           .btn-menu-all {
             border: 2px solid $color-alpha-base50;
@@ -435,7 +445,7 @@ header {
                 border-radius: 24px;
                 border: 1px solid $color-border-gray;
                 background: $color-border-gray-light;
-                @include sprite-icons(69, 16px);
+                @include sprite-icons(70, 16px);
 
                 &::before {
                   margin-right: 4px;
@@ -527,9 +537,11 @@ header {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
   color: $color-text-basic;
   z-index: 1;
-  &.--active{
+
+  &.--active {
     display: block;
   }
+
   .banner-wrap {
     display: flex;
     flex: 1 100%;
@@ -779,10 +791,44 @@ footer {
 
         [class^=btn-sns-] {
           display: inline-block;
-          width: 24px;
-          height: 24px;
           margin-right: 8px;
-          font-size: 0;
+
+          i {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            font-size: 0;
+          }
+        }
+
+        .btn-sns-blog {
+          i {
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              background-image: url(../img/icon/img-sprite.png);
+              background-repeat: no-repeat;
+              background-size: 1024px auto;
+              background-position: -72px 0;
+            }
+          }
+        }
+
+        .btn-sns-talk {
+          i {
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              background-image: url(../img/icon/img-sprite.png);
+              background-repeat: no-repeat;
+              background-size: 1024px auto;
+              background-position: -96px 0;
+            }
+          }
         }
       }
     }
@@ -806,6 +852,7 @@ footer {
         background: $color-alpha-base10;
 
         strong {
+          position: relative;
           display: inline-block;
           margin-bottom: 8px;
           @include font-body-small-bold;
@@ -823,17 +870,25 @@ footer {
             vertical-align: -6px;
           }
 
+          &::after {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+          }
+
           &.center {
+            @include sprite-icons(43, 16px, after);
+
             &::before {
               background-color: $color-text-primary;
-              background-image: url('');
             }
           }
 
           &.delivery {
+            @include sprite-icons(45, 16px, after);
+
             &::before {
               background-color: $color-border-tertiary;
-              background-image: url('');
             }
           }
         }
@@ -899,7 +954,10 @@ footer {
             width: 42px;
             height: 29px;
             margin-right: 20px;
-            background: $color-border-primary url('') no-repeat center center/100% 100%;
+            background-image: url(../img/icon/img-sprite.png);
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -120px 0;
           }
 
           .btn-text {
@@ -930,7 +988,10 @@ footer {
             width: 40px;
             height: 24px;
             margin-right: 20px;
-            background: $color-border-primary url('') no-repeat center center/100% 100%;
+            background-image: url(../img/icon/img-sprite.png);
+            background-repeat: no-repeat;
+            background-size: 1024px auto;
+            background-position: -162px 0;
           }
         }
       }
@@ -1057,6 +1118,7 @@ footer {
           @include font-body-small-bold;
           color: $color-text-basic;
         }
+
         .swiper-pagination-total {
           @include font-body-small-bold;
           color: $color-text-subcolor-light;
@@ -1087,7 +1149,7 @@ footer {
       .swiper-button-prev {
         @include sprite-icons(3, 24px, after);
       }
-      
+
       .swiper-button-next {
         @include sprite-icons(4, 24px, after);
       }

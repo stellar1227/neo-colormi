@@ -374,6 +374,7 @@ h5 {
       gap: 0 8px;
       min-height: 16px;
       transform: translateY(-50%);
+      z-index: 1;
 
       [class^=btn-] {
         display: inline-flex;

@@ -547,10 +547,16 @@
   padding: 16px;
   border-radius: 12px;
   @include font-body-small;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+  }
 
   dl {
-    flex: 1 0 auto;
-    margin: 1px 0;
+    padding-left: calc(24px + 8px);
   }
 
   .title {

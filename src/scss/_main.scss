@@ -30,11 +30,6 @@
   }
 }
 
-header {
-  position: relative;
-  border-bottom: 1px solid $Line-line;
-}
-
 .util-menu-wrap {
   position: relative;
 
@@ -241,7 +236,7 @@ header {
             height: 194px;
             background-image: url('../img/icon/img-sprite.png');
             background-repeat: no-repeat;
-            background-size: 1024px auto;
+            background-size: 1002px auto;
             background-position: -265px 0;
           }
         }
@@ -252,7 +247,7 @@ header {
             height: 133px;
             background-image: url('../img/icon/img-sprite.png');
             background-repeat: no-repeat;
-            background-size: 1024px auto;
+            background-size: 1002px auto;
             background-position: -526px 0;
           }
         }
@@ -430,6 +425,10 @@ header {
             background: $color-border-primary-light;
           }
         }
+
+        &.--home {
+          display: none;
+        }
       }
 
       .gnb-menu {
@@ -437,12 +436,12 @@ header {
           display: flex;
           gap: 0 16px;
           align-items: center;
-          padding: 6px 0;
+          // padding: 2px 0;
 
           .depth-1 {
             a {
               display: block;
-              padding: 4px 3px;
+              padding: 10px 3px;
               color: $color-text-subcolor-deep;
               @include depth-medium;
               line-height: 20px;
@@ -763,6 +762,12 @@ header {
       margin-bottom: 12px;
       @include title-medium;
       color: $color-text-basic;
+
+      .tooltip {
+        .item {
+          display: none;
+        }
+      }
     }
 
     [class^=guide-] {
@@ -827,7 +832,7 @@ footer {
               height: 24px;
               background-image: url(../img/icon/img-sprite.png);
               background-repeat: no-repeat;
-              background-size: 1024px auto;
+              background-size: 1002px auto;
               background-position: -72px 0;
             }
           }
@@ -842,7 +847,7 @@ footer {
               height: 24px;
               background-image: url(../img/icon/img-sprite.png);
               background-repeat: no-repeat;
-              background-size: 1024px auto;
+              background-size: 1002px auto;
               background-position: -96px 0;
             }
           }
@@ -973,7 +978,7 @@ footer {
             margin-right: 20px;
             background-image: url(../img/icon/img-sprite.png);
             background-repeat: no-repeat;
-            background-size: 1024px auto;
+            background-size: 1002px auto;
             background-position: -120px 0;
           }
 
@@ -1007,7 +1012,7 @@ footer {
             margin-right: 20px;
             background-image: url(../img/icon/img-sprite.png);
             background-repeat: no-repeat;
-            background-size: 1024px auto;
+            background-size: 1002px auto;
             background-position: -162px 0;
           }
         }

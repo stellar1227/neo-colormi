@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   //상품페이지 갤러리
   const thumbNailGallery = document.getElementById("thumbNailGallery");
-  if(thumbNailGallery) return productImages(thumbNailGallery);
+  if (thumbNailGallery) return productImages(thumbNailGallery);
 
   //상품페이지 스티키 정보
   const productImgDetail = document.querySelector(".product-wrap");
-  if(productImgDetail) return productStickyInfo(productImgDetail);
+  if (productImgDetail) return productStickyInfo(productImgDetail);
 
   //loading lottie
   loadingLottie();
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchMenu = document.querySelector('#searchWrap');
   const searchBtn = document.querySelector('#btnSearch');
   const searchCloseBtn = document.querySelector('#btnSearchClose');
-  
+
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     searchMenu.classList.add('--active');
@@ -226,7 +226,7 @@ function loadingLottie() {
   });
 }
 
-function initGnb(){
+function initGnb() {
   const links = document.querySelectorAll('.gnb .depth-1 a[data-menu-index]');
   const wraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
 

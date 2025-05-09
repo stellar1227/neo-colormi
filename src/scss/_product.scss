@@ -296,16 +296,11 @@
   }
 }
 
-$icon-star-off: '../img/icon/icon-star-off.png';
-$icon-star-on: '../img/icon/icon-star-on.png';
-$icon-star-on-black: '../img/icon/icon-star-on-black.png';
+$sprite: '../img/icon/icon-star.png';
 
-%star-base {
-  background: var(--star-off) repeat-x left center/auto 100%;
-
-  .rating-num {
-    background: var(--star-on) repeat-x left center/auto 100%;
-  }
+// 프레임 높이 × 3(0=off, 1=yellow, 2=black)
+%star-frame {
+  background: url(#{$sprite}) repeat-x 0 calc(var(--star-index) * -1 * var(--star-size)) / var(--star-size) calc(var(--star-size) * 3);
 }
 
 .rating-wrap {
@@ -313,24 +308,41 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
   align-items: center;
 
   .rating-container {
-    display: inline-flex;
-    --star-off: url(#{$icon-star-off});
-    --star-on: url(#{$icon-star-on});
-    @extend %star-base;
-    @include rating-size(16px);
+    --star-size: 16px;
+    --star-count: 5;
+    --star-index: 0;
+
+    @extend %star-frame;
+    width: calc(var(--star-size) * var(--star-count));
+    height: var(--star-size);
+    position: relative;
+
+    .rating-num {
+      --star-index: 1;
+      @extend %star-frame;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
 
     &.input {
-      background: none;
+      display: inline-flex;
       flex-direction: row-reverse;
+      background: none;
+      width: auto;
 
       .ipt-rating {
         display: none;
       }
 
       label {
-        display: inline-block;
+        --star-index: 0;
+        @extend %star-frame;
+        width: var(--star-size);
+        height: var(--star-size);
         cursor: pointer;
-        background: var(--star-off) no-repeat left center/auto 100%;
+        display: block;
 
         &::before {
           content: '';
@@ -346,8 +358,50 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
       .ipt-rating:checked+label:hover,
       .ipt-rating:checked~label:hover~label,
       label:hover~.ipt-rating:checked~label {
-        background: var(--star-on) no-repeat left center/auto 100%;
+        --star-index: 1;
       }
+    }
+  }
+
+  &.black {
+    .rating-container {
+      .rating-num {
+        --star-index: 2;
+      }
+
+      &.input {
+
+        label:hover,
+        label:hover~label,
+        .ipt-rating:checked~label,
+        .ipt-rating:checked+label:hover,
+        .ipt-rating:checked~label:hover~label,
+        label:hover~.ipt-rating:checked~label {
+          --star-index: 2;
+        }
+      }
+    }
+  }
+
+  &.--medium {
+
+    .rating-container,
+    .rating-container.input label {
+      --star-size: 24px;
+    }
+  }
+
+  &.--large {
+
+    .rating-container,
+    .rating-container.input label {
+      --star-size: 32px;
+    }
+
+    .text {
+      padding-left: 8px;
+      @include font-body-large-bold;
+      color: $color-text-basic;
     }
   }
 
@@ -366,30 +420,6 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
     padding-left: 8px;
     @include font-body-xsmall;
     color: $color-text-subcolor;
-  }
-
-  &.--medium {
-    .rating-container {
-      @include rating-size(24px);
-    }
-  }
-
-  &.--large {
-    .rating-container {
-      @include rating-size(32px);
-    }
-
-    .text {
-      padding-left: 8px;
-      @include font-body-large-bold;
-      color: $color-text-basic;
-    }
-  }
-
-  &.black {
-    .rating-container {
-      --star-on: url(#{$icon-star-on-black});
-    }
   }
 }
 
@@ -476,15 +506,15 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
 
         &:first-child {
 
-          [class^=btn-]:before {
-            background-image: url('');
+          [class^=btn-] {
+            @include sprite-icons(92, 16px);
           }
         }
 
         &:last-child {
 
-          [class^=btn-]:before {
-            background-image: url('');
+          [class^=btn-] {
+            @include sprite-icons(93, 16px);
           }
         }
 
@@ -498,18 +528,10 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
           background: $color-border-gray-light;
 
           &::before {
-            content: '';
-            display: inline-block;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 16px;
-            height: 16px;
-            background-color: #003f6d;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: 100% 100%;
           }
 
           i {
@@ -1729,6 +1751,7 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
       color: $color-text-subcolor-light;
       @include ellipsis;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
     }
 
     .text-content {
@@ -1736,6 +1759,7 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
       color: $color-text-basic;
       @include ellipsis;
       -webkit-line-clamp: 3;
+      line-clamp: 3;
     }
 
     .review-date {
@@ -1946,7 +1970,7 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
                 height: 100px;
                 background-image: url('../img/icon/img-sprite.png');
                 background-repeat: no-repeat;
-                background-size: 1024px auto;
+                background-size: 1002px auto;
                 background-position: -130px -194px;
               }
             }
@@ -1954,7 +1978,12 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
             // 견적문의
             &.--customer-2 {
               &::before {
-                background: $color-border-gray-light;
+                width: 87px;
+                height: 100px;
+                background-image: url(../img/icon/img-sprite.png);
+                background-repeat: no-repeat;
+                background-size: 1002px auto;
+                background-position: -215px -194px;
               }
             }
 
@@ -1965,7 +1994,7 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
                 height: 108px;
                 background-image: url('../img/icon/img-sprite.png');
                 background-repeat: no-repeat;
-                background-size: 1024px auto;
+                background-size: 1002px auto;
                 background-position: -30px -194px;
               }
             }
@@ -2003,6 +2032,7 @@ $icon-star-on-black: '../img/icon/icon-star-on-black.png';
           a {
             @include ellipsis;
             -webkit-line-clamp: 1;
+            line-clamp: 1;
           }
         }
       }

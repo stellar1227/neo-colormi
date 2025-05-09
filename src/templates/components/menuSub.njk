@@ -1,3 +1,8 @@
+{# {% from "components/menuTemplate.njk" import renderMenu %}
+{% import "components/menuData.njk" as data %}
+{% for i in range(data.menuData | length) %}
+  {{ renderMenu(i) }}
+{% endfor %} #}
 {% include "components/MN002S.njk" %}
 {% include "components/MN003S.njk" %}
 {% include "components/MN004S.njk" %}
@@ -10,10 +15,6 @@
 {% include "components/MN011S.njk" %}
 {% include "components/MN012S.njk" %}
 {% include "components/MN013S.njk" %}
-<!-- tooltipList: [ '<span class="tooltip status --new"><i class="item">신상품</i></span>', '<span class="tooltip status
---discount-1"><i class="item">폭풍할인</i></span>', '<span class="tooltip status --discount-2"><i
-    class="item">할인</i></span>', '<span class="tooltip status --best"><i class="item">베스트</i></span>', '<span
-    class="tooltip status --contact"><i class="item">별도문의</i></span>' ] -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('script[id^="menu-data-"]').forEach(tpl => {

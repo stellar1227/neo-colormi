@@ -1,19 +1,26 @@
 {% set slides = [
-  { imgUrl: "C007-01.jpg", alt: "떡메모지 3종, 일정체크 한 번에 정리!" },
-  { imgUrl: "C007-02.jpg", alt: "100DAYS 스터디 플래너" },
-  { imgUrl: "C007-03.jpg", alt: "주간 플래너" },
-  { imgUrl: "C007-04.jpg", alt: "차별화된 고급명함" },
-  { imgUrl: "C007-05.jpg", alt: "사진으로 만드는 나만의 엽서" }
+  { imgUrl: "pc-visual-01.jpg", alt: "떡메모지 3종, 일정체크 한 번에 정리!" },
+  { imgUrl: "pc-visual-02.jpg", alt: "100DAYS 스터디 플래너" },
+  { imgUrl: "pc-visual-03.jpg", alt: "주간 플래너" },
+  { imgUrl: "pc-visual-04.jpg", alt: "차별화된 고급명함" },
+  { imgUrl: "pc-visual-05.jpg", alt: "사진으로 만드는 나만의 엽서" }
 ] %}
 
 <div class="swiper my-swiper main-banner">
   <div class="swiper-wrapper">
     {% for slide in slides %}
-    <div class="swiper-slide">
-      <a href="" class="item">
-        <img src="{{ slide.imgUrl }}" alt="{{ slide.alt }}">
-      </a>
-    </div>
+      <div class="swiper-slide">
+        <a href="" class="item">
+          <picture>
+            <source
+              media="(max-width: 565px)"
+              srcset="/resources/fe/img/temp/{{ slide.imgUrl | replace('pc-', 'mo-') }}">
+            <img
+              src="/resources/fe/img/temp/{{ slide.imgUrl }}"
+              alt="{{ slide.alt }}">
+          </picture>
+        </a>
+      </div>
     {% endfor %}
   </div>
   <div class="swiper-util">

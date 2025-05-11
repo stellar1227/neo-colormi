@@ -1,6 +1,6 @@
-{# {% from "components/menuTemplate.njk" import renderMenu %}
-{% import "components/menuData.njk" as data %}
-{% for i in range(data.menuData | length) %}
+{# {% from "menuTemplate.njk" import renderMenu %}
+{% import "menuData.njk" as D %}
+{% for i in range(0, D.menuData | length) %}
   {{ renderMenu(i) }}
 {% endfor %} #}
 {% include "components/MN002S.njk" %}

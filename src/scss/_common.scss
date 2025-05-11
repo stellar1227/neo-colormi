@@ -225,7 +225,7 @@ h5 {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-image: url('../img/icon/img-sprite.png');
+    background-image: url('../resources/fe/img/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 1002px auto;
     background-position: 0 -194px;
@@ -1567,6 +1567,7 @@ h5 {
 
     .modal-container {
       overflow-y: auto;
+      scrollbar-width: none;
       padding: 0 20px 16px;
       color: $color-text-basic;
       @include font-body-small;
@@ -1875,6 +1876,7 @@ h5 {
   &.--scroll-box {
     max-height: 240px;
     overflow-y: auto;
+    scrollbar-width: none;
   }
 
   +.checkbox-wrap {

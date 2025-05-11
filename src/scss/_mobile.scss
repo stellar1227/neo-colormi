@@ -82,6 +82,60 @@
     display: none;
   }
 
+  .main-banner-wrap {
+    min-width: 100%;
+
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 100%;
+
+          .item {
+            height: auto;
+            border-radius: 0;
+          }
+        }
+      }
+
+      .swiper-util {
+        position: absolute;
+        bottom: 12px;
+        right: 16px;
+        margin: 0;
+        border-radius: 40px;
+        background: $color-alpha-inverse50;
+        z-index: 1;
+
+        .swiper-pagination {
+          @include font-body-xxsmall-bold;
+
+          .swiper-pagination-current {
+            color: $color-text-basic-inverse;
+          }
+
+          .swiper-pagination-total {
+            color: $color-text-subcolor;
+
+            &::before {
+              height: 8px;
+              background: $color-border-disabled;
+            }
+          }
+        }
+
+        .swiper-button-prev {
+          height: 20px;
+          @include sprite-icons(3, 16px, after);
+        }
+
+        .swiper-button-next {
+          height: 20px;
+          @include sprite-icons(4, 16px, after);
+        }
+      }
+    }
+  }
+
   .radio-wrap {
     &.img-option {
       gap: 8px;

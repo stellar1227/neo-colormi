@@ -834,7 +834,7 @@ footer {
               display: inline-block;
               width: 24px;
               height: 24px;
-              background-image: url(../img/icon/img-sprite.png);
+              background-image: url('../resources/fe/img/icon/img-sprite.png');
               background-repeat: no-repeat;
               background-size: 1002px auto;
               background-position: -72px 0;
@@ -849,7 +849,7 @@ footer {
               display: inline-block;
               width: 24px;
               height: 24px;
-              background-image: url(../img/icon/img-sprite.png);
+              background-image: url('../resources/fe/img/icon/img-sprite.png');
               background-repeat: no-repeat;
               background-size: 1002px auto;
               background-position: -96px 0;
@@ -980,7 +980,7 @@ footer {
             width: 42px;
             height: 29px;
             margin-right: 20px;
-            background-image: url(../img/icon/img-sprite.png);
+            background-image: url('../resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -120px 0;
@@ -1014,7 +1014,7 @@ footer {
             width: 40px;
             height: 24px;
             margin-right: 20px;
-            background-image: url(../img/icon/img-sprite.png);
+            background-image: url('../resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -162px 0;
@@ -1169,14 +1169,29 @@ footer {
         width: 24px;
         height: 24px;
         margin-top: 0;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+        }
       }
 
       .swiper-button-prev {
-        @include sprite-icons(3, 24px, after);
+
+        // @include sprite-icons(3, 24px, after);
+        &::after {
+          background: svgIcon(arrow-left, 'D6D6D6') no-repeat center center/24px 24px;
+        }
       }
 
       .swiper-button-next {
-        @include sprite-icons(4, 24px, after);
+
+        // @include sprite-icons(4, 24px, after);
+        &::after {
+          background: svgIcon(arrow-right, 'D6D6D6') no-repeat center center/24px 24px;
+        }
       }
     }
   }

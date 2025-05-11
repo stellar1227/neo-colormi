@@ -123,14 +123,24 @@
           }
         }
 
-        .swiper-button-prev {
-          height: 20px;
-          @include sprite-icons(3, 16px, after);
-        }
-
+        .swiper-button-prev,
         .swiper-button-next {
+          position: relative;
+          display: inline-flex;
+          top: auto;
+          left: auto;
+          right: auto;
+          width: 24px;
           height: 20px;
-          @include sprite-icons(4, 16px, after);
+          margin-top: 0;
+
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-size: 16px 16px;
+          }
         }
       }
     }

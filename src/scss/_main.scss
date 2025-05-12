@@ -1227,3 +1227,73 @@ footer {
   z-index: 1000;
   transition: .4s;
 }
+
+.product-wrap-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 18px;
+
+  .product-img {
+    overflow: hidden;
+    position: relative;
+    width: 225px;
+    border-radius: 10px;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .product-info {
+    width: 225px;
+
+    .badge-wrap {
+      margin-top: 16px;
+    }
+
+    .product-title {
+      display: flex;
+      gap: 4px;
+      @include font-body-small;
+
+      .product-discount {
+        font-weight: $font-weight-semibold;
+        font-family: $font-typo-icon-en-font;
+        color: $Display-Status-Display-2
+      }
+    }
+
+    .product-text {
+      margin-top: 3px;
+      @include font-body-small;
+      color: $color-text-subcolor-deep;
+    }
+  }
+}
+
+.img-title-event {
+  margin-bottom: 24px;
+  text-align: center;
+
+  img {
+    width: 427px;
+  }
+}
+
+.box-list {
+  +.btn-wrap {
+    justify-content: center;
+    margin-top: 24px;
+  }
+}

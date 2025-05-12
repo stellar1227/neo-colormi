@@ -1,13 +1,14 @@
-{% from "components/menuAll.njk" import renderMenuAll %}
+{% from "components/menuList.njk" import renderMenuList %}
 {% set keys = [
-  "menuData003","menuData004","menuData005","menuData006",
-  "menuData007","menuData008","menuData009","menuData010","menuData011","menuData012",
-  "menuData013"
+  "menuData001","menuData002","menuData003","menuData004",
+  "menuData005","menuData006","menuData007","menuData008","menuData009","menuData010",
+  "menuData011"
 ] %}
 {% for key in keys %}
   {% set arr = menuData[key] %}
-  {{ renderMenuAll(arr, loop.index0) }}
+  {{ renderMenuList(arr, loop.index0) }}
 {% endfor %}
+{% include "components/menuAll.njk" %}
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const dataScripts = Array.from(document.querySelectorAll('script[id^="menu-data-"]'));

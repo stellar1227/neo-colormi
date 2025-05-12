@@ -1,21 +1,25 @@
-{% macro renderMenuAll(arr, navIdx) %}
-  {% set mn    = arr[0] %}
-  {% set catg  = mn.categories[0] %}
-  <nav class="all-menu-wrap" data-menu-index="{{ navIdx+1 }}">
-    <div class="all-menu">
-      <div class="category-wrap">
+<nav class="all-menu-wrap" data-menu-index="0">
+  <div class="all-menu">
+    <div class="banner-wrap">
+      <a href="" alt=""><img src="/resources/fe/img/img/img-snb-banner-01.png" alt="학원·기업교재"/>
+      </a>
+      <a href="" alt=""><img src="/resources/fe/img/img/img-snb-banner-02.png" alt="1인작가 전용"/>
+      </a>
+      <a href="" alt=""><img src="/resources/fe/img/img/img-snb-banner-03.png" alt="대표님전용"/>
+      </a>
+    </div>
+    <div class="category-wrap">
+      {% for key in ["menuData001","menuData002"] %}
         <div class="category">
-          <strong class="depth-1">
-            {{ catg.depth1 | safe }}
-          </strong>
+          <strong class="depth-1">{{ menuData[key][0].categories[0].depth1 | safe }}</strong>
           <ul>
-            {% for d2 in catg.depth2List %}
+            {% for d2 in menuData[key][0].categories[0].depth2List %}
               <li>
                 <p class="depth-2">{{ d2.title }}</p>
                 <ul>
                   {% for d3 in d2.depth3List %}
                     <li class="depth-3">
-                      <a href="#" data-index="{{ loop.index0 }}">
+                      <a href="#">
                         {{ d3.title }}
                         {% for tpl in d3.tooltipList %}
                           {{ tpl|safe }}
@@ -28,28 +32,145 @@
             {% endfor %}
           </ul>
         </div>
-      </div>
-      <div class="header-product-wrap">
-        {% set data = catg.depth2List[0].depth3List[0] %}
-        <ul class="product-img">
-          {% for img in data.itemList %}
-            <li>
-              <img data-img-index="{{ loop.index0 }}" src="/resources/fe/img/product/{{ img.fileName }}" alt="{{ img.alt }}"/>
-            </li>
-          {% endfor %}
-        </ul>
-        <div class="product-info">
-          <strong class="product-name" data-name="{{ data.title }}">
-            {{ data.title }}
-            {% for tpl in data.tooltipList %}
-              {{ tpl|safe }}
+      {% endfor %}
+      {% set key = "menuData003" %}
+      <div class="category">
+        <strong class="depth-1">{{ menuData[key][0].categories[0].depth1 | safe }}</strong>
+        <ul>
+          <li>
+            {% for d2 in menuData[key][0].categories[0].depth2List %}
+              <p class="depth-2">{{ d2.title }}</p>
+              <ul>
+                {% for d3 in d2.depth3List %}
+                  <li class="depth-3">
+                    <a href="#">
+                      {{ d3.title }}
+                      {% for tpl in d3.tooltipList %}
+                        {{ tpl|safe }}
+                      {% endfor %}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
             {% endfor %}
-          </strong>
-          {% for sub in data.subs %}
-            <p class="guide-sub --small" data-sub-index="{{ loop.index0 }}">{{ sub }}</p>
-          {% endfor %}
-        </div>
+          </li>
+        </ul>
+      </div>
+      {% set catg004 = menuData.menuData004[0].categories[0] %}
+      <div class="category">
+        <strong class="depth-1 focus">{{ catg004.depth1 | safe }}</strong>
+        <ul>
+          <li>
+            {% for idx in range(0, 3) %}
+              {% set d2 = catg004.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+          </li>
+          <li>
+            {% for idx in range(3, catg004.depth2List | length) %}
+              {% set d2 = catg004.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+          </li>
+        </ul>
       </div>
     </div>
-  </nav>
-{% endmacro %}
+    <div class="category-wrap">
+      {% for key in ["menuData005","menuData006","menuData007","menuData008","menuData009","menuData010"] %}
+        <div class="category">
+          <strong class="depth-1">{{ menuData[key][0].categories[0].depth1 | safe }}</strong>
+          <ul>
+            <li>
+              {% for d2 in menuData[key][0].categories[0].depth2List %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            </li>
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="category-wrap">
+      {% set catg011 = menuData.menuData011[0].categories[0] %}
+      <div class="category">
+        <strong class="depth-1">{{ catg011.depth1 | safe }}</strong>
+        <ul>
+          <li>
+            {% for idx in range(0, 2) %}
+              {% set d2 = catg011.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+          </li>
+          <li>
+            {% for idx in range(2, 4) %}
+              {% set d2 = catg011.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+          </li>
+          <li>
+            {% for idx in range(4, catg011.depth2List | length) %}
+              {% set d2 = catg011.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,17 +1,20 @@
 {% extends "layouts/base.njk" %}
 {% set title = "loadingSpinner" %}
 {% block content %}
-  <!-- 일부 적용 시 :anim-item-box -->
-  <div class="anim-item-box">
-    <div style="width: 300px; height: 100px;">일부 적용 시</div>
+  <div
+    class="content">
+    <!-- 일부 적용 시 :anim-item-box -->
+    <div class="anim-item-box" style="width: 300px; height: 100px;">
+      <div>일부 적용 시</div>
+      <!-- anim-item-wrap : 실행 시 --active 추가 -->
+      <div class="anim-item-wrap --active" data-anim-type="loading">
+        <div class="anim-item"></div>
+      </div>
+    </div>
+    <!-- 전체 적용 시 -->
     <!-- anim-item-wrap : 실행 시 --active 추가 -->
     <div class="anim-item-wrap --active" data-anim-type="loading">
       <div class="anim-item"></div>
     </div>
-  </div>
-  <!-- 전체 적용 시 -->
-  <!-- anim-item-wrap : 실행 시 --active 추가 -->
-  <div class="anim-item-wrap --active" data-anim-type="loading">
-    <div class="anim-item"></div>
   </div>
 {% endblock %}

@@ -156,7 +156,7 @@ function loadingLottie() {
   const ACTIVE_CLASS = '--active';
 
   const animConfig = {
-    loading: './img/assets/loading.json',
+    loading: './resources/fe/img/assets/loading.json',
   };
 
   const animDataCache = new Map();

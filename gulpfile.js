@@ -21,10 +21,11 @@ const sass = gulpSass(dartSass);
 const paths = {
   templates: {
     src: 'src/templates/pages/**/*.njk',
-    watch: 'src/templates/**/*.njk',
+    watch: 'src/templates/**/*.{njk,json}',
     dest: 'dist/',
     data: 'src/data/global.json',
   },
+  menuData: 'src/data/menuData.json',
   styles: {
     src: 'src/scss/**/*.scss',
     dest: 'dist/css/',
@@ -55,8 +56,12 @@ function templates() {
       const libJsFiles = fs.readdirSync('src/libs/js').map(file => `/js/${file}`);
       const libCssFiles = fs.readdirSync('src/libs/css').map(file => `/css/${file}`);
 
+      const menuJson = fs.readFileSync(path.resolve(paths.menuData), 'utf8');
+      const menuData = JSON.parse(menuJson);
+
       return {
         ...globalData,
+        menuData,
         libJsFiles,
         libCssFiles,
       };
@@ -125,3 +130,6 @@ const build = gulp.parallel(templates, styles, scripts, copyLibsJS, copyLibsCSS)
 const dev = gulp.series(build, serve);
 
 export { build as default, dev };
+export const watchTemplates = () => {
+  gulp.watch(paths.templates.watch, templates);
+};

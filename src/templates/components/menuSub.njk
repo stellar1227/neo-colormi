@@ -1,54 +1,51 @@
-{# {% from "menuTemplate.njk" import renderMenu %}
-{% import "menuData.njk" as D %}
-{% for i in range(0, D.menuData | length) %}
-  {{ renderMenu(i) }}
-{% endfor %} #}
-{% include "components/MN002S.njk" %}
-{% include "components/MN003S.njk" %}
-{% include "components/MN004S.njk" %}
-{% include "components/MN005S.njk" %}
-{% include "components/MN006S.njk" %}
-{% include "components/MN007S.njk" %}
-{% include "components/MN008S.njk" %}
-{% include "components/MN009S.njk" %}
-{% include "components/MN010S.njk" %}
-{% include "components/MN011S.njk" %}
-{% include "components/MN012S.njk" %}
-{% include "components/MN013S.njk" %}
+{% from "components/menuAll.njk" import renderMenuAll %}
+{% set keys = [
+  "menuData003","menuData004","menuData005","menuData006",
+  "menuData007","menuData008","menuData009","menuData010","menuData011","menuData012",
+  "menuData013"
+] %}
+{% for key in keys %}
+  {% set arr = menuData[key] %}
+  {{ renderMenuAll(arr, loop.index0) }}
+{% endfor %}
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('script[id^="menu-data-"]').forEach(tpl => {
-      let menuData;
+    const dataScripts = Array.from(document.querySelectorAll('script[id^="menu-data-"]'));
+    const navEls = Array.from(document.querySelectorAll('.all-menu-wrap'));
+    const menus = dataScripts.map(s => {
       try {
-        menuData = JSON.parse(tpl.textContent.trim());
+        return JSON.parse(s.textContent.trim());
       } catch (e) {
-        return;
+        return null;
       }
-      const wrapper = tpl.nextElementSibling;
-      if (! wrapper || ! wrapper.classList.contains('all-menu-wrap')) {
+    });
+    navEls.forEach((navEl, idx) => {
+      const menuData = menus[idx];
+      if (! menuData) 
         return;
-      }
-      const container = wrapper.querySelector('.all-menu');
-      if (! container) {
-        return;
-      }
-      const links = container.querySelectorAll('.depth-3 > a[data-index]');
-      const imgs = container.querySelectorAll('.product-img img[data-img-index]');
-      const nameEl = container.querySelector('.product-info [data-name]');
-      const subs = container.querySelectorAll('.guide-sub[data-sub-index]');
-      function update(idx) {
-        const data = menuData[idx];
+      
+      const links = navEl.querySelectorAll('li.depth-3 a[data-index]');
+      const imgs = navEl.querySelectorAll('img[data-img-index]');
+      const nameEl = navEl.querySelector('.product-name');
+      const subs = navEl.querySelectorAll('.guide-sub[data-sub-index]');
+      function update(groupIdx, itemIdx) {
+        const catg = menuData.categories[0];
+        const d2 = catg.depth2List[groupIdx];
+        if (! d2) 
+          return;
+        
+        const data = d2.depth3List[itemIdx];
         if (! data) 
           return;
         
         imgs.forEach(img => {
           const i = + img.dataset.imgIndex;
-          const item = data.itemList[i];
-          if (item) {
-            img.src = `/img/product/${
-              item.fileName
+          const it = data.itemList[i];
+          if (it) {
+            img.src = `/resources/fe/img/product/${
+              it.fileName
             }`;
-            img.alt = item.alt;
+            img.alt = it.alt;
             img
               .parentElement
               .style
@@ -60,7 +57,7 @@
               .display = 'none';
           }
         });
-        nameEl.innerHTML = data.name + (data.tooltipList || []).join('');
+        nameEl.innerHTML = data.title + (data.tooltipList || []).join('');
         subs.forEach(p => {
           const i = + p.dataset.subIndex;
           p.textContent = data.subs[i] || '';
@@ -69,26 +66,15 @@
       links.forEach(link => {
         link.addEventListener('mouseenter', e => {
           e.preventDefault();
-          update(+ link.dataset.index);
+          const itemIdx = + link.dataset.index;
+          const depth3Li = link.closest('li.depth-3');
+          const depth2Li = depth3Li.closest('ul').closest('li');
+          const groupIdx = Array.from(depth2Li.parentElement.children).indexOf(depth2Li);
+          update(groupIdx, itemIdx);
         });
       });
-      if (menuData.length) {
-        update(0);
-      }
-      const observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-          if (mutation.attributeName === 'style' || mutation.attributeName === 'class') {
-            const disp = getComputedStyle(wrapper).display;
-            if (disp === 'none' && menuData.length) {
-              update(0);
-            }
-          }
-        });
-      });
-      observer.observe(wrapper, {
-        attributes: true,
-        attributeFilter: ['style', 'class']
-      });
+      // 초기 표시
+      update(0, 0);
     });
   });
 </script>

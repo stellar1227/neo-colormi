@@ -8,466 +8,175 @@
       <a href="" alt=""><img src="/resources/fe/img/img/img-snb-banner-03.png" alt="대표님전용"/>
       </a>
     </div>
+    <!-- 첫 번째 그룹: menuData003~006 -->
     <div
       class="category-wrap">
-      <!-- category -->
+      <!-- menuData003, menuData004 -->
+      {% for key in ["menuData003","menuData004"] %}
+        <div class="category">
+          <strong class="depth-1">{{ menuData[key][0].categories[0].depth1 | safe }}</strong>
+          <ul>
+            {% for d2 in menuData[key][0].categories[0].depth2List %}
+              <li>
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+      <!-- menuData005 -->
+      {% set key = "menuData005" %}
       <div class="category">
-        <strong class="depth-1 focus">책자</strong>
-        <!-- //하위메뉴 링크 호버 시 .focus 추가 -->
+        <strong class="depth-1">{{ menuData[key][0].categories[0].depth1 | safe }}</strong>
         <ul>
           <li>
-            <p class="depth-2">제본</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">무선제본</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">중철제본</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">스프링제본</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">떡제본</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p class="depth-2">책자</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">제안서·PPT</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">카탈로그·브로슈어</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">양식지</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">교재</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">지명원</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">단행본</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">문집</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">전시도록</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">포토북</a>
-              </li>
-            </ul>
+            {% for d2 in menuData[key][0].categories[0].depth2List %}
+              <p class="depth-2">{{ d2.title }}</p>
+              <ul>
+                {% for d3 in d2.depth3List %}
+                  <li class="depth-3">
+                    <a href="#">
+                      {{ d3.title }}
+                      {% for tpl in d3.tooltipList %}
+                        {{ tpl|safe }}
+                      {% endfor %}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endfor %}
           </li>
         </ul>
       </div>
-      <!-- category -->
+      <!-- menuData006-->
+      {% set catg6 = menuData.menuData006[0].categories[0] %}
       <div class="category">
-        <strong class="depth-1">출력</strong>
+        <strong class="depth-1 focus">{{ catg6.depth1 | safe }}</strong>
         <ul>
           <li>
-            <p class="depth-2">출력</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">낱장인쇄(제본없이)</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">소량책자표지</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">소량전단</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">명함</strong>
-        <ul>
-          <li>
-            <p class="depth-2">특가명함</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">일반명함</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">고급명함</a>
-              </li>
-            </ul>
-            <p class="depth-2">디자인명함</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">특수명함</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">정사각명함</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">홍보물</strong>
-        <ul>
-          <li>
-            <p class="depth-2">전단지</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">소량전단</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">대량전단</a>
-              </li>
-            </ul>
-            <p class="depth-2">리플렛</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">리플렛</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">카탈로그·브로슈어</a>
-              </li>
-            </ul>
-            <p class="depth-2">티켓</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">상품권</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">쿠폰</a>
-              </li>
-            </ul>
+            {% for idx in range(0, 3) %}
+              {% set d2 = catg6.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
           </li>
           <li>
-            <p class="depth-2">포스터</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">포스터</a>
-              </li>
-            </ul>
-            <p class="depth-2">테이블 메뉴</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">메뉴판</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">테이블세팅지</a>
-              </li>
-            </ul>
-            <p class="depth-2">포장용품</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">행택</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">헤더택</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">랩핑지</a>
-              </li>
-            </ul>
+            {% for idx in range(3, catg6.depth2List | length) %}
+              {% set d2 = catg6.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
           </li>
         </ul>
       </div>
     </div>
     <div
       class="category-wrap">
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">달력·수첩</strong>
-        <ul>
-          <li>
-            <p class="depth-2">달력</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">탁상달력</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">벽걸이달력
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <p class="depth-2">다이어리</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">다이어리
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">주간플래너</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">스터디플래너</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">봉투·쇼핑백</strong>
-        <ul>
-          <li>
-            <p class="depth-2">봉투</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">소량봉투</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">대량봉투
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">무지봉투
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <p class="depth-2">쇼핑백</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">쇼핑백
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">무지쇼핑백</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">엽서·카드</strong>
-        <ul>
-          <li>
-            <p class="depth-2">엽서</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">사진엽서</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">엽서세트</a>
-              </li>
-            </ul>
-            <p class="depth-2">안내장</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">청첩장</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">초대장</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">안내카드</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">문구점</strong>
-        <ul>
-          <li>
-            <p class="depth-2">노트</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">떡메모지</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">무선노트</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">스프링노트</a>
-              </li>
-            </ul>
-            <p class="depth-2">굿즈</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">스티커
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">포토카드</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">종이슬로건</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">책갈피</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">판촉물</strong>
-        <ul>
-          <li>
-            <p class="depth-2">기프트</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">단체티셔츠</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">에코백</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">텀블러</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">보조배터리</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">골프공</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- category -->
-      <div class="category">
-        <strong class="depth-1">옵셋인쇄</strong>
-        <ul>
-          <li>
-            <p class="depth-2">독판인쇄</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">무선책자
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">중철책자
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">스프링책자
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">리플렛
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-              <li class="depth-3">
-                <a href="#">전단지
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <p class="depth-2">합판인쇄</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">전단지
-                  <span class="tooltip status --contact">
-                    <i class="item">별도문의</i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <!-- menuData007~012 -->
+      {% for key in ["menuData007","menuData008","menuData009","menuData010","menuData011","menuData012"] %}
+        <div class="category">
+          <strong class="depth-1">{{ menuData[key][0].categories[0].depth1 | safe }}</strong>
+          <ul>
+            <li>
+              {% for d2 in menuData[key][0].categories[0].depth2List %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            </li>
+          </ul>
+        </div>
+      {% endfor %}
     </div>
     <div
       class="category-wrap">
-      <!-- category -->
+      <!-- menuData013 -->
+      {% set catg13 = menuData.menuData013[0].categories[0] %}
       <div class="category">
-        <strong class="depth-1">오피스·문구
-          <em class="desc-guide">
-            <i>#</i>디자인 없이 바로 구매 가능한 완제품
-          </em>
-        </strong>
+        <strong class="depth-1">{{ catg13.depth1 | safe }}</strong>
         <ul>
           <li>
-            <p class="depth-2">노트</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">스터디플래너</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">주간플래너</a>
-              </li>
-            </ul>
-            <p class="depth-2">메모장</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">떡메모지</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">컬러메모장</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">메모장</a>
-              </li>
-            </ul>
+            {% for idx in range(0, 2) %}
+              {% set d2 = catg13.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
           </li>
           <li>
-            <p class="depth-2">스티커</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">네임스티커</a>
-              </li>
-            </ul>
-            <p class="depth-2">카드·편지지</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">편지지패드</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">책갈피</a>
-              </li>
-            </ul>
+            {% for idx in range(2, 4) %}
+              {% set d2 = catg13.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
           </li>
           <li>
-            <p class="depth-2">사무용품</p>
-            <ul>
-              <li class="depth-3">
-                <a href="#">탁상달력</a>
-              </li>
-              <li class="depth-3">
-                <a href="#">복사용지</a>
-              </li>
-            </ul>
+            {% for idx in range(4, catg13.depth2List | length) %}
+              {% set d2 = catg13.depth2List[idx] %}
+              {% if d2 %}
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#">{{ d3.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
           </li>
         </ul>
       </div>

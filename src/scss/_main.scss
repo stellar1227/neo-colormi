@@ -678,7 +678,7 @@ header {
 
             >ul {
               +.depth-2 {
-                margin-top: 36px;
+                margin-top: 24px;
               }
             }
 
@@ -718,6 +718,24 @@ header {
   .status {
     i {
       bottom: -37px;
+    }
+  }
+
+  &[data-menu-index="4"],
+  &[data-menu-index="11"] {
+    .all-menu .category-wrap .category>ul {
+      max-height: 316px;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      >li {
+        width: 168px;
+
+        &:nth-child(even) {
+          margin-top: 24px;
+          margin-bottom: 100px;
+        }
+      }
     }
   }
 }

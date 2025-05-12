@@ -1,0 +1,55 @@
+{% macro renderMenuAll(arr, navIdx) %}
+  {% set mn    = arr[0] %}
+  {% set catg  = mn.categories[0] %}
+  <nav class="all-menu-wrap" data-menu-index="{{ navIdx+1 }}">
+    <div class="all-menu">
+      <div class="category-wrap">
+        <div class="category">
+          <strong class="depth-1">
+            {{ catg.depth1 | safe }}
+          </strong>
+          <ul>
+            {% for d2 in catg.depth2List %}
+              <li>
+                <p class="depth-2">{{ d2.title }}</p>
+                <ul>
+                  {% for d3 in d2.depth3List %}
+                    <li class="depth-3">
+                      <a href="#" data-index="{{ loop.index0 }}">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="header-product-wrap">
+        {% set data = catg.depth2List[0].depth3List[0] %}
+        <ul class="product-img">
+          {% for img in data.itemList %}
+            <li>
+              <img data-img-index="{{ loop.index0 }}" src="/resources/fe/img/product/{{ img.fileName }}" alt="{{ img.alt }}"/>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="product-info">
+          <strong class="product-name" data-name="{{ data.title }}">
+            {{ data.title }}
+            {% for tpl in data.tooltipList %}
+              {{ tpl|safe }}
+            {% endfor %}
+          </strong>
+          {% for sub in data.subs %}
+            <p class="guide-sub --small" data-sub-index="{{ loop.index0 }}">{{ sub }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </nav>
+{% endmacro %}

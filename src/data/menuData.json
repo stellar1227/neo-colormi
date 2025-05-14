@@ -22,8 +22,8 @@
                     "교재, 단행본등에 적합한 고급형 제본 방식"
                   ],
                   "itemList": [
-                    { "fileName": "A001-01.jpg", "alt": "무선제본 이미지 1" },
-                    { "fileName": "A001-02.jpg", "alt": "무선제본 이미지 2" }
+                    { "fileName": "A001_thum_1.jpg", "alt": "무선제본 이미지 1" },
+                    { "fileName": "A001_thum_2.jpg", "alt": "무선제본 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --best\"><i class=\"item\">베스트</i></span>"]
                 },
@@ -34,8 +34,8 @@
                     "소책자, 리플렛, 가이드북에 추천 (24p 이하 추천)"
                   ],
                   "itemList": [
-                    { "fileName": "A002-01.jpg", "alt": "중철제본 이미지 1" },
-                    { "fileName": "A002-02.jpg", "alt": "중철제본 이미지 2" }
+                    { "fileName": "A002_thum_1.jpg", "alt": "중철제본 이미지 1" },
+                    { "fileName": "A002_thum_2.jpg", "alt": "중철제본 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -46,8 +46,8 @@
                     "제안서, 매뉴얼, 노트 최적화"
                   ],
                   "itemList": [
-                    { "fileName": "A003-01.jpg", "alt": "스프링제본 이미지 1" },
-                    { "fileName": "A003-02.jpg", "alt": "스프링제본 이미지 2" }
+                    { "fileName": "A003_thum_1.jpg", "alt": "스프링제본 이미지 1" },
+                    { "fileName": "A003_thum_2.jpg", "alt": "스프링제본 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -58,8 +58,8 @@
                     "메모지, 수주장 등 실용 인쇄에 적합"
                   ],
                   "itemList": [
-                    { "fileName": "A004-01.jpg", "alt": "떡제본 이미지 1" },
-                    { "fileName": "A004-02.jpg", "alt": "떡제본 이미지 2" }
+                    { "fileName": "A004_thum_1.jpg", "alt": "떡제본 이미지 1" },
+                    { "fileName": "A004_thum_2.jpg", "alt": "떡제본 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -75,8 +75,8 @@
                     "비즈니스 제안서, 발표자료에 추천"
                   ],
                   "itemList": [
-                    { "fileName": "A011-01.jpg", "alt": "제안서 PPT 이미지 1" },
-                    { "fileName": "A011-02.jpg", "alt": "제안서 PPT 이미지 2" }
+                    { "fileName": "A011_thum_1.jpg", "alt": "제안서 PPT 이미지 1" },
+                    { "fileName": "A011_thum_2.jpg", "alt": "제안서 PPT 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -87,8 +87,8 @@
                     "기업 홍보, 전시회 활용에 딱"
                   ],
                   "itemList": [
-                    { "fileName": "A007-01.jpg", "alt": "카탈로그·브로슈어 이미지 1" },
-                    { "fileName": "A007-02.jpg", "alt": "카탈로그·브로슈어 이미지 2" }
+                    { "fileName": "A007_thum_1.jpg", "alt": "카탈로그·브로슈어 이미지 1" },
+                    { "fileName": "A007_thum_2.jpg", "alt": "카탈로그·브로슈어 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --best\"><i class=\"item\">베스트</i></span>"]
                 },
@@ -99,8 +99,8 @@
                     "계약서, 견적서, 사내 문서에 활용"
                   ],
                   "itemList": [
-                    { "fileName": "A012-01.jpg", "alt": "양식지 이미지 1" },
-                    { "fileName": "A012-02.jpg", "alt": "양식지 이미지 2" }
+                    { "fileName": "A012_thum_1.jpg", "alt": "양식지 이미지 1" },
+                    { "fileName": "A012_thum_2.jpg", "alt": "양식지 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -111,8 +111,8 @@
                     "표지부터 제본까지 맞춤 제작 가능"
                   ],
                   "itemList": [
-                    { "fileName": "A013-01.jpg", "alt": "교재 이미지 1" },
-                    { "fileName": "A013-02.jpg", "alt": "교재 이미지 2" }
+                    { "fileName": "A013_thum_1.jpg", "alt": "교재 이미지 1" },
+                    { "fileName": "A013_thum_2.jpg", "alt": "교재 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -123,8 +123,8 @@
                     "필수 사용 인쇄물"
                   ],
                   "itemList": [
-                    { "fileName": "A014-01.jpg", "alt": "지명원 이미지 1" },
-                    { "fileName": "A014-02.jpg", "alt": "지명원 이미지 2" }
+                    { "fileName": "A014_thum_1.jpg", "alt": "지명원 이미지 1" },
+                    { "fileName": "A014_thum_2.jpg", "alt": "지명원 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -135,8 +135,8 @@
                     "개인출판도 깔끔하게 인쇄 가능"
                   ],
                   "itemList": [
-                    { "fileName": "A015-01.jpg", "alt": "단행본 이미지 1" },
-                    { "fileName": "A015-02.jpg", "alt": "단행본 이미지 2" }
+                    { "fileName": "A015_thum_1.jpg", "alt": "단행본 이미지 1" },
+                    { "fileName": "A015_thum_2.jpg", "alt": "단행본 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -147,8 +147,8 @@
                     "소량 단위도 정성껏 제작해요"
                   ],
                   "itemList": [
-                    { "fileName": "A016-01.jpg", "alt": "문집 이미지 1" },
-                    { "fileName": "A016-02.jpg", "alt": "문집 이미지 2" }
+                    { "fileName": "A016_thum_1.jpg", "alt": "문집 이미지 1" },
+                    { "fileName": "A016_thum_2.jpg", "alt": "문집 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -159,8 +159,8 @@
                     "예술·디자인 전시에 필수"
                   ],
                   "itemList": [
-                    { "fileName": "A017-01.jpg", "alt": "전시도록 이미지 1" },
-                    { "fileName": "A017-02.jpg", "alt": "전시도록 이미지 2" }
+                    { "fileName": "A017_thum_1.jpg", "alt": "전시도록 이미지 1" },
+                    { "fileName": "A017_thum_2.jpg", "alt": "전시도록 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -171,8 +171,8 @@
                     "소중한 순간을 한 권에 담다"
                   ],
                   "itemList": [
-                    { "fileName": "A018-01.jpg", "alt": "포토북 이미지 1" },
-                    { "fileName": "A018-02.jpg", "alt": "포토북 이미지 2" }
+                    { "fileName": "A018_thum_1.jpg", "alt": "포토북 이미지 1" },
+                    { "fileName": "A018_thum_2.jpg", "alt": "포토북 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -199,8 +199,8 @@
                     "내가 원하는대로 한 장씩 자유로운 인쇄"
                   ],
                   "itemList": [
-                    { "fileName": "A005-01.jpg", "alt": "낱장인쇄 이미지 1" },
-                    { "fileName": "A005-02.jpg", "alt": "낱장인쇄 이미지 2" }
+                    { "fileName": "A005_thum_1.jpg", "alt": "낱장인쇄 이미지 1" },
+                    { "fileName": "A005_thum_2.jpg", "alt": "낱장인쇄 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --best\"><i class=\"item\">베스트</i></span>"]
                 },
@@ -211,8 +211,8 @@
                     "표지만 따로 제작"
                   ],
                   "itemList": [
-                    { "fileName": "A006-01.jpg", "alt": "소량책자표지 이미지 1" },
-                    { "fileName": "A006-02.jpg", "alt": "소량책자표지 이미지 2" }
+                    { "fileName": "A006_thum_1.jpg", "alt": "소량책자표지 이미지 1" },
+                    { "fileName": "A006_thum_2.jpg", "alt": "소량책자표지 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -223,8 +223,8 @@
                     "소규모 홍보에 최적화된 인쇄"
                   ],
                   "itemList": [
-                    { "fileName": "C013-01.jpg", "alt": "소량전단 이미지 1" },
-                    { "fileName": "C013-02.jpg", "alt": "소량전단 이미지 2" }
+                    { "fileName": "C013_thum_1.jpg", "alt": "소량전단 이미지 1" },
+                    { "fileName": "C013_thum_2.jpg", "alt": "소량전단 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -251,8 +251,8 @@
                     "기본에 충실한 실속 명함"
                   ],
                   "itemList": [
-                    { "fileName": "C001-01.jpg", "alt": "일반명함 이미지 1" },
-                    { "fileName": "C001-02.jpg", "alt": "일반명함 이미지 2" }
+                    { "fileName": "C001_thum_1.jpg", "alt": "일반명함 이미지 1" },
+                    { "fileName": "C001_thum_2.jpg", "alt": "일반명함 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -263,8 +263,8 @@
                     "실속과 브랜드 이미지 한 번에 챙기기"
                   ],
                   "itemList": [
-                    { "fileName": "C002-01.jpg", "alt": "고급명함 이미지 1" },
-                    { "fileName": "C002-02.jpg", "alt": "고급명함 이미지 2" }
+                    { "fileName": "C002_thum_1.jpg", "alt": "고급명함 이미지 1" },
+                    { "fileName": "C002_thum_2.jpg", "alt": "고급명함 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --best\"><i class=\"item\">베스트</i></span>"]
                 }
@@ -280,8 +280,8 @@
                     "차별화된 인상을 남기고 싶을 때"
                   ],
                   "itemList": [
-                    { "fileName": "C003-01.jpg", "alt": "특수명함 이미지 1" },
-                    { "fileName": "C003-02.jpg", "alt": "특수명함 이미지 2" }
+                    { "fileName": "C003_thum_1.jpg", "alt": "특수명함 이미지 1" },
+                    { "fileName": "C003_thum_2.jpg", "alt": "특수명함 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -292,8 +292,8 @@
                     "크리에이터, 디자이너에게 추천"
                   ],
                   "itemList": [
-                    { "fileName": "C020-01.jpg", "alt": "정사각명함 이미지 1" },
-                    { "fileName": "C020-02.jpg", "alt": "정사각명함 이미지 2" }
+                    { "fileName": "C020_thum_1.jpg", "alt": "정사각명함 이미지 1" },
+                    { "fileName": "C020_thum_2.jpg", "alt": "정사각명함 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
@@ -320,8 +320,8 @@
                     "소규모 홍보에 최적화된 인쇄"
                   ],
                   "itemList": [
-                    { "fileName": "C013-01.jpg", "alt": "소량전단 이미지 1" },
-                    { "fileName": "C013-02.jpg", "alt": "소량전단 이미지 2" }
+                    { "fileName": "C013_thum_1.jpg", "alt": "소량전단 이미지 1" },
+                    { "fileName": "C013_thum_2.jpg", "alt": "소량전단 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -332,8 +332,8 @@
                     "이벤트, 행사, 오픈홍보에 최적화"
                   ],
                   "itemList": [
-                    { "fileName": "C012-01.jpg", "alt": "대량전단 이미지 1" },
-                    { "fileName": "C012-02.jpg", "alt": "대량전단 이미지 2" }
+                    { "fileName": "C012_thum_1.jpg", "alt": "대량전단 이미지 1" },
+                    { "fileName": "C012_thum_2.jpg", "alt": "대량전단 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -349,8 +349,8 @@
                     "접는 방식에 따라 더 눈에 띄는 리플렛 활용하기"
                   ],
                   "itemList": [
-                    { "fileName": "C021-01.jpg", "alt": "리플렛 이미지 1" },
-                    { "fileName": "C021-02.jpg", "alt": "리플렛 이미지 2" }
+                    { "fileName": "C021_thum_1.jpg", "alt": "리플렛 이미지 1" },
+                    { "fileName": "C021_thum_2.jpg", "alt": "리플렛 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 },
@@ -361,8 +361,8 @@
                     "기업 홍보, 전시회 활용에 딱"
                   ],
                   "itemList": [
-                    { "fileName": "A007-01.jpg", "alt": "카탈로그·브로슈어 이미지 1" },
-                    { "fileName": "A007-02.jpg", "alt": "카탈로그·브로슈어 이미지 2" }
+                    { "fileName": "A007_thum_1.jpg", "alt": "카탈로그·브로슈어 이미지 1" },
+                    { "fileName": "A007_thum_2.jpg", "alt": "카탈로그·브로슈어 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -378,8 +378,8 @@
                     "상황에 딱 맞춘 맞춤형 상품권으로"
                   ],
                   "itemList": [
-                    { "fileName": "C006-01.jpg", "alt": "상품권 이미지 1" },
-                    { "fileName": "C006-02.jpg", "alt": "상품권 이미지 2" }
+                    { "fileName": "C006_thum_1.jpg", "alt": "상품권 이미지 1" },
+                    { "fileName": "C006_thum_2.jpg", "alt": "상품권 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -390,8 +390,8 @@
                     "매장 마케팅에 효과적"
                   ],
                   "itemList": [
-                    { "fileName": "C022-01.jpg", "alt": "쿠폰 이미지 1" },
-                    { "fileName": "C022-02.jpg", "alt": "쿠폰 이미지 2" }
+                    { "fileName": "C022_thum_1.jpg", "alt": "쿠폰 이미지 1" },
+                    { "fileName": "C022_thum_2.jpg", "alt": "쿠폰 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -407,8 +407,8 @@
                     "포스터 이용해 보세요"
                   ],
                   "itemList": [
-                    { "fileName": "C023-01.jpg", "alt": "포스터 이미지 1" },
-                    { "fileName": "C023-02.jpg", "alt": "포스터 이미지 2" }
+                    { "fileName": "C023_thum_1.jpg", "alt": "포스터 이미지 1" },
+                    { "fileName": "C023_thum_2.jpg", "alt": "포스터 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -424,8 +424,8 @@
                     "접지 메뉴판 제작"
                   ],
                   "itemList": [
-                    { "fileName": "C024-01.jpg", "alt": "메뉴판 이미지 1" },
-                    { "fileName": "C024-02.jpg", "alt": "메뉴판 이미지 2" }
+                    { "fileName": "C024_thum_1.jpg", "alt": "메뉴판 이미지 1" },
+                    { "fileName": "C024_thum_2.jpg", "alt": "메뉴판 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -436,8 +436,8 @@
                     "일회용 테이블 매트"
                   ],
                   "itemList": [
-                    { "fileName": "C025-01.jpg", "alt": "테이블세팅지 이미지 1" },
-                    { "fileName": "C025-02.jpg", "alt": "테이블세팅지 이미지 2" }
+                    { "fileName": "C025_thum_1.jpg", "alt": "테이블세팅지 이미지 1" },
+                    { "fileName": "C025_thum_2.jpg", "alt": "테이블세팅지 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -453,8 +453,8 @@
                     "의류, 리빙 소품에 활용"
                   ],
                   "itemList": [
-                    { "fileName": "C026-01.jpg", "alt": "행택 이미지 1" },
-                    { "fileName": "C026-02.jpg", "alt": "행택 이미지 2" }
+                    { "fileName": "C026_thum_1.jpg", "alt": "행택 이미지 1" },
+                    { "fileName": "C026_thum_2.jpg", "alt": "행택 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -465,8 +465,8 @@
                     "행사, 선물 포장에 효과적"
                   ],
                   "itemList": [
-                    { "fileName": "C027-01.jpg", "alt": "헤더택 이미지 1" },
-                    { "fileName": "C027-02.jpg", "alt": "헤더택 이미지 2" }
+                    { "fileName": "C027_thum_1.jpg", "alt": "헤더택 이미지 1" },
+                    { "fileName": "C027_thum_2.jpg", "alt": "헤더택 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -477,8 +477,8 @@
                     "브랜드 로고로 랩핑지 제작"
                   ],
                   "itemList": [
-                    { "fileName": "C028-01.jpg", "alt": "랩핑지 이미지 1" },
-                    { "fileName": "C028-02.jpg", "alt": "랩핑지 이미지 2" }
+                    { "fileName": "C028_thum_1.jpg", "alt": "랩핑지 이미지 1" },
+                    { "fileName": "C028_thum_2.jpg", "alt": "랩핑지 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -505,8 +505,8 @@
                     "하나뿐인 맞춤형 달력, 직접 만들어보기"
                   ],
                   "itemList": [
-                    { "fileName": "C010-01.jpg", "alt": "탁상달력 이미지 1" },
-                    { "fileName": "C010-02.jpg", "alt": "탁상달력 이미지 2" }
+                    { "fileName": "C010_thum_1.jpg", "alt": "탁상달력 이미지 1" },
+                    { "fileName": "C010_thum_2.jpg", "alt": "탁상달력 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -517,8 +517,8 @@
                     "벽걸이달력, 50부부터 제작 가능"
                   ],
                   "itemList": [
-                    { "fileName": "D001-01.jpg", "alt": "벽걸이달력 이미지 1" },
-                    { "fileName": "D001-02.jpg", "alt": "벽걸이달력 이미지 2" }
+                    { "fileName": "D001_thum_1.jpg", "alt": "벽걸이달력 이미지 1" },
+                    { "fileName": "D001_thum_2.jpg", "alt": "벽걸이달력 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 }
@@ -534,8 +534,8 @@
                     "판촉, 직원용 연말 선물로 인기"
                   ],
                   "itemList": [
-                    { "fileName": "D002-01.jpg", "alt": "다이어리 이미지 1" },
-                    { "fileName": "D002-02.jpg", "alt": "다이어리 이미지 2" }
+                    { "fileName": "D002_thum_1.jpg", "alt": "다이어리 이미지 1" },
+                    { "fileName": "D002_thum_2.jpg", "alt": "다이어리 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -546,8 +546,8 @@
                     "표지 내 마음대로 커스텀"
                   ],
                   "itemList": [
-                    { "fileName": "C029-01.jpg", "alt": "주간플래너 이미지 1" },
-                    { "fileName": "C029-02.jpg", "alt": "주간플래너 이미지 2" }
+                    { "fileName": "C029_thum_1.jpg", "alt": "주간플래너 이미지 1" },
+                    { "fileName": "C029_thum_2.jpg", "alt": "주간플래너 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -558,8 +558,8 @@
                     "표지 내 마음대로 커스텀"
                   ],
                   "itemList": [
-                    { "fileName": "C030-01.jpg", "alt": "스터디플래너 이미지 1" },
-                    { "fileName": "C030-02.jpg", "alt": "스터디플래너 이미지 2" }
+                    { "fileName": "C030_thum_1.jpg", "alt": "스터디플래너 이미지 1" },
+                    { "fileName": "C030_thum_2.jpg", "alt": "스터디플래너 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -586,8 +586,8 @@
                     "브랜드 로고, 주소 인쇄 가능"
                   ],
                   "itemList": [
-                    { "fileName": "C011-01.jpg", "alt": "소량봉투 이미지 1" },
-                    { "fileName": "C011-02.jpg", "alt": "소량봉투 이미지 2" }
+                    { "fileName": "C011_thum_1.jpg", "alt": "소량봉투 이미지 1" },
+                    { "fileName": "C011_thum_2.jpg", "alt": "소량봉투 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -598,8 +598,8 @@
                     "규격, 자켓, 티켓 등 봉투 제작"
                   ],
                   "itemList": [
-                    { "fileName": "D003-01.jpg", "alt": "대량봉투 이미지 1" },
-                    { "fileName": "D003-02.jpg", "alt": "대량봉투 이미지 2" }
+                    { "fileName": "D003_thum_1.jpg", "alt": "대량봉투 이미지 1" },
+                    { "fileName": "D003_thum_2.jpg", "alt": "대량봉투 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -610,8 +610,8 @@
                     "소량 포장, 매장 포장에 활용"
                   ],
                   "itemList": [
-                    { "fileName": "D004-01.jpg", "alt": "무지봉투 이미지 1" },
-                    { "fileName": "D004-02.jpg", "alt": "무지봉투 이미지 2" }
+                    { "fileName": "D004_thum_1.jpg", "alt": "무지봉투 이미지 1" },
+                    { "fileName": "D004_thum_2.jpg", "alt": "무지봉투 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 }
@@ -627,8 +627,8 @@
                     "깔끔한 맞춤형 쇼핑백 제작"
                   ],
                   "itemList": [
-                    { "fileName": "D005-01.jpg", "alt": "쇼핑백 이미지 1" },
-                    { "fileName": "D005-02.jpg", "alt": "쇼핑백 이미지 2" }
+                    { "fileName": "D005_thum_1.jpg", "alt": "쇼핑백 이미지 1" },
+                    { "fileName": "D005_thum_2.jpg", "alt": "쇼핑백 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -639,8 +639,8 @@
                     "원하는 수량만큼 구매 가능"
                   ],
                   "itemList": [
-                    { "fileName": "C031-01.jpg", "alt": "무지쇼핑백 이미지 1" },
-                    { "fileName": "C031-02.jpg", "alt": "무지쇼핑백 이미지 2" }
+                    { "fileName": "C031_thum_1.jpg", "alt": "무지쇼핑백 이미지 1" },
+                    { "fileName": "C031_thum_2.jpg", "alt": "무지쇼핑백 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -667,8 +667,8 @@
                     "전시, 기념품, 팬시용 추천"
                   ],
                   "itemList": [
-                    { "fileName": "C005-01.jpg", "alt": "사진엽서 이미지 1" },
-                    { "fileName": "C005-02.jpg", "alt": "사진엽서 이미지 2" }
+                    { "fileName": "C005_thum_1.jpg", "alt": "사진엽서 이미지 1" },
+                    { "fileName": "C005_thum_2.jpg", "alt": "사진엽서 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --best\"><i class=\"item\">베스트</i></span>"]
                 },
@@ -679,8 +679,8 @@
                     "패키지 선물용으로 인기"
                   ],
                   "itemList": [
-                    { "fileName": "C032-01.jpg", "alt": "엽서세트 이미지 1" },
-                    { "fileName": "C032-02.jpg", "alt": "엽서세트 이미지 2" }
+                    { "fileName": "C032_thum_1.jpg", "alt": "엽서세트 이미지 1" },
+                    { "fileName": "C032_thum_2.jpg", "alt": "엽서세트 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -696,8 +696,8 @@
                     "다양한 디자인과 용지 선택 가능"
                 ],
                   "itemList": [
-                    { "fileName": "C033-01.jpg", "alt": "청첩장 이미지 1" },
-                    { "fileName": "C033-02.jpg", "alt": "청첩장 이미지 2" }
+                    { "fileName": "C033_thum_1.jpg", "alt": "청첩장 이미지 1" },
+                    { "fileName": "C033_thum_2.jpg", "alt": "청첩장 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -708,8 +708,8 @@
                     "맞춤 초대장"
                   ],
                   "itemList": [
-                    { "fileName": "C004-01.jpg", "alt": "초대장 이미지 1" },
-                    { "fileName": "C004-02.jpg", "alt": "초대장 이미지 2" }
+                    { "fileName": "C004_thum_1.jpg", "alt": "초대장 이미지 1" },
+                    { "fileName": "C004_thum_2.jpg", "alt": "초대장 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -720,8 +720,8 @@
                     "안내문이 필요할 때 제작"
                   ],
                   "itemList": [
-                    { "fileName": "C034-01.jpg", "alt": "안내카드 이미지 1" },
-                    { "fileName": "C034-02.jpg", "alt": "안내카드 이미지 2" }
+                    { "fileName": "C034_thum_1.jpg", "alt": "안내카드 이미지 1" },
+                    { "fileName": "C034_thum_2.jpg", "alt": "안내카드 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -748,8 +748,8 @@
                     "브랜드 로고 넣어 굿즈로도 활용 가능"
                   ],
                   "itemList": [
-                    { "fileName": "C035-01.jpg", "alt": "떡메모지 이미지 1" },
-                    { "fileName": "C035-02.jpg", "alt": "떡메모지 이미지 2" }
+                    { "fileName": "C035_thum_1.jpg", "alt": "떡메모지 이미지 1" },
+                    { "fileName": "C035_thum_2.jpg", "alt": "떡메모지 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -760,8 +760,8 @@
                     "개인 제작용, 홍보용 이용"
                  ],
                   "itemList": [
-                    { "fileName": "C036-01.jpg", "alt": "무선노트 이미지 1" },
-                    { "fileName": "C036-02.jpg", "alt": "무선노트 이미지 2" }
+                    { "fileName": "C036_thum_1.jpg", "alt": "무선노트 이미지 1" },
+                    { "fileName": "C036_thum_2.jpg", "alt": "무선노트 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -772,8 +772,8 @@
                     "단체, 기업 굿즈로 추천"
                   ],
                   "itemList": [
-                    { "fileName": "C037-01.jpg", "alt": "스프링노트 이미지 1" },
-                    { "fileName": "C037-02.jpg", "alt": "스프링노트 이미지 2" }
+                    { "fileName": "C037_thum_1.jpg", "alt": "스프링노트 이미지 1" },
+                    { "fileName": "C037_thum_2.jpg", "alt": "스프링노트 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -789,8 +789,8 @@
                     "제작해보기"
                   ],
                   "itemList": [
-                    { "fileName": "D006-01.jpg", "alt": "스티커 이미지 1" },
-                    { "fileName": "D006-02.jpg", "alt": "스티커 이미지 2" }
+                    { "fileName": "D006_thum_1.jpg", "alt": "스티커 이미지 1" },
+                    { "fileName": "D006_thum_2.jpg", "alt": "스티커 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -801,8 +801,8 @@
                     "소량 인쇄할 곳을 찾는다면"
                   ],
                   "itemList": [
-                    { "fileName": "C038-01.jpg", "alt": "포토카드 이미지 1" },
-                    { "fileName": "C038-02.jpg", "alt": "포토카드 이미지 2" }
+                    { "fileName": "C038_thum_1.jpg", "alt": "포토카드 이미지 1" },
+                    { "fileName": "C038_thum_2.jpg", "alt": "포토카드 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -813,8 +813,8 @@
                     "단체 제작에 인기"
                   ],
                   "itemList": [
-                    { "fileName": "C039-01.jpg", "alt": "종이슬로건 이미지 1" },
-                    { "fileName": "C039-02.jpg", "alt": "종이슬로건 이미지 2" }
+                    { "fileName": "C039_thum_1.jpg", "alt": "종이슬로건 이미지 1" },
+                    { "fileName": "C039_thum_2.jpg", "alt": "종이슬로건 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -825,8 +825,8 @@
                     "도서·출판 기념품으로 추천"
                   ],
                   "itemList": [
-                    { "fileName": "C040-01.jpg", "alt": "책갈피 이미지 1" },
-                    { "fileName": "C040-02.jpg", "alt": "책갈피 이미지 2" }
+                    { "fileName": "C040_thum_1.jpg", "alt": "책갈피 이미지 1" },
+                    { "fileName": "C040_thum_2.jpg", "alt": "책갈피 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -853,8 +853,8 @@
                     "단체 제작 별도 문의"
                   ],
                   "itemList": [
-                    { "fileName": "C043-01.jpg", "alt": "단체티셔츠 이미지 1" },
-                    { "fileName": "C043-02.jpg", "alt": "단체티셔츠 이미지 2" }
+                    { "fileName": "C043_thum_1.jpg", "alt": "단체티셔츠 이미지 1" },
+                    { "fileName": "C043_thum_2.jpg", "alt": "단체티셔츠 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -865,8 +865,8 @@
                     "단체 제작 별도 문의"
                   ],
                   "itemList": [
-                    { "fileName": "C044-01.jpg", "alt": "에코백 이미지 1" },
-                    { "fileName": "C044-02.jpg", "alt": "에코백 이미지 2" }
+                    { "fileName": "C044_thum_1.jpg", "alt": "에코백 이미지 1" },
+                    { "fileName": "C044_thum_2.jpg", "alt": "에코백 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -877,8 +877,8 @@
                     "단체 제작 별도 문의"
                   ],
                   "itemList": [
-                    { "fileName": "C045-01.jpg", "alt": "텀블러 이미지 1" },
-                    { "fileName": "C045-02.jpg", "alt": "텀블러 이미지 2" }
+                    { "fileName": "C045_thum_1.jpg", "alt": "텀블러 이미지 1" },
+                    { "fileName": "C045_thum_2.jpg", "alt": "텀블러 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -889,8 +889,8 @@
                     "단체 제작 별도 문의"
                   ],
                   "itemList": [
-                    { "fileName": "C046-01.jpg", "alt": "보조배터리 이미지 1" },
-                    { "fileName": "C046-02.jpg", "alt": "보조배터리 이미지 2" }
+                    { "fileName": "C046_thum_1.jpg", "alt": "보조배터리 이미지 1" },
+                    { "fileName": "C046_thum_2.jpg", "alt": "보조배터리 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -901,8 +901,8 @@
                     "단체 제작 별도 문의"
                   ],
                   "itemList": [
-                    { "fileName": "C047-01.jpg", "alt": "골프공 이미지 1" },
-                    { "fileName": "C047-02.jpg", "alt": "골프공 이미지 2" }
+                    { "fileName": "C047_thum_1.jpg", "alt": "골프공 이미지 1" },
+                    { "fileName": "C047_thum_2.jpg", "alt": "골프공 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 }
@@ -929,8 +929,8 @@
                     "디자인 색상 정확도와 품질 최우선시 적합"
                   ],
                   "itemList": [
-                    { "fileName": "D007-01.jpg", "alt": "무선책자 이미지 1" },
-                    { "fileName": "D007-02.jpg", "alt": "무선책자 이미지 2" }
+                    { "fileName": "D007_thum_1.jpg", "alt": "무선책자 이미지 1" },
+                    { "fileName": "D007_thum_2.jpg", "alt": "무선책자 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -941,8 +941,8 @@
                     "학습자료, 소책자에 최적화된 인쇄 방식"
                   ],
                   "itemList": [
-                    { "fileName": "D008-01.jpg", "alt": "중철책자 이미지 1" },
-                    { "fileName": "D008-02.jpg", "alt": "중철책자 이미지 2" }
+                    { "fileName": "D008_thum_1.jpg", "alt": "중철책자 이미지 1" },
+                    { "fileName": "D008_thum_2.jpg", "alt": "중철책자 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -953,8 +953,8 @@
                     "독판인쇄로 컬러 구현력 향상"
                   ],
                   "itemList": [
-                    { "fileName": "D009-01.jpg", "alt": "스프링책자 이미지 1" },
-                    { "fileName": "D009-02.jpg", "alt": "스프링책자 이미지 2" }
+                    { "fileName": "D009_thum_1.jpg", "alt": "스프링책자 이미지 1" },
+                    { "fileName": "D009_thum_2.jpg", "alt": "스프링책자 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -965,8 +965,8 @@
                     "색상 정확도가 중요한 안내·홍보물에 추천"
                   ],
                   "itemList": [
-                    { "fileName": "D010-01.jpg", "alt": "리플렛 이미지 1" },
-                    { "fileName": "D010-02.jpg", "alt": "리플렛 이미지 2" }
+                    { "fileName": "D010_thum_1.jpg", "alt": "리플렛 이미지 1" },
+                    { "fileName": "D010_thum_2.jpg", "alt": "리플렛 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 },
@@ -977,8 +977,8 @@
                     "정확한 색상과 고급스러운 질감 구현"
                   ],
                   "itemList": [
-                    { "fileName": "D011-01.jpg", "alt": "전단지 이미지 1" },
-                    { "fileName": "D011-02.jpg", "alt": "전단지 이미지 2" }
+                    { "fileName": "D011_thum_1.jpg", "alt": "전단지 이미지 1" },
+                    { "fileName": "D011_thum_2.jpg", "alt": "전단지 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 }
@@ -994,8 +994,8 @@
                     "대량 홍보에 적합한 상품"
                   ],
                   "itemList": [
-                    { "fileName": "D012-01.jpg", "alt": "전단지 이미지 1" },
-                    { "fileName": "D012-02.jpg", "alt": "전단지 이미지 2" }
+                    { "fileName": "D012_thum_1.jpg", "alt": "전단지 이미지 1" },
+                    { "fileName": "D012_thum_2.jpg", "alt": "전단지 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 }
@@ -1022,8 +1022,8 @@
                     "효율적인 자기 주도 학습"
                   ],
                   "itemList": [
-                    { "fileName": "C016-01.jpg", "alt": "스터디플래너 이미지 1" },
-                    { "fileName": "C016-02.jpg", "alt": "스터디플래너 이미지 2" }
+                    { "fileName": "C016_thum_1.jpg", "alt": "스터디플래너 이미지 1" },
+                    { "fileName": "C016_thum_2.jpg", "alt": "스터디플래너 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -1034,8 +1034,8 @@
                     "한 주간의 계획을 한 눈에"
                   ],
                   "itemList": [
-                    { "fileName": "C009-01.jpg", "alt": "주간플래너 이미지 1" },
-                    { "fileName": "C009-02.jpg", "alt": "주간플래너 이미지 2" }
+                    { "fileName": "C009_thum_1.jpg", "alt": "주간플래너 이미지 1" },
+                    { "fileName": "C009_thum_2.jpg", "alt": "주간플래너 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -1051,8 +1051,8 @@
                     "편리함과 성취감 획득"
                   ],
                   "itemList": [
-                    { "fileName": "C017-01.jpg", "alt": "떡메모지 이미지 1" },
-                    { "fileName": "C017-02.jpg", "alt": "떡메모지 이미지 2" }
+                    { "fileName": "C017_thum_1.jpg", "alt": "떡메모지 이미지 1" },
+                    { "fileName": "C017_thum_2.jpg", "alt": "떡메모지 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -1063,8 +1063,8 @@
                     "컬러 디자인 메모지"
                   ],
                   "itemList": [
-                    { "fileName": "C041-01.jpg", "alt": "컬러메모지 이미지 1" },
-                    { "fileName": "C041-02.jpg", "alt": "컬러메모지 이미지 2" }
+                    { "fileName": "C041_thum_1.jpg", "alt": "컬러메모지 이미지 1" },
+                    { "fileName": "C041_thum_2.jpg", "alt": "컬러메모지 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -1075,8 +1075,8 @@
                     "어디서나 안정감있는 메모"
                   ],
                   "itemList": [
-                    { "fileName": "C015-01.jpg", "alt": "메모장 이미지 1" },
-                    { "fileName": "C015-02.jpg", "alt": "메모장 이미지 2" }
+                    { "fileName": "C015_thum_1.jpg", "alt": "메모장 이미지 1" },
+                    { "fileName": "C015_thum_2.jpg", "alt": "메모장 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -1092,8 +1092,8 @@
                     "학용품, 식판, 도시락 등에 활용됩니다."
                   ],
                   "itemList": [
-                    { "fileName": "C018-01.jpg", "alt": "네임스티커 이미지 1" },
-                    { "fileName": "C018-02.jpg", "alt": "네임스티커 이미지 2" }
+                    { "fileName": "C018_thum_1.jpg", "alt": "네임스티커 이미지 1" },
+                    { "fileName": "C018_thum_2.jpg", "alt": "네임스티커 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -1109,8 +1109,8 @@
                     "편지지, 포스터, 다꾸 멀티 용도 사용"
                   ],
                   "itemList": [
-                    { "fileName": "C019-01.jpg", "alt": "편지지패드 이미지 1" },
-                    { "fileName": "C019-02.jpg", "alt": "편지지패드 이미지 2" }
+                    { "fileName": "C019_thum_1.jpg", "alt": "편지지패드 이미지 1" },
+                    { "fileName": "C019_thum_2.jpg", "alt": "편지지패드 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --discount-1\"><i class=\"item\">폭풍할인</i></span>"]
                 },
@@ -1121,8 +1121,8 @@
                     "디자인 책갈피"
                   ],
                   "itemList": [
-                    { "fileName": "C042-01.jpg", "alt": "책갈피 이미지 1" },
-                    { "fileName": "C042-02.jpg", "alt": "책갈피 이미지 2" }
+                    { "fileName": "C042_thum_1.jpg", "alt": "책갈피 이미지 1" },
+                    { "fileName": "C042_thum_2.jpg", "alt": "책갈피 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -1138,8 +1138,8 @@
                     "디자인 달력"
                   ],
                   "itemList": [
-                    { "fileName": "C014-01.jpg", "alt": "탁상달력 이미지 1" },
-                    { "fileName": "C014-02.jpg", "alt": "탁상달력 이미지 2" }
+                    { "fileName": "C014_thum_1.jpg", "alt": "탁상달력 이미지 1" },
+                    { "fileName": "C014_thum_2.jpg", "alt": "탁상달력 이미지 2" }
                   ],
                   "tooltipList": []
                 },
@@ -1150,8 +1150,8 @@
                     "문서 출력, 과제 제출 등에 필수입니다."
                   ],
                   "itemList": [
-                    { "fileName": "C008-01.jpg", "alt": "복사용지 이미지 1" },
-                    { "fileName": "C008-02.jpg", "alt": "복사용지 이미지 2" }
+                    { "fileName": "C008_thum_1.jpg", "alt": "복사용지 이미지 1" },
+                    { "fileName": "C008_thum_2.jpg", "alt": "복사용지 이미지 2" }
                   ],
                   "tooltipList": []
                 }

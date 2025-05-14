@@ -44,38 +44,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // printing-list
-  const printingListSwiper = new Swiper('.main-wrap .printing-list', {
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: false,
-    slidesPerView: 6,
-    slidesPerGroup: 6,
-    loopFillGroupWithBlank: true,
-    spaceBetween: 20,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
-  });
+  let printingListSwiper = null;
+
+  function initPrintingListSwiper() {
+    if (window.innerWidth > 565 && !printingListSwiper) {
+      printingListSwiper = new Swiper('.main-wrap .printing-list', {
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: false,
+        slidesPerView: 6,
+        slidesPerGroup: 6,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+        },
+      });
+    } else if (window.innerWidth <= 565 && printingListSwiper) {
+      printingListSwiper.destroy(true, true);
+      printingListSwiper = null;
+    }
+  }
+  initPrintingListSwiper();
+  window.addEventListener('resize', initPrintingListSwiper);
 
   // product-review
   const productReviewSwiper = new Swiper('.main-wrap .product-review', {
     loop: false,
-    // mousewheel: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
+      delay: 1000,
+      disableOnInteraction: true,
     },
+    speed: 3000,
     slidesPerView: 'auto',
-    spaceBetween: 32,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -83,16 +92,22 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // product-review hover 시 멈춤/재시작
-  document.querySelectorAll('.main-wrap .product-review .item').forEach(item => {
+  // 기본 speed 값 저장
+  const defaultSpeed = productReviewSwiper.params.speed;
+
+  // product-review hover 시 멈춤/재시작 및 speed 초기화
+  document.querySelectorAll('.main-wrap .product-review .item a').forEach(item => {
     item.addEventListener('mouseenter', () => {
       productReviewSwiper.autoplay.stop();
+      productReviewSwiper.params.speed = defaultSpeed;
+      productReviewSwiper.update();
     });
     item.addEventListener('mouseleave', () => {
+      productReviewSwiper.params.speed = defaultSpeed;
+      productReviewSwiper.update();
       productReviewSwiper.autoplay.start();
     });
   });
-
 
   //searchMenu Open, Close - header
   const searchMenu = document.querySelector('#searchWrap');

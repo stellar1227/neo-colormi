@@ -113,6 +113,71 @@
 
   // main
   .main-wrap {
+    .main-banner-wrap {
+      min-width: 100%;
+      margin-top: 0;
+
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide {
+            width: 100%;
+
+            .item {
+              height: auto;
+              border-radius: 0;
+            }
+          }
+        }
+
+        .swiper-util {
+          position: absolute;
+          bottom: 12px;
+          right: 16px;
+          margin: 0;
+          border-radius: 40px;
+          background: $color-alpha-inverse50;
+          z-index: 1;
+
+          .swiper-pagination {
+            @include font-body-xxsmall-bold;
+
+            .swiper-pagination-current {
+              color: $color-text-basic-inverse;
+            }
+
+            .swiper-pagination-total {
+              color: $color-text-subcolor;
+
+              &::before {
+                height: 8px;
+                background: $color-border-disabled;
+              }
+            }
+          }
+
+          .swiper-button-prev,
+          .swiper-button-next {
+            position: relative;
+            display: inline-flex;
+            top: auto;
+            left: auto;
+            right: auto;
+            width: 24px;
+            height: 20px;
+            margin-top: 0;
+
+            &::after {
+              content: '';
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background-size: 16px 16px;
+            }
+          }
+        }
+      }
+    }
+
     .main-product-wrap {
       overflow-x: auto;
       scrollbar-width: none;
@@ -158,7 +223,7 @@
     }
 
     .content-box {
-      &.--best {
+      &.product-review-wrap {
         position: relative;
         margin-top: 48px;
         padding: 40px 0;
@@ -185,13 +250,17 @@
         }
 
         .product-review {
-          .list {
+          min-width: 100%;
+          padding: 12px 20px 0;
+
+          .swiper-wrapper {
             gap: 12px;
-            padding: 0 20px;
+
+            .swiper-slide {
+              width: 125px;
+            }
 
             .item {
-              flex: 0 0 125px;
-
               >a:hover {
                 top: 0;
               }
@@ -215,7 +284,90 @@
       }
     }
 
-    .content {
+    .printing-list-wrap {
+      max-width: 100%;
+      margin-bottom: 40px;
+
+      .swiper {
+        overflow-x: auto;
+        scrollbar-width: none;
+
+        .swiper-wrapper {
+          gap: 12px;
+        }
+
+        .swiper-slide {
+          width: 125px;
+        }
+      }
+
+      .swiper-util,
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }
+    }
+
+    .main-banner-wrap,
+    .util-menu-list-wrap {
+      order: -1;
+    }
+
+    .util-menu-list-wrap {
+      width: 100%;
+      margin-top: 24px;
+      padding: 4px 20px;
+
+      .util-menu-list {
+        gap: 20px;
+        justify-content: space-between;
+        border-left: none;
+
+        .item {
+          padding: 0;
+          border-right: none;
+
+          &.--quote a::before {
+            background-size: 28px 28px;
+          }
+
+          &.--guide a::before {
+            background-size: 28px 28px;
+          }
+
+          &.--delivery a::before {
+            background-size: 28px 28px;
+          }
+
+          &.--faq a::before {
+            background-size: 28px 28px;
+          }
+
+          &.--location a::before {
+            background-size: 28px 28px;
+          }
+
+          >a {
+            &::before {
+              width: 48px;
+              height: 48px;
+              border-radius: 16px;
+              background-color: $color-background-gray-subtler;
+              border: 1px solid $color-border-gray-light;
+            }
+
+            span {
+              @include font-body-xxsmall;
+              color: $color-text-subcolor-deep;
+            }
+          }
+        }
+      }
+    }
+
+    >.content {
+      margin: 24px 20px 0 !important;
+
       .content-box {
         +.content-box {
           position: relative;
@@ -231,70 +383,6 @@
             width: calc(100% + 40px);
             height: 8px;
             background: $color-divider-gray-light;
-          }
-        }
-      }
-    }
-  }
-
-  .main-banner-wrap {
-    min-width: 100%;
-
-    .swiper {
-      .swiper-wrapper {
-        .swiper-slide {
-          width: 100%;
-
-          .item {
-            height: auto;
-            border-radius: 0;
-          }
-        }
-      }
-
-      .swiper-util {
-        position: absolute;
-        bottom: 12px;
-        right: 16px;
-        margin: 0;
-        border-radius: 40px;
-        background: $color-alpha-inverse50;
-        z-index: 1;
-
-        .swiper-pagination {
-          @include font-body-xxsmall-bold;
-
-          .swiper-pagination-current {
-            color: $color-text-basic-inverse;
-          }
-
-          .swiper-pagination-total {
-            color: $color-text-subcolor;
-
-            &::before {
-              height: 8px;
-              background: $color-border-disabled;
-            }
-          }
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-          position: relative;
-          display: inline-flex;
-          top: auto;
-          left: auto;
-          right: auto;
-          width: 24px;
-          height: 20px;
-          margin-top: 0;
-
-          &::after {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background-size: 16px 16px;
           }
         }
       }

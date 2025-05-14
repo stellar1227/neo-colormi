@@ -175,7 +175,7 @@
       class="content-box">
       <!-- 일반주문/간편주문 체크박스 -->
       <div class="util-wrap --right">
-        <div class="toggle-wrap">
+        <div class="toggle-wrap" data-option="--option-toggle">
           <label class="toggle" for="toggle-0-1">
             <input type="checkbox" id="toggle-0-1" title="간편주문"/>
             <span class="toggle-switch"></span>
@@ -190,11 +190,11 @@
           <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
         </div>
         <div class="product-option columns-4">
-          <dl class="column-item row-span-3">
+          <dl class="column-item row-span-4">
             <dt>사이즈</dt>
             <dd>
               <!-- 일반주문 옵션 -->
-              <div class="radio-wrap option-item img-option">
+              <div class="radio-wrap option-item img-option" data-option-target="--option-default">
                 <label class="radio --a4" for="radio-0-1">
                   <input type="radio" id="radio-0-1" name="radio"/>
                   <span class="radio-img"></span>
@@ -218,7 +218,7 @@
               </div>
               <!-- // 일반주문 옵션 -->
               <!-- 간편주문 옵션 -->
-              <div class="form-field">
+              <div class="form-field blind" data-option-target="--option-simple">
                 <div class="form-wrap select">
                   <select class="btn-select">
                     <option>A5</option>
@@ -304,6 +304,23 @@
             </dd>
           </dl>
           <dl class="column-item">
+            <dt>후가공</dt>
+            <dd>
+              <div class="form-field">
+                <div class="form-inner button-option">
+                  <div class="form-wrap select">
+                    <select class="btn-select">
+                      <option>선택</option>
+                    </select>
+                  </div>
+                  <button type="button" class="btn-primary --small">
+                    <span>상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <dl class="column-item">
             <dt>작업내용</dt>
             <dd>
               <div class="form-field textarea">
@@ -371,7 +388,7 @@
               </dd>
             </dl>
             <!-- 일반주문 옵션 -->
-            <dl class="column-item">
+            <dl class="column-item" data-option-target="--option-default">
               <dt>후가공
                 <span class="tooltip --info">
                   <i class="item">표지는 후가공비가 포함되어 있어요.</i>
@@ -463,7 +480,7 @@
             </dl>
             <!-- // 일반주문 옵션 -->
             <!-- 간편주문 옵션 -->
-            <div class="product-option">
+            <div class="product-option blind" data-option-target="--option-simple">
               <dl class="column-item">
                 <dt>누름자국(오시)</dt>
                 <dd>

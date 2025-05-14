@@ -734,6 +734,10 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
           max-height: 68px; // 나중에 삭제 예정
         }
 
+        .tertiary-light-box {
+          display: none;
+        }
+
         >.badge-wrap {
           order: 1;
           margin: 10px 0 0 0;
@@ -1204,6 +1208,9 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
 
     .row-span-3 {
       grid-row-end: span 3;
+    }
+    .row-span-4 {
+      grid-row-end: span 4;
     }
 
     .--v-center {

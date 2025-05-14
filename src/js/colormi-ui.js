@@ -137,7 +137,29 @@ document.addEventListener("DOMContentLoaded", () => {
   //gnb menu - header
   initGnb();
 
+  // 간편주문 토글
+  setupOptionToggle();
+  
 });
+
+function setupOptionToggle() {
+  const toggleBoxes = document.querySelectorAll('[data-option="--option-toggle"] input[type="checkbox"]');
+  const defaultOptions = document.querySelectorAll('[data-option-target="--option-default"]');
+  const simpleOptions = document.querySelectorAll('[data-option-target="--option-simple"]');
+
+  const updateAll = (checked) => {
+    defaultOptions.forEach(el => el.classList.toggle('blind', checked));
+    simpleOptions.forEach(el => el.classList.toggle('blind', !checked));
+  };
+
+  toggleBoxes.forEach(checkbox => {
+    updateAll(checkbox.checked);
+
+    checkbox.addEventListener('change', () => {
+      updateAll(checkbox.checked);
+    });
+  });
+}
 
 function productImages(target) {
   const thumbNailGallery = target;

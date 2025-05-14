@@ -12,12 +12,8 @@
       <div class="swiper-slide">
         <a href="" class="item">
           <picture>
-            <source
-              media="(max-width: 565px)"
-              srcset="/resources/fe/img/img/{{ slide.imgUrl | replace('pc-', 'mo-') }}">
-            <img
-              src="/resources/fe/img/img/{{ slide.imgUrl }}"
-              alt="{{ slide.alt }}">
+            <source media="(max-width: 565px)" srcset="/resources/fe/img/img/{{ slide.imgUrl | replace('pc-', 'mo-') }}"/>
+            <img src="/resources/fe/img/img/{{ slide.imgUrl }}" alt="{{ slide.alt }}"/>
           </picture>
         </a>
       </div>

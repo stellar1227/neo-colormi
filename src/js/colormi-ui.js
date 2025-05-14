@@ -1,44 +1,98 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //상품페이지 갤러리
+  // 상품페이지 갤러리
   const thumbNailGallery = document.getElementById("thumbNailGallery");
-  if (thumbNailGallery) return productImages(thumbNailGallery);
+  if (thumbNailGallery) {
+    productImages(thumbNailGallery);
+  }
 
-  //상품페이지 스티키 정보
+  // 상품페이지 스티키 정보
   const productImgDetail = document.querySelector(".product-wrap");
-  if (productImgDetail) return productStickyInfo(productImgDetail);
+  if (productImgDetail) {
+    productStickyInfo(productImgDetail);
+  }
 
   //loading lottie
   loadingLottie();
 
-  //main swiper
-  new Swiper('.my-swiper', {
+  // swiper
+  // main-banner
+  const mainBannerSwiper = new Swiper('.main-banner', {
     loop: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
-        const realSlides = Array.from(this.slides).filter(
-          slide => !slide.classList.contains('swiper-slide-duplicate')
-        );
-        const realTotal = realSlides.length;
-        const current = this.realIndex + 1;
-
-        return `<span class="${currentClass}">${current}</span>` +
-          `<span class="${totalClass}">${realTotal}</span>`;
-      }
-    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      renderFraction(currentClass, totalClass) {
+        const realSlides = Array.from(this.slides)
+          .filter(slide => !slide.classList.contains('swiper-slide-duplicate'));
+        const realTotal = realSlides.length;
+        const current = this.realIndex + 1;
+        return `<span class="${currentClass}">${current}</span>` +
+          `<span class="${totalClass}">${realTotal}</span>`;
+      },
+    },
   });
+
+  // printing-list
+  const printingListSwiper = new Swiper('.main-wrap .printing-list', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: false,
+    slidesPerView: 6,
+    slidesPerGroup: 6,
+    loopFillGroupWithBlank: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+  });
+
+  // product-review
+  const productReviewSwiper = new Swiper('.main-wrap .product-review', {
+    loop: false,
+    // mousewheel: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 32,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+  });
+
+  // product-review hover 시 멈춤/재시작
+  document.querySelectorAll('.main-wrap .product-review .item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      productReviewSwiper.autoplay.stop();
+    });
+    item.addEventListener('mouseleave', () => {
+      productReviewSwiper.autoplay.start();
+    });
+  });
+
 
   //searchMenu Open, Close - header
   const searchMenu = document.querySelector('#searchWrap');
@@ -69,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initGnb();
 
 });
-
 
 function productImages(target) {
   const thumbNailGallery = target;
@@ -115,39 +168,45 @@ function productImages(target) {
 }
 
 function productStickyInfo(target) {
+  if (!(target instanceof HTMLElement)) return;
+
   const productImgDetail = target;
   const productInfo = document.querySelector(".product-inner");
+
+  if (!productInfo) return;
+
   const productInfoHeight = productInfo.offsetHeight;
   const productInfoTop = productInfo.getBoundingClientRect().top + window.scrollY;
 
   const parentContentBox = productImgDetail.closest(".content-box");
-  const nextContentBox = parentContentBox && parentContentBox.nextElementSibling;
+  const nextContentBox = parentContentBox ? parentContentBox.nextElementSibling : null;
 
   if (parentContentBox) {
     parentContentBox.style.height = `${productImgDetail.offsetHeight}px`;
   }
 
-  let timer = null;
+  let isTicking = false;
 
   window.addEventListener("scroll", () => {
-    if (!timer) {
-      timer = setTimeout(() => {
+    if (!isTicking) {
+      isTicking = true;
+      window.requestAnimationFrame(() => {
         const scrollTop = window.scrollY;
+
         if (scrollTop > productInfoTop + productInfoHeight) {
           productImgDetail.classList.add("scroll");
-
           if (nextContentBox && nextContentBox.classList.contains("content-box")) {
             nextContentBox.style.paddingTop = `${productImgDetail.offsetHeight}px`;
           }
         } else {
           productImgDetail.classList.remove("scroll");
-
           if (nextContentBox && nextContentBox.classList.contains("content-box")) {
             nextContentBox.style.paddingTop = "";
           }
         }
-        timer = null;
-      }, 0);
+
+        isTicking = false;
+      });
     }
   });
 }

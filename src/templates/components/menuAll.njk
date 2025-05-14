@@ -68,7 +68,12 @@
                 <ul>
                   {% for d3 in d2.depth3List %}
                     <li class="depth-3">
-                      <a href="#">{{ d3.title }}</a>
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -83,7 +88,12 @@
                 <ul>
                   {% for d3 in d2.depth3List %}
                     <li class="depth-3">
-                      <a href="#">{{ d3.title }}</a>
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -132,7 +142,12 @@
                 <ul>
                   {% for d3 in d2.depth3List %}
                     <li class="depth-3">
-                      <a href="#">{{ d3.title }}</a>
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -147,7 +162,12 @@
                 <ul>
                   {% for d3 in d2.depth3List %}
                     <li class="depth-3">
-                      <a href="#">{{ d3.title }}</a>
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -162,7 +182,12 @@
                 <ul>
                   {% for d3 in d2.depth3List %}
                     <li class="depth-3">
-                      <a href="#">{{ d3.title }}</a>
+                      <a href="#">
+                        {{ d3.title }}
+                        {% for tpl in d3.tooltipList %}
+                          {{ tpl|safe }}
+                        {% endfor %}
+                      </a>
                     </li>
                   {% endfor %}
                 </ul>

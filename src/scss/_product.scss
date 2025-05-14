@@ -1598,6 +1598,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
 
   &-photo {
     overflow-x: auto;
+    scrollbar-width: none;
 
     ul {
       display: flex;
@@ -1714,7 +1715,6 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
     height: 148px;
     border-radius: 4px;
     border: 1px solid $Line-line;
-    background: $color-border-gray-light;
 
     img {
       width: 100%;

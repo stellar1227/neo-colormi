@@ -1133,7 +1133,6 @@ footer {
   width: 100%;
 
   .main-banner-wrap {
-    max-width: 2560px;
     min-width: 1200px;
     margin-top: 20px;
 
@@ -1204,6 +1203,12 @@ footer {
             display: inline-block;
             width: 24px;
             height: 24px;
+          }
+
+          &.swiper-button-disabled {
+            opacity: 1;
+            cursor: pointer;
+            pointer-events: auto;
           }
         }
 
@@ -1446,6 +1451,10 @@ footer {
             }
           }
         }
+
+        &.blank-slide {
+          visibility: hidden;
+        }
       }
     }
 
@@ -1481,7 +1490,7 @@ footer {
       height: 32px;
       margin-top: 0;
       border-radius: 4px;
-      background: $color-alpha-inverse25;
+      background: $color-alpha-inverse75;
 
       &::after {
         content: '';
@@ -1503,14 +1512,15 @@ footer {
   }
 
   .util-menu-list-wrap {
-    width: 1200px;
-    margin: 0 auto;
     padding: 32px 0;
+    background: $color-background-gray-subtler;
 
     .util-menu-list {
       display: flex;
       flex-wrap: nowrap;
       gap: 0;
+      width: 1200px;
+      margin: 0 auto;
       border-left: 1px solid $Line-line;
 
       .item {

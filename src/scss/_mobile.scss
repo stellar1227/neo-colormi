@@ -320,13 +320,14 @@
     }
 
     .util-menu-list-wrap {
-      width: 100%;
       margin-top: 24px;
       padding: 4px 20px;
+      background: transparent;
 
       .util-menu-list {
         gap: 20px;
         justify-content: space-between;
+        width: 100%;
         border-left: none;
 
         .item {

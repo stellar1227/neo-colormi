@@ -46,10 +46,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // printing-list
   let printingListSwiper = null;
 
+  function padBlankSlides() {
+    const wrapper = document.querySelector('.main-wrap .printing-list .swiper-wrapper');
+    const slidesCount = wrapper.querySelectorAll('.swiper-slide').length;
+    const perGroup = 6;
+    const remainder = slidesCount % perGroup;
+
+    if (remainder !== 0) {
+      const blanksNeeded = perGroup - remainder;
+      for (let i = 0; i < blanksNeeded; i++) {
+        const blankSlide = document.createElement('div');
+        blankSlide.className = 'swiper-slide blank-slide';
+        wrapper.append(blankSlide);
+      }
+    }
+  }
+
   function initPrintingListSwiper() {
     if (window.innerWidth > 565 && !printingListSwiper) {
+      padBlankSlides();
+
       printingListSwiper = new Swiper('.main-wrap .printing-list', {
-        loop: true,
+        loop: false,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -73,24 +91,16 @@ document.addEventListener("DOMContentLoaded", () => {
   initPrintingListSwiper();
   window.addEventListener('resize', initPrintingListSwiper);
 
+
   // product-review
   const productReviewSwiper = new Swiper('.main-wrap .product-review', {
     loop: false,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
     autoplay: {
       delay: 1000,
       disableOnInteraction: true,
     },
     speed: 3000,
     slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
   });
 
   // 기본 speed 값 저장

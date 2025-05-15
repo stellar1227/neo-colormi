@@ -300,10 +300,10 @@
 
         .swiper-slide {
           width: 125px;
-        }
 
-        .swiper-slide-blank {
-          display: none;
+          &.blank-slide {
+            display: none;
+          }
         }
       }
 

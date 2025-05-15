@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 6,
         slidesPerGroup: 6,
         spaceBetween: 20,
-        loopFillGroupWithBlank: true,
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',

@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         autoplay: false,
         slidesPerView: 6,
         slidesPerGroup: 6,
+        spaceBetween: 20,
         loopFillGroupWithBlank: true,
         pagination: {
           el: '.swiper-pagination',
@@ -139,22 +140,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 간편주문 토글
   setupOptionToggle();
-  
+
 });
 
 function setupOptionToggle() {
   const toggleBoxes = document.querySelectorAll('[data-option="--option-toggle"] input[type="checkbox"]');
   const defaultOptions = document.querySelectorAll('[data-option-target="--option-default"]');
   const simpleOptions = document.querySelectorAll('[data-option-target="--option-simple"]');
+  const radioOptions = document.querySelectorAll('[data-option-target="--option-radio"]');
 
   const updateAll = (checked) => {
-    defaultOptions.forEach(el => el.classList.toggle('blind', checked));
-    simpleOptions.forEach(el => el.classList.toggle('blind', !checked));
+    defaultOptions.forEach(el => {
+      el.style.display = checked ? 'none' : '';
+    });
+    simpleOptions.forEach(el => {
+      el.style.display = checked ? '' : 'none';
+    });
+    radioOptions.forEach(el => {
+      el.classList.toggle('img-option', !checked);
+    });
   };
 
   toggleBoxes.forEach(checkbox => {
     updateAll(checkbox.checked);
-
     checkbox.addEventListener('change', () => {
       updateAll(checkbox.checked);
     });

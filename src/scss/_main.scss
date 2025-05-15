@@ -1412,7 +1412,6 @@ footer {
     .swiper {
       .swiper-wrapper {
         display: flex;
-        gap: 20px;
       }
 
       .swiper-slide {
@@ -1521,27 +1520,27 @@ footer {
 
 
         &.--quote a::before {
-          background-image: svgIcon(util-quote, '737373');
+          background-image: svgIcon(util-quote, '737373', 'ea4279');
           background-size: 64px 64px;
         }
 
         &.--guide a::before {
-          background-image: svgIcon(util-guide, '737373');
+          background-image: svgIcon(util-guide, '737373', 'ea4279');
           background-size: 62px 63px;
         }
 
         &.--delivery a::before {
-          background-image: svgIcon(util-delivery, '737373');
+          background-image: svgIcon(util-delivery, '737373', 'ea4279');
           background-size: 58px 59px;
         }
 
         &.--faq a::before {
-          background-image: svgIcon(util-faq, '737373');
+          background-image: svgIcon(util-faq, '737373', 'ea4279');
           background-size: 58px 58px;
         }
 
         &.--location a::before {
-          background-image: svgIcon(util-location, '737373');
+          background-image: svgIcon(util-location, '737373', 'ea4279');
           background-size: 60px 64px;
         }
 

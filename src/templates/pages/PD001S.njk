@@ -194,43 +194,59 @@
             <dt>사이즈</dt>
             <dd>
               <!-- 일반주문 옵션 -->
-              <div class="radio-wrap option-item img-option" data-option-target="--option-default">
+              <div class="radio-wrap img-option" data-option-target="--option-radio">
                 <label class="radio --a4" for="radio-0-1">
                   <input type="radio" id="radio-0-1" name="radio"/>
+                  <span class="radio-icon"></span>
                   <span class="radio-img"></span>
                   <span class="radio-label">A4</span>
                 </label>
                 <label class="radio --a5" for="radio-0-2">
                   <input type="radio" id="radio-0-2" name="radio"/>
+                  <span class="radio-icon"></span>
                   <span class="radio-img"></span>
                   <span class="radio-label">A5</span>
                 </label>
                 <label class="radio --b5" for="radio-0-3">
                   <input type="radio" id="radio-0-3" name="radio"/>
+                  <span class="radio-icon"></span>
                   <span class="radio-img"></span>
                   <span class="radio-label">B5</span>
                 </label>
                 <label class="radio --none" for="radio-0-4">
                   <input type="radio" id="radio-0-4" name="radio"/>
+                  <span class="radio-icon"></span>
                   <span class="radio-img"></span>
                   <span class="radio-label">비규격</span>
                 </label>
               </div>
               <!-- // 일반주문 옵션 -->
               <!-- 간편주문 옵션 -->
-              <div class="form-field blind" data-option-target="--option-simple">
-                <div class="form-wrap select">
-                  <select class="btn-select">
-                    <option>A5</option>
-                    <option>B5</option>
-                    <option>A4</option>
-                  </select>
-                </div>
-              </div>
+              {# <div class="radio-wrap" data-option-target="--option-simple">
+                                            <label class="radio" for="radio-1-1">
+                                              <input type="radio" id="radio-1-1" name="radio"/>
+                                              <span class="radio-icon"></span>
+                                              <span class="radio-label">A4</span>
+                                            </label>
+                                            <label class="radio" for="radio-1-2">
+                                              <input type="radio" id="radio-1-2" name="radio"/>
+                                              <span class="radio-icon"></span>
+                                              <span class="radio-label">A5</span>
+                                            </label>
+                                            <label class="radio" for="radio-1-3">
+                                              <input type="radio" id="radio-1-3" name="radio"/>
+                                              <span class="radio-icon"></span>
+                                              <span class="radio-label">B5</span>
+                                            </label>
+                                            <label class="radio" for="radio-1-4">
+                                              <input type="radio" id="radio-1-4" name="radio"/>
+                                              <span class="radio-icon"></span>
+                                              <span class="radio-label">비규격</span>
+                                            </label>
+                                          </div> #}
               <!-- // 간편주문 옵션 -->
               <!-- 사이즈 옵션 -->
-              <div class="--add-option">
-                <div class="option-item">
+                <div class="--add-option"> <div class="option-item">
                   <dl class="product-option">
                     <dt>재단사이즈</dt>
                     <!-- //사이즈 옵션 비규격 선택 시 클래스 추가 .--selected -->
@@ -480,7 +496,7 @@
             </dl>
             <!-- // 일반주문 옵션 -->
             <!-- 간편주문 옵션 -->
-            <div class="product-option blind" data-option-target="--option-simple">
+            <div class="product-option" data-option-target="--option-simple">
               <dl class="column-item">
                 <dt>누름자국(오시)</dt>
                 <dd>

@@ -291,13 +291,19 @@
       .swiper {
         overflow-x: auto;
         scrollbar-width: none;
+        padding: 0 20px;
 
         .swiper-wrapper {
           gap: 12px;
+          width: max-content;
         }
 
         .swiper-slide {
           width: 125px;
+        }
+
+        .swiper-slide-blank {
+          display: none;
         }
       }
 

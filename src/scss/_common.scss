@@ -1082,11 +1082,15 @@ h5 {
         }
       }
     }
+
+    .radio-img {
+      display: none;
+    }
   }
 
   &.img-option {
-    display: flex !important;
-    align-items: self-end !important;
+    display: flex;
+    align-items: self-end;
     justify-content: space-between;
     padding: 0 24px;
 
@@ -1126,6 +1130,10 @@ h5 {
         }
       }
 
+      .radio-icon {
+        display: none;
+      }
+
       .radio-img {
         position: relative;
         overflow: hidden;
@@ -1155,7 +1163,7 @@ h5 {
         transform: translate(-50%, -50%);
       }
 
-      input:checked+.radio-img {
+      input:checked~.radio-img {
         &::after {
           border-color: $color-border-primary;
         }

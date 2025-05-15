@@ -1055,11 +1055,21 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
             }
 
             .form-wrap {
+              position: relative;
               flex-wrap: wrap;
               gap: 8px 20px;
 
               .checkbox-wrap+[class$=-wrap] {
                 margin: 0;
+              }
+
+              .time {
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                transform: translateY(-50%);
+                @include font-body-small;
+                color: $color-text-primary;
               }
             }
 
@@ -1067,6 +1077,10 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
 
               span {
                 width: 84px;
+
+                &:only-child {
+                  padding: 0;
+                }
               }
             }
 

@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainBannerSwiper = new Swiper('.main-banner', {
     loop: true,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.visual-next',
+      prevEl: '.visual-prev',
     },
     autoplay: {
       delay: 3000,
@@ -69,13 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
       printingListSwiper = new Swiper('.main-wrap .printing-list', {
         loop: false,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.print-next',
+          prevEl: '.print-prev',
         },
         autoplay: false,
         slidesPerView: 6,
         slidesPerGroup: 6,
         spaceBetween: 20,
+        loopFillGroupWithBlank: true,
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
@@ -90,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initPrintingListSwiper();
   window.addEventListener('resize', initPrintingListSwiper);
 
-
   // product-review
   const productReviewSwiper = new Swiper('.main-wrap .product-review', {
     loop: false,
@@ -101,11 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
     speed: 3000,
     slidesPerView: 'auto',
   });
-
-  // 기본 speed 값 저장
   const defaultSpeed = productReviewSwiper.params.speed;
 
-  // product-review hover 시 멈춤/재시작 및 speed 초기화
+  // product-review hover
   document.querySelectorAll('.main-wrap .product-review .item a').forEach(item => {
     item.addEventListener('mouseenter', () => {
       productReviewSwiper.autoplay.stop();

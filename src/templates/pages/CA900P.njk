@@ -1,0 +1,79 @@
+{% extends "layouts/base.njk" %}
+{% set title = "주문상세" %}
+{% block content %}
+  <div class="modal --full --xlarge">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">주문상세</h5>
+      </div>
+      <div class="modal-container">
+        <div class="table-list">
+          <div class="list-item-wrap --header">
+            <div class="list-item">
+              <div class="item --product">
+                <p>주문정보</p>
+              </div>
+              <div class="item --quantity">
+                <p>수량</p>
+              </div>
+              <div class="item --amount">
+                <p>주문금액</p>
+              </div>
+            </div>
+          </div>
+          <!-- // list header -->
+          <div class="list-item-wrap --body">
+            <div class="list-item">
+              <div class="item --product" data-label="주문정보">
+                <div class="product-wrap --order-info">
+                  <div class="product-inner-item">
+                    <div class="product-img"><img src="/resources/fe/img/product/A001_thum_1.jpg" alt="상품이미지"/>
+                    </div>
+                    <div class="product-info">
+                      <p class="product-name">
+                        상품명 - 책자
+                      </p>
+                      <div class="product-text">
+                        <p class="text">기본정보 - A4 / 세로좌철 / 작업내용: 내용없음</p>
+                        <p class="text">표지 - 일반지 / 스노우지 / 180g / 컬러 / 단면 / 캐논IX / 오시: 2줄 / 코팅: 무광단면코팅</p>
+                        <p class="text">제목</p>
+                        <p class="text">작업내용 / 정보 / 세부사항</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item --quantity" data-label="수량">
+                <div class="item-inner">
+                  <p>
+                    <span>10</span>건
+                  </p>
+                </div>
+              </div>
+              <div class="item --amount" data-label="주문금액">
+                <div class="item-inner">
+                  <p>
+                    <span>100,000,000</span>원
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // list body -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

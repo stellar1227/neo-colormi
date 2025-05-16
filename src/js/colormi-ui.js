@@ -14,109 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //loading lottie
   loadingLottie();
 
-  // swiper
-  // main-banner
-  const mainBannerSwiper = new Swiper('.main-banner', {
-    loop: true,
-    navigation: {
-      nextEl: '.visual-next',
-      prevEl: '.visual-prev',
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'fraction',
-      renderFraction(currentClass, totalClass) {
-        const realSlides = Array.from(this.slides)
-          .filter(slide => !slide.classList.contains('swiper-slide-duplicate'));
-        const realTotal = realSlides.length;
-        const current = this.realIndex + 1;
-        return `<span class="${currentClass}">${current}</span>` +
-          `<span class="${totalClass}">${realTotal}</span>`;
-      },
-    },
-  });
-
-  // printing-list
-  let printingListSwiper = null;
-
-  function padBlankSlides() {
-    const wrapper = document.querySelector('.main-wrap .printing-list .swiper-wrapper');
-    const slidesCount = wrapper.querySelectorAll('.swiper-slide').length;
-    const perGroup = 6;
-    const remainder = slidesCount % perGroup;
-
-    if (remainder !== 0) {
-      const blanksNeeded = perGroup - remainder;
-      for (let i = 0; i < blanksNeeded; i++) {
-        const blankSlide = document.createElement('div');
-        blankSlide.className = 'swiper-slide blank-slide';
-        wrapper.append(blankSlide);
-      }
-    }
-  }
-
-  function initPrintingListSwiper() {
-    if (window.innerWidth > 565 && !printingListSwiper) {
-      padBlankSlides();
-
-      printingListSwiper = new Swiper('.main-wrap .printing-list', {
-        loop: false,
-        navigation: {
-          nextEl: '.print-next',
-          prevEl: '.print-prev',
-        },
-        autoplay: false,
-        slidesPerView: 6,
-        slidesPerGroup: 6,
-        spaceBetween: 20,
-        loopFillGroupWithBlank: true,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true,
-        },
-      });
-    } else if (window.innerWidth <= 565 && printingListSwiper) {
-      printingListSwiper.destroy(true, true);
-      printingListSwiper = null;
-    }
-  }
-  initPrintingListSwiper();
-  window.addEventListener('resize', initPrintingListSwiper);
-
-  // product-review
-  const productReviewSwiper = new Swiper('.main-wrap .product-review', {
-    loop: false,
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: true,
-    },
-    speed: 3000,
-    slidesPerView: 'auto',
-  });
-  const defaultSpeed = productReviewSwiper.params.speed;
-
-  // product-review hover
-  document.querySelectorAll('.main-wrap .product-review .item a').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      productReviewSwiper.autoplay.stop();
-      productReviewSwiper.params.speed = defaultSpeed;
-      productReviewSwiper.update();
-    });
-    item.addEventListener('mouseleave', () => {
-      productReviewSwiper.params.speed = defaultSpeed;
-      productReviewSwiper.update();
-      productReviewSwiper.autoplay.start();
-    });
-  });
-
   //searchMenu Open, Close - header
   const searchMenu = document.querySelector('#searchWrap');
   const searchBtn = document.querySelector('#btnSearch');
@@ -148,8 +45,121 @@ document.addEventListener("DOMContentLoaded", () => {
   // 간편주문 토글
   setupOptionToggle();
 
+  // swiper - main-banner / product-review / printing-list
+  initMainBannerSwiper();
+  initProductReviewSwiper();
+  initPrintingListSwiper();
+  window.addEventListener('resize', initPrintingListSwiper);
+
 });
 
+// swiper - main-banner
+function initMainBannerSwiper() {
+  new Swiper('.main-wrap .main-banner', {
+    loop: true,
+    navigation: {
+      prevEl: '.visual-prev',
+      nextEl: '.visual-next'
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      renderFraction: function (currentClass, totalClass) {
+        var allSlides = Array.prototype.slice.call(this.slides);
+        var realSlides = allSlides.filter(function (slide) {
+          return !slide.classList.contains('swiper-slide-duplicate');
+        });
+        var realTotal = realSlides.length;
+        var current = this.realIndex + 1;
+        return '<span class="' + currentClass + '">' + current + '</span>' +
+          '<span class="' + totalClass + '">' + realTotal + '</span>';
+      }
+    }
+  });
+}
+
+// swiper - product-review
+function initProductReviewSwiper() {
+  var swiper = new Swiper('.main-wrap .product-review', {
+    loop: true,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: true
+    },
+    speed: 3000,
+    slidesPerView: 'auto'
+  });
+  var defaultSpeed = swiper.params.speed;
+
+  var items = document.querySelectorAll('.main-wrap .product-review .item a');
+  for (var i = 0; i < items.length; i++) {
+    (function (item) {
+      item.addEventListener('mouseenter', function () {
+        swiper.autoplay.stop();
+        swiper.params.speed = defaultSpeed;
+        swiper.update();
+      });
+      item.addEventListener('mouseleave', function () {
+        swiper.params.speed = defaultSpeed;
+        swiper.update();
+        swiper.autoplay.start();
+      });
+    })(items[i]);
+  }
+}
+
+// swiper - printing-list
+var printingListSwiper = null;
+
+function padBlankSlides() {
+  var wrapper = document.querySelector('.main-wrap .printing-list .swiper-wrapper');
+  var slides = wrapper.querySelectorAll('.swiper-slide');
+  var perGroup = 6;
+  var remainder = slides.length % perGroup;
+  if (remainder !== 0) {
+    var blanksNeeded = perGroup - remainder;
+    for (var j = 0; j < blanksNeeded; j++) {
+      var blankSlide = document.createElement('div');
+      blankSlide.className = 'swiper-slide blank-slide';
+      wrapper.appendChild(blankSlide);
+    }
+  }
+}
+
+function initPrintingListSwiper() {
+  var selector = '.main-wrap .printing-list';
+  if (window.innerWidth > 565 && !printingListSwiper) {
+    padBlankSlides();
+    printingListSwiper = new Swiper(selector, {
+      loop: false,
+      navigation: {
+        prevEl: '.print-prev',
+        nextEl: '.print-next'
+      },
+      slidesPerView: 6,
+      slidesPerGroup: 6,
+      spaceBetween: 20,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+  } else if (window.innerWidth <= 565 && printingListSwiper) {
+    printingListSwiper.destroy(true, true);
+    printingListSwiper = null;
+  }
+}
+
+// 상품페이지 간편주문 토글
 function setupOptionToggle() {
   const toggleBoxes = document.querySelectorAll('[data-option="--option-toggle"] input[type="checkbox"]');
   const defaultOptions = document.querySelectorAll('[data-option-target="--option-default"]');
@@ -176,6 +186,7 @@ function setupOptionToggle() {
   });
 }
 
+// 상품페이지 갤러리
 function productImages(target) {
   const thumbNailGallery = target;
   const imgItemWrap = thumbNailGallery.querySelector(".img-item-wrap");
@@ -219,6 +230,7 @@ function productImages(target) {
   });
 }
 
+// 상픔페이지 스티키 정보
 function productStickyInfo(target) {
   if (!(target instanceof HTMLElement)) return;
 
@@ -263,6 +275,7 @@ function productStickyInfo(target) {
   });
 }
 
+// loading lottie
 function loadingLottie() {
   const ACTIVE_CLASS = '--active';
 
@@ -337,6 +350,7 @@ function loadingLottie() {
   });
 }
 
+// gnb menu - header
 function initGnb() {
   const links = document.querySelectorAll('.gnb .depth-1 a[data-menu-index]');
   const wraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');

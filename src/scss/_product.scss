@@ -504,14 +504,14 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
         &:first-child {
 
           [class^=btn-] {
-            @include sprite-icons(92, 16px);
+            @include sprite-icons(91, 16px);
           }
         }
 
         &:last-child {
 
           [class^=btn-] {
-            @include sprite-icons(93, 16px);
+            @include sprite-icons(92, 16px);
           }
         }
 

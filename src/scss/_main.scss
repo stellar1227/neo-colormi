@@ -1204,12 +1204,6 @@ footer {
             width: 24px;
             height: 24px;
           }
-
-          &.swiper-button-disabled {
-            opacity: 1;
-            cursor: pointer;
-            pointer-events: auto;
-          }
         }
 
         .swiper-button-prev {
@@ -1377,6 +1371,7 @@ footer {
                 margin-top: 0;
                 @include ellipsis;
                 -webkit-line-clamp: 1;
+                line-clamp: 1;
 
                 +[class^=guide-] {
                   margin-top: 8px;

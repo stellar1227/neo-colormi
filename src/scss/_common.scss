@@ -1904,14 +1904,9 @@ h5 {
     scrollbar-width: none;
   }
 
-  +.checkbox-wrap {
+  ~.checkbox-wrap {
     display: flex;
-    margin-top: 20px;
-
-    ~.checkbox-wrap {
-      display: flex;
-      margin: 8px 0 0;
-    }
+    margin: 20px 0 0 0;
   }
 
   &.--icon-box {
@@ -2085,15 +2080,15 @@ h5 {
   }
 
   &.--new {
-    @include sprite-icons(81, 16px);
+    @include sprite-icons(76, 16px);
   }
 
   &.--discount-1 {
-    @include sprite-icons(82, 16px);
+    @include sprite-icons(81, 16px);
   }
 
   &.--discount-2 {
-    @include sprite-icons(83, 16px);
+    @include sprite-icons(82, 16px);
   }
 
   &.--best {
@@ -2101,7 +2096,7 @@ h5 {
   }
 
   &.--contact {
-    @include sprite-icons(84, 16px);
+    @include sprite-icons(83, 16px);
   }
 
   &.--info {
@@ -2238,15 +2233,15 @@ button[type='button'] {
       }
 
       &.--naver {
-        @include sprite-icons(89, 48px);
+        @include sprite-icons(88, 48px);
       }
 
       &.--kakao {
-        @include sprite-icons(90, 48px);
+        @include sprite-icons(89, 48px);
       }
 
       &.--google {
-        @include sprite-icons(91, 48px);
+        @include sprite-icons(90, 48px);
       }
     }
   }
@@ -2450,8 +2445,40 @@ button[type='button'] {
   @include font-body-xsmall;
   color: $color-text-subcolor-deep;
 
+  p:not(:first-child) {
+    margin-top: 16px;
+  }
+
   .title:not(:first-child),
   .block {
+    margin-top: 32px;
+  }
+
+  >ul {
     margin-top: 16px;
+  }
+
+  .terms-title {
+    margin-bottom: 32px;
+    @include font-body-small-bold;
+    color: $color-text-basic;
+  }
+
+  .title {
+    font-weight: $font-weight-semibold;
+    color: $color-text-basic;
+
+    &.--dot {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin: 0 8px 0 0;
+        background: $color-text-basic;
+        border-radius: 50%;
+        vertical-align: 2px;
+      }
+    }
   }
 }

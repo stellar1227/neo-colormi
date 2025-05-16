@@ -1435,6 +1435,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
       dt {
         @include font-body-xsmall;
         color: $color-text-subcolor-deep;
+        white-space: nowrap;
 
         &.total-sum {
           font-weight: $font-weight-semibold;
@@ -1452,6 +1453,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
         @include font-body-xsmall-bold;
         color: $color-text-basic;
         line-height: 20px;
+        white-space: nowrap;
 
         strong {
           @include font-body-medium-bold;
@@ -1481,7 +1483,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
       gap: 0 20px;
 
       .product-price {
-        display: flex;
+        display: inline-flex;
         align-items: center;
 
         dt {
@@ -2273,6 +2275,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 20px 0;
 
   &:after {
     content: '';
@@ -2306,7 +2309,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
       flex: 0;
 
       >input {
-        width: 415px;
+        max-width: 415px;
       }
     }
   }

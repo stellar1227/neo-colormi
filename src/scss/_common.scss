@@ -356,7 +356,7 @@ h5 {
 
     input {
       &:not(:placeholder-shown) {
-        +.util {
+        ~.util {
           .btn-del {
             display: inline-flex;
           }
@@ -615,15 +615,15 @@ h5 {
         }
 
         &:focus~.search-bg,
-        // &:not(:placeholder-shown)~.search-bg,
         &:hover~.search-bg {
           border: 2px solid transparent;
           background-image: linear-gradient($color-background-white, $color-background-white), linear-gradient(180deg, $color-border-primary-lighter 0%, #F4D360 42%, $color-border-primary 100%);
+        }
 
-          ~.util .btn-search {
-            &::before {
-              background: svgIcon(search, '24A3FF') no-repeat center center/24px 24px;
-            }
+        &:focus~.util .btn-search,
+        &:hover~.util .btn-search {
+          &::before {
+            background-image: svgIcon(search, '24A3FF');
           }
         }
       }
@@ -1389,7 +1389,7 @@ h5 {
       display: inline-block;
       width: 24px;
       height: 24px;
-      background: svgIcon(arrow-right, '969696') no-repeat center center/24px 24px;
+      background-size: 24px 24px;
       vertical-align: -3px;
     }
   }
@@ -1827,7 +1827,7 @@ h5 {
 
   &.gray-light-box {
     @include desc-box;
-    padding: 20px 0px;
+    padding: 20px;
     background: $color-border-gray-light;
 
     &.--receipt {

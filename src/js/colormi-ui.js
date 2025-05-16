@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 간편주문 토글
   setupOptionToggle();
 
-  // swiper - main-banner / product-review / printing-list
+  // swiper - main-banner / product-review / blog-list
   initMainBannerSwiper();
   initProductReviewSwiper();
-  initPrintingListSwiper();
-  window.addEventListener('resize', initPrintingListSwiper);
+  initBlogListSwiper();
+  window.addEventListener('resize', initBlogListSwiper);
 
 });
 
@@ -116,29 +116,32 @@ function initProductReviewSwiper() {
   }
 }
 
-// swiper - printing-list
-var printingListSwiper = null;
+// swiper - blog-list
+var blogListSwiper = null;
 
 function padBlankSlides() {
-  var wrapper = document.querySelector('.main-wrap .printing-list .swiper-wrapper');
-  var slides = wrapper.querySelectorAll('.swiper-slide');
-  var perGroup = 6;
-  var remainder = slides.length % perGroup;
+  const wrapper = document.querySelector('.main-wrap .blog-list .swiper-wrapper');
+  if (!wrapper) return;
+
+  const realSlides = wrapper.querySelectorAll('.swiper-slide:not(.blank-slide)');
+  const perGroup = 6;
+  const remainder = realSlides.length % perGroup;
+
   if (remainder !== 0) {
-    var blanksNeeded = perGroup - remainder;
-    for (var j = 0; j < blanksNeeded; j++) {
-      var blankSlide = document.createElement('div');
+    const blanksNeeded = perGroup - remainder;
+    for (let i = 0; i < blanksNeeded; i++) {
+      const blankSlide = document.createElement('div');
       blankSlide.className = 'swiper-slide blank-slide';
       wrapper.appendChild(blankSlide);
     }
   }
 }
 
-function initPrintingListSwiper() {
-  var selector = '.main-wrap .printing-list';
-  if (window.innerWidth > 565 && !printingListSwiper) {
+function initBlogListSwiper() {
+  var selector = '.main-wrap .blog-list';
+  if (window.innerWidth > 565 && !blogListSwiper) {
     padBlankSlides();
-    printingListSwiper = new Swiper(selector, {
+    blogListSwiper = new Swiper(selector, {
       loop: false,
       navigation: {
         prevEl: '.print-prev',
@@ -154,9 +157,9 @@ function initPrintingListSwiper() {
         clickable: true
       }
     });
-  } else if (window.innerWidth <= 565 && printingListSwiper) {
-    printingListSwiper.destroy(true, true);
-    printingListSwiper = null;
+  } else if (window.innerWidth <= 565 && blogListSwiper) {
+    blogListSwiper.destroy(true, true);
+    blogListSwiper = null;
   }
 }
 

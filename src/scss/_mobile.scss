@@ -110,6 +110,16 @@
     }
   }
 
+  .search-wrap {
+    .search-inner {
+      min-width: auto;
+    }
+
+    .search-content {
+      width: 100%;
+    }
+  }
+
   // main
   .main-wrap {
     .main-banner-wrap {
@@ -283,7 +293,7 @@
       }
     }
 
-    .printing-list-wrap {
+    .blog-list-wrap {
       max-width: 100%;
       margin-bottom: 40px;
 
@@ -461,12 +471,13 @@
     flex-direction: column;
 
     .product-order-price {
-      display: grid;
-      grid-template-columns: 1fr 24px 1fr;
-      place-items: center;
+      flex-wrap: wrap;
 
-      .product-price:last-of-type {
-        grid-column: 2/4;
+      .product-price {}
+
+      .icon-sum+.product-price {
+        flex: 1;
+        justify-content: flex-end;
       }
     }
   }

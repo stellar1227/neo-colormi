@@ -1,0 +1,28 @@
+{% set slidesPrinting = [
+  { imgUrl: "A001_thum_1.jpg", alt: "프린팅 이미지" },
+  { imgUrl: "A001_thum_2.jpg", alt: "프린팅 이미지" },
+  { imgUrl: "C019_thum_1.jpg", alt: "프린팅 이미지" },
+  { imgUrl: "C019_thum_2.jpg", alt: "프린팅 이미지" },
+  { imgUrl: "C019_thum_3.jpg", alt: "프린팅 이미지" },
+  { imgUrl: "C019_thum_4.jpg", alt: "프린팅 이미지" },
+  { imgUrl: "C019_thum_1.jpg", alt: "프린팅 이미지" }
+] %}
+
+<div class="swiper printing-list">
+  <div class="swiper-wrapper">
+    {% for slide in slidesPrinting %}
+    <div class="swiper-slide">
+      <div class="item">
+        <a href="">
+          <img src="/resources/fe/img/product/{{ slide.imgUrl }}" alt="{{ slide.alt }}"/>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-util">
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+<div class="swiper-button-prev print-prev"></div>
+<div class="swiper-button-next print-next"></div>

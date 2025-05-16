@@ -1,4 +1,4 @@
-{% set slides = [
+{% set slidesMain = [
   { imgUrl: "pc-visual-01.jpg", alt: "떡메모지 3종, 일정체크 한 번에 정리!" },
   { imgUrl: "pc-visual-02.jpg", alt: "100DAYS 스터디 플래너" },
   { imgUrl: "pc-visual-03.jpg", alt: "주간 플래너" },
@@ -8,7 +8,7 @@
 
 <div class="swiper main-banner">
   <div class="swiper-wrapper">
-    {% for slide in slides %}
+    {% for slide in slidesMain %}
       <div class="swiper-slide">
         <a href="" class="item">
           <picture>

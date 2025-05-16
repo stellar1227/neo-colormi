@@ -89,9 +89,10 @@ function initMainBannerSwiper() {
 function initProductReviewSwiper() {
   var swiper = new Swiper('.main-wrap .product-review', {
     loop: true,
+    freeMode: false,
     autoplay: {
       delay: 1000,
-      disableOnInteraction: true
+      disableOnInteraction: false
     },
     speed: 3000,
     slidesPerView: 'auto'

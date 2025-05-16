@@ -602,9 +602,14 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
         }
       }
 
-      &.--end {
+      &.--between {
         display: flex;
         justify-content: space-between;
+      }
+
+      &.--right {
+        display: flex;
+        justify-content: flex-end;
       }
     }
 
@@ -934,22 +939,22 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
   }
 }
 
+.required {
+  &::after {
+    content: '*';
+    display: inline-flex;
+    color: $color-text-primary;
+    @include font-body-small;
+    line-height: 12px;
+    vertical-align: 2px;
+  }
+}
+
 .product-order {
   margin-bottom: 40px;
 
   &:last-of-type {
     margin-bottom: 0;
-  }
-
-  .required {
-    &::after {
-      content: '*';
-      display: inline-flex;
-      color: $color-text-primary;
-      @include font-body-small;
-      line-height: 12px;
-      vertical-align: 2px;
-    }
   }
 
   .desc-guide {
@@ -2063,21 +2068,21 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
             position: relative;
             @include sprite-icons(58, 16px, after);
 
-            &::after {
-              position: absolute;
-              top: 3px;
-              left: -1px;
-            }
-
             &::before {
               content: '';
               display: inline-block;
               width: 13px;
               height: 13px;
               margin: 0 4px 0 0;
-              background: $color-border-gray-dark url('') no-repeat center center/6.5px auto;
+              background-color: $color-border-gray-dark;
               vertical-align: -2px;
               border-radius: 50%;
+            }
+
+            &::after {
+              position: absolute;
+              top: 4px;
+              left: -1px;
             }
           }
         }

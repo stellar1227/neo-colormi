@@ -1547,6 +1547,13 @@ footer {
           span {
             @include font-body-small;
             font-weight: $font-weight-medium;
+            color: $color-text-subcolor-deep;
+          }
+
+          &:hover {
+            span {
+              color: $color-text-basic;
+            }
           }
         }
 

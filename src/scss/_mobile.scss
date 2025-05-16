@@ -461,9 +461,14 @@
 
   .product-order-wrap {
     flex-direction: column;
+    margin-bottom: 20px;
 
     .product-order {
-      margin-bottom: inherit;
+      margin-bottom: 20px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -483,6 +488,8 @@
   }
 
   .product-order {
+    margin-bottom: 20px;
+
     .product-option {
 
       .row-span-2,
@@ -497,7 +504,7 @@
       }
 
       .column-item {
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 1fr;
 
         >dd {
           .guide-wrap {

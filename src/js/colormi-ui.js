@@ -87,14 +87,25 @@ function initMainBannerSwiper() {
 
 // swiper - product-review
 function initProductReviewSwiper() {
-  var swiper = new Swiper('.main-wrap .product-review', {
+  var container = document.querySelector('.main-wrap .product-review');
+  var wrapper = container.querySelector('.swiper-wrapper');
+  var slides = wrapper.querySelectorAll('.swiper-slide');
+  var origCount = slides.length;
+
+  if (origCount > 0 && !wrapper.dataset.duplicated) {
+    wrapper.innerHTML += wrapper.innerHTML;
+    wrapper.dataset.duplicated = 'true';
+  }
+  var swiper = new Swiper(container, {
     loop: true,
-    freeMode: false,
+    freeMode: true,
+    freeModeMomentum: false,
     autoplay: {
-      delay: 1000,
+      delay: 2000,
       disableOnInteraction: false
     },
-    speed: 3000,
+    speed: 2000,
+    loopedSlides: wrapper.querySelectorAll('.swiper-slide').length,
     slidesPerView: 'auto'
   });
   var defaultSpeed = swiper.params.speed;

@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }} | {{ siteName }}</title>
-
-  {# 기존 메인 스타일 #}
-  <link rel="stylesheet" href="/css/style.css"/>
-
-  {# libs CSS 추가 #}
-  {% if libCssFiles %}
-    {% for css in libCssFiles %}
-      <link rel="stylesheet" href="{{ css }}">
-    {% endfor %}
-  {% endif %}
-
-</head>
-<body>
-  {% include "partials/header.njk" %}
-  <section id="wrap">
-    <div id="container">
-      {% block content %}{% endblock %}
-    </div>
-  </section>
-  {% include "partials/footer.njk" %}
-
-  <script src="/js/colormi-ui.js"></script>
-
-  {# libs JS 추가 #}
-  {% if libJsFiles %}
-    {% for js in libJsFiles %}
-      <script src="{{ js }}"></script>
-    {% endfor %}
-  {% endif %}
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} | {{ siteName }}</title>
+    {# 기존 메인 스타일 #}
+    <link
+    rel="stylesheet" href="/resources/fe/css/style.css"/>
+    {# libs CSS 추가 #}
+    {% if libCssFiles %}
+      {% for css in libCssFiles %}
+        <link rel="stylesheet" href="{{ css }}">
+      {% endfor %}
+    {% endif %}
+  </head>
+  <body>
+    {% include "partials/header.njk" %}
+    <section id="wrap">
+      <div id="container"> {% block content %}{% endblock %}
+        </div>
+      </section>
+      {% include "partials/footer.njk" %}
+      <script src="/resources/common/js/colormi-ui.js"></script>
+      {# libs JS 추가 #}
+      {% if libJsFiles %}
+        {% for js in libJsFiles %}
+          <script src="{{ js }}"></script>
+        {% endfor %}
+      {% endif %}
+    </body>
+  </html>

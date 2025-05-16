@@ -28,14 +28,14 @@ const paths = {
   menuData: 'src/data/menuData.json',
   styles: {
     src: 'src/scss/**/*.scss',
-    dest: 'dist/css/',
+    dest: 'dist/resources/fe/css/',
   },
   scripts: {
     src: 'src/js/**/*.js',
-    dest: 'dist/js/',
+    dest: 'dist/resources/common/js/',
   },
   images: {
-    src: 'src/resources/fe/img/**/*.*',
+    src: 'src/img/**/*.*',
     dest: 'dist/resources/fe/img/',
     watch: 'src/resources/fe/img/**/*.*',
   },
@@ -53,8 +53,8 @@ function templates() {
       const globalData = JSON.parse(fs.readFileSync(paths.templates.data));
 
       // libs 파일 읽어서 데이터로 넘김
-      const libJsFiles = fs.readdirSync('src/libs/js').map(file => `/js/${file}`);
-      const libCssFiles = fs.readdirSync('src/libs/css').map(file => `/css/${file}`);
+      const libJsFiles = fs.readdirSync('src/libs/js').map(file => `/resources/common/js/${file}`);
+      const libCssFiles = fs.readdirSync('src/libs/css').map(file => `/resources/fe/css/${file}`);
 
       const menuJson = fs.readFileSync(path.resolve(paths.menuData), 'utf8');
       const menuData = JSON.parse(menuJson);

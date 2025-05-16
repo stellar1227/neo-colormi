@@ -46,10 +46,19 @@ document.addEventListener("DOMContentLoaded", () => {
   setupOptionToggle();
 
   // swiper - main-banner / product-review / blog-list
-  initMainBannerSwiper();
-  initProductReviewSwiper();
-  initBlogListSwiper();
-  window.addEventListener('resize', initBlogListSwiper);
+  const mainBannerSwiper = document.querySelector(".main-wrap .main-banner");
+  if (mainBannerSwiper) {
+    initMainBannerSwiper(mainBannerSwiper);
+  }
+  const productReviewSwiper = document.querySelector(".main-wrap .main-banner");
+  if (productReviewSwiper) {
+    initProductReviewSwiper(productReviewSwiper);
+  }
+  const blogListSwiper = document.querySelector(".main-wrap .main-banner");
+  if (blogListSwiper) {
+    initBlogListSwiper(blogListSwiper);
+    window.addEventListener('resize', initBlogListSwiper);
+  }
 
 });
 
@@ -295,7 +304,7 @@ function loadingLottie() {
   const ACTIVE_CLASS = '--active';
 
   const animConfig = {
-    loading: './resources/fe/img/assets/loading.json',
+    loading: '/resources/fe/img/assets/loading.json',
   };
 
   const animDataCache = new Map();

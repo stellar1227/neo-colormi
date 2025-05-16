@@ -225,7 +225,7 @@ h5 {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-image: url('../resources/fe/img/icon/img-sprite.png');
+    background-image: url('/resources/fe/img/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 1002px auto;
     background-position: 0 -194px;
@@ -1148,7 +1148,7 @@ h5 {
         position: relative;
         overflow: hidden;
         display: inline-block;
-        background: url('../resources/fe/img/img/img-radio-option.png') no-repeat center bottom/cover;
+        background: url('/resources/fe/img/img/img-radio-option.png') no-repeat center bottom/cover;
 
         &::after {
           content: '';
@@ -1519,7 +1519,7 @@ h5 {
     width: 63px;
     height: 72px;
     margin-bottom: 4px;
-    background-image: url('../resources/fe/img/icon/img-sprite.png');
+    background-image: url('/resources/fe/img/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 1002px auto;
     background-position: -202px 0;
@@ -2284,7 +2284,7 @@ button[type='button'] {
 
         &.--kakao {
           &::after {
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: 0 -407px;
@@ -2293,7 +2293,7 @@ button[type='button'] {
 
         &.--facebook {
           &::after {
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -30px -407px;
@@ -2302,7 +2302,7 @@ button[type='button'] {
 
         &.--instagram {
           &::after {
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -60px -407px;
@@ -2313,7 +2313,7 @@ button[type='button'] {
           &::after {
             width: 33px;
             height: 30px;
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -90px -407px;

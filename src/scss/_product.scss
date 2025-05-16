@@ -295,7 +295,7 @@
   }
 }
 
-$sprite: '../resources/fe/img/icon/icon-star.png';
+$sprite: '/resources/fe/img/icon/icon-star.png';
 
 // 프레임 높이 × 3(0=off, 1=yellow, 2=black)
 %star-frame {
@@ -667,6 +667,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
     z-index: 10;
 
     .product-inner {
+      width: 1200px;
       gap: 0 20px;
       margin: 0 auto;
       padding: 20px 0;
@@ -2006,7 +2007,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
               &::before {
                 width: 85px;
                 height: 100px;
-                background-image: url('../resources/fe/img/icon/img-sprite.png');
+                background-image: url('/resources/fe/img/icon/img-sprite.png');
                 background-repeat: no-repeat;
                 background-size: 1002px auto;
                 background-position: -130px -194px;
@@ -2018,7 +2019,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
               &::before {
                 width: 87px;
                 height: 100px;
-                background-image: url('../resources/fe/img/icon/img-sprite.png');
+                background-image: url('/resources/fe/img/icon/img-sprite.png');
                 background-repeat: no-repeat;
                 background-size: 1002px auto;
                 background-position: -215px -194px;
@@ -2030,7 +2031,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
               &::before {
                 width: 100px;
                 height: 108px;
-                background-image: url('../resources/fe/img/icon/img-sprite.png');
+                background-image: url('/resources/fe/img/icon/img-sprite.png');
                 background-repeat: no-repeat;
                 background-size: 1002px auto;
                 background-position: -30px -194px;

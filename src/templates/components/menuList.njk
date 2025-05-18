@@ -9,19 +9,21 @@
             {{ catg.depth1 | safe }}
           </strong>
           <ul>
+            {% set flatIndex = 0 %}
             {% for d2 in catg.depth2List %}
               <li>
                 <p class="depth-2">{{ d2.title }}</p>
                 <ul>
                   {% for d3 in d2.depth3List %}
-                    <li class="depth-3">
-                      <a href="#" data-index="{{ loop.index0 }}">
+                    <li class="depth-3" data-group="{{ navIdx + 1 }}" data-index="{{ flatIndex }}">
+                      <a href="#">
                         {{ d3.title }}
                         {% for tpl in d3.tooltipList %}
                           {{ tpl|safe }}
                         {% endfor %}
                       </a>
                     </li>
+                    {% set flatIndex = flatIndex + 1 %}
                   {% endfor %}
                 </ul>
               </li>
@@ -30,26 +32,35 @@
         </div>
       </div>
       <div class="header-product-wrap">
-        {% set data = catg.depth2List[0].depth3List[0] %}
-        <ul class="product-img">
-          {% for img in data.itemList %}
-            <li>
-              <img data-img-index="{{ loop.index0 }}" src="/resources/fe/img/product/{{ img.fileName }}" alt="{{ img.alt }}"/>
-            </li>
+        {% set flatIndex = 0 %}
+        {% for d2 in catg.depth2List %}
+          {% for d3 in d2.depth3List %}
+           <div class="inner-header-product{% if flatIndex == 0 %} active{% endif %}" data-group="{{ navIdx + 1 }}" data-index="{{ flatIndex }}">
+              <ul class="product-img">
+                {% for img in d3.itemList %}
+                  <li>
+                    <img src="/resources/fe/img/product/{{ img.fileName }}" alt="{{ img.alt }}" />
+                  </li>
+                {% endfor %}
+              </ul>
+              <div class="product-info">
+                <strong class="product-name" data-name="{{ d3.title }}">
+                  {{ d3.title }}
+                  {% for tpl in d3.tooltipList %}
+                    {{ tpl|safe }}
+                  {% endfor %}
+                </strong>
+                {% for sub in d3.subs %}
+                  <p class="guide-sub --small" data-sub-index="{{ loop.index0 }}">{{ sub }}</p>
+                {% endfor %}
+              </div>
+            </div>
+           {% set flatIndex = flatIndex + 1 %}
           {% endfor %}
-        </ul>
-        <div class="product-info">
-          <strong class="product-name" data-name="{{ data.title }}">
-            {{ data.title }}
-            {% for tpl in data.tooltipList %}
-              {{ tpl|safe }}
-            {% endfor %}
-          </strong>
-          {% for sub in data.subs %}
-            <p class="guide-sub --small" data-sub-index="{{ loop.index0 }}">{{ sub }}</p>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
     </div>
   </nav>
 {% endmacro %}
+
+

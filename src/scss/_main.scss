@@ -719,7 +719,12 @@ header {
   padding-left: 32px;
   border-left: 1px solid $Line-line;
   border-radius: 6px;
-
+  .inner-header-product{
+    display:none;
+    &.active{
+      display:block;
+    }
+  }
   .product-img {
     display: flex;
     align-items: center;

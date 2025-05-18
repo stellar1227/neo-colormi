@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //gnb menu - header
   initGnb();
+  initSnb();
 
   // 간편주문 토글
   setupOptionToggle();
@@ -403,5 +404,30 @@ function initGnb() {
       wraps.forEach(w => w.style.display = 'none');
       links.forEach(a => a.parentElement.classList.remove('--active'));
     }
+  });
+}
+
+function initSnb() {
+  const navs = document.querySelectorAll('.all-menu-wrap');
+
+  navs.forEach(nav => {
+    const group = nav.getAttribute('data-menu-index');
+    const menuItems = nav.querySelectorAll(`.depth-3[data-group="${group}"]`);
+    const productBoxes = nav.querySelectorAll(`.inner-header-product[data-group="${group}"]`);
+
+    menuItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const index = item.getAttribute('data-index');
+
+        productBoxes.forEach(box => {
+          box.classList.remove('active');
+        });
+
+        const targetBox = nav.querySelector(`.inner-header-product[data-index="${index}"]`);
+        if (targetBox) {
+          targetBox.classList.add('active');
+        }
+      });
+    });
   });
 }

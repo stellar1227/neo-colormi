@@ -1,0 +1,41 @@
+{% set slidesReview = [
+  { imgUrl: "A001_thum_1.jpg", alt: "포토리뷰 이미지" },
+  { imgUrl: "A001_thum_2.jpg", alt: "포토리뷰 이미지" },
+  { imgUrl: "C019_thum_1.jpg", alt: "포토리뷰 이미지" },
+  { imgUrl: "C019_thum_2.jpg", alt: "포토리뷰 이미지" },
+  { imgUrl: "C019_thum_3.jpg", alt: "포토리뷰 이미지" }
+] %}
+
+<div class="swiper product-review">
+  <div class="swiper-wrapper">
+    {% for slide in slidesReview %}
+    <div class="swiper-slide">
+      <div class="item">
+        <a href="">
+          <p class="review-img">
+            <img src="/resources/fe/img/product/{{ slide.imgUrl }}" alt="{{ slide.alt }}"/>
+          </p>
+          <div class="review-text">
+            <div class="rating-wrap --small">
+              <p class="rating-container">
+                <em class="rating-num" style="width: 60%;"></em>
+              </p>
+            </div>
+            <div class="product-text">
+              <div class="guide-basic">
+                제목
+              </div>
+              <div class="guide-sub --small">
+                상세내용
+              </div>
+            </div>
+            <p class="review-date">
+              <span>05.01.01</span>
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

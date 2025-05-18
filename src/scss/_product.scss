@@ -48,6 +48,8 @@
 .title-wrap {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
 
   &:not(:first-of-type) {
     margin: 40px 0 16px;
@@ -293,7 +295,7 @@
   }
 }
 
-$sprite: '../resources/fe/img/icon/icon-star.png';
+$sprite: '/resources/fe/img/icon/icon-star.png';
 
 // 프레임 높이 × 3(0=off, 1=yellow, 2=black)
 %star-frame {
@@ -504,14 +506,14 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
         &:first-child {
 
           [class^=btn-] {
-            @include sprite-icons(92, 16px);
+            @include sprite-icons(91, 16px);
           }
         }
 
         &:last-child {
 
           [class^=btn-] {
-            @include sprite-icons(93, 16px);
+            @include sprite-icons(92, 16px);
           }
         }
 
@@ -602,9 +604,14 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
         }
       }
 
-      &.--end {
+      &.--between {
         display: flex;
         justify-content: space-between;
+      }
+
+      &.--right {
+        display: flex;
+        justify-content: flex-end;
       }
     }
 
@@ -660,6 +667,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
     z-index: 10;
 
     .product-inner {
+      width: 1200px;
       gap: 0 20px;
       margin: 0 auto;
       padding: 20px 0;
@@ -934,22 +942,22 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
   }
 }
 
+.required {
+  &::after {
+    content: '*';
+    display: inline-flex;
+    color: $color-text-primary;
+    @include font-body-small;
+    line-height: 12px;
+    vertical-align: 2px;
+  }
+}
+
 .product-order {
   margin-bottom: 40px;
 
   &:last-of-type {
     margin-bottom: 0;
-  }
-
-  .required {
-    &::after {
-      content: '*';
-      display: inline-flex;
-      color: $color-text-primary;
-      @include font-body-small;
-      line-height: 12px;
-      vertical-align: 2px;
-    }
   }
 
   .desc-guide {
@@ -989,6 +997,15 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
         padding: 1px 2px 0 0;
       }
     }
+
+    >.required {
+      display: inline-flex;
+
+      &::after {
+        order: -1;
+        padding: 1px 2px 0 0;
+      }
+    }
   }
 
   .product-option {
@@ -1014,12 +1031,13 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
       color: $color-text-basic;
 
       >dt {
+        display: inline-flex;
         padding: 9px 0;
         @include font-body-small;
 
         &.required {
           &::after {
-            float: left;
+            order: -1;
             padding: 3px 4px 0 0;
           }
         }
@@ -1055,11 +1073,21 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
             }
 
             .form-wrap {
+              position: relative;
               flex-wrap: wrap;
               gap: 8px 20px;
 
               .checkbox-wrap+[class$=-wrap] {
                 margin: 0;
+              }
+
+              .time {
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                transform: translateY(-50%);
+                @include font-body-small;
+                color: $color-text-primary;
               }
             }
 
@@ -1067,6 +1095,10 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
 
               span {
                 width: 84px;
+
+                &:only-child {
+                  padding: 0;
+                }
               }
             }
 
@@ -1209,6 +1241,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
     .row-span-3 {
       grid-row-end: span 3;
     }
+
     .row-span-4 {
       grid-row-end: span 4;
     }
@@ -1415,6 +1448,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
       dt {
         @include font-body-xsmall;
         color: $color-text-subcolor-deep;
+        white-space: nowrap;
 
         &.total-sum {
           font-weight: $font-weight-semibold;
@@ -1432,6 +1466,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
         @include font-body-xsmall-bold;
         color: $color-text-basic;
         line-height: 20px;
+        white-space: nowrap;
 
         strong {
           @include font-body-medium-bold;
@@ -1461,7 +1496,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
       gap: 0 20px;
 
       .product-price {
-        display: flex;
+        display: inline-flex;
         align-items: center;
 
         dt {
@@ -1972,7 +2007,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
               &::before {
                 width: 85px;
                 height: 100px;
-                background-image: url('../resources/fe/img/icon/img-sprite.png');
+                background-image: url('/resources/fe/img/icon/img-sprite.png');
                 background-repeat: no-repeat;
                 background-size: 1002px auto;
                 background-position: -130px -194px;
@@ -1984,7 +2019,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
               &::before {
                 width: 87px;
                 height: 100px;
-                background-image: url('../resources/fe/img/icon/img-sprite.png');
+                background-image: url('/resources/fe/img/icon/img-sprite.png');
                 background-repeat: no-repeat;
                 background-size: 1002px auto;
                 background-position: -215px -194px;
@@ -1996,7 +2031,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
               &::before {
                 width: 100px;
                 height: 108px;
-                background-image: url('../resources/fe/img/icon/img-sprite.png');
+                background-image: url('/resources/fe/img/icon/img-sprite.png');
                 background-repeat: no-repeat;
                 background-size: 1002px auto;
                 background-position: -30px -194px;
@@ -2048,21 +2083,21 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
             position: relative;
             @include sprite-icons(58, 16px, after);
 
-            &::after {
-              position: absolute;
-              top: 3px;
-              left: -1px;
-            }
-
             &::before {
               content: '';
               display: inline-block;
               width: 13px;
               height: 13px;
               margin: 0 4px 0 0;
-              background: $color-border-gray-dark url('') no-repeat center center/6.5px auto;
+              background-color: $color-border-gray-dark;
               vertical-align: -2px;
               border-radius: 50%;
+            }
+
+            &::after {
+              position: absolute;
+              top: 4px;
+              left: -1px;
             }
           }
         }
@@ -2253,6 +2288,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 20px 0;
 
   &:after {
     content: '';
@@ -2286,7 +2322,7 @@ $sprite: '../resources/fe/img/icon/icon-star.png';
       flex: 0;
 
       >input {
-        width: 415px;
+        max-width: 415px;
       }
     }
   }

@@ -14,101 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //loading lottie
   loadingLottie();
 
-  // swiper
-  // main-banner
-  const mainBannerSwiper = new Swiper('.main-banner', {
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'fraction',
-      renderFraction(currentClass, totalClass) {
-        const realSlides = Array.from(this.slides)
-          .filter(slide => !slide.classList.contains('swiper-slide-duplicate'));
-        const realTotal = realSlides.length;
-        const current = this.realIndex + 1;
-        return `<span class="${currentClass}">${current}</span>` +
-          `<span class="${totalClass}">${realTotal}</span>`;
-      },
-    },
-  });
-
-  // printing-list
-  let printingListSwiper = null;
-
-  function initPrintingListSwiper() {
-    if (window.innerWidth > 565 && !printingListSwiper) {
-      printingListSwiper = new Swiper('.main-wrap .printing-list', {
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        autoplay: false,
-        slidesPerView: 6,
-        slidesPerGroup: 6,
-        loopFillGroupWithBlank: true,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true,
-        },
-      });
-    } else if (window.innerWidth <= 565 && printingListSwiper) {
-      printingListSwiper.destroy(true, true);
-      printingListSwiper = null;
-    }
-  }
-  initPrintingListSwiper();
-  window.addEventListener('resize', initPrintingListSwiper);
-
-  // product-review
-  const productReviewSwiper = new Swiper('.main-wrap .product-review', {
-    loop: false,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: true,
-    },
-    speed: 3000,
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
-  });
-
-  // 기본 speed 값 저장
-  const defaultSpeed = productReviewSwiper.params.speed;
-
-  // product-review hover 시 멈춤/재시작 및 speed 초기화
-  document.querySelectorAll('.main-wrap .product-review .item a').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      productReviewSwiper.autoplay.stop();
-      productReviewSwiper.params.speed = defaultSpeed;
-      productReviewSwiper.update();
-    });
-    item.addEventListener('mouseleave', () => {
-      productReviewSwiper.params.speed = defaultSpeed;
-      productReviewSwiper.update();
-      productReviewSwiper.autoplay.start();
-    });
-  });
-
   //searchMenu Open, Close - header
   const searchMenu = document.querySelector('#searchWrap');
   const searchBtn = document.querySelector('#btnSearch');
@@ -140,28 +45,173 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 간편주문 토글
   setupOptionToggle();
-  
+
+  // swiper - main-banner / product-review / blog-list
+  const mainBannerSwiper = document.querySelector(".main-wrap .main-banner");
+  if (mainBannerSwiper) {
+    initMainBannerSwiper(mainBannerSwiper);
+  }
+  const productReviewSwiper = document.querySelector(".main-wrap .main-banner");
+  if (productReviewSwiper) {
+    initProductReviewSwiper(productReviewSwiper);
+  }
+  const blogListSwiper = document.querySelector(".main-wrap .main-banner");
+  if (blogListSwiper) {
+    initBlogListSwiper(blogListSwiper);
+    window.addEventListener('resize', initBlogListSwiper);
+  }
+
 });
 
+// swiper - main-banner
+function initMainBannerSwiper() {
+  new Swiper('.main-wrap .main-banner', {
+    loop: true,
+    navigation: {
+      prevEl: '.visual-prev',
+      nextEl: '.visual-next'
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+      renderFraction: function (currentClass, totalClass) {
+        var allSlides = Array.prototype.slice.call(this.slides);
+        var realSlides = allSlides.filter(function (slide) {
+          return !slide.classList.contains('swiper-slide-duplicate');
+        });
+        var realTotal = realSlides.length;
+        var current = this.realIndex + 1;
+        return '<span class="' + currentClass + '">' + current + '</span>' +
+          '<span class="' + totalClass + '">' + realTotal + '</span>';
+      }
+    }
+  });
+}
+
+// swiper - product-review
+function initProductReviewSwiper() {
+  var container = document.querySelector('.main-wrap .product-review');
+  var wrapper = container.querySelector('.swiper-wrapper');
+  var slides = wrapper.querySelectorAll('.swiper-slide');
+  var origCount = slides.length;
+
+  if (origCount > 0 && !wrapper.dataset.duplicated) {
+    wrapper.innerHTML += wrapper.innerHTML;
+    wrapper.dataset.duplicated = 'true';
+  }
+  var swiper = new Swiper(container, {
+    loop: true,
+    freeMode: true,
+    freeModeMomentum: false,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
+    speed: 2000,
+    loopedSlides: wrapper.querySelectorAll('.swiper-slide').length,
+    slidesPerView: 'auto'
+  });
+  var defaultSpeed = swiper.params.speed;
+
+  var items = document.querySelectorAll('.main-wrap .product-review .item a');
+  for (var i = 0; i < items.length; i++) {
+    (function (item) {
+      item.addEventListener('mouseenter', function () {
+        swiper.autoplay.stop();
+        swiper.params.speed = defaultSpeed;
+        swiper.update();
+      });
+      item.addEventListener('mouseleave', function () {
+        swiper.params.speed = defaultSpeed;
+        swiper.update();
+        swiper.autoplay.start();
+      });
+    })(items[i]);
+  }
+}
+
+// swiper - blog-list
+var blogListSwiper = null;
+
+function padBlankSlides() {
+  const wrapper = document.querySelector('.main-wrap .blog-list .swiper-wrapper');
+  if (!wrapper) return;
+
+  const realSlides = wrapper.querySelectorAll('.swiper-slide:not(.blank-slide)');
+  const perGroup = 6;
+  const remainder = realSlides.length % perGroup;
+
+  if (remainder !== 0) {
+    const blanksNeeded = perGroup - remainder;
+    for (let i = 0; i < blanksNeeded; i++) {
+      const blankSlide = document.createElement('div');
+      blankSlide.className = 'swiper-slide blank-slide';
+      wrapper.appendChild(blankSlide);
+    }
+  }
+}
+
+function initBlogListSwiper() {
+  var selector = '.main-wrap .blog-list';
+  if (window.innerWidth > 565 && !blogListSwiper) {
+    padBlankSlides();
+    blogListSwiper = new Swiper(selector, {
+      loop: false,
+      navigation: {
+        prevEl: '.print-prev',
+        nextEl: '.print-next'
+      },
+      slidesPerView: 6,
+      slidesPerGroup: 6,
+      spaceBetween: 20,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+  } else if (window.innerWidth <= 565 && blogListSwiper) {
+    blogListSwiper.destroy(true, true);
+    blogListSwiper = null;
+  }
+}
+
+// 상품페이지 간편주문 토글
 function setupOptionToggle() {
   const toggleBoxes = document.querySelectorAll('[data-option="--option-toggle"] input[type="checkbox"]');
   const defaultOptions = document.querySelectorAll('[data-option-target="--option-default"]');
   const simpleOptions = document.querySelectorAll('[data-option-target="--option-simple"]');
+  const radioOptions = document.querySelectorAll('[data-option-target="--option-radio"]');
 
   const updateAll = (checked) => {
-    defaultOptions.forEach(el => el.classList.toggle('blind', checked));
-    simpleOptions.forEach(el => el.classList.toggle('blind', !checked));
+    defaultOptions.forEach(el => {
+      el.style.display = checked ? 'none' : '';
+    });
+    simpleOptions.forEach(el => {
+      el.style.display = checked ? '' : 'none';
+    });
+    radioOptions.forEach(el => {
+      el.classList.toggle('img-option', !checked);
+    });
   };
 
   toggleBoxes.forEach(checkbox => {
     updateAll(checkbox.checked);
-
     checkbox.addEventListener('change', () => {
       updateAll(checkbox.checked);
     });
   });
 }
 
+// 상품페이지 갤러리
 function productImages(target) {
   const thumbNailGallery = target;
   const imgItemWrap = thumbNailGallery.querySelector(".img-item-wrap");
@@ -205,6 +255,7 @@ function productImages(target) {
   });
 }
 
+// 상픔페이지 스티키 정보
 function productStickyInfo(target) {
   if (!(target instanceof HTMLElement)) return;
 
@@ -249,11 +300,12 @@ function productStickyInfo(target) {
   });
 }
 
+// loading lottie
 function loadingLottie() {
   const ACTIVE_CLASS = '--active';
 
   const animConfig = {
-    loading: './resources/fe/img/assets/loading.json',
+    loading: '/resources/fe/img/assets/loading.json',
   };
 
   const animDataCache = new Map();
@@ -323,6 +375,7 @@ function loadingLottie() {
   });
 }
 
+// gnb menu - header
 function initGnb() {
   const links = document.querySelectorAll('.gnb .depth-1 a[data-menu-index]');
   const wraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');

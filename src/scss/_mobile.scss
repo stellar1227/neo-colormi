@@ -9,8 +9,7 @@
   .header-inner,
   .all-menu-wrap,
   .footer-wrap,
-  .footer-link,
-  .product-inner {
+  .footer-link {
     width: 100%;
   }
 
@@ -108,6 +107,16 @@
       .util-menu-wrap {
         display: none;
       }
+    }
+  }
+
+  .search-wrap {
+    .search-inner {
+      min-width: auto;
+    }
+
+    .search-content {
+      width: 100%;
     }
   }
 
@@ -284,20 +293,26 @@
       }
     }
 
-    .printing-list-wrap {
+    .blog-list-wrap {
       max-width: 100%;
       margin-bottom: 40px;
 
       .swiper {
         overflow-x: auto;
         scrollbar-width: none;
+        padding: 0 20px;
 
         .swiper-wrapper {
           gap: 12px;
+          width: max-content;
         }
 
         .swiper-slide {
           width: 125px;
+
+          &.blank-slide {
+            display: none;
+          }
         }
       }
 
@@ -314,13 +329,14 @@
     }
 
     .util-menu-list-wrap {
-      width: 100%;
       margin-top: 24px;
       padding: 4px 20px;
+      background: transparent;
 
       .util-menu-list {
         gap: 20px;
         justify-content: space-between;
+        width: 100%;
         border-left: none;
 
         .item {
@@ -445,9 +461,14 @@
 
   .product-order-wrap {
     flex-direction: column;
+    margin-bottom: 20px;
 
     .product-order {
-      margin-bottom: inherit;
+      margin-bottom: 20px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -455,17 +476,20 @@
     flex-direction: column;
 
     .product-order-price {
-      display: grid;
-      grid-template-columns: 1fr 24px 1fr;
-      place-items: center;
+      flex-wrap: wrap;
 
-      .product-price:last-of-type {
-        grid-column: 2/4;
+      .product-price {}
+
+      .icon-sum+.product-price {
+        flex: 1;
+        justify-content: flex-end;
       }
     }
   }
 
   .product-order {
+    margin-bottom: 20px;
+
     .product-option {
 
       .row-span-2,
@@ -480,7 +504,7 @@
       }
 
       .column-item {
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 1fr;
 
         >dd {
           .guide-wrap {
@@ -716,18 +740,8 @@
   .header-inner,
   .all-menu-wrap,
   .footer-wrap,
-  .footer-link,
-  .product-inner {
+  .footer-link {
     width: 1200px;
     margin: 0 auto;
   }
-
-  // #container,
-  // .top-banner,
-  // .header-top,
-  // .header-inner,
-  // .footer-link,
-  // .footer-wrap {
-  //   margin: 0 auto;
-  // }
 }

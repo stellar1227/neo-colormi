@@ -225,7 +225,7 @@ h5 {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-image: url('../resources/fe/img/icon/img-sprite.png');
+    background-image: url('/resources/fe/img/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 1002px auto;
     background-position: 0 -194px;
@@ -356,7 +356,7 @@ h5 {
 
     input {
       &:not(:placeholder-shown) {
-        +.util {
+        ~.util {
           .btn-del {
             display: inline-flex;
           }
@@ -419,16 +419,23 @@ h5 {
   &.--error,
   &.--success {
     .description {
+      position: relative;
+      display: inline-flex;
+
       &::before {
-        content: '!!'; //background-image 대신 넣은거임. 나중에 삭제
+        content: '';
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin-right: 4px;
-        text-align: center;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100% 100%;
+        width: 13px;
+        height: 13px;
+        margin: 3px 4px 0 0;
+        border-radius: 50%;
+        vertical-align: 2px;
+      }
+
+      &::after {
+        position: absolute;
+        top: 1px;
+        left: -1px;
       }
     }
   }
@@ -443,9 +450,10 @@ h5 {
 
     .description {
       color: $color-text-danger;
+      @include sprite-icons(40, 16px, after);
 
       &::before {
-        background-image: url('');
+        background-color: $color-text-danger;
       }
     }
   }
@@ -460,9 +468,10 @@ h5 {
 
     .description {
       color: $color-text-success;
+      @include sprite-icons(58, 16px, after);
 
       &::before {
-        background-image: url('');
+        background-color: $color-text-success;
       }
     }
   }
@@ -606,15 +615,15 @@ h5 {
         }
 
         &:focus~.search-bg,
-        // &:not(:placeholder-shown)~.search-bg,
         &:hover~.search-bg {
           border: 2px solid transparent;
           background-image: linear-gradient($color-background-white, $color-background-white), linear-gradient(180deg, $color-border-primary-lighter 0%, #F4D360 42%, $color-border-primary 100%);
+        }
 
-          ~.util .btn-search {
-            &::before {
-              background: svgIcon(search, '24A3FF') no-repeat center center/24px 24px;
-            }
+        &:focus~.util .btn-search,
+        &:hover~.util .btn-search {
+          &::before {
+            background-image: svgIcon(search, '24A3FF');
           }
         }
       }
@@ -694,6 +703,8 @@ h5 {
     color: $color-text-basic;
 
     &.util-option {
+      justify-content: center;
+
       input[type='text'] {
         width: 280px;
       }
@@ -921,7 +932,6 @@ h5 {
   }
 }
 
-
 // checkbox
 .checkbox-wrap {
   .checkbox {
@@ -1082,11 +1092,15 @@ h5 {
         }
       }
     }
+
+    .radio-img {
+      display: none;
+    }
   }
 
   &.img-option {
-    display: flex !important;
-    align-items: self-end !important;
+    display: flex;
+    align-items: self-end;
     justify-content: space-between;
     padding: 0 24px;
 
@@ -1126,11 +1140,15 @@ h5 {
         }
       }
 
+      .radio-icon {
+        display: none;
+      }
+
       .radio-img {
         position: relative;
         overflow: hidden;
         display: inline-block;
-        background: url('../resources/fe/img/img/img-radio-option.png') no-repeat center bottom/cover;
+        background: url('/resources/fe/img/img/img-radio-option.png') no-repeat center bottom/cover;
 
         &::after {
           content: '';
@@ -1155,7 +1173,7 @@ h5 {
         transform: translate(-50%, -50%);
       }
 
-      input:checked+.radio-img {
+      input:checked~.radio-img {
         &::after {
           border-color: $color-border-primary;
         }
@@ -1301,8 +1319,15 @@ h5 {
 
     span {
       position: relative;
-      padding-right: 16px !important;
-      @include line-icon(next, 5px);
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: svgIcon(arrow-right, '4c4c4c') no-repeat center center/16px 16px;
+        vertical-align: -3px;
+      }
     }
   }
 
@@ -1323,7 +1348,7 @@ h5 {
 
         &::before,
         &::after {
-          background: $color-background-white;
+          background-image: svgIcon(arrow-right, 'F4F5F6');
         }
       }
     }
@@ -1332,40 +1357,40 @@ h5 {
 
 .btn-text {
   @include button;
-  height: 15px;
+  height: inherit;
   border: 0;
   box-shadow: none;
   color: $color-text-subcolor;
   border-radius: 0;
-  padding: 0 16px 0 0;
+  padding: 0;
   @include font-body-small;
   line-height: 16px;
-  @include line-icon(next, 5px);
 
-  &::before,
   &::after {
-    background: $Line-line-2;
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: svgIcon(arrow-right, '969696') no-repeat center center/16px 16px;
+    vertical-align: -3px;
   }
 
   &.--small {
-    height: 13px;
+    height: inherit;
   }
 
   &.--large {
-    height: 17px;
-    padding-right: 24px;
+    height: inherit;
     @include font-body-medium;
     line-height: 20px;
 
-    &::before,
     &::after {
-      top: calc(50% - 2.4px);
-      right: 9.5px;
-      height: 7px;
-    }
-
-    &::after {
-      top: calc(50% + 2.4px);
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-size: 24px 24px;
+      vertical-align: -3px;
     }
   }
 
@@ -1494,7 +1519,7 @@ h5 {
     width: 63px;
     height: 72px;
     margin-bottom: 4px;
-    background-image: url('../resources/fe/img/icon/img-sprite.png');
+    background-image: url('/resources/fe/img/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 1002px auto;
     background-position: -202px 0;
@@ -1513,40 +1538,40 @@ h5 {
 .alert-danger {
   @include alert;
   background: $color-border-danger-light;
-  @include sprite-icons(85, 24px);
+  @include sprite-icons(84, 24px);
 
   .title {
     color: #BD2C0F;
   }
 }
 
-.alert-warning {
+.alert-information {
   @include alert;
-  background: $color-border-warning-light;
-  @include sprite-icons(88, 24px);
+  background: $color-border-secondary-light;
+  @include sprite-icons(85, 24px);
 
   .title {
-    color: #8A5C00;
+    color: #096AB3;
   }
 }
 
 .alert-success {
   @include alert;
   background: $color-border-success-light;
-  @include sprite-icons(87, 24px);
+  @include sprite-icons(86, 24px);
 
   .title {
     color: #267337;
   }
 }
 
-.alert-information {
+.alert-warning {
   @include alert;
-  background: $color-border-secondary-light;
-  @include sprite-icons(86, 24px);
+  background: $color-border-warning-light;
+  @include sprite-icons(87, 24px);
 
   .title {
-    color: #096AB3;
+    color: #8A5C00;
   }
 }
 
@@ -1802,7 +1827,7 @@ h5 {
 
   &.gray-light-box {
     @include desc-box;
-    padding: 20px 0px;
+    padding: 20px;
     background: $color-border-gray-light;
 
     &.--receipt {
@@ -1879,8 +1904,9 @@ h5 {
     scrollbar-width: none;
   }
 
-  +.checkbox-wrap {
-    margin-top: 20px;
+  ~.checkbox-wrap {
+    display: flex;
+    margin: 20px 0 0 0;
   }
 
   &.--icon-box {
@@ -1920,6 +1946,7 @@ h5 {
 
   .item-wrap {
     display: flex;
+    gap: 8px;
 
     .item {
 
@@ -1949,30 +1976,34 @@ h5 {
         }
       }
 
-      &.prev {
-
-        a,
-        span {
+      &.prev,
+      &.next {
+        a {
           position: relative;
-          padding: 12px 12px 12px 22px;
-          @include line-icon(prev, 5px);
+          padding: 12px;
+        }
+      }
 
-          &::before,
-          &::after {
-            left: 9.5px;
+      &.prev {
+        a {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: svgIcon(arrow-left, '4C4C4C') no-repeat center center/16px 16px;
           }
         }
       }
 
       &.next {
         a {
-          position: relative;
-          padding: 12px 22px 12px 12px;
-          @include line-icon(next, 5px);
-
-          &::before,
           &::after {
-            right: 9.5px;
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: svgIcon(arrow-right, '4C4C4C') no-repeat center center/16px 16px;
           }
         }
       }
@@ -1983,10 +2014,21 @@ h5 {
         span {
           background: $color-background-white;
           color: $color-text-subcolor;
+        }
 
-          &::before,
-          &::after {
-            background: $color-text-subcolor;
+        &.prev {
+          a {
+            &::before {
+              background: svgIcon(arrow-left, 'A5A5A5') no-repeat center center/16px 16px;
+            }
+          }
+        }
+
+        &.next {
+          a {
+            &::after {
+              background: svgIcon(arrow-right, 'A5A5A5') no-repeat center center/16px 16px;
+            }
           }
         }
       }
@@ -1997,10 +2039,21 @@ h5 {
         span {
           background: $color-border-gray-dark;
           color: $color-text-basic-inverse;
+        }
 
-          &::before,
-          &::after {
-            background: $color-text-basic-inverse;
+        &.prev {
+          a {
+            &::before {
+              background: svgIcon(arrow-left, 'ffffff') no-repeat center center/16px 16px;
+            }
+          }
+        }
+
+        &.next {
+          a {
+            &::after {
+              background: svgIcon(arrow-right, 'ffffff') no-repeat center center/16px 16px;
+            }
           }
         }
       }
@@ -2027,15 +2080,15 @@ h5 {
   }
 
   &.--new {
-    @include sprite-icons(81, 16px);
+    @include sprite-icons(76, 16px);
   }
 
   &.--discount-1 {
-    @include sprite-icons(82, 16px);
+    @include sprite-icons(81, 16px);
   }
 
   &.--discount-2 {
-    @include sprite-icons(83, 16px);
+    @include sprite-icons(82, 16px);
   }
 
   &.--best {
@@ -2043,7 +2096,7 @@ h5 {
   }
 
   &.--contact {
-    @include sprite-icons(84, 16px);
+    @include sprite-icons(83, 16px);
   }
 
   &.--info {
@@ -2180,15 +2233,15 @@ button[type='button'] {
       }
 
       &.--naver {
-        @include sprite-icons(89, 48px);
+        @include sprite-icons(88, 48px);
       }
 
       &.--kakao {
-        @include sprite-icons(90, 48px);
+        @include sprite-icons(89, 48px);
       }
 
       &.--google {
-        @include sprite-icons(91, 48px);
+        @include sprite-icons(90, 48px);
       }
     }
   }
@@ -2231,7 +2284,7 @@ button[type='button'] {
 
         &.--kakao {
           &::after {
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: 0 -407px;
@@ -2240,7 +2293,7 @@ button[type='button'] {
 
         &.--facebook {
           &::after {
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -30px -407px;
@@ -2249,7 +2302,7 @@ button[type='button'] {
 
         &.--instagram {
           &::after {
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -60px -407px;
@@ -2260,7 +2313,7 @@ button[type='button'] {
           &::after {
             width: 33px;
             height: 30px;
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -90px -407px;
@@ -2351,5 +2404,81 @@ button[type='button'] {
 
   &.--xxlarge {
     @include sprite-icons-size(64px);
+  }
+}
+
+.icon-check {
+  position: relative;
+  display: inline-flex;
+  margin: 0 4px 0 0;
+  @include sprite-icons(58, 16px, after);
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: $color-border-gray-dark;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.--primary {
+    @include sprite-icons(58, 18px, after);
+
+    &::before {
+      width: 16px;
+      height: 16px;
+      border: 1px solid $color-border-inverse;
+      background-color: transparent;
+    }
+  }
+}
+
+.terms-box {
+  @include font-body-xsmall;
+  color: $color-text-subcolor-deep;
+
+  p:not(:first-child) {
+    margin-top: 16px;
+  }
+
+  .title:not(:first-child),
+  .block {
+    margin-top: 32px;
+  }
+
+  >ul {
+    margin-top: 16px;
+  }
+
+  .terms-title {
+    margin-bottom: 32px;
+    @include font-body-small-bold;
+    color: $color-text-basic;
+  }
+
+  .title {
+    font-weight: $font-weight-semibold;
+    color: $color-text-basic;
+
+    &.--dot {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin: 0 8px 0 0;
+        background: $color-text-basic;
+        border-radius: 50%;
+        vertical-align: 2px;
+      }
+    }
   }
 }

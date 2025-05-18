@@ -58,7 +58,7 @@
       </div>
       {% set catg004 = menuData.menuData004[0].categories[0] %}
       <div class="category">
-        <strong class="depth-1 focus">{{ catg004.depth1 | safe }}</strong>
+        <strong class="depth-1">{{ catg004.depth1 | safe }}</strong>
         <ul>
           <li>
             {% for idx in range(0, 3) %}

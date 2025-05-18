@@ -2,34 +2,6 @@
 @use 'variables' as *;
 
 // header
-.top-banner-wrap {
-  position: relative;
-  width: 100%;
-
-  .top-banner {
-    position: relative;
-    height: 65px;
-
-    .top-banner-link {
-      display: block;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 65px;
-        object-fit: contain;
-      }
-    }
-  }
-
-  .top-banner-close {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-  }
-}
-
 .util-menu-wrap {
   position: relative;
 
@@ -236,7 +208,7 @@
           &::before {
             width: 261px;
             height: 194px;
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -265px 0;
@@ -247,7 +219,7 @@
           &::before {
             width: 172px;
             height: 133px;
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -526px 0;
@@ -859,7 +831,7 @@ footer {
               display: inline-block;
               width: 24px;
               height: 24px;
-              background-image: url('../resources/fe/img/icon/img-sprite.png');
+              background-image: url('/resources/fe/img/icon/img-sprite.png');
               background-repeat: no-repeat;
               background-size: 1002px auto;
               background-position: -72px 0;
@@ -874,7 +846,7 @@ footer {
               display: inline-block;
               width: 24px;
               height: 24px;
-              background-image: url('../resources/fe/img/icon/img-sprite.png');
+              background-image: url('/resources/fe/img/icon/img-sprite.png');
               background-repeat: no-repeat;
               background-size: 1002px auto;
               background-position: -96px 0;
@@ -1005,7 +977,7 @@ footer {
             width: 42px;
             height: 29px;
             margin-right: 20px;
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -120px 0;
@@ -1014,7 +986,7 @@ footer {
           .btn-text {
             height: 24px;
             margin-left: auto;
-            padding: 4px 20px 4px 8px;
+            padding: 4px 8px;
             border-radius: 4px;
             border: 1px solid $color-border-gray-light;
             background: $color-alpha-base25;
@@ -1022,11 +994,15 @@ footer {
             font-weight: 500;
             color: $color-text-subcolor-inverse;
 
-            &::before,
             &::after {
-              right: 9.5px;
-              background: $color-text-subcolor-inverse;
+              background-image: svgIcon(arrow-right, 'f4f5f6');
             }
+
+            // &::before,
+            // &::after {
+            //   right: 9.5px;
+            //   background: $color-text-subcolor-inverse;
+            // }
           }
         }
 
@@ -1039,7 +1015,7 @@ footer {
             width: 40px;
             height: 24px;
             margin-right: 20px;
-            background-image: url('../resources/fe/img/icon/img-sprite.png');
+            background-image: url('/resources/fe/img/icon/img-sprite.png');
             background-repeat: no-repeat;
             background-size: 1002px auto;
             background-position: -162px 0;
@@ -1138,7 +1114,6 @@ footer {
   width: 100%;
 
   .main-banner-wrap {
-    max-width: 2560px;
     min-width: 1200px;
     margin-top: 20px;
 
@@ -1377,6 +1352,7 @@ footer {
                 margin-top: 0;
                 @include ellipsis;
                 -webkit-line-clamp: 1;
+                line-clamp: 1;
 
                 +[class^=guide-] {
                   margin-top: 8px;
@@ -1393,7 +1369,7 @@ footer {
     }
   }
 
-  .title-printing-wrap {
+  .title-blog-wrap {
     text-align: center;
 
     &::before {
@@ -1402,14 +1378,14 @@ footer {
       width: 72px;
       height: 44px;
       margin-bottom: 4px;
-      background-image: url(../resources/fe/img/icon/img-sprite.png);
+      background-image: url(/resources/fe/img/icon/img-sprite.png);
       background-repeat: no-repeat;
       background-size: 1002px auto;
       background-position: 0 0;
     }
   }
 
-  .printing-list-wrap {
+  .blog-list-wrap {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
@@ -1417,7 +1393,6 @@ footer {
     .swiper {
       .swiper-wrapper {
         display: flex;
-        gap: 20px;
       }
 
       .swiper-slide {
@@ -1451,6 +1426,10 @@ footer {
               object-fit: cover;
             }
           }
+        }
+
+        &.blank-slide {
+          visibility: hidden;
         }
       }
     }
@@ -1487,7 +1466,8 @@ footer {
       height: 32px;
       margin-top: 0;
       border-radius: 4px;
-      background: $color-alpha-inverse25;
+      background: $color-alpha-inverse75;
+      z-index: 1;
 
       &::after {
         content: '';
@@ -1509,46 +1489,21 @@ footer {
   }
 
   .util-menu-list-wrap {
-    width: 1200px;
-    margin: 0 auto;
     padding: 32px 0;
+    background: $color-background-gray-subtler;
 
     .util-menu-list {
       display: flex;
       flex-wrap: nowrap;
       gap: 0;
+      width: 1200px;
+      margin: 0 auto;
       border-left: 1px solid $Line-line;
 
       .item {
         flex: 1;
         padding: 0 47.5px;
         border-right: 1px solid $Line-line;
-
-
-        &.--quote a::before {
-          background-image: svgIcon(util-quote, '737373');
-          background-size: 64px 64px;
-        }
-
-        &.--guide a::before {
-          background-image: svgIcon(util-guide, '737373');
-          background-size: 62px 63px;
-        }
-
-        &.--delivery a::before {
-          background-image: svgIcon(util-delivery, '737373');
-          background-size: 58px 59px;
-        }
-
-        &.--faq a::before {
-          background-image: svgIcon(util-faq, '737373');
-          background-size: 58px 58px;
-        }
-
-        &.--location a::before {
-          background-image: svgIcon(util-location, '737373');
-          background-size: 60px 64px;
-        }
 
         >a {
           display: inline-flex;
@@ -1569,6 +1524,68 @@ footer {
           span {
             @include font-body-small;
             font-weight: $font-weight-medium;
+            color: $color-text-subcolor-deep;
+          }
+
+          &:hover {
+            span {
+              color: $color-text-basic;
+            }
+          }
+        }
+
+        &.--quote a {
+          &::before {
+            background-image: svgIcon(util-quote);
+            background-size: 64px 64px;
+          }
+
+          &:hover::before {
+            background-image: svgIcon(util-quote, '', '', 'ea4279', '4c4c4c');
+          }
+        }
+
+        &.--guide a {
+          &::before {
+            background-image: svgIcon(util-guide);
+            background-size: 62px 63px;
+          }
+
+          &:hover::before {
+            background-image: svgIcon(util-guide, '', '', 'ea4279', '4c4c4c');
+          }
+        }
+
+        &.--delivery a {
+          &::before {
+            background-image: svgIcon(util-delivery);
+            background-size: 58px 59px;
+          }
+
+          &:hover::before {
+            background-image: svgIcon(util-delivery, '', '', 'ea4279', '4c4c4c');
+          }
+        }
+
+        &.--faq a {
+          &::before {
+            background-image: svgIcon(util-faq);
+            background-size: 58px 58px;
+          }
+
+          &:hover::before {
+            background-image: svgIcon(util-faq, '', '', 'ea4279', '4c4c4c');
+          }
+        }
+
+        &.--location a {
+          &::before {
+            background-image: svgIcon(util-location, '737373', 'ea4279');
+            background-size: 60px 64px;
+          }
+
+          &:hover::before {
+            background-image: svgIcon(util-location, '', '', 'ea4279', '4c4c4c');
           }
         }
       }

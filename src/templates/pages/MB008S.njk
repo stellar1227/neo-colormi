@@ -1,179 +1,38 @@
 {% extends "layouts/base.njk" %}
 {% set title = "회원정보수정" %}
 {% block content %}
+  {% include "components/sideNavMypage.njk" %}
   <div class="content">
     <div class="page-title">
       <h3>회원정보수정</h3>
     </div>
-    <section class="content-box">
-      <div class="product-order">
-        <div class="title-wrap">
-          <h5 class="required">회원정보</h5>
-          <strong class="desc-guide required">
-            표시는 필수입력 항목 이오니 반드시 입력해 주세요. 비밀번호를 수정 하시려면 비밀번호와 비밀번호 확인을 입력 하시기 바랍니다.
-          </strong>
-        </div>
-        <div class="product-option columns-4">
-          <dl class="column-item">
-            <dt class="required">이름</dt>
-            <dd>
-              <div
-                class="form-field --error">
-                <!-- // .error 추가 -->
-                <input type="text" placeholder="Placeholder"/>
-                <p class="description">error text</p>
-                <!-- // 에러메세지 -->
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt class="required">아이디</dt>
-            <dd>
-              <div class="form-field">
-                <input type="text" placeholder="Placeholder"/>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>비밀번호</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap">
-                  <input type="password" placeholder="비밀번호를 입력해 주세요"/>
-                  <div class="util">
-                    <button type="button" class="btn-del">
-                      <i>삭제</i>
-                    </button>
-                    <button
-                      type="button" class="btn-visible off">
-                      <!-- // 클릭 시 on/off 클래스 변경 -->
-                      <i>보기</i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>비밀번호 확인</dt>
-            <dd>
-              <div class="form-field">
-                <div class="form-wrap">
-                  <input type="password" placeholder="비밀번호를 한번 더 입력해 주세요"/>
-                  <div class="util">
-                    <button type="button" class="btn-del">
-                      <i>삭제</i>
-                    </button>
-                    <button
-                      type="button" class="btn-visible off">
-                      <!-- // 클릭 시 on/off 클래스 변경 -->
-                      <i>보기</i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt class="required">이메일</dt>
-            <dd>
-              <div class="form-field">
-                <input type="email" placeholder="Placeholder"/>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt class="required">휴대폰번호</dt>
-            <dd>
-              <div class="form-field">
-                <input type="tel" placeholder="휴대폰번호"/>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item row-span-3">
-            <dt class="required">주소</dt>
-            <dd>
-              <div class="form-field address">
-                <p class="address-item">
-                  <input type="text" placeholder="Placeholder"/>
-                  <button type="button" class="btn-outline --small">
-                    <span>우편번호 검색</span>
-                  </button>
-                </p>
-                <input type="text" placeholder="Placeholder"/>
-                <input type="text" placeholder="Placeholder"/>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>연락처</dt>
-            <dd>
-              <div class="form-field">
-                <input type="tel" placeholder="연락처"/>
-              </div>
-            </dd>
-          </dl>
-          <dl class="column-item">
-            <dt>마케팅 정보 수신 동의</dt>
-            <dd>
-              <div class="checkbox-wrap">
-                <label class="checkbox" for="checkbox-1-1">
-                  <input type="checkbox" id="checkbox-1-1"/>
-                  <span class="checkbox-icon"></span>
-                  <span class="checkbox-label">SMS</span>
-                </label>
-                <label class="checkbox" for="checkbox-1-2">
-                  <input type="checkbox" id="checkbox-1-2"/>
-                  <span class="checkbox-icon"></span>
-                  <span class="checkbox-label">이메일</span>
-                </label>
-                <label class="checkbox" for="checkbox-1-3">
-                  <input type="checkbox" id="checkbox-1-3"/>
-                  <span class="checkbox-icon"></span>
-                  <span class="checkbox-label">수신거부</span>
-                </label>
-              </div>
-            </dd>
-          </dl>
-        </div>
+    <div class="form-list-wrap --small">
+      <div class="text-wrap">
+        <p class="guide-basic --bold">비밀번호 확인</p>
+        <p class="guide-sub-deep --small">
+          고객님의 안전한 정보보호를 위하여 비밀번호를 다시 한번 확인합니다.<br/>비밀번호가 타인에게 노출되지 않도록 주의하여 주세요.
+        </p>
       </div>
-    </section>
-    <section class="content-box">
-      <div class="product-order">
-        <div class="title-wrap">
-          <h5>첨부파일</h5>
+      <section class="content-box">
+        <div class="form-field">
+          <div class="form-wrap">
+            <input type="text" placeholder="비밀번호"/>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="product-option">
-          <dl class="column-item">
-            <dt>통장사본</dt>
-            <dd>
-              <div class="form-field width-436">
-                <div class="form-wrap file">
-                  <label class="btn-primary --small">
-                    <input type="file"/>
-                    <span>파일첨부</span>
-                  </label>
-                  <span class="guide-sub">선택한 파일이 없습니다.</span>
-                  <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-                  <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-                  <button type="button" class="btn-del">
-                    <i class="delete">삭제</i>
-                  </button>
-                  <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
-                </div>
-              </div>
-            </dd>
-          </dl>
-        </div>
+      </section>
+      <div class="btn-wrap confirm">
+        <button type="button" class="btn-outline --medium">
+          <span>취소</span>
+        </button>
+        <button type="button" class="btn-primary --medium">
+          <span>확인</span>
+        </button>
       </div>
-    </section>
-    <div class="btn-wrap confirm">
-      <button type="button" class="btn-outline --medium">
-        <span>취소</span>
-      </button>
-      <button type="button" class="btn-primary --medium">
-        <span>결제하기</span>
-      </button>
     </div>
   </div>
 {% endblock %}

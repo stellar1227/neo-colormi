@@ -46,24 +46,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // 간편주문 토글
   setupOptionToggle();
 
-  // swiper - main-banner / product-review / blog-list
-  const mainBannerSwiper = document.querySelector(".main-wrap .main-banner");
-  if (mainBannerSwiper) {
-    initMainBannerSwiper(mainBannerSwiper);
-  }
-  const productReviewSwiper = document.querySelector(".main-wrap .product-review");
-  if (productReviewSwiper) {
-    initProductReviewSwiper(productReviewSwiper);
-  }
-  const blogListSwiper = document.querySelector(".main-wrap .blog-list");
-  if (blogListSwiper) {
-    initBlogListSwiper(blogListSwiper);
-    window.addEventListener('resize', initBlogListSwiper);
+  // main swiper - main-banner / product-review / blog-list
+  const mainWrap = document.querySelector('.main-wrap');
+  if (mainWrap) {
+    const swipers = [
+      { selector: '.main-banner', init: initMainBannerSwiper },
+      { selector: '.product-review', init: initProductReviewSwiper },
+      { selector: '.blog-list', init: initBlogListSwiper, onResize: true },
+    ];
+
+    swipers.forEach(({ selector, init, onResize }) => {
+      const el = mainWrap.querySelector(selector);
+      if (!el) return;
+      init(el);
+
+      if (onResize) {
+        window.addEventListener('resize', () => init(el));
+      }
+    });
   }
 
 });
 
-// swiper - main-banner
+// main swiper - main-banner
 function initMainBannerSwiper() {
   new Swiper('.main-wrap .main-banner', {
     loop: true,
@@ -95,7 +100,7 @@ function initMainBannerSwiper() {
   });
 }
 
-// swiper - product-review
+// main swiper - product-review
 function initProductReviewSwiper() {
   var container = document.querySelector('.main-wrap .product-review');
   var wrapper = container.querySelector('.swiper-wrapper');
@@ -137,7 +142,7 @@ function initProductReviewSwiper() {
   }
 }
 
-// swiper - blog-list
+// main swiper - blog-list
 var blogListSwiper = null;
 
 function padBlankSlides() {

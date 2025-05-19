@@ -13,6 +13,10 @@
     width: 100%;
   }
 
+  #container {
+    width: 100%;
+  }
+
   .side-wrap+.content,
   .content {
     width: calc(100% - 40px);

@@ -8,30 +8,33 @@
 
   >ol {
     display: flex;
+    gap: 2px;
 
     li {
       position: relative;
       display: flex;
       align-items: center;
+      gap: 2px;
 
       +li {
-        padding-left: 20px;
-
-        @include line-icon(next, 5px);
-
-        &::before,
-        &::after {
-          right: auto;
-          left: 8px;
-          background: $color-border-gray;
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: svgIcon(arrow-right, 'D6D6D6') no-repeat center center/16px 16px;
         }
       }
 
-      a {
+      a,
+      span {
         display: inline-block;
         color: $color-text-subcolor;
         @include font-body-xxsmall;
 
+      }
+
+      a {
         &:hover {
           text-decoration: underline;
         }
@@ -53,6 +56,10 @@
 
   &:not(:first-of-type) {
     margin: 40px 0 16px;
+  }
+
+  &.--right {
+    justify-content: flex-end;
   }
 
   .cont-title {
@@ -78,6 +85,24 @@
         margin-left: 24px;
       }
     }
+  }
+}
+
+.text-wrap {
+  text-align: center;
+
+  [class^=guide-] {
+    +[class^=guide-] {
+      margin-top: 20px;
+    }
+  }
+
+  [class^=guide-sub-] {
+    text-align: left;
+  }
+
+  +.content-box {
+    margin-top: 20px;
   }
 }
 
@@ -279,14 +304,14 @@
   }
 
   &.step-end {
-    @include sprite-icons(58, 20px);
-
     &::before {
+      content: '';
+      display: inline-block;
       width: 16px;
       height: 16px;
       border: 1px solid $color-border-inverse;
       border-radius: 50%;
-      background-position: -143px -103px;
+      background: svgIcon(check, 'ffffff') no-repeat center center/20px 20px;
     }
   }
 
@@ -2081,7 +2106,6 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
         .--name {
           >span {
             position: relative;
-            @include sprite-icons(58, 16px, after);
 
             &::before {
               content: '';
@@ -2089,15 +2113,9 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
               width: 13px;
               height: 13px;
               margin: 0 4px 0 0;
-              background-color: $color-border-gray-dark;
               vertical-align: -2px;
               border-radius: 50%;
-            }
-
-            &::after {
-              position: absolute;
-              top: 4px;
-              left: -1px;
+              background: $color-border-gray-dark svgIcon(check, 'ffffff') no-repeat center center/16px 16px;
             }
           }
         }

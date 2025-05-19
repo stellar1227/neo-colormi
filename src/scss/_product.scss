@@ -2231,9 +2231,15 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
   }
 }
 
-.order-status {
-  @include font-body-small;
+.delivery-pack {
+  color: $Display-Status-Display-6;
 
+  &.--not {
+    color: $Display-Status-Display-1;
+  }
+}
+
+.order-status {
   &.--ing {
     color: $color-text-warning;
   }

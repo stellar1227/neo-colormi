@@ -51,11 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mainBannerSwiper) {
     initMainBannerSwiper(mainBannerSwiper);
   }
-  const productReviewSwiper = document.querySelector(".main-wrap .main-banner");
+  const productReviewSwiper = document.querySelector(".main-wrap .product-review");
   if (productReviewSwiper) {
     initProductReviewSwiper(productReviewSwiper);
   }
-  const blogListSwiper = document.querySelector(".main-wrap .main-banner");
+  const blogListSwiper = document.querySelector(".main-wrap .blog-list");
   if (blogListSwiper) {
     initBlogListSwiper(blogListSwiper);
     window.addEventListener('resize', initBlogListSwiper);
@@ -412,12 +412,13 @@ function initSnb() {
 
   navs.forEach(nav => {
     const group = nav.getAttribute('data-menu-index');
-    const menuItems = nav.querySelectorAll(`.depth-3[data-group="${group}"]`);
+    const menuItems = nav.querySelectorAll(`.depth-3[data-group="${group}"] a`);
     const productBoxes = nav.querySelectorAll(`.inner-header-product[data-group="${group}"]`);
 
     menuItems.forEach(item => {
       item.addEventListener('mouseenter', () => {
-        const index = item.getAttribute('data-index');
+        const parentItem = item.closest('.depth-3');
+        const index = parentItem.getAttribute('data-index');
 
         productBoxes.forEach(box => {
           box.classList.remove('active');
@@ -428,6 +429,21 @@ function initSnb() {
           targetBox.classList.add('active');
         }
       });
+    });
+
+    new MutationObserver(() => {
+      if (getComputedStyle(nav).display === 'block') {
+        productBoxes.forEach((box, i) => {
+          if (i === 0) {
+            box.classList.add('active');
+          } else {
+            box.classList.remove('active');
+          }
+        });
+      }
+    }).observe(nav, {
+      attributes: true,
+      attributeFilter: ['style', 'class']
     });
   });
 }

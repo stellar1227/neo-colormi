@@ -46,16 +46,16 @@ h5 {
   display: flex;
   justify-content: center;
   gap: 0 20px;
+}
 
-  .side-wrap+.content {
-    width: 997px;
-    margin: 48px 0;
-  }
+.side-wrap+.content {
+  width: 997px;
+  margin: 48px 0;
+}
 
-  .content {
-    width: 1200px;
-    margin: 48px auto;
-  }
+.content {
+  width: 1200px;
+  margin: 48px auto;
 }
 
 .side-wrap {

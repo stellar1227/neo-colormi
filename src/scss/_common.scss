@@ -1994,6 +1994,16 @@ h5 {
   .no-item-text {
     @include font-heading-xsmall-bold;
   }
+
+  .desc-box-inner {
+    margin-top: 20px;
+
+    [class^=guide-sub-] {
+      +ul[class^=guide-sub-] {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 // pagination

@@ -101,7 +101,7 @@ $colors: (
 // 2. Fonts and Typography Maps
 $fonts: (
   'font-typo-main-font': 'Pretendard Variable, Pretendard',
-  'font-typo-icon-en-font': 'Montserrat'
+  'font-typo-en-font': 'Montserrat'
 );
 
 $font-size: (
@@ -232,7 +232,7 @@ $color-alpha-shadow3: map.get($colors, 'color-alpha-shadow3');
 
 // font
 $font-typo-main-font: map.get($fonts, 'font-typo-main-font');
-$font-typo-icon-en-font: map.get($fonts, 'font-typo-icon-en-font');
+$font-typo-en-font: map.get($fonts, 'font-typo-en-font');
 
 // font-size
 $font-size-heading-xsmall: map.get($font-size, 'font-size-heading-xsmall');

@@ -1,0 +1,133 @@
+{% extends "layouts/base.njk" %}
+{% set title = "주문상세" %}
+{% block content %}
+  <div class="modal --full --xlarge">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">주문상세</h5>
+      </div>
+      <div class="modal-container">
+        <section class="content-box">
+          <div class="util-wrap --text-type">
+            <p class="guide-basic --small">
+              주문번호<span>00000000</span>
+            </p>
+            <p class="guide-basic --small">
+              주문일<span>2025.00.00</span>
+            </p>
+          </div>
+          <div class="table-list">
+            <div class="list-item-wrap --header">
+              <div class="list-item">
+                <div class="item --product">
+                  <p>주문정보</p>
+                </div>
+                <div class="item --quantity">
+                  <p>수량</p>
+                </div>
+                <div class="item --amount">
+                  <p>주문금액</p>
+                </div>
+                <div class="item --status">
+                  <p>상태</p>
+                </div>
+              </div>
+            </div>
+            <!-- // list header -->
+            <div class="list-item-wrap --body">
+              <div class="list-item">
+                <div class="item --product" data-label="상품명">
+                  <div class="product-wrap --order-info">
+                    <div class="product-inner-item">
+                      <div class="product-img"><img src="/resources/fe/img/product/A001_thum_1.jpg" alt="상품이미지"/>
+                      </div>
+                      <div class="product-info">
+                        <p class="product-name">상품명</p>
+                        <div class="product-text --full-text">
+                          <p class="text">기본정보가 노출되는 줄입니다.</p>
+                          <p class="text">옵션</p>
+                          <p class="text">제목 및 내용이 노출되는 줄입니다.</p>
+                          <p class="text">작업내용</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item --quantity" data-label="수량">
+                  <div class="item-inner">
+                    <p>
+                      <span>1</span>부
+                    </p>
+                  </div>
+                </div>
+                <div class="item --amount" data-label="주문금액">
+                  <div class="item-inner">
+                    <p>
+                      <span>100,000,000</span>원
+                    </p>
+                  </div>
+                </div>
+                <div class="item --status" data-label="상태">
+                  <div class="item-inner">
+                    <p class="order-status --ing">견적요청</p>
+                    <p class="order-status --end">제작완료</p>
+                    <p class="order-status --error">주문취소</p>
+                    <p class="order-status --upload">출력용파일업로드</p>
+                    <p class="order-status --complete">출고완료</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // list body -->
+          </div>
+        </section>
+        <section class="content-box">
+          <div class="division-item-wrap --type-03">
+            <div class="division-item">
+              <div class="product-order-item">
+                <h5>배송지 정보</h5>
+                <dl class="order-item">
+                  <dt>수령인</dt>
+                  <dd>홍길동</dd>
+                  <dt>연락처</dt>
+                  <dd>010-0000-0000</dd>
+                  <dt>주소</dt>
+                  <dd>(12120) 서울특별시 광진구 가상로 10 102호 가상스튜디오</dd>
+                  <dt>배송메세지</dt>
+                  <dd>배송 전에 연락 부탁드립니다.</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="division-item">
+              <div class="product-order-item">
+                <h5>결제 정보</h5>
+                <dl class="order-item">
+                  <dt>상품 금액</dt>
+                  <dd>10,000,000원</dd>
+                  <dt>배송비</dt>
+                  <dd>7,000원</dd>
+                  <dt>할인 금액</dt>
+                  <dd>12,000원</dd>
+                  <dt>총 결제 금액 (vat포함가)</dt>
+                  <dd class="total-sum">10,000,000원</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

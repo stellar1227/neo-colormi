@@ -3,19 +3,10 @@
 @use "sass:list";
 @use "sass:map";
 
-// typography
-@mixin font($weight: $font-weight-regular,
-  $size: $font-size-body-medium,
-  $line-height: normal,
-  $family: $font-typo-main-font,
-  $letter-spacing: $letter-spacing-0) {
-  font: #{$weight} #{$size}/#{$line-height} #{$family};
-  letter-spacing: $letter-spacing;
-}
-
 // Typography
-@mixin build-font($weight, $size, $lineHeight, $family: $font-typo-main-font) {
-  font: #{$weight} #{$size}/#{$lineHeight} #{$family};
+@mixin build-font($weight, $size, $lineHeight) {
+  font: #{$weight} #{$size}/#{$lineHeight} $font-typo-en-font,
+  $font-typo-main-font;
   letter-spacing: $letter-spacing-0;
 }
 
@@ -118,7 +109,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-  // -webkit-line-clamp: 원하는 라인 수; 추가해서 사용
+  // -webkit-line-clamp: / line-clamp: 원하는 라인 수; 추가해서 사용
 }
 
 // desc-guide text
@@ -128,7 +119,8 @@
   padding: 1px 4px;
   border-radius: 2px;
   background: $color-border-gray-light;
-  @include font($weight: $font-weight-medium, $size: $font-size-body-xxsmall, $line-height: 1.2rem);
+  @include font-body-xxsmall;
+  line-height: 1.2rem;
   color: $color-text-subcolor;
 }
 
@@ -305,17 +297,6 @@
   transform: translate(-50%, -50%);
   z-index: 12;
   background: rgba(0, 0, 0, .5);
-
-  // &::before {
-  //   content: '';
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   display: block;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: $color-alpha-inverse50;
-  // }
 
   .modal-wrap {
     display: flex;
@@ -559,10 +540,6 @@ $sprite-orig: 64px; // 원본 아이콘 크기
 
 // 사용할 아이콘 이름 리스트(순서대로 1부터 시작)
 $icons: (
-  // arrow-up,
-  // arrow-down,
-  // arrow-left,
-  // arrow-right,
   arrow-line-up-white,
   arrow-line-down-white,
   arrow-line-left-white,
@@ -617,8 +594,6 @@ $icons: (
   unlock,
   lock,
   clip,
-  // check,
-  // check-white,
   checkbox,
   checkbox-disabled,
   eye-on,

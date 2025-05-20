@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 간편주문 토글
   setupOptionToggle();
 
+  initFaqToggle('.table-list.--faq-list');
+
   // main swiper - main-banner / product-review / blog-list
   const mainWrap = document.querySelector('.main-wrap');
   if (mainWrap) {
@@ -449,6 +451,25 @@ function initSnb() {
     }).observe(nav, {
       attributes: true,
       attributeFilter: ['style', 'class']
+    });
+  });
+}
+
+function initFaqToggle(faqContainerSelector) {
+  const container = document.querySelector(faqContainerSelector);
+  if (!container) return;
+
+  container.querySelectorAll('.item.--answer').forEach(el => {
+    el.classList.remove('--active');
+  });
+
+  container.querySelectorAll('.item.--question').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const answer = link.closest('.list-item').querySelector('.item.--answer');
+      if (answer) {
+        answer.classList.toggle('--active');
+      }
     });
   });
 }

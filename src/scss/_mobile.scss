@@ -682,20 +682,7 @@
               }
 
               ~.info-label .checkbox-icon {
-                @include line-icon(up, 5px);
-
-                &::before,
-                &::after {
-                  background: $color-border-disabled;
-                }
-
-                &::before {
-                  left: calc(50% - 1.8px);
-                }
-
-                &::after {
-                  left: calc(50% + 1.8px);
-                }
+                transform: rotate(-90deg);
               }
             }
           }
@@ -714,20 +701,11 @@
               width: 16px;
               height: 16px;
               font-size: 0;
-              @include line-icon(down, 5px);
-
-              &::before,
-              &::after {
-                background: $color-border-disabled;
-              }
-
-              &::before {
-                left: calc(50% - 1.8px);
-              }
-
-              &::after {
-                left: calc(50% + 1.8px);
-              }
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background: svgIcon(arrow, 'A5A5A5') no-repeat center center/16px 16px;
+              transform: rotate(90deg);
             }
           }
 

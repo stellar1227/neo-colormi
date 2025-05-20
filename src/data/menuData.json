@@ -393,7 +393,7 @@
                     { "fileName": "C022_thum_1.jpg", "alt": "쿠폰 이미지 1" },
                     { "fileName": "C022_thum_2.jpg", "alt": "쿠폰 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
               ]
             },
@@ -410,7 +410,7 @@
                     { "fileName": "C023_thum_1.jpg", "alt": "포스터 이미지 1" },
                     { "fileName": "C023_thum_2.jpg", "alt": "포스터 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
               ]
             },
@@ -427,7 +427,7 @@
                     { "fileName": "C024_thum_1.jpg", "alt": "메뉴판 이미지 1" },
                     { "fileName": "C024_thum_2.jpg", "alt": "메뉴판 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 },
                 {
                   "title": "테이블세팅지",
@@ -439,7 +439,7 @@
                     { "fileName": "C025_thum_1.jpg", "alt": "테이블세팅지 이미지 1" },
                     { "fileName": "C025_thum_2.jpg", "alt": "테이블세팅지 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
               ]
             },
@@ -456,7 +456,7 @@
                     { "fileName": "C026_thum_1.jpg", "alt": "행택 이미지 1" },
                     { "fileName": "C026_thum_2.jpg", "alt": "행택 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 },
                 {
                   "title": "헤더택",
@@ -468,7 +468,7 @@
                     { "fileName": "C027_thum_1.jpg", "alt": "헤더택 이미지 1" },
                     { "fileName": "C027_thum_2.jpg", "alt": "헤더택 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 },
                 {
                   "title": "랩핑지",
@@ -480,7 +480,7 @@
                     { "fileName": "C028_thum_1.jpg", "alt": "랩핑지 이미지 1" },
                     { "fileName": "C028_thum_2.jpg", "alt": "랩핑지 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
               ]
             }
@@ -841,82 +841,6 @@
     {
       "categories": [
         {
-          "depth1": "판촉물",
-          "depth2List": [
-            {
-              "title": "기프트",
-              "depth3List": [
-                {
-                  "title": "단체티셔츠",
-                  "subs": [
-                    "행사·동호회용 맞춤 제작",
-                    "단체 제작 별도 문의"
-                  ],
-                  "itemList": [
-                    { "fileName": "C043_thum_1.jpg", "alt": "단체티셔츠 이미지 1" },
-                    { "fileName": "C043_thum_2.jpg", "alt": "단체티셔츠 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
-                },
-                {
-                  "title": "에코백",
-                  "subs": [
-                    "로고 인쇄 가능한 에코백",
-                    "단체 제작 별도 문의"
-                  ],
-                  "itemList": [
-                    { "fileName": "C044_thum_1.jpg", "alt": "에코백 이미지 1" },
-                    { "fileName": "C044_thum_2.jpg", "alt": "에코백 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
-                },
-                {
-                  "title": "보틀·텀블러",
-                  "subs": [
-                    "로고 인쇄 가능 텀블러",
-                    "단체 제작 별도 문의"
-                  ],
-                  "itemList": [
-                    { "fileName": "C045_thum_1.jpg", "alt": "텀블러 이미지 1" },
-                    { "fileName": "C045_thum_2.jpg", "alt": "텀블러 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
-                },
-                {
-                  "title": "보조배터리",
-                  "subs": [
-                    "실용성 높은 전자 굿즈",
-                    "단체 제작 별도 문의"
-                  ],
-                  "itemList": [
-                    { "fileName": "C046_thum_1.jpg", "alt": "보조배터리 이미지 1" },
-                    { "fileName": "C046_thum_2.jpg", "alt": "보조배터리 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
-                },
-                {
-                  "title": "골프공",
-                  "subs": [
-                    "특별 고객을 위한 골프 마케팅",
-                    "단체 제작 별도 문의"
-                  ],
-                  "itemList": [
-                    { "fileName": "C047_thum_1.jpg", "alt": "골프공 이미지 1" },
-                    { "fileName": "C047_thum_2.jpg", "alt": "골프공 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "menuData010": [
-    {
-      "categories": [
-        {
           "depth1": "옵셋인쇄",
           "depth2List": [
             {
@@ -1006,6 +930,162 @@
       ]
     }
   ],
+  "menuData010": [
+    {
+      "categories": [
+        {
+          "depth1": "판촉물 <em class=\"badge line-display-5 square --small\">최소주문수량~</em>",
+          "depth2List": [
+            {
+              "title": "기프트",
+              "depth3List": [
+                {
+                  "title": "골프공",
+                  "subs": [
+                    "특별 고객을 위한 골프 마케팅",
+                    "단체 제작 별도 문의"
+                  ],
+                  "itemList": [
+                    { "fileName": "C047_thum_1.jpg", "alt": "골프공 이미지 1" },
+                    { "fileName": "C047_thum_2.jpg", "alt": "골프공 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                },
+                {
+                  "title": "정관장",
+                  "subs": [
+                    "정관장",
+                    "정관장"
+                  ],
+                  "itemList": [
+                    { "fileName": "C047_thum_1.jpg", "alt": "정관장 이미지 1" },
+                    { "fileName": "C047_thum_2.jpg", "alt": "정관장 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                }
+              ]
+            },
+            {
+              "title": "생활",
+              "depth3List": [
+                {
+                  "title": "텀블러",
+                  "subs": [
+                    "로고 인쇄 가능 텀블러",
+                    "단체 제작 별도 문의"
+                  ],
+                  "itemList": [
+                    { "fileName": "C045_thum_1.jpg", "alt": "텀블러 이미지 1" },
+                    { "fileName": "C045_thum_2.jpg", "alt": "텀블러 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                },
+                {
+                  "title": "우산",
+                  "subs": [
+                    "우산",
+                    "우산"
+                  ],
+                  "itemList": [
+                    { "fileName": "C045_thum_1.jpg", "alt": "우산 이미지 1" },
+                    { "fileName": "C045_thum_2.jpg", "alt": "우산 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                }
+              ]
+            },
+            {
+              "title": "선물세트",
+              "depth3List": [
+                {
+                  "title": "덴탈세트",
+                  "subs": [
+                    "덴탈세트",
+                    "덴탈세트"
+                  ],
+                  "itemList": [
+                    { "fileName": "C043_thum_1.jpg", "alt": "덴탈세트 이미지 1" },
+                    { "fileName": "C043_thum_2.jpg", "alt": "덴탈세트 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                },
+                {
+                  "title": "양치세트",
+                  "subs": [
+                    "양치세트",
+                    "양치세트"
+                  ],
+                  "itemList": [
+                    { "fileName": "C044_thum_1.jpg", "alt": "양치세트 이미지 1" },
+                    { "fileName": "C044_thum_2.jpg", "alt": "양치세트 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                }
+              ]
+            },
+            {
+              "title": "디지털·가전",
+              "depth3List": [
+                {
+                  "title": "보조배터리",
+                  "subs": [
+                    "실용성 높은 전자 굿즈",
+                    "단체 제작 별도 문의"
+                  ],
+                  "itemList": [
+                    { "fileName": "C046_thum_1.jpg", "alt": "보조배터리 이미지 1" },
+                    { "fileName": "C046_thum_2.jpg", "alt": "보조배터리 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                },
+                {
+                  "title": "칫솔살균기",
+                  "subs": [
+                    "칫솔살균기",
+                    "칫솔살균기"
+                  ],
+                  "itemList": [
+                    { "fileName": "C046_thum_1.jpg", "alt": "칫솔살균기 이미지 1" },
+                    { "fileName": "C046_thum_2.jpg", "alt": "칫솔살균기 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                }
+              ]
+            },
+            {
+              "title": "사무·필기류",
+              "depth3List": [
+                {
+                  "title": "커스텀 팝업메모지",
+                  "subs": [
+                    "커스텀 팝업메모지",
+                    "커스텀 팝업메모지"
+                  ],
+                  "itemList": [
+                    { "fileName": "C046_thum_1.jpg", "alt": "커스텀 팝업메모지 이미지 1" },
+                    { "fileName": "C046_thum_2.jpg", "alt": "커스텀 팝업메모지 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                },
+                {
+                  "title": "볼펜·만년필",
+                  "subs": [
+                    "볼펜·만년필",
+                    "볼펜·만년필"
+                  ],
+                  "itemList": [
+                    { "fileName": "C046_thum_1.jpg", "alt": "볼펜·만년필 이미지 1" },
+                    { "fileName": "C046_thum_2.jpg", "alt": "볼펜·만년필 이미지 2" }
+                  ],
+                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "menuData011": [
     {
       "categories": [
@@ -1066,7 +1146,7 @@
                     { "fileName": "C041_thum_1.jpg", "alt": "컬러메모지 이미지 1" },
                     { "fileName": "C041_thum_2.jpg", "alt": "컬러메모지 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 },
                 {
                   "title": "메모장",
@@ -1124,7 +1204,7 @@
                     { "fileName": "C042_thum_1.jpg", "alt": "책갈피 이미지 1" },
                     { "fileName": "C042_thum_2.jpg", "alt": "책갈피 이미지 2" }
                   ],
-                  "tooltipList": []
+                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
               ]
             },

@@ -251,7 +251,7 @@ input[type='date'] {
     background: $color-background-white;
   }
 
-  @include sprite-icons(73, 20px, after);
+  @include sprite-icons(69, 20px, after);
 
   &::after {
     position: absolute;

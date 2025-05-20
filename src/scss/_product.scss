@@ -22,7 +22,7 @@
           display: inline-block;
           width: 16px;
           height: 16px;
-          background: svgIcon(arrow-right, 'D6D6D6') no-repeat center center/16px 16px;
+          background: svgIcon(arrow, 'D6D6D6') no-repeat center center/16px 16px;
         }
       }
 
@@ -234,6 +234,12 @@
     &:has(i):before {
       margin: 0;
     }
+
+    &.--small {
+      height: 24px;
+      padding: 4px;
+      border-radius: 2px;
+    }
   }
 
   &.fill-display-2 {
@@ -261,6 +267,7 @@
   @each $class, $values in ('line-display-1': ($Display-Status-Display-1, rgba(250, 92, 84, 0.10)),
     'line-display-3': ($Display-Status-Display-3, rgba(235, 141, 87, 0.10)),
     'line-display-4': ($Display-Status-Display-4, rgba(132, 200, 96, 0.10)),
+    'line-display-5': ($Display-Status-Display-5, $color-background-white),
     'line-display-6': ($Display-Status-Display-6, rgba(91, 197, 210, 0.10)),
     'line-display-7': ($Display-Status-Display-7, rgba(114, 132, 198, 0.10)),
     'line-display-8': ($Display-Status-Display-8, rgba(164, 84, 221, 0.10)),
@@ -280,27 +287,27 @@
   }
 
   &.new {
-    @include sprite-icons(76, 16px);
+    @include sprite-icons(72, 16px);
   }
 
   &.best {
-    @include sprite-icons(77, 16px);
+    @include sprite-icons(73, 16px);
   }
 
   &.recommend {
-    @include sprite-icons(78, 16px);
+    @include sprite-icons(74, 16px);
   }
 
   &.discount-1 {
-    @include sprite-icons(79, 16px);
+    @include sprite-icons(75, 16px);
   }
 
   &.discount-2 {
-    @include sprite-icons(80, 16px);
+    @include sprite-icons(76, 16px);
   }
 
   &.step-ing {
-    @include sprite-icons(25, 16px);
+    @include sprite-icons(23, 16px);
   }
 
   &.step-end {
@@ -316,7 +323,7 @@
   }
 
   &.step-cart {
-    @include sprite-icons(17, 16px);
+    @include sprite-icons(15, 16px);
   }
 }
 
@@ -531,14 +538,14 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
         &:first-child {
 
           [class^=btn-] {
-            @include sprite-icons(91, 16px);
+            @include sprite-icons(8, 16px);
           }
         }
 
         &:last-child {
 
           [class^=btn-] {
-            @include sprite-icons(92, 16px);
+            @include sprite-icons(9, 16px);
           }
         }
 
@@ -587,14 +594,14 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
           width: 36px;
           height: 36px;
           font-size: 0;
-          @include sprite-icons(63, 24px);
+          @include sprite-icons(59, 24px);
 
           &:hover {
-            @include sprite-icons(64, 24px);
+            @include sprite-icons(60, 24px);
           }
 
           &:active {
-            @include sprite-icons(65, 24px);
+            @include sprite-icons(61, 24px);
           }
         }
       }

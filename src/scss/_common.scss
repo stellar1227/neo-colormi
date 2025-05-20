@@ -291,13 +291,16 @@ h5 {
     }
 
     &.select {
-      @include sprite-icons(2, 16px, after);
-
       &::after {
+        content: '';
+        display: inline-block;
         position: absolute;
         right: 12px;
         top: 50%;
-        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        background: svgIcon(arrow, '4c4c4c') no-repeat center center/16px 16px;
+        transform: translateY(-50%) rotate(90deg);
       }
     }
 
@@ -398,11 +401,11 @@ h5 {
           background-size: 100% 100%;
 
           &.on {
-            @include sprite-icons(61, 16px);
+            @include sprite-icons(57, 16px);
           }
 
           &.off {
-            @include sprite-icons(62, 16px);
+            @include sprite-icons(58, 16px);
           }
         }
 
@@ -453,7 +456,7 @@ h5 {
 
     .description {
       color: $color-text-danger;
-      @include sprite-icons(40, 16px, after);
+      @include sprite-icons(38, 16px, after);
 
       &::before {
         background-color: $color-text-danger;
@@ -983,7 +986,7 @@ h5 {
       &:disabled {
         +.checkbox-icon {
           background: $color-border-gray-light;
-          @include sprite-icons(60, 16px);
+          @include sprite-icons(56, 16px);
         }
       }
 
@@ -1001,14 +1004,14 @@ h5 {
         +.checkbox-icon {
           background: $color-border-primary;
           border-color: $color-border-primary;
-          @include sprite-icons(59, 16px);
+          @include sprite-icons(55, 16px);
         }
 
         &:disabled {
           +.checkbox-icon {
             background-color: $color-border-gray-light;
             border-color: $Line-line;
-            @include sprite-icons(60, 16px);
+            @include sprite-icons(56, 16px);
           }
         }
       }
@@ -1241,6 +1244,14 @@ h5 {
         min-width: 164px;
       }
     }
+
+    &.vertical {
+      gap: 24px;
+
+      [class^=btn-] {
+        width: inherit;
+      }
+    }
   }
 
   &.link {
@@ -1332,10 +1343,10 @@ h5 {
 
   &.--medium {
     .contact {
-      @include sprite-icons(22, 32px);
+      @include sprite-icons(20, 32px);
 
       &:active {
-        @include sprite-icons(23, 32px);
+        @include sprite-icons(21, 32px);
       }
     }
   }
@@ -1366,7 +1377,7 @@ h5 {
         display: inline-block;
         width: 16px;
         height: 16px;
-        background: svgIcon(arrow-right, '4c4c4c') no-repeat center center/16px 16px;
+        background: svgIcon(arrow, '4c4c4c') no-repeat center center/16px 16px;
         vertical-align: -3px;
       }
     }
@@ -1389,7 +1400,7 @@ h5 {
 
         &::before,
         &::after {
-          background-image: svgIcon(arrow-right, 'F4F5F6');
+          background-image: svgIcon(arrow, 'F4F5F6');
         }
       }
     }
@@ -1412,7 +1423,7 @@ h5 {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: svgIcon(arrow-right, '969696') no-repeat center center/16px 16px;
+    background: svgIcon(arrow, '969696') no-repeat center center/16px 16px;
     vertical-align: -3px;
   }
 
@@ -1494,7 +1505,7 @@ h5 {
     padding: 0;
     line-height: 1;
     font-size: 0;
-    @include sprite-icons(9, 24px);
+    @include sprite-icons(5, 24px);
 
     +span {
       margin: 4px 0 0;
@@ -1513,7 +1524,7 @@ h5 {
     color: $color-text-basic-inverse;
 
     i {
-      @include sprite-icons(10, 24px);
+      @include sprite-icons(6, 24px);
     }
   }
 
@@ -1522,7 +1533,7 @@ h5 {
     color: $color-text-basic-inverse;
 
     i {
-      @include sprite-icons(11, 24px);
+      @include sprite-icons(7, 24px);
     }
   }
 
@@ -1579,7 +1590,7 @@ h5 {
 .alert-danger {
   @include alert;
   background: $color-border-danger-light;
-  @include sprite-icons(84, 24px);
+  @include sprite-icons(80, 24px);
 
   .title {
     color: #BD2C0F;
@@ -1589,7 +1600,7 @@ h5 {
 .alert-information {
   @include alert;
   background: $color-border-secondary-light;
-  @include sprite-icons(85, 24px);
+  @include sprite-icons(81, 24px);
 
   .title {
     color: #096AB3;
@@ -1599,7 +1610,7 @@ h5 {
 .alert-success {
   @include alert;
   background: $color-border-success-light;
-  @include sprite-icons(86, 24px);
+  @include sprite-icons(82, 24px);
 
   .title {
     color: #267337;
@@ -1609,7 +1620,7 @@ h5 {
 .alert-warning {
   @include alert;
   background: $color-border-warning-light;
-  @include sprite-icons(87, 24px);
+  @include sprite-icons(83, 24px);
 
   .title {
     color: #8A5C00;
@@ -1645,10 +1656,6 @@ h5 {
       &:first-of-type {
         padding-top: 40px;
       }
-
-      // >.desc-box:first-of-type {
-      //   margin-top: 0;
-      // }
     }
 
     .modal-footer {
@@ -1902,6 +1909,16 @@ h5 {
     }
   }
 
+  &.border-box-2 {
+    @include desc-box;
+    padding: 20px;
+    border: 1px solid $Line-line;
+
+    .radio-wrap {
+      justify-content: center;
+    }
+  }
+
   &.tertiary-light-box {
     @include desc-box;
     flex-direction: row;
@@ -1957,15 +1974,15 @@ h5 {
 
     .icon {
       &.--coupon {
-        @include sprite-icons(21, 64px);
+        @include sprite-icons(17, 64px);
       }
 
       &.--review {
-        @include sprite-icons(19, 64px);
+        @include sprite-icons(18, 64px);
       }
 
       &.--delivery {
-        @include sprite-icons(20, 64px);
+        @include sprite-icons(19, 64px);
       }
     }
 
@@ -2022,29 +2039,22 @@ h5 {
         a {
           position: relative;
           padding: 12px;
-        }
-      }
 
-      &.prev {
-        a {
-          &::before {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: svgIcon(arrow-left, '4C4C4C') no-repeat center center/16px 16px;
-          }
-        }
-      }
-
-      &.next {
-        a {
           &::after {
             content: '';
             display: inline-block;
             width: 16px;
             height: 16px;
-            background: svgIcon(arrow-right, '4C4C4C') no-repeat center center/16px 16px;
+            background: svgIcon(arrow, '4C4C4C') no-repeat center center/16px 16px;
+          }
+        }
+      }
+
+      &.prev {
+        a {
+          &::after {
+            order: -1;
+            transform: rotate(180deg);
           }
         }
       }
@@ -2057,18 +2067,11 @@ h5 {
           color: $color-text-subcolor;
         }
 
-        &.prev {
-          a {
-            &::before {
-              background: svgIcon(arrow-left, 'A5A5A5') no-repeat center center/16px 16px;
-            }
-          }
-        }
-
+        &.prev,
         &.next {
           a {
             &::after {
-              background: svgIcon(arrow-right, 'A5A5A5') no-repeat center center/16px 16px;
+              background-image: svgIcon(arrow, 'A5A5A5');
             }
           }
         }
@@ -2082,18 +2085,11 @@ h5 {
           color: $color-text-basic-inverse;
         }
 
-        &.prev {
-          a {
-            &::before {
-              background: svgIcon(arrow-left, 'ffffff') no-repeat center center/16px 16px;
-            }
-          }
-        }
-
+        &.prev,
         &.next {
           a {
             &::after {
-              background: svgIcon(arrow-right, 'ffffff') no-repeat center center/16px 16px;
+              background-image: svgIcon(arrow, 'ffffff');
             }
           }
         }
@@ -2121,27 +2117,27 @@ h5 {
   }
 
   &.--new {
-    @include sprite-icons(76, 16px);
-  }
-
-  &.--discount-1 {
-    @include sprite-icons(81, 16px);
-  }
-
-  &.--discount-2 {
-    @include sprite-icons(82, 16px);
+    @include sprite-icons(72, 16px);
   }
 
   &.--best {
+    @include sprite-icons(73, 16px);
+  }
+
+  &.--discount-1 {
     @include sprite-icons(77, 16px);
   }
 
+  &.--discount-2 {
+    @include sprite-icons(78, 16px);
+  }
+
   &.--contact {
-    @include sprite-icons(83, 16px);
+    @include sprite-icons(79, 16px);
   }
 
   &.--info {
-    @include sprite-icons(38, 16px);
+    @include sprite-icons(36, 16px);
   }
 
   &:hover .item {
@@ -2278,15 +2274,15 @@ button[type='button'] {
       }
 
       &.--naver {
-        @include sprite-icons(88, 48px);
+        @include sprite-icons(84, 48px);
       }
 
       &.--kakao {
-        @include sprite-icons(89, 48px);
+        @include sprite-icons(85, 48px);
       }
 
       &.--google {
-        @include sprite-icons(90, 48px);
+        @include sprite-icons(86, 48px);
       }
     }
   }

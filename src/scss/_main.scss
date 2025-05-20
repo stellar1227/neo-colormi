@@ -392,7 +392,7 @@ header {
           span {
             font-size: 0;
             display: block;
-            @include sprite-icons(16, 36px);
+            @include sprite-icons(14, 36px);
           }
         }
 
@@ -438,7 +438,7 @@ header {
                 border-radius: 24px;
                 border: 1px solid $color-border-gray;
                 background: $color-border-gray-light;
-                @include sprite-icons(70, 16px);
+                @include sprite-icons(66, 16px);
 
                 &::before {
                   margin-right: 4px;
@@ -495,7 +495,7 @@ header {
           @include depth-xsmall-semibold;
           border: none;
           background: $color-background-white;
-          @include sprite-icons(13, 16px, after);
+          @include sprite-icons(11, 16px, after);
 
           &:hover {
             background: $color-border-gray-light;
@@ -504,7 +504,7 @@ header {
 
         .quick-menu-wrap.--active {
           .btn-select {
-            @include sprite-icons(12, 16px, after);
+            @include sprite-icons(10, 16px, after);
           }
         }
       }
@@ -571,18 +571,25 @@ header {
         border-top: 1px solid $Line-line-2;
       }
 
+      // 전체메뉴 마지막 카테고리
       &:last-child {
         padding-bottom: 24px;
         border-bottom: 1px solid $Line-line-2;
+
+        .category>ul>li {
+          min-width: 164px;
+        }
       }
 
+      // 전체메뉴 제외 카테고리 서브메뉴
       &:first-child {
         .category {
           >ul {
+            max-width: 490px;
             padding-bottom: 0;
 
             >li {
-              min-width: 168px;
+              min-width: 150px;
             }
           }
         }
@@ -634,6 +641,10 @@ header {
               color: $color-text-tertiary;
             }
           }
+
+          .badge {
+            margin-left: 8px;
+          }
         }
 
         >ul {
@@ -643,7 +654,7 @@ header {
 
           >li {
             padding-right: 20px;
-            min-width: 172px;
+            min-width: 184px;
 
             >.depth-2 {
               margin-bottom: 8px;
@@ -695,7 +706,23 @@ header {
     }
   }
 
+  &[data-menu-index="0"] {
+
+    .all-menu .banner-wrap+.category-wrap {
+
+      .category:nth-child(2),
+      .category:nth-child(3) {
+        flex: 0;
+
+        >ul>li {
+          min-width: 150px;
+        }
+      }
+    }
+  }
+
   &[data-menu-index="4"],
+  &[data-menu-index="10"],
   &[data-menu-index="11"] {
     .all-menu .category-wrap .category>ul {
       max-height: 316px;
@@ -703,8 +730,6 @@ header {
       flex-wrap: wrap;
 
       >li {
-        width: 168px;
-
         &:nth-child(even) {
           margin-top: 24px;
           margin-bottom: 100px;
@@ -719,12 +744,15 @@ header {
   padding-left: 32px;
   border-left: 1px solid $Line-line;
   border-radius: 6px;
-  .inner-header-product{
-    display:none;
-    &.active{
-      display:block;
+
+  .inner-header-product {
+    display: none;
+
+    &.active {
+      display: block;
     }
   }
+
   .product-img {
     display: flex;
     align-items: center;
@@ -900,7 +928,7 @@ footer {
           }
 
           &.center {
-            @include sprite-icons(43, 16px, after);
+            @include sprite-icons(41, 16px, after);
 
             &::before {
               background-color: $color-text-primary;
@@ -908,7 +936,7 @@ footer {
           }
 
           &.delivery {
-            @include sprite-icons(45, 16px, after);
+            @include sprite-icons(43, 16px, after);
 
             &::before {
               background-color: $color-border-tertiary;
@@ -995,7 +1023,7 @@ footer {
             color: $color-text-subcolor-inverse;
 
             &::after {
-              background-image: svgIcon(arrow-right, 'f4f5f6');
+              background-image: svgIcon(arrow, 'f4f5f6');
             }
 
             // &::before,
@@ -1184,18 +1212,13 @@ footer {
             display: inline-block;
             width: 24px;
             height: 24px;
+            background: svgIcon(arrow, 'D6D6D6') no-repeat center center/24px 24px;
           }
         }
 
         .swiper-button-prev {
           &::after {
-            background: svgIcon(arrow-left, 'D6D6D6') no-repeat center center/24px 24px;
-          }
-        }
-
-        .swiper-button-next {
-          &::after {
-            background: svgIcon(arrow-right, 'D6D6D6') no-repeat center center/24px 24px;
+            transform: rotate(180deg);
           }
         }
       }
@@ -1290,7 +1313,7 @@ footer {
       .title-review-wrap {
         margin-bottom: 24px;
         text-align: center;
-        @include sprite-icons(75, 24px);
+        @include sprite-icons(71, 24px);
 
         &::before {
           margin-bottom: 4px;
@@ -1479,12 +1502,12 @@ footer {
 
     .swiper-button-prev {
       left: -16px;
-      @include sprite-icons(7, 24px, after);
+      @include sprite-icons(3, 24px, after);
     }
 
     .swiper-button-next {
       right: -16px;
-      @include sprite-icons(8, 24px, after);
+      @include sprite-icons(4, 24px, after);
     }
   }
 

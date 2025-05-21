@@ -2190,19 +2190,10 @@ h5 {
 .tooltip {
   position: relative;
   display: inline-block;
+  width: 16px;
+  height: 16px;
   margin-left: 2px;
   line-height: 0;
-  // vertical-align: -3px;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
 
   &.--new {
     @include sprite-icons(72, 16px);
@@ -2289,6 +2280,7 @@ h5 {
 button[type='button'] {
   &.tooltip {
     display: inherit;
+    width: inherit;
     margin-left: 0;
     vertical-align: 0;
 

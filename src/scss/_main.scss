@@ -391,7 +391,8 @@ header {
 
           span {
             font-size: 0;
-            display: block;
+            line-height: 0;
+            display: inline-block;
             @include sprite-icons(14, 36px);
           }
         }

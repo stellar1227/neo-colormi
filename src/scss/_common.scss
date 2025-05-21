@@ -53,6 +53,16 @@ h5 {
   margin: 48px auto;
 }
 
+.content-box {
+  &.confirm {
+    text-align: center;
+
+    +.btn-wrap {
+      margin-top: 24px;
+    }
+  }
+}
+
 .page-title {
   text-align: center;
 
@@ -291,6 +301,8 @@ h5 {
     }
 
     &.select {
+      min-width: max-content;
+
       &::after {
         content: '';
         display: inline-block;
@@ -586,6 +598,7 @@ h5 {
     .textarea-bottom {
       display: flex;
       align-items: center;
+      gap: 8px;
       margin-top: 8px;
 
       .count {
@@ -751,6 +764,7 @@ h5 {
 
       input[type='text'] {
         width: 280px;
+        max-width: 280px;
       }
     }
   }
@@ -1984,10 +1998,6 @@ h5 {
       &.--delivery {
         @include sprite-icons(19, 64px);
       }
-    }
-
-    .list-top-item {
-      display: inline-flex;
     }
   }
 

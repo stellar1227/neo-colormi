@@ -1,0 +1,102 @@
+{% extends "layouts/base.njk" %}
+{% set title = "고객센터" %}
+{% block content %}
+  {% include "components/sideNavCustomer.njk" %}
+  <div class="content">
+    <div class="page-title">
+      <h3>고객센터</h3>
+    </div>
+    <section class="content-box">
+      <div class="desc-box line-box --xlarge --icon-box --customer">
+        <i class="icon"></i>
+        <div class="customer-info">
+          <div class="customer-item --center">
+            <p class="guide-basic --bold --title-icon">전화번호</p>
+            <ul class="guide-sub-deep --small --dot">
+              <li>접수 : 02-2266-0671</li>
+              <li>회계 : 02-2024-3304</li>
+            </ul>
+          </div>
+          <div class="customer-item --delivery">
+            <p class="guide-basic --bold --title-icon">근무시간 및 출고안내</p>
+            <ul class="guide-sub-deep --small --dot">
+              <li>접수센터 : 9:00 - 20:00</li>
+              <li>제작센터 : 24시 출고 (주말, 공휴일 휴무)</li>
+            </ul>
+          </div>
+          <div class="customer-item --email">
+            <p class="guide-basic --bold --title-icon">이메일</p>
+            <ul class="guide-sub-deep --small --dot">
+              <li>접수 : info@billpost.co.kr</li>
+              <li>회계 : colormitax@billpost.co.kr</li>
+            </ul>
+          </div>
+          <div class="customer-item --account">
+            <p class="guide-basic --bold --title-icon">입금 계좌안내</p>
+            <ul class="guide-sub-deep --small --dot">
+              <li>
+                KB 국민은행 412701-01-227972
+                <p>(예금주 : 빌포스트(주))</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content-box">
+      <div class="customer-info">
+        <div class="customer-item --map">
+          <p class="guide-basic --bold --title-icon">찾아오시는 길</p>
+        </div>
+        <div class="btn-wrap --tab">
+          <button type="button" class="btn-outline --large --active">
+            <span>접수센터</span>
+          </button>
+          <button type="button" class="btn-outline --large">
+            <span>제작센터</span>
+          </button>
+        </div>
+        <div class="map-box" id="map"></div>
+        <div class="table-list --type-01">
+          <dl class="list-item">
+            <dt>주소</dt>
+            <dd class="col-span-1">(04555)&nbsp;서울특별시 중구 퇴계로 27길 39(충무로3가 24-7)&nbsp;&nbsp;엘크루메트로시티 지하2층 201~208호</dd>
+            <dt>TEL</dt>
+            <dd>02-2266-0671</dd>
+            <dt>FAX</dt>
+            <dd>02-2266-0705</dd>
+            <dt>지하철</dt>
+            <dd class="col-span-1">충무로역 5,6번 출구 도보 4분 / 을지로 3가역 9번 출구 도보 5분 / 명동역 10번 출구 도보 7분</dd>
+            <dt>경유버스</dt>
+            <dd class="col-span-1">
+              <dl>
+                <dt>충무로역 하차</dt>
+                <dd>104(B) 105(B) 140(B) 263(B) 604(B) 507(B) 701(B)</dd>
+                <dt>을지로3가역 하차</dt>
+                <dd>149(B) 105(B) 202(B) 152(B) 500(B) 261(B)</dd>
+              </dl>
+              <p class="description --primary">※(R) 빨강버스_광역노선, (B) 파랑버스_간선노선, (Y) 노랑버스_순환노선</p>
+            </dd>
+            <dt class="col-span-2">공항, 서울역 및 각 버스터미널 지하철 이용</dt>
+            <dd class="col-span-2">
+              <dl>
+                <dt>서울역</dt>
+                <dd>서울역(지하철 4호선) ▶ 충무로역 하차 도보5분</dd>
+                <dt>강남터미널</dt>
+                <dd>고속버스터미널(지하철 3호선) ▶ 충무로역 하차 도보5분</dd>
+                <dt>남부터미널</dt>
+                <dd>남부터미널(지하철 3호선) ▶ 충무로역 하차 도보5분</dd>
+                <dt>상봉터미널</dt>
+                <dd>상봉터미널(지하철 7호선) ▶ 군자역(지하철 5호선) ▶ 동대문운동장역(지하철 4호선) ▶ 충무로역 하차 도보5분</dd>
+                <dt>동서울터미널</dt>
+                <dd>강변역(지하철 2호선) ▶ 동대문운동장역(지하철 4호선) ▶ 충무로역 하차 도보5분</dd>
+                <dt>공항</dt>
+                <dd>김포공항(지하철 5호선) ▶ 종로3가역(지하철 3호선) ▶ 충무로역 하차 도보5분</dd>
+              </dl>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

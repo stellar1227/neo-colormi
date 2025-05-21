@@ -644,7 +644,6 @@ $offset-y: - $row * $size;
 &::#{$pseudo} {
   content: '';
   display: inline-block;
-  vertical-align: middle;
   width: $size;
   height: $size;
   background-image: url(#{$sprite-path});

@@ -2350,6 +2350,46 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       }
     }
   }
+
+  &.--type-01 {
+    .list-item {
+      display: grid;
+      grid-template-columns: 160px 1fr 160px 1fr;
+      border-top: 2px solid $color-border-gray-dark;
+      color: $color-text-basic;
+
+      >dt {
+        display: inline-flex;
+        align-items: center;
+        padding: 19px 16px;
+        border-bottom: 1px solid $color-border-gray;
+        background: $color-border-gray-light;
+      }
+
+      >dd {
+        padding: 19px 16px;
+        border-bottom: 1px solid $color-border-gray;
+
+        dl {
+          display: grid;
+          grid-template-columns: 120px 1fr;
+          gap: 8px 0;
+
+          dt {
+            font-weight: $font-weight-semibold;
+          }
+        }
+      }
+
+      .col-span-1 {
+        grid-column: span 3;
+      }
+
+      .col-span-2 {
+        grid-column: span 4;
+      }
+    }
+  }
 }
 
 .delivery-pack {
@@ -2383,7 +2423,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
 }
 
 .list-top-item-wrap {
-  &.--type-1 {
+  &.--type-01 {
     .list-top-item {
       display: inline-flex;
     }

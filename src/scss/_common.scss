@@ -434,64 +434,64 @@ h5 {
     }
   }
 
-  &.--error,
-  &.--success {
-    .description {
-      position: relative;
-      display: inline-flex;
+  // &.--error,
+  // &.--success {
+  //   .description {
+  //     position: relative;
+  //     display: inline-flex;
 
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 13px;
-        height: 13px;
-        margin: 3px 4px 0 0;
-        border-radius: 50%;
-        vertical-align: 2px;
-      }
+  //     &::before {
+  //       content: '';
+  //       display: inline-block;
+  //       width: 13px;
+  //       height: 13px;
+  //       margin: 3px 4px 0 0;
+  //       border-radius: 50%;
+  //       vertical-align: 2px;
+  //     }
 
-      &::after {
-        position: absolute;
-        top: 1px;
-        left: -1px;
-      }
-    }
-  }
+  //     &::after {
+  //       position: absolute;
+  //       top: 1px;
+  //       left: -1px;
+  //     }
+  //   }
+  // }
 
-  &.--error {
+  // &.--error {
 
-    input,
-    select,
-    .btn-select {
-      border: 1px solid $color-border-danger !important;
-    }
+  //   input,
+  //   select,
+  //   .btn-select {
+  //     border: 1px solid $color-border-danger !important;
+  //   }
 
-    .description {
-      color: $color-text-danger;
-      @include sprite-icons(38, 16px, after);
+  //   .description {
+  //     color: $color-text-danger;
+  //     @include sprite-icons(38, 16px, after);
 
-      &::before {
-        background-color: $color-text-danger;
-      }
-    }
-  }
+  //     &::before {
+  //       background-color: $color-text-danger;
+  //     }
+  //   }
+  // }
 
-  &.--success {
+  // &.--success {
 
-    input,
-    select,
-    .btn-select {
-      border: 1px solid $color-text-success !important;
-    }
+  //   input,
+  //   select,
+  //   .btn-select {
+  //     border: 1px solid $color-text-success !important;
+  //   }
 
-    .description {
-      color: $color-text-success;
+  //   .description {
+  //     color: $color-text-success;
 
-      &::before {
-        background: $color-text-success svgIcon(check, 'ffffff') no-repeat center center/16px 16px;
-      }
-    }
-  }
+  //     &::before {
+  //       background: $color-text-success svgIcon(check, 'ffffff') no-repeat center center/16px 16px;
+  //     }
+  //   }
+  // }
 
   &.--active {
 
@@ -770,6 +770,66 @@ h5 {
   }
 }
 
+// input error, success
+.--error,
+.--success {
+  .description {
+    position: relative;
+    display: inline-flex;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      margin: 3px 4px 0 0;
+      border-radius: 50%;
+      vertical-align: 2px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: -1px;
+    }
+  }
+}
+
+.--error {
+
+  input,
+  select,
+  .btn-select {
+    border: 1px solid $color-border-danger !important;
+  }
+
+  .description {
+    color: $color-text-danger;
+    @include sprite-icons(38, 16px, after);
+
+    &::before {
+      background-color: $color-text-danger;
+    }
+  }
+}
+
+.--success {
+
+  input,
+  select,
+  .btn-select {
+    border: 1px solid $color-text-success !important;
+  }
+
+  .description {
+    color: $color-text-success;
+
+    &::before {
+      background: $color-text-success svgIcon(check, 'ffffff') no-repeat center center/16px 16px;
+    }
+  }
+}
+
 .btn-del {
   position: relative;
   width: 24px;
@@ -992,10 +1052,18 @@ h5 {
 
 // checkbox
 .checkbox-wrap {
+  &.--error {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    .checkbox input+.checkbox-icon {
+      border-color: $color-border-danger;
+    }
+  }
+
   .checkbox {
-
     input {
-
       // disabled
       &:disabled {
         +.checkbox-icon {

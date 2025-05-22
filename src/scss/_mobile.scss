@@ -23,7 +23,7 @@
   .content-box+.btn-wrap.vertical,
   .btn-wrap.link+.content-box,
   .content-box+.content-box {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
   .side-wrap {
@@ -238,7 +238,7 @@
     .content-box {
       &.product-review-wrap {
         position: relative;
-        margin-top: 48px;
+        margin-top: 40px;
         padding: 40px 0;
 
         &::before {
@@ -401,7 +401,6 @@
     .content-box {
       +.content-box:not(.util-menu-list-wrap) {
         position: relative;
-        margin-top: 48px;
         padding-top: 40px;
 
         &::before {
@@ -585,6 +584,30 @@
       flex-direction: column;
       gap: 12px;
     }
+
+    &.--icon-box {
+      .list-top-item {
+        +.list-top-item {
+          margin: 0;
+        }
+      }
+
+      &.--customer {
+        flex-direction: column;
+        padding: 0;
+        border: 0;
+
+        .icon {
+          width: 270px;
+          max-width: 402px;
+        }
+
+        .customer-info {
+          flex: 1;
+          flex-direction: column;
+        }
+      }
+    }
   }
 
   .item-box-wrap {
@@ -671,31 +694,47 @@
     }
   }
 
-  .desc-box {
-    &.--icon-box {
-      .list-top-item {
-        +.list-top-item {
-          margin: 0;
-        }
-      }
-
-      &.--customer {
-        flex-direction: column;
-
-        .icon {
-          width: 270px;
-          max-width: 402px;
-        }
-      }
-    }
-
-    .customer-info {
-      flex: 1;
-      flex-direction: column;
-    }
-  }
-
   .table-list {
+    .list-item-wrap {
+      &.--header {
+        display: none;
+      }
+
+      &.--body {
+        border-top: 1px solid $color-border-gray-dark;
+        .list-item {
+          .item {
+            
+            &.--product {
+              flex: 0 0 100%;
+            }
+            &.--checkbox{
+              flex: 0 0 32px;
+              align-items: flex-start;
+              justify-content: flex-start;
+              width: 32px;
+              padding-right: 0;
+              
+              +.--product {
+                flex: 0 0 calc(100% - 32px);
+              }
+            }
+            
+            &:not(.--product, .--checkbox) {
+              flex: 0 0 100%;
+              justify-content: space-between;
+              padding: 4px 16px;
+
+              &::before {
+                content: attr(data-label);
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+
     &.--type-01 .list-item {
       grid-template-columns: 120px 1fr;
 

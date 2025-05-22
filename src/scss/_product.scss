@@ -619,6 +619,10 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
     }
 
     .item {
+      +.item {
+        margin-top: 16px;
+      }
+
       >.desc-box {
         margin-top: 16px;
       }
@@ -666,6 +670,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
     }
 
     .product-price {
+      margin-top: 0;
 
       .discount-title {
         @include font-body-xxsmall;
@@ -749,7 +754,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          margin-left: 20px;
+          margin: 0 0 0 20px;
           padding-left: 20px;
           border-left: 1px solid $Line-line;
 
@@ -808,7 +813,6 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
 
         .product-price {
           background: none;
-          margin-top: 0;
         }
       }
 

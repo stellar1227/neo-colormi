@@ -438,11 +438,13 @@
     &.scroll {
       .product-inner {
         display: block;
+        width: 100%;
         padding: 20px;
       }
 
       .product-img {
         float: left;
+        margin-right: 10px;
 
         .product-img-detail {
           width: 50px;
@@ -454,10 +456,12 @@
       .product-info {
         display: block;
 
-        .item+.item {
-          margin-left: 0;
-          padding-left: 0;
-          border: none;
+        .item {
+          +.item {
+            margin: 16px 0 0 0;
+            padding-left: 0;
+            border: none;
+          }
         }
 
         .btn-wrap.--hide {
@@ -489,8 +493,6 @@
 
     .product-order-price {
       flex-wrap: wrap;
-
-      .product-price {}
 
       .icon-sum+.product-price {
         flex: 1;

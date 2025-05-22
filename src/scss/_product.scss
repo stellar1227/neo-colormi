@@ -1877,6 +1877,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px 10px;
     }
   }
 
@@ -2047,6 +2048,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       .--request-data,
       .--confirm-data,
       .--confirm,
+      .--review-write,
       .--count-num {
         width: 16%;
       }

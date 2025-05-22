@@ -202,15 +202,15 @@
           content: '';
           display: inline-block;
           margin-bottom: 40px;
+          background-image: url('/resources/fe/img/icon/img-sprite.png');
+          background-repeat: no-repeat;
+          background-size: 1002px auto;
         }
 
         &.--default {
           &::before {
             width: 261px;
             height: 194px;
-            background-image: url('/resources/fe/img/icon/img-sprite.png');
-            background-repeat: no-repeat;
-            background-size: 1002px auto;
             background-position: -265px 0;
           }
         }
@@ -219,9 +219,6 @@
           &::before {
             width: 172px;
             height: 133px;
-            background-image: url('/resources/fe/img/icon/img-sprite.png');
-            background-repeat: no-repeat;
-            background-size: 1002px auto;
             background-position: -526px 0;
           }
         }
@@ -850,19 +847,22 @@ footer {
             width: 24px;
             height: 24px;
             font-size: 0;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              background-image: url('/resources/fe/img/icon/img-sprite.png');
+              background-repeat: no-repeat;
+              background-size: 1002px auto;
+            }
           }
         }
 
         .btn-sns-blog {
           i {
             &::before {
-              content: '';
-              display: inline-block;
-              width: 24px;
-              height: 24px;
-              background-image: url('/resources/fe/img/icon/img-sprite.png');
-              background-repeat: no-repeat;
-              background-size: 1002px auto;
               background-position: -72px 0;
             }
           }
@@ -871,13 +871,6 @@ footer {
         .btn-sns-talk {
           i {
             &::before {
-              content: '';
-              display: inline-block;
-              width: 24px;
-              height: 24px;
-              background-image: url('/resources/fe/img/icon/img-sprite.png');
-              background-repeat: no-repeat;
-              background-size: 1002px auto;
               background-position: -96px 0;
             }
           }
@@ -981,6 +974,15 @@ footer {
         padding: 12px 20px;
         border-radius: 6px;
 
+        &::before {
+          content: '';
+          display: inline-block;
+          margin-right: 20px;
+          background-image: url('/resources/fe/img/icon/img-sprite.png');
+          background-repeat: no-repeat;
+          background-size: 1002px auto;
+        }
+
         dl {
           display: flex;
           flex-wrap: wrap;
@@ -1001,14 +1003,8 @@ footer {
           background: $color-border-secondary;
 
           &::before {
-            content: '';
-            display: inline-block;
             width: 42px;
             height: 29px;
-            margin-right: 20px;
-            background-image: url('/resources/fe/img/icon/img-sprite.png');
-            background-repeat: no-repeat;
-            background-size: 1002px auto;
             background-position: -120px 0;
           }
 
@@ -1026,12 +1022,6 @@ footer {
             &::after {
               background-image: svgIcon(arrow, 'f4f5f6');
             }
-
-            // &::before,
-            // &::after {
-            //   right: 9.5px;
-            //   background: $color-text-subcolor-inverse;
-            // }
           }
         }
 
@@ -1039,14 +1029,8 @@ footer {
           background: #896F12;
 
           &::before {
-            content: '';
-            display: inline-block;
             width: 40px;
             height: 24px;
-            margin-right: 20px;
-            background-image: url('/resources/fe/img/icon/img-sprite.png');
-            background-repeat: no-repeat;
-            background-size: 1002px auto;
             background-position: -162px 0;
           }
         }

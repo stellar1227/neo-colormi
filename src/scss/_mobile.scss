@@ -720,15 +720,26 @@
               }
             }
             
-            &:not(.--product, .--checkbox) {
+            &:not(.--product, .--checkbox, .--no-item) {
               flex: 0 0 100%;
               justify-content: space-between;
               padding: 4px 16px;
+              display: grid;
+              grid-template-columns: auto 1fr;
+              gap: 0 10px;
+
+              .item-inner {
+                text-align: right;
+              }
 
               &::before {
                 content: attr(data-label);
                 display: inline-block;
               }
+            }
+
+            &:last-child {
+              padding-bottom: 19px;
             }
           }
         }

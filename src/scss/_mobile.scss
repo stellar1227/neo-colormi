@@ -720,6 +720,10 @@
 
               .item-inner {
                 text-align: right;
+
+                .date>span {
+                  display: inline-block;
+                }
               }
 
               &:not(.--review)::before {

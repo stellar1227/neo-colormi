@@ -2,6 +2,9 @@
 @use 'variables' as *;
 
 @media (max-width:768px) {
+  #container {
+    min-width: inherit;
+  }
 
   .top-banner,
   .header-top,

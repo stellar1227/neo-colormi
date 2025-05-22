@@ -700,6 +700,10 @@
                 flex: 0 0 calc(100% - 32px);
               }
 
+              +.--name {
+                padding-top: 19px;
+              }
+
               ~.--tel,
               ~.--address {
                 margin-left: auto;
@@ -743,6 +747,10 @@
             &.--tel,
             &.--address {
               gap: 0;
+            }
+
+            &:first-child:not(.--no-item) {
+              padding-top: 19px;
             }
 
             &:last-child:not(.--no-item) {

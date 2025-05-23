@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %}
+{% set title = "주문완료" %}
+{% block content %}
+  <div class="content">
+    <div class="error-box --order">
+      <div class="text-box">
+        <p class="guide-basic --large-bold">주문결제가 정상 처리되지 않았어요.</p>
+        <p class="guide-basic">잠시 후에 다시 한번 이용해 주시기 바랍니다.</p>
+        <p class="guide-basic">지속적으로 결제가 이루어지지 않는 경우, 고객센터(02-2266-0671)로 문의해 주시기 바랍니다.</p>
+      </div>
+      <div class="btn-wrap">
+        <a href="/" class="btn-round icon">
+          <span>메인으로</span>
+        </a>
+        <a href="/" class="btn-round">
+          <span>장바구니</span>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

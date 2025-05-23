@@ -2689,3 +2689,38 @@ button[type='button'] {
     }
   }
 }
+
+.error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: calc(100px - 48px) auto;
+
+  &.--order {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 186px;
+      height: 148px;
+      background-image: url('/resources/fe/img/icon/img-sprite.png');
+      background-repeat: no-repeat;
+      background-size: 1002px auto;
+      background-position: -708px -194px;
+    }
+  }
+
+  .text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    [class^=guide-] {
+      margin-top: 0;
+
+      &.--large-bold {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

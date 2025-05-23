@@ -598,16 +598,16 @@ h5 {
 
     .textarea-bottom {
       display: flex;
-      align-items: center;
+      justify-content: flex-end;
       gap: 8px;
       margin-top: 8px;
 
       .count {
-        order: 1;
         margin: 0;
       }
 
       [class^=guide-] {
+        order: -1;
         flex: 1;
         margin: 0;
       }
@@ -750,6 +750,10 @@ h5 {
 
   +.btn-wrap {
     margin-top: 16px;
+
+    &.--replace {
+      margin-top: 0;
+    }
   }
 
   .form-option {
@@ -1065,6 +1069,7 @@ h5 {
 
   .checkbox {
     input {
+
       // disabled
       &:disabled {
         +.checkbox-icon {
@@ -1322,10 +1327,8 @@ h5 {
   &.confirm {
     justify-content: center;
 
-    [class^=btn-] {
-      >span {
-        min-width: 164px;
-      }
+    [class^=btn-]:not(.tooltip, .--default) {
+      min-width: 180px;
     }
 
     &.vertical {
@@ -1342,9 +1345,7 @@ h5 {
     margin-top: 24px;
 
     [class^=btn-] {
-      span {
-        min-width: 132px;
-      }
+      min-width: 148px;
     }
   }
 
@@ -1445,6 +1446,10 @@ h5 {
   &.--medium {
     .contact {
       @include sprite-icons(20, 32px);
+
+      &::before {
+        margin: -4px;
+      }
 
       &:active {
         @include sprite-icons(21, 32px);

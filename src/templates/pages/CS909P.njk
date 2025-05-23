@@ -1,0 +1,178 @@
+{% extends "layouts/base.njk" %}
+{% set title = "교정확인 상세내역" %}
+{% block content %}
+  <div class="modal --full --xlarge">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">교정확인 상세내역</h5>
+      </div>
+      <div class="modal-container">
+        <section class="content-box">
+          <div class="util-wrap --text-type">
+            <p class="guide-basic --small">
+              주문번호<span>00000000</span>
+            </p>
+            <p class="guide-basic --small">
+              주문일<span>2025.00.00</span>
+            </p>
+          </div>
+          <div class="table-list">
+            <div class="list-item-wrap --header">
+              <div class="list-item">
+                <div class="item --product">
+                  <p>주문정보</p>
+                </div>
+                <div class="item --request-data">
+                  <p>검수요청일</p>
+                </div>
+                <div class="item --confirm-data">
+                  <p>고객확인일</p>
+                </div>
+                <div class="item --manager">
+                  <p>담당자</p>
+                </div>
+                <div class="item --status">
+                  <p>상태</p>
+                </div>
+              </div>
+            </div>
+            <!-- // list header -->
+            <div class="list-item-wrap --body">
+              <div class="list-item">
+                <div class="item --product" data-label="주문정보">
+                  <div class="product-wrap --order-info">
+                    <div class="product-inner-item">
+                      <div class="product-img"><img src="/resources/fe/img/product/A001_thum_1.jpg" alt="상품이미지"/>
+                      </div>
+                      <div class="product-info">
+                        <p class="product-name">
+                          상품명이 나타나게 됩니다. 상품명이 나타나게 됩니다.
+                        </p>
+                        <div class="product-text">
+                          <p class="text">제목명이 나타나게 됩니다. 제목명이 나타나게 됩니다. 제목명이 나타나게 됩니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item --request-data" data-label="검수요청일">
+                  <div class="item-inner">
+                    <p class="date">
+                      <span>2025-00-00</span>
+                      <span>00:00:00</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="item --confirm-data" data-label="고객확인일">
+                  <div class="item-inner">
+                    <p class="date">
+                      <span>-</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="item --manager" data-label="담당자">
+                  <div class="item-inner">
+                    <p>담당자</p>
+                  </div>
+                </div>
+                <div class="item --status" data-label="상태">
+                  <div class="item-inner">
+                    <p class="order-status --ing">검수요청</p>
+                    <!-- <p class="order-status --error">인쇄보류</p> <p class="order-status --complete">시안확정</p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // list body -->
+          </div>
+        </section>
+        <!-- 시안 확정 전 : 확정 후 미사용 -->
+        <section class="content-box">
+          <div class="product-order">
+            <div class="title-wrap">
+              <h5>파일재접수</h5>
+            </div>
+            <div
+              class="product-option">
+              <!-- 파일재접수 전 -->
+              <dl class="column-item">
+                <dt>파일첨부</dt>
+                <dd>
+                  <div class="form-field width-436">
+                    <div class="form-wrap file">
+                      <label class="btn-primary --small">
+                        <input type="file"/>
+                        <span>파일첨부</span>
+                      </label>
+                      <span class="guide-sub">선택한 파일이 없습니다.</span>
+                      <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+                      <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+                      <button type="button" class="btn-del">
+                        <i class="delete">삭제</i>
+                      </button>
+                      <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                    </div>
+                  </div>
+                </dd>
+              </dl>
+              <!-- // 파일재접수 전 -->
+              <!-- 파일재접수 후 -->
+              <dl class="column-item">
+                <dt>파일첨부</dt>
+                <dd>
+                  <div class="inner-wrap">
+                    <span class="guide-basic">파일명.pdf</span>
+                  </div>
+                </dd>
+              </dl>
+              <dl class="column-item">
+                <dt>파일첨부일</dt>
+                <dd>
+                  <div class="inner-wrap">
+                    <span class="guide-basic">2025-00-00 00:00:00</span>
+                  </div>
+                </dd>
+              </dl>
+              <!-- // 파일재접수 후 -->
+              <dl class="column-item">
+                <dt>전달사항</dt>
+                <dd>
+                  <div class="form-field textarea">
+                    <div class="form-wrap">
+                      <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
+                    </div>
+                    <div class="textarea-bottom">
+                      <div class="count">
+                        <em>1</em>/<span>100</span>
+                      </div>
+                    </div>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+            <p class="guide-sub --small">*시안확정 시 입력하신 ‘전달사항’은 전달되지 않습니다.</p>
+          </div>
+        </section>
+        <!-- // 시안 확정 전 : 확정 후 미사용 -->
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-primary --medium --default">
+            <span>시안확정</span>
+          </button>
+          <button type="button" class="btn-black --medium --default">
+            <span>파일재접수</span>
+          </button>
+          <button type="button" class="btn-outline --medium">
+            <span>닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

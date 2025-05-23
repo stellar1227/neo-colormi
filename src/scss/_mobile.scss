@@ -292,6 +292,7 @@
       margin-bottom: 40px;
 
       .swiper {
+        display: flex;
         overflow-x: auto;
         scrollbar-width: none;
         padding: 0 20px;
@@ -565,6 +566,11 @@
         }
       }
     }
+
+    .review-img {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   .btn-wrap.confirm [class^=btn-]>span {
@@ -692,6 +698,7 @@
               justify-content: flex-start;
               width: 32px;
               padding-right: 0;
+              padding-bottom: 8px;
 
               +.--product,
               +.--name,

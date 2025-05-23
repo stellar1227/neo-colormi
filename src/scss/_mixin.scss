@@ -147,7 +147,7 @@
 }
 
 // button
-@mixin icon-size($width, $height, $only-child-margin: 0) {
+@mixin icon-size($width, $height, $only-child-margin: 0 -4px) {
   display: inline-block;
   width: $width;
   height: $height;
@@ -159,7 +159,7 @@
 
   +span {
     margin-left: 2px;
-    padding-right: 8px;
+    // padding-right: 8px;
   }
 }
 
@@ -168,7 +168,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 7px;
+  padding: 0 15px;
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   border-radius: 4px;
   border-width: 1px;
@@ -190,7 +190,6 @@
 
   i {
     position: relative;
-    @include icon-size(16px, 16px);
 
     &.plus {
       @include line-icon(plus, 10px);
@@ -207,10 +206,6 @@
   span {
     display: inline-block;
     white-space: nowrap;
-
-    &:only-child {
-      padding: 0 8px;
-    }
   }
 
   // 사이즈
@@ -219,7 +214,7 @@
     @include font-body-xsmall;
 
     i {
-      @include icon-size(16px, 16px);
+      @include icon-size(16px, 16px, 0 -8px);
     }
 
     &.--round {
@@ -232,7 +227,7 @@
     @include font-body-xsmall;
 
     i {
-      @include icon-size(16px, 16px, 4px);
+      @include icon-size(16px, 16px);
     }
   }
 
@@ -241,11 +236,7 @@
     @include font-body-small;
 
     i {
-      @include icon-size(24px, 24px, 4px);
-    }
-
-    i:only-child {
-      @include icon-size(32px, 32px, 0);
+      @include icon-size(24px, 24px);
     }
   }
 
@@ -254,7 +245,11 @@
     @include font-body-small;
 
     i {
-      @include icon-size(24px, 24px, 8px);
+      @include icon-size(24px, 24px);
+    }
+
+    i:only-child {
+      margin: 0;
     }
   }
 

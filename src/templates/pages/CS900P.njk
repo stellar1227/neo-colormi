@@ -49,7 +49,7 @@
               </div>
               <div class="textarea-bottom">
                 <div class="count">
-                  <em>1</em>/<span>100</span>
+                  <em>1</em>/<span>500</span>
                 </div>
                 <p class="guide-sub --small">
                   후기 작성은 최소 20자 이상 작성해야만 등록 가능합니다.
@@ -60,6 +60,7 @@
             <dl class="column-item">
               <dt>파일첨부</dt>
               <dd>
+                <!-- 파일 첨부 전 :파일 첨부 -->
                 <div class="form-field">
                   <div class="form-wrap file">
                     <label class="btn-primary --small">
@@ -73,7 +74,35 @@
                       <i class="delete">삭제</i>
                     </button>
                     <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                    <button type="button" class="btn-util-add">
+                      <i class="icon-plus"></i>
+                      <span>추가</span>
+                    </button>
                   </div>
+                  <!-- 파일첨부 추가 -->
+                  <div class="form-wrap file">
+                    <label class="btn-primary --small">
+                      <input type="file">
+                      <span>파일첨부</span>
+                    </label>
+                    <span class="guide-sub">선택한 파일이 없습니다.</span>
+                    <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+                    <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+                    <button type="button" class="btn-del">
+                      <i class="delete">삭제</i>
+                    </button>
+                    <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                    <button type="button" class="btn-util-del">
+                      <i class="icon-minus"></i>
+                      <span>삭제</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- 파일 첨부 후 :첨부 파일 삭제 -->
+                <div class="btn-wrap --replace">
+                  <button type="button" class="btn-outline --small">
+                    <span>이미지 전체삭제</span>
+                  </button>
                 </div>
               </dd>
             </dl>
@@ -83,18 +112,15 @@
                 <li>
                   <p class="item">
                     <img src="/resources/fe/img/product/A001_thum_2.jpg" alt="포토리뷰 이미지"/>
-                    <a href="/" class="btn-del --small">
-                      <i>삭제</i>
-                    </a>
-                    <strong class="badge">대표</strong>
+                  <!-- <a href="/" class="btn-del --small"> <i>삭제</i> </a> // 전체 삭제로 변경 -->
+                    <!-- <strong class="badge">대표</strong> // 대표이미지 표기 안함 -->
                   </p>
                 </li>
                 <li>
                   <p class="item">
-                    <img src="/resources/fe/img/product/A001_thum_2.jpg" alt="포토리뷰 이미지"/>
-                    <a href="/" class="btn-del --small">
-                      <i>삭제</i>
-                    </a>
+                    <img
+                    src="/resources/fe/img/product/A001_thum_2.jpg" alt="포토리뷰 이미지"/>
+                  <!-- <a href="/" class="btn-del --small"> <i>삭제</i> </a> // 전체 삭제로 변경 -->
                   </p>
                 </li>
               </ul>

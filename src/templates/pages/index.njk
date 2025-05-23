@@ -36,16 +36,19 @@
         td a {
             word-wrap: break-word;
         }
-        .--s span {
+        .--progress span {
             color: #C78500;
         }
-        .--p span {
-            color: #969696;
+        .--progress span::before {
+            content: '진행';
         }
-        .--c span {
+        .--complete span {
             position: relative;
         }
-        .--c span::after {
+        .--complete span::before {
+            content: '완료';
+        }
+        .--complete span::after {
             content: '';
             display: inline-block;
             position: absolute;
@@ -183,8 +186,8 @@
                     <td>
                         <a href='./main.html'>pages/main.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -200,8 +203,8 @@
                     <td>
                         <a href='./PD055S.html'>pages/PD055S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>금액>로딩스피너</p>
@@ -214,8 +217,8 @@
                     <td>
                         <a href='./PD057S.html'>pages/PD057S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>선택옵션</p>
@@ -228,8 +231,8 @@
                     <td>
                         <a href='./PD001S.html'>pages/PD001S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>내지 추가, 간편주문 옵션</p>
@@ -242,8 +245,8 @@
                     <td>
                         <a href='./PD014S.html'>pages/PD014S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>후가공-라운딩, 파일첨부 추가/삭제</p>
@@ -256,8 +259,8 @@
                     <td>
                         <a href='./PD059S.html'>pages/PD059S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>별도 견적문의</p>
@@ -301,8 +304,8 @@
                     <td>
                         <a href='./CA001S.html'>pages/CA001S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -315,8 +318,8 @@
                     <td>
                         <a href='./CA900P.html'>pages/CA900P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>책자</p>
@@ -329,8 +332,8 @@
                     <td>
                         <a href='./CA901P.html'>pages/CA901P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -346,8 +349,8 @@
                     <td>
                         <a href='./OD001S.html'>pages/OD001S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -360,8 +363,8 @@
                     <td>
                         <a href='./OD100P.html'>pages/OD100P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -374,8 +377,8 @@
                     <td>
                         <a href='./OD002S.html'>pages/OD002S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -391,8 +394,8 @@
                     <td>
                         <a href='./CS001S.html'>pages/CS001S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -405,8 +408,8 @@
                     <td>
                         <a href='./CS002S.html'>pages/CS002S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -419,8 +422,8 @@
                     <td>
                         <a href='./CS908P.html'>pages/CS908P.html</a>
                     </td>
-                    <td class="--s">
-                        <span>진행</span>
+                    <td class="--progress">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -445,8 +448,8 @@
                     <td>
                         <a href='./CS003S.html'>pages/CS003S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -459,8 +462,8 @@
                     <td>
                         <a href='./CS004S.html'>pages/CS004S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -473,8 +476,8 @@
                     <td>
                         <a href='./CS909P.html'>pages/CS909P.html</a>
                     </td>
-                    <td class="--s">
-                        <span>진행</span>
+                    <td class="--progress">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -487,8 +490,8 @@
                     <td>
                         <a href='./CS005S.html'>pages/CS005S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -501,8 +504,8 @@
                     <td>
                         <a href='./CS006S.html'>pages/CS006S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>CS007S</p>
@@ -515,8 +518,8 @@
                     <td>
                         <a href='./CS900P.html'>pages/CS900P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>CS901P</p>
@@ -529,8 +532,8 @@
                     <td>
                         <a href='./CS902P.html'>pages/CS902P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -543,8 +546,8 @@
                     <td>
                         <a href='./CS015S.html'>pages/CS015S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -557,8 +560,8 @@
                     <td>
                         <a href='./CS016S.html'>pages/CS016S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>견적문의 상세</p>
@@ -571,8 +574,8 @@
                     <td>
                         <a href='./CS903P.html'>pages/CS903P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -585,8 +588,8 @@
                     <td>
                         <a href='./CS011S.html'>pages/CS011S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>CS012S</p>
@@ -599,8 +602,8 @@
                     <td>
                         <a href='./CS905P.html'>pages/CS905P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>CS906P</p>
@@ -613,8 +616,8 @@
                     <td>
                         <a href='./MB008S.html'>pages/MB008S.html</a>
                     </td>
-                    <td class="--s">
-                        <span>진행</span>
+                    <td class="--progress">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -627,8 +630,8 @@
                     <td>
                         <a href='./MB009S.html'>pages/MB009S.html</a>
                     </td>
-                    <td class="--s">
-                        <span>진행</span>
+                    <td class="--progress">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -641,8 +644,8 @@
                     <td>
                         <a href='./CS012S.html'>pages/CS012S.html</a>
                     </td>
-                    <td class="--s">
-                        <span>진행</span>
+                    <td class="--progress">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -658,8 +661,8 @@
                     <td>
                         <a href='./CS013S.html'>pages/CS013S.html</a>
                     </td>
-                    <td class="--s">
-                        <span>진행</span>
+                    <td class="--progress">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -672,8 +675,8 @@
                     <td>
                         <a href='./CS014S.html'>pages/CS014S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -686,8 +689,8 @@
                     <td>
                         <a href='./CS017S.html'>pages/CS017S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -700,8 +703,8 @@
                     <td>
                         <a href='./CS907P.html'>pages/CS907P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -714,8 +717,8 @@
                     <td>
                         <a href='./CS016S.html'>pages/CS016S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p>1:1 문의하기</p>
@@ -728,8 +731,8 @@
                     <td>
                         <a href='./CS018S.html'>pages/CS018S.html</a>
                     </td>
-                    <td class="--s">
-                        <span>진행</span>
+                    <td class="--progress">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -756,8 +759,8 @@
                     <td>
                         <a href='./CS020S.html'>pages/CS020S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -941,8 +944,8 @@
                     <td>
                         <a href='./MB002S.html'>pages/MB002S.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>
@@ -955,8 +958,8 @@
                     <td>
                         <a href='./MB002P.html'>pages/MB002P.html</a>
                     </td>
-                    <td class="--c">
-                        <span>완료</span>
+                    <td class="--complete">
+                        <span></span>
                     </td>
                     <td>
                         <p></p>

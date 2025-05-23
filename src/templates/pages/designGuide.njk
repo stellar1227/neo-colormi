@@ -342,24 +342,19 @@
           }
         }
       }
-    }
-    &.--button {
-      .d-sys-list-wrap {
-        gap: 10px 20px;
-        .d-sys-list {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          width: calc(33.33% - 15px);
-          p {
-            margin-left: 20px;
+      &.--button {
+        .d-sys-list-wrap {
+          gap: 10px 20px;
+          .d-sys-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: calc(33.33% - 15px);
+            p {
+              margin-left: 20px;
+            }
           }
         }
-      }
-    }
-    &.--tooltip {
-      .d-sys-list-wrap {
-        display: block;
       }
     }
     .modal {
@@ -885,6 +880,11 @@
           <div class="desc-box line-box --large">
             <p class="guide-basic">
               desc-box line-box --large
+            </p>
+          </div>
+          <div class="desc-box line-box --xlarge">
+            <p class="guide-basic">
+              desc-box line-box --xlarge
             </p>
           </div>
           <div class="desc-box gray-light-box">
@@ -1705,11 +1705,13 @@
       <p>위치 --top :상단</p>
       <div class="d-sys-list">
         <h2 class="d-sys">아이콘 버튼 툴팁</h2>
-        <button type="button" class="btn-outline --medium tooltip">
-          <i class="contact">
-            <span class="item">아이콘 버튼 툴팁</span>
-          </i>
-        </button>
+        <div class="btn-wrap">
+          <button type="button" class="btn-outline --medium tooltip">
+            <i class="contact">
+              <span class="item">아이콘 버튼 툴팁</span>
+            </i>
+          </button>
+        </div>
       </div>
       <div class="d-sys-list">
         <h2 class="d-sys">아이콘 가이드 툴팁</h2>

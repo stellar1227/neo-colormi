@@ -1219,6 +1219,7 @@ h5 {
 
         &:disabled {
           +.radio-icon {
+            background: $color-border-gray-light;
             border-color: $color-border-gray;
           }
         }

@@ -1,3 +1,4 @@
+{% include "components/menuAll.njk" %}
 {% from "components/menuList.njk" import renderMenuList %}
 {% set keys = [
   "menuData001","menuData002","menuData003","menuData004",
@@ -8,4 +9,3 @@
   {% set arr = menuData[key] %}
   {{ renderMenuList(arr, loop.index0) }}
 {% endfor %}
-{% include "components/menuAll.njk" %}

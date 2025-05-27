@@ -35,11 +35,11 @@
         {% set flatIndex = 0 %}
         {% for d2 in catg.depth2List %}
           {% for d3 in d2.depth3List %}
-           <div class="inner-header-product{% if flatIndex == 0 %} active{% endif %}" data-group="{{ navIdx + 1 }}" data-index="{{ flatIndex }}">
+            <div class="inner-header-product{% if flatIndex == 0 %} active{% endif %}" data-group="{{ navIdx + 1 }}" data-index="{{ flatIndex }}">
               <ul class="product-img">
                 {% for img in d3.itemList %}
                   <li>
-                    <img src="/resources/fe/img/product/{{ img.fileName }}" alt="{{ img.alt }}" />
+                    <img src="/resources/fe/img/product/{{ img.fileName }}" alt="{{ img.alt }}"/>
                   </li>
                 {% endfor %}
               </ul>
@@ -55,12 +55,10 @@
                 {% endfor %}
               </div>
             </div>
-           {% set flatIndex = flatIndex + 1 %}
+            {% set flatIndex = flatIndex + 1 %}
           {% endfor %}
         {% endfor %}
       </div>
     </div>
   </nav>
 {% endmacro %}
-
-

@@ -45,8 +45,20 @@ h5 {
 #container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0 20px;
   min-width: 1200px;
+}
+
+.top-img-wrap {
+  width: 100%;
+  height: 363px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .content {
@@ -258,8 +270,8 @@ h5 {
     height: 30px;
     background-image: url('/resources/fe/img/icon/img-sprite.png');
     background-repeat: no-repeat;
-    background-size: 1002px auto;
-    background-position: 0 -194px;
+    background-size: 920px auto;
+    background-position: -890px 0;
   }
 
   .check-item {
@@ -1680,7 +1692,7 @@ h5 {
     margin-bottom: 4px;
     background-image: url('/resources/fe/img/icon/img-sprite.png');
     background-repeat: no-repeat;
-    background-size: 1002px auto;
+    background-size: 920px auto;
     background-position: -202px 0;
   }
 
@@ -1817,7 +1829,6 @@ h5 {
 
         .btn-wrap {
           justify-content: center;
-          // gap: 8px;
         }
       }
 
@@ -1904,10 +1915,6 @@ h5 {
       @include font-body-large-bold;
     }
 
-    &.--bold {
-      font-weight: $font-weight-semibold;
-    }
-
     &.--dot {
       li {
         position: relative;
@@ -1921,10 +1928,8 @@ h5 {
           left: 8px;
           width: 4px;
           height: 4px;
-          // margin: 0 8px;
           background: $color-text-subcolor-deep;
           border-radius: 50%;
-          // vertical-align: 3px;
         }
       }
     }
@@ -2084,70 +2089,30 @@ h5 {
     margin: 20px 0 0 0;
   }
 
-  &.--icon-box {
-    justify-content: center;
-    position: relative;
-    min-height: calc(64px + 64px);
-    padding-right: calc(64px + 32px);
+  &.cont-division {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 32px;
+    text-align: left;
 
-    &::after {
-      position: absolute;
-      right: 32px;
-      top: 50%;
-      transform: translateY(-50%);
+    .img-box {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
 
-    &.--coupon {
-      @include sprite-icons(17, 64px, after);
-    }
-
-    &.--review {
-      @include sprite-icons(18, 64px, after);
-    }
-
-    &.--delivery {
-      @include sprite-icons(19, 64px, after);
-    }
-
-    &.--customer {
-      flex-direction: row;
-      gap: 32px;
-      justify-content: flex-start;
-      text-align: left;
-
-      .icon {
-        width: 402px;
-        height: 213px;
-        max-width: 402px;
-        max-height: 213px;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-
-        // &::before {
-        //   content: '';
-        //   display: inline-block;
-        //   width: 100%;
-        //   height: 100%;
-        //   background-image: url(/resources/fe/img/icon/img-sprite.png);
-        //   background-repeat: no-repeat;
-        //   background-size: 1002px auto;
-        //   background-position: -383px -194px;
-        // }
+    .cont-info {
+      .cont-item {
+        flex: 0 0 50%;
+        align-self: flex-start;
       }
 
-      .customer-info {
-        flex-direction: row;
-        flex: 0 0 500px;
-        flex-wrap: wrap;
-        gap: 32px 0;
-
-        .customer-item {
-          flex: 0 0 50%;
-        }
+      >[class^=guide-] {
+        margin-top: 0;
       }
     }
   }
@@ -2163,6 +2128,105 @@ h5 {
       +ul[class^=guide-sub-] {
         margin-top: 0;
       }
+    }
+  }
+}
+
+.icon-box {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 24px;
+
+  &:not(:first-child) {
+    margin-top: 32px;
+  }
+
+  &.desc-box {
+    align-items: flex-start;
+    justify-content: center;
+    min-height: calc(64px + 64px);
+    margin-top: 0;
+    padding-right: calc(64px + 32px);
+  }
+
+  &::after {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.--coupon {
+    @include sprite-icons(17, 64px, after);
+  }
+
+  &.--review {
+    @include sprite-icons(18, 64px, after);
+  }
+
+  &.--delivery {
+    @include sprite-icons(19, 64px, after);
+  }
+
+  &.--delivery-guide {
+    &::before {
+      flex: 0 0 99px;
+      content: '';
+      display: inline-block;
+      width: 99px;
+      height: 90px;
+      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-repeat: no-repeat;
+      background-size: 920px auto;
+      background-position: -353px -194px;
+    }
+  }
+
+  &.--terms {
+    &::before {
+      flex: 0 0 104px;
+      content: '';
+      display: inline-block;
+      width: 104px;
+      height: 91px;
+      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-repeat: no-repeat;
+      background-size: 920px auto;
+      background-position: -452px -194px;
+    }
+  }
+
+  &.--guide {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $Line-line;
+  }
+
+  &.--size-guide {
+    &::before {
+      flex: 0 0 78px;
+      content: '';
+      display: inline-block;
+      width: 78px;
+      height: 80px;
+      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-repeat: no-repeat;
+      background-size: 920px auto;
+      background-position: 0 -342px;
+    }
+  }
+
+  &.--copies-guide {
+    &::before {
+      flex: 0 0 82px;
+      content: '';
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-repeat: no-repeat;
+      background-size: 920px auto;
+      background-position: -78px -342px;
     }
   }
 }
@@ -2483,32 +2547,32 @@ button[type='button'] {
           height: 30px;
           background-image: url('/resources/fe/img/icon/img-sprite.png');
           background-repeat: no-repeat;
-          background-size: 1002px auto;
+          background-size: 920px auto;
         }
 
         &.--kakao {
           &::after {
-            background-position: -586px -194px;
+            background-position: -556px -194px;
           }
         }
 
         &.--facebook {
           &::after {
-            background-position: -616px -194px;
+            background-position: -586px -194px;
           }
         }
 
         &.--instagram {
           &::after {
-            background-position: -646px -194px;
+            background-position: -616px -194px;
           }
         }
 
         &.--naver {
           &::after {
-            width: 33px;
+            width: 32px;
             height: 30px;
-            background-position: -676px -194px;
+            background-position: -646px -194px;
           }
         }
       }
@@ -2645,6 +2709,10 @@ button[type='button'] {
 
   >ul {
     margin-top: 16px;
+
+    p {
+      margin-top: 0 !important;
+    }
   }
 
   .terms-title {
@@ -2705,8 +2773,8 @@ button[type='button'] {
       height: 148px;
       background-image: url('/resources/fe/img/icon/img-sprite.png');
       background-repeat: no-repeat;
-      background-size: 1002px auto;
-      background-position: -708px -194px;
+      background-size: 920px auto;
+      background-position: -678px -194px;
     }
   }
 

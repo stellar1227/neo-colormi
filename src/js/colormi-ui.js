@@ -45,8 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 간편주문 토글
   setupOptionToggle();
-
+  // faq 목록
   initFaqToggle('.table-list.--faq-list');
+  // 고객센터 탭
+  initTabs('.tab-item .btn-wrap.--tab', 'button', '.tab-cont', '--active');
 
   // main swiper - main-banner / product-review / blog-list
   const mainWrap = document.querySelector('.main-wrap');
@@ -472,4 +474,22 @@ function initFaqToggle(faqContainerSelector) {
       }
     });
   });
+}
+
+function initTabs(tabWrapperSelector, buttonSelector, contentSelector, activeClass) {
+  const wrapper = document.querySelector(tabWrapperSelector);
+  if (!wrapper) return;
+  const buttons = Array.from(wrapper.querySelectorAll(buttonSelector));
+  const contents = Array.from(document.querySelectorAll(contentSelector));
+
+  function activate(index) {
+    buttons.forEach((btn, i) => btn.classList.toggle(activeClass, i === index));
+    contents.forEach((cnt, i) => cnt.style.display = (i === index ? 'block' : 'none'));
+  }
+
+  buttons.forEach((btn, i) => {
+    btn.addEventListener('click', () => activate(i));
+  });
+
+  activate(0);
 }

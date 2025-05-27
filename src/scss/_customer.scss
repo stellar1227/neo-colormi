@@ -188,7 +188,8 @@
 
   .item {
     .coupon {
-      height: 200px;
+      width: 100%;
+      max-height: 200px;
     }
 
     .event {
@@ -196,6 +197,7 @@
 
       .event-img {
         overflow: hidden;
+        width: 100%;
         max-height: 215px;
         border-radius: 8px;
       }
@@ -219,48 +221,100 @@
 }
 
 // 고객센터
-.customer-info {
+.cont-division {
+  >.title-wrap {
+    width: 273px;
+
+    .cont-title {
+      align-self: flex-start;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background: $color-text-basic;
+        vertical-align: 3px;
+      }
+    }
+  }
+
+  .img-box {
+    &.--customer-info {
+      width: 401px;
+      height: 213px;
+      max-width: 401px;
+      max-height: 213px;
+    }
+
+    &.--greeting {
+      flex: 0 0 174px;
+      height: auto;
+      max-width: 174px;
+      max-height: 310px;
+    }
+
+    &.--brand-story {
+      flex: 0 0 100%;
+    }
+  }
+
+  .cont-info {
+    flex: 1;
+    gap: 32px 0;
+
+    &.--customer-info {
+      flex-direction: row;
+      flex: 0 0 500px;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.cont-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
 
-  .customer-item {
-    .--title-icon {
+  &.--customer-info {
+    .title-icon {
       &::before {
         margin-right: 8px;
         vertical-align: -2px;
       }
-    }
 
-    &.--center {
-      .--title-icon {
+      &.--center {
         @include sprite-icons(42, 16px);
       }
-    }
 
-    &.--delivery {
-      .--title-icon {
+      &.--delivery {
         @include sprite-icons(67, 16px);
       }
-    }
 
-    &.--email {
-      .--title-icon {
+      &.--email {
         @include sprite-icons(62, 16px);
       }
-    }
 
-    &.--account {
-      .--title-icon {
+      &.--account {
         @include sprite-icons(68, 16px);
       }
-    }
 
-    &.--map {
-      .--title-icon {
+      &.--map {
         @include sprite-icons(44, 16px);
       }
     }
+  }
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .tab-cont {
+    display: none;
   }
 }
 

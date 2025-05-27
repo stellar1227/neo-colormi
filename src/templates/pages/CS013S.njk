@@ -7,32 +7,42 @@
       <h3>고객센터</h3>
     </div>
     <section class="content-box">
-      <div class="desc-box line-box --xlarge --icon-box --customer">
-        <i class="icon"><img src="/resources/fe/img/icon/img-customer-center.png"/> </i>
-        <div class="customer-info">
-          <div class="customer-item --center">
-            <p class="guide-basic --bold --title-icon">전화번호</p>
+      <div class="desc-box line-box --xlarge cont-division">
+        <i class="img-box --customer-info">
+          <img src="/resources/fe/img/icon/img-customer-center.png"/>
+        </i>
+        <div class="cont-info --customer-info">
+          <div class="cont-item">
+            <div class="title-wrap">
+              <p class="cont-title --small title-icon --center">전화번호</p>
+            </div>
             <ul class="guide-sub-deep --small --dot">
               <li>접수 : 02-2266-0671</li>
               <li>회계 : 02-2024-3304</li>
             </ul>
           </div>
-          <div class="customer-item --delivery">
-            <p class="guide-basic --bold --title-icon">근무시간 및 출고안내</p>
+          <div class="cont-item">
+            <div class="title-wrap">
+              <p class="cont-title --small title-icon --delivery">근무시간 및 출고안내</p>
+            </div>
             <ul class="guide-sub-deep --small --dot">
               <li>접수센터 : 9:00 - 20:00</li>
               <li>제작센터 : 24시 출고 (주말, 공휴일 휴무)</li>
             </ul>
           </div>
-          <div class="customer-item --email">
-            <p class="guide-basic --bold --title-icon">이메일</p>
+          <div class="cont-item">
+            <div class="title-wrap">
+              <p class="cont-title --small title-icon --email">이메일</p>
+            </div>
             <ul class="guide-sub-deep --small --dot">
               <li>접수 : info@billpost.co.kr</li>
               <li>회계 : colormitax@billpost.co.kr</li>
             </ul>
           </div>
-          <div class="customer-item --account">
-            <p class="guide-basic --bold --title-icon">입금 계좌안내</p>
+          <div class="cont-item">
+            <div class="title-wrap">
+              <p class="cont-title --small title-icon --account">입금 계좌안내</p>
+            </div>
             <ul class="guide-sub-deep --small --dot">
               <li>
                 KB 국민은행 412701-01-227972
@@ -44,19 +54,11 @@
       </div>
     </section>
     <section class="content-box">
-      <div class="customer-info">
-        <div class="customer-item --map">
-          <p class="guide-basic --bold --title-icon">찾아오시는 길</p>
+      <div class="cont-info --customer-info">
+        <div class="title-wrap">
+          <p class="cont-title --small title-icon --map">찾아오시는 길</p>
         </div>
-        <div class="btn-wrap --tab">
-          <button type="button" class="btn-outline --large --active">
-            <span>접수센터</span>
-          </button>
-          <button type="button" class="btn-outline --large">
-            <span>제작센터</span>
-          </button>
-        </div>
-        <div class="map-box" id="map"></div>
+        {% include "components/map.njk" %}
         <div class="table-list --type-01">
           <dl class="list-item">
             <dt>주소</dt>

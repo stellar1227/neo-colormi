@@ -1,0 +1,120 @@
+{% extends "layouts/base.njk" %}
+{% set title = "용지 사이즈 안내" %}
+{% block content %}
+  <div class="modal --full --xlarge">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">용지 사이즈 안내</h5>
+      </div>
+      <div class="modal-container">
+        <div class="icon-box --size-guide --guide">
+          <div class="tag-wrap">
+            <div class="tag-area">
+              <span class="tag --secondary">#사이즈가 어떻게 다를까요?</span>
+              <span class="tag">#인쇄상식</span>
+              <span class="tag">#알고주문하자</span>
+            </div>
+            <p class="guide-sub-deep --small">전지의 규격은 국전지(A판형/939×636mm)와 4×6전지(B판형/1091×788mm)으로 구분됩니다.</p>
+          </div>
+        </div>
+        <div class="title-wrap --center">
+          <p class="cont-title --small">국전지(A판형) / 4×6(B판형)</p>
+        </div>
+        <div class="desc-box cont-division --guide">
+          <div class="cont-info --a1">
+            <div class="--size-1">
+              <dl>
+                <dt class="guide-basic-title">A1</dt>
+                <dd>636mm</dd>
+              </dl>
+              <i class="--width"></i>
+            </div>
+            <div class="size-cont">
+              <i class="--height">
+                <span>939mm</span>
+              </i>
+              <dl class="--size-2">
+                <dt class="guide-basic-title">A2</dt>
+                <dd>국2절</dd>
+                <dd>468 × 636</dd>
+              </dl>
+              <dl class="--size-3">
+                <dt class="guide-basic-title">A3</dt>
+                <dd>국4절</dd>
+                <dd>318 × 468</dd>
+              </dl>
+              <dl class="--size-4">
+                <dt class="guide-basic-title">A4</dt>
+                <dd>국8절</dd>
+                <dd>234 × 318</dd>
+              </dl>
+              <dl class="--size-5">
+                <dt class="guide-basic-title">A5</dt>
+                <dd>국16절</dd>
+                <dd>159 × 234</dd>
+              </dl>
+              <div class="--size-6"></div>
+              <dl class="--size-6">
+                <dt class="guide-basic-title">A6</dt>
+                <dd>국32절</dd>
+                <dd>117 × 159</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="cont-info --b1">
+            <div class="--size-1">
+              <dl>
+                <dt class="guide-basic-title">B1</dt>
+                <dd>788mm</dd>
+              </dl>
+              <i class="--width"></i>
+            </div>
+            <div class="size-cont">
+              <i class="--height">
+                <span>1090mm</span>
+              </i>
+              <dl class="--size-2">
+                <dt class="guide-basic-title">B2</dt>
+                <dd>2절</dd>
+                <dd>545 × 788</dd>
+              </dl>
+              <dl class="--size-3">
+                <dt class="guide-basic-title">B3</dt>
+                <dd>4절</dd>
+                <dd>394 × 545</dd>
+              </dl>
+              <dl class="--size-4">
+                B<dt class="guide-basic-title">B4</dt>
+                <dd>8절</dd>
+                <dd>272 × 394</dd>
+              </dl>
+              <dl class="--size-5">
+                <dt class="guide-basic-title">B5</dt>
+                <dd>16절</dd>
+                <dd>197 × 272</dd>
+              </dl>
+              <div class="--size-6"></div>
+              <dl class="--size-6">
+                <dt class="guide-basic-title">B6</dt>
+                <dd>32절</dd>
+                <dd>136 × 197</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

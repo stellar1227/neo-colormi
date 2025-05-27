@@ -1,0 +1,464 @@
+{% extends "layouts/base.njk" %}
+{% set title = "출고안내" %}
+{% block content %}
+  {% include "components/sideNavCustomer.njk" %}
+  <div class="content">
+    <div class="page-title">
+      <h3>출고안내</h3>
+    </div>
+    <section class="content-box">
+      <div class="desc-box border-box">
+        <p class="guide-basic-title">오후 6시 이후 접수 시, 익일(다음날) 출고됩니다.</p>
+        <div class="icon-box --delivery-guide">
+          <ul class="guide-sub-deep --small --dot">
+            <li>인쇄 예측시간은 인쇄 당일의 상황에 따라 변동이 있을 수 있습니다.</li>
+            <li>[즉석명함]은 당일출고, [일반명함]은 익일출고 합니다.</li>
+            <li>[상품권/쿠폰/초대장/청첩장] 은 익일출고 합니다.</li>
+            <li>지역에 따라 배송일이 1일 정도 더 소요될 수 있습니다.</li>
+            <li>출고 예측시간은 당일 업무량에 따라 약간의 시간차가 발생할 수 있으며, PDF 생성 및 교정 시간을 제외한 시간으로 계산됩니다.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="content-box">
+      <div class="title-wrap">
+        <p class="cont-title --small --title-icon --account">출고예측시간 (입금 및 시안 확정 후)</p>
+      </div>
+      <table class="table-list --board">
+        <colgroup>
+          <col style="width: 8%"/>
+          <col style="width: 12%"/>
+          <col span="6"/>
+        </colgroup>
+        <thead class="list-item-wrap --header">
+          <tr class="list-item">
+            <th scope="col" class="item" colspan="2">
+              <p>구분</p>
+            </th>
+            <th scope="col" class="item">
+              <p>1부</p>
+            </th>
+            <th scope="col" class="item">
+              <p>5부 미만</p>
+            </th>
+            <th scope="col" class="item">
+              <p>10부 미만</p>
+            </th>
+            <th scope="col" class="item">
+              <p>50부 미만</p>
+            </th>
+            <th scope="col" class="item">
+              <p>100부 미만</p>
+            </th>
+            <th scope="col" class="item">
+              <p>100부 이상</p>
+            </th>
+          </tr>
+        </thead>
+        <!-- // list header -->
+        <tbody class="list-item-wrap --body">
+          <tr class="list-item">
+            <th scope="row" class="item --type" data-label="구분" rowspan="2">
+              <div class="item-inner">
+                <p>10P</p>
+                <p>이하</p>
+              </div>
+            </th>
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>인쇄</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>1시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>1시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>2시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>2시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>3시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>3시간</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>후가공</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>1시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>2시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>3시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>4시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type" data-label="구분" rowspan="2">
+              <div class="item-inner">
+                <p>50P</p>
+                <p>이하</p>
+              </div>
+            </th>
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>인쇄</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>2시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>2시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>3시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>3시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>4시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>후가공</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>3시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>4시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>4시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>7시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>8시간</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type" data-label="구분" rowspan="2">
+              <div class="item-inner">
+                <p>100P</p>
+                <p>이하</p>
+              </div>
+            </th>
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>인쇄</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>3시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>6시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>7시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>8시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>9시간</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>후가공</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>6시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>7시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>8시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>9시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>10시간</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type" data-label="구분" rowspan="2">
+              <div class="item-inner">
+                <p>500P</p>
+                <p>이하</p>
+              </div>
+            </th>
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>인쇄</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>6시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>7시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>10시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>14시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>익일오전</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>후가공</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>7시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>8시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>12시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>익일오전</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>익일오전</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type" data-label="구분" rowspan="2">
+              <div class="item-inner">
+                <p>500P</p>
+                <p>이상</p>
+              </div>
+            </th>
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>인쇄</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>5시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>7시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>8시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>14시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>익일오전</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>2일 후</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="list-item">
+            <th scope="row" class="item --type-detail" data-label="구분">
+              <div class="item-inner">
+                <p>후가공</p>
+              </div>
+            </th>
+            <td class="item" data-label="1부">
+              <div class="item-inner">
+                <p>7시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="5부 미만">
+              <div class="item-inner">
+                <p>10시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="10부 미만">
+              <div class="item-inner">
+                <p>12시간</p>
+              </div>
+            </td>
+            <td class="item" data-label="50부 미만">
+              <div class="item-inner">
+                <p>익일오전</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 미만">
+              <div class="item-inner">
+                <p>2일 후</p>
+              </div>
+            </td>
+            <td class="item" data-label="100부 이상">
+              <div class="item-inner">
+                <p>2일 후</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,434 @@
+{% extends "layouts/base.njk" %}
+{% set title = "연당 매수 안내" %}
+{% block content %}
+  <div class="modal --full --xlarge">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">연당 매수 안내</h5>
+      </div>
+      <div class="modal-container">
+        <div class="icon-box --copies-guide --guide">
+          <div class="tag-wrap">
+            <div class="tag-area">
+              <span class="tag --secondary">#사이즈가 어떻게 다를까요?</span>
+              <span class="tag">#인쇄상식</span>
+              <span class="tag">#알고주문하자</span>
+            </div>
+            <p class="guide-sub-deep --small">
+              모든 종이는 전지 형태(=펼친 신문지 크기 정도)로 재단하게 되는데, 이때 발생되는 매수가 ‘500매’입니다.
+              <br/>전지의 규격은 국전지(A판형/939×636mm)와 4×6전지(B판형/1090×788mm)으로 구분되며, 모두 500매를 ‘1연(Ream)’으로 말합니다.<br/>예시) 4×6 전지 1연을 16절로 재단하면
+              8,000매가 나오게 됩니다.
+            </p>
+          </div>
+        </div>
+        <div class="title-wrap">
+          <p class="cont-title --small">국사이즈별 연당 매수 안내</p>
+        </div>
+        <div class="table-wrap">
+          <table class="table-list --board">
+            <thead class="list-item-wrap --header">
+              <tr class="list-item">
+                <th class="item --type" rowspan="2">
+                  <p>구분</p>
+                </th>
+                <th class="item --size-type" colspan="5">
+                  <p>국전지</p>
+                </th>
+              </tr>
+              <tr class="list-item">
+                <th class="item --size-type-item">
+                  <p>A5</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>A4</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>A3</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>A2</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>A1</p>
+                </th>
+              </tr>
+            </thead>
+            <!-- // list header -->
+            <tbody class="list-item-wrap --body">
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>1연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>8,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>4,000</p>
+                  </div>
+                </div>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>2,000</p>
+                  </div>
+                </div>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>1,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>500</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>2연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>16,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>8,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>4,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>2,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>1,000</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>3연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>24,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>10,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>6,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>3,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>1,500</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>4연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>32,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>16,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>8,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>4,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>2,000</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>5연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>40,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>20,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>10,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>5,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>2,500</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table-list --board">
+            <thead class="list-item-wrap --header">
+              <tr class="list-item">
+                <th class="item --type" rowspan="2">
+                  <p>구분</p>
+                </th>
+                <th class="item --size-type" colspan="5">
+                  <p>4×6 전지</p>
+                </th>
+              </tr>
+              <tr class="list-item">
+                <th class="item --size-type-item">
+                  <p>32절(B6)</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>16절(B5)</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>8절(B4)</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>4절(B3)</p>
+                </th>
+                <th class="item --size-type-item">
+                  <p>2절(B2)</p>
+                </th>
+              </tr>
+            </thead>
+            <!-- // list header -->
+            <tbody class="list-item-wrap --body">
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>1연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>16,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>8,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>4,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>2,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>1,000</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>2연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>32,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>16,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>8,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>4,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>2,000</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>3연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>48,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>24,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>12,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>6,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>3,000</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>4연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>64,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>32,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>16,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>8,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>4,000</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="list-item">
+                <th class="item --type-detail">
+                  <div class="item-inner">
+                    <p>5연</p>
+                  </div>
+                </th>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>80,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>40,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>20,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>10,000</p>
+                  </div>
+                </td>
+                <td class="item --size-type-item">
+                  <div class="item-inner">
+                    <p>5,000</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="desc-box">
+          <p class="guide-basic-title">※ 꼭 확인하세요.</p>
+          <ul class="guide-sub-deep --small --dot">
+            <li>정매수로 주문하시는 경우, 견적문의 또는 고객상담센터(02-2266-0671)로 문의 후에 결제해주세요.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

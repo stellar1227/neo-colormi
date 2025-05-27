@@ -1,0 +1,42 @@
+{% macro renderMenuList(arr) %}
+  {% set mn   = arr[0] %}
+  {% set catg = mn.categories[0] %}
+  {% for d2 in catg.depth2List %}
+    <section class="content-box">
+      <div class="title-wrap">
+        <h5>{{ d2.title }}</h5>
+        <div class="breadcrumb">
+          <ol>
+            <li>
+              <span>{{ catg.depth1 | safe }}</span>
+            </li>
+            <li>
+              <strong>{{ d2.title }}</strong>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="main-product-wrap">
+        <div class="list">
+          {% for d3 in d2.depth3List %}
+            {% set item = d3.itemList[0] %}
+            <a href="/" class="item">
+              <div class="product-img">
+                <img src="/resources/fe/img/product/{{ item.fileName }}" alt="{{ item.alt }}"/>
+              </div>
+              <div class="product-info">
+                <div class="product-title">
+                  <p class="product-discount">30%</p>
+                  <p class="product-name">{{ d3.title }}</p>
+                </div>
+                <div class="product-text">
+                  <p class="text">1,870원 ~</p>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endmacro %}

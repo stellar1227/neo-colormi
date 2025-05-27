@@ -1,0 +1,30 @@
+{% extends "layouts/base.njk" %}
+{% set title = "브랜드스토리" %}
+{% block content %}
+  {% include "components/sideNavCustomer.njk" %}
+  <div class="content">
+    <div class="page-title">
+      <h3>브랜드스토리</h3>
+    </div>
+    <section class="content-box">
+      <div class="desc-box cont-division">
+        <p class="img-box --brand-story">
+          <img src="/resources/fe/img/img/img-brand-story.png"/>
+        </p>
+        <div class="title-wrap">
+          <p class="cont-title --small">브랜드 컨셉</p>
+        </div>
+        <div class="cont-info --brand-story">
+          <div class="text-wrap">
+            <p class="guide-sub-deep --small">
+              모든 형태의 인쇄! 고품질 인쇄 기준을 잡다!
+            </p>
+            <p class="guide-sub-deep --small">
+              색을 아름답게 표현하겠다는 의지를 실천하는 곳<br/>색조합을 통한 모든 형태의 인쇄물을 최고의 품질로 제공하는 곳<br/>이곳은 고품질 디지털 인쇄 전문 칼라미 입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

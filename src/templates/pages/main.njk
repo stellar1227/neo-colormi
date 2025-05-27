@@ -6,10 +6,10 @@
       {% include "components/swiperMain.njk" %}
     </div>
     <div class="content">
-      <div class="content-box">
+      <section class="content-box">
         <div class="main-product-wrap">
           <div class="list">
-            <div class="item">
+            <a href="/" class="item">
               <div class="product-img">
                 <img src="/resources/fe/img/product/A001_thum_1.jpg" alt="상품 이미지"/>
               </div>
@@ -27,11 +27,30 @@
                   <p class="text">1,870원 ~</p>
                 </div>
               </div>
-            </div>
+            </a>
+            <!-- // item -->
+            <a href="/" class="item">
+              <div class="product-img">
+                <img src="/resources/fe/img/product/A001_thum_1.jpg" alt="상품 이미지"/>
+              </div>
+              <div class="product-info">
+                <div class="badge-wrap">
+                  <span class="badge line-display-3 recommend">MD추천</span>
+                  <span class="badge line-display-4 new">신상품</span>
+                </div>
+                <div class="product-title">
+                  <p class="product-discount">30%</p>
+                  <p class="product-name">상품명</p>
+                </div>
+                <div class="product-text">
+                  <p class="text">1,870원 ~</p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="content-box">
+      </section>
+      <section class="content-box">
         <h4 class="img-title-event">
           <img src="/resources/fe/img//img/img-main-title-event.png" alt="칼라미에서 준비한 이벤트 확인해보세요!"/>
         </h4>
@@ -39,7 +58,7 @@
           <div class="item">
             <a href="" class="event">
               <div class="event-img">
-                <img src="/resources/fe/img/temp/pc-event-studyBn.png" alt="이벤트 이미지"/>
+                <img src="/resources/fe/img/temp/event-studyBn.png" alt="이벤트 이미지"/>
               </div>
               <p class="guide-basic">스터디플래너 40% 할인받고, 100일 목표 달성하기!</p>
               <p class="guide-basic-title">2025.03.06~2025.04.05</p>
@@ -48,7 +67,7 @@
           <div class="item">
             <div href="" class="event">
               <div class="event-img">
-                <img src="/resources/fe/img/temp/pc-event-studyBn.png" alt="이벤트 이미지"/>
+                <img src="/resources/fe/img/temp/event-studyBn.png" alt="이벤트 이미지"/>
               </div>
               <p class="guide-basic">스터디플래너 40% 할인받고, 100일 목표 달성하기!</p>
               <p class="guide-basic-title">2025.03.06~2025.04.05</p>
@@ -60,9 +79,9 @@
             <span>더보기</span>
           </button>
         </div>
-      </div>
+      </section>
     </div>
-    <div class="content-box product-review-wrap --best">
+    <section class="content-box product-review-wrap --best">
       <div class="title-review-wrap">
         <h4 class="title-review">이용후기
           <span>TOP10</span>
@@ -74,16 +93,16 @@
       <div class="product-review-wrap">
         {% include "components/swiperReview.njk" %}
       </div>
-    </div>
-    <div class="content-box">
+    </section>
+    <section class="content-box">
       <div class="title-blog-wrap">
         <h4 class="title-blog">printing content</h4>
       </div>
       <div class="blog-list-wrap">
         {% include "components/swiperBlog.njk" %}
       </div>
-    </div>
-    <div class="content-box util-menu-list-wrap">
+    </section>
+    <section class="content-box util-menu-list-wrap">
       <ul class="util-menu-list">
         <li class="item --quote">
           <a href="">
@@ -111,7 +130,7 @@
           </a>
         </li>
       </ul>
-    </div>
+    </section>
     <div class="floting-nav">
       <button type="button" class="btn-talk-contact">
         <i class="icon"></i>

@@ -158,7 +158,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    min-width: 1200px;
+    // min-width: 1200px;
 
     .logo {
       margin: 13px 20px;
@@ -204,7 +204,7 @@
           margin-bottom: 40px;
           background-image: url('/resources/fe/img/icon/img-sprite.png');
           background-repeat: no-repeat;
-          background-size: 1002px auto;
+          background-size: 920px auto;
         }
 
         &.--default {
@@ -494,6 +494,10 @@ header {
           border: none;
           background: $color-background-white;
           @include sprite-icons(11, 16px, after);
+
+          &::after {
+            vertical-align: -3px;
+          }
 
           &:hover {
             background: $color-border-gray-light;
@@ -855,7 +859,7 @@ footer {
               height: 100%;
               background-image: url('/resources/fe/img/icon/img-sprite.png');
               background-repeat: no-repeat;
-              background-size: 1002px auto;
+              background-size: 920px auto;
             }
           }
         }
@@ -980,7 +984,7 @@ footer {
           margin-right: 20px;
           background-image: url('/resources/fe/img/icon/img-sprite.png');
           background-repeat: no-repeat;
-          background-size: 1002px auto;
+          background-size: 920px auto;
         }
 
         dl {
@@ -1121,156 +1125,180 @@ footer {
   transition: .4s;
 }
 
-.main-wrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.main-banner-wrap {
+  min-width: 1200px;
+  margin-top: 20px;
 
-  .main-banner-wrap {
-    min-width: 1200px;
-    margin-top: 20px;
+  .swiper {
+    .swiper-slide {
+      width: 996px;
 
-    .swiper {
-      .swiper-slide {
-        width: 996px;
-
-        .item {
-          overflow: hidden;
-          display: flex;
-          height: 420px;
-          border-radius: 20px;
-
-          img {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-      }
-
-      .swiper-util {
-        display: flex;
-        justify-content: center;
-        margin-top: 12px;
-
-        .swiper-pagination {
-          position: relative;
-          display: inline-flex;
-          width: auto;
-          top: auto;
-          bottom: auto;
-          margin: 0 4px;
-          @include font-body-small-bold;
-
-          .swiper-pagination-current {
-            color: $color-text-basic;
-          }
-
-          .swiper-pagination-total {
-            color: $color-text-subcolor-light;
-
-            &::before {
-              content: '';
-              display: inline-block;
-              width: 1px;
-              height: 11px;
-              margin: 0 8px;
-              background: $color-border-gray;
-            }
-          }
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-          position: relative;
-          display: inline-flex;
-          top: auto;
-          left: auto;
-          right: auto;
-          width: 24px;
-          height: 24px;
-          margin-top: 0;
-
-          &::after {
-            content: '';
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background: svgIcon(arrow, 'D6D6D6') no-repeat center center/24px 24px;
-          }
-        }
-
-        .swiper-button-prev {
-          &::after {
-            transform: rotate(180deg);
-          }
-        }
-      }
-    }
-  }
-
-  .main-product-wrap {
-    .list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px 18px;
-    }
-
-    .item {
-      width: 225px;
-
-      .product-img {
+      .item {
         overflow: hidden;
-        position: relative;
-        border-radius: 10px;
-
-        &::before {
-          content: '';
-          display: block;
-          padding-bottom: 100%;
-        }
+        display: flex;
+        height: 420px;
+        border-radius: 20px;
 
         img {
-          position: absolute;
-          top: 0;
           display: inline-block;
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
+    }
 
-      .product-info {
-        display: flex;
-        flex-direction: column;
-        margin-top: 16px;
+    .swiper-util {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
 
-        .badge-wrap {
-          margin: 0;
+      .swiper-pagination {
+        position: relative;
+        display: inline-flex;
+        width: auto;
+        top: auto;
+        bottom: auto;
+        margin: 0 4px;
+        @include font-body-small-bold;
+
+        .swiper-pagination-current {
+          color: $color-text-basic;
         }
 
-        .product-title {
-          display: flex;
-          gap: 8px 4px;
-          margin-top: 4px;
-          @include font-body-small;
+        .swiper-pagination-total {
+          color: $color-text-subcolor-light;
 
-          .product-discount {
-            font-weight: $font-weight-semibold;
-            font-family: $font-typo-en-font;
-            color: $Display-Status-Display-2
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 11px;
+            margin: 0 8px;
+            background: $color-border-gray;
           }
         }
+      }
 
-        .product-text {
-          margin-top: 3px;
-          @include font-body-small;
-          color: $color-text-subcolor-deep;
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: relative;
+        display: inline-flex;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 24px;
+        height: 24px;
+        margin-top: 0;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background: svgIcon(arrow, 'D6D6D6') no-repeat center center/24px 24px;
+        }
+      }
+
+      .swiper-button-prev {
+        &::after {
+          transform: rotate(180deg);
         }
       }
     }
   }
+}
+
+.main-product-wrap {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px 18px;
+  }
+
+  .item {
+    display: inline-block;
+
+    .product-img {
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      background: $color-border-gray-light;
+
+      &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 53%;
+        transform: translate(-50%, -50%);
+        background: url(/resources/fe/img/icon/img-no-image.png) no-repeat center center/cover;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        transform: scale(1.0);
+        transition: transform .3s;
+      }
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 16px;
+
+      .badge-wrap {
+        margin: 0;
+      }
+
+      .product-title {
+        display: flex;
+        gap: 8px 4px;
+        margin-top: 4px;
+        @include font-body-small;
+
+        .product-discount {
+          font-weight: $font-weight-semibold;
+          font-family: $font-typo-en-font;
+          color: $Display-Status-Display-2
+        }
+      }
+
+      .product-text {
+        margin-top: 3px;
+        @include font-body-small;
+        color: $color-text-subcolor-deep;
+      }
+    }
+
+    &:hover {
+      .product-img {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
   // 이벤트
   .img-title-event {
@@ -1388,7 +1416,7 @@ footer {
       margin-bottom: 4px;
       background-image: url(/resources/fe/img/icon/img-sprite.png);
       background-repeat: no-repeat;
-      background-size: 1002px auto;
+      background-size: 920px auto;
       background-position: 0 0;
     }
   }

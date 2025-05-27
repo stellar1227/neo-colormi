@@ -1489,6 +1489,12 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       }
     }
   }
+
+  &.--add-cert {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid $Line-line;
+  }
 }
 
 .product-price-wrap {
@@ -2035,14 +2041,10 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
 
         &.--size-type-item {
           width: calc((100% - 60px)/5);
+          padding-right: 0;
+          padding-left: 0;
         }
 
-      }
-
-      &.--header {
-        .list-item .item {
-          padding: 14px 0;
-        }
       }
     }
   }

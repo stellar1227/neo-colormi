@@ -2472,6 +2472,12 @@ button[type='button'] {
   .form-field .form-wrap input[type=password] {
     padding-right: 64px;
   }
+
+  .page-title {
+    [class^=guide-] {
+      margin-top: 16px;
+    }
+  }
 }
 
 .sns-login {

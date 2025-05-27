@@ -295,6 +295,10 @@ h5 {
     &.--basic {
       border: 1px solid $Line-line;
       background: $color-background-white;
+
+      &:hover {
+        border-color: $Line-line-3;
+      }
     }
   }
 
@@ -1076,6 +1080,16 @@ h5 {
 
     .checkbox input+.checkbox-icon {
       border-color: $color-border-danger;
+    }
+  }
+
+  &.--block,
+  &.--block .checkbox-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+
+    >.checkbox-wrap {
+      padding-left: 16px;
     }
   }
 
@@ -1999,12 +2013,12 @@ h5 {
     @include desc-box;
     padding: 20px;
     background: $color-border-gray-light;
+  }
 
-    &.--receipt {
-      max-width: 590px;
-      margin: 0 auto;
-      padding: 48px 32px;
-    }
+  &.--receipt {
+    max-width: 590px;
+    margin: 0 auto;
+    padding: 48px 32px;
   }
 
   &.gray-sub-box {
@@ -2373,14 +2387,13 @@ h5 {
   .item {
     @include tooltip;
     bottom: -32px;
-    // transform: translateX(calc(-50% + 8px));
     z-index: 10;
   }
 
   &.--multiline {
 
     .item {
-      top: auto;
+      top: unset;
       bottom: calc(-100% - 35px);
     }
   }
@@ -2388,7 +2401,7 @@ h5 {
   &.--multiline-3 {
 
     .item {
-      top: auto;
+      top: unset;
       bottom: calc(-100% - 55px);
     }
   }
@@ -2397,10 +2410,10 @@ h5 {
 
     .item {
       top: calc(-100% - 17px);
-      bottom: auto;
+      bottom: unset;
 
       &::before {
-        top: auto;
+        top: unset;
         bottom: -2.5px;
         transform: translateX(-50%) rotate(-135deg);
       }
@@ -2410,7 +2423,7 @@ h5 {
 
       i {
         top: calc(-100% - 35px);
-        bottom: auto;
+        bottom: unset;
       }
     }
 
@@ -2418,7 +2431,7 @@ h5 {
 
       i {
         top: calc(-100% - 55px);
-        bottom: auto;
+        bottom: unset;
       }
     }
   }
@@ -2437,7 +2450,18 @@ button[type='button'] {
 
     .item {
       bottom: -45px;
-      // transform: translateX(calc(-50% + 12px));
+    }
+
+    &.--top {
+      .item {
+        top: calc(-100% - 21px);
+        bottom: unset;
+      }
+
+      >.item {
+        top: calc(-100% - -12px);
+        bottom: unset;
+      }
     }
   }
 }

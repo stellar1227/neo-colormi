@@ -197,6 +197,8 @@
       margin: 0 -20px;
 
       .list {
+        display: flex;
+        flex-wrap: wrap;
         gap: 32px 12px;
         width: max-content;
         max-width: 673px;

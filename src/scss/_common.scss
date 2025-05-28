@@ -2176,11 +2176,14 @@ h5 {
         }
       }
 
-      span {
-        letter-spacing: -1px;
+      &.--ellipsis {
+        span {
+          padding: 0;
+          @include sprite-icons(70, 40px);
 
-        &:hover {
-          background: $color-background-white;
+          &:hover {
+            background: $color-background-white;
+          }
         }
       }
 

@@ -2147,7 +2147,6 @@ h5 {
   }
 }
 
-// pagination
 .pagination {
   display: flex;
   justify-content: center;
@@ -2187,7 +2186,9 @@ h5 {
 
       &.prev,
       &.next {
-        a {
+
+        a,
+        span {
           position: relative;
           padding: 12px;
 
@@ -2202,7 +2203,9 @@ h5 {
       }
 
       &.prev {
-        a {
+
+        a,
+        span {
           &::after {
             order: -1;
             transform: rotate(180deg);
@@ -2220,7 +2223,9 @@ h5 {
 
         &.prev,
         &.next {
-          a {
+
+          a,
+          span {
             &::after {
               background-image: svgIcon(arrow, 'A5A5A5');
             }
@@ -2230,14 +2235,14 @@ h5 {
 
       &.--active {
 
-        a,
-        span {
+        a {
           background: $color-border-gray-dark;
           color: $color-text-basic-inverse;
         }
 
         &.prev,
         &.next {
+
           a {
             &::after {
               background-image: svgIcon(arrow, 'ffffff');

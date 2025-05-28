@@ -2758,6 +2758,56 @@ button[type='button'] {
     }
   }
 
+  &.--error,
+  &.--error-404,
+  &.--error-403,
+  &.--error-500,
+  &.--error-503 {
+    justify-content: center;
+    height: 100vh;
+    margin: 0 20px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 608px;
+      height: 430px;
+      background-image: url('/resources/fe/img/icon/img-sprite-error.png');
+      background-repeat: no-repeat;
+      background-size: 1824px auto;
+    }
+  }
+
+  &.--error {
+    &::before {
+      background-position: 0 0;
+    }
+  }
+
+  &.--error-404 {
+    &::before {
+      background-position: -608px 0;
+    }
+  }
+
+  &.--error-403 {
+    &::before {
+      background-position: -1216px 0;
+    }
+  }
+
+  &.--error-500 {
+    &::before {
+      background-position: 0 -430px;
+    }
+  }
+
+  &.--error-503 {
+    &::before {
+      background-position: -608px -430px;
+    }
+  }
+
   .text-box {
     display: flex;
     flex-direction: column;

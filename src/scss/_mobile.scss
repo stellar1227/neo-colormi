@@ -603,26 +603,21 @@
 
     &.cont-division {
       flex-direction: column;
-      padding: 0 !important;
       border: 0;
+    }
+  }
 
-      .img-box {
-        align-self: center;
-      }
+  .cont-division {
+    flex-direction: column;
+    padding: 0 !important;
 
-      .cont-info {
+    .img-box:not(.--brand-story) {
+      align-self: center;
+    }
+
+    .cont-info {
+      &.--customer-info {
         flex: 1;
-        align-items: center;
-      }
-
-      &.--guide {
-        .cont-info {
-
-          &.--a1,
-          &.--b1 {
-            margin-right: 68px;
-          }
-        }
       }
     }
   }
@@ -980,20 +975,6 @@
       .review-date-content {
         align-items: flex-end;
         flex-direction: column;
-      }
-    }
-  }
-
-  .desc-box {
-    &.cont-division {
-      .img-box {
-        width: inherit;
-        height: inherit;
-      }
-
-      .cont-info {
-        flex-direction: column;
-        min-width: inherit;
       }
     }
   }

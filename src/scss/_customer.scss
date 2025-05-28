@@ -222,8 +222,15 @@
 
 // 고객센터
 .cont-division {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 32px;
+  text-align: left;
+
   >.title-wrap {
-    width: 273px;
+    min-width: 273px;
 
     .cont-title {
       align-self: flex-start;
@@ -242,6 +249,12 @@
   }
 
   .img-box {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     &.--customer-info {
       width: 401px;
       height: 213px;
@@ -265,10 +278,157 @@
     flex: 1;
     gap: 32px 0;
 
+    .cont-item {
+      flex: 0 0 50%;
+      align-self: flex-start;
+    }
+
+    >[class^=guide-] {
+      margin-top: 0;
+    }
+
     &.--customer-info {
       flex-direction: row;
       flex: 0 0 500px;
       flex-wrap: wrap;
+    }
+  }
+
+  // 용지 사이즈 안내
+  &.--guide {
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+
+    .cont-info {
+      flex: 0;
+      gap: 0;
+      min-width: 367px;
+      margin-top: 0 !important;
+
+      [class^=--size-1] {
+        position: relative;
+        width: 300px;
+        margin-bottom: 17px;
+        padding-bottom: 9px;
+        text-align: center;
+      }
+
+      .--width,
+      .--height {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $Line-line;
+
+        &::before,
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          right: -7px;
+          width: 16px;
+          height: 16px;
+          background: svgIcon(arrow, 'DEDEDF') no-repeat center center/16px 16px;
+          transform: translateY(-50%);
+        }
+
+        &::before {
+          right: inherit;
+          left: -7px;
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
+      .--height {
+        width: 1px;
+        height: 100%;
+        top: 0;
+        right: -17px;
+        bottom: inherit;
+        left: inherit;
+
+        &::before,
+        &::after {
+          top: calc(100% - 9px);
+          left: -7.5px;
+          transform: rotate(90deg);
+        }
+
+        &::before {
+          top: -7px;
+          transform: rotate(-90deg);
+        }
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 7px;
+          transform: translateY(-50%);
+          font: $font-weight-regular 1rem/1 $font-typo-en-font, $font-typo-main-font;
+          color: $color-text-subcolor;
+        }
+      }
+
+      [class^=--size-] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        dd {
+          font: $font-weight-regular 1rem/1 $font-typo-en-font, $font-typo-main-font;
+          color: $color-text-subcolor;
+        }
+      }
+
+      .size-cont {
+        position: relative;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        width: 300px;
+        border: 1px solid $color-border-gray;
+
+        .--size-2 {
+          grid-column: span 3;
+          height: 210px;
+          background: $color-border-gray-light;
+          border-bottom: 1px solid $color-border-gray;
+        }
+
+        .--size-3 {
+          grid-row: span 3;
+          height: 210px;
+          background: #EAF6EC;
+          border-right: 1px solid $color-border-gray;
+        }
+
+        .--size-4 {
+          grid-column: span 2;
+          height: 105px;
+          background: #FFF3DB;
+          border-bottom: 1px solid $color-border-gray;
+        }
+
+        .--size-5 {
+          grid-row: span 2;
+          height: 105px;
+          background: #E7F4FE;
+          border-right: 1px solid $color-border-gray;
+        }
+
+        .--size-6 {
+          height: 52.5px;
+          background: #FDEFEC;
+
+          +.--size-6 {
+            border-top: 1px solid $color-border-gray;
+          }
+        }
+      }
     }
   }
 }

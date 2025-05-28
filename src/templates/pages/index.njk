@@ -60,6 +60,11 @@
             filter: opacity(0.3);
             z-index: -1;
         }
+        .--del {
+            td {
+                text-decoration: line-through;
+            }
+        }
         @media(max-width:565px) {
             #container {
                 margin: 20px auto;
@@ -1049,7 +1054,7 @@
                         <p></p>
                     </td>
                 </tr>
-                <tr>
+                <tr class="--del">
                     <td></td>
                     <td></td>
                     <td>비밀번호 찾기 완료</td>

@@ -1,0 +1,114 @@
+@use 'mixin' as *;
+@use 'variables' as *;
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap");
+
+// alert
+.sweet-overlay {}
+.sweet-alert {}
+
+.swal2-container {
+  
+  .swal2-popup {
+    width: 500px;
+    padding: 40px 20px 26px;
+    border-radius: 10px;
+    border: 1px solid $color-border-gray;
+    @include font-body-small;  
+  }
+
+  .swal2-icon {
+    &.swal2-icon-show {
+      place-self: center center;
+      width: 53px;
+      height: 53px;
+      margin: 0 0 26px;
+      background: $color-border-primary;
+      border: none;
+      animation: swal2-animate-error-icon .5s;
+      
+      .swal2-icon-content {
+        width: 100%;
+        height: 100%;
+        
+        .swal2-cart {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: svgIcon(cart, 'ffffff') no-repeat center center/30px 30px;
+            animation: swal2-animate-i-mark .8s;
+          }
+        }
+      }
+    }
+  }
+
+  h2.swal2-title {
+    padding: 0;
+    @include font-heading-xsmall-bold;
+    +.swal2-html-container {
+      margin-top: 12px;
+    }
+  }
+
+  .swal2-html-container {
+    padding: 0;
+    @include font-body-small;  
+  }
+
+  .swal2-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  button.swal2-styled {
+    margin: 0;
+    min-width: 164px;
+    height: 48px;
+    @include button;
+    @include button-disabled;
+    @include font-body-small;
+  }
+
+  button.swal2-styled.swal2-cancel {
+    box-shadow: none;
+    border-color: $color-border-gray-dark;
+    background: $color-background-white;
+    color: $color-text-basic;
+
+    &:hover {
+      border-color: $color-border-gray-dark;
+      background: $color-border-gray-light;
+    }
+
+    &:active {
+      border-color: $color-border-gray-dark;
+      background: $color-border-gray-dark;
+      color: $color-text-basic-inverse;
+    }
+  }
+
+  button.swal2-styled.swal2-confirm {
+    border-color: $color-border-primary;
+    background: $color-border-primary;
+    color: $color-text-basic-inverse;
+    &:hover {
+      border-color: #F181A6;
+      background: #F181A6;
+    }
+
+    &:active {
+      border-color: #E62263;
+      background: #E62263;
+    }
+  }
+}

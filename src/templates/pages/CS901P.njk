@@ -1,0 +1,119 @@
+{% extends "layouts/base.njk" %}
+{% set title = "배송조회" %}
+{% block content %}
+  <div class="modal --full --xlarge">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">배송조회</h5>
+      </div>
+      <div class="modal-container">
+        <section class="content-box">
+          <div class="table-wrap --center">
+            <table class="table-list --board --type-02">
+              <colgroup>
+                <col style="width: 35%">
+                <col>
+              </colgroup>
+              <tbody class="list-item-wrap --body">
+                <tr class="list-item">
+                  <th scope="row" class="item">
+                    <p>운송장 번호</p>
+                  </th>
+                  <td class="item">
+                    <p>249953665791</p>
+                  </td>
+                </tr>
+                <tr class="list-item">
+                  <th scope="row" class="item">
+                    <p>발송지</p>
+                  </th>
+                  <td class="item">
+                    <p>충무로(대)</p>
+                  </td>
+                </tr>
+                <tr class="list-item">
+                  <th scope="row" class="item">
+                    <p>도착지</p>
+                  </th>
+                  <td class="item">
+                    <p>성수(대)</p>
+                  </td>
+                </tr>
+                <tr class="list-item">
+                  <th scope="row" class="item">
+                    <p>배달결과</p>
+                  </th>
+                  <td class="item">
+                    <p>배달완료</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="content-box">
+          <table class="table-list --board --type-02">
+            <colgroup>
+              <col style="width: 15%">
+              <col style="width: 20%">
+              <col style="width: 17%">
+              <col>
+            </colgroup>
+            <thead class="list-item-wrap --header">
+              <tr class="list-item">
+                <th scope="col" class="item">
+                  단계
+                </th>
+                <th scope="col" class="item">
+                  시간
+                </th>
+                <th scope="col" class="item">
+                  현위치
+                </th>
+                <th scope="col" class="item">
+                  처리현황
+                </th>
+              </tr>
+            </thead>
+            <tbody class="list-item-wrap --body">
+              <tr class="list-item">
+                <td class="item">
+                  <div class="item-inner">
+                    인수/상품접수
+                  </div>
+                </td>
+                <td class="item">
+                  <div class="item-inner">
+                    2024-12-18 14:20
+                  </div>
+                </td>
+                <td class="item">
+                  <div class="item-inner">
+                    춘천통합집배센터
+                  </div>
+                </td>
+                <td class="item">
+                  <div class="item-inner --left">
+                    고객님의 상품을 13~15시에 배달 예정 입니다. (배송담당: 고부연 010-7490-8255)
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

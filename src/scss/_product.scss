@@ -2047,6 +2047,10 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
 
       }
     }
+
+    &:only-child {
+      flex: 0 0 50%;
+    }
   }
 
   .table-list:not(:first-child) {
@@ -2072,14 +2076,17 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
   +.desc-box {
     margin-top: 20px;
   }
+
+  &.--center {
+    justify-content: center;
+  }
 }
 
 .table-list {
   .list-item-wrap {
     &.--header {
       .list-item {
-        border-bottom: 1px solid $color-border-gray-dark;
-
+        
         .item {
           padding: 14px 10px;
           @include font-body-small-bold;
@@ -2088,8 +2095,11 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
         }
       }
     }
-
+    
     &.--body {
+      .list-item:first-of-type {
+        border-top: 1px solid $color-border-gray-dark;
+      }
       .list-item {
         border-bottom: 1px solid $color-border-gray;
 
@@ -2122,6 +2132,10 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
           .item-inner {
             text-align: center;
             word-break: break-word;
+
+            &.--left {
+              text-align: left;
+            }
           }
         }
 
@@ -2535,6 +2549,15 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       .col-span-2 {
         grid-column: span 4;
       }
+    }
+  }
+
+  // 배송조회
+  &.--type-02 {
+    .list-item-wrap.--body .list-item th.item {
+      text-align: left;
+      font-weight: $font-weight-semibold;
+      color: $color-text-basic;
     }
   }
 }

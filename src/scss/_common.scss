@@ -2238,7 +2238,8 @@ h5 {
 
       &.--active {
 
-        a {
+        a,
+        span {
           background: $color-border-gray-dark;
           color: $color-text-basic-inverse;
         }

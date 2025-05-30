@@ -3,6 +3,9 @@
 {% block content %}
   <div class="content">
     <section class="content-box">
+      <div class="title-wrap">
+        <h5>디자인 아이콘</h5>
+      </div>
       <div class="btn-wrap">
         <button type="button" class="btn-black --xsmall" id="cart">
           <span>장바구니 담기</span>
@@ -22,6 +25,9 @@
       </div>
     </section>
     <section class="content-box">
+      <div class="title-wrap">
+        <h5>기본 아이콘</h5>
+      </div>
       <div class="btn-wrap">
         <button type="button" class="btn-outline --xsmall" id="error">
           <span>error</span>
@@ -72,12 +78,9 @@
           cancelButtonText: '취소'
         },
         'error': {
-          titleText: '작성하신 글을 삭제하시겠습니까?',
-          text: '삭제하시면 다시 복구할 수 없어요.',
+          titleText: '삭제할 상품을 체크하세요.',
           icon: 'error',
-          showCancelButton: true,
-          confirmButtonText: '확인',
-          cancelButtonText: '취소'
+          confirmButtonText: '확인'
         },
         'success': {
           titleText: '완료',

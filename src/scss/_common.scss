@@ -2415,32 +2415,22 @@ button[type='button'] {
     }
   }
 
-  &:not(.--large) {
-    .content-box {
-      +.btn-wrap {
-        &.confirm {
-          flex-direction: column;
-          padding-top: 40px;
-          border-top: 1px solid $Line-line;
-
-          [class^=guide] {
-            margin-bottom: 12px;
-            text-align: center;
-          }
-        }
-      }
-    }
-  }
-
-  &.--large {
-    max-width: 590px;
-
+  .content-box {
     .btn-wrap {
       &.confirm {
-        flex-direction: row;
+        margin-top: 16px;
+      }
+    }
 
-        [class^=btn-] {
-          width: calc(50% - 4px);
+    +.btn-wrap {
+      &.confirm:not(.--default) {
+        flex-direction: column;
+        padding-top: 40px;
+        border-top: 1px solid $Line-line;
+
+        [class^=guide] {
+          margin-bottom: 12px;
+          text-align: center;
         }
       }
     }

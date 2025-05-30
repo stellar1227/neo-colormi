@@ -116,7 +116,7 @@
 @mixin desc-guide {
   display: inline-flex;
   align-items: center;
-  padding: 1px 4px;
+  padding: 4px;
   border-radius: 2px;
   background: $color-border-gray-light;
   @include font-body-xxsmall;

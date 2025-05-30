@@ -283,22 +283,25 @@
 }
 
 @mixin modal {
+  display: grid;
   position: fixed;
   top: 50%;
   left: 50%;
   width: 100vw;
   height: 100vh;
+  padding: 0 20px;
   transform: translate(-50%, -50%);
   z-index: 12;
   background: rgba(0, 0, 0, .5);
 
   .modal-wrap {
+    place-self: center center;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
     border-radius: 8px;
     border: 1px solid $color-border-gray;
     background: $color-background-white;

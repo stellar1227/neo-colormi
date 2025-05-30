@@ -53,6 +53,11 @@
     .util-menu-wrap .util-menu [class^=btn-] {
       width: 24px;
       height: 24px;
+
+      .badge {
+        top: -5px;
+        right: -7px;
+      }
     }
   }
 
@@ -523,8 +528,6 @@
       }
 
       .column-item {
-        // grid-template-columns: 1fr;
-
         >dd {
           .guide-wrap {
 
@@ -537,19 +540,6 @@
 
           .width-436 {
             width: 100%;
-          }
-
-          .form-field {
-            .button-option {
-              &.--v-center {
-                flex-direction: column;
-                align-items: flex-start;
-
-                .form-wrap {
-                  width: 100%;
-                }
-              }
-            }
           }
         }
       }
@@ -834,14 +824,6 @@
           }
         }
       }
-    }
-  }
-
-  .modal {
-    .modal-wrap {
-      width: calc(100% - 40px) !important;
-      margin: 0 20px;
-      transform: translate(calc(-50% - 20px), -50%);
     }
   }
 

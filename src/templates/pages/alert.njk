@@ -1,0 +1,107 @@
+{% extends "layouts/base.njk" %}
+{% set title = "alert" %}
+{% block content %}
+  <div class="content">
+    <section class="content-box">
+      <div class="btn-wrap">
+        <button type="button" class="btn-black --xsmall" id="cart">
+          <span>장바구니 담기</span>
+        </button>
+        <button type="button" class="btn-black --xsmall" id="warning-01">
+          <span>로그인</span>
+        </button>
+        <button type="button" class="btn-black --xsmall" id="warning-02">
+          <span>장바구니 삭제</span>
+        </button>
+        <button type="button" class="btn-black --xsmall" id="warning-03">
+          <span>작성 글 삭제</span>
+        </button>
+        <button type="button" class="btn-black --xsmall" id="info">
+          <span>info</span>
+        </button>
+      </div>
+    </section>
+    <section class="content-box">
+      <div class="btn-wrap">
+        <button type="button" class="btn-outline --xsmall" id="error">
+          <span>error</span>
+        </button>
+        <button type="button" class="btn-outline --xsmall" id="success">
+          <span>success</span>
+        </button>
+        <button type="button" class="btn-outline --xsmall" id="question">
+          <span>question</span>
+        </button>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <script>
+      // alert 옵션
+      const swalConfigs = {
+        'cart': {
+          titleText: '선택하신 상품이 장바구니에 담겼습니다.',
+          text: '다른 상품을 계속 쇼핑하시겠어요?',
+          iconHtml: '<span class="swal2-cart"><i></i></span>',
+          showCancelButton: true,
+          reverseButtons: true,
+          confirmButtonText: '장바구니 보기',
+          cancelButtonText: '계속 쇼핑하기'
+        },
+        'warning-01': {
+          titleText: '로그인이 필요합니다. 상단 로그인을 이용해 주세요.',
+          iconHtml: '<span class="swal2-warning"><i></i></span>',
+          confirmButtonText: '확인'
+        },
+        'warning-02': {
+          titleText: '선택하신 상품을 장바구니에서 삭제하시겠습니까?',
+          text: '삭제하시면 다시 복구할 수 없어요.',
+          iconHtml: '<span class="swal2-warning"><i></i></span>',
+          showCancelButton: true,
+          reverseButtons: true,
+          confirmButtonText: '네, 삭제할게요',
+          cancelButtonText: '취소'
+        },
+        'warning-03': {
+          titleText: '작성하신 글을 삭제하시겠습니까?',
+          text: '삭제하시면 다시 복구할 수 없어요.',
+          iconHtml: '<span class="swal2-warning"><i></i></span>',
+          showCancelButton: true,
+          confirmButtonText: '확인',
+          cancelButtonText: '취소'
+        },
+        'error': {
+          titleText: '작성하신 글을 삭제하시겠습니까?',
+          text: '삭제하시면 다시 복구할 수 없어요.',
+          icon: 'error',
+          showCancelButton: true,
+          confirmButtonText: '확인',
+          cancelButtonText: '취소'
+        },
+        'success': {
+          titleText: '완료',
+          icon: 'success',
+          confirmButtonText: '닫기'
+        },
+        'info': {
+          titleText: '안내',
+          iconHtml: '<span class="swal2-info"><i></i></span>',
+          confirmButtonText: '닫기'
+        },
+        'question': {
+          titleText: 'question',
+          icon: 'question',
+          confirmButtonText: '닫기'
+        }
+      };
+      function bindSwal(id, options) {
+        document.getElementById(id).addEventListener('click', function () {
+          Swal.fire(options);
+        });
+      }
+      for (const [id, config] of Object.entries(swalConfigs)) {
+        bindSwal(id, config);
+      }
+    </script>
+  {% endblock %}

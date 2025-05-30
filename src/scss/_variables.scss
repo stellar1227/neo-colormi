@@ -134,7 +134,7 @@ $letter-spacing: (
   'letter-spacing-1': 1px
 );
 
-// 3. (Optional) 개별 SCSS 변수로 할당하여 SCSS 코드에서 쉽게 사용하기
+// 3. (Optional) 개별 SCSS 변수로 할당
 
 // colors-line&display-status
 $Line-line: map.get($colors, 'Line-line');

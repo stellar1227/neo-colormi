@@ -2700,11 +2700,6 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       text-align: right;
       @include font-body-small;
       color: $color-text-subcolor-deep;
-
-      .btn-link {
-        color: $color-text-subcolor-deep;
-        text-decoration: underline;
-      }
     }
 
     .secondary {

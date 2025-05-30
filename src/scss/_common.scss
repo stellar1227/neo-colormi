@@ -1531,6 +1531,11 @@ h5 {
       left: calc(-4px - 4px);
     }
   }
+
+  &.--underline {
+    color: $color-text-subcolor-deep;
+    text-decoration: underline;
+  }
 }
 
 .btn-top {

@@ -2086,7 +2086,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
   .list-item-wrap {
     &.--header {
       .list-item {
-        
+
         .item {
           padding: 14px 10px;
           @include font-body-small-bold;
@@ -2095,11 +2095,12 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
         }
       }
     }
-    
+
     &.--body {
       .list-item:first-of-type {
         border-top: 1px solid $color-border-gray-dark;
       }
+
       .list-item {
         border-bottom: 1px solid $color-border-gray;
 
@@ -2699,6 +2700,11 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       text-align: right;
       @include font-body-small;
       color: $color-text-subcolor-deep;
+
+      .btn-link {
+        color: $color-text-subcolor-deep;
+        text-decoration: underline;
+      }
     }
 
     .secondary {

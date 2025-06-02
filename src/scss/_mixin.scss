@@ -296,6 +296,7 @@
   background: rgba(0, 0, 0, .5);
 
   .modal-wrap {
+    position: relative;
     place-self: center center;
     display: flex;
     flex-direction: column;

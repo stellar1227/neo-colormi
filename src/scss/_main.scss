@@ -47,19 +47,23 @@
     .util-menu {
 
       [class^=btn-] {
-        display: inline-block;
+        display: inline-flex;
         width: 36px;
         height: 36px;
+        margin: 0;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+        }
 
         span:not(.item) {
           font-size: 0;
         }
 
         &.tooltip {
-          &::before {
-            content: none;
-          }
-
           .item {
             background: #F181A6;
             z-index: 11;
@@ -86,43 +90,78 @@
       }
 
       .btn-search {
-        background: svgIcon(search, '4c4c4c') no-repeat center center/24px 24px;
+        &::before {
+          background: svgIcon(search, '4c4c4c') no-repeat center center/24px 24px;
+        }
 
         &:hover {
-          background: svgIcon(search, 'ed6190') no-repeat center center/24px 24px;
+          &::before {
+            background-image: svgIcon(search, 'ed6190');
+          }
         }
       }
 
       .btn-login {
 
         &.--login {
-          background: svgIcon(user, '4c4c4c', 'transparent') no-repeat center center/36px 36px;
-
+          &::before {
+            background: svgIcon(user, '4c4c4c', 'transparent') no-repeat center center/36px 36px;
+          }
           &:hover {
-            background: svgIcon(user, 'ed6190', 'transparent') no-repeat center center/36px 36px;
+            &::before {
+              background-image: svgIcon(user, 'ed6190', 'transparent');
+            }
           }
         }
 
         &.--logout {
-          background: svgIcon(user, '4c4c4c', 'ed6190') no-repeat center center/36px 36px;
+          &::before {
+            background: svgIcon(user, '4c4c4c', 'ed6190') no-repeat center center/36px 36px;
+          }
 
           &:hover {
-            background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
+            &::before {
+              background-image: svgIcon(user, 'ed6190', 'ed6190');
+            }
           }
         }
 
         &.--active {
-          background: svgIcon(user, 'ed6190', 'ed6190') no-repeat center center/36px 36px;
+          &::before {
+           background-image: svgIcon(user, 'ed6190', 'ed6190');
+          }
         }
 
       }
 
       .btn-cart {
-        background: svgIcon(cart, '4c4c4c') no-repeat center center/24px 24px;
+        &::before {
+          background: svgIcon(cart, '4c4c4c') no-repeat center center/24px 24px;
+        }
 
         &:hover {
-          background: svgIcon(cart, 'ed6190') no-repeat center center/24px 24px;
+          &::before {
+            background-image: svgIcon(cart, 'ed6190');
+          }
         }
+      }
+      
+      .btn-home {
+        display: none;
+        &::before {
+          background: svgIcon(home, '4c4c4c') no-repeat center center/24px 24px;
+        }
+      }
+      .btn-catg {
+        display: none;
+        &::before {
+          background: aliceblue;
+        }
+      }
+
+      .util-menu-inner {
+        display: flex;
+        gap: 16px;
       }
     }
 

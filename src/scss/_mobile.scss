@@ -2,8 +2,16 @@
 @use 'variables' as *;
 
 @media (max-width:768px) {
+  body {
+    padding-bottom: 56px;
+  }
+
   #container {
     min-width: inherit;
+  }
+
+  .floting-nav {
+    bottom: 72px;
   }
 
   .top-banner,
@@ -50,13 +58,72 @@
       }
     }
 
-    .util-menu-wrap .util-menu [class^=btn-] {
-      width: 24px;
-      height: 24px;
+    .util-menu-wrap {
+      .util-menu {
+        [class^=btn-] {
+          .badge {
+            top: -5px;
+            right: -7px;
+          }
+        }
 
-      .badge {
-        top: -5px;
-        right: -7px;
+        .btn-home {
+          display: inline-flex;
+        }
+        .btn-catg {
+          display: inline-flex;
+        }
+
+        .util-menu-inner {
+          gap: 0;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          border-top: 1px solid $Line-line;
+          background: $color-border-inverse;
+          z-index: 10;
+
+          [class^=btn-] {
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            height: auto;
+            padding: 8px 0;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+            }
+  
+            &.tooltip {
+              .item {
+                left: initial;
+                bottom: unset;
+                min-height: unset;
+                padding: 0 !important;
+                border-radius: 0;
+                background: transparent;
+                transform: none;
+    
+                &::before {
+                  content: none;
+                }
+              }
+            }
+
+            span {
+              display: inline-block;
+              position: relative;
+              @include font-body-xsmall;
+              color: $color-text-basic;
+            }
+          }
+        }
       }
     }
   }
@@ -82,7 +149,7 @@
           ul {
             .depth-1 {
               a {
-                padding: 12px 3px;
+                padding: 12px 3px 11px;
                 @include depth-small-medium;
               }
 

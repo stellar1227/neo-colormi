@@ -1,0 +1,64 @@
+{% extends "layouts/base.njk" %}
+{% set title = "견적문의 작성" %}
+{% block content %}
+  <div class="modal --full --large">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h5 class="modal-title">견적문의 작성</h5>
+      </div>
+      <div
+        class="modal-container">
+        <!-- 기본정보 -->
+        <div class="product-order">
+          <div class="title-wrap">
+            <h5>문의 내용</h5>
+            <strong class="desc-guide required">표시는 필수입력 항목 이오니 반드시 입력해 주세요</strong>
+          </div>
+          <div class="product-option">
+            <dl class="column-item">
+              <dt class="required">제목</dt>
+              <dd>
+                <div class="form-field">
+                  <input type="text" placeholder="제목을 입력해주세요."/>
+                </div>
+              </dd>
+            </dl>
+            <dl class="column-item">
+              <dt>내용</dt>
+              <dd>
+                <div class="form-field textarea">
+                  <div class="form-wrap">
+                    <textarea id="textarea" placeholder="상품에 대한 문의 내용을 자세히 작성해주세요."></textarea>
+                  </div>
+                  <div class="textarea-bottom">
+                    <div class="count">
+                      <em>1</em>/<span>100</span>
+                    </div>
+                    <ul class="guide-sub --small">
+                      <li>- 자세한 견적을 원하시면, 인쇄정보는 모두 작성해주세요.</li>
+                    </ul>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-outline --medium">
+            <span>취소</span>
+          </button>
+          <button type="button" class="btn-primary --medium">
+            <span>문의하기</span>
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrap close">
+        <button type="button" class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

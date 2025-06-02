@@ -2086,6 +2086,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
   .list-item-wrap {
     &.--header {
       .list-item {
+        border-bottom: 1px solid $color-border-gray-dark;
 
         .item {
           padding: 14px 10px;
@@ -2097,10 +2098,6 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
     }
 
     &.--body {
-      .list-item:first-of-type {
-        border-top: 1px solid $color-border-gray-dark;
-      }
-
       .list-item {
         border-bottom: 1px solid $color-border-gray;
 
@@ -2555,10 +2552,18 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
 
   // 배송조회
   &.--type-02 {
-    .list-item-wrap.--body .list-item th.item {
-      text-align: left;
-      font-weight: $font-weight-semibold;
-      color: $color-text-basic;
+    .list-item-wrap {
+      &.--body {
+        border-top: 1px solid $color-border-gray-dark;
+
+        .list-item {
+          th.item {
+            text-align: left;
+            font-weight: $font-weight-semibold;
+            color: $color-text-basic;
+          }
+        }
+      }
     }
   }
 }
@@ -2667,6 +2672,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
     .item-box-inner {
       flex: 0;
 
+      .form-field,
       >input {
         max-width: 415px;
       }

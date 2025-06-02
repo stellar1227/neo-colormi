@@ -285,8 +285,12 @@
                   <div class="form-wrap select">
                     <select class="btn-select">
                       <option>선택안함</option>
+                      <option>직접 입력하기</option>
                     </select>
                   </div>
+                  <!-- 직접입력 선택 시 text input -->
+                  <input
+                  type="text" placeholder="직접 입력해주세요."/>
                   <!-- checkbox -->
                   <div class="checkbox-wrap">
                     <label class="checkbox" for="check-0-1">
@@ -342,7 +346,9 @@
             </div>
             <div class="item-box">
               <div class="item-box-inner">
-                <input type="text" placeholder="입금자명" value="입금자명"/>
+                <div class="form-field">
+                  <input type="text" placeholder="입금자명" value="입금자명" class="--basic" readonly="readonly"/>
+                </div>
                 <ul class="guide-sub-deep --small --dot">
                   <li>입금은행/계좌번호/예금주를 미리 메모해 두시기 바랍니다.</li>
                   <li>무통장 입금 시 ‘신청자명’과 ‘입금자명’이 다를 경우 반드시 연락 주셔야 합니다.</li>

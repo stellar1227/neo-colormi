@@ -1,0 +1,42 @@
+{% extends "layouts/base.njk" %}
+{% set title = "이벤트" %}
+{% block content %}
+  {% include "components/sideNavMypage.njk" %}
+  <div class="content">
+    <div class="page-title">
+      <h3>이벤트</h3>
+    </div>
+    <section class="content-box">
+      <div class="table-list --detail">
+        <div class="list-item-wrap --body">
+          <div class="list-item">
+            <div class="item --title">
+              <p>이벤트 제목</p>
+              <div class="util">
+                <p class="date">
+                  작성일<span>2025-00-00</span>
+                </p>
+              </div>
+            </div>
+            <div class="item --content">
+              <p class="text">
+                문의내용
+              </p>
+              <div class="img-item">
+                <img src="/resources/fe/img/temp/event-temp.jpg" alt=""/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // list body -->
+      </div>
+      <div class="util-wrap --right">
+        <div class="btn-wrap">
+          <a href="" class="btn-black --small">
+            <span>목록</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

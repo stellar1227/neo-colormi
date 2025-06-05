@@ -1773,6 +1773,16 @@ h5 {
       }
     }
   }
+
+  .comment-view {
+    margin: 0 -20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
 }
 
 .layer-wrap {

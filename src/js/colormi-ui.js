@@ -266,7 +266,7 @@ function productImages(target) {
   });
 }
 
-// 상픔페이지 스티키 정보
+// 상품페이지 스티키 정보
 function productStickyInfo(target) {
   if (!(target instanceof HTMLElement)) return;
 
@@ -282,7 +282,7 @@ function productStickyInfo(target) {
   const nextContentBox = parentContentBox ? parentContentBox.nextElementSibling : null;
 
   if (parentContentBox) {
-    parentContentBox.style.height = `${productImgDetail.offsetHeight}px`;
+    parentContentBox.style.minHeight = `${productImgDetail.offsetHeight}px`;
   }
 
   let isTicking = false;

@@ -1678,6 +1678,10 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       color: $color-text-basic;
     }
 
+    &:first-child {
+      border-left: none;
+    }
+
     &.--active {
       background: $color-border-gray-dark;
 

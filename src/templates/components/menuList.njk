@@ -1,34 +1,47 @@
 {% macro renderMenuList(arr, navIdx) %}
   {% set mn    = arr[0] %}
   {% set catg  = mn.categories[0] %}
-  <nav class="all-menu-wrap" data-menu-index="{{ navIdx+1 }}">
+  <nav
+    class="all-menu-wrap" data-menu-index="{{ navIdx+1 }}">
+    <!-- 모바일 메뉴 -->
+    <div class="menu-cont-wrap">
+      <div class="menu-title-wrap"></div>
+      <div class="btn-wrap --close">
+        <button class="btn-close">
+          <i>닫기</i>
+        </button>
+      </div>
+    </div>
     <div class="all-menu">
-      <div class="category-wrap">
-        <div class="category">
-          <strong class="depth-1">
-            {{ catg.depth1 | safe }}
-          </strong>
-          <ul>
-            {% set flatIndex = 0 %}
-            {% for d2 in catg.depth2List %}
-              <li>
-                <p class="depth-2">{{ d2.title }}</p>
-                <ul>
-                  {% for d3 in d2.depth3List %}
-                    <li class="depth-3" data-group="{{ navIdx + 1 }}" data-index="{{ flatIndex }}">
-                      <a href="#">
-                        {{ d3.title }}
-                        {% for tpl in d3.tooltipList %}
-                          {{ tpl|safe }}
-                        {% endfor %}
-                      </a>
-                    </li>
-                    {% set flatIndex = flatIndex + 1 %}
-                  {% endfor %}
-                </ul>
-              </li>
-            {% endfor %}
-          </ul>
+      <div class="all-menu-inner">
+        <div class="category-wrap">
+          <div class="category">
+            <p class="depth-1">
+              <strong>{{ catg.depth1 | safe }}</strong>
+              <i class="icon-more"></i>
+            </p>
+            <ul>
+              {% set flatIndex = 0 %}
+              {% for d2 in catg.depth2List %}
+                <li>
+                  <p class="depth-2">{{ d2.title }}</p>
+                  <ul>
+                    {% for d3 in d2.depth3List %}
+                      <li class="depth-3" data-group="{{ navIdx + 1 }}" data-index="{{ flatIndex }}">
+                        <a href="#">
+                          {{ d3.title }}
+                          {% for tpl in d3.tooltipList %}
+                            {{ tpl|safe }}
+                          {% endfor %}
+                        </a>
+                      </li>
+                      {% set flatIndex = flatIndex + 1 %}
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
       <div class="header-product-wrap">

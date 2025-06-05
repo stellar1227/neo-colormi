@@ -629,7 +629,7 @@ h5 {
         &:focus~.util .btn-search,
         &:hover~.util .btn-search {
           &::before {
-            background-image: svgIcon(search, '24A3FF');
+            background-image: svgIcon(search, '24A3FF', '', '', '', '24A3FF');
           }
         }
       }
@@ -649,7 +649,7 @@ h5 {
             display: inline-block;
             width: 24px;
             height: 24px;
-            background: svgIcon(search, '4c4c4c') no-repeat center center/24px 24px;
+            background: svgIcon(search, '4c4c4c', '', '', '', '4c4c4c') no-repeat center center/24px 24px;
           }
         }
       }

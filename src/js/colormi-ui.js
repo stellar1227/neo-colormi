@@ -283,6 +283,7 @@ function productStickyInfo(target) {
 
   if (parentContentBox) {
     parentContentBox.style.minHeight = `${productImgDetail.offsetHeight}px`;
+    // parentContentBox.style.setProperty('min-height', `${productImgDetail.offsetHeight}px`);
   }
 
   let isTicking = false;

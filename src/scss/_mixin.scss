@@ -293,13 +293,13 @@
   padding: 0 20px;
   z-index: 12;
   background: rgba(0, 0, 0, .5);
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
 
   .modal-wrap {
     position: relative;
-    place-self: center center;
+    // place-self: center center;
     display: flex;
     flex-direction: column;
     border-radius: 8px;

@@ -391,7 +391,6 @@ function initGnb() {
   const mobileQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
   const body = document.body;
 
-  // PC/모바일
   const menuButtons = document.querySelectorAll(
     '.gnb .depth-1 a[data-menu-index], .util-menu .btn-catg[data-menu-index]'
   );
@@ -424,7 +423,7 @@ function initGnb() {
   }
   menuButtons.forEach(btn => btn.addEventListener("click", handleMenuButtonClick));
 
-  // 모바일
+  // 모바일 서브
   const mobileToggleItems = document.querySelectorAll(
     '.all-menu-wrap .category .depth-1, .all-menu-wrap .btn-familysite'
   );
@@ -449,9 +448,9 @@ function initGnb() {
     });
   });
 
-  // PC/모바일
+  // close
   document.addEventListener("click", e => {
-    if (!e.target.closest('.gnb') && !e.target.closest('.all-menu-wrap')) {
+    if (!e.target.closest('.gnb, .header-top .util-menu-wrap') && !e.target.closest('.all-menu-wrap')) {
       submenuWraps.forEach(wrap => wrap.style.display = "none");
       if (!mobileQuery.matches) {
         menuButtons.forEach(btn => btn.parentElement.classList.remove("--active"));

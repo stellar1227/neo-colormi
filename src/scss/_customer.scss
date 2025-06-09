@@ -256,21 +256,17 @@
     }
 
     &.--customer-info {
-      width: 401px;
-      height: 213px;
       max-width: 401px;
       max-height: 213px;
     }
 
     &.--greeting {
-      flex: 0 0 174px;
-      height: auto;
       max-width: 174px;
       max-height: 310px;
     }
 
     &.--brand-story {
-      flex: 0 0 100%;
+      min-width: 100%;
     }
   }
 

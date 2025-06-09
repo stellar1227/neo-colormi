@@ -42,6 +42,10 @@ body {
   color: $color-text-basic;
   font-size: 1.4rem;
   @include font-body-small;
+
+  &.inactive {
+    overflow: hidden;
+  }
 }
 
 body,

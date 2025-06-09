@@ -1685,7 +1685,7 @@ h5 {
   @include modal;
 
   .modal-wrap {
-    max-height: calc(100vh - 200px);
+    max-height: calc(100% - 200px);
 
     .modal-header {
       padding: 16px 44px 16px 20px;

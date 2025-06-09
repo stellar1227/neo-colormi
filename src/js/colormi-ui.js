@@ -42,8 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //gnb menu - header
   initGnb();
   initSnb();
-  initSnbMo(".all-menu-wrap .category .depth-1, .all-menu-wrap .btn-familysite");
-  initSnbMoClose();
 
   // 간편주문 토글
   setupOptionToggle();
@@ -389,38 +387,85 @@ function loadingLottie() {
 
 // gnb menu - header
 function initGnb() {
-  const links = document.querySelectorAll('.gnb .depth-1 a[data-menu-index], .util-menu .btn-catg[data-menu-index]');
-  const wraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
-  const mobileQuery = window.matchMedia("(max-width: 768px)");
+  const MOBILE_BREAKPOINT = 768;
+  const mobileQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+  const body = document.body;
 
-  wraps.forEach(w => w.style.display = 'none');
+  // PC/모바일
+  const menuButtons = document.querySelectorAll(
+    '.gnb .depth-1 a[data-menu-index], .util-menu .btn-catg[data-menu-index]'
+  );
+  const submenuWraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
+  submenuWraps.forEach(wrap => wrap.style.display = "none");
 
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const idx = link.dataset.menuIndex;
+  function handleMenuButtonClick(e) {
+    e.preventDefault();
+    const idx = e.currentTarget.dataset.menuIndex;
+    const targetWrap = Array.from(submenuWraps).find(w => w.dataset.menuIndex === idx);
+    const isAlreadyOpen = targetWrap && targetWrap.style.display === "";
 
-      wraps.forEach(w => {
-        if (w.dataset.menuIndex === idx) {
-          w.style.display = '';
-        } else {
-          w.style.display = 'none';
-        }
-      });
+    if (!mobileQuery.matches && isAlreadyOpen) {
+      targetWrap.style.display = "none";
+      e.currentTarget.parentElement.classList.remove("--active");
+      body.classList.remove("inactive");
+      return;
+    }
 
-      if (!mobileQuery.matches) {
-        links.forEach(a => a.parentElement.classList.remove('--active'));
-        link.parentElement.classList.add('--active');
-      }
+    submenuWraps.forEach(wrap => {
+      wrap.style.display = (wrap.dataset.menuIndex === idx ? "" : "none");
+    });
+    if (!mobileQuery.matches) {
+      menuButtons.forEach(btn => btn.parentElement.classList.remove("--active"));
+      e.currentTarget.parentElement.classList.add("--active");
+    }
+
+    const anyOpen = Array.from(submenuWraps).some(wrap => wrap.style.display === "");
+    body.classList.toggle("inactive", anyOpen);
+  }
+  menuButtons.forEach(btn => btn.addEventListener("click", handleMenuButtonClick));
+
+  // 모바일
+  const mobileToggleItems = document.querySelectorAll(
+    '.all-menu-wrap .category .depth-1, .all-menu-wrap .btn-familysite'
+  );
+  mobileToggleItems.forEach(item => {
+    item.addEventListener("click", e => {
+      if (!mobileQuery.matches) return;
+      e.currentTarget.classList.toggle("--active");
     });
   });
 
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.gnb, .header-top') && !e.target.closest('.all-menu-wrap')) {
-      wraps.forEach(w => w.style.display = 'none');
+  const mobileCloseButtons = document.querySelectorAll(".all-menu-wrap .btn-close");
+  mobileCloseButtons.forEach(btn => {
+    btn.addEventListener("click", e => {
+      const wrap = e.currentTarget.closest(".all-menu-wrap");
+      if (!wrap) return;
+      wrap.style.display = "none";
+      const idx = wrap.dataset.menuIndex;
+      const relatedBtn = Array.from(menuButtons).find(b => b.dataset.menuIndex === idx);
+      if (relatedBtn) relatedBtn.parentElement.classList.remove("--active");
+      const anyOpen = Array.from(submenuWraps).some(w => w.style.display === "");
+      if (!anyOpen) body.classList.remove("inactive");
+    });
+  });
+
+  // PC/모바일
+  document.addEventListener("click", e => {
+    if (!e.target.closest('.gnb') && !e.target.closest('.all-menu-wrap')) {
+      submenuWraps.forEach(wrap => wrap.style.display = "none");
       if (!mobileQuery.matches) {
-        links.forEach(a => a.parentElement.classList.remove('--active'));
+        menuButtons.forEach(btn => btn.parentElement.classList.remove("--active"));
       }
+      body.classList.remove("inactive");
+    }
+  });
+
+  mobileQuery.addEventListener("change", ev => {
+    if (!ev.matches) {
+      mobileToggleItems.forEach(item => item.classList.remove("--active"));
+      submenuWraps.forEach(wrap => wrap.style.display = "none");
+      menuButtons.forEach(btn => btn.parentElement.classList.remove("--active"));
+      body.classList.remove("inactive");
     }
   });
 }
@@ -438,63 +483,29 @@ function initSnb() {
         const parentItem = item.closest('.depth-3');
         const index = parentItem.getAttribute('data-index');
 
-        productBoxes.forEach(box => {
-          box.classList.remove('active');
-        });
-
+        productBoxes.forEach(box => box.classList.remove('active'));
         const targetBox = nav.querySelector(`.inner-header-product[data-index="${index}"]`);
-        if (targetBox) {
-          targetBox.classList.add('active');
-        }
+        if (targetBox) targetBox.classList.add('active');
       });
     });
 
-    new MutationObserver(() => {
-      if (getComputedStyle(nav).display === 'block') {
+    const observer = new MutationObserver(() => {
+      const isOpen = getComputedStyle(nav).display !== 'none';
+
+      if (isOpen) {
         productBoxes.forEach((box, i) => {
-          if (i === 0) {
-            box.classList.add('active');
-          } else {
-            box.classList.remove('active');
-          }
+          box.classList.toggle('active', i === 0);
+        });
+      } else {
+        productBoxes.forEach(box => {
+          box.classList.remove('active');
         });
       }
-    }).observe(nav, {
+    });
+
+    observer.observe(nav, {
       attributes: true,
       attributeFilter: ['style', 'class']
-    });
-  });
-}
-
-function initSnbMo(selector) {
-  const mobileQuery = window.matchMedia("(max-width: 768px)");
-  const els = document.querySelectorAll(selector);
-
-  function onClick(e) {
-    if (!mobileQuery.matches) return;
-    e.currentTarget.classList.toggle("--active");
-  }
-
-  els.forEach(el => {
-    el.addEventListener("click", onClick);
-  });
-
-  mobileQuery.addEventListener("change", ev => {
-    if (!ev.matches) {
-      els.forEach(el => el.classList.remove("--active"));
-    }
-  });
-}
-
-function initSnbMoClose() {
-  const btnCloses = document.querySelectorAll(".all-menu-wrap .btn-close");
-
-  btnCloses.forEach(btnClose => {
-    btnClose.addEventListener("click", e => {
-      const wrap = e.currentTarget.closest(".all-menu-wrap");
-      if (wrap) {
-        wrap.style.display = "none";
-      }
     });
   });
 }

@@ -1658,6 +1658,19 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
   }
 }
 
+#product-detail,
+#product-review,
+#product-contact,
+#product-delivery {
+  &:before{
+    content: '';
+    display: block;
+    height: 201px;
+    margin-top: -201px;
+    visibility: hidden;
+  }
+}
+
 .tab-wrap {
   display: flex;
   align-items: center;

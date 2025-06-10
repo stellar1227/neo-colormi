@@ -1389,6 +1389,8 @@
   .util-wrap {
     .form-field {
       .form-option {
+        justify-content: flex-start;
+
         input[type='text'] {
           width: inherit;
           flex: 1;

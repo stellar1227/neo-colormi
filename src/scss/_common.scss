@@ -317,8 +317,6 @@ h5 {
     }
 
     &.select {
-      min-width: max-content;
-
       &::after {
         content: '';
         display: inline-block;

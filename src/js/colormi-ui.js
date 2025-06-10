@@ -239,19 +239,21 @@ function productImages(target) {
   btnPrev.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
-      imgItemWrap.style.transform = `translateY(-${currentIndex === 0 ? MARGIN_TOP : (currentIndex * imgItemHeight) + MARGIN_TOP}px)`;
-      return;
+      imgItemWrap.style.transform =
+        `translateY(-${currentIndex * imgItemHeight + MARGIN_TOP}px)`;
+    } else {
+      alert('첫번째 이미지입니다.');
     }
-    alert('첫번째 이미지입니다.')
   });
 
   btnNext.addEventListener("click", () => {
     if (currentIndex < imgItemLength - itemListNum) {
       currentIndex++;
-      imgItemWrap.style.transform = `translateY(-${currentIndex === imgItemLength - itemListNum ? MARGIN_TOP : (currentIndex * imgItemHeight) + MARGIN_TOP}px)`;
-      return;
+      imgItemWrap.style.transform =
+        `translateY(-${currentIndex * imgItemHeight + MARGIN_TOP}px)`;
+    } else {
+      alert('마지막 이미지입니다.');
     }
-    alert('마지막 이미지입니다.')
   });
 
   // imgItems에 마우스엔터 시 product-img-detail에 해당 이미지 보여주기

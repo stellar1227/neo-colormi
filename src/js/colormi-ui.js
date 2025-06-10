@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 상품페이지 스티키 정보
-  const productImgDetail = document.querySelector(".product-wrap");
-  if (productImgDetail) {
-    productStickyInfo(productImgDetail);
+  const productDetailBox = document.querySelector(".product-wrap");
+  if (productDetailBox) {
+    productStickyInfo(productDetailBox);
   }
 
   //loading lottie
@@ -268,45 +268,71 @@ function productImages(target) {
 function productStickyInfo(target) {
   if (!(target instanceof HTMLElement)) return;
 
-  const productImgDetail = target;
+  const productDetailBox = target;
   const productInfo = document.querySelector(".product-inner");
-
   if (!productInfo) return;
 
   const productInfoHeight = productInfo.offsetHeight;
   const productInfoTop = productInfo.getBoundingClientRect().top + window.scrollY;
-
-  const parentContentBox = productImgDetail.closest(".content-box");
+  const parentContentBox = productDetailBox.closest(".content-box");
   const nextContentBox = parentContentBox ? parentContentBox.nextElementSibling : null;
 
-  if (parentContentBox) {
-    parentContentBox.style.minHeight = `${productImgDetail.offsetHeight}px`;
-    // parentContentBox.style.setProperty('min-height', `${productImgDetail.offsetHeight}px`);
+  // 탭 해시링크 product-tab-pseudo-style 생성
+  const selectors = [
+    "#product-contact",
+    "#product-delivery",
+    "#product-detail",
+    "#product-review"
+  ];
+  let styleEl = document.getElementById("product-tab-pseudo-style");
+  if (!styleEl) {
+    styleEl = document.createElement("style");
+    styleEl.id = "product-tab-pseudo-style";
+    document.head.appendChild(styleEl);
   }
+  const EXTRA = 40; // 상단 마진 값
+  const buildRule = height => {
+    const totalHeight = height + EXTRA;
+    return selectors.map(sel => `${sel}::before { height: ${totalHeight}px; margin-top: -${totalHeight}px; }`).join("\n");
+  };
+
+  const updateMinHeight = () => {
+    if (productDetailBox.classList.contains("scroll")) return;
+    if (parentContentBox) {
+      parentContentBox.style.minHeight = `${productDetailBox.offsetHeight}px`;
+    }
+  };
+  updateMinHeight();
+
+  const ro = new ResizeObserver(updateMinHeight);
+  ro.observe(productDetailBox);
+  window.addEventListener("resize", updateMinHeight);
 
   let isTicking = false;
-
   window.addEventListener("scroll", () => {
-    if (!isTicking) {
-      isTicking = true;
-      window.requestAnimationFrame(() => {
-        const scrollTop = window.scrollY;
+    if (isTicking) return;
+    isTicking = true;
+    window.requestAnimationFrame(() => {
+      const scrollTop = window.scrollY;
 
-        if (scrollTop > productInfoTop + productInfoHeight) {
-          productImgDetail.classList.add("scroll");
-          if (nextContentBox && nextContentBox.classList.contains("content-box")) {
-            nextContentBox.style.paddingTop = `${productImgDetail.offsetHeight}px`;
-          }
-        } else {
-          productImgDetail.classList.remove("scroll");
-          if (nextContentBox && nextContentBox.classList.contains("content-box")) {
-            nextContentBox.style.paddingTop = "";
-          }
+      if (scrollTop > productInfoTop + productInfoHeight) {
+        productDetailBox.classList.add("scroll");
+        if (nextContentBox && nextContentBox.classList.contains("content-box")) {
+          nextContentBox.style.paddingTop = `${productDetailBox.offsetHeight}px`;
         }
+        const h = productDetailBox.offsetHeight;
+        styleEl.textContent = buildRule(h);
+      } else {
+        productDetailBox.classList.remove("scroll");
+        if (nextContentBox && nextContentBox.classList.contains("content-box")) {
+          nextContentBox.style.paddingTop = "";
+        }
+        updateMinHeight();
+        styleEl.textContent = "";
+      }
 
-        isTicking = false;
-      });
-    }
+      isTicking = false;
+    });
   });
 }
 
@@ -395,76 +421,94 @@ function initGnb() {
     '.gnb .depth-1 a[data-menu-index], .util-menu .btn-catg[data-menu-index]'
   );
   const submenuWraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
-  submenuWraps.forEach(wrap => wrap.style.display = "none");
+  submenuWraps.forEach(wrap => wrap.classList.remove('--open'));
 
   function handleMenuButtonClick(e) {
     e.preventDefault();
     const idx = e.currentTarget.dataset.menuIndex;
     const targetWrap = Array.from(submenuWraps).find(w => w.dataset.menuIndex === idx);
-    const isAlreadyOpen = targetWrap && targetWrap.style.display === "";
+    const isAlreadyOpen = targetWrap && targetWrap.classList.contains('--open');
 
     if (!mobileQuery.matches && isAlreadyOpen) {
-      targetWrap.style.display = "none";
-      e.currentTarget.parentElement.classList.remove("--active");
-      body.classList.remove("inactive");
+      targetWrap.classList.remove('--open');
+      e.currentTarget.parentElement.classList.remove('--active');
+      body.classList.remove('inactive');
       return;
     }
 
     submenuWraps.forEach(wrap => {
-      wrap.style.display = (wrap.dataset.menuIndex === idx ? "" : "none");
+      wrap.classList.toggle('--open', wrap.dataset.menuIndex === idx);
     });
     if (!mobileQuery.matches) {
-      menuButtons.forEach(btn => btn.parentElement.classList.remove("--active"));
-      e.currentTarget.parentElement.classList.add("--active");
+      menuButtons.forEach(btn => btn.parentElement.classList.remove('--active'));
+      e.currentTarget.parentElement.classList.add('--active');
     }
 
-    const anyOpen = Array.from(submenuWraps).some(wrap => wrap.style.display === "");
-    body.classList.toggle("inactive", anyOpen);
+    const anyOpen = Array.from(submenuWraps)
+      .some(wrap => wrap.classList.contains('--open'));
+    body.classList.toggle('inactive', anyOpen);
   }
-  menuButtons.forEach(btn => btn.addEventListener("click", handleMenuButtonClick));
+  menuButtons.forEach(btn =>
+    btn.addEventListener('click', handleMenuButtonClick)
+  );
 
-  // 모바일 서브
+  // 모바일 세브메뉴
   const mobileToggleItems = document.querySelectorAll(
     '.all-menu-wrap .category .depth-1, .all-menu-wrap .btn-familysite'
   );
   mobileToggleItems.forEach(item => {
-    item.addEventListener("click", e => {
+    item.addEventListener('click', e => {
       if (!mobileQuery.matches) return;
-      e.currentTarget.classList.toggle("--active");
+      e.currentTarget.classList.toggle('--active');
     });
   });
 
-  const mobileCloseButtons = document.querySelectorAll(".all-menu-wrap .btn-close");
+  // 닫기
+  const mobileCloseButtons = document.querySelectorAll('.all-menu-wrap .btn-close');
   mobileCloseButtons.forEach(btn => {
-    btn.addEventListener("click", e => {
-      const wrap = e.currentTarget.closest(".all-menu-wrap");
+    btn.addEventListener('click', e => {
+      const wrap = e.currentTarget.closest('.all-menu-wrap');
       if (!wrap) return;
-      wrap.style.display = "none";
+      wrap.classList.remove('--open');
       const idx = wrap.dataset.menuIndex;
-      const relatedBtn = Array.from(menuButtons).find(b => b.dataset.menuIndex === idx);
-      if (relatedBtn) relatedBtn.parentElement.classList.remove("--active");
-      const anyOpen = Array.from(submenuWraps).some(w => w.style.display === "");
-      if (!anyOpen) body.classList.remove("inactive");
+      const relatedBtn = Array.from(menuButtons)
+        .find(b => b.dataset.menuIndex === idx);
+      if (relatedBtn) relatedBtn.parentElement.classList.remove('--active');
+
+      const anyOpen = Array.from(submenuWraps)
+        .some(w => w.classList.contains('--open'));
+      if (!anyOpen) body.classList.remove('inactive');
     });
   });
 
-  // close
-  document.addEventListener("click", e => {
-    if (!e.target.closest('.gnb, .header-top .util-menu-wrap') && !e.target.closest('.all-menu-wrap')) {
-      submenuWraps.forEach(wrap => wrap.style.display = "none");
+  document.addEventListener('click', e => {
+    if (
+      !e.target.closest('.gnb, .header-top .util-menu-wrap')
+      && !e.target.closest('.all-menu-wrap')
+    ) {
+      submenuWraps.forEach(wrap => wrap.classList.remove('--open'));
       if (!mobileQuery.matches) {
-        menuButtons.forEach(btn => btn.parentElement.classList.remove("--active"));
+        menuButtons.forEach(btn =>
+          btn.parentElement.classList.remove('--active')
+        );
       }
-      body.classList.remove("inactive");
+      body.classList.remove('inactive');
     }
   });
 
-  mobileQuery.addEventListener("change", ev => {
+  // 리사이즈 시 리셋
+  mobileQuery.addEventListener('change', ev => {
     if (!ev.matches) {
-      mobileToggleItems.forEach(item => item.classList.remove("--active"));
-      submenuWraps.forEach(wrap => wrap.style.display = "none");
-      menuButtons.forEach(btn => btn.parentElement.classList.remove("--active"));
-      body.classList.remove("inactive");
+      mobileToggleItems.forEach(item =>
+        item.classList.remove('--active')
+      );
+      submenuWraps.forEach(wrap =>
+        wrap.classList.remove('active')
+      );
+      menuButtons.forEach(btn =>
+        btn.parentElement.classList.remove('--active')
+      );
+      body.classList.remove('inactive');
     }
   });
 }

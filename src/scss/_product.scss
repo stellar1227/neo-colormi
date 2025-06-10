@@ -1381,6 +1381,7 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
       display: flex;
       align-items: center;
       width: calc(100% - 108px);
+      min-width: auto;
     }
 
     .form-wrap {
@@ -1662,11 +1663,9 @@ $sprite: '/resources/fe/img/icon/icon-star.png';
 #product-review,
 #product-contact,
 #product-delivery {
-  &:before{
+  &:before {
     content: '';
     display: block;
-    height: 201px;
-    margin-top: -201px;
     visibility: hidden;
   }
 }

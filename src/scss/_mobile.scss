@@ -1386,19 +1386,17 @@
 }
 
 @media (max-width:565px) {
-  .form-field {
-    // width: 100%;
+  .util-wrap {
+    .form-field {
+      .form-option {
+        input[type='text'] {
+          width: inherit;
+          flex: 1;
+        }
 
-    .form-option {
-      justify-content: flex-end;
-
-      input[type='text'] {
-        width: inherit;
-        flex: 1;
-      }
-
-      &.util-option {
-        flex-wrap: wrap;
+        &.util-option {
+          flex-wrap: wrap;
+        }
       }
     }
   }

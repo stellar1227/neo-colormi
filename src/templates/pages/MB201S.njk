@@ -1,0 +1,60 @@
+{% extends "layouts/base.njk" %}
+{% set title = "로그인" %}
+{% block content %}
+  <div class="content">
+    <div class="login-wrap">
+      <div class="page-title">
+        <h3>
+          <span>사용자</span>님은<br/>이미 칼라미에 가입되어 있습니다.
+        </h3>
+        <p class="guide-sub-deep --small">로그인 후 이용하여 주시기 바랍니다.</p>
+      </div>
+      <!-- 로그인 id/password -->
+      <section class="content-box">
+        <div class="form-field">
+          <div class="form-wrap">
+            <input type="text" placeholder="아이디"/>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+            </div>
+          </div>
+          <div class="form-wrap">
+            <input type="password" placeholder="비밀번호"/>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+              <button
+                type="button" class="btn-visible off">
+                <!-- // 클릭 시 on/off 클래스 변경 -->
+                <i>보기</i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-black --medium">
+            <span>로그인</span>
+          </button>
+        </div>
+        <div class="util-wrap">
+          <div class="util">
+            <button type="button" class="btn-link --small">
+              <span>아이디 찾기</span>
+            </button>
+            <button type="button" class="btn-link --small">
+              <span>비밀번호 찾기</span>
+            </button>
+          </div>
+          <div class="util">
+            <button type="button" class="btn-link --small">
+              <span>회원가입</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+{% endblock %}

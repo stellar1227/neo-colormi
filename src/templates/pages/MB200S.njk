@@ -1,0 +1,71 @@
+{% extends "layouts/base.njk" %}
+{% set title = "약관동의" %}
+{% block content %}
+  <div class="content">
+    <div class="step-wrap">
+      <ol class="step-status">
+        <li class="--active">
+          <p class="item">
+            <i class="item-number"></i>
+            <strong>약관동의</strong>
+          </p>
+        </li>
+        <li>
+          <p class="item">
+            <i class="item-number"></i>
+            <strong>정보입력</strong>
+          </p>
+        </li>
+        <li>
+          <p class="item">
+            <i class="item-number"></i>
+            <strong>가입완료</strong>
+          </p>
+        </li>
+      </ol>
+    </div>
+    <div class="form-list-wrap">
+      <div class="page-title">
+        <h3>약관동의</h3>
+      </div>
+      <section class="content-box">
+        <div class="checkbox-wrap --block">
+          <label class="checkbox" for="check-0-1">
+            <input type="checkbox" id="check-0-1"/>
+            <span class="checkbox-icon"></span>
+            <span class="checkbox-label">만 14세 이상입니다.</span>
+          </label>
+          <label class="checkbox" for="check-0-2">
+            <input type="checkbox" id="check-0-2"/>
+            <span class="checkbox-icon"></span>
+            <span class="checkbox-label">칼라미 이용약관에 모두 동의 합니다.</span>
+          </label>
+          <div class="checkbox-wrap">
+            <label class="checkbox" for="check-1-1">
+              <input type="checkbox" id="check-1-1"/>
+              <span class="checkbox-icon"></span>
+              <span class="checkbox-label">
+                칼라미
+                <button type="button">이용약관</button>
+                동의(필수)
+              </span>
+            </label>
+            <label class="checkbox" for="check-1-2">
+              <input type="checkbox" id="check-1-2"/>
+              <span class="checkbox-icon"></span>
+              <span class="checkbox-label">
+                <button type="button">개인정보 수집 및 이용</button>
+                동의(필수)
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+      <div class="btn-wrap confirm">
+        <button type="button" class="btn-primary --medium">
+          <span>휴대폰 인증</span>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

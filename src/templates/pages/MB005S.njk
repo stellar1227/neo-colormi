@@ -1,0 +1,122 @@
+{% extends "layouts/base.njk" %}
+{% set title = "비밀번호 찾기" %}
+{% block content %}
+  <div class="content">
+    <div class="login-wrap">
+      <div class="page-title">
+        <h3>비밀번호 찾기</h3>
+        <p class="guide-sub-deep --small">당황하지 마세요! 빠르게 찾을 수 있도록 도와드릴게요.</p>
+      </div>
+      <!-- 인증 전 -->
+      <section class="content-box">
+        <div class="form-field">
+          <div class="form-wrap">
+            <input type="text" placeholder="아이디"/>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+            </div>
+          </div>
+          <div class="form-wrap">
+            <input type="text" placeholder="이름"/>
+            <div class="util">
+              <button type="button" class="btn-del">
+                <i>삭제</i>
+              </button>
+            </div>
+          </div>
+          <div class="form-inner button-option">
+            <input type="tel" placeholder="휴대폰번호"/>
+            <button type="button" class="btn-black --small">
+              <span>인증번호 발송</span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="form-field --add-cert">
+          <!-- 인증번호 입력 -->
+          <div class="form-inner button-option">
+            <div class="form-wrap">
+              <input type="text" placeholder="인증번호 숫자 입력"/>
+              <span class="time">2:00</span>
+            </div>
+            <button type="button" class="btn-primary --small">
+              <span>인증하기</span>
+            </button>
+          </div>
+          <!-- 인증 완료 -->
+          <div class="inner-wrap">
+            <p class="guide-basic">
+              <span class="icon-check"></span>인증 완료되었습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="content-box">
+        <div class="util-wrap --right">
+          <div class="util">
+            <button type="button" class="btn-link --small">
+              <span>아이디를 찾으셨나요?</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- // 인증 전 -->
+      <!-- 인증 후 -->
+      <section class="content-box">
+        <div class="form-field">
+          <div class="form-field">
+            <div class="form-wrap">
+              <input type="password" placeholder="비밀번호를 입력해 주세요"/>
+              <div class="util">
+                <button type="button" class="btn-del">
+                  <i>삭제</i>
+                </button>
+                <button
+                  type="button" class="btn-visible on">
+                  <!-- // 클릭 시 on/off 클래스 변경 -->
+                  <i>보기</i>
+                </button>
+              </div>
+            </div>
+            <div class="desc-unit">
+              <p class="description">영문</p>
+              <p class="description --error">숫자</p>
+              <p class="description --success">특수문자</p>
+              <p class="description --error">8-16자</p>
+              <!-- // 입력 전 .description (전체 디폴트 컬러) / 입력 후 조건 맞지 않으면 추가 .--error / 입력 후 조건 맞으면 변경 .--success -->
+            </div>
+          </div>
+          <div
+            class="form-field">
+            <!-- 클래스 추가: --error / --success -->
+            <div class="form-wrap">
+              <input type="password" placeholder="비밀번호를 한번 더 입력해 주세요"/>
+              <div class="util">
+                <button type="button" class="btn-del">
+                  <i>삭제</i>
+                </button>
+                <button
+                  type="button" class="btn-visible on">
+                  <!-- // 클릭 시 on/off 클래스 변경 -->
+                  <i>보기</i>
+                </button>
+              </div>
+            </div>
+            <!-- error text -->
+            <p class="description">입력하신 비밀번호와 일치하지 않습니다.</p>
+            <!-- success text -->
+            <p class="description">입력하신 비밀번호와 일치합니다.</p>
+          </div>
+        </div>
+        <div class="btn-wrap confirm">
+          <button type="button" class="btn-black --medium">
+            <span>비밀번호 재설정</span>
+          </button>
+        </div>
+      </section>
+      <!-- // 인증 후 -->
+    </div>
+  </div>
+{% endblock %}

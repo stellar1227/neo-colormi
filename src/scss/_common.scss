@@ -2402,6 +2402,10 @@ button[type='button'] {
   max-width: 386px;
   margin: calc(120px - 48px) auto;
 
+  &:not(:first-child) {
+    margin-top: 0;
+  }
+
   .page-title+.content-box,
   .content-box+.content-box {
     margin-top: 40px;

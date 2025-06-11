@@ -1,0 +1,62 @@
+{% extends "layouts/base.njk" %}
+{% set title = "회원가입 완료" %}
+{% block content %}
+  <div class="content">
+    <div class="step-wrap">
+      <ol class="step-status">
+        <li>
+          <p class="item">
+            <i class="item-number"></i>
+            <strong>약관동의</strong>
+          </p>
+        </li>
+        <li>
+          <p class="item">
+            <i class="item-number"></i>
+            <strong>정보입력</strong>
+          </p>
+        </li>
+        <li class="--active">
+          <p class="item">
+            <i class="item-number"></i>
+            <strong>가입완료</strong>
+          </p>
+        </li>
+      </ol>
+    </div>
+    <div class="login-wrap">
+      <div class="page-title">
+        <h3>
+          <span>사용자</span>님,<br/>칼라미 가입을 환영합니다!
+          <p class="guide-sub-deep --small">회원님만을 위한 특별한 혜택을 기대해 주세요.</p>
+        </h3>
+      </div>
+      <section class="content-box">
+        <div class="desc-box gray-light-box --receipt">
+          <div class="product-order-item">
+            <dl class="order-item">
+              <dt>회원구분</dt>
+              <dd>개인 회원</dd>
+              <!-- 사업자 회원 -->
+              <dt>회사명</dt>
+              <dd>회사명</dd>
+              <!-- // 사업자 회원 -->
+              <dt>회원 아이디</dt>
+              <dd>회원 아이디</dd>
+              <dt>가입일</dt>
+              <dd>
+                <span>2025.00.00</span>
+                <span>00-00-00</span>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+      <div class="btn-wrap confirm --default">
+        <button type="button" class="btn-primary --medium">
+          <span>로그인하고 첫 구매 혜택 받기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

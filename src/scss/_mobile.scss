@@ -539,107 +539,107 @@
 
 
   // main
+  .main-banner-wrap {
+    min-width: 100%;
+    margin-top: 0;
+
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 100%;
+
+          .item {
+            height: auto;
+            border-radius: 0;
+          }
+        }
+      }
+
+      .swiper-util {
+        position: absolute;
+        bottom: 12px;
+        right: 16px;
+        margin: 0;
+        border-radius: 40px;
+        background: $color-alpha-inverse50;
+        z-index: 1;
+
+        .swiper-pagination {
+          @include font-body-xxsmall-bold;
+
+          .swiper-pagination-current {
+            color: $color-text-basic-inverse;
+          }
+
+          .swiper-pagination-total {
+            color: $color-text-subcolor;
+
+            &::before {
+              height: 8px;
+              background: $color-border-disabled;
+            }
+          }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          position: relative;
+          display: inline-flex;
+          top: auto;
+          left: auto;
+          right: auto;
+          width: 24px;
+          height: 20px;
+          margin-top: 0;
+
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-size: 16px 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .main-product-wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0 -20px;
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px 12px;
+      width: max-content;
+      max-width: 673px;
+      margin: 0 20px;
+    }
+
+    .item {
+      width: 125px;
+
+      .product-info {
+        .badge-wrap {
+          order: 2;
+          margin-top: 20px;
+        }
+
+        .product-title {
+          flex-direction: column;
+          margin-top: 0;
+        }
+
+        .product-text {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+
   .main-wrap {
-    .main-banner-wrap {
-      min-width: 100%;
-      margin-top: 0;
-
-      .swiper {
-        .swiper-wrapper {
-          .swiper-slide {
-            width: 100%;
-
-            .item {
-              height: auto;
-              border-radius: 0;
-            }
-          }
-        }
-
-        .swiper-util {
-          position: absolute;
-          bottom: 12px;
-          right: 16px;
-          margin: 0;
-          border-radius: 40px;
-          background: $color-alpha-inverse50;
-          z-index: 1;
-
-          .swiper-pagination {
-            @include font-body-xxsmall-bold;
-
-            .swiper-pagination-current {
-              color: $color-text-basic-inverse;
-            }
-
-            .swiper-pagination-total {
-              color: $color-text-subcolor;
-
-              &::before {
-                height: 8px;
-                background: $color-border-disabled;
-              }
-            }
-          }
-
-          .swiper-button-prev,
-          .swiper-button-next {
-            position: relative;
-            display: inline-flex;
-            top: auto;
-            left: auto;
-            right: auto;
-            width: 24px;
-            height: 20px;
-            margin-top: 0;
-
-            &::after {
-              content: '';
-              display: inline-block;
-              width: 16px;
-              height: 16px;
-              background-size: 16px 16px;
-            }
-          }
-        }
-      }
-    }
-
-    .main-product-wrap {
-      overflow-x: auto;
-      scrollbar-width: none;
-      margin: 0 -20px;
-
-      .list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 32px 12px;
-        width: max-content;
-        max-width: 673px;
-        margin: 0 20px;
-      }
-
-      .item {
-        width: 125px;
-
-        .product-info {
-          .badge-wrap {
-            order: 2;
-            margin-top: 20px;
-          }
-
-          .product-title {
-            flex-direction: column;
-            margin-top: 0;
-          }
-
-          .product-text {
-            margin-top: 12px;
-          }
-        }
-      }
-    }
-
     .img-title-event {
       img {
         max-width: 275px;

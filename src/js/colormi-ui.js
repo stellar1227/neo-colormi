@@ -70,7 +70,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // modal
+  initModalSystem();
+
 });
+// inactive 클래스 관리
+const InactiveManager = {
+  sources: new Set(),
+
+  add(source) {
+    this.sources.add(source);
+    this.update();
+  },
+
+  remove(source) {
+    this.sources.delete(source);
+    this.update();
+  },
+
+  update() {
+    if (this.sources.size > 0) {
+      document.body.classList.add('inactive');
+    } else {
+      document.body.classList.remove('inactive');
+    }
+  }
+};
 
 // main swiper - main-banner
 function initMainBannerSwiper() {
@@ -417,13 +442,20 @@ function loadingLottie() {
 function initGnb() {
   const MOBILE_BREAKPOINT = 768;
   const mobileQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
-  const body = document.body;
-
   const menuButtons = document.querySelectorAll(
     '.gnb .depth-1 a[data-menu-index], .util-menu .btn-catg[data-menu-index]'
   );
   const submenuWraps = document.querySelectorAll('.all-menu-wrap[data-menu-index]');
   submenuWraps.forEach(wrap => wrap.classList.remove('--open'));
+
+  function updateGnbInactiveState() {
+    const anyOpen = Array.from(submenuWraps).some(wrap => wrap.classList.contains('--open'));
+    if (anyOpen) {
+      InactiveManager.add('gnb');
+    } else {
+      InactiveManager.remove('gnb');
+    }
+  }
 
   function handleMenuButtonClick(e) {
     e.preventDefault();
@@ -434,22 +466,22 @@ function initGnb() {
     if (!mobileQuery.matches && isAlreadyOpen) {
       targetWrap.classList.remove('--open');
       e.currentTarget.parentElement.classList.remove('--active');
-      body.classList.remove('inactive');
+      updateGnbInactiveState();
       return;
     }
 
     submenuWraps.forEach(wrap => {
       wrap.classList.toggle('--open', wrap.dataset.menuIndex === idx);
     });
+
     if (!mobileQuery.matches) {
       menuButtons.forEach(btn => btn.parentElement.classList.remove('--active'));
       e.currentTarget.parentElement.classList.add('--active');
     }
 
-    const anyOpen = Array.from(submenuWraps)
-      .some(wrap => wrap.classList.contains('--open'));
-    body.classList.toggle('inactive', anyOpen);
+    updateGnbInactiveState();
   }
+
   menuButtons.forEach(btn =>
     btn.addEventListener('click', handleMenuButtonClick)
   );
@@ -473,44 +505,36 @@ function initGnb() {
       if (!wrap) return;
       wrap.classList.remove('--open');
       const idx = wrap.dataset.menuIndex;
-      const relatedBtn = Array.from(menuButtons)
-        .find(b => b.dataset.menuIndex === idx);
+      const relatedBtn = Array.from(menuButtons).find(b => b.dataset.menuIndex === idx);
       if (relatedBtn) relatedBtn.parentElement.classList.remove('--active');
-
-      const anyOpen = Array.from(submenuWraps)
-        .some(w => w.classList.contains('--open'));
-      if (!anyOpen) body.classList.remove('inactive');
+      updateGnbInactiveState();
     });
   });
 
   document.addEventListener('click', e => {
-    if (
-      !e.target.closest('.gnb, .header-top .util-menu-wrap')
-      && !e.target.closest('.all-menu-wrap')
-    ) {
+    const isOutsideGnb =
+      !e.target.closest('.gnb') &&
+      !e.target.closest('.header-top .util-menu-wrap') &&
+      !e.target.closest('.all-menu-wrap');
+
+    if (isOutsideGnb) {
       submenuWraps.forEach(wrap => wrap.classList.remove('--open'));
       if (!mobileQuery.matches) {
         menuButtons.forEach(btn =>
           btn.parentElement.classList.remove('--active')
         );
       }
-      body.classList.remove('inactive');
+      updateGnbInactiveState();
     }
   });
 
   // 리사이즈 시 리셋
   mobileQuery.addEventListener('change', ev => {
     if (!ev.matches) {
-      mobileToggleItems.forEach(item =>
-        item.classList.remove('--active')
-      );
-      submenuWraps.forEach(wrap =>
-        wrap.classList.remove('active')
-      );
-      menuButtons.forEach(btn =>
-        btn.parentElement.classList.remove('--active')
-      );
-      body.classList.remove('inactive');
+      mobileToggleItems.forEach(item => item.classList.remove('--active'));
+      submenuWraps.forEach(wrap => wrap.classList.remove('--open'));
+      menuButtons.forEach(btn => btn.parentElement.classList.remove('--active'));
+      updateGnbInactiveState();
     }
   });
 }
@@ -590,4 +614,34 @@ function initTabs(tabWrapperSelector, buttonSelector, contentSelector, activeCla
   });
 
   activate(0);
+}
+
+function initModalSystem() {
+  document.querySelectorAll('.modalOpen').forEach(button => {
+    button.addEventListener('click', () => {
+      const selector = button.getAttribute('data-target');
+      const modal = document.querySelector(selector);
+      if (modal) toggleModal(modal, true);
+    });
+  });
+
+  document.querySelectorAll('.modal .modalClose').forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal');
+      if (modal) toggleModal(modal, false);
+    });
+  });
+}
+
+function toggleModal(modal, isOpen) {
+  if (isOpen) {
+    modal.classList.add('open');
+    InactiveManager.add('modal');
+  } else {
+    modal.classList.remove('open');
+    const anyOpen = document.querySelector('.modal.open');
+    if (!anyOpen) {
+      InactiveManager.remove('modal');
+    }
+  }
 }

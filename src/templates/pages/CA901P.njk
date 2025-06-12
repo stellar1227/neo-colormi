@@ -1,7 +1,12 @@
 {% extends "layouts/base.njk" %}
 {% set title = "옵션변경" %}
 {% block content %}
-  <div class="modal --full --large">
+  <div class="content">
+    <button type="button" class="btn-outline --small modalOpen" data-target="#CA901">
+      <span>옵션변경</span>
+    </button>
+  </div>
+  <div class="modal --full --large" id="CA901">
     <div class="modal-wrap">
       <div class="modal-header">
         <h5 class="modal-title">옵션변경</h5>
@@ -61,8 +66,9 @@
                 <div class="form-field">
                   <div class="form-inner print-option">
                     <p class="option-form">
-                      <input type="number" placeholder="Placeholder"/>
-                      <!-- <span class="guide-basic">부</span> -->
+                      <input
+                      type="number" placeholder="Placeholder"/>
+                    <!-- <span class="guide-basic">부</span> -->
                     </p>
                     <span class="guide-sub --small">
                       <em>10</em>부 단위로 주문 가능
@@ -172,7 +178,7 @@
         </div>
       </div>
       <div class="btn-wrap close">
-        <button type="button" class="btn-close">
+        <button type="button" class="btn-close modalClose">
           <i>닫기</i>
         </button>
       </div>

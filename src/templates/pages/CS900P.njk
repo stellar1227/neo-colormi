@@ -1,7 +1,12 @@
 {% extends "layouts/base.njk" %}
 {% set title = "이용후기 작성" %}
 {% block content %}
-  <div class="modal --full --large">
+  <div class="content">
+    <button type="button" class="btn-outline --small modalOpen" data-target="#CS900">
+      <span>이용후기 작성</span>
+    </button>
+  </div>
+  <div class="modal --full --large" id="CS900">
     <div class="modal-wrap">
       <div class="modal-header">
         <h5 class="modal-title">이용후기 작성</h5>
@@ -130,7 +135,7 @@
       </div>
       <div class="modal-footer">
         <div class="btn-wrap confirm">
-          <button type="button" class="btn-outline --medium">
+          <button type="button" class="btn-outline --medium modalClose">
             <span>취소</span>
           </button>
           <button type="button" class="btn-primary --medium">
@@ -139,7 +144,7 @@
         </div>
       </div>
       <div class="btn-wrap close">
-        <button type="button" class="btn-close">
+        <button type="button" class="btn-close modalClose">
           <i>닫기</i>
         </button>
       </div>

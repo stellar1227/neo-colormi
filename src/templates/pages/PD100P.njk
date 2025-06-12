@@ -1,7 +1,12 @@
 {% extends "layouts/base.njk" %}
 {% set title = "견적문의 작성" %}
 {% block content %}
-  <div class="modal --full --large">
+  <div class="content">
+    <button type="button" class="btn-outline --small modalOpen" data-target="#PD100">
+      <span>견적문의 작성</span>
+    </button>
+  </div>
+  <div class="modal --full --large" id="PD100">
     <div class="modal-wrap">
       <div class="modal-header">
         <h5 class="modal-title">견적문의 작성</h5>
@@ -55,7 +60,7 @@
         </div>
       </div>
       <div class="btn-wrap close">
-        <button type="button" class="btn-close">
+        <button type="button" class="btn-close modalClose">
           <i>닫기</i>
         </button>
       </div>

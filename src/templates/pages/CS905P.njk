@@ -1,7 +1,12 @@
 {% extends "layouts/base.njk" %}
 {% set title = "배송지 추가" %}
 {% block content %}
-  <div class="modal --full --large">
+  <div class="content">
+    <button type="button" class="btn-outline --small modalOpen" data-target="#CS905">
+      <span>배송지 추가</span>
+    </button>
+  </div>
+  <div class="modal --full --large" id="CS905">
     <div class="modal-wrap">
       <div class="modal-header">
         <h5 class="modal-title">배송지 추가</h5>
@@ -73,7 +78,7 @@
         </div>
       </div>
       <div class="btn-wrap close">
-        <button type="button" class="btn-close">
+        <button type="button" class="btn-close modalClose">
           <i>닫기</i>
         </button>
       </div>

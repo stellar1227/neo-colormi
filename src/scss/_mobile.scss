@@ -421,8 +421,8 @@
           margin: 12px 0;
 
           [class^=btn-] {
+            flex: 1;
             display: inline-flex;
-            width: 50%;
           }
         }
       }

@@ -2745,10 +2745,11 @@ button[type='button'] {
   .btn-wrap {
     &.confirm {
       [class^=btn-] {
-        width: 50%;
+        flex: 1;
 
         &:only-child {
-          width: calc(50% - 4px);
+          flex: 0;
+          min-width: calc(50% - 4px);
         }
       }
     }

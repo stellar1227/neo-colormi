@@ -459,18 +459,6 @@
                   "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 },
                 {
-                  "title": "헤더택",
-                  "subs": [
-                    "패키지용 포장 태그",
-                    "행사, 선물 포장에 효과적"
-                  ],
-                  "itemList": [
-                    { "fileName": "C027_thum_1.jpg", "alt": "헤더택 이미지 1" },
-                    { "fileName": "C027_thum_2.jpg", "alt": "헤더택 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
-                },
-                {
                   "title": "포장지",
                   "subs": [
                     "포장도 감성있게 완성",
@@ -600,18 +588,6 @@
                   "itemList": [
                     { "fileName": "D003_thum_1.jpg", "alt": "대량봉투 이미지 1" },
                     { "fileName": "D003_thum_2.jpg", "alt": "대량봉투 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
-                },
-                {
-                  "title": "무지봉투",
-                  "subs": [
-                    "심플한 무인쇄 봉투",
-                    "소량 포장, 매장 포장에 활용"
-                  ],
-                  "itemList": [
-                    { "fileName": "D004_thum_1.jpg", "alt": "무지봉투 이미지 1" },
-                    { "fileName": "D004_thum_2.jpg", "alt": "무지봉투 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --contact\"><i class=\"item\">별도문의</i></span>"]
                 }

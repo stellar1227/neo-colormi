@@ -41,12 +41,17 @@ h5 {
   margin-top: 48px;
 }
 
+#wrap {
+  flex: 1;
+}
+
 #container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0 20px;
   min-width: 1200px;
+  height: 100%;
 }
 
 .top-img-wrap {

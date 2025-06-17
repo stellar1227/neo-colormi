@@ -471,14 +471,14 @@
                   "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 },
                 {
-                  "title": "랩핑지",
+                  "title": "포장지",
                   "subs": [
                     "포장도 감성있게 완성",
-                    "브랜드 로고로 랩핑지 제작"
+                    "브랜드 로고로 포장지 제작"
                   ],
                   "itemList": [
-                    { "fileName": "C028_thum_1.jpg", "alt": "랩핑지 이미지 1" },
-                    { "fileName": "C028_thum_2.jpg", "alt": "랩핑지 이미지 2" }
+                    { "fileName": "C028_thum_1.jpg", "alt": "포장지 이미지 1" },
+                    { "fileName": "C028_thum_2.jpg", "alt": "포장지 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
@@ -815,18 +815,6 @@
                   "itemList": [
                     { "fileName": "C039_thum_1.jpg", "alt": "종이슬로건 이미지 1" },
                     { "fileName": "C039_thum_2.jpg", "alt": "종이슬로건 이미지 2" }
-                  ],
-                  "tooltipList": []
-                },
-                {
-                  "title": "책갈피",
-                  "subs": [
-                    "작고 실용적인 굿즈",
-                    "도서·출판 기념품으로 추천"
-                  ],
-                  "itemList": [
-                    { "fileName": "C040_thum_1.jpg", "alt": "책갈피 이미지 1" },
-                    { "fileName": "C040_thum_2.jpg", "alt": "책갈피 이미지 2" }
                   ],
                   "tooltipList": []
                 }
@@ -1193,18 +1181,6 @@
                     { "fileName": "C019_thum_2.jpg", "alt": "편지지패드 이미지 2" }
                   ],
                   "tooltipList": ["<span class=\"tooltip status --discount-1\"><i class=\"item\">폭풍할인</i></span>"]
-                },
-                {
-                  "title": "책갈피",
-                  "subs": [
-                    "책이나 노트의 페이지를 표기해주는",
-                    "디자인 책갈피"
-                  ],
-                  "itemList": [
-                    { "fileName": "C042_thum_1.jpg", "alt": "책갈피 이미지 1" },
-                    { "fileName": "C042_thum_2.jpg", "alt": "책갈피 이미지 2" }
-                  ],
-                  "tooltipList": ["<span class=\"tooltip status --new\"><i class=\"item\">신상품</i></span>"]
                 }
               ]
             },

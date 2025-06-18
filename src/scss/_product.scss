@@ -232,8 +232,8 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  height: 22px;
-  padding: 2px 8px;
+  height: 20px;
+  padding: 2px 4px;
   border-radius: 11px;
   @include font-body-xxsmall;
   line-height: 1.6rem;
@@ -287,8 +287,8 @@
   }
 
   &.fill-gray-dark {
-    color: $color-text-basic-inverse;
-    background: $color-border-gray-dark;
+    color: $color-text-subcolor-deep;
+    background: $color-border-gray-light;
   }
 
   &.fill-secondary {
@@ -315,6 +315,7 @@
     &.#{$class} {
       color: list.nth($values, 1);
       border: 1px solid list.nth($values, 1);
+      border: none;
       background: list.nth($values, 2);
     }
   }

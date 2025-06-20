@@ -62,6 +62,8 @@
 
     .util-menu-wrap {
       .util-menu {
+        gap: 2px;
+
         .btn-home {
           display: inline-flex;
 
@@ -103,7 +105,6 @@
         }
 
         .btn-login {
-
           &.--login {
             &::before {
               background-image: svgIcon(user, '4c4c4c', '', '', '', '4c4c4c');
@@ -179,6 +180,12 @@
                   content: none;
                 }
               }
+
+              &.--visible {
+                .item {
+                  display: none;
+                }
+              }
             }
 
             span {
@@ -194,6 +201,22 @@
                 color: $color-text-primary;
               }
             }
+          }
+        }
+
+        .user-desc {
+          align-self: center;
+          display: inline-flex;
+          align-items: center;
+          height: 24px;
+          padding: 2px 8px;
+          border-radius: 4px;
+          background: $color-border-primary;
+          color: $color-text-basic-inverse;
+          @include font-body-xxsmall;
+
+          em {
+            padding-left: 4px;
           }
         }
       }
@@ -403,7 +426,6 @@
             @include font-heading-xsmall-bold;
           }
         }
-
       }
 
       .btn-wrap {
@@ -554,51 +576,53 @@
           }
         }
       }
+    }
+  }
 
-      .swiper-util {
-        position: absolute;
-        bottom: 12px;
-        right: 16px;
-        margin: 0;
-        border-radius: 40px;
-        background: $color-alpha-inverse50;
-        z-index: 1;
+  .main-banner-wrap {
+    .swiper-util {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      margin: 0;
+      border-radius: 40px;
+      background: $color-alpha-inverse50;
+      z-index: 1;
 
-        .swiper-pagination {
-          @include font-body-xxsmall-bold;
+      .swiper-pagination {
+        @include font-body-xxsmall-bold;
 
-          .swiper-pagination-current {
-            color: $color-text-basic-inverse;
-          }
-
-          .swiper-pagination-total {
-            color: $color-text-subcolor;
-
-            &::before {
-              height: 8px;
-              background: $color-border-disabled;
-            }
-          }
+        .swiper-pagination-current {
+          color: $color-text-basic-inverse;
         }
 
-        .swiper-button-prev,
-        .swiper-button-next {
-          position: relative;
-          display: inline-flex;
-          top: auto;
-          left: auto;
-          right: auto;
-          width: 24px;
-          height: 20px;
-          margin-top: 0;
+        .swiper-pagination-total {
+          color: $color-text-subcolor;
 
-          &::after {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background-size: 16px 16px;
+          &::before {
+            height: 8px;
+            background: $color-border-disabled;
           }
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: relative;
+        display: inline-flex;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 24px;
+        height: 20px;
+        margin-top: 0;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-size: 16px 16px;
         }
       }
     }
@@ -850,10 +874,6 @@
     .product-img {
       flex: 0 0 auto;
       width: auto;
-
-      .product-img-items {
-        display: none;
-      }
     }
 
     &.scroll {
@@ -866,12 +886,6 @@
       .product-img {
         float: left;
         margin-right: 10px;
-
-        .product-img-detail {
-          width: 50px;
-          height: 50px;
-          border-radius: 8Px;
-        }
       }
 
       .product-info {
@@ -1388,9 +1402,124 @@
   .top-img-wrap {
     height: auto;
   }
+
+  .product-wrap {
+    .product-img {
+      .product-img-detail {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media (max-width:565px) {
+  .product-wrap {
+    .product-img {
+      margin: 0 -20px;
+
+      .product-img-items {
+        padding: 0;
+
+        .img-item-wrap {
+          flex-direction: row;
+
+          .img-item {
+            height: 100%;
+            border-radius: 0;
+
+            +.img-item {
+              margin: 0;
+            }
+
+            &:hover,
+            &.--selected {
+              pointer-events: none;
+              border-color: transparent;
+            }
+          }
+        }
+
+        .swiper-util {
+          position: absolute;
+          bottom: 12px;
+          left: 50%;
+          transform: translateX(-50%);
+          margin: 0;
+          border-radius: 40px;
+          background: $color-alpha-inverse50;
+          z-index: 1;
+
+          .swiper-pagination {
+            display: inline-flex;
+            @include font-body-xxsmall-bold;
+
+            .swiper-pagination-current {
+              color: $color-text-basic-inverse;
+            }
+
+            .swiper-pagination-total {
+              color: $color-text-subcolor;
+
+              &::before {
+                height: 8px;
+                background: $color-border-disabled;
+              }
+            }
+          }
+
+          .swiper-button-prev,
+          .swiper-button-next {
+            position: relative;
+            display: inline-flex;
+            top: auto;
+            left: auto;
+            right: auto;
+            width: 24px;
+            height: 20px;
+            margin-top: 0;
+            background: none;
+            border: none;
+            transform: none;
+
+            &::before {
+              content: none;
+            }
+
+            &::after {
+              content: '';
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background: svgIcon(arrow, 'D6D6D6') no-repeat center center/16px 16px;
+            }
+          }
+
+          .swiper-button-prev {
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+
+      .product-img-detail {
+        display: none;
+      }
+    }
+
+    &.scroll {
+      .product-img {
+        margin: 0 10px 0 0;
+
+        .product-img-detail {
+          display: block;
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+  }
+
   .util-wrap {
     .form-field {
       .form-option {

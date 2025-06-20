@@ -25,7 +25,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url('/resources/fe/img/icon/icon-level.png');
+        background-image: url('/resources/fe/images/icon/icon-level.png');
         background-repeat: no-repeat;
         background-size: 600px auto;
       }
@@ -182,7 +182,7 @@
   }
 }
 
-// 쿠폰
+// 쿠폰, 이벤트
 .box-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -204,7 +204,6 @@
       .event-img {
         overflow: hidden;
         width: 100%;
-        max-height: 215px;
         border-radius: 8px;
       }
 

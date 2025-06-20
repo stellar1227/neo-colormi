@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 상품페이지 갤러리
-  const thumbNailGallery = document.getElementById("thumbNailGallery");
-  if (thumbNailGallery) {
-    productImages(thumbNailGallery);
-  }
+  initProductImagesSwiper();
 
   // 상품페이지 스티키 정보
   const productDetailBox = document.querySelector(".product-wrap");
@@ -218,6 +215,141 @@ function initBlogListSwiper() {
   }
 }
 
+// 상품페이지 갤러리
+function initProductImagesSwiper() {
+  const gallery = document.getElementById("thumbNailGallery");
+  if (!gallery) return;
+
+  const imgDetail = gallery.querySelector(".product-img-detail img");
+  const prevButton = gallery.querySelector(".thumbnail-prev");
+  const nextButton = gallery.querySelector(".thumbnail-next");
+  const wrapper = gallery.querySelector(".img-item-wrap");
+
+  let imgItems = Array.from(gallery.querySelectorAll(".swiper-slide.img-item"));
+  let swiper = null;
+  let scrollIndex = 0;
+  const margin = 12;
+  const itemHeight = imgItems[0]?.offsetHeight || 70;
+
+  const isMobile = () => window.innerWidth <= 565;
+
+  const updateDetailImage = (img) => {
+    if (!img) return;
+    imgDetail.src = img.src;
+    imgDetail.alt = img.alt;
+  };
+
+  const selectItem = (index, scrollSwiper = true) => {
+    imgItems.forEach(item => item.classList.remove("--selected"));
+    const selected = imgItems[index];
+    if (!selected) return;
+
+    selected.classList.add("--selected");
+    updateDetailImage(selected.querySelector("img"));
+
+    if (swiper && scrollSwiper && isMobile()) {
+      swiper.slideTo(index);
+    }
+  };
+
+  const bindThumbnailEvents = () => {
+    imgItems.forEach((item, index) => {
+      item.addEventListener("mouseenter", () => {
+        if (!isMobile()) selectItem(index, false);
+      });
+      item.addEventListener("click", () => {
+        selectItem(index, true);
+      });
+    });
+  };
+
+  const createSwiper = () => {
+    const instance = new Swiper(".img-item-screen", {
+      direction: "horizontal",
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: nextButton,
+        prevEl: prevButton,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+        renderFraction(currentClass, totalClass) {
+          const total = this.slides.length;
+          const current = this.realIndex + 1;
+          return `<span class="${currentClass}">${current}</span><span class="${totalClass}">${total}</span>`;
+        }
+      }
+    });
+
+    instance.on("slideChange", () => {
+      if (!isMobile()) return;
+      const img = instance.slides[instance.activeIndex]?.querySelector("img");
+      updateDetailImage(img);
+    });
+
+    return instance;
+  };
+
+  const destroySwiper = () => {
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  };
+
+  const scrollByButton = (direction) => {
+    const maxIndex = imgItems.length - 4;
+    if (direction === "next") {
+      if (scrollIndex >= maxIndex) return alert("마지막 이미지입니다.");
+      scrollIndex++;
+    } else {
+      if (scrollIndex <= 0) return alert("첫번째 이미지입니다.");
+      scrollIndex--;
+    }
+    const offset = (itemHeight + margin) * scrollIndex;
+    wrapper.style.transform = `translateY(-${offset}px)`;
+  };
+
+  const applyMode = () => {
+    destroySwiper();
+    imgItems = Array.from(gallery.querySelectorAll(".swiper-slide.img-item"));
+    scrollIndex = 0;
+    wrapper.style.transform = isMobile() ? "" : "translateY(0px)";
+
+    if (isMobile()) {
+      swiper = createSwiper();
+      swiper.slideTo(0, 0);
+      setTimeout(() => {
+        const img = swiper.slides[0]?.querySelector("img");
+        updateDetailImage(img);
+      }, 50);
+    } else {
+      selectItem(0, false);
+    }
+  };
+
+  applyMode();
+  bindThumbnailEvents();
+
+  prevButton.addEventListener("click", () => {
+    if (!isMobile()) scrollByButton("prev");
+  });
+
+  nextButton.addEventListener("click", () => {
+    if (!isMobile()) scrollByButton("next");
+  });
+
+  // 리사이즈
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => applyMode(), 0);
+  });
+}
+
 // 상품페이지 간편주문 토글
 function setupOptionToggle() {
   const toggleBoxes = document.querySelectorAll('[data-option="--option-toggle"] input[type="checkbox"]');
@@ -241,52 +373,6 @@ function setupOptionToggle() {
     updateAll(checkbox.checked);
     checkbox.addEventListener('change', () => {
       updateAll(checkbox.checked);
-    });
-  });
-}
-
-// 상품페이지 갤러리
-function productImages(target) {
-  const thumbNailGallery = target;
-  const imgItemWrap = thumbNailGallery.querySelector(".img-item-wrap");
-  const imgItems = imgItemWrap.querySelectorAll(".img-item");
-  const btnPrev = thumbNailGallery.querySelector(".btn-prev");
-  const btnNext = thumbNailGallery.querySelector(".btn-next");
-  const imgDetail = thumbNailGallery.querySelector(".product-img-detail img");
-  let currentIndex = 0;
-  const imgItemLength = imgItems.length;
-  const MARGIN_TOP = 12;
-  const itemListNum = 4;
-  const imgItemHeight = imgItems[0].offsetHeight + MARGIN_TOP;
-
-  imgItems[0].classList.add("--selected");
-
-  btnPrev.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      imgItemWrap.style.transform =
-        `translateY(-${currentIndex * imgItemHeight + MARGIN_TOP}px)`;
-    } else {
-      alert('첫번째 이미지입니다.');
-    }
-  });
-
-  btnNext.addEventListener("click", () => {
-    if (currentIndex < imgItemLength - itemListNum) {
-      currentIndex++;
-      imgItemWrap.style.transform =
-        `translateY(-${currentIndex * imgItemHeight + MARGIN_TOP}px)`;
-    } else {
-      alert('마지막 이미지입니다.');
-    }
-  });
-
-  // imgItems에 마우스엔터 시 product-img-detail에 해당 이미지 보여주기
-  imgItems.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      imgItems.forEach(i => i.classList.remove("--selected"));
-      item.classList.add("--selected");
-      imgDetail.src = item.querySelector("img").src;
     });
   });
 }
@@ -368,7 +454,7 @@ function loadingLottie() {
   const ACTIVE_CLASS = '--active';
 
   const animConfig = {
-    loading: '/resources/fe/img/assets/loading.json',
+    loading: '/resources/fe/images/assets/loading.json',
   };
 
   const animDataCache = new Map();

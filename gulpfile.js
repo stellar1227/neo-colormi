@@ -35,9 +35,9 @@ const paths = {
     dest: 'dist/resources/common/js/',
   },
   images: {
-    src: 'src/img/**/*.*',
-    dest: 'dist/resources/fe/img/',
-    watch: 'src/resources/fe/img/**/*.*',
+    src: 'src/images/**/*.*',
+    dest: 'dist/resources/fe/images/',
+    watch: 'src/resources/fe/images/**/*.*',
   },
   libs: {
     js: 'src/libs/js/**/*.js',

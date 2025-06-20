@@ -69,10 +69,23 @@
         &.tooltip {
           .item {
             background: #F181A6;
-            z-index: 11;
+            z-index: 12;
+            bottom: -25px;
 
             &::before {
               background: #F181A6;
+            }
+          }
+
+          &.--visible {
+            .item {
+              display: block;
+              background: $color-border-primary;
+              z-index: 11;
+
+              &::before {
+                background: $color-border-primary;
+              }
             }
           }
         }
@@ -170,6 +183,10 @@
         display: flex;
         gap: 16px;
       }
+
+      .user-desc {
+        display: none;
+      }
     }
 
     .quick-menu {
@@ -248,7 +265,7 @@
           content: '';
           display: inline-block;
           margin-bottom: 40px;
-          background-image: url('/resources/fe/img/icon/img-sprite.png');
+          background-image: url('/resources/fe/images/icon/img-sprite.png');
           background-repeat: no-repeat;
           background-size: 920px auto;
         }
@@ -324,6 +341,7 @@
   .quick-menu {
     display: none;
     position: absolute;
+    top: 32px;
     transform: translateX(-50%);
     padding: 10px;
     border-radius: 4px;
@@ -337,18 +355,16 @@
     }
 
     .user-info {
+      flex-direction: column;
       margin-bottom: 8px;
       padding-bottom: 8px;
       border-bottom: 1px solid $Line-line;
-      text-align: center;
 
       .user-img {
         display: inline-block;
         width: 40px;
         height: 40px;
-        margin-bottom: 8px;
         border-radius: 50%;
-        background: $color-border-tertiary; //대신 넣은거임. 나중에 삭제
 
         img {
           display: inline-block;
@@ -365,11 +381,11 @@
     }
 
     .quick-menu-list {
-      li {
-        +li {
-          margin-top: 8px;
-        }
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
 
+      li {
         @include font-body-xsmall;
         text-align: center;
 
@@ -384,6 +400,40 @@
           }
         }
       }
+    }
+  }
+}
+
+.user-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .user-img {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    img {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+  }
+
+  .user-name {
+    @include font-body-xxsmall-bold;
+    color: $color-text-basic;
+  }
+
+  .user-desc {
+    @include desc-guide;
+
+    em {
+      padding-left: 4px;
+      color: $color-border-primary;
     }
   }
 }
@@ -653,16 +703,6 @@ header {
         >.depth-1 {
           @include title-semibold;
 
-          // &.focus:after {
-          //   content: '';
-          //   display: inline-block;
-          //   width: 5px;
-          //   height: 5px;
-          //   background: $color-border-primary;
-          //   border-radius: 50%;
-          //   vertical-align: 12px;
-          // }
-
           .desc-guide {
             @include desc-guide;
             margin-left: 8px;
@@ -931,7 +971,7 @@ footer {
               display: inline-block;
               width: 100%;
               height: 100%;
-              background-image: url('/resources/fe/img/icon/img-sprite.png');
+              background-image: url('/resources/fe/images/icon/img-sprite.png');
               background-repeat: no-repeat;
               background-size: 920px auto;
             }
@@ -1056,7 +1096,7 @@ footer {
           content: '';
           display: inline-block;
           margin-right: 20px;
-          background-image: url('/resources/fe/img/icon/img-sprite.png');
+          background-image: url('/resources/fe/images/icon/img-sprite.png');
           background-repeat: no-repeat;
           background-size: 920px auto;
         }
@@ -1068,7 +1108,7 @@ footer {
           dt {
             flex: 0 auto;
             margin-right: 4px;
-            font-weight: 600;
+            font-weight: $font-weight-semibold;
           }
 
           dd+dt,
@@ -1221,62 +1261,68 @@ footer {
         }
       }
     }
+  }
 
-    .swiper-util {
-      display: flex;
-      justify-content: center;
-      margin-top: 12px;
+  .swiper-util {
 
-      .swiper-pagination {
-        position: relative;
-        display: inline-flex;
-        width: auto;
-        top: auto;
-        bottom: auto;
-        margin: 0 4px;
-        @include font-body-small-bold;
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: relative;
+      display: inline-flex;
+      top: auto;
+      left: auto;
+      right: auto;
+      width: 24px;
+      height: 24px;
+      margin-top: 0;
 
-        .swiper-pagination-current {
-          color: $color-text-basic;
-        }
-
-        .swiper-pagination-total {
-          color: $color-text-subcolor-light;
-
-          &::before {
-            content: '';
-            display: inline-block;
-            width: 1px;
-            height: 11px;
-            margin: 0 8px;
-            background: $color-border-gray;
-          }
-        }
-      }
-
-      .swiper-button-prev,
-      .swiper-button-next {
-        position: relative;
-        display: inline-flex;
-        top: auto;
-        left: auto;
-        right: auto;
+      &::after {
+        content: '';
+        display: inline-block;
         width: 24px;
         height: 24px;
-        margin-top: 0;
+        background: svgIcon(arrow, 'D6D6D6') no-repeat center center/24px 24px;
+      }
+    }
 
-        &::after {
-          content: '';
-          display: inline-block;
-          width: 24px;
-          height: 24px;
-          background: svgIcon(arrow, 'D6D6D6') no-repeat center center/24px 24px;
-        }
+    .swiper-button-prev {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.product-img-items,
+.main-banner-wrap {
+  .swiper-util {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+
+    .swiper-pagination {
+      position: relative;
+      display: inline-flex;
+      width: auto;
+      top: auto;
+      bottom: auto;
+      margin: 0 4px;
+      @include font-body-small-bold;
+
+      .swiper-pagination-current {
+        color: $color-text-basic;
       }
 
-      .swiper-button-prev {
-        &::after {
-          transform: rotate(180deg);
+      .swiper-pagination-total {
+        color: $color-text-subcolor-light;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 1px;
+          height: 11px;
+          margin: 0 8px;
+          background: $color-border-gray;
         }
       }
     }
@@ -1296,30 +1342,12 @@ footer {
     .product-img {
       overflow: hidden;
       position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       border-radius: 10px;
-      background: $color-border-gray-light;
-
-      &::before {
-        content: '';
-        display: block;
-        padding-bottom: 100%;
-      }
-
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 50%;
-        height: 53%;
-        transform: translate(-50%, -50%);
-        background: url(/resources/fe/img/icon/img-no-image.png) no-repeat center center/cover;
-      }
+      background: $color-border-gray-light url('/resources/fe/images/icon/img-no-image.png') no-repeat center center/50% auto;
 
       img {
-        position: absolute;
-        top: 0;
         display: inline-block;
         width: 100%;
         height: 100%;
@@ -1443,17 +1471,10 @@ footer {
               overflow: hidden;
               width: 100%;
               height: auto;
+              aspect-ratio: 1 / 1;
               border-radius: 24px 24px 0 0;
 
-              &::before {
-                content: '';
-                display: block;
-                padding-bottom: 100%;
-              }
-
               img {
-                position: absolute;
-                top: 0;
                 display: inline-block;
                 width: 100%;
                 height: 100%;
@@ -1503,7 +1524,7 @@ footer {
       width: 72px;
       height: 44px;
       margin-bottom: 4px;
-      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-image: url('/resources/fe/images/icon/img-sprite.png');
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: 0 0;

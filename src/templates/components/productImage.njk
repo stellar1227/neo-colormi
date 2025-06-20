@@ -1,4 +1,4 @@
-<div class="product-img" id="thumbNailGallery">
+{# <div class="product-img" id="thumbNailGallery">
   <div class="product-img-items">
     <div class="button-item">
       <button type="button" class="btn-prev">
@@ -9,7 +9,7 @@
       <div class="img-item-wrap">
         {% for item in itemList %}
           <div class="img-item">
-            <img src="/resources/fe/img/product/{{ item.fileName }}" alt="{{ item.alt }}"/>
+            <img src="/resources/fe/images/product/{{ item.fileName }}" alt="{{ item.alt }}"/>
           </div>
         {% endfor %}
       </div>
@@ -21,6 +21,27 @@
     </div>
   </div>
   <div class="product-img-detail">
-    <img src="/resources/fe/img/product/{{ itemList[0].fileName }}" alt="{{ itemList[0].alt }}"/>
+    <img src="/resources/fe/images/product/{{ itemList[0].fileName }}" alt="{{ itemList[0].alt }}"/>
+  </div>
+</div> #}
+<div class="product-img" id="thumbNailGallery">
+  <div class="swiper product-img-items">
+    <div class="img-item-screen">
+      <div class="swiper-wrapper img-item-wrap">
+        {% for item in itemList %}
+          <div class="swiper-slide img-item">
+            <img src="/resources/fe/images/product/{{ item.fileName }}" alt="{{ item.alt }}"/>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="swiper-util">
+      <div class="swiper-button-prev thumbnail-prev"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next thumbnail-next"></div>
+    </div>
+  </div>
+  <div class="product-img-detail">
+    <img src="/resources/fe/images/product/{{ itemList[0].fileName }}" alt="{{ itemList[0].alt }}"/>
   </div>
 </div>

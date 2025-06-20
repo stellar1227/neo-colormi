@@ -273,7 +273,7 @@ h5 {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-image: url('/resources/fe/img/icon/img-sprite.png');
+    background-image: url('/resources/fe/images/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 920px auto;
     background-position: -890px 0;
@@ -1086,7 +1086,7 @@ h5 {
         overflow: hidden;
         display: inline-block;
         width: 100%;
-        padding-bottom: 100%;
+        aspect-ratio: 1 / 1;
         border-radius: 4px;
 
         &::after {
@@ -1243,7 +1243,7 @@ h5 {
         position: relative;
         overflow: hidden;
         display: inline-block;
-        background: url('/resources/fe/img/img/img-radio-option.png') no-repeat center bottom/cover;
+        background: url('/resources/fe/images/assets/img-radio-option.png') no-repeat center bottom/cover;
 
         &::after {
           content: '';
@@ -1630,7 +1630,7 @@ h5 {
     width: 63px;
     height: 72px;
     margin-bottom: 4px;
-    background-image: url('/resources/fe/img/icon/img-sprite.png');
+    background-image: url('/resources/fe/images/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 920px auto;
     background-position: -202px 0;
@@ -2119,7 +2119,7 @@ h5 {
       display: inline-block;
       width: 99px;
       height: 90px;
-      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-image: url(/resources/fe/images/icon/img-sprite.png);
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: -353px -194px;
@@ -2133,7 +2133,7 @@ h5 {
       display: inline-block;
       width: 104px;
       height: 91px;
-      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-image: url(/resources/fe/images/icon/img-sprite.png);
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: -452px -194px;
@@ -2152,7 +2152,7 @@ h5 {
       display: inline-block;
       width: 78px;
       height: 80px;
-      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-image: url(/resources/fe/images/icon/img-sprite.png);
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: 0 -342px;
@@ -2166,7 +2166,7 @@ h5 {
       display: inline-block;
       width: 82px;
       height: 82px;
-      background-image: url(/resources/fe/img/icon/img-sprite.png);
+      background-image: url(/resources/fe/images/icon/img-sprite.png);
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: -78px -342px;
@@ -2539,7 +2539,7 @@ button[type='button'] {
           transform: translateX(-50%);
           width: 30px;
           height: 30px;
-          background-image: url('/resources/fe/img/icon/img-sprite.png');
+          background-image: url('/resources/fe/images/icon/img-sprite.png');
           background-repeat: no-repeat;
           background-size: 920px auto;
         }
@@ -2774,7 +2774,7 @@ button[type='button'] {
       display: inline-block;
       width: 186px;
       height: 148px;
-      background-image: url('/resources/fe/img/icon/img-sprite.png');
+      background-image: url('/resources/fe/images/icon/img-sprite.png');
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: -678px -194px;
@@ -2795,7 +2795,7 @@ button[type='button'] {
       display: inline-block;
       width: 608px;
       height: 430px;
-      background-image: url('/resources/fe/img/icon/img-sprite-error.png');
+      background-image: url('/resources/fe/images/icon/img-sprite-error.png');
       background-repeat: no-repeat;
       background-size: 1824px auto;
     }

@@ -205,14 +205,14 @@
                   "tooltipList": ["<span class=\"tooltip status --best\"><i class=\"item\">베스트</i></span>"]
                 },
                 {
-                  "title": "소량책자표지",
+                  "title": "책자표지",
                   "subs": [
                     "책자 표지만 필요하다면?",
                     "표지만 따로 제작"
                   ],
                   "itemList": [
-                    { "fileName": "A006_thum_1.jpg", "alt": "소량책자표지 이미지 1" },
-                    { "fileName": "A006_thum_2.jpg", "alt": "소량책자표지 이미지 2" }
+                    { "fileName": "A006_thum_1.jpg", "alt": "책자표지 이미지 1" },
+                    { "fileName": "A006_thum_2.jpg", "alt": "책자표지 이미지 2" }
                   ],
                   "tooltipList": []
                 },

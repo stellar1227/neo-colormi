@@ -2406,20 +2406,14 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
           &.--content {
             .title {
               @include font-body-medium-bold;
+              color: $color-text-basic;
             }
 
-            .category {
+            .item-list-text {
               @include font-body-xsmall;
               color: $color-text-subcolor-deep;
-
-              &::before {
-                content: '';
-                display: inline-block;
-                width: 1px;
-                height: 9px;
-                margin-right: 20px;
-                background: $Line-line;
-              }
+              border-left: 1px solid $Line-line;
+              padding-left: 20px;
             }
 
             .product-option {
@@ -2437,6 +2431,7 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
           }
 
           .inner-wrap.--file {
+            flex-direction: column;
             color: $color-text-subcolor;
           }
         }

@@ -26,10 +26,49 @@
               <p class="text">
                 문의내용
               </p>
-              <p class="category">
-                <span>문의유형 :</span>
-                <em>[선택한 항목]</em>
-              </p>
+              <div
+                class="item-list-text">
+                <!-- 1:1 문의 -->
+                <p class="text">
+                  <span>상품종류 :</span>
+                  <em>[선택한 항목]</em>
+                </p>
+                <!-- // 1:1 문의 -->
+                <!-- 견적문의 -->
+                <p class="text">
+                  <span>상담종류 :</span>
+                  <em>[선택한 항목]</em>
+                </p>
+                <p class="text">
+                  <span>인쇄물종류 :</span>
+                  <em>[선택한 항목]</em>
+                </p>
+                <p class="text">
+                  <span>사이즈 :</span>
+                  <em>[기재한 값]</em>
+                </p>
+                <p class="text">
+                  <span>용지종류 :</span>
+                  <em>[기재한 값]</em>
+                </p>
+                <p class="text">
+                  <span>용지평량 :</span>
+                  <em>[기재한 값]</em>
+                </p>
+                <p class="text">
+                  <span>출력칼라 :</span>
+                  <em>[선택한 항목]</em>
+                </p>
+                <p class="text">
+                  <span>페이지 수 :</span>
+                  <em>[기재한 값]</em>
+                </p>
+                <p class="text">
+                  <span>제작수량 :</span>
+                  <em>[기재한 값]</em>
+                </p>
+                <!-- // 견적문의 -->
+              </div>
               <div class="product-order">
                 <div class="product-option">
                   <dl class="column-item">
@@ -44,6 +83,7 @@
                     <dt>파일첨부</dt>
                     <dd>
                       <div class="inner-wrap --file">
+                        <a href="" alt="">250000_리플렛_최종_outline.pdf</a>
                         <a href="" alt="">250000_리플렛_최종_outline.pdf</a>
                       </div>
                     </dd>
@@ -85,24 +125,28 @@
         </div>
         <!-- // list body -->
       </div>
-      <div
-        class="util-wrap">
+      <div class="util-wrap">
+        <!-- // 견적문의 .util-wrap 버튼 그룹 단독사용 오른쪽 정렬 클래스 추가 --right -->
         <!-- 답변 후 삭제 클래스 추가 .hide -->
-        <div class="btn-wrap">
-          <a href="" class="btn-outline --small">
+          <div class="btn-wrap"> <a href="" class="btn-outline --small">
             <span>수정</span>
           </a>
           <button type="button" class="btn-outline --small">
             <span>삭제</span>
           </button>
         </div>
-        <!-- // 답변 후 삭제 -->
+        <!-- // 답변 후 삭제 클래스 추가 .hide -->
         <div class="btn-wrap">
           <a href="" class="btn-black --small">
             <span>목록</span>
           </a>
         </div>
       </div>
+      <!-- 견적문의 <div class="util-wrap --right"> <div class="btn-wrap">
+          <a href="" class="btn-black --small">
+            <span>목록</span>
+          </a>
+      </div> </div> -->
     </section>
   </div>
 {% endblock %}

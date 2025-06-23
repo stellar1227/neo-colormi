@@ -2073,6 +2073,71 @@ h5 {
       }
     }
   }
+
+  &.--greeting {
+    flex-direction: row;
+    gap: 20px;
+    margin-top: calc(72px + 48px) !important;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .img-box {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      margin: -72px 0 0 69px;
+      max-width: 171px;
+      max-height: 260px;
+      align-self: flex-end;
+    }
+
+    .cont-info {
+      gap: 24px;
+      align-self: center;
+      text-align: left;
+
+      .text {
+        @include font-heading-small-bold;
+        color: $color-text-secondary;
+      }
+
+      .text-ceo {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+
+        .name {
+          @include font-body-large;
+          color: $color-text-basic;
+        }
+
+        .title {
+          @include font-body-xxsmall;
+          color: $color-text-subcolor-deep;
+        }
+
+        .signature {
+          display: inline-block;
+          width: 80px;
+          height: 30px;
+          margin-left: 12px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    +.--greeting {
+      margin-top: 32px;
+    }
+  }
 }
 
 .icon-box {
@@ -2140,24 +2205,42 @@ h5 {
     }
   }
 
-  &.--guide {
-    padding-bottom: 20px;
-    border-bottom: 1px solid $Line-line;
-  }
+  &.--design-guide {
+    width: 100%;
+    padding-right: 20px;
+    background: $color-border-gray-light;
 
-  &.--size-guide {
     &::before {
-      flex: 0 0 78px;
+      flex: 0 0 219px;
       content: '';
       display: inline-block;
-      width: 78px;
-      height: 80px;
-      background-image: url(/resources/fe/images/icon/img-sprite.png);
+      width: 219px;
+      height: 174px;
+      background-image: url('/resources/fe/images/icon/img-sprite.png');
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: 0 -342px;
     }
   }
+
+  // &.--guide {
+  //   padding-bottom: 20px;
+  //   border-bottom: 1px solid $Line-line;
+  // }
+
+  // &.--size-guide {
+  //   &::before {
+  //     flex: 0 0 78px;
+  //     content: '';
+  //     display: inline-block;
+  //     width: 78px;
+  //     height: 80px;
+  //     background-image: url(/resources/fe/images/icon/img-sprite.png);
+  //     background-repeat: no-repeat;
+  //     background-size: 920px auto;
+  //     background-position: 0 -342px;
+  //   }
+  // }
 
   &.--copies-guide {
     &::before {

@@ -215,7 +215,7 @@
     @include font-body-small;
   }
 
-  button.swal2-styled.swal2-cancel {
+  button.swal2-styled.swal2-confirm {
     border-color: $color-border-primary;
     background: $color-border-primary;
     color: $color-text-basic-inverse;
@@ -231,7 +231,7 @@
     }
   }
 
-  button.swal2-styled.swal2-confirm {
+  button.swal2-styled.swal2-cancel {
     box-shadow: none;
     border-color: $color-border-gray-dark;
     background: $color-background-white;

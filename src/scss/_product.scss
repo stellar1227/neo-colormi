@@ -314,7 +314,7 @@
     'line-tertiary': ($color-border-tertiary, $color-background-white)) {
     &.#{$class} {
       color: list.nth($values, 1);
-      border: 1px solid list.nth($values, 1);
+      // border: 1px solid list.nth($values, 1);
       border: none;
       background: list.nth($values, 2);
     }
@@ -2154,6 +2154,21 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
 
             &.--left {
               text-align: left;
+            }
+
+            .badge {
+              &.line-tertiary {
+                border: 1px solid $color-border-tertiary;
+              }
+            }
+
+            .sale-price {
+              text-decoration: line-through;
+              color: $color-text-subcolor-light;
+            }
+
+            .guide-sale-price {
+              color: $Display-Status-Display-9;
             }
           }
         }

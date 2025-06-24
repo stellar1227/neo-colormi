@@ -1960,6 +1960,10 @@ h5 {
     @include desc-box;
     padding: 20px;
     background: $color-border-gray-light;
+
+    &.--xlarge {
+      padding: 32px;
+    }
   }
 
   &.--receipt {
@@ -2082,12 +2086,6 @@ h5 {
     padding-bottom: 0;
 
     .img-box {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
       margin: -72px 0 0 69px;
       max-width: 171px;
       max-height: 260px;
@@ -2137,6 +2135,65 @@ h5 {
     +.--greeting {
       margin-top: 32px;
     }
+  }
+
+  &.--brand-story {
+    display: flex;
+    flex-direction: column;
+    gap: 64px 0;
+    margin: 0;
+
+    .img-box {
+      &.--bi-palette {
+        text-align: center;
+
+        img {
+          max-width: 386px;
+        }
+      }
+    }
+
+    .cont-info {
+      gap: 32px 0;
+
+      .title-wrap {
+        justify-content: center;
+        margin: 0;
+
+        .cont-title:not(.--small) {
+          font-size: 19px;
+        }
+      }
+
+      .text-wrap [class^=guide-] {
+        text-align: center;
+      }
+
+      >[class^=guide-] {
+        margin-top: 0;
+        text-align: center;
+      }
+
+      .color-primary {
+        color: $color-text-primary;
+      }
+
+      .color-tertiary {
+        color: $color-text-tertiary;
+      }
+    }
+
+    +.--brand-story {
+      margin-top: 64px;
+    }
+  }
+}
+
+.img-box {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
@@ -2502,6 +2559,11 @@ button[type='button'] {
     margin-top: 0;
   }
 
+  &.--large {
+    max-width: 590px;
+    margin: 0 auto;
+  }
+
   .page-title+.content-box,
   .content-box+.content-box {
     margin-top: 40px;
@@ -2525,6 +2587,14 @@ button[type='button'] {
 
       [class^=btn-] {
         width: 100%;
+      }
+    }
+
+    &.--horizontal {
+      flex-direction: row;
+
+      [class^=btn-] {
+        flex: 1;
       }
     }
   }

@@ -2,42 +2,47 @@
 {% set title = "회원가입" %}
 {% block content %}
   <div class="content">
-    <div class="login-wrap">
+    <div class="login-wrap --large">
       <div class="page-title">
         <h3>Printing Platform 서비스를<br/>직접 경험해보세요</h3>
       </div>
       <section class="content-box">
-        <div class="btn-wrap confirm">
-          <button type="button" class="btn-outline --medium">
+        <div class="img-box">
+          <img src="/resources/fe/images/img/img-signup-rewards.png" alt="회원가입 혜택"/>
+        </div>
+      </section>
+      <section class="content-box">
+        <div class="btn-wrap confirm --horizontal">
+          <button type="button" class="btn-outline --large">
             <span>개인 회원 가입</span>
           </button>
-          <button type="button" class="btn-black --medium">
+          <button type="button" class="btn-black --large">
             <span>사업자 회원 가입</span>
           </button>
         </div>
       </section>
-      <section class="content-box">
-        <div class="sns-login">
-          <p class="guide-basic --xsmall">자주 사용하시는 SNS로 10초만에 가입하실 수 있습니다.</p>
-          <div class="item-list">
-            <button type="button" class="btn-sns --naver">
-              <span>네이버</span>
-            </button>
-            <button type="button" class="btn-sns --kakao">
-              <span>카카오</span>
-            </button>
-            <button type="button" class="btn-sns --google">
-              <span>구글</span>
-            </button>
-          </div>
-        </div>
-      </section>
-      <section class="content-box">
-        <ul class="guide-sub --xsmall --center">
-          <li>SNS 회원은 기업 회원으로 변경이 불가합니다.</li>
-          <li>기업 회원가입의 경우 [사업자 회원가입]을 이용해 주세요.</li>
-        </ul>
-      </section>
+      {# <section class="content-box">
+                                                                          <div class="sns-login">
+                                                                            <p class="guide-basic --xsmall">자주 사용하시는 SNS로 10초만에 가입하실 수 있습니다.</p>
+                                                                            <div class="item-list">
+                                                                              <button type="button" class="btn-sns --naver">
+                                                                                <span>네이버</span>
+                                                                              </button>
+                                                                              <button type="button" class="btn-sns --kakao">
+                                                                                <span>카카오</span>
+                                                                              </button>
+                                                                              <button type="button" class="btn-sns --google">
+                                                                                <span>구글</span>
+                                                                              </button>
+                                                                            </div>
+                                                                          </div>
+                                                                        </section>
+                                                                        <section class="content-box">
+                                                                          <ul class="guide-sub --xsmall --center">
+                                                                            <li>SNS 회원은 기업 회원으로 변경이 불가합니다.</li>
+                                                                            <li>기업 회원가입의 경우 [사업자 회원가입]을 이용해 주세요.</li>
+                                                                          </ul>
+                                                                        </section> #}
     </div>
   </div>
 {% endblock %}

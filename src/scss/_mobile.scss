@@ -1032,7 +1032,7 @@
     flex-direction: column;
     padding: 0 !important;
 
-    .img-box:not(.--brand-story) {
+    .img-box {
       align-self: center;
     }
 
@@ -1601,6 +1601,18 @@
         .cont-item {
           flex: 0 0 auto;
           width: 100%;
+        }
+      }
+    }
+  }
+
+  .login-wrap {
+    .btn-wrap {
+      &.--horizontal {
+        flex-direction: column;
+
+        [class^=btn-] {
+          flex: auto;
         }
       }
     }

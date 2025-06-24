@@ -314,8 +314,8 @@
     'line-tertiary': ($color-border-tertiary, $color-background-white)) {
     &.#{$class} {
       color: list.nth($values, 1);
-      // border: 1px solid list.nth($values, 1);
-      border: none;
+      border: 1px solid list.nth($values, 1);
+      border-width: 0; // 디자인 변경으로 badge border 0 적용, 일부 적용 사용시 width: 1px로 변경
       background: list.nth($values, 2);
     }
   }
@@ -2158,7 +2158,7 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
 
             .badge {
               &.line-tertiary {
-                border: 1px solid $color-border-tertiary;
+                border-width: 1px;
               }
             }
 

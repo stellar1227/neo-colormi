@@ -323,7 +323,10 @@ h5 {
     }
 
     &.select {
-      &::after {
+      border-radius: 4px;
+      background: $color-background-white;
+
+      &::before {
         content: '';
         display: inline-block;
         position: absolute;
@@ -340,7 +343,7 @@ h5 {
       position: relative;
       padding-right: 28px;
       text-align: left;
-      background: $color-background-white;
+      background: transparent;
 
       &:focus,
       &:focus-visible,

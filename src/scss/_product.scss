@@ -2239,72 +2239,9 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
           width: 16%;
         }
 
-        &::before {
+        &:not(.--no-item)::before {
           content: attr(data-label);
           display: none;
-        }
-
-        &.--no-item {
-          flex: 1;
-          flex-direction: column;
-          padding: 48px 16px;
-
-          &.--icon {
-            padding: 24px 16px;
-
-            &::before {
-              content: '';
-              display: inline-block;
-              margin-bottom: 20px;
-              background-image: url('/resources/fe/images/icon/img-sprite.png');
-              background-repeat: no-repeat;
-              background-size: 920px auto;
-            }
-
-            // 장바구니
-            &.--cart {
-              &::before {
-                width: 192px;
-                height: 151px;
-                background-position: -698px 0;
-              }
-            }
-
-            // 이용후기
-            &.--review {
-              &::before {
-                width: 100px;
-                height: 108px;
-                background-position: 0 -194px;
-              }
-            }
-
-            // 1:1 문의
-            &.--customer-1 {
-              &::before {
-                width: 85px;
-                height: 100px;
-                background-position: -100px -194px;
-              }
-            }
-
-            // 견적문의
-            &.--customer-2 {
-              &::before {
-                width: 87px;
-                height: 100px;
-                background-position: -185px -194px;
-              }
-            }
-          }
-
-          .guide-basic-title+.guide-sub-deep {
-            margin-top: 12px;
-          }
-
-          .guide-sub-deep+.btn-wrap {
-            margin-top: 20px;
-          }
         }
 
         .item-inner {
@@ -2746,6 +2683,85 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
     .total-sum {
       color: $color-text-primary;
       font-weight: $font-weight-semibold;
+    }
+  }
+}
+
+.item {
+  &.--no-item {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1;
+    flex-direction: column;
+    grid-template-columns: 1fr !important;
+    gap: 0;
+    padding: 48px 16px !important;
+    text-align: center;
+
+    &.--icon {
+      padding: 24px 16px;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        margin-bottom: 20px;
+        background-image: url('/resources/fe/images/icon/img-sprite.png');
+        background-repeat: no-repeat;
+        background-size: 920px auto;
+      }
+
+      // 장바구니
+      &.--cart {
+        &::before {
+          width: 192px;
+          height: 151px;
+          background-position: -698px 0;
+        }
+      }
+
+      // 이용후기
+      &.--review {
+        &::before {
+          width: 100px;
+          height: 108px;
+          background-position: 0 -194px;
+        }
+      }
+
+      // 1:1 문의
+      &.--customer-1 {
+        &::before {
+          width: 85px;
+          height: 100px;
+          background-position: -100px -194px;
+        }
+      }
+
+      // 견적문의
+      &.--customer-2 {
+        &::before {
+          width: 87px;
+          height: 100px;
+          background-position: -185px -194px;
+        }
+      }
+
+      // 쿠폰
+      &.--coupon {
+        &::before {
+          width: 138px;
+          height: 87px;
+          background-position: -219px -342px;
+        }
+      }
+    }
+
+    .guide-basic-title+.guide-sub-deep {
+      margin-top: 12px;
+    }
+
+    .guide-sub-deep+.btn-wrap {
+      margin-top: 20px;
     }
   }
 }

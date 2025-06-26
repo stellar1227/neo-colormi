@@ -1309,6 +1309,12 @@ h5 {
   }
 
   &.--tab {
+    flex-wrap: nowrap;
+    margin: -4px;
+    padding: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
     [class^=btn-] {
       flex: 1;
 

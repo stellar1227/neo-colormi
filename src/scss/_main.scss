@@ -70,22 +70,10 @@
           .item {
             background: #F181A6;
             z-index: 12;
-            bottom: -25px;
+            bottom: -27px;
 
             &::before {
               background: #F181A6;
-            }
-          }
-
-          &.--visible {
-            .item {
-              display: block;
-              background: $color-border-primary;
-              z-index: 11;
-
-              &::before {
-                background: $color-border-primary;
-              }
             }
           }
         }
@@ -102,6 +90,37 @@
           background: $color-border-primary;
           color: $color-text-basic-inverse;
           font-weight: $font-weight-regular;
+        }
+      }
+
+      .btn-coupon {
+        &::before {
+          content: none;
+        }
+
+        &.--visible {
+          width: auto;
+          height: auto;
+          min-height: 24px;
+          position: absolute;
+          right: 18px;
+          bottom: -27px;
+          transform: translateX(50%);
+          z-index: 11;
+
+          .item {
+            position: relative;
+            display: block;
+            background: $color-border-primary;
+            z-index: 11;
+            left: auto;
+            bottom: auto;
+            transform: none;
+
+            &::before {
+              background: $color-border-primary;
+            }
+          }
         }
       }
 
@@ -182,6 +201,7 @@
       .util-menu-inner {
         display: flex;
         gap: 16px;
+        position: relative;
       }
 
       .user-desc {
@@ -1090,7 +1110,7 @@ footer {
         display: flex;
         align-items: center;
         min-height: 50px;
-        padding: 12px 20px;
+        padding: 12px 16px;
         border-radius: 6px;
 
         &::before {
@@ -1104,8 +1124,8 @@ footer {
 
         dl {
           display: flex;
-          flex-wrap: nowrap;
           gap: 0 4px;
+          white-space: nowrap;
 
           dt {
             flex: 0 auto;
@@ -1122,6 +1142,7 @@ footer {
           background: $color-border-secondary;
 
           &::before {
+            flex: 0 0 42px;
             width: 42px;
             height: 29px;
             background-position: -120px 0;
@@ -1148,6 +1169,7 @@ footer {
           background: #896F12;
 
           &::before {
+            flex: 0 0 40px;
             width: 40px;
             height: 24px;
             background-position: -162px 0;

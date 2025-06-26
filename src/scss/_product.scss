@@ -304,6 +304,7 @@
   }
 
   @each $class, $values in ('line-display-1': ($Display-Status-Display-1, rgba(250, 92, 84, 0.10)),
+    'line-display-2': ($Display-Status-Display-2, rgba(255, 115, 115, 0.10)),
     'line-display-3': ($Display-Status-Display-3, rgba(235, 141, 87, 0.10)),
     'line-display-4': ($Display-Status-Display-4, rgba(132, 200, 96, 0.10)),
     'line-display-5': ($Display-Status-Display-5, $color-background-white),

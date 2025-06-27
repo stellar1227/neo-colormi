@@ -48,6 +48,10 @@ body {
 
   &.inactive {
     overflow: hidden;
+
+    header {
+      z-index: 11;
+    }
   }
 }
 

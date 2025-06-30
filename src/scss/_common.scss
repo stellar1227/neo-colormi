@@ -276,7 +276,7 @@ h5 {
     background-image: url('/resources/fe/images/icon/img-sprite.png');
     background-repeat: no-repeat;
     background-size: 920px auto;
-    background-position: -890px 0;
+    background-position: -877px 0;
   }
 
   .check-item {
@@ -1559,8 +1559,8 @@ h5 {
   color: $color-text-basic;
   border-radius: 10px;
   flex-direction: column;
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   padding: 0;
   @include font-body-xsmall;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05), 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
@@ -1636,8 +1636,8 @@ h5 {
 
   .icon {
     display: inline-block;
-    width: 63px;
-    height: 72px;
+    width: 50px;
+    height: 57px;
     margin-bottom: 4px;
     background-image: url('/resources/fe/images/icon/img-sprite.png');
     background-repeat: no-repeat;
@@ -1647,11 +1647,12 @@ h5 {
 
   span {
     display: inline-block;
-    padding: 0 9px;
+    width: 50px;
     border-radius: 8px;
     background: #583738;
-    @include font-body-xsmall-bold;
+    @include font-body-xxsmall-bold;
     color: $color-border-inverse;
+    line-height: 1.6rem;
   }
 }
 
@@ -2250,7 +2251,7 @@ h5 {
       display: inline-block;
       width: 99px;
       height: 90px;
-      background-image: url(/resources/fe/images/icon/img-sprite.png);
+      background-image: url('/resources/fe/images/icon/img-sprite.png');
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: -353px -194px;
@@ -2264,7 +2265,7 @@ h5 {
       display: inline-block;
       width: 104px;
       height: 91px;
-      background-image: url(/resources/fe/images/icon/img-sprite.png);
+      background-image: url('/resources/fe/images/icon/img-sprite.png');
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: -452px -194px;
@@ -2289,25 +2290,6 @@ h5 {
     }
   }
 
-  // &.--guide {
-  //   padding-bottom: 20px;
-  //   border-bottom: 1px solid $Line-line;
-  // }
-
-  // &.--size-guide {
-  //   &::before {
-  //     flex: 0 0 78px;
-  //     content: '';
-  //     display: inline-block;
-  //     width: 78px;
-  //     height: 80px;
-  //     background-image: url(/resources/fe/images/icon/img-sprite.png);
-  //     background-repeat: no-repeat;
-  //     background-size: 920px auto;
-  //     background-position: 0 -342px;
-  //   }
-  // }
-
   &.--copies-guide {
     &::before {
       flex: 0 0 82px;
@@ -2315,7 +2297,7 @@ h5 {
       display: inline-block;
       width: 82px;
       height: 82px;
-      background-image: url(/resources/fe/images/icon/img-sprite.png);
+      background-image: url('/resources/fe/images/icon/img-sprite.png');
       background-repeat: no-repeat;
       background-size: 920px auto;
       background-position: -78px -342px;

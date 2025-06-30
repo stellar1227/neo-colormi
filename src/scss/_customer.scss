@@ -194,8 +194,32 @@
 
   .item {
     .coupon {
+      position: relative;
       width: 100%;
       max-height: 200px;
+
+      .coupon-end-date {
+        position: absolute;
+        bottom: 12%;
+        left: 6%;
+        @include font-body-medium-bold;
+        color: $color-text-primary;
+      }
+      
+      .coupon-d-day {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        padding: 0 10px;
+        border-radius: 15px;
+        background: $color-border-primary;
+        @include font-body-medium-bold;
+        color: $color-text-basic-inverse;
+      }
     }
 
     .event {

@@ -2145,6 +2145,24 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
             }
           }
 
+          &.--re-sub {
+            justify-content: flex-start;
+
+            >.form-wrap {
+              flex: 0 0 100%;
+              >.form-field {
+                +.form-field {
+                  margin-top: 12px;
+                }
+              }
+            }
+  
+  
+            .item-inner {
+              text-align: left;
+            }
+          }
+
           .item-inner {
             text-align: center;
             word-break: break-word;
@@ -2202,7 +2220,8 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
 
         &.--product,
         &.--title,
-        &.--address {
+        &.--address,
+        &.--re-sub {
           flex: 1;
         }
 
@@ -2223,6 +2242,10 @@ $sprite: '/resources/fe/images/icon/icon-star.png';
         &.--category,
         &.--name {
           width: 20%;
+        }
+
+        &.--re-sub-file {
+          width: 22%;
         }
 
         &.--date,

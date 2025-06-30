@@ -1629,6 +1629,22 @@ h5 {
   }
 }
 
+.btn-join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .icon {
+    display: inline-block;
+    width: 70px;
+    height: 84px;
+    background-image: url('/resources/fe/images/icon/img-sprite.png');
+    background-repeat: no-repeat;
+    background-size: 920px auto;
+    background-position: -357px -342px;
+  }
+}
+
 .btn-talk-contact {
   display: flex;
   flex-direction: column;
@@ -2879,7 +2895,7 @@ button[type='button'] {
 }
 
 .form-list-wrap {
-  max-width: 560px;
+  max-width: 590px;
   margin: 0 auto;
 
   &:first-child {

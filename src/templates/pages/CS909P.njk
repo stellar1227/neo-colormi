@@ -93,70 +93,118 @@
         </section>
         <!-- 시안 확정 전 : 확정 후 미사용 -->
         <section class="content-box">
-          <div class="product-order">
-            <div class="title-wrap">
-              <h5>파일재접수</h5>
+          <div class="title-wrap">
+            <h5>파일재접수</h5>
+          </div>
+          <!-- 파일재접수 전 -->
+          <div class="table-list">
+            <div class="list-item-wrap --header">
+              <div class="list-item">
+                <div class="item --re-sub-file">
+                  <p>구분</p>
+                </div>
+                <div class="item --re-sub-file">
+                  <p>기존파일</p>
+                </div>
+                <div class="item --re-sub">
+                  <p>재접수 정보</p>
+                </div>
+              </div>
             </div>
-            <div
-              class="product-option">
-              <!-- 파일재접수 전 -->
-              <dl class="column-item">
-                <dt>파일첨부</dt>
-                <dd>
-                  <div class="form-field width-436">
-                    <div class="form-wrap file">
-                      <label class="btn-primary --small">
-                        <input type="file"/>
-                        <span>파일첨부</span>
-                      </label>
-                      <span class="guide-sub">선택한 파일이 없습니다.</span>
-                      <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
-                      <!-- 파일 선택 후 : 삭제 버튼 사용 -->
-                      <button type="button" class="btn-del">
-                        <i class="delete">삭제</i>
-                      </button>
-                      <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+            <!-- // list header -->
+            <div class="list-item-wrap --body">
+              <div class="list-item">
+                <div class="item --re-sub-file" data-label="구분">
+                  <div class="item-inner">
+                    <p>내지</P>
+                  </div>
+                </div>
+                <div class="item --re-sub-file" data-label="기존파일">
+                  <div class="item-inner">
+                    <p class="guide-basic">파일명.pdf</p>
+                    <p class="date">
+                      <span>2025-00-00 00:00:00</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="item --re-sub --add-file" data-label="재접수 정보">
+                  <div class="form-wrap">
+                    <div class="form-field">
+                      <div class="form-wrap file">
+                        <label class="btn-primary --small">
+                          <input type="file"/>
+                          <span>파일첨부</span>
+                        </label>
+                        <span class="guide-sub">선택한 파일이 없습니다.</span>
+                        <!-- // 파일 선택 후 : 안내문구 > 파일명으로 텍스트 대치 -->
+                        <!-- 파일 선택 후 : 삭제 버튼 사용 -->
+                        <button type="button" class="btn-del">
+                          <i class="delete">삭제</i>
+                        </button>
+                        <!-- // 파일 선택 후 : 삭제 버튼 사용 -->
+                      </div>
                     </div>
-                  </div>
-                </dd>
-              </dl>
-              <!-- // 파일재접수 전 -->
-              <!-- 파일재접수 후 -->
-              <dl class="column-item">
-                <dt>파일첨부</dt>
-                <dd>
-                  <div class="inner-wrap">
-                    <span class="guide-basic">파일명.pdf</span>
-                  </div>
-                </dd>
-              </dl>
-              <dl class="column-item">
-                <dt>파일첨부일</dt>
-                <dd>
-                  <div class="inner-wrap">
-                    <span class="guide-basic">2025-00-00 00:00:00</span>
-                  </div>
-                </dd>
-              </dl>
-              <!-- // 파일재접수 후 -->
-              <dl class="column-item">
-                <dt>전달사항</dt>
-                <dd>
-                  <div class="form-field textarea">
-                    <div class="form-wrap">
-                      <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
-                    </div>
-                    <div class="textarea-bottom">
-                      <div class="count">
-                        <em>1</em>/<span>100</span>
+                    <div class="form-field textarea">
+                      <div class="form-wrap">
+                        <textarea id="textarea" placeholder="상품에 대한 요청사항을 자세히 작성해주세요."></textarea>
+                      </div>
+                      <div class="textarea-bottom">
+                        <div class="count">
+                          <em>1</em>/<span>100</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </dd>
-              </dl>
+                </div>
+              </div>
             </div>
-            <p class="guide-sub --small">*시안확정 시 입력하신 ‘전달사항’은 전달되지 않습니다.</p>
+            <!-- // list body -->
           </div>
+          <!-- // 파일재접수 전 -->
+          <!-- 파일재접수 후 -->
+          <div class="table-list">
+            <div class="list-item-wrap --header">
+              <div class="list-item">
+                <div class="item --re-sub-file">
+                  <p>구분</p>
+                </div>
+                <div class="item --re-sub-file">
+                  <p>재접수 파일</p>
+                </div>
+                <div class="item --re-sub">
+                  <p>전달사항</p>
+                </div>
+              </div>
+            </div>
+            <!-- // list header -->
+            <div class="list-item-wrap --body">
+              <div class="list-item">
+                <div class="item --re-sub-file" data-label="구분">
+                  <div class="item-inner">
+                    <p>내지</P>
+                  </div>
+                </div>
+                <div class="item --re-sub-file" data-label="재접수 파일">
+                  <div class="item-inner">
+                    <p class="guide-basic">파일명.pdf</p>
+                    <p class="date">
+                      <span>2025-00-00 00:00:00</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="item --re-sub" data-label="전달사항">
+                  <div class="item-inner">
+                    <div class="guide-basic">
+                      <p>A3사이즈로 재조정해서 파일 접수합니다. 교정 확인 후 얼마나 걸리는지 안내 부탁드립니다.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // list body -->
+          </div>
+          <!-- // 파일재접수 후 -->
+          <p class="guide-sub --small">*시안확정 시 입력하신 ‘전달사항’은 전달되지 않습니다.</p>
         </section>
         <!-- // 시안 확정 전 : 확정 후 미사용 -->
       </div>

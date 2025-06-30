@@ -1658,6 +1658,17 @@
       }
     }
   }
+
+  .box-list {
+    .item {
+      .coupon {
+        .coupon-end-date,
+        .coupon-d-day {
+          @include font-body-xxsmall-bold;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width:769px) {

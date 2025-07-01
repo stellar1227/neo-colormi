@@ -564,12 +564,12 @@
     .search-content {
       width: 100%;
 
-      .result-item .no-item{
+      .result-item .no-item {
         &::before {
           transform: scale(.6);
           transform-origin: 50% bottom;
         }
-        
+
         &.--default {
           &::before {
             margin-top: -78px;
@@ -1258,6 +1258,7 @@
                 }
               }
             }
+
             &.--re-sub-file {
               p.date {
                 display: block;
@@ -1666,6 +1667,7 @@
   .box-list {
     .item {
       .coupon {
+
         .coupon-end-date,
         .coupon-d-day {
           @include font-body-xxsmall-bold;

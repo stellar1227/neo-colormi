@@ -47,7 +47,7 @@ body {
   @include font-body-small;
 
   &.inactive {
-    overflow: hidden;
+    overflow-y: hidden;
 
     header {
       z-index: 11;

@@ -597,13 +597,13 @@ function initGnb() {
     });
   });
 
+  // 닫기
   document.addEventListener('click', e => {
-    const isOutsideGnb =
-      !e.target.closest('.gnb') &&
-      !e.target.closest('.header-top .util-menu-wrap') &&
-      !e.target.closest('.all-menu-wrap');
+    const openedMenuWraps = Array.from(submenuWraps).filter(wrap => wrap.classList.contains('--open'));
+    const isClickInsideAnyOpenMenu = openedMenuWraps.some(wrap => wrap.contains(e.target));
+    const isMenuButton = Array.from(menuButtons).some(btn => btn === e.target || btn.contains(e.target));
 
-    if (isOutsideGnb) {
+    if (!isClickInsideAnyOpenMenu && !isMenuButton) {
       submenuWraps.forEach(wrap => wrap.classList.remove('--open'));
       if (!mobileQuery.matches) {
         menuButtons.forEach(btn =>
